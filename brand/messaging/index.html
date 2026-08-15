@@ -51,7 +51,7 @@
   code{font-family:'SF Mono',Consolas,monospace;font-size:13.5px;background:rgba(11,26,45,.06);padding:1px 6px;border-radius:3px;}
   .dark code{background:rgba(247,243,236,.1);}
 
-  /* site nav — unified chrome, matches portal */
+  /* site nav · unified chrome, matches portal */
   .sitenav{position:absolute;top:0;left:0;right:0;z-index:10;}
   .sitenav .bar{max-width:1240px;margin:0 auto;padding:26px 36px;display:flex;justify-content:space-between;align-items:center;gap:20px;}
   .sitenav .logo img{height:20px;width:auto;display:block;}
@@ -60,9 +60,8 @@
   .sitenav .links a:hover{color:var(--white);}
   .sitenav .links a.active{color:var(--white);border-bottom:1px solid rgba(255,255,255,.6);padding-bottom:2px;}
 
-  /* cover — full-bleed video hero, unified chrome */
-  .cover{position:relative;min-height:92vh;display:flex;align-items:center;justify-content:center;text-align:center;background:var(--midnight);color:var(--parchment);overflow:hidden;}
-  .cover video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+  /* cover · full-bleed video hero, unified chrome */
+  .cover{position:relative;min-height:92vh;display:flex;align-items:center;justify-content:center;text-align:center;background:var(--midnight) url('/assets/images/hero-worship.jpg') center/cover no-repeat;color:var(--parchment);overflow:hidden;}
   .cover .scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,26,45,.78) 0%,rgba(11,26,45,.55) 40%,rgba(11,26,45,.82) 100%);}
   .cover .inner{position:relative;z-index:2;padding:140px 32px 100px;max-width:900px;}
   .cover .kicker{font-size:13px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--white);margin-bottom:28px;display:block;}
@@ -75,13 +74,12 @@
   .cover .down{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);z-index:2;color:rgba(247,243,236,.75);font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;text-decoration:none;}
   .cover .down:hover{color:var(--white);}
   @media(max-width:640px){.sitenav .bar{padding:20px 24px;}.cover .inner{padding:120px 24px 90px;}}
-  @media (prefers-reduced-motion: reduce){.cover video{display:none;}}
 
   /* toc */
   .toc{padding:48px 0;border-bottom:1px solid var(--rule);}
   .toc ol{list-style:none;counter-reset:toc;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:8px 40px;}
   .toc li{counter-increment:toc;font-size:14.5px;font-weight:500;}
-  .toc li::before{content:counter(toc,decimal-leading-zero)" — ";font-weight:700;color:var(--ember);letter-spacing:.06em;}
+  .toc li::before{content:counter(toc,decimal-leading-zero)" · ";font-weight:700;color:var(--ember);letter-spacing:.06em;}
   .toc a{color:var(--midnight);text-decoration:none;}
   .toc a:hover{color:var(--ember);}
 
@@ -198,32 +196,30 @@
 <!-- NAV -->
 <nav class="sitenav">
   <div class="bar">
-    <a class="logo" href="/" aria-label="THE WORD FOR ALL THE WORLD — portal home">
+    <a class="logo" href="/" aria-label="THE WORD FOR ALL THE WORLD, portal home">
       <img src="/assets/logos/the-word-for-all-the-world.png" alt="THE WORD FOR ALL THE WORLD">
     </a>
     <div class="links">
       <a href="/">Home</a>
       <a href="/brand/">Brand Guide</a>
       <a href="/brand/messaging/" class="active">Messaging</a>
+      <a href="/documents/">Documents</a>
     </div>
   </div>
 </nav>
 
 <!-- COVER -->
 <header class="cover">
-  <video autoplay muted loop playsinline poster="/assets/images/tent-congregation-poster.jpg">
-    <source src="/assets/videos/tent-congregation.mp4" type="video/mp4">
-  </video>
   <div class="scrim"></div>
   <div class="inner">
     <span class="kicker">Messaging Guide · Version 1.0</span>
     <h1>How we speak.<br>Everywhere. To <em>everyone.</em></h1>
-    <p class="lede">The Brand Messaging Guide — the single source for what this ministry says, to whom, and in what words. Where wording conflicts anywhere else, this document rules.</p>
+    <p class="lede">The Brand Messaging Guide: the single source for what this ministry says, to whom, and in what words. Where wording conflicts anywhere else, this document rules.</p>
     <div class="rule"></div>
     <div class="meta">
       <div><strong>Version</strong>1.0 · August 2026</div>
       <div><strong>Companion To</strong>Brand Guide v4.4</div>
-      <div><strong>Status</strong>Single Source of Truth — Words</div>
+      <div><strong>Status</strong>Single Source of Truth: Words</div>
       <div><strong>Approved By</strong>Joel Zimmer · Nathan Zimmer</div>
     </div>
   </div>
@@ -238,7 +234,7 @@
       <li><a href="#foundation">The foundation</a></li>
       <li><a href="#prophecy">The prophecy</a></li>
       <li><a href="#origin">How it began</a></li>
-      <li><a href="#identity">What we are — and are not</a></li>
+      <li><a href="#identity">What we are, and are not</a></li>
       <li><a href="#values">Values, uniques &amp; guarantee</a></li>
       <li><a href="#architecture">The message architecture</a></li>
       <li><a href="#journey">The journey: Clean · Burn · Train</a></li>
@@ -255,24 +251,24 @@
 <!-- 01 HOW TO USE -->
 <section id="use">
   <div class="wrap">
-    <div class="slidehead"><span class="eyebrow">01 — How To Use This Guide</span><span class="slideno">The Word · Messaging Guide</span></div>
+    <div class="slidehead"><span class="eyebrow">01 · How To Use This Guide</span><span class="slideno">The Word · Messaging Guide</span></div>
     <h2>One guide. Every voice.</h2>
-    <p class="lede">This document is written for everyone who speaks or writes for THE WORD FOR ALL THE WORLD — leadership, team members, volunteers, and outside writers, designers, and agencies. It assumes no tribal knowledge. If you have never worked with us before, this guide is enough.</p>
+    <p class="lede">This document is written for everyone who speaks or writes for THE WORD FOR ALL THE WORLD: leadership, team members, volunteers, and outside writers, designers, and agencies. It assumes no tribal knowledge. If you have never worked with us before, this guide is enough.</p>
     <p>The Brand Guide (v4.4) governs how we <em>look</em>. This guide governs what we <em>say</em>. The two are companions: Law II (everything is a record), Law III (one house, named front doors), and Law IV (the institution signs its work) apply to words exactly as they apply to design.</p>
-    <p><strong>The rule of rule:</strong> where wording in any older document, website, deck, or social post conflicts with this guide, this guide wins. Changes to this guide happen one way — proposed in writing, approved by Joel and Nathan, recorded in the changelog (§14).</p>
+    <p><strong>The rule of rule:</strong> where wording in any older document, website, deck, or social post conflicts with this guide, this guide wins. Changes to this guide happen one way: proposed in writing, approved by Joel and Nathan, recorded in the changelog (§14).</p>
   </div>
 </section>
 
 <!-- 02 FOUNDATION -->
 <section id="foundation" class="dark">
   <div class="wrap">
-    <div class="slidehead"><span class="eyebrow">02 — The Foundation</span><span class="slideno">The Word · Messaging Guide</span></div>
+    <div class="slidehead"><span class="eyebrow">02 · The Foundation</span><span class="slideno">The Word · Messaging Guide</span></div>
     <h2>One public line.<br>Three pillars behind it.</h2>
-    <p>In public — websites, decks, one-liners, introductions — the mission speaks as a single fused line. Internally, that line stands on a Purpose, a Mission, and a Vision. Both are canon. The fused line is what the world hears; the pillars are what the house is built on.</p>
+    <p>In public (websites, decks, one-liners, introductions) the mission speaks as a single fused line. Internally, that line stands on a Purpose, a Mission, and a Vision. Both are canon. The fused line is what the world hears; the pillars are what the house is built on.</p>
 
     <div class="statement">
-      <div class="sk">The Public Mission Line — Use This Everywhere</div>
-      <div class="big">Strengthening the local church to fulfill the Great Commission — until EVERY1 knows the name Jesus.</div>
+      <div class="sk">The Public Mission Line · Use This Everywhere</div>
+      <div class="big">Strengthening the local church to fulfill the Great Commission, until EVERY1 knows the name Jesus.</div>
     </div>
 
     <div class="pmv">
@@ -282,11 +278,11 @@
       </div>
       <div class="card">
         <div class="lab">Mission</div>
-        <div class="txt">To strengthen the local church to do the Great Commission. Fire starts fire — we burn for Jesus in locations across the world, and they catch it, because they're dry enough.</div>
+        <div class="txt">To strengthen the local church to do the Great Commission. Fire starts fire. We burn for Jesus in locations across the world, and they catch it, because they're dry enough.</div>
       </div>
       <div class="card">
         <div class="lab">Vision</div>
-        <div class="txt">Every tribe, every tongue, every nation — and EVERY1 — will know the name Jesus.</div>
+        <div class="txt">Every tribe, every tongue, every nation, and EVERY1, will know the name Jesus.</div>
         <span class="vref">Hebrews 8:11</span>
       </div>
     </div>
@@ -296,16 +292,16 @@
 
     <h3>The lead narrative</h3>
     <p style="font-family:var(--serif-text);font-size:22px;">Every generation seeks a revival. No one told them it is <em>already here.</em></p>
-    <p class="caption">This is the door we open every big conversation with. Revival is not a hope we are waiting on — it is a fact we are announcing. All messaging flows downstream of this posture.</p>
+    <p class="caption">This is the door we open every big conversation with. Revival is not a hope we are waiting on. It is a fact we are announcing. All messaging flows downstream of this posture.</p>
   </div>
 </section>
 
 <!-- 03 PROPHECY -->
 <section id="prophecy">
   <div class="wrap">
-    <div class="slidehead"><span class="eyebrow">03 — The Founding Document</span><span class="slideno">The Word · Messaging Guide</span></div>
+    <div class="slidehead"><span class="eyebrow">03 · The Founding Document</span><span class="slideno">The Word · Messaging Guide</span></div>
     <h2>The prophecy.</h2>
-    <p>Received before the ministry had a name for what it would become. It is quoted exactly, in full, or not at all — never paraphrased, never excerpted for effect. Set in the record register per Brand Guide §08.</p>
+    <p>Received before the ministry had a name for what it would become. It is quoted exactly, in full, or not at all. Never paraphrased, never excerpted for effect. Set in the record register per Brand Guide §08.</p>
     <div class="exhibit">
       <hr class="short-rule">
       <span class="doc-kicker">The Word · A Prophecy</span>
@@ -318,38 +314,38 @@
 <!-- 04 ORIGIN -->
 <section id="origin" class="dark">
   <div class="wrap">
-    <div class="slidehead"><span class="eyebrow">04 — How It Began</span><span class="slideno">The Word · Messaging Guide</span></div>
+    <div class="slidehead"><span class="eyebrow">04 · How It Began</span><span class="slideno">The Word · Messaging Guide</span></div>
     <h2>One question on<br>an airport tarmac.</h2>
-    <p>This is the canonical telling of the origin story. Tell it this way — in interviews, on the About page, from the stage. Bracketed fields are pending verification against the ministry record; per Law II, nothing unverified enters a founding document. Verify, unbracket, done.</p>
+    <p>This is the canonical telling of the origin story. Tell it this way: in interviews, on the About page, from the stage. Bracketed fields are pending verification against the ministry record; per Law II, nothing unverified enters a founding document. Verify, unbracket, done.</p>
     <div class="statement">
       <div class="sk">The Record · How It Began</div>
-      <div class="big" style="font-size:clamp(18px,2.4vw,23px);">In <span class="flag">[2024]</span>, Joel Zimmer traveled to Uganda alongside <span class="flag">[Inspiring Better Business]</span>. As he stepped off the plane, a man named <span class="flag">[David Kamanzi]</span> met him with one question: "Will you help me train my people?" That question was the first seed of the School of the Local Church. Later that year, the Lord spoke: go back to Uganda — and this time, hold a pastors conference. The conference was held. The fire caught. We have been going back ever since. Uganda is for Jesus. So is the rest of the world.</div>
+      <div class="big" style="font-size:clamp(18px,2.4vw,23px);">In <span class="flag">[2024]</span>, Joel Zimmer traveled to Uganda alongside <span class="flag">[Inspiring Better Business]</span>. As he stepped off the plane, a man named <span class="flag">[David Kamanzi]</span> met him with one question: "Will you help me train my people?" That question was the first seed of the School of the Local Church. Later that year, the Lord spoke: go back to Uganda, and this time, hold a pastors conference. The conference was held. The fire caught. We have been going back ever since. Uganda is for Jesus. So is the rest of the world.</div>
     </div>
-    <p class="caption">The prophecy (Dec 2019) precedes the first trip — the word came first, then the door opened. When telling the full story, keep that order.</p>
+    <p class="caption">The prophecy (Dec 2019) precedes the first trip: the word came first, then the door opened. When telling the full story, keep that order.</p>
   </div>
 </section>
 
 <!-- 05 IDENTITY -->
 <section id="identity">
   <div class="wrap">
-    <div class="slidehead"><span class="eyebrow">05 — What We Are, What We Are Not</span><span class="slideno">The Word · Messaging Guide</span></div>
+    <div class="slidehead"><span class="eyebrow">05 · What We Are, What We Are Not</span><span class="slideno">The Word · Messaging Guide</span></div>
     <h2>Say what we are.<br>Correct what we're <em>not.</em></h2>
-    <p>The name THE WORD FOR ALL THE WORLD invites assumptions. Messaging corrects them plainly, without being defensive — one clear sentence and move on.</p>
+    <p>The name THE WORD FOR ALL THE WORLD invites assumptions. Messaging corrects them plainly, without being defensive: one clear sentence and move on.</p>
     <div class="twocol dark" style="background:var(--midnight);padding:36px;border-radius:6px;">
       <div class="idcard are">
         <div class="lab">We Are</div>
         <ul>
           <li><strong>A Spirit-led ministry</strong> that strengthens local churches to do the Great Commission.</li>
-          <li><strong>A servant of the local church</strong> — we come to serve their house, not build ours.</li>
-          <li><strong>Evangelists and trainers</strong> — we preach, we stir, we equip, and we leave the church stronger than we found it.</li>
+          <li><strong>A servant of the local church</strong>: we come to serve their house, not build ours.</li>
+          <li><strong>Evangelists and trainers</strong>: we preach, we stir, we equip, and we leave the church stronger than we found it.</li>
         </ul>
       </div>
       <div class="idcard arenot">
         <div class="lab">We Are Not</div>
         <ul>
-          <li><strong>Not a Bible translation ministry.</strong> "THE WORD" is the Word preached — not the Word translated.</li>
+          <li><strong>Not a Bible translation ministry.</strong> "THE WORD" is the Word preached, not the Word translated.</li>
           <li><strong>Not a denomination.</strong> We plant fire, not flags.</li>
-          <li><strong>Not a replacement for the local church.</strong> If there is no local church to partner with in an area, we hold off — our goal is never to create spiritual orphans.</li>
+          <li><strong>Not a replacement for the local church.</strong> If there is no local church to partner with in an area, we hold off. Our goal is never to create spiritual orphans.</li>
         </ul>
       </div>
     </div>
@@ -359,13 +355,13 @@
 <!-- 06 VALUES -->
 <section id="values" class="dark">
   <div class="wrap">
-    <div class="slidehead"><span class="eyebrow">06 — Values, Uniques &amp; Guarantee</span><span class="slideno">The Word · Messaging Guide</span></div>
-    <h2>What we live —<br>and what makes us <em>us.</em></h2>
+    <div class="slidehead"><span class="eyebrow">06 · Values, Uniques &amp; Guarantee</span><span class="slideno">The Word · Messaging Guide</span></div>
+    <h2>What we live,<br>and what makes us <em>us.</em></h2>
     <p>Four core values, three uniques, one guarantee. These are not slogans; they are filters. Content that violates a value gets killed no matter how good it looks.</p>
     <div class="values">
-      <div class="value"><div class="vn">Burn For Jesus</div><div class="vd">We burn with the passion of our relationship with Jesus and with His mission — the Great Commission.</div></div>
+      <div class="value"><div class="vn">Burn For Jesus</div><div class="vd">We burn with the passion of our relationship with Jesus and with His mission, the Great Commission.</div></div>
       <div class="value"><div class="vn">Spirit-Led</div><div class="vd">Our spirit has the final say. We never violate it, and we always fear the Lord. Words are stewarded to build, edify, and impart life.</div></div>
-      <div class="value"><div class="vn">Selfless Love</div><div class="vd">Not concerned about credit, fame, or name recognition. Servant leadership — promoting and developing others first.</div></div>
+      <div class="value"><div class="vn">Selfless Love</div><div class="vd">Not concerned about credit, fame, or name recognition. Servant leadership: promoting and developing others first.</div></div>
       <div class="value"><div class="vn">Full of Faith</div><div class="vd">We challenge giants with the Word of God and take the Kingdom by the force of faith.</div></div>
     </div>
     <h3>Three uniques</h3>
@@ -376,42 +372,42 @@
     </div>
     <h3>The guarantee</h3>
     <p style="font-family:var(--serif-text);font-size:22px;">The Holy Spirit runs our services.</p>
-    <p class="caption">"The Holy Spirit is our PR man" is internal and partner-facing language. In public copy, say it the way the guarantee says it: the Holy Spirit runs our services — there is no routine He can't interrupt.</p>
+    <p class="caption">"The Holy Spirit is our PR man" is internal and partner-facing language. In public copy, say it the way the guarantee says it: the Holy Spirit runs our services. There is no routine He can't interrupt.</p>
   </div>
 </section>
 
 <!-- 07 MESSAGE ARCHITECTURE -->
 <section id="architecture">
   <div class="wrap">
-    <div class="slidehead"><span class="eyebrow">07 — The Message Architecture</span><span class="slideno">The Word · Messaging Guide</span></div>
+    <div class="slidehead"><span class="eyebrow">07 · The Message Architecture</span><span class="slideno">The Word · Messaging Guide</span></div>
     <h2>The story we tell,<br>at every length.</h2>
-    <p>The believer is the hero. We are the guide. That order never flips — messaging never makes THE WORD the hero of the story.</p>
+    <p>The believer is the hero. We are the guide. That order never flips. Messaging never makes THE WORD the hero of the story.</p>
 
     <h3>The story in one frame</h3>
     <table>
       <tr><th style="width:190px;">Element</th><th>Canonical language</th></tr>
-      <tr><td><strong>The hero</strong></td><td>The local church and the believer. They want a real, active relationship with Jesus and to walk in their purpose — but they feel dry, distracted, or asleep.</td></tr>
-      <tr><td><strong>The problem</strong></td><td>External: the church is asleep and the fire has gone out. Internal: "I know there's more to this walk with Jesus — I just don't know how to get there." Philosophical: the world is waiting for the Church to wake up.</td></tr>
-      <tr><td><strong>The guide</strong></td><td>THE WORD FOR ALL THE WORLD. We don't bring hype — we bring hunger. The Holy Spirit runs our services, and fire starts fire.</td></tr>
-      <tr><td><strong>The plan</strong></td><td>CLEAN · BURN · TRAIN — Revival To My City wakes the church, the EVERY1 Movement sends it, the School of the Local Church roots it.</td></tr>
-      <tr><td><strong>The call</strong></td><td>Primary: join the movement — host a Revival To My City, join EVERY1, enroll in the School. Transitional: watch a testimony, join the prayer meeting, take the free personal evangelism course.</td></tr>
+      <tr><td><strong>The hero</strong></td><td>The local church and the believer. They want a real, active relationship with Jesus and to walk in their purpose, but they feel dry, distracted, or asleep.</td></tr>
+      <tr><td><strong>The problem</strong></td><td>External: the church is asleep and the fire has gone out. Internal: "I know there's more to this walk with Jesus. I just don't know how to get there." Philosophical: the world is waiting for the Church to wake up.</td></tr>
+      <tr><td><strong>The guide</strong></td><td>THE WORD FOR ALL THE WORLD. We don't bring hype. We bring hunger. The Holy Spirit runs our services, and fire starts fire.</td></tr>
+      <tr><td><strong>The plan</strong></td><td>CLEAN · BURN · TRAIN: Revival To My City wakes the church, the EVERY1 Movement sends it, the School of the Local Church roots it.</td></tr>
+      <tr><td><strong>The call</strong></td><td>Primary: join the movement: host a Revival To My City, join EVERY1, enroll in the School. Transitional: watch a testimony, join the prayer meeting, take the free personal evangelism course.</td></tr>
       <tr><td><strong>The stakes</strong></td><td>If the church stays asleep, people keep searching for life in all the wrong places and entire cities stay unchanged.</td></tr>
-      <tr><td><strong>The success</strong></td><td>Believers become bold, the Great Commission is fulfilled, cities are transformed — the world knows Jesus.</td></tr>
+      <tr><td><strong>The success</strong></td><td>Believers become bold, the Great Commission is fulfilled, cities are transformed. The world knows Jesus.</td></tr>
     </table>
 
-    <h3>Boilerplate — three lengths</h3>
+    <h3>Boilerplate · three lengths</h3>
     <div class="dark" style="background:var(--midnight);padding:36px;border-radius:6px;">
       <div class="boiler">
         <div class="bl">One Sentence</div>
-        <div class="bt">THE WORD FOR ALL THE WORLD strengthens the local church to fulfill the Great Commission — until EVERY1 knows the name Jesus.</div>
+        <div class="bt">THE WORD FOR ALL THE WORLD strengthens the local church to fulfill the Great Commission, until EVERY1 knows the name Jesus.</div>
       </div>
       <div class="boiler">
-        <div class="bl">One Paragraph — ~55 Words</div>
-        <div class="bt">THE WORD FOR ALL THE WORLD is a Spirit-led ministry that strengthens the local church to fulfill the Great Commission. Through Revival To My City, the EVERY1 Movement, and the School of the Local Church, we stir believers back to their first love, send them to the lost, and train them to walk with Jesus — until EVERY1 knows the name Jesus.</div>
+        <div class="bl">One Paragraph · ~55 Words</div>
+        <div class="bt">THE WORD FOR ALL THE WORLD is a Spirit-led ministry that strengthens the local church to fulfill the Great Commission. Through Revival To My City, the EVERY1 Movement, and the School of the Local Church, we stir believers back to their first love, send them to the lost, and train them to walk with Jesus, until EVERY1 knows the name Jesus.</div>
       </div>
       <div class="boiler">
-        <div class="bl">The Full Telling — ~100 Words</div>
-        <div class="bt">THE WORD FOR ALL THE WORLD began with a prophecy and a question on a Ugandan tarmac: "Will you help me train my people?" We are a Spirit-led ministry that strengthens the local church to fulfill the Great Commission. We don't replace the local church — we serve it. Through Revival To My City we stir congregations back to their first love. Through the EVERY1 Movement we send EVERY1 in the church to EVERY1 outside of it. Through the School of the Local Church we train believers to know their authority in Christ and build a real relationship with Jesus. Fire starts fire — until EVERY1 knows the name Jesus.</div>
+        <div class="bl">The Full Telling · ~100 Words</div>
+        <div class="bt">THE WORD FOR ALL THE WORLD began with a prophecy and a question on a Ugandan tarmac: "Will you help me train my people?" We are a Spirit-led ministry that strengthens the local church to fulfill the Great Commission. We don't replace the local church. We serve it. Through Revival To My City we stir congregations back to their first love. Through the EVERY1 Movement we send EVERY1 in the church to EVERY1 outside of it. Through the School of the Local Church we train believers to know their authority in Christ and build a real relationship with Jesus. Fire starts fire, until EVERY1 knows the name Jesus.</div>
       </div>
     </div>
   </div>
@@ -420,7 +416,7 @@
 <!-- 08 JOURNEY -->
 <section id="journey" class="dark">
   <div class="wrap">
-    <div class="slidehead"><span class="eyebrow">08 — The Journey</span><span class="slideno">The Word · Messaging Guide</span></div>
+    <div class="slidehead"><span class="eyebrow">08 · The Journey</span><span class="slideno">The Word · Messaging Guide</span></div>
     <h2>Clean. Burn. Train.<br>In that order.</h2>
     <p>The three priorities are a sequence, not a menu. A heart is cleaned, then it burns, then it is trained to keep burning. All journey messaging honors this order.</p>
     <div class="phases" style="filter:none;">
@@ -444,16 +440,16 @@
       </div>
     </div>
     <h3>How one weekend tells the whole story</h3>
-    <p>We arrive in a city Thursday or Friday. Evenings are Revival To My City services — worship, preaching, altar calls, healing, testimonies captured — hearts get cleaned out by the power of God. Saturday morning is the EVERY1 interest meeting: what the movement is, how to join, and the first outreach — participants personally evangelize in the community that same morning. From there, they sign up for the School of the Local Church, starting with the free personal evangelism course. One person can be in all three at once — and often is.</p>
+    <p>We arrive in a city Thursday or Friday. Evenings are Revival To My City services: worship, preaching, altar calls, healing, testimonies captured. Hearts get cleaned out by the power of God. Saturday morning is the EVERY1 interest meeting: what the movement is, how to join, and the first outreach. Participants personally evangelize in the community that same morning. From there, they sign up for the School of the Local Church, starting with the free personal evangelism course. One person can be in all three at once, and often is.</p>
   </div>
 </section>
 
 <!-- 09 AUDIENCES -->
 <section id="audiences">
   <div class="wrap">
-    <div class="slidehead"><span class="eyebrow">09 — The Five People We Speak To</span><span class="slideno">The Word · Messaging Guide</span></div>
+    <div class="slidehead"><span class="eyebrow">09 · The Five People We Speak To</span><span class="slideno">The Word · Messaging Guide</span></div>
     <h2>Five faces.<br>Five first sentences.</h2>
-    <p>Every piece of content is aimed at one of these five people. Know which one before you write a word. The "what they need to hear" line is the heart of the message — say it in your own words, but say <em>that</em>.</p>
+    <p>Every piece of content is aimed at one of these five people. Know which one before you write a word. The "what they need to hear" line is the heart of the message: say it in your own words, but say <em>that</em>.</p>
     <div class="aud dark" style="background:var(--midnight);padding:36px;border-radius:6px;">
       <div class="audcard">
         <div class="an">The Local Pastor</div>
@@ -461,7 +457,7 @@
         <dl>
           <dt>They Want</dt><dd>To multiply disciples and lead revival without burning out.</dd>
           <dt>Their Pain</dt><dd>Exhaustion, plateaued growth, no discipleship pathway.</dd>
-          <dt>What They Need To Hear</dt><dd class="say">"We come to serve your church, not build ours. When we leave, your people stay — on fire and equipped."</dd>
+          <dt>What They Need To Hear</dt><dd class="say">"We come to serve your church, not build ours. When we leave, your people stay, on fire and equipped."</dd>
           <dt>First Step</dt><dd>Host a Revival To My City · train leaders through the School.</dd>
         </dl>
       </div>
@@ -471,17 +467,17 @@
         <dl>
           <dt>They Want</dt><dd>To grow spiritually and live on mission.</dd>
           <dt>Their Pain</dt><dd>Dry faith. The conviction that "there must be more."</dd>
-          <dt>What They Need To Hear</dt><dd class="say">"There is more — and it isn't a program. It's a real relationship with Jesus, and it starts with turning back to your first love."</dd>
+          <dt>What They Need To Hear</dt><dd class="say">"There is more, and it isn't a program. It's a real relationship with Jesus, and it starts with turning back to your first love."</dd>
           <dt>First Step</dt><dd>Join the EVERY1 Movement · start the School.</dd>
         </dl>
       </div>
       <div class="audcard">
         <div class="an">The Lost Online Searcher</div>
-        <div class="at">18–30 · Digital-First</div>
+        <div class="at">18 to 30 · Digital-First</div>
         <dl>
           <dt>They Want</dt><dd>Truth, healing, identity, purpose.</dd>
-          <dt>Their Pain</dt><dd>Anxiety, loneliness, distrust of religion — hungry for what's real.</dd>
-          <dt>What They Need To Hear</dt><dd class="say">"What you're looking for has a name. You can have a real relationship with Jesus — starting today."</dd>
+          <dt>Their Pain</dt><dd>Anxiety, loneliness, distrust of religion, hungry for what's real.</dd>
+          <dt>What They Need To Hear</dt><dd class="say">"What you're looking for has a name. You can have a real relationship with Jesus, starting today."</dd>
           <dt>First Step</dt><dd>Watch a testimony → request prayer → begin the intro course.</dd>
         </dl>
       </div>
@@ -501,32 +497,32 @@
         <dl>
           <dt>They Want</dt><dd>Eternal impact with their influence and resources.</dd>
           <dt>Their Pain</dt><dd>Unsure whom to trust; tired of shallow ministry.</dd>
-          <dt>What They Need To Hear</dt><dd class="say">"Fund what heaven is doing. Every number we report comes from the official record — you will always know exactly what your partnership did."</dd>
+          <dt>What They Need To Hear</dt><dd class="say">"Fund what heaven is doing. Every number we report comes from the official record. You will always know exactly what your partnership did."</dd>
           <dt>First Step</dt><dd>Sponsor a Revival To My City · scholarship School students.</dd>
         </dl>
       </div>
     </div>
-    <p class="caption" style="margin-top:20px;">A note on Gen Z (18–25): they trust testimony over performance and vulnerability over polish. Lead with real stories of transformation, never with production value. They can smell hype — which is fine, because we don't use it.</p>
+    <p class="caption" style="margin-top:20px;">A note on Gen Z (18 to 25): they trust testimony over performance and vulnerability over polish. Lead with real stories of transformation, never with production value. They can smell hype, which is fine, because we don't use it.</p>
   </div>
 </section>
 
 <!-- 10 VOICE -->
 <section id="voice" class="dark">
   <div class="wrap">
-    <div class="slidehead"><span class="eyebrow">10 — Voice &amp; Vocabulary</span><span class="slideno">The Word · Messaging Guide</span></div>
+    <div class="slidehead"><span class="eyebrow">10 · Voice &amp; Vocabulary</span><span class="slideno">The Word · Messaging Guide</span></div>
     <h2>Bold, clear,<br>simple, <em>direct.</em></h2>
     <p class="lede">Pastoral with prophetic urgency. Invitation-first. Short, punchy sentences. Never polished-corporate. Never hype. Never churchy. If a new believer couldn't understand it, rewrite it.</p>
 
     <div class="filter-card">
       <div class="q">Would Nathan actually say this? Does it point people to Jesus Himself? Is it clear to a new believer? Does it invite response?</div>
-      <div class="a">If unsure — simplify and center Jesus.</div>
+      <div class="a">If unsure, simplify and center Jesus.</div>
     </div>
 
     <h3>Words we carry</h3>
-    <p class="caption">This recurring language is our fingerprint. Use these phrases exactly — they are load-bearing.</p>
+    <p class="caption">This recurring language is our fingerprint. Use these phrases exactly. They are load-bearing.</p>
     <table class="lex">
       <tr><th style="width:320px;">Phrase</th><th>What it carries</th></tr>
-      <tr><td>Real relationship with Jesus</td><td>The gospel in five words. The good news is not religion — it's Him.</td></tr>
+      <tr><td>Real relationship with Jesus</td><td>The gospel in five words. The good news is not religion. It's Him.</td></tr>
       <tr><td>First love</td><td>Revelation 3. The heart of every RTMC message: return.</td></tr>
       <tr><td>Fire starts fire</td><td>How the mission spreads. We burn; the dry catch.</td></tr>
       <tr><td>Revival is here, not coming</td><td>Our posture. We announce a fact, we don't market a hope.</td></tr>
@@ -538,12 +534,12 @@
     </table>
 
     <h3>Words we never use</h3>
-    <p class="caption">Three ban categories, with starter lists. <strong>These lists are proposals for the v1.0 review — strike or keep each one.</strong> Theological words (repentance, salvation, Holy Spirit baptism) are never banned; they are explained. The test is always the filter: clear to a new believer.</p>
+    <p class="caption">Three ban categories, with starter lists. <strong>These lists are proposals for the v1.0 review: strike or keep each one.</strong> Theological words (repentance, salvation, Holy Spirit baptism) are never banned; they are explained. The test is always the filter: clear to a new believer.</p>
     <div class="banlist" style="filter:none;">
       <div class="ban">
         <div class="bh">Hype</div>
         <div class="bw">insane · epic · unreal · next-level · game-changer · "God showed up and showed out" · "you won't believe" · walls of 🔥 emojis · ALL-CAPS excitement</div>
-        <div class="why">Hype manufactures a feeling. We report what God actually did — the record is more powerful than the adjective.</div>
+        <div class="why">Hype manufactures a feeling. We report what God actually did. The record is more powerful than the adjective.</div>
       </div>
       <div class="ban">
         <div class="bh">Corporate Polish</div>
@@ -557,7 +553,7 @@
       </div>
     </div>
 
-    <h3>Rewrites — before and after</h3>
+    <h3>Rewrites · before and after</h3>
     <table>
       <tr><th>Never this</th><th>Always this</th></tr>
       <tr><td>"🔥🔥 INSANE night!! God showed UP and showed OUT!!"</td><td>"Friday night in [city]: [n] people heard the gospel. [n] turned their hearts back to Jesus. The fire is spreading." <em>(numbers from the official record only)</em></td></tr>
@@ -566,16 +562,16 @@
     </table>
 
     <h3>Standing rules</h3>
-    <p>Short sentences. One idea each. Say Jesus by name — not "faith," not "spirituality." Never invent a statistic, a quote, or a testimony; the record or nothing (Law II). Never manufacture a catchphrase — if a line has to be explained to be catchy, kill it. Invitation before information: every piece ends with something the reader can <em>do.</em></p>
+    <p>Short sentences. One idea each. Say Jesus by name, not "faith," not "spirituality." Never invent a statistic, a quote, or a testimony; the record or nothing (Law II). Never manufacture a catchphrase: if a line has to be explained to be catchy, kill it. Invitation before information: every piece ends with something the reader can <em>do.</em></p>
   </div>
 </section>
 
 <!-- 11 SUB-BRANDS -->
 <section id="subbrands">
   <div class="wrap">
-    <div class="slidehead"><span class="eyebrow">11 — Sub-Brand Messaging Pages</span><span class="slideno">The Word · Messaging Guide</span></div>
+    <div class="slidehead"><span class="eyebrow">11 · Sub-Brand Messaging Pages</span><span class="slideno">The Word · Messaging Guide</span></div>
     <h2>Three front doors.<br>One page each.</h2>
-    <p>Per Law III, the initiatives are named front doors of one house — never separate homes, and never separate messaging guides. Each door gets one page here. Every sub-brand carries the endorsement line, inherits the house voice, and inherits every ban in §10.</p>
+    <p>Per Law III, the initiatives are named front doors of one house, never separate homes, and never separate messaging guides. Each door gets one page here. Every sub-brand carries the endorsement line, inherits the house voice, and inherits every ban in §10.</p>
 
     <div class="dark" style="background:var(--midnight);padding:8px 36px 36px;border-radius:6px;">
 
@@ -583,20 +579,20 @@
         <div class="sbk"><span class="stage">CLEAN</span><span class="sbn">Revival To My City</span></div>
         <div class="sbm">Stirring the local church to return to their first love.</div>
         <h4>Who it speaks to</h4>
-        <p>Congregations and pew-sitters who are asleep at the wheel — complacent, bogged down by the weeds in their hearts.</p>
+        <p>Congregations and pew-sitters who are asleep at the wheel: complacent, bogged down by the weeds in their hearts.</p>
         <h4>The pitch</h4>
-        <p>Jesus has already saved you, healed you, and purchased your freedom. Now receive it. RTMC is two to three evenings of Spirit-led revival meetings in your city — worship, preaching, altar calls, healing — where hearts get cleaned out and set back on their first love.</p>
+        <p>Jesus has already saved you, healed you, and purchased your freedom. Now receive it. RTMC is two to three evenings of Spirit-led revival meetings in your city: worship, preaching, altar calls, healing, where hearts get cleaned out and set back on their first love.</p>
         <h4>What actually happens</h4>
         <ul>
-          <li>Thursday/Friday–Saturday evening services in neutral venues — event centers, meeting halls.</li>
+          <li>Thursday/Friday to Saturday evening services in neutral venues: event centers, meeting halls.</li>
           <li>One local host church partners with ministry of helps; we bring the worship team and preaching.</li>
           <li>Saturday morning: outreach in the community, then a final evening service.</li>
-          <li>If no local church can partner, we hold off — we don't create spiritual orphans.</li>
+          <li>If no local church can partner, we hold off. We don't create spiritual orphans.</li>
         </ul>
         <h4>Key language</h4>
         <p>First love (Rev 3) · lighting hearts and seats on fire · revival is here, not coming · receive what Jesus already purchased.</p>
         <h4>First steps</h4>
-        <p>Host an RTMC in your city · attend one near you · then join the EVERY1 Movement — that's how the fire stays lit.</p>
+        <p>Host an RTMC in your city · attend one near you · then join the EVERY1 Movement. That's how the fire stays lit.</p>
         <div class="endorse">A ministry of THE WORD FOR ALL THE WORLD</div>
       </div>
 
@@ -604,12 +600,12 @@
         <div class="sbk"><span class="stage">BURN</span><span class="sbn">EVERY1 Movement</span></div>
         <div class="sbm">Empowering the local church to do the Great Commission &amp; walk in God's calling.</div>
         <h4>Who it speaks to</h4>
-        <p>Every believer — no maturity requirement; when you're born again, you qualify. Special fire for the young and the newly saved: their fire kindles faster and hotter.</p>
+        <p>Every believer, no maturity requirement. When you're born again, you qualify. Special fire for the young and the newly saved: their fire kindles faster and hotter.</p>
         <h4>The pitch</h4>
-        <p>It's EVERY1 in the church going to EVERY1 outside of the church. The Great Commission won't be fulfilled by pulpits alone — you are the minister, sent by God everywhere you go. Joining is simple: you've shared Jesus with at least one person recently. That's the movement.</p>
+        <p>It's EVERY1 in the church going to EVERY1 outside of the church. The Great Commission won't be fulfilled by pulpits alone. You are the minister, sent by God everywhere you go. Joining is simple: you've shared Jesus with at least one person recently. That's the movement.</p>
         <h4>The first three steps</h4>
         <ul>
-          <li>Join the weekly prayer meeting — praying for the lost.</li>
+          <li>Join the weekly prayer meeting, praying for the lost.</li>
           <li>Share Jesus with one person this week.</li>
           <li>Take the free personal evangelism course (via the School of the Local Church).</li>
         </ul>
@@ -624,12 +620,12 @@
         <div class="sbk"><span class="stage">TRAIN</span><span class="sbn">School of the Local Church</span></div>
         <div class="sbm">Training the local church to know their authority in Christ &amp; build a real relationship with Jesus.</div>
         <h4>Who it speaks to</h4>
-        <p>Local leaders and hungry believers who are done with shallow faith and want to go deeper — including pastors in places the internet doesn't reach, whom we train in person.</p>
+        <p>Local leaders and hungry believers who are done with shallow faith and want to go deeper, including pastors in places the internet doesn't reach, whom we train in person.</p>
         <h4>The pitch</h4>
-        <p>A real relationship with Jesus is built by knowing His character — who He is, how He thinks, what He wants from you. The School is a self-paced online training that walks you there: the purpose, mission, message, and foundations of the local church, your authority in Christ, and how to keep the fire burning for life.</p>
+        <p>A real relationship with Jesus is built by knowing His character: who He is, how He thinks, what He wants from you. The School is a self-paced online training that walks you there: the purpose, mission, message, and foundations of the local church, your authority in Christ, and how to keep the fire burning for life.</p>
         <h4>What actually happens</h4>
         <ul>
-          <li>Rolling enrollment, self-paced video modules — roughly a year at one video a week.</li>
+          <li>Rolling enrollment, self-paced video modules, roughly a year at one video a week.</li>
           <li>Monthly live discipleship gathering online; the team is available for questions.</li>
           <li>Three-day intensive conferences hosted by local churches, at home and overseas.</li>
           <li>Graduates leave still on fire, grounded in the foundations, and active in the EVERY1 Movement.</li>
@@ -648,17 +644,17 @@
 <!-- 12 PROOF -->
 <section id="proof" class="dark">
   <div class="wrap">
-    <div class="slidehead"><span class="eyebrow">12 — Proof &amp; Testimony Policy</span><span class="slideno">The Word · Messaging Guide</span></div>
+    <div class="slidehead"><span class="eyebrow">12 · Proof &amp; Testimony Policy</span><span class="slideno">The Word · Messaging Guide</span></div>
     <h2>The record is<br>our only proof.</h2>
-    <p>This guide contains no statistics on purpose. Numbers live in one place — the official ministry record — and messaging cites that record rather than freezing figures that will age. Per the Minister Agreement: official numbers only, never estimates, never memory. A guide that hardcodes stats violates Law II the day the record updates; a guide that points to the record never does.</p>
-    <h3>Testimonies — the four slots</h3>
-    <p>Every testimony is a record of what God did — real, consented, and named. Never fabricated, never composited, never anonymous.</p>
+    <p>This guide contains no statistics on purpose. Numbers live in one place, the official ministry record, and messaging cites that record rather than freezing figures that will age. Per the Minister Agreement: official numbers only, never estimates, never memory. A guide that hardcodes stats violates Law II the day the record updates; a guide that points to the record never does.</p>
+    <h3>Testimonies · the four slots</h3>
+    <p>Every testimony is a record of what God did: real, consented, and named. Never fabricated, never composited, never anonymous.</p>
     <div class="testimony">
       <div class="tk">Testimony · The Record of What God Did</div>
       <div class="slots">
-        <div class="slot"><div class="s1">Before</div><div class="s2">Life as it was — in the person's own words.</div></div>
-        <div class="slot"><div class="s1">Encounter</div><div class="s2">The moment Jesus intervened — where and when.</div></div>
-        <div class="slot"><div class="s1">Transformation</div><div class="s2">What changed — specific, verifiable, honest.</div></div>
+        <div class="slot"><div class="s1">Before</div><div class="s2">Life as it was, in the person's own words.</div></div>
+        <div class="slot"><div class="s1">Encounter</div><div class="s2">The moment Jesus intervened: where and when.</div></div>
+        <div class="slot"><div class="s1">Transformation</div><div class="s2">What changed: specific, verifiable, honest.</div></div>
         <div class="slot"><div class="s1">Outcome</div><div class="s2">Life now, and the invitation to respond.</div></div>
       </div>
     </div>
@@ -668,12 +664,12 @@
 <!-- 13 ROADMAP -->
 <section id="roadmap">
   <div class="wrap">
-    <div class="slidehead"><span class="eyebrow">13 — Roadmap Notes</span><span class="slideno">The Word · Messaging Guide</span></div>
-    <h2>On the horizon —<br>not on the record.</h2>
+    <div class="slidehead"><span class="eyebrow">13 · Roadmap Notes</span><span class="slideno">The Word · Messaging Guide</span></div>
+    <h2>On the horizon,<br>not on the record.</h2>
     <p>Two future works are noted here so no one invents messaging for them prematurely. Neither receives public messaging until launch, at which point this guide gets a versioned update.</p>
     <table>
       <tr><th style="width:300px;">Initiative</th><th>Status &amp; note</th></tr>
-      <tr><td><strong>School of Supernatural Kingdom Advancement (SOSKA)</strong></td><td>Future online school on stewardship of the Kingdom of Heaven. Roadmap only — no public messaging until launch.</td></tr>
+      <tr><td><strong>School of Supernatural Kingdom Advancement (SOSKA)</strong></td><td>Future online school on stewardship of the Kingdom of Heaven. Roadmap only: no public messaging until launch.</td></tr>
       <tr><td><strong>EVERY1 App</strong></td><td>Future app on the YouVersion model; will not visibly promote the parent (exception on record, Brand Guide §09). Messaging to be written at launch.</td></tr>
     </table>
     <p class="caption">Books, music publishing, and clothing are intentionally outside this guide's scope by ruling of August 2026.</p>
@@ -683,7 +679,7 @@
 <!-- 14 GOVERNANCE -->
 <section id="governance" class="dark">
   <div class="wrap">
-    <div class="slidehead"><span class="eyebrow">14 — Governance &amp; Changelog</span><span class="slideno">The Word · Messaging Guide</span></div>
+    <div class="slidehead"><span class="eyebrow">14 · Governance &amp; Changelog</span><span class="slideno">The Word · Messaging Guide</span></div>
     <h2>How this guide<br>stays the truth.</h2>
     <p>Per Law IV, the institution signs its work. This guide changes one way: a proposed edit in writing, approval by Joel and Nathan, a version bump, and a changelog entry. No silent edits, ever.</p>
     <table>
@@ -691,13 +687,13 @@
       <tr><td>1.0</td><td>August 2026</td><td>Initial guide. Rulings on record: fused mission line public with Purpose/Mission/Vision internal · SOSKA roadmap-only · books/music/clothing out of scope. Origin-story fields bracketed pending verification. Banned-word starter lists pending strike/keep review.</td></tr>
     </table>
     <h3>Open items for v1.1</h3>
-    <p>Verify and unbracket the origin-story fields (§04). Review the three banned-word starter lists (§10) — strike or keep each entry. Close both, sign, and this guide is fully canonical.</p>
+    <p>Verify and unbracket the origin-story fields (§04). Review the three banned-word starter lists (§10): strike or keep each entry. Close both, sign, and this guide is fully canonical.</p>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
-    <a href="/" aria-label="THE WORD FOR ALL THE WORLD — portal home"><img src="/assets/logos/the-word-for-all-the-world.png" alt="THE WORD FOR ALL THE WORLD"></a>
+    <a href="/" aria-label="THE WORD FOR ALL THE WORLD, portal home"><img src="/assets/logos/the-word-for-all-the-world.png" alt="THE WORD FOR ALL THE WORLD"></a>
     <span>Every tribe. Every tongue. Every nation. EVERY1.</span>
     <span>brand.theword.world · Internal use</span>
   </div>

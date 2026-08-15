@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Official Records · THE WORD FOR ALL THE WORLD</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Serif+Text:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --midnight:#0B1A2D;
+    --word-blue:#023D6F;
+    --parchment:#F7F3EC;
+    --flame:#F85842;
+    --ember:#C13A24;
+    --white:#FFFFFF;
+    --rule:rgba(11,26,45,.18);
+    --rule-light:rgba(247,243,236,.22);
+    --serif-display:'DM Serif Display', Georgia, 'Times New Roman', serif;
+    --serif-text:'DM Serif Text', Georgia, 'Times New Roman', serif;
+    --sans:'DM Sans', -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  @media (prefers-reduced-motion: no-preference){html{scroll-behavior:smooth;}}
+  body{font-family:var(--sans);font-size:17px;line-height:1.7;color:var(--midnight);background:var(--parchment);-webkit-font-smoothing:antialiased;}
+  a:focus-visible,button:focus-visible{outline:2px solid var(--ember);outline-offset:3px;border-radius:3px;}
+  .wrap{max-width:1020px;margin:0 auto;padding:0 32px;width:100%;}
+
+  /* site nav · unified chrome */
+  .sitenav{position:absolute;top:0;left:0;right:0;z-index:10;}
+  .sitenav .bar{max-width:1240px;margin:0 auto;padding:26px 36px;display:flex;justify-content:space-between;align-items:center;gap:20px;}
+  .sitenav .logo img{height:20px;width:auto;display:block;}
+  .sitenav .links{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:12px 28px;font-size:12.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;}
+  .sitenav .links a{color:rgba(247,243,236,.9);text-decoration:none;}
+  .sitenav .links a:hover{color:var(--white);}
+  .sitenav .links a.active{color:var(--white);border-bottom:1px solid rgba(255,255,255,.6);padding-bottom:2px;}
+
+  /* page band · compact midnight header */
+  .band{background:var(--midnight);color:var(--parchment);padding:150px 0 64px;text-align:center;}
+  .band .kicker{font-size:13px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--white);opacity:.8;margin-bottom:18px;display:block;}
+  .band h1{font-family:var(--serif-display);font-weight:400;line-height:1.1;font-size:clamp(34px,5vw,54px);}
+  .band h1 em{font-style:italic;}
+  .band p{margin:18px auto 0;max-width:600px;color:rgba(247,243,236,.85);}
+
+  footer{background:var(--midnight);color:rgba(247,243,236,.75);padding:40px 0;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;font-weight:500;}
+  footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+  footer img{height:16px;width:auto;display:block;opacity:.9;}
+  @media(max-width:640px){.sitenav .bar{padding:20px 24px;}.band{padding:130px 0 54px;}}
+
+  main{padding:72px 0 96px;}
+  .section-label{font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--ember);margin-bottom:24px;}
+  .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px;}
+  .card{display:flex;flex-direction:column;justify-content:space-between;background:var(--white);border:1px solid var(--rule);border-radius:4px;padding:30px 28px;text-decoration:none;color:var(--midnight);transition:border-color .15s ease, box-shadow .15s ease;min-height:210px;}
+  .card:hover{border-color:var(--ember);box-shadow:0 10px 30px rgba(11,26,45,.1);}
+  .card .stage{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--white);background:var(--word-blue);border-radius:2px;padding:4px 10px;margin-bottom:16px;align-self:flex-start;}
+  .card h2{font-family:var(--serif-display);font-weight:400;font-size:25px;line-height:1.2;margin-bottom:10px;}
+  .card p{font-size:14.5px;line-height:1.6;color:rgba(11,26,45,.8);}
+  .card .go{margin-top:20px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--word-blue);}
+  .card:hover .go{color:var(--ember);}
+  .note{max-width:660px;margin:44px auto 0;text-align:center;font-size:14px;color:rgba(11,26,45,.75);}
+
+</style>
+</head>
+<body>
+
+<nav class="sitenav">
+  <div class="bar">
+    <a class="logo" href="/" aria-label="THE WORD FOR ALL THE WORLD, portal home">
+      <img src="/assets/logos/the-word-for-all-the-world.png" alt="THE WORD FOR ALL THE WORLD">
+    </a>
+    <div class="links">
+      <a href="/">Home</a>
+      <a href="/brand/">Brand Guide</a>
+      <a href="/brand/messaging/">Messaging</a>
+      <a href="/documents/" class="active">Documents</a>
+    </div>
+  </div>
+</nav>
+
+<div class="band">
+  <span class="kicker">Official Records · The Initiatives</span>
+  <h1>Official <em>Records</em></h1>
+  <p>One ordinance for each initiative of THE WORD FOR ALL THE WORLD. Read them on screen, or print them on letterhead. One journey, in order: Clean, Burn, Train.</p>
+</div>
+
+<main>
+  <div class="wrap">
+    <div class="section-label">The Three Initiatives</div>
+    <div class="cards">
+      <a class="card" href="/documents/revival-to-my-city/">
+        <div>
+          <span class="stage">Clean · No. 2026-01</span>
+          <h2>Revival To My City</h2>
+          <p>Stirring the local church to return to their first love.</p>
+        </div>
+        <div class="go">Read the record &rarr;</div>
+      </a>
+      <a class="card" href="/documents/every1/">
+        <div>
+          <span class="stage">Burn · No. 2026-02</span>
+          <h2>EVERY1 Movement</h2>
+          <p>Empowering the local church to do the Great Commission and walk in God's calling.</p>
+        </div>
+        <div class="go">Read the record &rarr;</div>
+      </a>
+      <a class="card" href="/documents/school-of-the-local-church/">
+        <div>
+          <span class="stage">Train · No. 2026-03</span>
+          <h2>School of the Local Church</h2>
+          <p>Training the local church to know their authority in Christ and build a real relationship with Jesus.</p>
+        </div>
+        <div class="go">Read the record &rarr;</div>
+      </a>
+    </div>
+    <p class="note">Each record is adopted under the ministry's own law: the institution signs its work, numbers come from the official record only, and no record changes without a written proposal, approval, and a changelog entry.</p>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a href="/" aria-label="THE WORD FOR ALL THE WORLD, portal home"><img src="/assets/logos/the-word-for-all-the-world.png" alt="THE WORD FOR ALL THE WORLD"></a>
+    <span>Every tribe. Every tongue. Every nation. EVERY1.</span>
+    <span>brand.theword.world · Internal use</span>
+  </div>
+</footer>
+
+</body>
+</html>
