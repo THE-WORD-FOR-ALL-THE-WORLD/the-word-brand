@@ -1,35 +1,47 @@
 {
   "_README": "Usage notes for published assets, keyed by repository path. The build scans assets/ for the inventory and merges these notes in. A file with no note still publishes, it just carries no guidance. The build never overwrites this file. Add a note whenever an asset has a rule attached to it, and always when an asset is a counter-example.",
-
   "notes": {
     "assets/logos/the-word-for-all-the-world.png": {
       "name": "Wordmark, reversed",
       "status": "approved",
-      "grounds": ["midnight", "word-blue", "photography with a Midnight scrim"],
+      "grounds": [
+        "midnight",
+        "word-blue",
+        "photography with a Midnight scrim"
+      ],
       "note": "The default reversed wordmark used in the portal navigation and footer."
     },
     "assets/logos/wordmark-midnight-ink.png": {
       "name": "Wordmark, Midnight ink",
       "status": "approved",
-      "grounds": ["parchment", "white"],
+      "grounds": [
+        "parchment",
+        "white"
+      ],
       "note": "The letterhead mark. Use on printed and printable documents."
     },
     "assets/logos/wordmark-on-midnight.png": {
       "name": "Wordmark on Midnight",
       "status": "approved",
-      "grounds": ["midnight"],
+      "grounds": [
+        "midnight"
+      ],
       "note": "Reference lockup showing the flagship pairing."
     },
     "assets/logos/wordmark-on-word-blue.png": {
       "name": "Wordmark on Word Blue",
       "status": "approved",
-      "grounds": ["word-blue"],
+      "grounds": [
+        "word-blue"
+      ],
       "note": "Secondary structural ground. Use where Word Blue carries logo continuity."
     },
     "assets/logos/wordmark-over-photo-scrim.png": {
       "name": "Wordmark over photography",
       "status": "approved",
-      "grounds": ["photography with a Midnight scrim"],
+      "grounds": [
+        "photography with a Midnight scrim"
+      ],
       "note": "The only approved treatment of the mark over imagery. The scrim is not optional."
     },
     "assets/logos/wordmark-on-flame-not-allowed.png": {
@@ -41,49 +53,73 @@
     "assets/signatures/nathaniel-zimmer.svg": {
       "name": "Signature, Nathaniel Zimmer",
       "status": "approved",
-      "grounds": ["parchment", "white"],
+      "grounds": [
+        "parchment",
+        "white"
+      ],
       "note": "The default signature. Cleanest of the three full forms and the most legible, so it is the one to use on documents and letterhead unless there is a reason to reach for another. Vector master: scale it, never redraw it."
     },
     "assets/signatures/nathaniel-zimmer.png": {
       "name": "Signature, Nathaniel Zimmer, raster",
       "status": "approved",
-      "grounds": ["parchment", "white"],
+      "grounds": [
+        "parchment",
+        "white"
+      ],
       "note": "Transparent PNG of the default signature, 1200px tall. For the places that cannot take SVG: Google Docs, PDF and e-sign fields, email signatures. Prefer the SVG everywhere else."
     },
     "assets/signatures/nathaniel-zimmer-display.svg": {
       "name": "Signature, Nathaniel Zimmer, display",
       "status": "approved",
-      "grounds": ["parchment", "white"],
+      "grounds": [
+        "parchment",
+        "white"
+      ],
       "note": "Faster and more slanted, with a long lead-in and a trailing flick. Holds its energy at large sizes. Not for small settings, where the flick reads as noise."
     },
     "assets/signatures/nathaniel-zimmer-display.png": {
       "name": "Signature, Nathaniel Zimmer, display, raster",
       "status": "approved",
-      "grounds": ["parchment", "white"],
+      "grounds": [
+        "parchment",
+        "white"
+      ],
       "note": "Transparent PNG of the display signature, 1200px tall. Same rule: SVG unless the destination refuses it."
     },
     "assets/signatures/nathaniel-zimmer-compact.svg": {
       "name": "Signature, Nathaniel Zimmer, compact",
       "status": "approved",
-      "grounds": ["parchment", "white"],
+      "grounds": [
+        "parchment",
+        "white"
+      ],
       "note": "Tightest of the three, with heavier looping on the Z. The one that survives being scaled down."
     },
     "assets/signatures/nathaniel-zimmer-compact.png": {
       "name": "Signature, Nathaniel Zimmer, compact, raster",
       "status": "approved",
-      "grounds": ["parchment", "white"],
+      "grounds": [
+        "parchment",
+        "white"
+      ],
       "note": "Transparent PNG of the compact signature, 1200px tall. Same rule: SVG unless the destination refuses it."
     },
     "assets/signatures/nathan-zimmer.svg": {
       "name": "Signature, Nathan Zimmer, short form",
       "status": "approved",
-      "grounds": ["parchment", "white"],
+      "grounds": [
+        "parchment",
+        "white"
+      ],
       "note": "The short form. Widest stroke relative to its width, so it stays readable in tight spaces like an email footer. Use the full name on anything entered into the record."
     },
     "assets/signatures/nathan-zimmer.png": {
       "name": "Signature, Nathan Zimmer, short form, raster",
       "status": "approved",
-      "grounds": ["parchment", "white"],
+      "grounds": [
+        "parchment",
+        "white"
+      ],
       "note": "Transparent PNG of the short form, 1200px tall. Same rule: SVG unless the destination refuses it."
     },
     "assets/images/hero-congregation.jpg": {
@@ -140,11 +176,74 @@
       "capture": "SLC conference footage, Uganda, July 2026",
       "poster": "assets/images/tent-congregation-poster.jpg",
       "note": "Muted looping hero footage."
+    },
+    "assets/videos/rtmc-evening-worship.mp4": {
+      "name": "Loop, Revival To My City",
+      "status": "approved",
+      "capture": "SLC Conference · Sanga, Mbarara, Uganda · 31 Jul 2026",
+      "poster": "assets/images/rtmc-evening-worship-poster.jpg",
+      "note": "Muted looping hero for the CLEAN door. Evening service, congregation with hands raised. Every loop ships with its poster."
+    },
+    "assets/images/rtmc-evening-worship-poster.jpg": {
+      "status": "approved",
+      "note": "Still fallback for rtmc-evening-worship.mp4."
+    },
+    "assets/videos/every1-community-gathering.mp4": {
+      "name": "Loop, EVERY1 Movement",
+      "status": "approved",
+      "capture": "SLC Conference · Sanga, Mbarara, Uganda · 30 Jul 2026",
+      "poster": "assets/images/every1-community-gathering-poster.jpg",
+      "note": "Muted looping hero for the BURN door. Believers gathered outdoors in the community. Every loop ships with its poster."
+    },
+    "assets/images/every1-community-gathering-poster.jpg": {
+      "status": "approved",
+      "note": "Still fallback for every1-community-gathering.mp4."
+    },
+    "assets/videos/slc-teaching-session.mp4": {
+      "name": "Loop, School of the Local Church",
+      "status": "approved",
+      "capture": "SLC Conference · Sanga, Mbarara, Uganda · 30 Jul 2026",
+      "poster": "assets/images/slc-teaching-session-poster.jpg",
+      "note": "Muted looping hero for the TRAIN door. A teaching session under the conference tent. Every loop ships with its poster."
+    },
+    "assets/images/slc-teaching-session-poster.jpg": {
+      "status": "approved",
+      "note": "Still fallback for slc-teaching-session.mp4."
+    },
+    "assets/images/rtmc-crowd-hands-raised.jpg": {
+      "status": "approved",
+      "capture": "SLC Conference · Sanga, Mbarara, Uganda · 31 Jul 2026",
+      "note": "An evening congregation with hands raised during the service. Documentary capture for the CLEAN door."
+    },
+    "assets/images/rtmc-preaching-evening.jpg": {
+      "status": "approved",
+      "capture": "SLC Conference · Sanga, Mbarara, Uganda · 31 Jul 2026",
+      "note": "Preaching to the evening crowd from the open-air platform. Documentary capture for the CLEAN door."
+    },
+    "assets/images/every1-one-to-one.jpg": {
+      "status": "approved",
+      "capture": "SLC Conference · Sanga, Mbarara, Uganda · 31 Jul 2026",
+      "note": "One believer greeting another at the front of the tent. The person-to-person image of the BURN door."
+    },
+    "assets/images/every1-ministry-in-the-tent.jpg": {
+      "status": "approved",
+      "capture": "SLC Conference · Sanga, Mbarara, Uganda · 30 Jul 2026",
+      "note": "Serving the seated rows individually rather than from the platform. Documentary capture for the BURN door."
+    },
+    "assets/images/slc-attendees-taking-notes.jpg": {
+      "status": "approved",
+      "capture": "SLC Conference · Sanga, Mbarara, Uganda · 30 Jul 2026",
+      "note": "Attendees following the teaching with open Bibles and notebooks. The study image of the TRAIN door."
+    },
+    "assets/images/slc-bibles-received.jpg": {
+      "status": "approved",
+      "capture": "SLC Conference · Sanga, Mbarara, Uganda · 31 Jul 2026",
+      "note": "Bibles and the personal evangelism course handed to attendees. Documentary capture for the TRAIN door."
     }
   },
-
   "gaps": [
     "A reversed signature for dark grounds. Every signature published here is Midnight ink and works only on Parchment or white. Nothing signed may appear on Midnight, Word Blue, or footage until a reversed master exists. Recolor the SVG fill rather than inverting the raster.",
+    "Location on every July 2026 caption is recorded as Sanga, Mbarara, Uganda from the capture folder and has not yet been confirmed against the official ministry record. Confirm it, then unbracket the older captions that still read [City].",
     "Wordmark masters in SVG and 2x/3x PNG (White, Midnight, Word Blue) are recorded as approved in Brand Guide §06 but are not yet published in this repository. Until they are, request them rather than recreating the mark.",
     "Prayer and ministry moments up close",
     "A Bible passing from one hand to another",

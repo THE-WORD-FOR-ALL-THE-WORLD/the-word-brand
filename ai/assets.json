@@ -1,12 +1,12 @@
 {
-  "version": "5.1",
+  "version": "5.2",
   "messagingVersion": "1.0",
   "updated": "2026-08-15",
   "authority": "canonical",
   "rule": "Use these assets. Never generate photography or video of people or ministry, and never substitute stock. If the asset you need is not listed, request it and leave the slot empty.",
   "counts": {
-    "total": 25,
-    "approved": 24,
+    "total": 37,
+    "approved": 36,
     "counterExamples": 1
   },
   "assets": [
@@ -38,6 +38,35 @@
       "bytes": 111620,
       "status": "approved",
       "note": "Still fallback for crowd-evening.mp4. Every loop ships with its poster."
+    },
+    {
+      "file": "assets/images/every1-community-gathering-poster.jpg",
+      "url": "https://brand.theword.world/assets/images/every1-community-gathering-poster.jpg",
+      "kind": "image",
+      "group": "images",
+      "bytes": 99620,
+      "status": "approved",
+      "note": "Still fallback for every1-community-gathering.mp4."
+    },
+    {
+      "file": "assets/images/every1-ministry-in-the-tent.jpg",
+      "url": "https://brand.theword.world/assets/images/every1-ministry-in-the-tent.jpg",
+      "kind": "image",
+      "group": "images",
+      "bytes": 557931,
+      "status": "approved",
+      "capture": "SLC Conference · Sanga, Mbarara, Uganda · 30 Jul 2026",
+      "note": "Serving the seated rows individually rather than from the platform. Documentary capture for the BURN door."
+    },
+    {
+      "file": "assets/images/every1-one-to-one.jpg",
+      "url": "https://brand.theword.world/assets/images/every1-one-to-one.jpg",
+      "kind": "image",
+      "group": "images",
+      "bytes": 349810,
+      "status": "approved",
+      "capture": "SLC Conference · Sanga, Mbarara, Uganda · 31 Jul 2026",
+      "note": "One believer greeting another at the front of the tent. The person-to-person image of the BURN door."
     },
     {
       "file": "assets/images/hero-congregation.jpg",
@@ -77,6 +106,64 @@
       "status": "approved",
       "capture": "Ministry's own conference photography, July 2026",
       "note": "Documentary hero still."
+    },
+    {
+      "file": "assets/images/rtmc-crowd-hands-raised.jpg",
+      "url": "https://brand.theword.world/assets/images/rtmc-crowd-hands-raised.jpg",
+      "kind": "image",
+      "group": "images",
+      "bytes": 311165,
+      "status": "approved",
+      "capture": "SLC Conference · Sanga, Mbarara, Uganda · 31 Jul 2026",
+      "note": "An evening congregation with hands raised during the service. Documentary capture for the CLEAN door."
+    },
+    {
+      "file": "assets/images/rtmc-evening-worship-poster.jpg",
+      "url": "https://brand.theword.world/assets/images/rtmc-evening-worship-poster.jpg",
+      "kind": "image",
+      "group": "images",
+      "bytes": 89685,
+      "status": "approved",
+      "note": "Still fallback for rtmc-evening-worship.mp4."
+    },
+    {
+      "file": "assets/images/rtmc-preaching-evening.jpg",
+      "url": "https://brand.theword.world/assets/images/rtmc-preaching-evening.jpg",
+      "kind": "image",
+      "group": "images",
+      "bytes": 255140,
+      "status": "approved",
+      "capture": "SLC Conference · Sanga, Mbarara, Uganda · 31 Jul 2026",
+      "note": "Preaching to the evening crowd from the open-air platform. Documentary capture for the CLEAN door."
+    },
+    {
+      "file": "assets/images/slc-attendees-taking-notes.jpg",
+      "url": "https://brand.theword.world/assets/images/slc-attendees-taking-notes.jpg",
+      "kind": "image",
+      "group": "images",
+      "bytes": 586858,
+      "status": "approved",
+      "capture": "SLC Conference · Sanga, Mbarara, Uganda · 30 Jul 2026",
+      "note": "Attendees following the teaching with open Bibles and notebooks. The study image of the TRAIN door."
+    },
+    {
+      "file": "assets/images/slc-bibles-received.jpg",
+      "url": "https://brand.theword.world/assets/images/slc-bibles-received.jpg",
+      "kind": "image",
+      "group": "images",
+      "bytes": 482368,
+      "status": "approved",
+      "capture": "SLC Conference · Sanga, Mbarara, Uganda · 31 Jul 2026",
+      "note": "Bibles and the personal evangelism course handed to attendees. Documentary capture for the TRAIN door."
+    },
+    {
+      "file": "assets/images/slc-teaching-session-poster.jpg",
+      "url": "https://brand.theword.world/assets/images/slc-teaching-session-poster.jpg",
+      "kind": "image",
+      "group": "images",
+      "bytes": 147859,
+      "status": "approved",
+      "note": "Still fallback for slc-teaching-session.mp4."
     },
     {
       "file": "assets/images/tent-congregation-poster.jpg",
@@ -290,6 +377,18 @@
       "note": "Muted looping hero footage. Used on the Brand Guide cover."
     },
     {
+      "file": "assets/videos/every1-community-gathering.mp4",
+      "url": "https://brand.theword.world/assets/videos/every1-community-gathering.mp4",
+      "kind": "video",
+      "group": "videos",
+      "bytes": 1870989,
+      "status": "approved",
+      "capture": "SLC Conference · Sanga, Mbarara, Uganda · 30 Jul 2026",
+      "poster": "assets/images/every1-community-gathering-poster.jpg",
+      "note": "Muted looping hero for the BURN door. Believers gathered outdoors in the community. Every loop ships with its poster.",
+      "name": "Loop, EVERY1 Movement"
+    },
+    {
       "file": "assets/videos/hero-tent.mp4",
       "url": "https://brand.theword.world/assets/videos/hero-tent.mp4",
       "kind": "video",
@@ -299,6 +398,30 @@
       "capture": "SLC conference footage, Uganda, July 2026",
       "poster": "assets/images/hero-tent-poster.jpg",
       "note": "Muted looping hero footage."
+    },
+    {
+      "file": "assets/videos/rtmc-evening-worship.mp4",
+      "url": "https://brand.theword.world/assets/videos/rtmc-evening-worship.mp4",
+      "kind": "video",
+      "group": "videos",
+      "bytes": 2040718,
+      "status": "approved",
+      "capture": "SLC Conference · Sanga, Mbarara, Uganda · 31 Jul 2026",
+      "poster": "assets/images/rtmc-evening-worship-poster.jpg",
+      "note": "Muted looping hero for the CLEAN door. Evening service, congregation with hands raised. Every loop ships with its poster.",
+      "name": "Loop, Revival To My City"
+    },
+    {
+      "file": "assets/videos/slc-teaching-session.mp4",
+      "url": "https://brand.theword.world/assets/videos/slc-teaching-session.mp4",
+      "kind": "video",
+      "group": "videos",
+      "bytes": 2115825,
+      "status": "approved",
+      "capture": "SLC Conference · Sanga, Mbarara, Uganda · 30 Jul 2026",
+      "poster": "assets/images/slc-teaching-session-poster.jpg",
+      "note": "Muted looping hero for the TRAIN door. A teaching session under the conference tent. Every loop ships with its poster.",
+      "name": "Loop, School of the Local Church"
     },
     {
       "file": "assets/videos/tent-congregation.mp4",
@@ -315,6 +438,7 @@
   "notesWithoutFiles": [],
   "gaps": [
     "A reversed signature for dark grounds. Every signature published here is Midnight ink and works only on Parchment or white. Nothing signed may appear on Midnight, Word Blue, or footage until a reversed master exists. Recolor the SVG fill rather than inverting the raster.",
+    "Location on every July 2026 caption is recorded as Sanga, Mbarara, Uganda from the capture folder and has not yet been confirmed against the official ministry record. Confirm it, then unbracket the older captions that still read [City].",
     "Wordmark masters in SVG and 2x/3x PNG (White, Midnight, Word Blue) are recorded as approved in Brand Guide §06 but are not yet published in this repository. Until they are, request them rather than recreating the mark.",
     "Prayer and ministry moments up close",
     "A Bible passing from one hand to another",

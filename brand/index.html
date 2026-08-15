@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Brand Guide v5.1 · THE WORD FOR ALL THE WORLD</title>
+<title>Brand Guide v5.2 · THE WORD FOR ALL THE WORLD</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Serif+Text:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400;1,9..40,700&display=swap" rel="stylesheet">
@@ -246,7 +246,9 @@
   .phase .ident > div{display:flex;gap:12px;align-items:baseline;}
   .phase .ident dt{flex:0 0 76px;font-size:9.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;}
   .phase .ident dd{font-size:12.5px;line-height:1.5;}
-  .phase .doorlink{margin-top:auto;padding-top:22px;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;}
+  .phase .doorlink{margin-top:auto;padding-top:22px;display:block;}
+  .phase .doorlink.second{margin-top:0;padding-top:10px;opacity:.85;}
+  .phase .doorlink{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;}
   .phase.clean .endorse,.phase.clean .ident{border-top-color:rgba(11,26,45,.25);}
   .phase.clean .endorse,.phase.clean .ident dt{color:rgba(11,26,45,.8);}
   .phase.clean .doorlink{color:var(--word-blue);}
@@ -316,7 +318,7 @@
   </video>
   <div class="scrim"></div>
   <div class="inner">
-    <span class="kicker">Brand Guide · Version 5.1</span>
+    <span class="kicker">Brand Guide · Version 5.2</span>
     <h1>THE WORD<br>FOR ALL <em>THE WORLD</em></h1>
     <div class="rule"></div>
     <div class="meta">
@@ -789,7 +791,8 @@
           <div><dt>Flame</dt><dd>5% ceiling. The quietest door.</dd></div>
           <div><dt>Register</dt><dd>Before the fire. Calm, open, unhurried.</dd></div>
         </dl>
-        <a class="doorlink" href="/documents/revival-to-my-city/">Messaging document &rarr;</a>
+        <a class="doorlink" href="/brand/revival-to-my-city/">Brand guide &rarr;</a>
+        <a class="doorlink second" href="/documents/revival-to-my-city/">Messaging document &rarr;</a>
       </div>
       <div class="phase burn">
         <div class="word">BURN</div>
@@ -802,7 +805,8 @@
           <div><dt>Flame</dt><dd>The full tenth. This door owns the fire.</dd></div>
           <div><dt>Register</dt><dd>The fire itself. Loudest, fastest, most footage.</dd></div>
         </dl>
-        <a class="doorlink" href="/documents/every1/">Messaging document &rarr;</a>
+        <a class="doorlink" href="/brand/every1/">Brand guide &rarr;</a>
+        <a class="doorlink second" href="/documents/every1/">Messaging document &rarr;</a>
       </div>
       <div class="phase train">
         <div class="word">TRAIN</div>
@@ -815,7 +819,8 @@
           <div><dt>Flame</dt><dd>5% ceiling. Structure carries it, not colour.</dd></div>
           <div><dt>Register</dt><dd>A building. Ordered, sequential, institutional.</dd></div>
         </dl>
-        <a class="doorlink" href="/documents/school-of-the-local-church/">Messaging document &rarr;</a>
+        <a class="doorlink" href="/brand/school-of-the-local-church/">Brand guide &rarr;</a>
+        <a class="doorlink second" href="/documents/school-of-the-local-church/">Messaging document &rarr;</a>
       </div>
     </div>
     <p class="caption">Exception on record: the EVERY1 app follows the YouVersion model and will not visibly promote the parent. Until it ships, EVERY1 follows this guide. RTMC's script-logo exploration ("Revival" cursive) remains open and compatible. The script is custom lettering, not a brand font.</p>
@@ -840,6 +845,7 @@
     <p class="lede">This guide changes one way: a proposed edit in writing, approval by Joel Zimmer and Nathan Zimmer, a version bump, and a row in this table. No silent edits, ever. The same table is published for machines at <a href="/ai/brand-system.md" style="color:var(--word-blue);">/ai/brand-system.md</a>, so an audit report can name the exact version it was measured against.</p>
     <table>
       <tr><th style="width:66px;">Version</th><th style="width:104px;">Date</th><th style="width:120px;">Owner</th><th>Changed</th><th style="width:150px;">Approved</th></tr>
+      <tr><td>5.2</td><td>2026-08-15</td><td>Nathan Zimmer</td><td>An initiative brand guide published for each door at /brand/&lt;slug&gt;, each rendering in the identity it publishes and linking to its messaging document. Nine documentary assets added from the July 2026 Sanga conference: three muted loops with posters and six stills.</td><td>Joel Zimmer, Nathan Zimmer</td></tr>
       <tr><td>5.1</td><td>2026-08-15</td><td>Nathan Zimmer</td><td>Sub-brand identity system added to §11. The three doors are now told apart by ground, Flame ceiling, and register rather than by three separate palettes, and each card renders in the identity it describes. Each door links to its messaging document. No new colours.</td><td>Joel Zimmer, Nathan Zimmer</td></tr>
       <tr><td>5.0</td><td>2026-08-15</td><td>Nathan Zimmer</td><td>Guide restated as the single source of truth rather than against the retired PDF: Supersedes line dropped, prophecy moved to the Messaging Guide, governmental-iconography boundary and retired colours moved to the anti-patterns record, voice filter de-duplicated, website example retired, design tokens renamed and moved to §08, colour rationale restated as five colours doing one job, swatches set on one row, changelog rebuilt with owner and approval, em dashes removed throughout.</td><td>Joel Zimmer, Nathan Zimmer</td></tr>
       <tr><td>4.5</td><td>2026-08-15</td><td>Nathan Zimmer</td><td>Signature masters published as approved assets, the initiative documents signed in real ink rather than an italic stand-in, and a Signatures page added to the portal.</td><td>Joel Zimmer, Nathan Zimmer</td></tr>
@@ -862,7 +868,7 @@
   <div class="wrap">
     <div class="inner">
       <div class="ad">Adopted and entered into the record</div>
-      <div class="vline">Brand Guide version 5.1 · Approved 15 August 2026</div>
+      <div class="vline">Brand Guide version 5.2 · Approved 15 August 2026</div>
       <div class="sigrow">
         <div class="sig">
           <div class="ink"></div>

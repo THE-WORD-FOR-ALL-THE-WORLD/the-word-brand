@@ -464,10 +464,10 @@ def scan_initiatives() -> list:
             "messagingDocument": f"{SITE}/documents/{slug}",
         }
         # Only claim a per-initiative brand guide when the page actually exists.
-        # /letterhead became the document template at v5.0, so these are absent
-        # unless a door is later given its own page.
-        if os.path.isfile(os.path.join(REPO, "letterhead", slug, "index.html")):
-            entry["brandGuide"] = f"{SITE}/letterhead/{slug}"
+        # /letterhead became the document template at v5.0; the per-door guides
+        # live under /brand/<slug> from v5.2.
+        if os.path.isfile(os.path.join(REPO, "brand", slug, "index.html")):
+            entry["brandGuide"] = f"{SITE}/brand/{slug}"
         out.append(entry)
     return out
 

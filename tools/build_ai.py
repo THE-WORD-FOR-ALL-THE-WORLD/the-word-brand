@@ -564,7 +564,8 @@ def build_llms_txt(brand: dict, messaging: dict, tokens: dict, initiatives: list
         "",
         "## The three initiatives",
         "",
-        f"- [Initiative brand guides]({SITE}/letterhead): How each initiative looks under the parent brand.",
+        f"- [Sub-brands]({SITE}/brand#architecture): The three doors, told apart by ground, Flame ceiling, and register.",
+        f"- [Letterhead]({SITE}/letterhead): The document template every record is set in.",
         f"- [Initiative messaging documents]({SITE}/documents): What each initiative is, in the words of the ministry.",
     ]
     for init in initiatives:

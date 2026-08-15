@@ -372,3 +372,237 @@ for section, cfg in SECTIONS.items():
     path = os.path.join(REPO, section, "index.html")
     open(path, "w").write(html)
     print(path, len(html))
+
+
+# ============ SUB-BRAND GUIDES (/brand/<slug>) ============
+# One brand guide per named front door. Each renders in the identity it
+# describes, per Brand Guide §11: a ground, a Flame ceiling, and a register.
+
+SUB_CSS = """
+  .door{position:relative;min-height:74vh;display:flex;align-items:flex-end;background:var(--midnight);overflow:hidden;}
+  .door video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+  .door .scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,26,45,.72) 0%,rgba(11,26,45,.45) 45%,rgba(11,26,45,.92) 100%);}
+  .door .inner{position:relative;z-index:2;max-width:1020px;margin:0 auto;padding:0 32px 72px;width:100%;color:var(--parchment);}
+  .door .stageword{font-size:clamp(52px,9vw,104px);font-weight:700;letter-spacing:.05em;line-height:1;}
+  .door h1{font-family:var(--serif-display);font-weight:400;font-size:clamp(30px,4.4vw,48px);line-height:1.12;margin-top:10px;}
+  .door .mission{margin-top:16px;max-width:560px;color:rgba(247,243,236,.9);}
+  .door .endorse{margin-top:26px;padding-top:14px;border-top:1px solid rgba(247,243,236,.3);font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:rgba(247,243,236,.85);}
+  @media (prefers-reduced-motion: reduce){.door video{display:none;}}
+
+  main{padding:72px 0 40px;}
+  .bar{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:52px;}
+  .bar a{font-size:11.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:var(--word-blue);}
+  .bar a:hover{color:var(--ember);}
+  .blk{margin-bottom:64px;}
+  .lab{font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--ember);margin-bottom:20px;}
+  h2{font-family:var(--serif-text);font-weight:400;font-size:clamp(26px,3.2vw,34px);line-height:1.2;margin-bottom:14px;}
+  .lede{max-width:70ch;color:rgba(11,26,45,.85);}
+  .spec{width:100%;border-collapse:collapse;margin-top:18px;background:var(--white);border:1px solid var(--rule);}
+  .spec th,.spec td{text-align:left;padding:14px 16px;border-bottom:1px solid var(--rule);vertical-align:top;font-size:15px;}
+  .spec tr:last-child td{border-bottom:none;}
+  .spec th{width:150px;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(11,26,45,.8);}
+  .shots{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin-top:20px;}
+  .shot{background:var(--white);border:1px solid var(--rule);border-radius:4px;overflow:hidden;}
+  .shot img{width:100%;display:block;aspect-ratio:4/3;object-fit:cover;}
+  .shot .cap{padding:14px 16px;}
+  .shot .c1{font-size:13.5px;line-height:1.5;}
+  .shot .c2{margin-top:8px;font-size:10.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(11,26,45,.8);}
+  ul.doorrules{list-style:none;max-width:72ch;margin-top:10px;}
+  ul.doorrules li{position:relative;padding-left:22px;margin-bottom:14px;font-size:15.5px;line-height:1.65;}
+  ul.doorrules li::before{content:"\\00b7";position:absolute;left:4px;color:var(--ember);font-weight:700;}
+  .nextstep{background:var(--midnight);color:var(--parchment);border-radius:4px;padding:34px 32px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;}
+  .nextstep .t{font-family:var(--serif-text);font-size:23px;}
+  .nextstep .s{font-size:14px;color:rgba(247,243,236,.85);margin-top:6px;max-width:52ch;}
+  .nextstep a{font-size:11.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:var(--white);background:var(--ember);border-radius:3px;padding:13px 20px;white-space:nowrap;}
+  .nextstep a:hover{background:#A62F1B;}
+
+  /* each door renders in the identity it publishes (Brand Guide §11) */
+  body.burn{background:var(--midnight);color:var(--parchment);}
+  body.burn .lede{color:rgba(247,243,236,.88);}
+  body.burn .lab{color:var(--flame);}
+  body.burn .bar a{color:var(--parchment);}
+  body.burn .bar a:hover{color:var(--flame);}
+  body.burn .spec{background:rgba(247,243,236,.05);border-color:rgba(247,243,236,.22);}
+  body.burn .spec th,body.burn .spec td{border-bottom-color:rgba(247,243,236,.18);}
+  body.burn .spec th{color:rgba(247,243,236,.8);}
+  body.burn .shot{background:rgba(247,243,236,.05);border-color:rgba(247,243,236,.22);}
+  body.burn .shot .c2{color:rgba(247,243,236,.8);}
+  body.burn .prov{color:rgba(247,243,236,.8);}
+  body.burn ul.doorrules li::before{color:var(--flame);}
+  body.burn .nextstep{background:rgba(247,243,236,.06);border:1px solid rgba(247,243,236,.22);}
+
+  body.train .lab{color:var(--word-blue);}
+  body.train h2{border-left:4px solid var(--word-blue);padding-left:16px;margin-left:-20px;}
+  body.train .spec th{background:var(--word-blue);color:var(--parchment);}
+  body.train .spec{border-color:var(--word-blue);}
+  body.train ul.doorrules li::before{color:var(--word-blue);}
+  body.train .nextstep{background:var(--word-blue);}
+
+  body.clean .lab{color:var(--ember);}
+  body.clean .blk{margin-bottom:82px;}
+  .prov{margin-top:14px;font-size:13px;color:rgba(11,26,45,.8);max-width:74ch;}
+"""
+
+SUBS = [
+    dict(
+        slug="revival-to-my-city", stage="CLEAN", name="Revival To My City",
+        title="Revival To My <em>City</em>",
+        mission="Stirring the local church to return to their first love.",
+        video="rtmc-evening-worship",
+        ground="White or Parchment. The most whitespace of the three.",
+        typerule="Midnight on light. DM Sans led.",
+        flame="5% ceiling. The quietest door.",
+        register="Before the fire. Calm, open, unhurried.",
+        why="CLEAN is the first movement of the journey. A heart is cleaned before it burns, so this "
+            "door is the invitation, not the intensity. Its work happens in evening services: worship, "
+            "preaching, the altar call, and testimonies captured as they are given.",
+        rules=[
+            "<strong>Lead with air.</strong> This door carries the most whitespace in the house. Crowding it contradicts what it is for.",
+            "<strong>Flame at five percent.</strong> Half the parent's ceiling. A single tick, a rule, a numeral. Never a panel.",
+            "<strong>Midnight type on light ground.</strong> The evening footage is dark enough on its own; the page around it stays paper.",
+            "<strong>The altar call is the call to action.</strong> Every surface ends with something the reader can do, and it is an invitation before it is information.",
+        ],
+        shots=[("rtmc-crowd-hands-raised","An evening congregation with hands raised during the service.","31 Jul 2026"),
+               ("rtmc-preaching-evening","Preaching to the evening crowd from the open-air platform.","31 Jul 2026")],
+    ),
+    dict(
+        slug="every1", stage="BURN", name="EVERY1 Movement",
+        title="The EVERY1 <em>Movement</em>",
+        mission="Empowering the local church to do the Great Commission and walk in God's calling.",
+        video="every1-community-gathering",
+        ground="Midnight, full bleed wherever it can be.",
+        typerule="Parchment on Midnight. Ember for links and buttons.",
+        flame="The full tenth. This door owns the fire.",
+        register="The fire itself. Loudest, fastest, most footage.",
+        why="BURN is the second movement. A cleaned heart catches fire, and fire starts fire. This door "
+            "is not an event, it is a lifestyle: ordinary believers sharing Jesus where they already "
+            "live, work, and study. Membership is simple, and it is measured by whether you have shared "
+            "Jesus with someone recently.",
+        rules=[
+            "<strong>Midnight ground, full bleed.</strong> This is the only door that runs dark by default. Footage fills the frame wherever the layout allows.",
+            "<strong>Flame to the full tenth.</strong> The parent's ceiling, used fully. It still never carries text: Ember does that job.",
+            "<strong>Most footage, least chrome.</strong> Motion carries this door. Where a still would do for CLEAN or TRAIN, EVERY1 uses the clip.",
+            "<strong>One recorded exception.</strong> The future EVERY1 app follows the YouVersion model and will not visibly promote the parent. Until it ships, EVERY1 follows this guide in full.",
+        ],
+        shots=[("every1-one-to-one","One believer greeting another at the front of the tent, person to person.","31 Jul 2026"),
+               ("every1-ministry-in-the-tent","Serving the seated rows individually rather than from the platform.","30 Jul 2026")],
+    ),
+    dict(
+        slug="school-of-the-local-church", stage="TRAIN", name="School of the Local Church",
+        title="School of the <em>Local Church</em>",
+        mission="Training the local church to know their authority in Christ and build a real relationship with Jesus.",
+        video="slc-teaching-session",
+        ground="Word Blue structure on Parchment.",
+        typerule="Parchment on Word Blue. The most typographic door.",
+        flame="5% ceiling. Structure carries it, not colour.",
+        register="A building. Ordered, sequential, institutional.",
+        why="TRAIN is the third movement, and the one that lasts. Fire that is not trained goes out. "
+            "This door teaches believers their authority in Christ and how to build a real relationship "
+            "with Jesus, starting with the free personal evangelism course.",
+        rules=[
+            "<strong>Structure carries the weight.</strong> Word Blue blocks, rules, and numbered sequence do the work that colour does elsewhere.",
+            "<strong>The most typographic door.</strong> Sessions, modules, and steps are numbered and ordered. If it can be a sequence, it is one.",
+            "<strong>Flame at five percent.</strong> A school is not a rally. The fire is in what is taught, not in the layout.",
+            "<strong>Everything is a record.</strong> Course names, session numbers, and dates are stated exactly, because a school that is vague about its own curriculum is not a school.",
+        ],
+        shots=[("slc-attendees-taking-notes","Attendees following the teaching with open Bibles and notebooks.","30 Jul 2026"),
+               ("slc-bibles-received","Bibles and the personal evangelism course handed to attendees.","31 Jul 2026")],
+    ),
+]
+
+SUB_PAGE = """
+<div class="door">
+  <video autoplay muted loop playsinline poster="/assets/images/{video}-poster.jpg">
+    <source src="/assets/videos/{video}.mp4" type="video/mp4">
+  </video>
+  <div class="scrim"></div>
+  <div class="inner">
+    <div class="stageword">{stage}</div>
+    <h1>{title}</h1>
+    <p class="mission">{mission}</p>
+    <div class="endorse">A ministry of THE WORD FOR ALL THE WORLD</div>
+  </div>
+</div>
+
+<main>
+  <div class="wrap">
+    <div class="bar">
+      <a href="/brand/#architecture">&larr; Brand Guide &sect;11</a>
+      <a href="/documents/{slug}/">Messaging document &rarr;</a>
+    </div>
+
+    <div class="blk">
+      <div class="lab">Identity</div>
+      <h2>What this door owns.</h2>
+      <p class="lede">The three doors are told apart by temperature and proportion, not by three separate
+      palettes, so the house still reads as one house. This is what {name} owns.</p>
+      <table class="spec">
+        <tr><th>Ground</th><td>{ground}</td></tr>
+        <tr><th>Type</th><td>{typerule}</td></tr>
+        <tr><th>Flame</th><td>{flame}</td></tr>
+        <tr><th>Register</th><td>{register}</td></tr>
+        <tr><th>Endorsement</th><td>Every surface carries the line <em>A ministry of THE WORD FOR ALL THE WORLD.</em> It is not optional.</td></tr>
+      </table>
+    </div>
+
+    <div class="blk">
+      <div class="lab">Place in the journey</div>
+      <h2>Why this door exists.</h2>
+      <p class="lede">{why}</p>
+    </div>
+
+    <div class="blk">
+      <div class="lab">The ground in use</div>
+      <h2>Documentary capture, from the record.</h2>
+      <p class="lede">Real moments from real ministry. Nothing stock, nothing staged, nothing generated.
+      Every published photograph carries a caption in the record register.</p>
+      <div class="shots">
+{shots}      </div>
+      <p class="prov">Dates come from the capture record. The location is recorded as Sanga, Mbarara,
+      Uganda in the capture folder and is pending confirmation against the official ministry record,
+      so it is stated here and not yet frozen into the guide.</p>
+    </div>
+
+    <div class="blk">
+      <div class="lab">Rules that differ from the parent</div>
+      <h2>Where this door departs.</h2>
+      <p class="lede">Everything in the Brand Guide applies here. These are the points where {name}
+      is deliberately not the parent.</p>
+      <ul class="doorrules">
+{rules}      </ul>
+    </div>
+
+    <div class="blk">
+      <div class="nextstep">
+        <div>
+          <div class="t">What this door says, in the words of the ministry</div>
+          <div class="s">The messaging document records what {name} is, who it speaks to, and the
+          language it carries. This guide governs how it looks. That one governs what it says.</div>
+        </div>
+        <a href="/documents/{slug}/">Messaging document &rarr;</a>
+      </div>
+    </div>
+  </div>
+</main>
+"""
+
+for d in SUBS:
+    shots = ""
+    for name_, cap, date in d["shots"]:
+        shots += (f'        <figure class="shot">\n'
+                  f'          <img src="/assets/images/{name_}.jpg" alt="{cap}">\n'
+                  f'          <figcaption class="cap"><div class="c1">{cap}</div>'
+                  f'<div class="c2">SLC Conference &middot; Sanga, Mbarara &middot; {date}</div></figcaption>\n'
+                  f'        </figure>\n')
+    rules = "".join(f"        <li>{r}</li>\n" for r in d["rules"])
+    fields = {k: v for k, v in d.items() if k not in ("rules", "shots")}
+    html = HEAD.format(title=f"{d['name']} · Initiative Brand Guide", extra_css=SUB_CSS,
+                       band_pad="0", doc_active="", lh_active="")
+    html = html.replace("<body>", f"<body class=\"{d['stage'].lower()}\">")
+    html += SUB_PAGE.format(shots=shots, rules=rules, **fields)
+    html += FOOT
+    outdir = os.path.join(REPO, "brand", d["slug"])
+    os.makedirs(outdir, exist_ok=True)
+    path = os.path.join(outdir, "index.html")
+    open(path, "w").write(html)
+    print(path, len(html))
