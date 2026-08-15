@@ -77,8 +77,11 @@
   .adoption{margin-top:48px;padding-top:28px;border-top:1px solid var(--midnight);text-align:center;}
   .adoption .ad{font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(11,26,45,.7);}
   .sigrow{display:flex;justify-content:center;gap:80px;flex-wrap:wrap;margin-top:44px;}
-  .sig .name{font-family:var(--serif-display);font-style:italic;font-size:28px;color:var(--word-blue);}
-  .sig .role{margin-top:8px;padding-top:8px;border-top:1px solid var(--rule);font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(11,26,45,.75);min-width:200px;}
+  .sig{min-width:220px;}
+  .sig .ink{height:62px;display:flex;align-items:flex-end;justify-content:center;}
+  .sig .ink img{max-height:62px;max-width:220px;width:auto;height:auto;display:block;}
+  .sig .name{margin-top:8px;padding-top:10px;border-top:1px solid var(--midnight);font-size:14px;font-weight:700;letter-spacing:.06em;line-height:1.3;color:var(--midnight);}
+  .sig .role{margin-top:6px;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(11,26,45,.75);}
   .sealline{margin-top:40px;font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:rgba(11,26,45,.55);}
 
   @media print{
@@ -88,6 +91,9 @@
     .paper{max-width:none;margin:0;border:none;box-shadow:none;padding:0.4in 0.5in;}
     .docbody{font-size:11.5pt;line-height:1.65;}
     .sec{page-break-inside:avoid;}
+    .adoption{page-break-inside:avoid;}
+    .sig .ink{height:52px;}
+    .sig .ink img{max-height:52px;}
     a{color:inherit;text-decoration:none;}
   }
 
@@ -106,6 +112,7 @@
       <a href="/brand/messaging/">Messaging</a>
       <a href="/documents/" class="active">Documents</a>
       <a href="/letterhead/">Letterhead</a>
+      <a href="/signatures/">Signatures</a>
     </div>
   </div>
 </nav>
@@ -173,8 +180,16 @@
       <div class="adoption">
         <div class="ad">Entered into the record · August 2026</div>
         <div class="sigrow">
-          <div class="sig"><div class="name">Joel Zimmer</div><div class="role">Approved and Recorded</div></div>
-          <div class="sig"><div class="name">Nathan Zimmer</div><div class="role">Approved and Recorded</div></div>
+          <div class="sig">
+            <div class="ink"></div>
+            <div class="name">Joel Zimmer</div>
+            <div class="role">Approved and Recorded</div>
+          </div>
+          <div class="sig">
+            <div class="ink"><img src="/assets/signatures/nathaniel-zimmer.svg" alt="Signed by Nathan Zimmer"></div>
+            <div class="name">Nathan Zimmer</div>
+            <div class="role">Approved and Recorded</div>
+          </div>
         </div>
         <div class="sealline">Every tribe. Every tongue. Every nation. EVERY1.</div>
       </div>

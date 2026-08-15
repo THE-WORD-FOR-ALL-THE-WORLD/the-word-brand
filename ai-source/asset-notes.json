@@ -38,6 +38,54 @@
       "grounds": [],
       "note": "Not permitted. Published only to show the violation. The mark cannot compete with calls to action, and Flame never carries the logo."
     },
+    "assets/signatures/nathaniel-zimmer.svg": {
+      "name": "Signature, Nathaniel Zimmer",
+      "status": "approved",
+      "grounds": ["parchment", "white"],
+      "note": "The default signature. Cleanest of the three full forms and the most legible, so it is the one to use on documents and letterhead unless there is a reason to reach for another. Vector master: scale it, never redraw it."
+    },
+    "assets/signatures/nathaniel-zimmer.png": {
+      "name": "Signature, Nathaniel Zimmer, raster",
+      "status": "approved",
+      "grounds": ["parchment", "white"],
+      "note": "Transparent PNG of the default signature, 1200px tall. For the places that cannot take SVG: Google Docs, PDF and e-sign fields, email signatures. Prefer the SVG everywhere else."
+    },
+    "assets/signatures/nathaniel-zimmer-display.svg": {
+      "name": "Signature, Nathaniel Zimmer, display",
+      "status": "approved",
+      "grounds": ["parchment", "white"],
+      "note": "Faster and more slanted, with a long lead-in and a trailing flick. Holds its energy at large sizes. Not for small settings, where the flick reads as noise."
+    },
+    "assets/signatures/nathaniel-zimmer-display.png": {
+      "name": "Signature, Nathaniel Zimmer, display, raster",
+      "status": "approved",
+      "grounds": ["parchment", "white"],
+      "note": "Transparent PNG of the display signature, 1200px tall. Same rule: SVG unless the destination refuses it."
+    },
+    "assets/signatures/nathaniel-zimmer-compact.svg": {
+      "name": "Signature, Nathaniel Zimmer, compact",
+      "status": "approved",
+      "grounds": ["parchment", "white"],
+      "note": "Tightest of the three, with heavier looping on the Z. The one that survives being scaled down."
+    },
+    "assets/signatures/nathaniel-zimmer-compact.png": {
+      "name": "Signature, Nathaniel Zimmer, compact, raster",
+      "status": "approved",
+      "grounds": ["parchment", "white"],
+      "note": "Transparent PNG of the compact signature, 1200px tall. Same rule: SVG unless the destination refuses it."
+    },
+    "assets/signatures/nathan-zimmer.svg": {
+      "name": "Signature, Nathan Zimmer, short form",
+      "status": "approved",
+      "grounds": ["parchment", "white"],
+      "note": "The short form. Widest stroke relative to its width, so it stays readable in tight spaces like an email footer. Use the full name on anything entered into the record."
+    },
+    "assets/signatures/nathan-zimmer.png": {
+      "name": "Signature, Nathan Zimmer, short form, raster",
+      "status": "approved",
+      "grounds": ["parchment", "white"],
+      "note": "Transparent PNG of the short form, 1200px tall. Same rule: SVG unless the destination refuses it."
+    },
     "assets/images/hero-congregation.jpg": {
       "status": "approved",
       "capture": "Ministry's own conference photography, July 2026",
@@ -96,6 +144,7 @@
   },
 
   "gaps": [
+    "A reversed signature for dark grounds. Every signature published here is Midnight ink and works only on Parchment or white. Nothing signed may appear on Midnight, Word Blue, or footage until a reversed master exists. Recolor the SVG fill rather than inverting the raster.",
     "Wordmark masters in SVG and 2x/3x PNG (White, Midnight, Word Blue) are recorded as approved in Brand Guide §06 but are not yet published in this repository. Until they are, request them rather than recreating the mark.",
     "Prayer and ministry moments up close",
     "A Bible passing from one hand to another",

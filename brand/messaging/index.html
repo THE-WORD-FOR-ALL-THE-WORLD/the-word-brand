@@ -159,12 +159,10 @@
   .slot .s1{font-family:var(--serif-text);font-size:17px;margin-bottom:4px;}
   .slot .s2{font-size:13px;line-height:1.55;color:rgba(11,26,45,.78);}
 
-  /* adoption · signatures left, divider before doc info */
+  /* adoption · signature, one line, divider, doc info */
   .adoption{margin-top:64px;}
-  .sigrow{display:flex;flex-direction:column;gap:30px;}
-  .sig .name{font-family:var(--serif-display);font-style:italic;font-size:27px;color:var(--word-blue);}
-  .sig .role{margin-top:8px;padding-top:8px;border-top:1px solid var(--rule);font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(11,26,45,.75);width:210px;}
-  .adoption .ad{margin-top:30px;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);}
+  .adoption .signature{height:58px;width:auto;display:block;}
+  .adoption .ad{margin-top:12px;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);}
   .adoption .frule{border:none;border-top:2px solid var(--midnight);margin:34px 0 14px;}
   .adoption .docinfo{font-size:11.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);}
 
@@ -221,6 +219,7 @@
       <a href="/brand/messaging/" class="active">Messaging</a>
       <a href="/documents/">Documents</a>
       <a href="/letterhead/">Letterhead</a>
+      <a href="/signatures/">Signatures</a>
     </div>
   </div>
 </nav>
@@ -238,7 +237,7 @@
     <div class="rule"></div>
     <div class="meta">
       <div><strong>Version</strong>1.0 · August 2026</div>
-      <div><strong>Companion To</strong>Brand Guide v4.4</div>
+      <div><strong>Companion To</strong>Brand Guide v4.5</div>
       <div><strong>Status</strong>Single Source of Truth: Words</div>
       <div><strong>Approved By</strong>Joel Zimmer · Nathan Zimmer</div>
     </div>
@@ -274,7 +273,7 @@
     <div class="slidehead"><span class="eyebrow">01 · How To Use This Guide</span><span class="slideno">The Word · Messaging Guide</span></div>
     <h2>One guide. Every voice.</h2>
     <p class="lede">This document is written for everyone who speaks or writes for THE WORD FOR ALL THE WORLD: leadership, team members, volunteers, and outside writers, designers, and agencies. It assumes no tribal knowledge. If you have never worked with us before, this guide is enough.</p>
-    <p>The Brand Guide (v4.4) governs how we <em>look</em>. This guide governs what we <em>say</em>. The two are companions: Law II (everything is a record), Law III (one house, named front doors), and Law IV (the institution signs its work) apply to words exactly as they apply to design.</p>
+    <p>The Brand Guide (v4.5) governs how we <em>look</em>. This guide governs what we <em>say</em>. The two are companions: Law II (everything is a record), Law III (one house, named front doors), and Law IV (the institution signs its work) apply to words exactly as they apply to design.</p>
     <p><strong>The rule of rule:</strong> where wording in any older document, website, deck, or social post conflicts with this guide, this guide wins. Changes to this guide happen one way: proposed in writing, approved by Joel and Nathan, recorded in the changelog (Section 12 of the document below).</p>
   </div>
 </section>
@@ -637,11 +636,8 @@
       </section>
 
       <div class="adoption">
-        <div class="sigrow">
-          <div class="sig"><div class="name">Joel Zimmer</div><div class="role">Approved and Recorded</div></div>
-          <div class="sig"><div class="name">Nathan Zimmer</div><div class="role">Approved and Recorded</div></div>
-        </div>
-        <div class="ad">Entered into the record · August 2026</div>
+        <img class="signature" src="/assets/signatures/nathan-zimmer.svg" alt="Nathan Zimmer's signature">
+        <div class="ad">Nathan Zimmer · Entered into the record · August 2026</div>
         <hr class="frule">
         <div class="docinfo">The Word for All the World · Brand Messaging Guide · Version 1.0</div>
       </div>

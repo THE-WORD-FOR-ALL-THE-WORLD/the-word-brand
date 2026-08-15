@@ -1,12 +1,12 @@
 {
-  "version": "4.4",
+  "version": "4.5",
   "messagingVersion": "1.0",
   "updated": "2026-08-15",
   "authority": "canonical",
   "rule": "Use these assets. Never generate photography or video of people or ministry, and never substitute stock. If the asset you need is not listed, request it and leave the slot empty.",
   "counts": {
-    "total": 17,
-    "approved": 16,
+    "total": 25,
+    "approved": 24,
     "counterExamples": 1
   },
   "assets": [
@@ -167,6 +167,118 @@
       "name": "Wordmark over photography"
     },
     {
+      "file": "assets/signatures/nathan-zimmer.png",
+      "url": "https://brand.theword.world/assets/signatures/nathan-zimmer.png",
+      "kind": "image",
+      "group": "signatures",
+      "bytes": 648900,
+      "status": "approved",
+      "grounds": [
+        "parchment",
+        "white"
+      ],
+      "note": "Transparent PNG of the short form, 1200px tall. Same rule: SVG unless the destination refuses it.",
+      "name": "Signature, Nathan Zimmer, short form, raster"
+    },
+    {
+      "file": "assets/signatures/nathan-zimmer.svg",
+      "url": "https://brand.theword.world/assets/signatures/nathan-zimmer.svg",
+      "kind": "vector",
+      "group": "signatures",
+      "bytes": 19405,
+      "status": "approved",
+      "grounds": [
+        "parchment",
+        "white"
+      ],
+      "note": "The short form. Widest stroke relative to its width, so it stays readable in tight spaces like an email footer. Use the full name on anything entered into the record.",
+      "name": "Signature, Nathan Zimmer, short form"
+    },
+    {
+      "file": "assets/signatures/nathaniel-zimmer-compact.png",
+      "url": "https://brand.theword.world/assets/signatures/nathaniel-zimmer-compact.png",
+      "kind": "image",
+      "group": "signatures",
+      "bytes": 1020980,
+      "status": "approved",
+      "grounds": [
+        "parchment",
+        "white"
+      ],
+      "note": "Transparent PNG of the compact signature, 1200px tall. Same rule: SVG unless the destination refuses it.",
+      "name": "Signature, Nathaniel Zimmer, compact, raster"
+    },
+    {
+      "file": "assets/signatures/nathaniel-zimmer-compact.svg",
+      "url": "https://brand.theword.world/assets/signatures/nathaniel-zimmer-compact.svg",
+      "kind": "vector",
+      "group": "signatures",
+      "bytes": 23572,
+      "status": "approved",
+      "grounds": [
+        "parchment",
+        "white"
+      ],
+      "note": "Tightest of the three, with heavier looping on the Z. The one that survives being scaled down.",
+      "name": "Signature, Nathaniel Zimmer, compact"
+    },
+    {
+      "file": "assets/signatures/nathaniel-zimmer-display.png",
+      "url": "https://brand.theword.world/assets/signatures/nathaniel-zimmer-display.png",
+      "kind": "image",
+      "group": "signatures",
+      "bytes": 1192472,
+      "status": "approved",
+      "grounds": [
+        "parchment",
+        "white"
+      ],
+      "note": "Transparent PNG of the display signature, 1200px tall. Same rule: SVG unless the destination refuses it.",
+      "name": "Signature, Nathaniel Zimmer, display, raster"
+    },
+    {
+      "file": "assets/signatures/nathaniel-zimmer-display.svg",
+      "url": "https://brand.theword.world/assets/signatures/nathaniel-zimmer-display.svg",
+      "kind": "vector",
+      "group": "signatures",
+      "bytes": 25413,
+      "status": "approved",
+      "grounds": [
+        "parchment",
+        "white"
+      ],
+      "note": "Faster and more slanted, with a long lead-in and a trailing flick. Holds its energy at large sizes. Not for small settings, where the flick reads as noise.",
+      "name": "Signature, Nathaniel Zimmer, display"
+    },
+    {
+      "file": "assets/signatures/nathaniel-zimmer.png",
+      "url": "https://brand.theword.world/assets/signatures/nathaniel-zimmer.png",
+      "kind": "image",
+      "group": "signatures",
+      "bytes": 1186632,
+      "status": "approved",
+      "grounds": [
+        "parchment",
+        "white"
+      ],
+      "note": "Transparent PNG of the default signature, 1200px tall. For the places that cannot take SVG: Google Docs, PDF and e-sign fields, email signatures. Prefer the SVG everywhere else.",
+      "name": "Signature, Nathaniel Zimmer, raster"
+    },
+    {
+      "file": "assets/signatures/nathaniel-zimmer.svg",
+      "url": "https://brand.theword.world/assets/signatures/nathaniel-zimmer.svg",
+      "kind": "vector",
+      "group": "signatures",
+      "bytes": 24902,
+      "status": "approved",
+      "grounds": [
+        "parchment",
+        "white"
+      ],
+      "note": "The default signature. Cleanest of the three full forms and the most legible, so it is the one to use on documents and letterhead unless there is a reason to reach for another. Vector master: scale it, never redraw it.",
+      "name": "Signature, Nathaniel Zimmer"
+    },
+    {
       "file": "assets/videos/crowd-evening.mp4",
       "url": "https://brand.theword.world/assets/videos/crowd-evening.mp4",
       "kind": "video",
@@ -202,6 +314,7 @@
   ],
   "notesWithoutFiles": [],
   "gaps": [
+    "A reversed signature for dark grounds. Every signature published here is Midnight ink and works only on Parchment or white. Nothing signed may appear on Midnight, Word Blue, or footage until a reversed master exists. Recolor the SVG fill rather than inverting the raster.",
     "Wordmark masters in SVG and 2x/3x PNG (White, Midnight, Word Blue) are recorded as approved in Brand Guide §06 but are not yet published in this repository. Until they are, request them rather than recreating the mark.",
     "Prayer and ministry moments up close",
     "A Bible passing from one hand to another",

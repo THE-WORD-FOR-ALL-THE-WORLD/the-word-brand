@@ -69,6 +69,7 @@ HEAD = """<!DOCTYPE html>
       <a href="/brand/messaging/">Messaging</a>
       <a href="/documents/"{doc_active}>Documents</a>
       <a href="/letterhead/"{lh_active}>Letterhead</a>
+      <a href="/signatures/">Signatures</a>
     </div>
   </div>
 </nav>
@@ -117,8 +118,11 @@ DOC_CSS = """
   .adoption{margin-top:48px;padding-top:28px;border-top:1px solid var(--midnight);text-align:center;}
   .adoption .ad{font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(11,26,45,.7);}
   .sigrow{display:flex;justify-content:center;gap:80px;flex-wrap:wrap;margin-top:44px;}
-  .sig .name{font-family:var(--serif-display);font-style:italic;font-size:28px;color:var(--word-blue);}
-  .sig .role{margin-top:8px;padding-top:8px;border-top:1px solid var(--rule);font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(11,26,45,.75);min-width:200px;}
+  .sig{min-width:220px;}
+  .sig .ink{height:62px;display:flex;align-items:flex-end;justify-content:center;}
+  .sig .ink img{max-height:62px;max-width:220px;width:auto;height:auto;display:block;}
+  .sig .name{margin-top:8px;padding-top:10px;border-top:1px solid var(--midnight);font-size:14px;font-weight:700;letter-spacing:.06em;line-height:1.3;color:var(--midnight);}
+  .sig .role{margin-top:6px;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(11,26,45,.75);}
   .sealline{margin-top:40px;font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:rgba(11,26,45,.55);}
 
   @media print{
@@ -128,6 +132,9 @@ DOC_CSS = """
     .paper{max-width:none;margin:0;border:none;box-shadow:none;padding:0.4in 0.5in;}
     .docbody{font-size:11.5pt;line-height:1.65;}
     .sec{page-break-inside:avoid;}
+    .adoption{page-break-inside:avoid;}
+    .sig .ink{height:52px;}
+    .sig .ink img{max-height:52px;}
     a{color:inherit;text-decoration:none;}
   }
 """
@@ -149,16 +156,36 @@ DOC_PAGE = """
 {body}
       <div class="adoption">
         <div class="ad">Entered into the record · August 2026</div>
-        <div class="sigrow">
-          <div class="sig"><div class="name">Joel Zimmer</div><div class="role">Approved and Recorded</div></div>
-          <div class="sig"><div class="name">Nathan Zimmer</div><div class="role">Approved and Recorded</div></div>
-        </div>
+{sigrow}
         <div class="sealline">Every tribe. Every tongue. Every nation. EVERY1.</div>
       </div>
     </div>
   </article>
 </main>
 """
+
+# Who signs, and the signature master placed above each printed name. A signatory with
+# no master published yet gets the empty space above the rule, which is what an unsigned
+# line looks like. Add the file path here the day the master lands in assets/signatures/.
+SIGNATORIES = [
+    ("Joel Zimmer", "Approved and Recorded", None),
+    ("Nathan Zimmer", "Approved and Recorded", "/assets/signatures/nathaniel-zimmer.svg"),
+]
+
+
+def sigrow():
+    out = '        <div class="sigrow">\n'
+    for name, role, mark in SIGNATORIES:
+        ink = f'<img src="{mark}" alt="Signed by {name}">' if mark else ""
+        out += (
+            '          <div class="sig">\n'
+            f'            <div class="ink">{ink}</div>\n'
+            f'            <div class="name">{name}</div>\n'
+            f'            <div class="role">{role}</div>\n'
+            "          </div>\n"
+        )
+    return out + "        </div>"
+
 
 def sec(n, title, inner):
     return f'      <div class="sec">\n        <div class="sh"><span class="n">Section {n}.</span>{title}</div>\n{inner}      </div>\n'
@@ -380,7 +407,7 @@ for section, cfg in SECTIONS.items():
                            band_pad="96px 0 24px", doc_active=doc_a, lh_active=lh_a)
         html += DOC_PAGE.format(backurl=f"/{section}/", backlabel=cfg["backlabel"],
                                 doctitle=TITLES[slug], metaline=cfg["metaline"],
-                                body=cfg["bodies"][slug])
+                                body=cfg["bodies"][slug], sigrow=sigrow())
         html += FOOT
         os.makedirs(os.path.join(REPO, section, slug), exist_ok=True)
         path = os.path.join(REPO, section, slug, "index.html")

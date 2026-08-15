@@ -18,7 +18,7 @@
 
 ## Facts at a glance
 
-Brand system version 4.4, messaging guide version 1.0, issued August 2026.
+Brand system version 4.5, messaging guide version 1.0, issued August 2026.
 Palette: Midnight `#0B1A2D`, Word Blue `#023D6F`, Parchment `#F7F3EC`, Flame `#F85842`, Ember `#C13A24`, White `#FFFFFF`.
 Typefaces: DM Serif Display, DM Serif Text, DM Sans.
 Proportion: 60 / 30 / 10, Flame never above a tenth and never carrying text.
@@ -30,6 +30,7 @@ Public mission line: Strengthening the local church to fulfill the Great Commiss
 
 - [Brand Guide](https://brand.theword.world/brand): Full visual identity. Logo usage, color, typography, layout, photography and video.
 - [Messaging Guide](https://brand.theword.world/brand/messaging): Voice, tone, vocabulary, audiences, and proof policy.
+- [Signatures](https://brand.theword.world/signatures): The signature masters that sign the record, and the law governing where each may be placed.
 
 ## The three initiatives
 

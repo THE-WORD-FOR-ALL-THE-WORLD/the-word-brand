@@ -1,6 +1,6 @@
 # THE WORD FOR ALL THE WORLD: Brand System
 
-> **Brand system v4.4 · Messaging guide v1.0 · Updated 2026-08-15**
+> **Brand system v4.5 · Messaging guide v1.0 · Updated 2026-08-15**
 > Canonical source: <https://brand.theword.world/ai/manifest.json>
 > The complete standard, assembled for machine reading. The human guides are at <https://brand.theword.world/brand> and <https://brand.theword.world/brand/messaging>.
 
@@ -374,7 +374,7 @@ replace it.
 
 ## 15. Version history
 
-### Brand Guide v4.4, against Branding.pdf — color & typography
+### Brand Guide v4.5, against Branding.pdf — color & typography
 
 | Element | Was | Now |
 | --- | --- | --- |
@@ -392,8 +392,9 @@ replace it.
 | Field exemplars | Placeholder gradients | Ministry's own July 2026 conference photographs embedded as the §07 standard; capture standards added; captions pending location verification |
 | Document treatments | — | Founding-document pattern, dateline, signatures (§08) |
 | Sub-brand rules | SLC listed as branch | Endorsed house for RTMC / EVERY1 / SLC; app exception recorded |
+| Signatures | Italic names standing in for ink | Signature masters published as approved assets and placed on every initiative document (§08, /signatures) |
 
-**Revision trail.** v2.0 Instrument Serif + DM Sans · v2.1 DM Serif Text + Instrument Sans (rejected — readability) · v2.2 DM companion pairing · v3.0 presentation rebuild with Do/Don't · v3.1 accessibility & integrity revision (Ember buttons, stats relabel, tokens & states) · v4.0 design language codified as six native laws — originally distilled from a compositional analysis of whitehouse.gov (2026), now adopted and owned, with governmental iconography permanently excluded — plus new photography & video rules with rendered examples · v4.1 real field photographs from the July 2026 conferences embedded as exemplars, field capture checklist added · v4.2 readability pass — provenance badges removed from swatches, inherited light-on-light text corrected on all card components, muted-text tokens darkened · v4.3 Do/Don’t reorganized into opposing columns, Tokens & States promoted to its own section (§04), operational checklists removed from the standard · v4.4 Do/Don’t pairs aligned like-for-like — each rule and its violation share a row.
+**Revision trail.** v2.0 Instrument Serif + DM Sans · v2.1 DM Serif Text + Instrument Sans (rejected — readability) · v2.2 DM companion pairing · v3.0 presentation rebuild with Do/Don't · v3.1 accessibility & integrity revision (Ember buttons, stats relabel, tokens & states) · v4.0 design language codified as six native laws — originally distilled from a compositional analysis of whitehouse.gov (2026), now adopted and owned, with governmental iconography permanently excluded — plus new photography & video rules with rendered examples · v4.1 real field photographs from the July 2026 conferences embedded as exemplars, field capture checklist added · v4.2 readability pass — provenance badges removed from swatches, inherited light-on-light text corrected on all card components, muted-text tokens darkened · v4.3 Do/Don’t reorganized into opposing columns, Tokens & States promoted to its own section (§04), operational checklists removed from the standard · v4.4 Do/Don’t pairs aligned like-for-like — each rule and its violation share a row · v4.5 signature masters published as approved assets, the initiative documents signed in real ink rather than an italic stand-in, and a Signatures page added to the portal.
 
 ### Messaging Guide v1.0
 

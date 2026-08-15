@@ -538,6 +538,7 @@ def build_llms_txt(brand: dict, messaging: dict, tokens: dict, initiatives: list
         "",
         f"- [Brand Guide]({SITE}/brand): Full visual identity. Logo usage, color, typography, layout, photography and video.",
         f"- [Messaging Guide]({SITE}/brand/messaging): Voice, tone, vocabulary, audiences, and proof policy.",
+        f"- [Signatures]({SITE}/signatures): The signature masters that sign the record, and the law governing where each may be placed.",
         "",
         "## The three initiatives",
         "",
@@ -611,7 +612,7 @@ AI_INDEX = """<!DOCTYPE html>
 <meta name="description" content="Machine-readable brand system for THE WORD FOR ALL THE WORLD. Start at manifest.json.">
 <link rel="alternate" type="application/json" href="/ai/manifest.json" title="AI manifest">
 <style>
-  :root{{--midnight:#0B1A2D;--word-blue:#023D6F;--parchment:#F7F3EC;--ember:#C13A24;--rule:rgba(11,26,45,.18);}}
+  :root{{{root}}}
   *{{margin:0;padding:0;box-sizing:border-box;}}
   body{{font:16px/1.7 -apple-system,'Segoe UI',Helvetica,Arial,sans-serif;color:var(--midnight);background:var(--parchment);padding:64px 24px;}}
   main{{max-width:760px;margin:0 auto;}}
@@ -652,15 +653,20 @@ AI_INDEX = """<!DOCTYPE html>
 """
 
 
-def build_ai_index(manifest: dict, descriptions: dict) -> str:
+def build_ai_index(manifest: dict, descriptions: dict, tokens: dict) -> str:
     rows = ""
     for name, desc in descriptions.items():
         rows += f'    <tr><td><a href="/ai/{name}">{name}</a></td><td>{desc}</td></tr>\n'
+    # Take the palette from the tokens rather than restating it, so this page
+    # cannot drift from the Brand Guide the way a hand-written copy would.
+    root = "".join(f"--{key}:{c['hex']};" for key, c in tokens["color"].items())
+    root += f"--rule:{tokens['cssVariables'].get('rule', 'rgba(11,26,45,.18)')};"
     return AI_INDEX.format(
         version=manifest["version"],
         messagingVersion=manifest["messagingVersion"],
         updated=manifest["updated"],
         rows=rows.rstrip("\n"),
+        root=root,
     )
 
 
@@ -795,7 +801,7 @@ def build() -> dict:
         manifest.setdefault(key, value)
 
     files["ai/manifest.json"] = json.dumps(manifest, indent=2, ensure_ascii=False) + "\n"
-    files["ai/index.html"] = build_ai_index(manifest, DESCRIPTIONS)
+    files["ai/index.html"] = build_ai_index(manifest, DESCRIPTIONS, tokens)
 
     files["llms.txt"] = build_llms_txt(brand, messaging, tokens, initiatives)
     files["sitemap.xml"] = build_sitemap(bs.published_pages(), list(DESCRIPTIONS))
