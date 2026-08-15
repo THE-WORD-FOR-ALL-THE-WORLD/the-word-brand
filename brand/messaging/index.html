@@ -61,7 +61,8 @@
   .sitenav .links a.active{color:var(--white);border-bottom:1px solid rgba(255,255,255,.6);padding-bottom:2px;}
 
   /* cover · full-bleed video hero, unified chrome */
-  .cover{position:relative;min-height:92vh;display:flex;align-items:center;justify-content:center;text-align:center;background:var(--midnight) url('/assets/images/hero-worship.jpg') center/cover no-repeat;color:var(--parchment);overflow:hidden;}
+  .cover{position:relative;min-height:92vh;display:flex;align-items:center;justify-content:center;text-align:center;background:var(--midnight) url('/assets/images/tent-congregation-poster.jpg') center/cover no-repeat;color:var(--parchment);overflow:hidden;}
+  .cover video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
   .cover .scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,26,45,.78) 0%,rgba(11,26,45,.55) 40%,rgba(11,26,45,.82) 100%);}
   .cover .inner{position:relative;z-index:2;padding:140px 32px 100px;max-width:900px;}
   .cover .kicker{font-size:13px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--white);margin-bottom:28px;display:block;}
@@ -176,6 +177,9 @@
   .sb ul{list-style:none;font-size:15px;color:rgba(247,243,236,.92);}
   .sb li{padding:6px 0;border-bottom:1px solid var(--rule-light);}
   .sb li:last-child{border-bottom:none;}
+  .sb .doclink{margin-top:20px;}
+  .sb .doclink a{font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--flame);text-decoration:none;border-bottom:1px solid rgba(248,88,66,.4);padding-bottom:2px;}
+  .sb .doclink a:hover{color:var(--parchment);border-bottom-color:var(--parchment);}
   .sb .endorse{margin-top:26px;font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:rgba(247,243,236,.6);border-top:1px solid var(--rule-light);padding-top:16px;}
 
   .testimony{background:var(--white);border:1px solid var(--rule);border-radius:4px;padding:36px 32px;margin:26px 0;}
@@ -189,6 +193,7 @@
   footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
   footer img{height:16px;width:auto;display:block;opacity:.9;}
   @media(max-width:640px){section{padding:72px 0;}}
+  @media (prefers-reduced-motion: reduce){.cover video{display:none;}}
 </style>
 </head>
 <body>
@@ -210,6 +215,9 @@
 
 <!-- COVER -->
 <header class="cover">
+  <video autoplay muted loop playsinline poster="/assets/images/tent-congregation-poster.jpg">
+    <source src="/assets/videos/tent-congregation.mp4" type="video/mp4">
+  </video>
   <div class="scrim"></div>
   <div class="inner">
     <span class="kicker">Messaging Guide · Version 1.0</span>
@@ -571,7 +579,7 @@
   <div class="wrap">
     <div class="slidehead"><span class="eyebrow">11 · Sub-Brand Messaging Pages</span><span class="slideno">The Word · Messaging Guide</span></div>
     <h2>Three front doors.<br>One page each.</h2>
-    <p>Per Law III, the initiatives are named front doors of one house, never separate homes, and never separate messaging guides. Each door gets one page here. Every sub-brand carries the endorsement line, inherits the house voice, and inherits every ban in §10.</p>
+    <p>Per Law III, the initiatives are named front doors of one house, never separate homes, and never separate messaging guides. Each door gets one page here, and each has a full printable initiative document on official letterhead in the <a href="/documents/">Documents</a> section. Every sub-brand carries the endorsement line, inherits the house voice, and inherits every ban in §10.</p>
 
     <div class="dark" style="background:var(--midnight);padding:8px 36px 36px;border-radius:6px;">
 
@@ -593,6 +601,7 @@
         <p>First love (Rev 3) · lighting hearts and seats on fire · revival is here, not coming · receive what Jesus already purchased.</p>
         <h4>First steps</h4>
         <p>Host an RTMC in your city · attend one near you · then join the EVERY1 Movement. That's how the fire stays lit.</p>
+        <p class="doclink"><a href="/documents/revival-to-my-city/">Read the initiative document &rarr;</a></p>
         <div class="endorse">A ministry of THE WORD FOR ALL THE WORLD</div>
       </div>
 
@@ -613,6 +622,7 @@
         <p>EVERY1 in the church for EVERY1 outside the church · you are the minister · fire starts fire · a lifestyle, not an event.</p>
         <h4>On record</h4>
         <p>The future EVERY1 app follows the YouVersion model and will not visibly promote the parent. Until it ships, EVERY1 follows this guide in full.</p>
+        <p class="doclink"><a href="/documents/every1/">Read the initiative document &rarr;</a></p>
         <div class="endorse">A ministry of THE WORD FOR ALL THE WORLD</div>
       </div>
 
@@ -634,6 +644,7 @@
         <p>Real relationship with Jesus · authority in Christ · the Holy Spirit writes the lessons · fire with roots.</p>
         <h4>First steps</h4>
         <p>Enroll anytime · start with the free personal evangelism course.</p>
+        <p class="doclink"><a href="/documents/school-of-the-local-church/">Read the initiative document &rarr;</a></p>
         <div class="endorse">A ministry of THE WORD FOR ALL THE WORLD</div>
       </div>
 

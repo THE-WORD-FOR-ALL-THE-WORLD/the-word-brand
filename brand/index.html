@@ -67,7 +67,8 @@
   .sitenav .links a.active{color:var(--white);border-bottom:1px solid rgba(255,255,255,.6);padding-bottom:2px;}
 
   /* cover — full-bleed video hero, matches portal homepage */
-  .cover{position:relative;min-height:92vh;display:flex;align-items:center;justify-content:center;text-align:center;background:var(--midnight) url('/assets/images/hero-crowd-dusk.jpg') center/cover no-repeat;color:var(--parchment);overflow:hidden;}
+  .cover{position:relative;min-height:92vh;display:flex;align-items:center;justify-content:center;text-align:center;background:var(--midnight) url('/assets/images/crowd-evening-poster.jpg') center/cover no-repeat;color:var(--parchment);overflow:hidden;}
+  .cover video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
   .cover .scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,26,45,.78) 0%,rgba(11,26,45,.55) 40%,rgba(11,26,45,.82) 100%);}
   .cover .inner{position:relative;z-index:2;padding:140px 32px 100px;max-width:900px;}
   .cover .kicker{font-size:13px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--white);margin-bottom:28px;display:block;}
@@ -254,6 +255,7 @@
   footer img{height:16px;width:auto;display:block;opacity:.9;}
 
   @media print{body{font-size:12px;}section{padding:36px 0;page-break-inside:avoid;}.sitenav,.cover .down{display:none;}.cover{min-height:0;padding:60px 0;}}
+  @media (prefers-reduced-motion: reduce){.cover video{display:none;}}
 </style>
 </head>
 <body>
@@ -275,6 +277,9 @@
 
 <!-- COVER -->
 <div class="cover">
+  <video autoplay muted loop playsinline poster="/assets/images/crowd-evening-poster.jpg">
+    <source src="/assets/videos/crowd-evening.mp4" type="video/mp4">
+  </video>
   <div class="scrim"></div>
   <div class="inner">
     <span class="kicker">Brand Guide · Version 4.4</span>
