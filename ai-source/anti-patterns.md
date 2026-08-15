@@ -54,6 +54,11 @@ that a designer would not.
   because the guide states what the palette is, not what it used to be. They stay recorded here so
   the audit can still catch them.
 
+- **Reaching for gold.** Gold was considered for this system and excluded: Flame performs the accent
+  role a federal palette gives to gold. An antique or metallic gold pulls the work toward commemorative
+  and governmental design, which is the register this brand deliberately does not occupy. This was
+  recorded in the Brand Guide through v4.5 and is kept here so the decision survives.
+
 ## Borrowed authority
 
 - **Reaching for governmental iconography.** No seals, no crests, no flags, no eagles, and no device

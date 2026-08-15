@@ -1,6 +1,6 @@
 # THE WORD FOR ALL THE WORLD: Brand System
 
-> **Brand system v5.2 · Messaging guide v1.0 · Updated 2026-08-15**
+> **Brand system v5.3 · Messaging guide v1.0 · Updated 2026-08-15**
 > Canonical source: <https://brand.theword.world/ai/manifest.json>
 > The complete standard, assembled for machine reading. The human guides are at <https://brand.theword.world/brand> and <https://brand.theword.world/brand/messaging>.
 
@@ -379,10 +379,11 @@ replace it.
 
 ## 15. Version history
 
-### Brand Guide v5.2
+### Brand Guide v5.3
 
 | Version | Date | Owner | Changed | Approved |
 | --- | --- | --- | --- | --- |
+| 5.3 | 2026-08-15 | Nathan Zimmer | Revival To My City takes the framed-panel treatment: the hero type sits on a bordered Parchment card over the footage rather than straight on the scrim, links are underlined rather than filled, and the door carries the widest vertical rhythm. The gold exclusion, lost from the record when the changelog was rebuilt at v5.0, is restored to the anti-patterns record. | Joel Zimmer, Nathan Zimmer |
 | 5.2 | 2026-08-15 | Nathan Zimmer | An initiative brand guide published for each door at /brand/<slug>, each rendering in the identity it publishes and linking to its messaging document. Nine documentary assets added from the July 2026 Sanga conference: three muted loops with posters and six stills. | Joel Zimmer, Nathan Zimmer |
 | 5.1 | 2026-08-15 | Nathan Zimmer | Sub-brand identity system added to §11. The three doors are now told apart by ground, Flame ceiling, and register rather than by three separate palettes, and each card renders in the identity it describes. Each door links to its messaging document. No new colours. | Joel Zimmer, Nathan Zimmer |
 | 5.0 | 2026-08-15 | Nathan Zimmer | Guide restated as the single source of truth rather than against the retired PDF: Supersedes line dropped, prophecy moved to the Messaging Guide, governmental-iconography boundary and retired colours moved to the anti-patterns record, voice filter de-duplicated, website example retired, design tokens renamed and moved to §08, colour rationale restated as five colours doing one job, swatches set on one row, changelog rebuilt with owner and approval, em dashes removed throughout. | Joel Zimmer, Nathan Zimmer |

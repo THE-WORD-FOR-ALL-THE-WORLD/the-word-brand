@@ -1,6 +1,6 @@
 # Anti-patterns
 
-> **Brand system v5.2 · Messaging guide v1.0 · Updated 2026-08-15**
+> **Brand system v5.3 · Messaging guide v1.0 · Updated 2026-08-15**
 > Canonical source: <https://brand.theword.world/ai/manifest.json>
 > What not to do. The first section is hand-authored; the rest is generated from the guides.
 
@@ -57,6 +57,11 @@ that a designer would not.
   form success state, and never in a brand layout. The Brand Guide stopped listing them at v5.0
   because the guide states what the palette is, not what it used to be. They stay recorded here so
   the audit can still catch them.
+
+- **Reaching for gold.** Gold was considered for this system and excluded: Flame performs the accent
+  role a federal palette gives to gold. An antique or metallic gold pulls the work toward commemorative
+  and governmental design, which is the register this brand deliberately does not occupy. This was
+  recorded in the Brand Guide through v4.5 and is kept here so the decision survives.
 
 ## Borrowed authority
 

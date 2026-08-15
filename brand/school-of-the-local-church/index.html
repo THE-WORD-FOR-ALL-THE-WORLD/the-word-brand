@@ -58,10 +58,33 @@
   .door .endorse{margin-top:26px;padding-top:14px;border-top:1px solid rgba(247,243,236,.3);font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:rgba(247,243,236,.85);}
   @media (prefers-reduced-motion: reduce){.door video{display:none;}}
 
+  .tickrule{display:flex;align-items:center;justify-content:center;gap:12px;margin:26px 0 0;max-width:430px;}
+  .tickrule .ln{flex:1;border-top:1px solid currentColor;opacity:.55;}
+  .tickrule .tk{width:32px;border-top:3px solid var(--flame);}
+
+  /* CLEAN takes the framed-panel treatment: type never sits straight on the footage */
+  body.clean .door{align-items:center;min-height:82vh;}
+  body.clean .door .inner{padding:96px 32px;}
+  body.clean .door .panel{background:var(--parchment);border:1px solid var(--midnight);color:var(--midnight);
+    max-width:730px;margin:0 auto;padding:clamp(38px,5vw,60px) clamp(28px,4.5vw,56px);text-align:center;}
+  body.clean .door .stageword{font-size:clamp(32px,4.6vw,52px);letter-spacing:.08em;}
+  body.clean .door h1{margin-top:12px;}
+  body.clean .door .mission{margin:16px auto 0;color:rgba(11,26,45,.85);}
+  body.clean .door .tickrule{margin-left:auto;margin-right:auto;}
+  body.clean .door .endorse{border-top:none;margin-top:22px;padding-top:0;color:rgba(11,26,45,.8);}
+  body.clean .blk{margin-bottom:96px;}
+  body.clean .nextstep{background:var(--white);border:1px solid var(--midnight);color:var(--midnight);}
+  body.clean .nextstep .s{color:rgba(11,26,45,.85);}
+  body.clean .nextstep a{background:none;color:var(--word-blue);padding:0;border-bottom:2px solid var(--flame);border-radius:0;}
+  body.clean .nextstep a:hover{background:none;color:var(--ember);}
+  body.clean .docbar a,body.clean .shot .c2{color:rgba(11,26,45,.8);}
+  body.clean .docbar a{border-bottom:1px solid rgba(11,26,45,.3);padding-bottom:2px;}
+  body.clean .docbar a:hover{color:var(--ember);border-bottom-color:var(--ember);}
+
   main{padding:72px 0 40px;}
-  .bar{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:52px;}
-  .bar a{font-size:11.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:var(--word-blue);}
-  .bar a:hover{color:var(--ember);}
+  .docbar{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:52px;}
+  .docbar a{font-size:11.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:var(--word-blue);}
+  .docbar a:hover{color:var(--ember);}
   .blk{margin-bottom:64px;}
   .lab{font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--ember);margin-bottom:20px;}
   h2{font-family:var(--serif-text);font-weight:400;font-size:clamp(26px,3.2vw,34px);line-height:1.2;margin-bottom:14px;}
@@ -89,8 +112,8 @@
   body.burn{background:var(--midnight);color:var(--parchment);}
   body.burn .lede{color:rgba(247,243,236,.88);}
   body.burn .lab{color:var(--flame);}
-  body.burn .bar a{color:var(--parchment);}
-  body.burn .bar a:hover{color:var(--flame);}
+  body.burn .docbar a{color:var(--parchment);}
+  body.burn .docbar a:hover{color:var(--flame);}
   body.burn .spec{background:rgba(247,243,236,.05);border-color:rgba(247,243,236,.22);}
   body.burn .spec th,body.burn .spec td{border-bottom-color:rgba(247,243,236,.18);}
   body.burn .spec th{color:rgba(247,243,236,.8);}
@@ -137,16 +160,19 @@
   </video>
   <div class="scrim"></div>
   <div class="inner">
-    <div class="stageword">TRAIN</div>
-    <h1>School of the <em>Local Church</em></h1>
-    <p class="mission">Training the local church to know their authority in Christ and build a real relationship with Jesus.</p>
-    <div class="endorse">A ministry of THE WORD FOR ALL THE WORLD</div>
+    <div class="panel">
+      <div class="stageword">TRAIN</div>
+      <h1>School of the <em>Local Church</em></h1>
+      <p class="mission">Training the local church to know their authority in Christ and build a real relationship with Jesus.</p>
+      <div class="tickrule"><span class="ln"></span><span class="tk"></span><span class="ln"></span></div>
+      <div class="endorse">A ministry of THE WORD FOR ALL THE WORLD</div>
+    </div>
   </div>
 </div>
 
 <main>
   <div class="wrap">
-    <div class="bar">
+    <div class="docbar">
       <a href="/brand/#architecture">&larr; Brand Guide &sect;11</a>
       <a href="/documents/school-of-the-local-church/">Messaging document &rarr;</a>
     </div>
