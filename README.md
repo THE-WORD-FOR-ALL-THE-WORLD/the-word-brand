@@ -1,7 +1,11 @@
 # THE WORD — Brand Portal
 
-Private internal brand site for **THE WORD FOR ALL THE WORLD**, published at
-**https://brand.theword.world** via Cloudflare Pages and protected by Cloudflare Access.
+Brand site for **THE WORD FOR ALL THE WORLD**, published at
+**https://brand.theword.world** via Cloudflare Pages.
+
+The site is publicly readable and open to crawlers, including AI assistants. You can hand
+`https://brand.theword.world` (or `https://brand.theword.world/llms.txt`) to Claude, ChatGPT,
+or any other tool as a link and it will be able to read the whole brand system.
 
 ## Structure
 
@@ -15,8 +19,10 @@ Private internal brand site for **THE WORD FOR ALL THE WORLD**, published at
 │   ├── fonts/
 │   └── images/
 ├── archive/            # Retired versions of guides
-├── _headers            # Cloudflare Pages headers (noindex)
-└── robots.txt          # Blocks search crawlers
+├── _headers            # Cloudflare Pages headers
+├── robots.txt          # Allows all crawlers, points to the sitemap
+├── sitemap.xml         # Every public page
+└── llms.txt            # Machine-readable index for AI assistants
 ```
 
 Each guide lives in its own folder as `index.html`, so `brand/index.html` is served at
@@ -34,11 +40,12 @@ Each guide lives in its own folder as `index.html`, so `brand/index.html` is ser
    output directory: `/`. Deploy.
 2. **Custom domain**: In the Pages project → Custom domains → add `brand.theword.world`
    (the `theword.world` zone is already on Cloudflare, so this is one click).
-3. **Access**: Zero Trust → Access → Applications → Add application → Self-hosted.
-   Protect **both** `brand.theword.world` and the `*.pages.dev` domain (add both as
-   application domains). Policy: Allow → Emails / email domain of the team.
-   Identity: One-time PIN and/or Google login.
-4. **Disable automatic `pages.dev` indexing**: already handled by `robots.txt` + `_headers`.
+3. **Access**: the site is intentionally public so AI tools and search engines can read it.
+   Do **not** put a Cloudflare Access application in front of `brand.theword.world`. If one
+   exists, remove it (Zero Trust → Access → Applications), otherwise every crawler gets the
+   login page instead of the site.
+4. **Indexing**: allowed via `robots.txt`, `sitemap.xml`, and the per-page `robots` meta tag.
+   Add new pages to `sitemap.xml` and `llms.txt` when you create them.
 
 ## Conventions
 

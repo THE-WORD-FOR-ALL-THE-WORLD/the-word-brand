@@ -1,0 +1,34 @@
+# THE WORD FOR ALL THE WORLD — Brand Portal
+
+> The canonical brand system for THE WORD FOR ALL THE WORLD: visual identity,
+> voice and messaging, and per-initiative brand guides. Point an AI assistant at
+> this site to have it write, design, or review anything on-brand.
+
+Brand tokens: midnight `#0B1A2D`, word blue `#023D6F`, parchment `#F7F3EC`,
+flame `#F85842`, ember `#C13A24`.
+Typefaces: DM Serif Display (headlines), DM Serif Text, DM Sans (body).
+Standing brand law: text over video or photo footage uses a midnight scrim with
+white type only, never Flame.
+
+## Core guides
+
+- [Brand Guide](https://brand.theword.world/brand): Full visual identity — logo usage, color system, typography, layout, and imagery rules.
+- [Messaging Guide](https://brand.theword.world/brand/messaging): Voice, tone, vocabulary, and how we speak to every audience.
+
+## Initiative brand guides
+
+- [Initiative Brand Guides index](https://brand.theword.world/letterhead): Hub for each initiative's own brand expression under the parent brand.
+- [The EVERY1 Movement](https://brand.theword.world/letterhead/every1)
+- [Revival To My City](https://brand.theword.world/letterhead/revival-to-my-city)
+- [School of the Local Church](https://brand.theword.world/letterhead/school-of-the-local-church)
+
+## Initiative messaging documents
+
+- [Documents index](https://brand.theword.world/documents): Initiative messaging documents in ordinance form.
+- [The EVERY1 Movement](https://brand.theword.world/documents/every1)
+- [Revival To My City](https://brand.theword.world/documents/revival-to-my-city)
+- [School of the Local Church](https://brand.theword.world/documents/school-of-the-local-church)
+
+## Optional
+
+- [Portal homepage](https://brand.theword.world/): Card index of every document in the system.
