@@ -1,12 +1,12 @@
 {
-  "version": "5.5",
+  "version": "5.6",
   "messagingVersion": "1.0",
   "updated": "2026-08-15",
   "authority": "canonical",
   "rule": "Use these assets. Never generate photography or video of people or ministry, and never substitute stock. If the asset you need is not listed, request it and leave the slot empty.",
   "counts": {
-    "total": 42,
-    "approved": 41,
+    "total": 48,
+    "approved": 47,
     "counterExamples": 1
   },
   "assets": [
@@ -323,6 +323,90 @@
       "name": "Wordmark over photography"
     },
     {
+      "file": "assets/signatures/joel-zimmer-display.png",
+      "url": "https://brand.theword.world/assets/signatures/joel-zimmer-display.png",
+      "kind": "image",
+      "group": "signatures",
+      "bytes": 1613345,
+      "status": "approved",
+      "grounds": [
+        "parchment",
+        "white"
+      ],
+      "note": "Transparent PNG of Joel Zimmer's display signature, 1200px tall. Same rule: SVG unless the destination refuses it.",
+      "name": "Signature, Joel Zimmer, display, raster"
+    },
+    {
+      "file": "assets/signatures/joel-zimmer-display.svg",
+      "url": "https://brand.theword.world/assets/signatures/joel-zimmer-display.svg",
+      "kind": "vector",
+      "group": "signatures",
+      "bytes": 15556,
+      "status": "approved",
+      "grounds": [
+        "parchment",
+        "white"
+      ],
+      "note": "The fastest of the three, with a high sweeping stroke arcing back over the last name. It carries the most character at large sizes. Not for small settings, where the arc closes up and reads as a smudge.",
+      "name": "Signature, Joel Zimmer, display"
+    },
+    {
+      "file": "assets/signatures/joel-zimmer-extended.png",
+      "url": "https://brand.theword.world/assets/signatures/joel-zimmer-extended.png",
+      "kind": "image",
+      "group": "signatures",
+      "bytes": 1536121,
+      "status": "approved",
+      "grounds": [
+        "parchment",
+        "white"
+      ],
+      "note": "Transparent PNG of Joel Zimmer's extended signature, 1200px tall. Same rule: SVG unless the destination refuses it.",
+      "name": "Signature, Joel Zimmer, extended, raster"
+    },
+    {
+      "file": "assets/signatures/joel-zimmer-extended.svg",
+      "url": "https://brand.theword.world/assets/signatures/joel-zimmer-extended.svg",
+      "kind": "vector",
+      "group": "signatures",
+      "bytes": 18440,
+      "status": "approved",
+      "grounds": [
+        "parchment",
+        "white"
+      ],
+      "note": "The widest of the three, with a trailing stroke carrying almost a third of the total width. Use it where the signature line is wide and the default would leave the rule half empty.",
+      "name": "Signature, Joel Zimmer, extended"
+    },
+    {
+      "file": "assets/signatures/joel-zimmer.png",
+      "url": "https://brand.theword.world/assets/signatures/joel-zimmer.png",
+      "kind": "image",
+      "group": "signatures",
+      "bytes": 1555433,
+      "status": "approved",
+      "grounds": [
+        "parchment",
+        "white"
+      ],
+      "note": "Transparent PNG of Joel Zimmer's default signature, 1200px tall. For the places that cannot take SVG: Google Docs, PDF and e-sign fields, email signatures. Prefer the SVG everywhere else.",
+      "name": "Signature, Joel Zimmer, raster"
+    },
+    {
+      "file": "assets/signatures/joel-zimmer.svg",
+      "url": "https://brand.theword.world/assets/signatures/joel-zimmer.svg",
+      "kind": "vector",
+      "group": "signatures",
+      "bytes": 14724,
+      "status": "approved",
+      "grounds": [
+        "parchment",
+        "white"
+      ],
+      "note": "Joel Zimmer's default signature. The most upright and open of the three, with the largest J bowl and the clearest gap between the names, so it is the one to place on documents and letterhead unless there is a reason to reach for another. Vector master: scale it, never redraw it.",
+      "name": "Signature, Joel Zimmer"
+    },
+    {
       "file": "assets/signatures/nathan-zimmer.png",
       "url": "https://brand.theword.world/assets/signatures/nathan-zimmer.png",
       "kind": "image",
@@ -431,7 +515,7 @@
         "parchment",
         "white"
       ],
-      "note": "The default signature. Cleanest of the three full forms and the most legible, so it is the one to use on documents and letterhead unless there is a reason to reach for another. Vector master: scale it, never redraw it.",
+      "note": "Nathan Zimmer's default signature. Cleanest of the three full forms and the most legible, so it is the one to use on documents and letterhead unless there is a reason to reach for another. Vector master: scale it, never redraw it.",
       "name": "Signature, Nathaniel Zimmer"
     },
     {

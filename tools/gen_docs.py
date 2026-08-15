@@ -169,7 +169,7 @@ DOC_PAGE = """
 # no master published yet gets the empty space above the rule, which is what an unsigned
 # line looks like. Add the file path here the day the master lands in assets/signatures/.
 SIGNATORIES = [
-    ("Joel Zimmer", "Approved and Recorded", None),
+    ("Joel Zimmer", "Approved and Recorded", "/assets/signatures/joel-zimmer.svg"),
     ("Nathan Zimmer", "Approved and Recorded", "/assets/signatures/nathaniel-zimmer.svg"),
 ]
 

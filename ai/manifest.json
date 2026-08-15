@@ -2,7 +2,7 @@
   "schemaVersion": "1.0",
   "name": "THE WORD Brand System",
   "organization": "THE WORD FOR ALL THE WORLD",
-  "version": "5.5",
+  "version": "5.6",
   "messagingVersion": "1.0",
   "updated": "2026-08-15",
   "issued": "August 2026",
@@ -84,8 +84,8 @@
       "name": "brand-system.md",
       "url": "https://brand.theword.world/ai/brand-system.md",
       "description": "The complete brand standard as one document.",
-      "bytes": 32037,
-      "sha256": "ac921a7ff6be549410854a87ba8a74b8481f3479f3d0fd832862140c9f96432e"
+      "bytes": 32508,
+      "sha256": "6f1718874cf975ce29a427eb818e532a72117ed0c8ac321f4b155737d811406f"
     },
     {
       "name": "SKILL.md",
@@ -99,42 +99,42 @@
       "url": "https://brand.theword.world/ai/tokens.json",
       "description": "Colors, typography, system tokens and states.",
       "bytes": 4010,
-      "sha256": "83be07d2964c2c2dde6f3bf8bd27ff22522a67426943f274c8a9a1ea7b0c0d8c"
+      "sha256": "1ed316a3efd6e9ca19ffaaa01b0ff80c139332ce4ef0b5a1f1010b9ec7ba7166"
     },
     {
       "name": "audit.md",
       "url": "https://brand.theword.world/ai/audit.md",
       "description": "The brand audit rubric and report template.",
       "bytes": 7516,
-      "sha256": "f90cf65002c6a2921427eb93bd6a2cb36d9ffdd5701f0e644b4481c70c6feefa"
+      "sha256": "ad88eeec39e8c6931598a2f361b017c84a2aea7dcd945b664989c956446669b6"
     },
     {
       "name": "components.json",
       "url": "https://brand.theword.world/ai/components.json",
       "description": "Component specifications, resolved against current tokens.",
       "bytes": 11048,
-      "sha256": "4d99cce88eb6780e15af995278b97bc4d91ba986af0ba58b874fa80f2b7dcbaa"
+      "sha256": "22da814ab4ebaf35342b9dc6d466ff49e26cbdfb34e519247627cc31a58bedbf"
     },
     {
       "name": "assets.json",
       "url": "https://brand.theword.world/ai/assets.json",
       "description": "Approved logos, photography, and video, with usage rules.",
-      "bytes": 22189,
-      "sha256": "d9e0b1e4da7702dd3abd1cbc98b48beed40f163fd0c712db6955fec80682b338"
+      "bytes": 25613,
+      "sha256": "c016158a8917bc18ff8f6ca8cb06757290846c6724ca250c5a9b8fbabba673c1"
     },
     {
       "name": "approved-examples.md",
       "url": "https://brand.theword.world/ai/approved-examples.md",
       "description": "Worked output that passes the audit.",
       "bytes": 5682,
-      "sha256": "954518e2dacdaabb652efbff3a57eece27053f7246aac096714796af56d1d2ef"
+      "sha256": "791a62d6fca5b8518c45914a2db94996a4f7e66267b7640103114437bce7b885"
     },
     {
       "name": "anti-patterns.md",
       "url": "https://brand.theword.world/ai/anti-patterns.md",
       "description": "What not to do, including every DON'T and every banned word.",
       "bytes": 8422,
-      "sha256": "200ddff76c1dac0e9b3636e1bce963c1f0ed1d341878031b53b3faa090c7c138"
+      "sha256": "8a6383cf4e3123e78c23385962d46f7088ff722cc8fc5da3a093f27563cebb7b"
     }
   ],
   "extraResources": []

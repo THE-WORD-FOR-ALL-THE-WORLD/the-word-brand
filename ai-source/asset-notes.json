@@ -57,7 +57,7 @@
         "parchment",
         "white"
       ],
-      "note": "The default signature. Cleanest of the three full forms and the most legible, so it is the one to use on documents and letterhead unless there is a reason to reach for another. Vector master: scale it, never redraw it."
+      "note": "Nathan Zimmer's default signature. Cleanest of the three full forms and the most legible, so it is the one to use on documents and letterhead unless there is a reason to reach for another. Vector master: scale it, never redraw it."
     },
     "assets/signatures/nathaniel-zimmer.png": {
       "name": "Signature, Nathaniel Zimmer, raster",
@@ -121,6 +121,60 @@
         "white"
       ],
       "note": "Transparent PNG of the short form, 1200px tall. Same rule: SVG unless the destination refuses it."
+    },
+    "assets/signatures/joel-zimmer.svg": {
+      "name": "Signature, Joel Zimmer",
+      "status": "approved",
+      "grounds": [
+        "parchment",
+        "white"
+      ],
+      "note": "Joel Zimmer's default signature. The most upright and open of the three, with the largest J bowl and the clearest gap between the names, so it is the one to place on documents and letterhead unless there is a reason to reach for another. Vector master: scale it, never redraw it."
+    },
+    "assets/signatures/joel-zimmer.png": {
+      "name": "Signature, Joel Zimmer, raster",
+      "status": "approved",
+      "grounds": [
+        "parchment",
+        "white"
+      ],
+      "note": "Transparent PNG of Joel Zimmer's default signature, 1200px tall. For the places that cannot take SVG: Google Docs, PDF and e-sign fields, email signatures. Prefer the SVG everywhere else."
+    },
+    "assets/signatures/joel-zimmer-display.svg": {
+      "name": "Signature, Joel Zimmer, display",
+      "status": "approved",
+      "grounds": [
+        "parchment",
+        "white"
+      ],
+      "note": "The fastest of the three, with a high sweeping stroke arcing back over the last name. It carries the most character at large sizes. Not for small settings, where the arc closes up and reads as a smudge."
+    },
+    "assets/signatures/joel-zimmer-display.png": {
+      "name": "Signature, Joel Zimmer, display, raster",
+      "status": "approved",
+      "grounds": [
+        "parchment",
+        "white"
+      ],
+      "note": "Transparent PNG of Joel Zimmer's display signature, 1200px tall. Same rule: SVG unless the destination refuses it."
+    },
+    "assets/signatures/joel-zimmer-extended.svg": {
+      "name": "Signature, Joel Zimmer, extended",
+      "status": "approved",
+      "grounds": [
+        "parchment",
+        "white"
+      ],
+      "note": "The widest of the three, with a trailing stroke carrying almost a third of the total width. Use it where the signature line is wide and the default would leave the rule half empty."
+    },
+    "assets/signatures/joel-zimmer-extended.png": {
+      "name": "Signature, Joel Zimmer, extended, raster",
+      "status": "approved",
+      "grounds": [
+        "parchment",
+        "white"
+      ],
+      "note": "Transparent PNG of Joel Zimmer's extended signature, 1200px tall. Same rule: SVG unless the destination refuses it."
     },
     "assets/images/hero-congregation.jpg": {
       "status": "approved",
