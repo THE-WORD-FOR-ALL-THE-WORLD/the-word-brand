@@ -6,8 +6,9 @@ Private internal brand site for **THE WORD FOR ALL THE WORLD**, published at
 ## Structure
 
 ```
-├── index.html          # Portal homepage (document hub)
-├── brand/index.html    # Brand Guide          → brand.theword.world/brand
+├── index.html            # Portal homepage (document hub)
+├── brand/index.html      # Brand Guide       → brand.theword.world/brand
+├── brand/messaging/index.html  # Messaging Guide → brand.theword.world/brand/messaging
 ├── templates/          # Document templates   → brand.theword.world/templates/<name>
 ├── assets/
 │   ├── logos/
@@ -45,3 +46,8 @@ Each guide lives in its own folder as `index.html`, so `brand/index.html` is ser
   parchment `#F7F3EC`, flame `#F85842`, ember `#C13A24`.
 - Fonts: DM Serif Display (headlines), DM Serif Text, DM Sans (body) — loaded from Google Fonts.
 - Old versions of a guide go to `archive/` rather than being deleted.
+- Every page shares the same chrome: `.sitenav` (wordmark + Home / Brand Guide / Messaging,
+  `.active` on the current page) over a full-bleed video hero, and the unified midnight
+  footer (wordmark · tagline · domain). When adding a page, copy the chrome from an
+  existing guide and add its nav link to **all** pages.
+- Text over footage: midnight scrim + white type only — never Flame (Brand Guide law).

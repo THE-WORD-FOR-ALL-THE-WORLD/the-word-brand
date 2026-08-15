@@ -33,6 +33,7 @@
   nav .links{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:12px 28px;font-size:12.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;}
   nav .links a{color:rgba(247,243,236,.9);text-decoration:none;}
   nav .links a:hover{color:var(--white);}
+  nav .links a.active{color:var(--white);border-bottom:1px solid rgba(255,255,255,.6);padding-bottom:2px;}
 
   /* hero — full-bleed video */
   .hero{position:relative;min-height:92vh;display:flex;align-items:center;justify-content:center;text-align:center;background:var(--midnight);color:var(--parchment);overflow:hidden;}
@@ -79,8 +80,9 @@
       <img src="/assets/logos/the-word-for-all-the-world.png" alt="THE WORD FOR ALL THE WORLD">
     </a>
     <div class="links">
+      <a href="/" class="active">Home</a>
       <a href="/brand/">Brand Guide</a>
-      <a href="#guides">Guides</a>
+      <a href="/brand/messaging/">Messaging</a>
     </div>
   </div>
 </nav>
@@ -110,9 +112,17 @@
         </div>
         <div class="go">Open guide →</div>
       </a>
-      <div class="card soon">
+      <a class="card" href="/brand/messaging/">
         <div>
           <div class="num">02</div>
+          <h2>Messaging Guide</h2>
+          <p>What we say, to whom, and in what words. The single source of truth for language.</p>
+        </div>
+        <div class="go">Open guide →</div>
+      </a>
+      <div class="card soon">
+        <div>
+          <div class="num">03</div>
           <h2>Letterhead</h2>
           <p>Official letterhead standards and downloadable templates.</p>
         </div>
@@ -120,7 +130,7 @@
       </div>
       <div class="card soon">
         <div>
-          <div class="num">03</div>
+          <div class="num">04</div>
           <h2>Templates</h2>
           <p>Employment letters, partner reports, and other document templates.</p>
         </div>
@@ -128,7 +138,7 @@
       </div>
       <div class="card soon">
         <div>
-          <div class="num">04</div>
+          <div class="num">05</div>
           <h2>Assets</h2>
           <p>Logos, fonts, and imagery for approved use.</p>
         </div>
@@ -140,7 +150,8 @@
 
 <footer>
   <div class="wrap">
-    <img src="/assets/logos/the-word-for-all-the-world.png" alt="THE WORD FOR ALL THE WORLD">
+    <a href="/" aria-label="THE WORD FOR ALL THE WORLD — portal home"><img src="/assets/logos/the-word-for-all-the-world.png" alt="THE WORD FOR ALL THE WORLD"></a>
+    <span>Every tribe. Every tongue. Every nation. EVERY1.</span>
     <span>brand.theword.world · Internal use</span>
   </div>
 </footer>

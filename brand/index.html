@@ -64,6 +64,7 @@
   .sitenav .links{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:12px 28px;font-size:12.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;}
   .sitenav .links a{color:rgba(247,243,236,.9);text-decoration:none;}
   .sitenav .links a:hover{color:var(--white);}
+  .sitenav .links a.active{color:var(--white);border-bottom:1px solid rgba(255,255,255,.6);padding-bottom:2px;}
 
   /* cover — full-bleed video hero, matches portal homepage */
   .cover{position:relative;min-height:92vh;display:flex;align-items:center;justify-content:center;text-align:center;background:var(--midnight);color:var(--parchment);overflow:hidden;}
@@ -266,8 +267,9 @@
       <img src="/assets/logos/the-word-for-all-the-world.png" alt="THE WORD FOR ALL THE WORLD">
     </a>
     <div class="links">
-      <a href="/">Portal</a>
-      <a href="#toc">Contents</a>
+      <a href="/">Home</a>
+      <a href="/brand/" class="active">Brand Guide</a>
+      <a href="/brand/messaging/">Messaging</a>
     </div>
   </div>
 </nav>
@@ -804,7 +806,8 @@
 <footer>
   <div class="wrap">
     <a href="/" aria-label="THE WORD FOR ALL THE WORLD — portal home"><img src="/assets/logos/the-word-for-all-the-world.png" alt="THE WORD FOR ALL THE WORLD"></a>
-    <span>Brand Guide v4.4 · August 2026 · Every tribe. Every tongue. Every nation. EVERY1.</span>
+    <span>Every tribe. Every tongue. Every nation. EVERY1.</span>
+    <span>brand.theword.world · Internal use</span>
   </div>
 </footer>
 
