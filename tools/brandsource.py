@@ -120,11 +120,10 @@ def parse_brand_guide(path: str = BRAND_GUIDE) -> dict:
     out["issued"] = require(
         re.search(r"<strong>Issued</strong>\s*([^<]+)<", s), "the issue date", path
     ).group(1).strip()
-    out["supersedes"] = strip_tags(
-        require(
-            re.search(r"<strong>Supersedes</strong>\s*([^<]+)<", s), "the supersedes line", path
-        ).group(1)
-    )
+    # Optional. The guide stopped defining itself against the retired PDF at v5.0;
+    # older archived versions still carry the line, so the field survives when present.
+    sup = re.search(r"<strong>Supersedes</strong>\s*([^<]+)<", s)
+    out["supersedes"] = strip_tags(sup.group(1)).strip() if sup else ""
     out["appliesTo"] = [
         p.strip()
         for p in strip_tags(
@@ -170,7 +169,7 @@ def parse_brand_guide(path: str = BRAND_GUIDE) -> dict:
     )
 
     # --- proportion rule
-    ratio = re.search(r'<h3>Proportion — ([^<]+)</h3>', s)
+    ratio = re.search(r'<h3>Proportion\s*[—:]\s*([^<]+)</h3>', s)
     out["proportion"] = ratio.group(1).strip() if ratio else "60 / 30 / 10"
 
     # --- system tokens and states (§04)
@@ -228,7 +227,11 @@ def parse_brand_guide(path: str = BRAND_GUIDE) -> dict:
     bodies = re.findall(r'<section id="[^"]+".*?</section>', s, re.S)
     for sid, eyebrow, body in zip(ids, eyebrows, bodies):
         label = strip_tags(eyebrow)
-        num, _, title = label.partition("—")
+        # v5.0 moved the eyebrow separator from an em dash to a middot.
+        # Archived guides still use the em dash, so both are accepted.
+        parts = re.split(r"\s[—·]\s", label, maxsplit=1)
+        num = parts[0].strip()
+        title = parts[1].strip() if len(parts) > 1 else ""
         entry = {"id": sid, "number": num.strip(), "title": title.strip() or label}
         entry.update(_section_prose(body))
         sections.append(entry)
@@ -251,13 +254,24 @@ def parse_brand_guide(path: str = BRAND_GUIDE) -> dict:
     changelog_section = require(
         re.search(r'<section id="changelog".*?</section>', s, re.S), "the changelog section", path
     ).group(0)
+    # v5.0 replaced the element/was/now comparison against the retired PDF with a
+    # release record: version, date, owner, what changed, and who approved it.
     changes = []
     for m in re.finditer(
-        r"<tr><td>(.*?)</td><td>(.*?)</td><td>(.*?)</td></tr>", changelog_section, re.S
+        r"<tr><td>(.*?)</td><td>(.*?)</td><td>(.*?)</td><td>(.*?)</td><td>(.*?)</td></tr>",
+        changelog_section,
+        re.S,
     ):
         changes.append(
-            {"element": strip_tags(m.group(1)), "was": strip_tags(m.group(2)), "now": strip_tags(m.group(3))}
+            {
+                "version": strip_tags(m.group(1)),
+                "date": strip_tags(m.group(2)),
+                "owner": strip_tags(m.group(3)),
+                "changed": strip_tags(m.group(4)),
+                "approved": strip_tags(m.group(5)),
+            }
         )
+    require_count(changes, 1, "changelog rows", path)
     out["changelog"] = changes
     trail = re.search(r"Revision trail:\s*(.*?)</p>", changelog_section, re.S)
     out["revisionTrail"] = strip_tags(trail.group(1)) if trail else ""

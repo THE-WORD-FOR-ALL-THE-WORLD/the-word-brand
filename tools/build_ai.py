@@ -184,12 +184,15 @@ def build_brand_system(brand: dict, messaging: dict, tokens: dict, updated: str,
         f"<{SITE}/brand> and <{SITE}/brand/messaging>.",
     )
 
+    # The guide stopped defining itself against the retired PDF at v5.0.
+    supersedes_clause = f"Supersedes {brand['supersedes']}. " if brand["supersedes"] else ""
     md += (
         "This document is authoritative. Where any older deck, site, PDF, or remembered rule "
         "conflicts with it, this document wins. It governs work for THE WORD FOR ALL THE WORLD and "
         "for its three initiatives: Revival To My City, the EVERY1 Movement, and the School of the "
         "Local Church.\n\n"
-        f"Issued {brand['issued']}. Supersedes {brand['supersedes']}. "
+        f"Issued {brand['issued']}. "
+        f"{supersedes_clause}"
         f"Applies to {', '.join(brand['appliesTo'])}.\n\n"
         "Governance: this system changes one way. A proposed edit in writing, approval by Joel "
         "Zimmer and Nathan Zimmer, a version bump, and a changelog entry. No silent edits.\n\n"
@@ -388,9 +391,18 @@ def build_brand_system(brand: dict, messaging: dict, tokens: dict, updated: str,
 
     # 15. Version history
     md += "## 15. Version history\n\n"
-    md += f"### Brand Guide v{brand['version']}, against {brand['supersedes']}\n\n"
-    md += md_table(["Element", "Was", "Now"], [[c["element"], c["was"], c["now"]] for c in brand["changelog"]])
-    md += f"\n**Revision trail.** {brand['revisionTrail']}\n\n"
+    heading = f"### Brand Guide v{brand['version']}"
+    if brand["supersedes"]:
+        heading += f", against {brand['supersedes']}"
+    md += heading + "\n\n"
+    md += md_table(
+        ["Version", "Date", "Owner", "Changed", "Approved"],
+        [[c["version"], c["date"], c["owner"], c["changed"], c["approved"]] for c in brand["changelog"]],
+    )
+    if brand["revisionTrail"]:
+        md += f"\n**Revision trail.** {brand['revisionTrail']}\n\n"
+    else:
+        md += "\n"
     md += f"### Messaging Guide v{messaging['version']}\n\n"
     md += md_table(
         ["Version", "Date", "Change"],

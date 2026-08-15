@@ -1,12 +1,12 @@
 # THE WORD FOR ALL THE WORLD: Brand System
 
-> **Brand system v4.5 · Messaging guide v1.0 · Updated 2026-08-15**
+> **Brand system v5.0 · Messaging guide v1.0 · Updated 2026-08-15**
 > Canonical source: <https://brand.theword.world/ai/manifest.json>
 > The complete standard, assembled for machine reading. The human guides are at <https://brand.theword.world/brand> and <https://brand.theword.world/brand/messaging>.
 
 This document is authoritative. Where any older deck, site, PDF, or remembered rule conflicts with it, this document wins. It governs work for THE WORD FOR ALL THE WORLD and for its three initiatives: Revival To My City, the EVERY1 Movement, and the School of the Local Church.
 
-Issued August 2026. Supersedes Branding.pdf — color & typography. Applies to theword.world, RTMC, EVERY1, SLC.
+Issued August 2026. Applies to theword.world, RTMC, EVERY1, SLC.
 
 Governance: this system changes one way. A proposed edit in writing, approval by Joel Zimmer and Nathan Zimmer, a version bump, and a changelog entry. No silent edits.
 
@@ -48,30 +48,30 @@ Received before the ministry had a name for what it would become. It is quoted e
 
 ## 3. The six laws
 
-These are not preferences — they are how THE WORD looks, sounds, and carries authority everywhere it appears. Every page, post, slide, and flyer can be tested against them.
+These rules help govern how THE WORD looks, sounds, and carries authority everywhere we appear. Everything we produce is tested against these rules.
 
 ### Law I. Few words, spoken as commands.
 
 We organize everything around a tiny set of imperative declarations. Our three are fixed: CLEAN · BURN · TRAIN. Big statements are short; short statements are big.
 
-- Never more than three to five priorities on any page or deck — if everything is featured, nothing is.
+- Never more than three to five priorities on any page or deck. If everything is featured, nothing is.
 - Priority words sit over full-bleed footage, one bold word per panel, mission line beneath.
 - Each priority links to its own named page. A priority without a destination is decoration.
 
 ### Law II. Everything is a record.
 
-We publish documents, not posts. Field reports, impact reports, devotionals, the prophecy — each carries the marks of a record: a kicker, a dateline, and only official facts.
+We publish documents, not posts. Field reports, impact reports, devotionals, the prophecy: each carries the marks of a record: a kicker, a dateline, and only official facts.
 
 - Every record opens with a letterspaced kicker and closes with a dateline (what · where · when).
-- Statistics come from the official ministry record only — never estimates, never memory (per the Minister Agreement).
+- Statistics come from the official ministry record only, never estimates, never memory (per the Minister Agreement).
 - The record register uses Parchment, hairline rules, and DM Serif Text. It is never decorated.
 
 ### Law III. One house, named front doors.
 
-Revival To My City, EVERY1, and School of the Local Church live as named pages under theword.world — never as scattered websites. The house lends them weight; they lend the house fire.
+Revival To My City, EVERY1, and School of the Local Church live as named pages under theword.world, never as scattered websites. The house lends them weight; they lend the house fire.
 
 - Every sub-brand carries the endorsement line: "A ministry of THE WORD FOR ALL THE WORLD."
-- Vanity domains (revivaltmc.com) redirect into their page — they never become separate homes.
+- Vanity domains (revivaltmc.com) redirect into their page. They never become separate homes.
 - One recorded exception: the future EVERY1 app (YouVersion model, §09).
 
 ### Law IV. The institution signs its work.
@@ -79,28 +79,28 @@ Revival To My City, EVERY1, and School of the Local Church live as named pages u
 Authority is anchored in named people. Vision statements close with real handwritten signatures. Reports name who filed them. The institution speaks first; a person is its voice.
 
 - The About page vision statement always closes with Joel's and Nathan's actual signatures.
-- Testimonies, field reports, and teachings carry a name — nothing important is anonymous.
+- Testimonies, field reports, and teachings carry a name. Nothing important is anonymous.
 - Signatures are scanned ink, never a script font pretending to be ink.
 
 ### Law V. A formal frame around burning content.
 
-Composition is centered, spacious, and disciplined — navy and paper grounds, letterspaced labels, sentence-case serif headlines, hairline rules. The formality is the frame; the footage, the fire, and the testimony are the picture.
+Composition is centered, spacious, and disciplined: navy and paper grounds, letterspaced labels, sentence-case serif headlines, hairline rules. The formality is the frame; the footage, the fire, and the testimony are the picture.
 
 - Flame never exceeds a tenth of any composition and never carries text (§03).
 - Serif headlines are sentence case with at most one italic word; all-caps belongs to the wordmark and labels.
-- Generous whitespace is mandatory — crowding reads as hype, and we are never hype.
+- Generous whitespace is mandatory. Crowding reads as hype, and we are never hype.
 
 ### Law VI. Real over staged. Always.
 
-Our homepage already says it: Real People, Real Fire, & Real Change. Every image and every frame of video is documentary — from our conferences, our crusades, our streets. Nothing stock, nothing staged, nothing borrowed.
+Our homepage already says it: Real People, Real Fire, & Real Change. Every image and every frame of video is documentary, from our conferences, our crusades, our streets. Nothing stock, nothing staged, nothing borrowed.
 
 - No stock photography or stock footage, ever. An empty slot is better than a borrowed moment.
-- Every person is shown with dignity — as a co-laborer, never an object of pity (§06).
+- Every person is shown with dignity, as a co-laborer, never an object of pity (§06).
 - Raw beats polished: honest capture over produced perfection, per the ministry's own voice rules.
 
 ## 4. Color
 
-Two colors carried over, three new, gold deliberately excluded — Flame does the work a federal palette gives to gold.
+Five colors that do one job together. Midnight holds the room and carries the institution. Word Blue supports it where a second structural voice is needed. Parchment is the ground everything rests on, so the page reads as paper rather than screen. Flame is the fire, used sparingly enough that it still means something. Ember is that same fire brought down to text size, where it has to stay readable.
 
 | Token | Name | Hex | Role |
 | --- | --- | --- | --- |
@@ -113,27 +113,25 @@ Two colors carried over, three new, gold deliberately excluded — Flame does th
 
 **Proportion, 60 / 30 / 10.** Parchment about 60 percent, Midnight about 30 percent, Flame a tenth or less. If Flame covers more than a tenth of a layout, the institution disappears and the design reads as a startup.
 
-**Retired from brand use:** `#0077AA` (cyan), `#5FAD56` (green (functional success state only))
-
 ## 5. System tokens and states
 
-Interaction states, structural values, and functional colors — fixed here so no one improvises them per project.
+These are the named values to build with. Every one is a design token: a decision made once here and referenced everywhere else by name, so nobody re-picks it per project. The machine-readable copy is published at /ai/tokens.json.
 
 | Token | Value | Rule |
 | --- | --- | --- |
-| Button hover | #A62F1B | Ember deepened ~10%. State-only — never a palette color. |
+| Button hover | #A62F1B | Ember deepened ~10%. State-only. Never a palette color. |
 | Focus ring | 2px Ember (Flame on dark), 3px offset | Visible on every interactive element. Never removed. |
 | Success state | #5FAD56 | Forms and dashboards only. Never in brand layouts. |
 | Photo/video scrim | Midnight gradient, ~70% at text | Required under any text on imagery (§07). |
 | Corner radius | 3px buttons · 4px cards · 6px frames | Three steps, no others. |
-| Muted text | 80% Midnight (light grounds) · 75% Parchment (dark) | Captions and metadata. Nothing lighter — it fails contrast. |
+| Muted text | 80% Midnight (light grounds) · 75% Parchment (dark) | Captions and metadata. Nothing lighter. It fails contrast. |
 | Breakpoint | 720px | Single-column below; grids above. |
 
 ## 6. Typography
 
-DM Serif and DM Sans were drawn as companions on shared proportions — that's why the page reads as one smooth rhythm. All free on Google Fonts, for every volunteer, partner, and field team.
+DM Serif and DM Sans were drawn as companions on shared proportions. That is why the page reads as one smooth rhythm. All free on Google Fonts, for every volunteer, partner, and field team.
 
-- **DM Serif Display.** Large headlines, 36px and up. Fine, engraved hairlines. Regular + Italic only — no bold exists.
+- **DM Serif Display.** Large headlines, 36px and up. Fine, engraved hairlines. Regular + Italic only. No bold exists.
 - **DM Serif Text.** Serif moments from 22–36px: pull quotes, the prophecy, document headings. Regular + Italic only.
 - **DM Sans.** Everything functional: body, nav, labels, buttons, sub-brand materials. Weights 400–700 with true italics.
 
@@ -143,51 +141,50 @@ Stacks as the site renders them:
 - Serif text: `'DM Serif Text', Georgia, 'Times New Roman', serif`
 - Sans: `'DM Sans', -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif`
 
-Proxima Nova is fully retired — paid license, and DM Sans covers its role. Fallbacks: Georgia for the serifs, system sans for DM Sans.
+Three faces, and no others. All three come from Google Fonts, so every volunteer, partner, and field team can install them free. Where they cannot load, the fallbacks are Georgia for the serifs and the system sans for DM Sans. Proxima Nova is retired and is not used again.
 
 ## 7. Logo
 
-**The wordmark stays.** The wordmark and DM Sans are geometric cousins — the mark reads as family beside the new type, and its letterspaced sub-line already matches the eyebrow style. No redraw. The serif never enters the lockup, and the wordmark owns all-caps in its zone.
-
-No Proxima Nova license is required for the existing artwork — a logo is an artifact, not live text. Approved masters: SVG plus 2× / 3× PNG in White, Midnight, and Word Blue. If the wordmark is ever re-cut, DM Sans ExtraBold is the approved face.
+**The wordmark stays.** The wordmark is fixed and is not redrawn. It sits beside DM Sans as family, because both are built on the same geometry, and its letterspaced sub-line already matches the eyebrow style used throughout this guide. The serif never enters the lockup. Inside the wordmark zone, the mark owns all-caps.
 
 ## 8. Photography and video
 
-Law VI applied. Our imagery is documentary evidence of what God is doing — captured in our conferences, our crusades, and our streets. It is treated like the record it is.
+Law VI applied. Our imagery is documentary evidence of what God is doing, captured in our conferences, our crusades, and our streets. It is treated like the record it is.
 
-### Photography rules
+### Photography
 
-- **Documentary only.** Real moments from real ministry. No stock photography, ever — an empty slot is better than a borrowed moment.
-- **Dignity is non-negotiable.** Every subject — especially in Uganda, especially children — is portrayed as a co-laborer in the gospel, never an object of pity. No poverty-framing, no exploitation of need. Consent before capture; official media use follows the Minister Agreement.
+- **Documentary only.** Real moments from real ministry. No stock photography, ever. An empty slot is better than a borrowed moment.
+- **Dignity is non-negotiable.** Every subject, especially in Uganda and especially children, is portrayed as a co-laborer in the gospel, never an object of pity. No poverty-framing, no exploitation of need. Consent before capture; official media use follows the Minister Agreement.
 - **Every photo is a record.** Published photography carries a caption in the record register: what happened, place, and date. Names when known and permitted.
-- **Honest color.** Natural grading. No heavy filters, no HDR drama, no artificial warmth — the moment carries the drama.
+- **Honest color.** Natural grading. No heavy filters, no HDR drama, no artificial warmth. The moment carries the drama.
 - **Text needs a scrim.** Type over imagery sits on the Midnight scrim (~70% at the text). White or Parchment text only. Never Flame or Ember text over photography. Logo per §06.
 
-### Video rules
+### Video
 
 - **Footage is the fire.** Full-bleed motion belongs in heroes and priority panels: muted, looping, roughly 6–15 seconds, cut from real field footage.
-- **Captions, always.** Every spoken word is subtitled — DM Sans 500+, on the Midnight scrim bar. Most viewers watch with sound off; captions are also an accessibility requirement.
+- **Captions, always.** Every spoken word is subtitled in DM Sans 500 or heavier, on the Midnight scrim bar. Most viewers watch with sound off; captions are also an accessibility requirement.
 - **Still fallback, always.** Every loop ships with a still frame honored under prefers-reduced-motion and on slow connections.
 - **Lower thirds in the system.** Name and role in DM Sans, letterspaced caps, on the scrim bar, with an optional Flame tick. Nothing animated or bouncing.
-- **Raw beats polished.** Honest capture — a Wednesday-worship phone recording included — is on-brand. Over-produced hype editing, dramatic sound design, and manufactured urgency are not. We are never hype.
-- **Testimonies follow the template:** Before → Encounter → Transformation → Outcome, closing with the person's name and an invitation to respond.
+- **Raw beats polished.** Honest capture is on-brand, a Wednesday-worship phone recording included. Over-produced hype editing, dramatic sound design, and manufactured urgency are not. We are never hype.
 
 ### Field capture standards
 
-- **Shoot every key moment twice** — once vertical for Reels/Stories, once horizontal (16:9) for the website, priority panels, and YouTube. The web starves without wide frames.
+- **Shoot every key moment twice** once vertical for Reels/Stories, once horizontal (16:9) for the website, priority panels, and YouTube. The web starves without wide frames.
 - **Consent is announced and logged.** Hosts announce photography at the start of every session; anyone captured individually (testimonies, portraits) gives explicit permission. One line in the event run-sheet, every event.
-- **Caption at capture, not from memory.** Rename files the same day — YYYY-MM-DD_place_event_## — and keep a one-line log: what happened, where, when, who shot it. No photo publishes without its record.
+- **Caption at capture, not from memory.** Rename files the same day as YYYY-MM-DD_place_event_## and keep a one-line log: what happened, where, when, who shot it. No photo publishes without its record.
 - **Sweep the stage edges before sessions.** Cables, wedges, and water bottles out of the frame line. Tidying is not staging.
 - **Own the golden hour.** Midday under cream canvas runs flat and blown; assign someone to shoot the last 30 minutes of daylight and the evening sessions, every event.
 - **Fill the missing shots:** prayer and ministry moments up close · a Bible passing from one hand to another · testimony portraits · exteriors that establish place · details (open Bible and pen, the offering basket).
 
-Bracketed caption fields are pending verification against the ministry record — Law II applies to captions too.
+Bracketed caption fields are pending verification against the ministry record. Law II applies to captions too.
 
-The photographs above are the ministry's own, from the July 2026 conferences, and set the standard for all future capture. Remaining gradient areas (video hero, DON'T card) are placeholders.
+Both clips above are the ministry's own footage from the July 2026 conferences, playing here exactly as they would in a hero. The three approved loops and their posters are listed at /ai/assets.json.
+
+The photographs above are the ministry's own, from the July 2026 conferences, and set the standard for all future capture. The video frames are the ministry's own conference loops, playing as they would in a hero. The one remaining gradient is the DON’T card, which is a deliberate counter-example.
 
 ## 9. The record
 
-**The prophecy, set as a record.** Law II and Law IV in their purest form. The canonical treatment: short rule · kicker · DM Serif Text italic · dateline · signatures, always on Parchment. Reuse this exact pattern for scripture features, vision statements, and official impact summaries.
+**The record, set as a document.** Law II and Law IV in their purest form. The canonical treatment, in order: short rule, letterspaced kicker, the body in DM Serif Text italic, dateline, signatures. Always on Parchment. Reuse this exact pattern for scripture features, vision statements, and official impact summaries.
 
 Every record carries the marks of a record: a letterspaced kicker, a dateline of what, where, and when, and only official facts. Statistics come from the official ministry record, never estimates and never memory. Signatures are scanned ink, never a script font pretending to be ink.
 
@@ -195,7 +192,7 @@ Every record carries the marks of a record: a letterspaced kicker, a dateline of
 
 ## 10. The house and its named front doors
 
-Law III applied. The outreaches lead in their own moments and always carry the endorsement line. Sub-brand materials are DM Sans–led; the serif appears only where the parent speaks. BURN owns the Flame — EVERY1 uses it most freely; RTMC and SLC hold the ≤10% line.
+Law III applied. The outreaches lead in their own moments and always carry the endorsement line. Sub-brand materials are DM Sans–led; the serif appears only where the parent speaks. BURN owns the Flame. EVERY1 uses it most freely; RTMC and SLC hold the ≤10% line.
 
 | Stage | Initiative | Mission | Brand guide | Messaging document |
 | --- | --- | --- | --- | --- |
@@ -205,7 +202,7 @@ Law III applied. The outreaches lead in their own moments and always carry the e
 
 Every initiative surface carries the endorsement line: *A ministry of THE WORD FOR ALL THE WORLD*
 
-Exception on record: the EVERY1 app follows the YouVersion model and will not visibly promote the parent. Until it ships, EVERY1 follows this guide. RTMC's script-logo exploration ("Revival" cursive) remains open and compatible — the script is custom lettering, not a brand font.
+Exception on record: the EVERY1 app follows the YouVersion model and will not visibly promote the parent. Until it ships, EVERY1 follows this guide. RTMC's script-logo exploration ("Revival" cursive) remains open and compatible. The script is custom lettering, not a brand font.
 
 ## 11. Voice
 
@@ -374,27 +371,22 @@ replace it.
 
 ## 15. Version history
 
-### Brand Guide v4.5, against Branding.pdf — color & typography
+### Brand Guide v5.0
 
-| Element | Was | Now |
-| --- | --- | --- |
-| Primary color | #023D6F | #0B1A2D Midnight; Word Blue kept as secondary |
-| Light ground | #FFFFFF | #F7F3EC Parchment; White for cards & reversed text |
-| Accent | #F85842 | Kept as Flame (non-text only); #C13A24 Ember added for text sizes and primary buttons |
-| Buttons | — | Ember fill + white text (5.4:1, AA); Flame never carries text |
-| Secondary palette | #0077AA, #5FAD56 | Retired; green survives as form success state only |
-| Gold | — | Considered and excluded; Flame performs the accent role |
-| Display type | Proxima Nova Bold | DM Serif Display (≥36px) + DM Serif Text (22–36px); no bold exists |
-| Text & UI type | Proxima Nova Semibold / Regular | DM Sans 400–700 + italics; Proxima fully retired |
-| Logo | Wordmark (Proxima-era artwork) | Retained; grounds & don’ts recorded (§06) |
-| Design language | — | Codified as six native laws (§02), adopted as our own |
-| Photography & video | — | Documentary-only rules, dignity standard, scrim, captions, testimony template (§07) |
-| Field exemplars | Placeholder gradients | Ministry's own July 2026 conference photographs embedded as the §07 standard; capture standards added; captions pending location verification |
-| Document treatments | — | Founding-document pattern, dateline, signatures (§08) |
-| Sub-brand rules | SLC listed as branch | Endorsed house for RTMC / EVERY1 / SLC; app exception recorded |
-| Signatures | Italic names standing in for ink | Signature masters published as approved assets and placed on every initiative document (§08, /signatures) |
-
-**Revision trail.** v2.0 Instrument Serif + DM Sans · v2.1 DM Serif Text + Instrument Sans (rejected — readability) · v2.2 DM companion pairing · v3.0 presentation rebuild with Do/Don't · v3.1 accessibility & integrity revision (Ember buttons, stats relabel, tokens & states) · v4.0 design language codified as six native laws — originally distilled from a compositional analysis of whitehouse.gov (2026), now adopted and owned, with governmental iconography permanently excluded — plus new photography & video rules with rendered examples · v4.1 real field photographs from the July 2026 conferences embedded as exemplars, field capture checklist added · v4.2 readability pass — provenance badges removed from swatches, inherited light-on-light text corrected on all card components, muted-text tokens darkened · v4.3 Do/Don’t reorganized into opposing columns, Tokens & States promoted to its own section (§04), operational checklists removed from the standard · v4.4 Do/Don’t pairs aligned like-for-like — each rule and its violation share a row · v4.5 signature masters published as approved assets, the initiative documents signed in real ink rather than an italic stand-in, and a Signatures page added to the portal.
+| Version | Date | Owner | Changed | Approved |
+| --- | --- | --- | --- | --- |
+| 5.0 | 2026-08-15 | Nathan Zimmer | Guide restated as the single source of truth rather than against the retired PDF: Supersedes line dropped, prophecy moved to the Messaging Guide, governmental-iconography boundary and retired colours moved to the anti-patterns record, voice filter de-duplicated, website example retired, design tokens renamed and moved to §08, colour rationale restated as five colours doing one job, swatches set on one row, changelog rebuilt with owner and approval, em dashes removed throughout. | Joel Zimmer, Nathan Zimmer |
+| 4.5 | 2026-08-15 | Nathan Zimmer | Signature masters published as approved assets, the initiative documents signed in real ink rather than an italic stand-in, and a Signatures page added to the portal. | Joel Zimmer, Nathan Zimmer |
+| 4.4 | not recorded | not recorded | Do/Don’t pairs aligned like-for-like, so each rule and its violation share a row. | not recorded |
+| 4.3 | not recorded | not recorded | Do/Don’t reorganized into opposing columns, Tokens & States promoted to its own section, operational checklists removed from the standard. | not recorded |
+| 4.2 | not recorded | not recorded | Readability pass: provenance badges removed from swatches, inherited light-on-light text corrected on all card components, muted-text tokens darkened. | not recorded |
+| 4.1 | not recorded | not recorded | Real field photographs from the July 2026 conferences embedded as exemplars, field capture checklist added. | not recorded |
+| 4.0 | not recorded | not recorded | Design language codified as six native laws, adopted and owned, with governmental iconography excluded. New photography and video rules added with rendered examples. | not recorded |
+| 3.1 | not recorded | not recorded | Accessibility and integrity revision: Ember buttons, stats relabelled, tokens and states introduced. | not recorded |
+| 3.0 | not recorded | not recorded | Presentation rebuild with Do/Don’t pairs. | not recorded |
+| 2.2 | not recorded | not recorded | DM companion pairing adopted. | not recorded |
+| 2.1 | not recorded | not recorded | DM Serif Text with Instrument Sans trialled and rejected on readability. | not recorded |
+| 2.0 | not recorded | not recorded | Instrument Serif with DM Sans. | not recorded |
 
 ### Messaging Guide v1.0
 

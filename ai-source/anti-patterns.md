@@ -48,7 +48,20 @@ that a designer would not.
 - **Using Parchment as a gray.** It is a warm paper ground, and it is never a neutral fill.
 - **Treating Flame and Ember as interchangeable.** Flame is the non-text accent. Ember is fire at
   text size. Reaching for Flame on type is the single most common color failure.
-- **Reviving a retired color** because it appears in an old file, a deck, or a screenshot.
+- **Reviving a retired color** because it appears in an old file, a deck, or a screenshot. Two are
+  retired by name: `#0077AA` cyan and `#5FAD56` green. The green survives in one place only, as a
+  form success state, and never in a brand layout. The Brand Guide stopped listing them at v5.0
+  because the guide states what the palette is, not what it used to be. They stay recorded here so
+  the audit can still catch them.
+
+## Borrowed authority
+
+- **Reaching for governmental iconography.** No seals, no crests, no flags, no eagles, and no device
+  that imitates a government office. The formality of this system comes from restraint, dated
+  records, and signatures, not from costume. We carry authority. We do not imitate office.
+- **Dressing a document as a legal instrument it is not.** A record carries a kicker, a dateline, and
+  a signature because those things are true of it. Adding notary marks, reference numbers, or seals
+  to make a page feel official is fabrication in visual form.
 
 ## Audit theater
 

@@ -1,6 +1,6 @@
 # Anti-patterns
 
-> **Brand system v4.5 · Messaging guide v1.0 · Updated 2026-08-15**
+> **Brand system v5.0 · Messaging guide v1.0 · Updated 2026-08-15**
 > Canonical source: <https://brand.theword.world/ai/manifest.json>
 > What not to do. The first section is hand-authored; the rest is generated from the guides.
 
@@ -52,7 +52,20 @@ that a designer would not.
 - **Using Parchment as a gray.** It is a warm paper ground, and it is never a neutral fill.
 - **Treating Flame and Ember as interchangeable.** Flame is the non-text accent. Ember is fire at
   text size. Reaching for Flame on type is the single most common color failure.
-- **Reviving a retired color** because it appears in an old file, a deck, or a screenshot.
+- **Reviving a retired color** because it appears in an old file, a deck, or a screenshot. Two are
+  retired by name: `#0077AA` cyan and `#5FAD56` green. The green survives in one place only, as a
+  form success state, and never in a brand layout. The Brand Guide stopped listing them at v5.0
+  because the guide states what the palette is, not what it used to be. They stay recorded here so
+  the audit can still catch them.
+
+## Borrowed authority
+
+- **Reaching for governmental iconography.** No seals, no crests, no flags, no eagles, and no device
+  that imitates a government office. The formality of this system comes from restraint, dated
+  records, and signatures, not from costume. We carry authority. We do not imitate office.
+- **Dressing a document as a legal instrument it is not.** A record carries a kicker, a dateline, and
+  a signature because those things are true of it. Adding notary marks, reference numbers, or seals
+  to make a page feel official is fabrication in visual form.
 
 ## Audit theater
 
@@ -82,15 +95,15 @@ Generated from the guide's Do / Don't cards, in document order.
 
 | Never | Instead |
 | --- | --- |
-| Text on Midnight: never Word Blue — too little contrast. | Text on Midnight: White or Parchment — the flagship pairing. |
+| Text on Midnight: never Word Blue. Too little contrast. | Text on Midnight: White or Parchment. The flagship pairing. |
 | Body on light grounds: never Flame. | Body on light grounds: Midnight. |
-| Buttons: never Flame — 3.3:1 fails AA. | Buttons: Ember fill, white text — 5.4:1, passes AA. |
-| Flame’s job is never a ground — accent only, ≤10%. | Flame’s job: display numerals and small uppercase labels on Midnight. |
-| Fire at small sizes: never Flame and Ember side by side — pick one. | Fire at small sizes: Ember for links and accents on light. |
-| Serif headline: never faux-bold — no bold exists. Go bigger instead. | Serif headline: sentence case, one italic word for emphasis. |
-| Caps done wrong: never the serif in all caps. | Caps done right: DM Sans labels — eyebrows, nav, the wordmark zone. |
+| Buttons: never Flame. 3.3:1 fails AA. | Buttons: Ember fill, white text. 5.4:1, passes AA. |
+| Flame’s job is never a ground. Accent only, ≤10%. | Flame’s job: display numerals and small uppercase labels on Midnight. |
+| Fire at small sizes: never Flame and Ember side by side. Pick one. | Fire at small sizes: Ember for links and accents on light. |
+| Serif headline: never faux-bold. No bold exists, so go bigger instead. | Serif headline: sentence case, one italic word for emphasis. |
+| Caps done wrong: never the serif in all caps. | Caps done right: DM Sans labels for eyebrows, nav, and the wordmark zone. |
 | Body text: never the serif below 22px. | Body text: always DM Sans, with true bold and italics. |
-| Logo on color: never Flame — the mark can’t compete with CTAs. | Logo on imagery: photography with a Midnight scrim. |
+| Logo on color: never Flame. The mark cannot compete with CTAs. | Logo on imagery: photography with a Midnight scrim. |
 | Text over footage: never Flame, never without the scrim. | Text over footage: Midnight scrim, white serif, sentence case. |
 
 ## Every banned word
