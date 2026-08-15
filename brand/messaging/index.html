@@ -160,13 +160,12 @@
   .slot .s1{font-family:var(--serif-text);font-size:17px;margin-bottom:4px;}
   .slot .s2{font-size:13px;line-height:1.55;color:rgba(11,26,45,.78);}
 
-  /* adoption · left aligned */
-  .adoption{margin-top:52px;border-top:2px solid var(--midnight);padding-top:24px;display:grid;grid-template-columns:96px minmax(0,1fr);column-gap:36px;}
-  .adoption .ad{grid-column:2;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);}
-  .sigrow{grid-column:2;display:flex;gap:72px;flex-wrap:wrap;margin-top:32px;}
+  /* adoption · symmetrical close */
+  .adoption{margin-top:52px;border-top:2px solid var(--midnight);padding-top:36px;text-align:center;}
+  .sigrow{display:flex;justify-content:center;gap:72px;flex-wrap:wrap;}
   .sig .name{font-family:var(--serif-display);font-style:italic;font-size:27px;color:var(--word-blue);}
   .sig .role{margin-top:8px;padding-top:8px;border-top:1px solid var(--rule);font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(11,26,45,.75);min-width:190px;}
-  .sealline{grid-column:2;margin-top:34px;font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:rgba(11,26,45,.55);}
+  .adoption .ad{margin-top:36px;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);}
 
   .runhead{display:none;}
 
@@ -631,12 +630,11 @@
       </section>
 
       <div class="adoption">
-        <div class="ad">Entered into the record · August 2026</div>
         <div class="sigrow">
           <div class="sig"><div class="name">Joel Zimmer</div><div class="role">Approved and Recorded</div></div>
           <div class="sig"><div class="name">Nathan Zimmer</div><div class="role">Approved and Recorded</div></div>
         </div>
-        <div class="sealline">Every tribe. Every tongue. Every nation. EVERY1.</div>
+        <div class="ad">Entered into the record · August 2026</div>
       </div>
 
     </div>
