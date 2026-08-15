@@ -177,17 +177,6 @@
       "poster": "assets/images/tent-congregation-poster.jpg",
       "note": "Muted looping hero footage."
     },
-    "assets/videos/rtmc-evening-worship.mp4": {
-      "name": "Loop, Revival To My City",
-      "status": "approved",
-      "capture": "SLC Conference · Sanga, Mbarara, Uganda · 31 Jul 2026",
-      "poster": "assets/images/rtmc-evening-worship-poster.jpg",
-      "note": "Muted looping hero for the CLEAN door. Evening service, congregation with hands raised. Every loop ships with its poster."
-    },
-    "assets/images/rtmc-evening-worship-poster.jpg": {
-      "status": "approved",
-      "note": "Still fallback for rtmc-evening-worship.mp4."
-    },
     "assets/videos/every1-community-gathering.mp4": {
       "name": "Loop, EVERY1 Movement",
       "status": "approved",
@@ -239,10 +228,92 @@
       "status": "approved",
       "capture": "SLC Conference · Sanga, Mbarara, Uganda · 31 Jul 2026",
       "note": "Bibles and the personal evangelism course handed to attendees. Documentary capture for the TRAIN door."
+    },
+    "assets/videos/rtmc-city-gathering.mp4": {
+      "name": "Loop, Revival To My City",
+      "status": "approved",
+      "capture": "SLC Conference · Sanga, Mbarara, Uganda · 30 Jul 2026",
+      "poster": "assets/images/rtmc-city-gathering-poster.jpg",
+      "note": "Muted looping hero for the CLEAN door. A city-wide gathering with hands raised, in daylight. Replaced an evening loop that measured roughly half the brightness and half the sharpness, which fought CLEAN's light register."
+    },
+    "assets/images/rtmc-city-gathering-poster.jpg": {
+      "status": "approved",
+      "note": "Still fallback for rtmc-city-gathering.mp4."
+    },
+    "assets/logos/rtmc-explorations/rtmc-single-endorsed.png": {
+      "name": "RTMC exploration, single endorsed",
+      "status": "exploration",
+      "grounds": [
+        "white",
+        "parchment"
+      ],
+      "note": "Single line with the endorsement lockup. Exploration only, not an approved mark. Generated raster: it cannot be recoloured or scaled without degrading, and it must be redrawn as vector before any published use."
+    },
+    "assets/logos/rtmc-explorations/rtmc-single-reversed.png": {
+      "name": "RTMC exploration, single reversed",
+      "status": "exploration",
+      "grounds": [
+        "midnight"
+      ],
+      "note": "Single line reversed for Midnight grounds. Exploration only, not an approved mark. Generated raster: it cannot be recoloured or scaled without degrading, and it must be redrawn as vector before any published use."
+    },
+    "assets/logos/rtmc-explorations/rtmc-stacked-endorsed.png": {
+      "name": "RTMC exploration, stacked endorsed",
+      "status": "exploration",
+      "grounds": [
+        "white",
+        "parchment"
+      ],
+      "note": "Stacked two-line with the endorsement lockup. Exploration only, not an approved mark. Generated raster: it cannot be recoloured or scaled without degrading, and it must be redrawn as vector before any published use."
+    },
+    "assets/logos/rtmc-explorations/rtmc-monogram-endorsed.png": {
+      "name": "RTMC exploration, monogram endorsed",
+      "status": "exploration",
+      "grounds": [
+        "white",
+        "parchment"
+      ],
+      "note": "RTMC monogram with the endorsement lockup. Exploration only, not an approved mark. Generated raster: it cannot be recoloured or scaled without degrading, and it must be redrawn as vector before any published use."
+    },
+    "assets/logos/rtmc-explorations/rtmc-single-bare.png": {
+      "name": "RTMC exploration, single bare",
+      "status": "exploration",
+      "grounds": [
+        "white",
+        "parchment"
+      ],
+      "note": "Single line, mark only. Exploration only, not an approved mark. Generated raster: it cannot be recoloured or scaled without degrading, and it must be redrawn as vector before any published use."
+    },
+    "assets/logos/rtmc-explorations/rtmc-single-reversed-bare.png": {
+      "name": "RTMC exploration, single reversed bare",
+      "status": "exploration",
+      "grounds": [
+        "midnight"
+      ],
+      "note": "Single line reversed, mark only. Exploration only, not an approved mark. Generated raster: it cannot be recoloured or scaled without degrading, and it must be redrawn as vector before any published use."
+    },
+    "assets/logos/rtmc-explorations/rtmc-stacked-bare.png": {
+      "name": "RTMC exploration, stacked bare",
+      "status": "exploration",
+      "grounds": [
+        "white",
+        "parchment"
+      ],
+      "note": "Stacked two-line, mark only. Exploration only, not an approved mark. Generated raster: it cannot be recoloured or scaled without degrading, and it must be redrawn as vector before any published use."
+    },
+    "assets/logos/rtmc-explorations/rtmc-monogram-bare.png": {
+      "name": "RTMC exploration, monogram bare",
+      "status": "exploration",
+      "grounds": [
+        "white",
+        "parchment"
+      ],
+      "note": "RTMC monogram, mark only. Exploration only, not an approved mark. Generated raster: it cannot be recoloured or scaled without degrading, and it must be redrawn as vector before any published use."
     }
   },
   "gaps": [
     "A reversed signature for dark grounds. Every signature published here is Midnight ink and works only on Parchment or white. Nothing signed may appear on Midnight, Word Blue, or footage until a reversed master exists. Recolor the SVG fill rather than inverting the raster.",
+    "Revival To My City has no approved mark. Eight explorations are published under assets/logos/rtmc-explorations/ for selection. The chosen direction must be redrawn as vector, in Midnight and reversed, before it is used on anything. Until then RTMC is set as type.",
     "Location on every July 2026 caption is recorded as Sanga, Mbarara, Uganda from the capture folder and has not yet been confirmed against the official ministry record. Confirm it, then unbracket the older captions that still read [City].",
     "Wordmark masters in SVG and 2x/3x PNG (White, Midnight, Word Blue) are recorded as approved in Brand Guide §06 but are not yet published in this repository. Until they are, request them rather than recreating the mark.",
     "Prayer and ministry moments up close",

@@ -396,7 +396,8 @@ SUB_CSS = """
   /* CLEAN takes the framed-panel treatment: type never sits straight on the footage */
   body.clean .door{align-items:center;min-height:82vh;}
   body.clean .door .inner{padding:96px 32px;}
-  body.clean .door .panel{background:var(--parchment);border:1px solid var(--midnight);color:var(--midnight);
+  body.clean{background:var(--white);}
+  body.clean .door .panel{background:var(--white);border:1px solid var(--midnight);color:var(--midnight);
     max-width:730px;margin:0 auto;padding:clamp(38px,5vw,60px) clamp(28px,4.5vw,56px);text-align:center;}
   body.clean .door .stageword{font-size:clamp(32px,4.6vw,52px);letter-spacing:.08em;}
   body.clean .door h1{margin-top:12px;}
@@ -411,6 +412,15 @@ SUB_CSS = """
   body.clean .docbar a,body.clean .shot .c2{color:rgba(11,26,45,.8);}
   body.clean .docbar a{border-bottom:1px solid rgba(11,26,45,.3);padding-bottom:2px;}
   body.clean .docbar a:hover{color:var(--ember);border-bottom-color:var(--ember);}
+
+  .marks{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px;margin-top:22px;}
+  .mark{border:1px solid var(--rule);border-radius:4px;overflow:hidden;background:var(--white);}
+  .mark .art{display:flex;align-items:center;justify-content:center;padding:26px 22px;min-height:150px;background:var(--parchment);}
+  .mark .art.dark{background:var(--midnight);}
+  .mark img{max-width:100%;height:auto;display:block;}
+  .mark .lbl{border-top:1px solid var(--rule);padding:12px 16px;font-size:12.5px;line-height:1.5;}
+  .mark .lbl b{display:block;font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(11,26,45,.8);margin-bottom:4px;}
+  .warn{margin-top:18px;background:var(--parchment);border-left:3px solid var(--ember);padding:16px 20px;font-size:14px;line-height:1.65;max-width:74ch;}
 
   main{padding:72px 0 40px;}
   .docbar{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:52px;}
@@ -471,7 +481,7 @@ SUBS = [
         slug="revival-to-my-city", stage="CLEAN", name="Revival To My City",
         title="Revival To My <em>City</em>",
         mission="Stirring the local church to return to their first love.",
-        video="rtmc-evening-worship",
+        video="rtmc-city-gathering",
         ground="White or Parchment. The most whitespace of the three.",
         typerule="Midnight on light. DM Sans led.",
         flame="5% ceiling. The quietest door.",
@@ -533,6 +543,41 @@ SUBS = [
     ),
 ]
 
+MARKS = [
+ ("rtmc-single-endorsed",      False, "Single line, endorsed",   "The full lockup. Most legible at document and letterhead size."),
+ ("rtmc-single-reversed",      True,  "Single line, reversed",   "The same lockup for Midnight grounds and over footage with a scrim."),
+ ("rtmc-stacked-endorsed",     False, "Stacked, endorsed",       "For square and portrait spaces where the single line runs too wide."),
+ ("rtmc-monogram-endorsed",    False, "Monogram, endorsed",      "RTMC as shorthand. Only where the full name is already established."),
+ ("rtmc-single-bare",          False, "Single line, mark only",  "Where the endorsement line is already carried elsewhere on the surface."),
+ ("rtmc-single-reversed-bare", True,  "Reversed, mark only",     "Banner and hero use on Midnight."),
+ ("rtmc-stacked-bare",         False, "Stacked, mark only",      "The compact form."),
+ ("rtmc-monogram-bare",        False, "Monogram, mark only",     "Avatar, favicon, and stamp use."),
+]
+
+
+def marks_block():
+    cards = ""
+    for name, dark, label, note in MARKS:
+        cls = "art dark" if dark else "art"
+        cards += (f'        <figure class="mark">\n'
+                  f'          <div class="{cls}"><img src="/assets/logos/rtmc-explorations/{name}.png" alt="{label}"></div>\n'
+                  f'          <figcaption class="lbl"><b>{label}</b>{note}</figcaption>\n'
+                  f'        </figure>\n')
+    return ('    <div class="blk">\n'
+            '      <div class="lab">Marks under consideration</div>\n'
+            '      <h2>Eight options, none approved yet.</h2>\n'
+            '      <p class="lede">Each tile shows the mark on a ground it is approved for. These are explorations, not the mark. They share one system: heavy caps in '
+            'Midnight, a hairline rule split by a single Flame tick, and the endorsement line beneath. That '
+            'sits inside CLEAN\'s spec exactly, with the tick as a 5% Flame accent.</p>\n'
+            '      <div class="marks">\n' + cards + '      </div>\n'
+            '      <div class="warn"><strong>Not approved, and not usable as artwork.</strong> These are '
+            'generated raster images, so they cannot be recoloured, scaled, or set on a dark ground without '
+            'degrading, and generated letterforms carry irregularities that only show at size. Pick a '
+            'direction here, then the chosen one gets redrawn as vector and published as the mark. Until '
+            'that happens, Revival To My City is set as type, not as a logo.</div>\n'
+            '    </div>\n\n')
+
+
 SUB_PAGE = """
 <div class="door">
   <video autoplay muted loop playsinline poster="/assets/images/{video}-poster.jpg">
@@ -589,7 +634,7 @@ SUB_PAGE = """
       so it is stated here and not yet frozen into the guide.</p>
     </div>
 
-    <div class="blk">
+{marks}    <div class="blk">
       <div class="lab">Rules that differ from the parent</div>
       <h2>Where this door departs.</h2>
       <p class="lede">Everything in the Brand Guide applies here. These are the points where {name}
@@ -622,6 +667,7 @@ for d in SUBS:
                   f'        </figure>\n')
     rules = "".join(f"        <li>{r}</li>\n" for r in d["rules"])
     fields = {k: v for k, v in d.items() if k not in ("rules", "shots")}
+    fields["marks"] = marks_block() if d["slug"] == "revival-to-my-city" else ""
     html = HEAD.format(title=f"{d['name']} · Initiative Brand Guide", extra_css=SUB_CSS,
                        band_pad="0", doc_active="", lh_active="")
     html = html.replace("<body>", f"<body class=\"{d['stage'].lower()}\">")

@@ -1,11 +1,11 @@
 {
-  "version": "5.3",
+  "version": "5.4",
   "messagingVersion": "1.0",
   "updated": "2026-08-15",
   "authority": "canonical",
   "rule": "Use these assets. Never generate photography or video of people or ministry, and never substitute stock. If the asset you need is not listed, request it and leave the slot empty.",
   "counts": {
-    "total": 37,
+    "total": 45,
     "approved": 36,
     "counterExamples": 1
   },
@@ -108,6 +108,15 @@
       "note": "Documentary hero still."
     },
     {
+      "file": "assets/images/rtmc-city-gathering-poster.jpg",
+      "url": "https://brand.theword.world/assets/images/rtmc-city-gathering-poster.jpg",
+      "kind": "image",
+      "group": "images",
+      "bytes": 96655,
+      "status": "approved",
+      "note": "Still fallback for rtmc-city-gathering.mp4."
+    },
+    {
       "file": "assets/images/rtmc-crowd-hands-raised.jpg",
       "url": "https://brand.theword.world/assets/images/rtmc-crowd-hands-raised.jpg",
       "kind": "image",
@@ -116,15 +125,6 @@
       "status": "approved",
       "capture": "SLC Conference · Sanga, Mbarara, Uganda · 31 Jul 2026",
       "note": "An evening congregation with hands raised during the service. Documentary capture for the CLEAN door."
-    },
-    {
-      "file": "assets/images/rtmc-evening-worship-poster.jpg",
-      "url": "https://brand.theword.world/assets/images/rtmc-evening-worship-poster.jpg",
-      "kind": "image",
-      "group": "images",
-      "bytes": 89685,
-      "status": "approved",
-      "note": "Still fallback for rtmc-evening-worship.mp4."
     },
     {
       "file": "assets/images/rtmc-preaching-evening.jpg",
@@ -173,6 +173,116 @@
       "bytes": 90487,
       "status": "approved",
       "note": "Still fallback for tent-congregation.mp4."
+    },
+    {
+      "file": "assets/logos/rtmc-explorations/rtmc-monogram-bare.png",
+      "url": "https://brand.theword.world/assets/logos/rtmc-explorations/rtmc-monogram-bare.png",
+      "kind": "image",
+      "group": "rtmc-explorations",
+      "bytes": 181852,
+      "status": "exploration",
+      "grounds": [
+        "white",
+        "parchment"
+      ],
+      "note": "RTMC monogram, mark only. Exploration only, not an approved mark. Generated raster: it cannot be recoloured or scaled without degrading, and it must be redrawn as vector before any published use.",
+      "name": "RTMC exploration, monogram bare"
+    },
+    {
+      "file": "assets/logos/rtmc-explorations/rtmc-monogram-endorsed.png",
+      "url": "https://brand.theword.world/assets/logos/rtmc-explorations/rtmc-monogram-endorsed.png",
+      "kind": "image",
+      "group": "rtmc-explorations",
+      "bytes": 258886,
+      "status": "exploration",
+      "grounds": [
+        "white",
+        "parchment"
+      ],
+      "note": "RTMC monogram with the endorsement lockup. Exploration only, not an approved mark. Generated raster: it cannot be recoloured or scaled without degrading, and it must be redrawn as vector before any published use.",
+      "name": "RTMC exploration, monogram endorsed"
+    },
+    {
+      "file": "assets/logos/rtmc-explorations/rtmc-single-bare.png",
+      "url": "https://brand.theword.world/assets/logos/rtmc-explorations/rtmc-single-bare.png",
+      "kind": "image",
+      "group": "rtmc-explorations",
+      "bytes": 163684,
+      "status": "exploration",
+      "grounds": [
+        "white",
+        "parchment"
+      ],
+      "note": "Single line, mark only. Exploration only, not an approved mark. Generated raster: it cannot be recoloured or scaled without degrading, and it must be redrawn as vector before any published use.",
+      "name": "RTMC exploration, single bare"
+    },
+    {
+      "file": "assets/logos/rtmc-explorations/rtmc-single-endorsed.png",
+      "url": "https://brand.theword.world/assets/logos/rtmc-explorations/rtmc-single-endorsed.png",
+      "kind": "image",
+      "group": "rtmc-explorations",
+      "bytes": 302921,
+      "status": "exploration",
+      "grounds": [
+        "white",
+        "parchment"
+      ],
+      "note": "Single line with the endorsement lockup. Exploration only, not an approved mark. Generated raster: it cannot be recoloured or scaled without degrading, and it must be redrawn as vector before any published use.",
+      "name": "RTMC exploration, single endorsed"
+    },
+    {
+      "file": "assets/logos/rtmc-explorations/rtmc-single-reversed-bare.png",
+      "url": "https://brand.theword.world/assets/logos/rtmc-explorations/rtmc-single-reversed-bare.png",
+      "kind": "image",
+      "group": "rtmc-explorations",
+      "bytes": 192406,
+      "status": "exploration",
+      "grounds": [
+        "midnight"
+      ],
+      "note": "Single line reversed, mark only. Exploration only, not an approved mark. Generated raster: it cannot be recoloured or scaled without degrading, and it must be redrawn as vector before any published use.",
+      "name": "RTMC exploration, single reversed bare"
+    },
+    {
+      "file": "assets/logos/rtmc-explorations/rtmc-single-reversed.png",
+      "url": "https://brand.theword.world/assets/logos/rtmc-explorations/rtmc-single-reversed.png",
+      "kind": "image",
+      "group": "rtmc-explorations",
+      "bytes": 323479,
+      "status": "exploration",
+      "grounds": [
+        "midnight"
+      ],
+      "note": "Single line reversed for Midnight grounds. Exploration only, not an approved mark. Generated raster: it cannot be recoloured or scaled without degrading, and it must be redrawn as vector before any published use.",
+      "name": "RTMC exploration, single reversed"
+    },
+    {
+      "file": "assets/logos/rtmc-explorations/rtmc-stacked-bare.png",
+      "url": "https://brand.theword.world/assets/logos/rtmc-explorations/rtmc-stacked-bare.png",
+      "kind": "image",
+      "group": "rtmc-explorations",
+      "bytes": 267957,
+      "status": "exploration",
+      "grounds": [
+        "white",
+        "parchment"
+      ],
+      "note": "Stacked two-line, mark only. Exploration only, not an approved mark. Generated raster: it cannot be recoloured or scaled without degrading, and it must be redrawn as vector before any published use.",
+      "name": "RTMC exploration, stacked bare"
+    },
+    {
+      "file": "assets/logos/rtmc-explorations/rtmc-stacked-endorsed.png",
+      "url": "https://brand.theword.world/assets/logos/rtmc-explorations/rtmc-stacked-endorsed.png",
+      "kind": "image",
+      "group": "rtmc-explorations",
+      "bytes": 398365,
+      "status": "exploration",
+      "grounds": [
+        "white",
+        "parchment"
+      ],
+      "note": "Stacked two-line with the endorsement lockup. Exploration only, not an approved mark. Generated raster: it cannot be recoloured or scaled without degrading, and it must be redrawn as vector before any published use.",
+      "name": "RTMC exploration, stacked endorsed"
     },
     {
       "file": "assets/logos/the-word-for-all-the-world.png",
@@ -400,15 +510,15 @@
       "note": "Muted looping hero footage."
     },
     {
-      "file": "assets/videos/rtmc-evening-worship.mp4",
-      "url": "https://brand.theword.world/assets/videos/rtmc-evening-worship.mp4",
+      "file": "assets/videos/rtmc-city-gathering.mp4",
+      "url": "https://brand.theword.world/assets/videos/rtmc-city-gathering.mp4",
       "kind": "video",
       "group": "videos",
-      "bytes": 2040718,
+      "bytes": 2860934,
       "status": "approved",
-      "capture": "SLC Conference · Sanga, Mbarara, Uganda · 31 Jul 2026",
-      "poster": "assets/images/rtmc-evening-worship-poster.jpg",
-      "note": "Muted looping hero for the CLEAN door. Evening service, congregation with hands raised. Every loop ships with its poster.",
+      "capture": "SLC Conference · Sanga, Mbarara, Uganda · 30 Jul 2026",
+      "poster": "assets/images/rtmc-city-gathering-poster.jpg",
+      "note": "Muted looping hero for the CLEAN door. A city-wide gathering with hands raised, in daylight. Replaced an evening loop that measured roughly half the brightness and half the sharpness, which fought CLEAN's light register.",
       "name": "Loop, Revival To My City"
     },
     {
@@ -438,6 +548,7 @@
   "notesWithoutFiles": [],
   "gaps": [
     "A reversed signature for dark grounds. Every signature published here is Midnight ink and works only on Parchment or white. Nothing signed may appear on Midnight, Word Blue, or footage until a reversed master exists. Recolor the SVG fill rather than inverting the raster.",
+    "Revival To My City has no approved mark. Eight explorations are published under assets/logos/rtmc-explorations/ for selection. The chosen direction must be redrawn as vector, in Midnight and reversed, before it is used on anything. Until then RTMC is set as type.",
     "Location on every July 2026 caption is recorded as Sanga, Mbarara, Uganda from the capture folder and has not yet been confirmed against the official ministry record. Confirm it, then unbracket the older captions that still read [City].",
     "Wordmark masters in SVG and 2x/3x PNG (White, Midnight, Word Blue) are recorded as approved in Brand Guide §06 but are not yet published in this repository. Until they are, request them rather than recreating the mark.",
     "Prayer and ministry moments up close",
