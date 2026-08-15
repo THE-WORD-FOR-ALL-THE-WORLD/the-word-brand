@@ -4,12 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
-<title>Initiative Brand Guides · THE WORD FOR ALL THE WORLD</title>
+<title>Letterhead · The Document Template · THE WORD FOR ALL THE WORLD</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Serif+Text:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400;1,9..40,700&display=swap" rel="stylesheet">
 <style>
-  :root{
+:root{
     --midnight:#0B1A2D;
     --word-blue:#023D6F;
     --parchment:#F7F3EC;
@@ -18,14 +17,33 @@
     --white:#FFFFFF;
     --rule:rgba(11,26,45,.18);
     --rule-light:rgba(247,243,236,.22);
+    --ink-soft:rgba(11,26,45,.72);
     --serif-display:'DM Serif Display', Georgia, 'Times New Roman', serif;
+    --serif-text:'DM Serif Text', Georgia, 'Times New Roman', serif;
     --sans:'DM Sans', -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
   }
   *{margin:0;padding:0;box-sizing:border-box;}
   @media (prefers-reduced-motion: no-preference){html{scroll-behavior:smooth;}}
-  body{font-family:var(--sans);font-size:17px;line-height:1.7;color:var(--midnight);background:var(--parchment);-webkit-font-smoothing:antialiased;}
   a:focus-visible,button:focus-visible{outline:2px solid var(--ember);outline-offset:3px;border-radius:3px;}
-  .wrap{max-width:1020px;margin:0 auto;padding:0 32px;width:100%;}
+  .dark a:focus-visible{outline-color:var(--flame);}
+  body{font-family:var(--sans);font-size:17px;line-height:1.7;color:var(--midnight);background:var(--parchment);-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:1020px;margin:0 auto;padding:0 32px;}
+  section{padding:100px 0;}
+  .slidehead{display:flex;justify-content:space-between;align-items:baseline;gap:16px;margin-bottom:18px;}
+  .eyebrow{font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--ember);}
+  .slideno{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(11,26,45,.72);}
+  .dark .eyebrow{color:var(--flame);}
+  .dark .slideno{color:rgba(247,243,236,.68);}
+  h1,h2{font-family:var(--serif-display);font-weight:400;line-height:1.08;}
+  h2{font-size:clamp(34px,4.8vw,52px);margin-bottom:22px;}
+  h2 em{font-style:italic;}
+  h3{font-size:14px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin:52px 0 16px;}
+  p{max-width:660px;margin-bottom:14px;}
+  p.lede{font-size:19px;}
+  .dark{background:var(--midnight);color:var(--parchment);}
+  .dark p{color:rgba(247,243,236,.92);}
+  .caption{font-size:13px;color:rgba(11,26,45,.8);max-width:660px;}
+  .dark .caption{color:rgba(247,243,236,.75);}
 
   /* site nav · unified chrome */
   .sitenav{position:absolute;top:0;left:0;right:0;z-index:10;}
@@ -36,34 +54,90 @@
   .sitenav .links a:hover{color:var(--white);}
   .sitenav .links a.active{color:var(--white);border-bottom:1px solid rgba(255,255,255,.6);padding-bottom:2px;}
 
+
   /* page band · midnight backdrop for the nav */
-  .band{background:var(--midnight);color:var(--parchment);padding:150px 0 64px;text-align:center;}
-  .band .kicker{font-size:13px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--white);opacity:.8;margin-bottom:18px;display:block;}
-  .band h1{font-family:var(--serif-display);font-weight:400;line-height:1.1;font-size:clamp(34px,5vw,54px);}
-  .band h1 em{font-style:italic;}
-  .band p{margin:18px auto 0;max-width:600px;color:rgba(247,243,236,.85);}
+  .band{background:var(--midnight);color:var(--parchment);padding:96px 0 24px;}
+  @media(max-width:640px){.sitenav .bar{padding:20px 24px;}}
+
+  /* ============ the messaging document · register & marginalia ============ */
+  .docwrap{padding:72px 0 96px;}
+  .toolbar{max-width:880px;margin:0 auto 22px;padding:0 24px;display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;}
+  .toolbar .tlabel{font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--ember);}
+  .printbtn{font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--white);background:var(--word-blue);border:none;border-radius:3px;padding:11px 22px;cursor:pointer;}
+  .printbtn:hover{background:var(--midnight);}
+  .paper{max-width:880px;margin:0 auto;background:var(--white);border:1px solid var(--rule);box-shadow:0 18px 50px rgba(11,26,45,.14);padding:clamp(36px,6vw,72px) clamp(28px,6vw,76px) clamp(44px,6vw,72px);}
+
+  /* masthead · asymmetric */
+  .masthead .mrow{display:flex;justify-content:space-between;align-items:flex-start;gap:24px;padding-bottom:20px;border-bottom:1px solid var(--rule);}
+  .masthead .mrow img{height:15px;width:auto;margin-top:5px;}
+  .masthead .mmeta{text-align:right;font-size:11.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);line-height:1.9;}
+  .masthead .doctitle{font-family:var(--serif-display);font-weight:400;font-size:clamp(34px,5vw,48px);line-height:1.1;margin:34px 0 14px;}
+  .masthead .doctitle em{font-style:italic;}
+  .masthead .standfirst{font-size:17px;line-height:1.65;color:var(--ink-soft);max-width:56ch;margin:0 0 10px;}
+
+  /* section register · margin numerals */
+  .dsec{display:grid;grid-template-columns:96px minmax(0,1fr);column-gap:36px;padding-top:30px;margin-top:44px;}
+  .dsec:first-of-type{margin-top:0;padding-top:30px;}
+  .dnum{font-family:var(--serif-display);font-size:34px;line-height:1;color:var(--ember);}
+  .dnum small{display:block;margin-top:10px;font-family:var(--sans);font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);}
+  .dtitle{font-family:var(--serif-display);font-weight:400;font-size:26px;line-height:1.15;margin:0 0 16px;}
+  .dcontent{font-size:16px;line-height:1.75;}
+  .dcontent p{max-width:62ch;margin-bottom:12px;}
+  .dcontent ul{margin:6px 0 12px 20px;max-width:60ch;}
+  .dcontent li{margin-bottom:8px;}
+
+  /* distinct treatments */
+  .missionline{font-family:var(--serif-text);font-size:21px;line-height:1.5;border-left:3px solid var(--flame);padding:6px 0 6px 20px;margin:16px 0 18px;max-width:34ch;}
+  .plain{font-size:14px;line-height:1.7;color:rgba(11,26,45,.85);background:var(--parchment);border-left:3px solid var(--word-blue);padding:14px 18px;margin:14px 0 12px;max-width:62ch;}
+  .record{background:var(--parchment);border-left:3px solid var(--word-blue);padding:30px 34px;margin:18px 0;max-width:640px;}
+  .record .qk{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--word-blue);display:block;margin-bottom:16px;}
+  .record .verse{font-family:var(--serif-text);font-style:italic;font-size:19px;line-height:1.65;}
+  .record .dateline{margin-top:18px;font-size:11.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);}
+  .telling{font-family:var(--serif-text);font-size:18px;line-height:1.7;max-width:58ch;margin:14px 0;}
+  .flag{background:rgba(193,58,36,.08);border:1px dashed var(--ember);border-radius:3px;padding:2px 6px;color:var(--ember);font-weight:600;}
+  .dcontent table{width:100%;border-collapse:collapse;font-size:14.5px;margin:14px 0 12px;}
+  .dcontent th{text-align:left;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:8px 14px 8px 0;border-bottom:1px solid var(--midnight);}
+  .dcontent td{padding:10px 14px 10px 0;border-bottom:1px solid var(--rule);vertical-align:top;}
+  .bp{display:grid;grid-template-columns:130px minmax(0,1fr);column-gap:22px;padding:14px 0;}
+  .bp:first-of-type{margin-top:16px;}
+  .bp .bl{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--word-blue);padding-top:4px;}
+  .bp .bt{font-size:15px;line-height:1.7;max-width:58ch;}
+  .roster{margin-top:16px;}
+  .person{display:grid;grid-template-columns:170px minmax(0,1fr);column-gap:22px;padding:16px 0;}
+  .person .pn{font-weight:700;font-size:15px;line-height:1.4;}
+  .person .pn span{display:block;font-weight:600;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);margin-top:4px;}
+  .person .pd{font-size:14.5px;line-height:1.65;}
+  .person .pd p{margin-bottom:5px;max-width:none;}
+  .person .say{font-family:var(--serif-text);font-style:italic;font-size:15.5px;}
+  .banreg{margin-top:16px;}
+  .ban{display:grid;grid-template-columns:170px minmax(0,1fr);column-gap:22px;padding:16px 0;}
+  .ban .bh{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ember);padding-top:2px;}
+  .ban .bw{font-size:14.5px;margin-bottom:6px;}
+  .ban .why{font-size:13.5px;color:rgba(11,26,45,.8);}
+  .slots{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:0 22px;margin:14px 0 12px;}
+  .slot{padding-top:10px;}
+  .slot .s1{font-family:var(--serif-text);font-size:17px;margin-bottom:4px;}
+  .slot .s2{font-size:13px;line-height:1.55;color:rgba(11,26,45,.78);}
+
+  /* adoption · divider, signature, name */
+  .adoption{margin-top:64px;}
+  .adoption .frule{border:none;border-top:2px solid var(--midnight);margin:0 0 30px;}
+  .adoption .signature{height:58px;width:auto;display:block;}
+  .adoption .ad{margin-top:12px;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);}
+
+  table.pt{width:100%;border-collapse:collapse;}
+  table.pt > thead.runhead{display:none;}
+  table.pt > tbody > tr > td.ptcell{padding:0;border:none;}
+
 
   footer{background:var(--midnight);color:rgba(247,243,236,.75);padding:40px 0;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;font-weight:500;}
   footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
   footer img{height:16px;width:auto;display:block;opacity:.9;}
-  @media(max-width:640px){.sitenav .bar{padding:20px 24px;}}
-
-  main{padding:72px 0 96px;}
-  .section-label{font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--ember);margin-bottom:24px;}
-  .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px;}
-  .card{display:flex;flex-direction:column;justify-content:space-between;background:var(--white);border:1px solid var(--rule);border-radius:4px;padding:30px 28px;text-decoration:none;color:var(--midnight);transition:border-color .15s ease, box-shadow .15s ease;min-height:210px;}
-  .card:hover{border-color:var(--ember);box-shadow:0 10px 30px rgba(11,26,45,.1);}
-  .card .stage{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--white);background:var(--word-blue);border-radius:2px;padding:4px 10px;margin-bottom:16px;align-self:flex-start;}
-  .card h2{font-family:var(--serif-display);font-weight:400;font-size:25px;line-height:1.2;margin-bottom:10px;}
-  .card p{font-size:14.5px;line-height:1.6;color:rgba(11,26,45,.8);}
-  .card .go{margin-top:20px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--word-blue);}
-  .card:hover .go{color:var(--ember);}
-  .note{max-width:660px;margin:44px auto 0;text-align:center;font-size:14px;color:rgba(11,26,45,.75);}
-
 </style>
 </head>
 <body>
 
+<!-- NAV -->
 <nav class="sitenav">
   <div class="bar">
     <a class="logo" href="/" aria-label="THE WORD FOR ALL THE WORLD, portal home">
@@ -80,43 +154,158 @@
   </div>
 </nav>
 
-<div class="band">
-  <span class="kicker">One Journey · Three Initiatives</span>
-  <h1>Initiative <em>Brand Guides</em></h1>
-  <p>One brand guide for each initiative of THE WORD FOR ALL THE WORLD, an extension of the Brand Guide. Read them on screen, or print them on letterhead. One journey, in order: Clean, Burn, Train.</p>
-</div>
-<main>
-  <div class="wrap">
-    <div class="section-label">The Initiatives</div>
-    <div class="cards">
-      <a class="card" href="/letterhead/revival-to-my-city/">
-        <div>
-          <span class="stage">Clean</span>
-          <h2>Revival To My City</h2>
-          <p>Stirring the local church to return to their first love.</p>
-        </div>
-        <div class="go">Read the document &rarr;</div>
-      </a>
-      <a class="card" href="/letterhead/every1/">
-        <div>
-          <span class="stage">Burn</span>
-          <h2>EVERY1 Movement</h2>
-          <p>Empowering the local church to do the Great Commission and walk in God's calling.</p>
-        </div>
-        <div class="go">Read the document &rarr;</div>
-      </a>
-      <a class="card" href="/letterhead/school-of-the-local-church/">
-        <div>
-          <span class="stage">Train</span>
-          <h2>School of the Local Church</h2>
-          <p>Training the local church to know their authority in Christ and build a real relationship with Jesus.</p>
-        </div>
-        <div class="go">Read the document &rarr;</div>
-      </a>
-    </div>
-    <p class="note">Each document is kept under the ministry's own law: the institution signs its work, numbers come from the official record only, and no document changes without a written proposal, approval, and a changelog entry.</p>
+<div class="band"></div>
+
+<!-- THE TEMPLATE -->
+<div class="docwrap">
+  <div class="toolbar">
+    <span class="tlabel">The Document Template</span>
+    <button class="printbtn" onclick="window.print()">Print this document</button>
   </div>
-</main>
+  <article class="paper">
+    <table class="pt">
+    <thead class="runhead"><tr><td><div class="rh"><span>The Word for All the World</span><span>Letterhead · The Document Template</span></div></td></tr></thead>
+    <tbody><tr><td class="ptcell">
+    <header class="masthead">
+      <div class="mrow">
+        <img src="/assets/logos/wordmark-midnight-ink.png" alt="THE WORD FOR ALL THE WORLD">
+        <div class="mmeta">Letterhead · August 2026</div>
+      </div>
+      <h1 class="doctitle">Document <em>Template</em></h1>
+      <p class="standfirst">How documents are written in this brand. Every component on this page is the standard: copy it, fill it, and the result is a document of THE WORD.</p>
+    </header>
+    <div class="docbody">
+
+      <section class="dsec">
+        <div class="dnum">01<small>The Paper</small></div>
+        <div class="dcontent">
+          <h2 class="dtitle">The Paper</h2>
+          <p>Every document is a white sheet. It opens with the letterhead: the wordmark, small, with the document's version and date on the right, and one rule beneath. Then the title in serif, and a standfirst that says what the document is in one or two sentences.</p>
+          <p>The body is DM Sans. Titles are DM Serif Display. Lines hold to roughly sixty characters. Sections are numbered in the margin, in Ember, with a small label naming what kind of section it is.</p>
+          <p>No dividers between sections. The white space is the divider. The only rules on the page are the letterhead rule at the top, the footer rule at the bottom, and the rules inside tables.</p>
+        </div>
+      </section>
+
+      <section class="dsec">
+        <div class="dnum">02<small>The Record</small></div>
+        <div class="dcontent">
+          <h2 class="dtitle">Quotations</h2>
+          <p>A quotation of record sits in a parchment field with the navy line. It is quoted exactly, in full, or not at all. Never paraphrased, never excerpted for effect.</p>
+          <div class="record">
+            <span class="qk">The Word · The Guarantee</span>
+            <div class="verse">The Holy Spirit runs our services.</div>
+            <div class="dateline">Brand Messaging Guide · Section 5</div>
+          </div>
+          <p>One line per document may carry the Flame: the single most important line, the one the document exists to say. Everything else stays navy.</p>
+          <p class="missionline">Strengthening the local church to fulfill the Great Commission, until EVERY1 knows the name Jesus.</p>
+        </div>
+      </section>
+
+      <section class="dsec">
+        <div class="dnum">03<small>Callouts</small></div>
+        <div class="dcontent">
+          <h2 class="dtitle">Callouts</h2>
+          <p>A callout restates the point so a first-time reader cannot miss it. Use it once per section at most. If everything is called out, nothing is.</p>
+          <div class="plain">In plain words: say the thing again, shorter, for the reader who skims.</div>
+        </div>
+      </section>
+
+      <section class="dsec">
+        <div class="dnum">04<small>The Telling</small></div>
+        <div class="dcontent">
+          <h2 class="dtitle">The Telling</h2>
+          <p>When a document tells a story, the story is set in serif, larger than the body. Bracketed fields mark facts pending verification against the ministry record; per Law II, nothing unverified enters a founding document. Verify, unbracket, done.</p>
+          <p class="telling">In <span class="flag">[year]</span>, the story is told in the ministry's own words, and every fact in it comes from the record.</p>
+        </div>
+      </section>
+
+      <section class="dsec">
+        <div class="dnum">05<small>Reference</small></div>
+        <div class="dcontent">
+          <h2 class="dtitle">Reference Tables</h2>
+          <p>Reference material is set in tables. Tables are the one place dividers are allowed: a heavy rule under the header row, light rules between entries.</p>
+          <table>
+            <tr><th style="width:220px;">Phrase</th><th>What it carries</th></tr>
+            <tr><td>Real relationship with Jesus</td><td>The gospel in five words. The good news is not religion. It's Him.</td></tr>
+            <tr><td>Fire starts fire</td><td>How the mission spreads. We burn; the dry catch.</td></tr>
+          </table>
+        </div>
+      </section>
+
+      <section class="dsec">
+        <div class="dnum">06<small>Label Rows</small></div>
+        <div class="dcontent">
+          <h2 class="dtitle">Label Rows</h2>
+          <p>Copy-ready language gets a label in the margin and the language beside it, so a writer can lift it without reading around it.</p>
+          <div class="bp">
+            <div class="bl">One sentence</div>
+            <div class="bt">THE WORD FOR ALL THE WORLD strengthens the local church to fulfill the Great Commission, until EVERY1 knows the name Jesus.</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="dsec">
+        <div class="dnum">07<small>Rosters</small></div>
+        <div class="dcontent">
+          <h2 class="dtitle">Rosters</h2>
+          <p>A roster lists people, audiences, or entries: the name on the left, the substance on the right, separated by space alone. Quoted language inside a roster is set in serif italic.</p>
+          <div class="roster">
+            <div class="person">
+              <div class="pn">The Local Pastor <span>US &amp; International</span></div>
+              <div class="pd">
+                <p><strong>They want:</strong> to multiply disciples and lead revival without burning out.</p>
+                <p class="say">"We come to serve your church, not build ours. When we leave, your people stay, on fire and equipped."</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="dsec">
+        <div class="dnum">08<small>Cautions</small></div>
+        <div class="dcontent">
+          <h2 class="dtitle">The Caution Register</h2>
+          <p>What must not be done is registered the same way, with the category in Ember. State the banned thing, then say why, in one or two sentences.</p>
+          <div class="banreg">
+            <div class="ban">
+              <div class="bh">Hype</div>
+              <div>
+                <div class="bw">insane · epic · unreal · next-level · game-changer</div>
+                <div class="why">Hype manufactures a feeling. We report what God actually did. The record is more powerful than the adjective.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="dsec">
+        <div class="dnum">09<small>Printing</small></div>
+        <div class="dcontent">
+          <h2 class="dtitle">Printing</h2>
+          <p>Every document prints. The running banner repeats at the top of every page and names the ministry and the document. The letterhead wordmark hides in print, because the banner already carries it.</p>
+          <p>Sections flow. No block splits across a page: a quotation, a callout, a roster entry, or a table row that does not fit moves whole to the next page.</p>
+        </div>
+      </section>
+
+      <section class="dsec">
+        <div class="dnum">10<small>The Signing</small></div>
+        <div class="dcontent">
+          <h2 class="dtitle">The Signing</h2>
+          <p>A document closes one way: the footer rule, the signature, and the name. Nothing else. The institution signs its work.</p>
+        </div>
+      </section>
+
+      <div class="adoption">
+        <hr class="frule">
+        <img class="signature" src="/assets/signatures/nathan-zimmer.svg" alt="Nathan Zimmer's signature">
+        <div class="ad">Nathan Zimmer</div>
+      </div>
+
+    </div>
+    </td></tr></tbody>
+    </table>
+  </article>
+</div>
 
 <footer>
   <div class="wrap">

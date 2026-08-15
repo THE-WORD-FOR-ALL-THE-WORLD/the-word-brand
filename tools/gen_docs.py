@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate initiative messaging documents (/documents) and initiative brand guides (/letterhead)."""
+"""Generate the initiative messaging documents (/documents)."""
 import os
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -298,56 +298,6 @@ slc_msg += sec(8, "How to Take Part",
     p("Enroll at any time. Start with the free personal evangelism course."))
 slc_msg += sec_authority(9, "Brand Messaging Guide")
 
-# ============ INITIATIVE BRAND GUIDES (/letterhead) ============
-
-BRAND_LEAD = '      <p class="therefore">This document records how the initiative looks and speaks, in the words of the ministry</p>\n'
-
-def brand_doc(name_html, stage_sentence, flame_rule, voice_extra, words, special_secs):
-    b = FOUNDATION + BRAND_LEAD
-    n = 1
-    b += sec_name_standing(n, name_html); n += 1
-    b += sec(n, "Place in the Journey", p(stage_sentence)); n += 1
-    b += sec(n, "How It Speaks",
-        p("Sub-brand materials are DM Sans led. The serif appears only where the parent speaks.")
-        + p("The initiative inherits the house voice: bold, clear, simple, direct. Pastoral with prophetic urgency. Invitation-first. Every ban in the Messaging Guide applies." + voice_extra)); n += 1
-    b += sec(n, "Color and the Flame",
-        p("The initiative inherits the house palette: Midnight, Word Blue, Parchment, Flame, and Ember. No new colors.")
-        + p(flame_rule)
-        + p("Text over footage takes a Midnight scrim with white type. Never Flame, never without the scrim.")); n += 1
-    b += sec(n, "The Endorsement",
-        p("The line <em>A ministry of THE WORD FOR ALL THE WORLD</em> appears wherever the initiative's name appears. The initiatives are named front doors of one house, never separate homes.")); n += 1
-    for title, inner in special_secs:
-        b += sec(n, title, inner); n += 1
-    b += sec(n, "The Words It Carries", keywords(words)); n += 1
-    b += sec_authority(n, "Brand Guide")
-    return b
-
-rtmc_brand = brand_doc(
-    "<strong>Revival To My City</strong>",
-    "Revival To My City is the first movement of the journey. Its word is <strong>CLEAN</strong>. Stirring the local church to return to their first love.",
-    "Revival To My City holds the Flame to the 10 percent line or less.",
-    "",
-    ["First love", "Lighting hearts and seats on fire for Jesus", "Revival is here, not coming", "Receive what Jesus already purchased"],
-    [("The Script Logo",
-      p('The script-logo exploration ("Revival" in cursive) remains open and compatible. The script is custom lettering, not a brand font.'))])
-
-e1_brand = brand_doc(
-    "the <strong>EVERY1 Movement</strong>, always styled EVERY1",
-    "The EVERY1 Movement is the second movement of the journey. Its word is <strong>BURN</strong>. Empowering the local church to do the Great Commission and walk in God's calling.",
-    "BURN owns the Flame. EVERY1 uses it most freely of the three initiatives.",
-    " Its name is always styled EVERY1, in every context.",
-    ["EVERY1 in the church for EVERY1 outside the church", "You are the minister", "Fire starts fire", "A lifestyle, not an event"],
-    [("Exception on Record",
-      p("The future EVERY1 app follows the YouVersion model and will not visibly promote the parent. Until it ships, EVERY1 follows the Brand Guide in full."))])
-
-slc_brand = brand_doc(
-    "the <strong>School of the Local Church</strong>",
-    "The School of the Local Church is the third movement of the journey. Its word is <strong>TRAIN</strong>. Training the local church to know their authority in Christ and build a real relationship with Jesus.",
-    "The School of the Local Church holds the Flame to the 10 percent line or less.",
-    "",
-    ["Real relationship with Jesus", "Authority in Christ", "Fire with roots"],
-    [])
-
 # ============ PAGE ASSEMBLY ============
 
 INDEX_CSS = """
@@ -386,16 +336,6 @@ SECTIONS = {
         index_sub="One messaging document for each initiative of THE WORD FOR ALL THE WORLD, an extension of the Brand Messaging Guide. Read them on screen, or print them on letterhead. One journey, in order: Clean, Burn, Train.",
         doc_suffix="Initiative Document",
         bodies={"revival-to-my-city": rtmc_msg, "every1": e1_msg, "school-of-the-local-church": slc_msg},
-    ),
-    "letterhead": dict(
-        active="lh",
-        metaline="Initiative Brand Guide · August 2026",
-        backlabel="All brand guides",
-        index_title="Initiative Brand Guides",
-        index_h1="Initiative <em>Brand Guides</em>",
-        index_sub="One brand guide for each initiative of THE WORD FOR ALL THE WORLD, an extension of the Brand Guide. Read them on screen, or print them on letterhead. One journey, in order: Clean, Burn, Train.",
-        doc_suffix="Initiative Brand Guide",
-        bodies={"revival-to-my-city": rtmc_brand, "every1": e1_brand, "school-of-the-local-church": slc_brand},
     ),
 }
 
