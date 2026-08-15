@@ -91,6 +91,21 @@
   .mark .lbl b{display:block;font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(11,26,45,.8);margin-bottom:4px;}
   .warn{margin-top:18px;background:var(--parchment);border-left:3px solid var(--ember);padding:16px 20px;font-size:14px;line-height:1.65;max-width:74ch;}
 
+  /* CLEAN leads with the mark on white; the footage follows as its own band */
+  /* CLEAN's hero is white, so the chrome inverts to Midnight ink over it */
+  body.clean .sitenav .links a{color:rgba(11,26,45,.8);}
+  body.clean .sitenav .links a:hover{color:var(--ember);}
+  body.clean .sitenav .links a.active{color:var(--midnight);border-bottom-color:rgba(11,26,45,.45);}
+
+  .markhero{background:var(--white);padding:clamp(84px,11vw,150px) 32px clamp(64px,8vw,104px);text-align:center;}
+  .markhero img{width:min(660px,86%);height:auto;display:block;margin:0 auto;}
+  .markhero .mission{margin:34px auto 0;max-width:520px;font-size:17px;color:rgba(11,26,45,.85);}
+  .filmband{position:relative;height:min(58vh,520px);overflow:hidden;background:var(--midnight);}
+  .filmband video,.filmband img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+  @media (prefers-reduced-motion: reduce){.filmband video{display:none;}}
+  .filmcap{background:var(--white);padding:16px 32px 0;text-align:center;font-size:11px;font-weight:600;
+    letter-spacing:.14em;text-transform:uppercase;color:rgba(11,26,45,.8);}
+
   main{padding:72px 0 40px;}
   .docbar{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:52px;}
   .docbar a{font-size:11.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:var(--word-blue);}

@@ -240,80 +240,53 @@
       "status": "approved",
       "note": "Still fallback for rtmc-city-gathering.mp4."
     },
-    "assets/logos/rtmc-explorations/rtmc-single-endorsed.png": {
-      "name": "RTMC exploration, single endorsed",
-      "status": "exploration",
+    "assets/logos/rtmc/rtmc-wordmark.svg": {
+      "name": "Revival To My City, primary lockup",
+      "status": "approved",
       "grounds": [
         "white",
         "parchment"
       ],
-      "note": "Single line with the endorsement lockup. Exploration only, not an approved mark. Generated raster: it cannot be recoloured or scaled without degrading, and it must be redrawn as vector before any published use."
+      "note": "The full mark with the endorsement line. Default wherever the name is introduced. Set in DM Sans at weight 900 and converted to outlines, so it is artwork rather than live text: it needs no font installed, never reflows, and recolours by changing one fill value. Never re-set it in another face, never stretch it, never rebuild the tick rule by hand."
     },
-    "assets/logos/rtmc-explorations/rtmc-single-reversed.png": {
-      "name": "RTMC exploration, single reversed",
-      "status": "exploration",
+    "assets/logos/rtmc/rtmc-wordmark-reversed.svg": {
+      "name": "Revival To My City, reversed lockup",
+      "status": "approved",
+      "grounds": [
+        "midnight",
+        "photography with a Midnight scrim"
+      ],
+      "note": "For Midnight grounds and for footage carrying a scrim. Set in DM Sans at weight 900 and converted to outlines, so it is artwork rather than live text: it needs no font installed, never reflows, and recolours by changing one fill value. Never re-set it in another face, never stretch it, never rebuild the tick rule by hand."
+    },
+    "assets/logos/rtmc/rtmc-wordmark-bare.svg": {
+      "name": "Revival To My City, mark only",
+      "status": "approved",
+      "grounds": [
+        "white",
+        "parchment"
+      ],
+      "note": "Where the endorsement line is already carried elsewhere on the surface. Set in DM Sans at weight 900 and converted to outlines, so it is artwork rather than live text: it needs no font installed, never reflows, and recolours by changing one fill value. Never re-set it in another face, never stretch it, never rebuild the tick rule by hand."
+    },
+    "assets/logos/rtmc/rtmc-wordmark-bare-reversed.svg": {
+      "name": "Revival To My City, mark only, reversed",
+      "status": "approved",
       "grounds": [
         "midnight"
       ],
-      "note": "Single line reversed for Midnight grounds. Exploration only, not an approved mark. Generated raster: it cannot be recoloured or scaled without degrading, and it must be redrawn as vector before any published use."
+      "note": "Banner and hero use on Midnight. Set in DM Sans at weight 900 and converted to outlines, so it is artwork rather than live text: it needs no font installed, never reflows, and recolours by changing one fill value. Never re-set it in another face, never stretch it, never rebuild the tick rule by hand."
     },
-    "assets/logos/rtmc-explorations/rtmc-stacked-endorsed.png": {
-      "name": "RTMC exploration, stacked endorsed",
-      "status": "exploration",
+    "assets/logos/rtmc/rtmc-wordmark-stacked.svg": {
+      "name": "Revival To My City, stacked lockup",
+      "status": "approved",
       "grounds": [
         "white",
         "parchment"
       ],
-      "note": "Stacked two-line with the endorsement lockup. Exploration only, not an approved mark. Generated raster: it cannot be recoloured or scaled without degrading, and it must be redrawn as vector before any published use."
-    },
-    "assets/logos/rtmc-explorations/rtmc-monogram-endorsed.png": {
-      "name": "RTMC exploration, monogram endorsed",
-      "status": "exploration",
-      "grounds": [
-        "white",
-        "parchment"
-      ],
-      "note": "RTMC monogram with the endorsement lockup. Exploration only, not an approved mark. Generated raster: it cannot be recoloured or scaled without degrading, and it must be redrawn as vector before any published use."
-    },
-    "assets/logos/rtmc-explorations/rtmc-single-bare.png": {
-      "name": "RTMC exploration, single bare",
-      "status": "exploration",
-      "grounds": [
-        "white",
-        "parchment"
-      ],
-      "note": "Single line, mark only. Exploration only, not an approved mark. Generated raster: it cannot be recoloured or scaled without degrading, and it must be redrawn as vector before any published use."
-    },
-    "assets/logos/rtmc-explorations/rtmc-single-reversed-bare.png": {
-      "name": "RTMC exploration, single reversed bare",
-      "status": "exploration",
-      "grounds": [
-        "midnight"
-      ],
-      "note": "Single line reversed, mark only. Exploration only, not an approved mark. Generated raster: it cannot be recoloured or scaled without degrading, and it must be redrawn as vector before any published use."
-    },
-    "assets/logos/rtmc-explorations/rtmc-stacked-bare.png": {
-      "name": "RTMC exploration, stacked bare",
-      "status": "exploration",
-      "grounds": [
-        "white",
-        "parchment"
-      ],
-      "note": "Stacked two-line, mark only. Exploration only, not an approved mark. Generated raster: it cannot be recoloured or scaled without degrading, and it must be redrawn as vector before any published use."
-    },
-    "assets/logos/rtmc-explorations/rtmc-monogram-bare.png": {
-      "name": "RTMC exploration, monogram bare",
-      "status": "exploration",
-      "grounds": [
-        "white",
-        "parchment"
-      ],
-      "note": "RTMC monogram, mark only. Exploration only, not an approved mark. Generated raster: it cannot be recoloured or scaled without degrading, and it must be redrawn as vector before any published use."
+      "note": "For square and portrait spaces where the single line runs too wide. Set in DM Sans at weight 900 and converted to outlines, so it is artwork rather than live text: it needs no font installed, never reflows, and recolours by changing one fill value. Never re-set it in another face, never stretch it, never rebuild the tick rule by hand."
     }
   },
   "gaps": [
     "A reversed signature for dark grounds. Every signature published here is Midnight ink and works only on Parchment or white. Nothing signed may appear on Midnight, Word Blue, or footage until a reversed master exists. Recolor the SVG fill rather than inverting the raster.",
-    "Revival To My City has no approved mark. Eight explorations are published under assets/logos/rtmc-explorations/ for selection. The chosen direction must be redrawn as vector, in Midnight and reversed, before it is used on anything. Until then RTMC is set as type.",
     "Location on every July 2026 caption is recorded as Sanga, Mbarara, Uganda from the capture folder and has not yet been confirmed against the official ministry record. Confirm it, then unbracket the older captions that still read [City].",
     "Wordmark masters in SVG and 2x/3x PNG (White, Midnight, Word Blue) are recorded as approved in Brand Guide §06 but are not yet published in this repository. Until they are, request them rather than recreating the mark.",
     "Prayer and ministry moments up close",

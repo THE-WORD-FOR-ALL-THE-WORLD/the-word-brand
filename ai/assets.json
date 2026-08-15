@@ -1,12 +1,12 @@
 {
-  "version": "5.4",
+  "version": "5.5",
   "messagingVersion": "1.0",
   "updated": "2026-08-15",
   "authority": "canonical",
   "rule": "Use these assets. Never generate photography or video of people or ministry, and never substitute stock. If the asset you need is not listed, request it and leave the slot empty.",
   "counts": {
-    "total": 45,
-    "approved": 36,
+    "total": 42,
+    "approved": 41,
     "counterExamples": 1
   },
   "assets": [
@@ -175,114 +175,73 @@
       "note": "Still fallback for tent-congregation.mp4."
     },
     {
-      "file": "assets/logos/rtmc-explorations/rtmc-monogram-bare.png",
-      "url": "https://brand.theword.world/assets/logos/rtmc-explorations/rtmc-monogram-bare.png",
-      "kind": "image",
-      "group": "rtmc-explorations",
-      "bytes": 181852,
-      "status": "exploration",
-      "grounds": [
-        "white",
-        "parchment"
-      ],
-      "note": "RTMC monogram, mark only. Exploration only, not an approved mark. Generated raster: it cannot be recoloured or scaled without degrading, and it must be redrawn as vector before any published use.",
-      "name": "RTMC exploration, monogram bare"
-    },
-    {
-      "file": "assets/logos/rtmc-explorations/rtmc-monogram-endorsed.png",
-      "url": "https://brand.theword.world/assets/logos/rtmc-explorations/rtmc-monogram-endorsed.png",
-      "kind": "image",
-      "group": "rtmc-explorations",
-      "bytes": 258886,
-      "status": "exploration",
-      "grounds": [
-        "white",
-        "parchment"
-      ],
-      "note": "RTMC monogram with the endorsement lockup. Exploration only, not an approved mark. Generated raster: it cannot be recoloured or scaled without degrading, and it must be redrawn as vector before any published use.",
-      "name": "RTMC exploration, monogram endorsed"
-    },
-    {
-      "file": "assets/logos/rtmc-explorations/rtmc-single-bare.png",
-      "url": "https://brand.theword.world/assets/logos/rtmc-explorations/rtmc-single-bare.png",
-      "kind": "image",
-      "group": "rtmc-explorations",
-      "bytes": 163684,
-      "status": "exploration",
-      "grounds": [
-        "white",
-        "parchment"
-      ],
-      "note": "Single line, mark only. Exploration only, not an approved mark. Generated raster: it cannot be recoloured or scaled without degrading, and it must be redrawn as vector before any published use.",
-      "name": "RTMC exploration, single bare"
-    },
-    {
-      "file": "assets/logos/rtmc-explorations/rtmc-single-endorsed.png",
-      "url": "https://brand.theword.world/assets/logos/rtmc-explorations/rtmc-single-endorsed.png",
-      "kind": "image",
-      "group": "rtmc-explorations",
-      "bytes": 302921,
-      "status": "exploration",
-      "grounds": [
-        "white",
-        "parchment"
-      ],
-      "note": "Single line with the endorsement lockup. Exploration only, not an approved mark. Generated raster: it cannot be recoloured or scaled without degrading, and it must be redrawn as vector before any published use.",
-      "name": "RTMC exploration, single endorsed"
-    },
-    {
-      "file": "assets/logos/rtmc-explorations/rtmc-single-reversed-bare.png",
-      "url": "https://brand.theword.world/assets/logos/rtmc-explorations/rtmc-single-reversed-bare.png",
-      "kind": "image",
-      "group": "rtmc-explorations",
-      "bytes": 192406,
-      "status": "exploration",
+      "file": "assets/logos/rtmc/rtmc-wordmark-bare-reversed.svg",
+      "url": "https://brand.theword.world/assets/logos/rtmc/rtmc-wordmark-bare-reversed.svg",
+      "kind": "vector",
+      "group": "rtmc",
+      "bytes": 6592,
+      "status": "approved",
       "grounds": [
         "midnight"
       ],
-      "note": "Single line reversed, mark only. Exploration only, not an approved mark. Generated raster: it cannot be recoloured or scaled without degrading, and it must be redrawn as vector before any published use.",
-      "name": "RTMC exploration, single reversed bare"
+      "note": "Banner and hero use on Midnight. Set in DM Sans at weight 900 and converted to outlines, so it is artwork rather than live text: it needs no font installed, never reflows, and recolours by changing one fill value. Never re-set it in another face, never stretch it, never rebuild the tick rule by hand.",
+      "name": "Revival To My City, mark only, reversed"
     },
     {
-      "file": "assets/logos/rtmc-explorations/rtmc-single-reversed.png",
-      "url": "https://brand.theword.world/assets/logos/rtmc-explorations/rtmc-single-reversed.png",
-      "kind": "image",
-      "group": "rtmc-explorations",
-      "bytes": 323479,
-      "status": "exploration",
-      "grounds": [
-        "midnight"
-      ],
-      "note": "Single line reversed for Midnight grounds. Exploration only, not an approved mark. Generated raster: it cannot be recoloured or scaled without degrading, and it must be redrawn as vector before any published use.",
-      "name": "RTMC exploration, single reversed"
-    },
-    {
-      "file": "assets/logos/rtmc-explorations/rtmc-stacked-bare.png",
-      "url": "https://brand.theword.world/assets/logos/rtmc-explorations/rtmc-stacked-bare.png",
-      "kind": "image",
-      "group": "rtmc-explorations",
-      "bytes": 267957,
-      "status": "exploration",
+      "file": "assets/logos/rtmc/rtmc-wordmark-bare.svg",
+      "url": "https://brand.theword.world/assets/logos/rtmc/rtmc-wordmark-bare.svg",
+      "kind": "vector",
+      "group": "rtmc",
+      "bytes": 6592,
+      "status": "approved",
       "grounds": [
         "white",
         "parchment"
       ],
-      "note": "Stacked two-line, mark only. Exploration only, not an approved mark. Generated raster: it cannot be recoloured or scaled without degrading, and it must be redrawn as vector before any published use.",
-      "name": "RTMC exploration, stacked bare"
+      "note": "Where the endorsement line is already carried elsewhere on the surface. Set in DM Sans at weight 900 and converted to outlines, so it is artwork rather than live text: it needs no font installed, never reflows, and recolours by changing one fill value. Never re-set it in another face, never stretch it, never rebuild the tick rule by hand.",
+      "name": "Revival To My City, mark only"
     },
     {
-      "file": "assets/logos/rtmc-explorations/rtmc-stacked-endorsed.png",
-      "url": "https://brand.theword.world/assets/logos/rtmc-explorations/rtmc-stacked-endorsed.png",
-      "kind": "image",
-      "group": "rtmc-explorations",
-      "bytes": 398365,
-      "status": "exploration",
+      "file": "assets/logos/rtmc/rtmc-wordmark-reversed.svg",
+      "url": "https://brand.theword.world/assets/logos/rtmc/rtmc-wordmark-reversed.svg",
+      "kind": "vector",
+      "group": "rtmc",
+      "bytes": 27752,
+      "status": "approved",
+      "grounds": [
+        "midnight",
+        "photography with a Midnight scrim"
+      ],
+      "note": "For Midnight grounds and for footage carrying a scrim. Set in DM Sans at weight 900 and converted to outlines, so it is artwork rather than live text: it needs no font installed, never reflows, and recolours by changing one fill value. Never re-set it in another face, never stretch it, never rebuild the tick rule by hand.",
+      "name": "Revival To My City, reversed lockup"
+    },
+    {
+      "file": "assets/logos/rtmc/rtmc-wordmark-stacked.svg",
+      "url": "https://brand.theword.world/assets/logos/rtmc/rtmc-wordmark-stacked.svg",
+      "kind": "vector",
+      "group": "rtmc",
+      "bytes": 27844,
+      "status": "approved",
       "grounds": [
         "white",
         "parchment"
       ],
-      "note": "Stacked two-line with the endorsement lockup. Exploration only, not an approved mark. Generated raster: it cannot be recoloured or scaled without degrading, and it must be redrawn as vector before any published use.",
-      "name": "RTMC exploration, stacked endorsed"
+      "note": "For square and portrait spaces where the single line runs too wide. Set in DM Sans at weight 900 and converted to outlines, so it is artwork rather than live text: it needs no font installed, never reflows, and recolours by changing one fill value. Never re-set it in another face, never stretch it, never rebuild the tick rule by hand.",
+      "name": "Revival To My City, stacked lockup"
+    },
+    {
+      "file": "assets/logos/rtmc/rtmc-wordmark.svg",
+      "url": "https://brand.theword.world/assets/logos/rtmc/rtmc-wordmark.svg",
+      "kind": "vector",
+      "group": "rtmc",
+      "bytes": 27752,
+      "status": "approved",
+      "grounds": [
+        "white",
+        "parchment"
+      ],
+      "note": "The full mark with the endorsement line. Default wherever the name is introduced. Set in DM Sans at weight 900 and converted to outlines, so it is artwork rather than live text: it needs no font installed, never reflows, and recolours by changing one fill value. Never re-set it in another face, never stretch it, never rebuild the tick rule by hand.",
+      "name": "Revival To My City, primary lockup"
     },
     {
       "file": "assets/logos/the-word-for-all-the-world.png",
@@ -548,7 +507,6 @@
   "notesWithoutFiles": [],
   "gaps": [
     "A reversed signature for dark grounds. Every signature published here is Midnight ink and works only on Parchment or white. Nothing signed may appear on Midnight, Word Blue, or footage until a reversed master exists. Recolor the SVG fill rather than inverting the raster.",
-    "Revival To My City has no approved mark. Eight explorations are published under assets/logos/rtmc-explorations/ for selection. The chosen direction must be redrawn as vector, in Midnight and reversed, before it is used on anything. Until then RTMC is set as type.",
     "Location on every July 2026 caption is recorded as Sanga, Mbarara, Uganda from the capture folder and has not yet been confirmed against the official ministry record. Confirm it, then unbracket the older captions that still read [City].",
     "Wordmark masters in SVG and 2x/3x PNG (White, Midnight, Word Blue) are recorded as approved in Brand Guide §06 but are not yet published in this repository. Until they are, request them rather than recreating the mark.",
     "Prayer and ministry moments up close",

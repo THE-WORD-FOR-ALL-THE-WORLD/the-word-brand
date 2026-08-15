@@ -2,6 +2,7 @@
 """Generate the initiative messaging documents (/documents)."""
 import os
 
+NL = chr(10)
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 HEAD = """<!DOCTYPE html>
@@ -422,6 +423,21 @@ SUB_CSS = """
   .mark .lbl b{display:block;font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(11,26,45,.8);margin-bottom:4px;}
   .warn{margin-top:18px;background:var(--parchment);border-left:3px solid var(--ember);padding:16px 20px;font-size:14px;line-height:1.65;max-width:74ch;}
 
+  /* CLEAN leads with the mark on white; the footage follows as its own band */
+  /* CLEAN's hero is white, so the chrome inverts to Midnight ink over it */
+  body.clean .sitenav .links a{color:rgba(11,26,45,.8);}
+  body.clean .sitenav .links a:hover{color:var(--ember);}
+  body.clean .sitenav .links a.active{color:var(--midnight);border-bottom-color:rgba(11,26,45,.45);}
+
+  .markhero{background:var(--white);padding:clamp(84px,11vw,150px) 32px clamp(64px,8vw,104px);text-align:center;}
+  .markhero img{width:min(660px,86%);height:auto;display:block;margin:0 auto;}
+  .markhero .mission{margin:34px auto 0;max-width:520px;font-size:17px;color:rgba(11,26,45,.85);}
+  .filmband{position:relative;height:min(58vh,520px);overflow:hidden;background:var(--midnight);}
+  .filmband video,.filmband img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+  @media (prefers-reduced-motion: reduce){.filmband video{display:none;}}
+  .filmcap{background:var(--white);padding:16px 32px 0;text-align:center;font-size:11px;font-weight:600;
+    letter-spacing:.14em;text-transform:uppercase;color:rgba(11,26,45,.8);}
+
   main{padding:72px 0 40px;}
   .docbar{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:52px;}
   .docbar a{font-size:11.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:var(--word-blue);}
@@ -544,42 +560,45 @@ SUBS = [
 ]
 
 MARKS = [
- ("rtmc-single-endorsed",      False, "Single line, endorsed",   "The full lockup. Most legible at document and letterhead size."),
- ("rtmc-single-reversed",      True,  "Single line, reversed",   "The same lockup for Midnight grounds and over footage with a scrim."),
- ("rtmc-stacked-endorsed",     False, "Stacked, endorsed",       "For square and portrait spaces where the single line runs too wide."),
- ("rtmc-monogram-endorsed",    False, "Monogram, endorsed",      "RTMC as shorthand. Only where the full name is already established."),
- ("rtmc-single-bare",          False, "Single line, mark only",  "Where the endorsement line is already carried elsewhere on the surface."),
- ("rtmc-single-reversed-bare", True,  "Reversed, mark only",     "Banner and hero use on Midnight."),
- ("rtmc-stacked-bare",         False, "Stacked, mark only",      "The compact form."),
- ("rtmc-monogram-bare",        False, "Monogram, mark only",     "Avatar, favicon, and stamp use."),
+ ("rtmc-wordmark",               False, "Primary lockup",      "The full mark with the endorsement line. The default everywhere the name is introduced."),
+ ("rtmc-wordmark-reversed",      True,  "Reversed lockup",     "For Midnight grounds and for footage carrying a scrim."),
+ ("rtmc-wordmark-bare",          False, "Mark only",           "Where the endorsement line is already carried elsewhere on the surface."),
+ ("rtmc-wordmark-bare-reversed", True,  "Mark only, reversed", "Banner and hero use on Midnight."),
+ ("rtmc-wordmark-stacked",       False, "Stacked",             "For square and portrait spaces where the single line runs too wide."),
 ]
 
 
 def marks_block():
-    cards = ""
+    rows = []
     for name, dark, label, note in MARKS:
         cls = "art dark" if dark else "art"
-        cards += (f'        <figure class="mark">\n'
-                  f'          <div class="{cls}"><img src="/assets/logos/rtmc-explorations/{name}.png" alt="{label}"></div>\n'
-                  f'          <figcaption class="lbl"><b>{label}</b>{note}</figcaption>\n'
-                  f'        </figure>\n')
-    return ('    <div class="blk">\n'
-            '      <div class="lab">Marks under consideration</div>\n'
-            '      <h2>Eight options, none approved yet.</h2>\n'
-            '      <p class="lede">Each tile shows the mark on a ground it is approved for. These are explorations, not the mark. They share one system: heavy caps in '
-            'Midnight, a hairline rule split by a single Flame tick, and the endorsement line beneath. That '
-            'sits inside CLEAN\'s spec exactly, with the tick as a 5% Flame accent.</p>\n'
-            '      <div class="marks">\n' + cards + '      </div>\n'
-            '      <div class="warn"><strong>Not approved, and not usable as artwork.</strong> These are '
-            'generated raster images, so they cannot be recoloured, scaled, or set on a dark ground without '
-            'degrading, and generated letterforms carry irregularities that only show at size. Pick a '
-            'direction here, then the chosen one gets redrawn as vector and published as the mark. Until '
-            'that happens, Revival To My City is set as type, not as a logo.</div>\n'
-            '    </div>\n\n')
+        rows.append('        <figure class="mark">')
+        rows.append(f'          <div class="{cls}"><img src="/assets/logos/rtmc/{name}.svg" alt="{label}"></div>')
+        rows.append(f'          <figcaption class="lbl"><b>{label}</b>{note}</figcaption>')
+        rows.append('        </figure>')
+    head = [
+        '    <div class="blk">',
+        '      <div class="lab">The mark</div>',
+        '      <h2>One lockup, five forms.</h2>',
+        '      <p class="lede">Heavy caps in Midnight, a hairline rule split by a single Flame tick, '
+        'and the endorsement line beneath. The tick is the only Flame on the mark, which keeps it '
+        "inside CLEAN's 5% ceiling. Every form is vector, so it scales without limit and recolours "
+        'by changing one fill value.</p>',
+        '      <div class="marks">',
+    ]
+    tail = [
+        '      </div>',
+        '      <div class="warn"><strong>Set in DM Sans at weight 900, converted to outlines.</strong> '
+        'The mark is artwork, not live text, so it never needs the font installed to render and never '
+        'reflows. Do not re-set it in another face, do not stretch it, and do not rebuild the tick rule '
+        'by hand. If a size or colour you need does not exist, request it.</div>',
+        '    </div>',
+        '',
+    ]
+    return NL.join(head + rows + tail) + NL
 
 
-SUB_PAGE = """
-<div class="door">
+DOOR_HERO = """<div class="door">
   <video autoplay muted loop playsinline poster="/assets/images/{video}-poster.jpg">
     <source src="/assets/videos/{video}.mp4" type="video/mp4">
   </video>
@@ -594,7 +613,23 @@ SUB_PAGE = """
     </div>
   </div>
 </div>
+"""
 
+MARK_HERO = """<div class="markhero">
+  <img src="/assets/logos/rtmc/rtmc-wordmark.svg" alt="Revival To My City, a ministry of THE WORD FOR ALL THE WORLD">
+  <p class="mission">{mission}</p>
+</div>
+<div class="filmband">
+  <video autoplay muted loop playsinline poster="/assets/images/{video}-poster.jpg">
+    <source src="/assets/videos/{video}.mp4" type="video/mp4">
+  </video>
+</div>
+<div class="filmcap">Sanga, Mbarara &middot; 30 Jul 2026</div>
+"""
+
+
+SUB_PAGE = """
+{hero}
 <main>
   <div class="wrap">
     <div class="docbar">
@@ -668,9 +703,15 @@ for d in SUBS:
     rules = "".join(f"        <li>{r}</li>\n" for r in d["rules"])
     fields = {k: v for k, v in d.items() if k not in ("rules", "shots")}
     fields["marks"] = marks_block() if d["slug"] == "revival-to-my-city" else ""
+    tmpl = MARK_HERO if d["slug"] == "revival-to-my-city" else DOOR_HERO
+    invert_nav = d["slug"] == "revival-to-my-city"
+    fields["hero"] = tmpl.format(**fields)
     html = HEAD.format(title=f"{d['name']} · Initiative Brand Guide", extra_css=SUB_CSS,
                        band_pad="0", doc_active="", lh_active="")
     html = html.replace("<body>", f"<body class=\"{d['stage'].lower()}\">")
+    if invert_nav:
+        html = html.replace("/assets/logos/the-word-for-all-the-world.png",
+                            "/assets/logos/wordmark-midnight-ink.png", 1)
     html += SUB_PAGE.format(shots=shots, rules=rules, **fields)
     html += FOOT
     outdir = os.path.join(REPO, "brand", d["slug"])
