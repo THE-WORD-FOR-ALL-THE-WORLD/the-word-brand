@@ -193,12 +193,13 @@
     table.pt > thead.runhead{display:table-header-group;}
     .runhead td{padding:0;border:none;}
     .runhead .rh{display:flex;justify-content:space-between;font-size:8.5pt;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(11,26,45,.6);border-bottom:0.5pt solid rgba(11,26,45,.3);padding-bottom:5pt;margin-bottom:22pt;}
-    .masthead .doctitle{margin-top:24px;}
+    .masthead .mrow{display:none;}
+    .masthead .doctitle{margin-top:10px;}
     .dcontent{font-size:10.5pt;line-height:1.6;}
-    .dsec{grid-template-columns:72px minmax(0,1fr);break-before:page;border-top:none;margin-top:0;padding-top:0;}
-    .dtitle{break-after:avoid;}
+    .dsec{grid-template-columns:72px minmax(0,1fr);border-top:1px solid var(--rule);margin-top:26px;padding-top:22px;}
+    .dnum,.dtitle{break-after:avoid;}
     .record,.plain,.bp,.person,.ban,.slot,.missionline,.telling{break-inside:avoid;}
-    .adoption{break-before:page;border-top:none;margin-top:0;padding-top:40px;}
+    .adoption{break-inside:avoid;border-top:2px solid var(--midnight);margin-top:40px;padding-top:26px;}
     .dcontent tr{break-inside:avoid;}
     a{color:inherit;text-decoration:none;}
     @page{margin:0.95in 0.6in 0.7in;}
