@@ -2,7 +2,7 @@
   "schemaVersion": "1.0",
   "name": "THE WORD Brand System",
   "organization": "THE WORD FOR ALL THE WORLD",
-  "version": "5.0",
+  "version": "5.1",
   "messagingVersion": "1.0",
   "updated": "2026-08-15",
   "issued": "August 2026",
@@ -29,19 +29,16 @@
     {
       "slug": "every1",
       "name": "EVERY1 Movement",
-      "brandGuide": "https://brand.theword.world/letterhead/every1",
       "messagingDocument": "https://brand.theword.world/documents/every1"
     },
     {
       "slug": "revival-to-my-city",
       "name": "Revival To My City",
-      "brandGuide": "https://brand.theword.world/letterhead/revival-to-my-city",
       "messagingDocument": "https://brand.theword.world/documents/revival-to-my-city"
     },
     {
       "slug": "school-of-the-local-church",
       "name": "School of the Local Church",
-      "brandGuide": "https://brand.theword.world/letterhead/school-of-the-local-church",
       "messagingDocument": "https://brand.theword.world/documents/school-of-the-local-church"
     }
   ],
@@ -64,14 +61,14 @@
       "name": "EVERY1 Movement",
       "role": "initiative, BURN",
       "register": "DM Sans led, bolder, closer to the field",
-      "mission": "Empowering the local church to do the Great Commission & walk in God's calling."
+      "mission": "Empowering the local church to do the Great Commission and walk in God's calling."
     },
     {
       "id": "school-of-the-local-church",
       "name": "School of the Local Church",
       "role": "initiative, TRAIN",
       "register": "DM Sans led, bolder, closer to the field",
-      "mission": "Training the local church to know their authority in Christ & build a real relationship with Jesus."
+      "mission": "Training the local church to know their authority in Christ and build a real relationship with Jesus."
     }
   ],
   "governance": "This system changes one way: a proposed edit in writing, approval by Joel Zimmer and Nathan Zimmer, a version bump, and a changelog entry. No silent edits.",
@@ -84,8 +81,8 @@
       "name": "brand-system.md",
       "url": "https://brand.theword.world/ai/brand-system.md",
       "description": "The complete brand standard as one document.",
-      "bytes": 29600,
-      "sha256": "9d1cda3bc9c544da602e55fb3101447372764bc34721296a4599d403045fc8fd"
+      "bytes": 30402,
+      "sha256": "9b9f0e22f9bbc3bd8c7b51e0080957ca71877bb7e51fe5cd2cef5305bf090862"
     },
     {
       "name": "SKILL.md",
@@ -99,42 +96,42 @@
       "url": "https://brand.theword.world/ai/tokens.json",
       "description": "Colors, typography, system tokens and states.",
       "bytes": 4010,
-      "sha256": "4a1fa3318f5da4544fa01f7941544d7ce4b75b0dcbf6421f7f8d40d5653ffcd7"
+      "sha256": "7664a6b70232103c1dc0d8d3cf6924762c1bfb1a101ec00e9c165b96424babc1"
     },
     {
       "name": "audit.md",
       "url": "https://brand.theword.world/ai/audit.md",
       "description": "The brand audit rubric and report template.",
       "bytes": 7516,
-      "sha256": "e046aa787429b9999ce633c2fd84597f6b3da997b36a08431a4db14fddf6560a"
+      "sha256": "54877e92ae4993933d9cb7a4d7fd7791f1ea575a6ea4248e0b9dc968a4134e03"
     },
     {
       "name": "components.json",
       "url": "https://brand.theword.world/ai/components.json",
       "description": "Component specifications, resolved against current tokens.",
       "bytes": 11048,
-      "sha256": "7d93b7415ec6356beb37ad9b42df7adcc316ec51b983f365620e8dfde61199aa"
+      "sha256": "3add935f698f2b12d5a0445c937941b5dfc2bca36a8953af33a868a85bf6c738"
     },
     {
       "name": "assets.json",
       "url": "https://brand.theword.world/ai/assets.json",
       "description": "Approved logos, photography, and video, with usage rules.",
       "bytes": 12461,
-      "sha256": "972eb328192dd222c4d8907cf98f70c50cdb7c8a73e6d70053160735a538e419"
+      "sha256": "bf417a7b8b41b8527767971aa99df8858f1ed0108e7a8ca9af3a7c6f9a6911c6"
     },
     {
       "name": "approved-examples.md",
       "url": "https://brand.theword.world/ai/approved-examples.md",
       "description": "Worked output that passes the audit.",
       "bytes": 5682,
-      "sha256": "219d27dbd64a782025d9450c652ff0d836bd525ceca217c15c7f18a958d41adb"
+      "sha256": "9aa32d470b890fcfa4a96a022ad22cf0e62097c30fa907fa371a8b97927f8933"
     },
     {
       "name": "anti-patterns.md",
       "url": "https://brand.theword.world/ai/anti-patterns.md",
       "description": "What not to do, including every DON'T and every banned word.",
       "bytes": 8031,
-      "sha256": "d63c631dfa2d82061ca6ecc32879ae775edddde80c225d2e59f5067dbdba975e"
+      "sha256": "e040e57c391496503377a89a314c9e36616e825a686b1dfdbdfd594c80a3bbee"
     }
   ],
   "extraResources": []

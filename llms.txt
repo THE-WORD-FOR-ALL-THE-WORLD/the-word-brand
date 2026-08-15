@@ -18,7 +18,7 @@
 
 ## Facts at a glance
 
-Brand system version 5.0, messaging guide version 1.0, issued August 2026.
+Brand system version 5.1, messaging guide version 1.0, issued August 2026.
 Palette: Midnight `#0B1A2D`, Word Blue `#023D6F`, Parchment `#F7F3EC`, Flame `#F85842`, Ember `#C13A24`, White `#FFFFFF`.
 Typefaces: DM Serif Display, DM Serif Text, DM Sans.
 Proportion: 60 / 30 / 10, Flame never above a tenth and never carrying text.
@@ -36,9 +36,9 @@ Public mission line: Strengthening the local church to fulfill the Great Commiss
 
 - [Initiative brand guides](https://brand.theword.world/letterhead): How each initiative looks under the parent brand.
 - [Initiative messaging documents](https://brand.theword.world/documents): What each initiative is, in the words of the ministry.
-- [EVERY1 Movement](https://brand.theword.world/letterhead/every1) · [messaging document](https://brand.theword.world/documents/every1)
-- [Revival To My City](https://brand.theword.world/letterhead/revival-to-my-city) · [messaging document](https://brand.theword.world/documents/revival-to-my-city)
-- [School of the Local Church](https://brand.theword.world/letterhead/school-of-the-local-church) · [messaging document](https://brand.theword.world/documents/school-of-the-local-church)
+- [EVERY1 Movement](https://brand.theword.world/documents/every1)
+- [Revival To My City](https://brand.theword.world/documents/revival-to-my-city)
+- [School of the Local Church](https://brand.theword.world/documents/school-of-the-local-church)
 
 ## Optional
 

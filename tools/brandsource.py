@@ -292,6 +292,17 @@ def parse_brand_guide(path: str = BRAND_GUIDE) -> dict:
                 "endorsement": strip_tags(m.group(4)),
             }
         )
+    # v5.1 gave each door a ground, a Flame ceiling, and a register.
+    idents = []
+    for block in re.findall(r'<dl class="ident">(.*?)</dl>', s, re.S):
+        idents.append(
+            {
+                strip_tags(k).lower(): strip_tags(v)
+                for k, v in re.findall(r"<dt>(.*?)</dt>\s*<dd>(.*?)</dd>", block, re.S)
+            }
+        )
+    for sub, ident in zip(subs, idents):
+        sub["identity"] = ident
     require_count(subs, 3, "sub-brand cards", path)
     out["subBrands"] = subs
 
@@ -447,14 +458,17 @@ def scan_initiatives() -> list:
                 slugs.add(entry)
     out = []
     for slug in sorted(slugs):
-        out.append(
-            {
-                "slug": slug,
-                "name": INITIATIVE_NAMES.get(slug, slug.replace("-", " ").title()),
-                "brandGuide": f"{SITE}/letterhead/{slug}",
-                "messagingDocument": f"{SITE}/documents/{slug}",
-            }
-        )
+        entry = {
+            "slug": slug,
+            "name": INITIATIVE_NAMES.get(slug, slug.replace("-", " ").title()),
+            "messagingDocument": f"{SITE}/documents/{slug}",
+        }
+        # Only claim a per-initiative brand guide when the page actually exists.
+        # /letterhead became the document template at v5.0, so these are absent
+        # unless a door is later given its own page.
+        if os.path.isfile(os.path.join(REPO, "letterhead", slug, "index.html")):
+            entry["brandGuide"] = f"{SITE}/letterhead/{slug}"
+        out.append(entry)
     return out
 
 

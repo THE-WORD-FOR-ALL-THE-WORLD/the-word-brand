@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Brand Guide v5.0 · THE WORD FOR ALL THE WORLD</title>
+<title>Brand Guide v5.1 · THE WORD FOR ALL THE WORLD</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Serif+Text:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400;1,9..40,700&display=swap" rel="stylesheet">
@@ -231,15 +231,29 @@
   .exhibit .sig .role{margin-top:8px;padding-top:8px;border-top:1px solid var(--rule);font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(11,26,45,.78);}
   .exhibit .short-rule{border:none;border-top:1px solid var(--rule);width:72px;margin:0 auto 44px;}
 
-  /* phases */
-  .phases{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin:32px 0 12px;}
-  .phase{background:var(--word-blue);color:var(--parchment);border-radius:4px;padding:30px 26px;}
-  .phase.burn{background:var(--midnight);}
+  /* phases · each door renders in its own identity */
+  .phases{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:16px;margin:32px 0 12px;}
+  .phase{border-radius:4px;padding:30px 26px;display:flex;flex-direction:column;}
+  .phase.clean{background:var(--white);color:var(--midnight);border:1px solid var(--midnight);}
+  .phase.burn{background:var(--midnight);color:var(--parchment);}
+  .phase.train{background:var(--word-blue);color:var(--parchment);}
   .phase .word{font-weight:700;font-size:30px;letter-spacing:.06em;}
   .phase.burn .word{color:var(--flame);}
-  .phase .name{font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;margin-top:6px;opacity:.95;}
-  .phase .desc{font-size:14px;line-height:1.55;margin-top:14px;opacity:.95;}
-  .phase .endorse{margin-top:22px;padding-top:14px;border-top:1px solid rgba(247,243,236,.25);font-size:10.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;opacity:.8;}
+  .phase .name{font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;margin-top:6px;}
+  .phase .desc{font-size:14px;line-height:1.55;margin-top:14px;}
+  .phase .endorse{margin-top:22px;padding-top:14px;border-top:1px solid;font-size:10.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;}
+  .phase .ident{margin-top:18px;padding-top:16px;border-top:1px solid;display:grid;gap:9px;}
+  .phase .ident > div{display:flex;gap:12px;align-items:baseline;}
+  .phase .ident dt{flex:0 0 76px;font-size:9.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;}
+  .phase .ident dd{font-size:12.5px;line-height:1.5;}
+  .phase .doorlink{margin-top:auto;padding-top:22px;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;}
+  .phase.clean .endorse,.phase.clean .ident{border-top-color:rgba(11,26,45,.25);}
+  .phase.clean .endorse,.phase.clean .ident dt{color:rgba(11,26,45,.8);}
+  .phase.clean .doorlink{color:var(--word-blue);}
+  .phase.clean .doorlink:hover{color:var(--ember);}
+  .phase.burn .endorse,.phase.burn .ident,.phase.train .endorse,.phase.train .ident{border-top-color:rgba(247,243,236,.28);}
+  .phase.burn .endorse,.phase.burn .ident dt,.phase.train .endorse,.phase.train .ident dt{color:rgba(247,243,236,.8);}
+  .phase.burn .doorlink,.phase.train .doorlink{color:var(--white);}
 
   ul.rules{list-style:none;max-width:700px;}
   ul.rules li{padding:13px 0 13px 28px;position:relative;border-bottom:1px solid var(--rule);font-size:15px;}
@@ -302,7 +316,7 @@
   </video>
   <div class="scrim"></div>
   <div class="inner">
-    <span class="kicker">Brand Guide · Version 5.0</span>
+    <span class="kicker">Brand Guide · Version 5.1</span>
     <h1>THE WORD<br>FOR ALL <em>THE WORLD</em></h1>
     <div class="rule"></div>
     <div class="meta">
@@ -761,25 +775,47 @@
   <div class="wrap">
     <div class="slidehead"><span class="eyebrow">11 · Sub-Brands</span><span class="slideno">The Word · Brand Guide</span></div>
     <h2>One house.<br>Three named front doors.</h2>
-    <p>Law III applied. The outreaches lead in their own moments and always carry the endorsement line. Sub-brand materials are DM Sans–led; the serif appears only where the parent speaks. BURN owns the Flame. EVERY1 uses it most freely; RTMC and SLC hold the ≤10% line.</p>
+    <p>Law III applied. The outreaches lead in their own moments and always carry the endorsement line. Sub-brand materials are DM Sans led, and the serif appears only where the parent speaks.</p>
+    <p>The three doors are a sequence, not a menu: a heart is cleaned, then it burns, then it is trained to keep burning. They are told apart by temperature and proportion rather than by three separate palettes, so the house still reads as one house. Each door owns a ground, a Flame ceiling, and a register, and the cards below are rendered in the identity they describe.</p>
     <div class="phases">
-      <div class="phase">
+      <div class="phase clean">
         <div class="word">CLEAN</div>
         <div class="name">Revival To My City</div>
         <div class="desc">Stirring the local church to return to their first love.</div>
         <div class="endorse">A ministry of THE WORD FOR ALL THE WORLD</div>
+        <dl class="ident">
+          <div><dt>Ground</dt><dd>White or Parchment. The most whitespace of the three.</dd></div>
+          <div><dt>Type</dt><dd>Midnight on light. DM Sans led.</dd></div>
+          <div><dt>Flame</dt><dd>5% ceiling. The quietest door.</dd></div>
+          <div><dt>Register</dt><dd>Before the fire. Calm, open, unhurried.</dd></div>
+        </dl>
+        <a class="doorlink" href="/documents/revival-to-my-city/">Messaging document &rarr;</a>
       </div>
       <div class="phase burn">
         <div class="word">BURN</div>
         <div class="name">EVERY1 Movement</div>
-        <div class="desc">Empowering the local church to do the Great Commission &amp; walk in God's calling.</div>
+        <div class="desc">Empowering the local church to do the Great Commission and walk in God's calling.</div>
         <div class="endorse">A ministry of THE WORD FOR ALL THE WORLD</div>
+        <dl class="ident">
+          <div><dt>Ground</dt><dd>Midnight, full bleed wherever it can be.</dd></div>
+          <div><dt>Type</dt><dd>Parchment on Midnight. Ember for links and buttons.</dd></div>
+          <div><dt>Flame</dt><dd>The full tenth. This door owns the fire.</dd></div>
+          <div><dt>Register</dt><dd>The fire itself. Loudest, fastest, most footage.</dd></div>
+        </dl>
+        <a class="doorlink" href="/documents/every1/">Messaging document &rarr;</a>
       </div>
-      <div class="phase">
+      <div class="phase train">
         <div class="word">TRAIN</div>
         <div class="name">School of the Local Church</div>
-        <div class="desc">Training the local church to know their authority in Christ &amp; build a real relationship with Jesus.</div>
+        <div class="desc">Training the local church to know their authority in Christ and build a real relationship with Jesus.</div>
         <div class="endorse">A ministry of THE WORD FOR ALL THE WORLD</div>
+        <dl class="ident">
+          <div><dt>Ground</dt><dd>Word Blue structure on Parchment.</dd></div>
+          <div><dt>Type</dt><dd>Parchment on Word Blue. The most typographic door.</dd></div>
+          <div><dt>Flame</dt><dd>5% ceiling. Structure carries it, not colour.</dd></div>
+          <div><dt>Register</dt><dd>A building. Ordered, sequential, institutional.</dd></div>
+        </dl>
+        <a class="doorlink" href="/documents/school-of-the-local-church/">Messaging document &rarr;</a>
       </div>
     </div>
     <p class="caption">Exception on record: the EVERY1 app follows the YouVersion model and will not visibly promote the parent. Until it ships, EVERY1 follows this guide. RTMC's script-logo exploration ("Revival" cursive) remains open and compatible. The script is custom lettering, not a brand font.</p>
@@ -804,6 +840,7 @@
     <p class="lede">This guide changes one way: a proposed edit in writing, approval by Joel Zimmer and Nathan Zimmer, a version bump, and a row in this table. No silent edits, ever. The same table is published for machines at <a href="/ai/brand-system.md" style="color:var(--word-blue);">/ai/brand-system.md</a>, so an audit report can name the exact version it was measured against.</p>
     <table>
       <tr><th style="width:66px;">Version</th><th style="width:104px;">Date</th><th style="width:120px;">Owner</th><th>Changed</th><th style="width:150px;">Approved</th></tr>
+      <tr><td>5.1</td><td>2026-08-15</td><td>Nathan Zimmer</td><td>Sub-brand identity system added to §11. The three doors are now told apart by ground, Flame ceiling, and register rather than by three separate palettes, and each card renders in the identity it describes. Each door links to its messaging document. No new colours.</td><td>Joel Zimmer, Nathan Zimmer</td></tr>
       <tr><td>5.0</td><td>2026-08-15</td><td>Nathan Zimmer</td><td>Guide restated as the single source of truth rather than against the retired PDF: Supersedes line dropped, prophecy moved to the Messaging Guide, governmental-iconography boundary and retired colours moved to the anti-patterns record, voice filter de-duplicated, website example retired, design tokens renamed and moved to §08, colour rationale restated as five colours doing one job, swatches set on one row, changelog rebuilt with owner and approval, em dashes removed throughout.</td><td>Joel Zimmer, Nathan Zimmer</td></tr>
       <tr><td>4.5</td><td>2026-08-15</td><td>Nathan Zimmer</td><td>Signature masters published as approved assets, the initiative documents signed in real ink rather than an italic stand-in, and a Signatures page added to the portal.</td><td>Joel Zimmer, Nathan Zimmer</td></tr>
       <tr><td>4.4</td><td>not recorded</td><td>not recorded</td><td>Do/Don’t pairs aligned like-for-like, so each rule and its violation share a row.</td><td>not recorded</td></tr>
@@ -825,7 +862,7 @@
   <div class="wrap">
     <div class="inner">
       <div class="ad">Adopted and entered into the record</div>
-      <div class="vline">Brand Guide version 5.0 · Approved 15 August 2026</div>
+      <div class="vline">Brand Guide version 5.1 · Approved 15 August 2026</div>
       <div class="sigrow">
         <div class="sig">
           <div class="ink"></div>

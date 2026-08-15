@@ -317,20 +317,30 @@ def build_brand_system(brand: dict, messaging: dict, tokens: dict, updated: str,
     md += "## 10. The house and its named front doors\n\n"
     md += f"{sec['architecture']['lede']}\n\n"
     md += md_table(
-        ["Stage", "Initiative", "Mission", "Brand guide", "Messaging document"],
+        ["Stage", "Initiative", "Mission", "Messaging document"],
         [
             [
                 sub["stage"],
                 sub["name"],
                 sub["mission"],
                 next(
-                    (i["brandGuide"] for i in initiatives if slug(i["name"]) in slug(sub["name"]) or slug(sub["name"]) in slug(i["name"])),
-                    "",
-                ),
-                next(
                     (i["messagingDocument"] for i in initiatives if slug(i["name"]) in slug(sub["name"]) or slug(sub["name"]) in slug(i["name"])),
                     "",
                 ),
+            ]
+            for sub in brand["subBrands"]
+        ],
+    )
+    md += "\nEach door is told apart by ground, Flame ceiling, and register, not by a separate palette.\n\n"
+    md += md_table(
+        ["Stage", "Ground", "Type", "Flame", "Register"],
+        [
+            [
+                sub["stage"],
+                sub.get("identity", {}).get("ground", ""),
+                sub.get("identity", {}).get("type", ""),
+                sub.get("identity", {}).get("flame", ""),
+                sub.get("identity", {}).get("register", ""),
             ]
             for sub in brand["subBrands"]
         ],
@@ -558,7 +568,13 @@ def build_llms_txt(brand: dict, messaging: dict, tokens: dict, initiatives: list
         f"- [Initiative messaging documents]({SITE}/documents): What each initiative is, in the words of the ministry.",
     ]
     for init in initiatives:
-        lines.append(f"- [{init['name']}]({init['brandGuide']}) · [messaging document]({init['messagingDocument']})")
+        if init.get("brandGuide"):
+            lines.append(
+                f"- [{init['name']}]({init['brandGuide']}) · "
+                f"[messaging document]({init['messagingDocument']})"
+            )
+        else:
+            lines.append(f"- [{init['name']}]({init['messagingDocument']})")
     lines += [
         "",
         "## Optional",

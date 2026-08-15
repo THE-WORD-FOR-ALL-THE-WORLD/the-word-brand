@@ -1,6 +1,6 @@
 # THE WORD FOR ALL THE WORLD: Brand System
 
-> **Brand system v5.0 · Messaging guide v1.0 · Updated 2026-08-15**
+> **Brand system v5.1 · Messaging guide v1.0 · Updated 2026-08-15**
 > Canonical source: <https://brand.theword.world/ai/manifest.json>
 > The complete standard, assembled for machine reading. The human guides are at <https://brand.theword.world/brand> and <https://brand.theword.world/brand/messaging>.
 
@@ -192,13 +192,21 @@ Every record carries the marks of a record: a letterspaced kicker, a dateline of
 
 ## 10. The house and its named front doors
 
-Law III applied. The outreaches lead in their own moments and always carry the endorsement line. Sub-brand materials are DM Sans–led; the serif appears only where the parent speaks. BURN owns the Flame. EVERY1 uses it most freely; RTMC and SLC hold the ≤10% line.
+Law III applied. The outreaches lead in their own moments and always carry the endorsement line. Sub-brand materials are DM Sans led, and the serif appears only where the parent speaks.
 
-| Stage | Initiative | Mission | Brand guide | Messaging document |
+| Stage | Initiative | Mission | Messaging document |
+| --- | --- | --- | --- |
+| CLEAN | Revival To My City | Stirring the local church to return to their first love. | https://brand.theword.world/documents/revival-to-my-city |
+| BURN | EVERY1 Movement | Empowering the local church to do the Great Commission and walk in God's calling. | https://brand.theword.world/documents/every1 |
+| TRAIN | School of the Local Church | Training the local church to know their authority in Christ and build a real relationship with Jesus. | https://brand.theword.world/documents/school-of-the-local-church |
+
+Each door is told apart by ground, Flame ceiling, and register, not by a separate palette.
+
+| Stage | Ground | Type | Flame | Register |
 | --- | --- | --- | --- | --- |
-| CLEAN | Revival To My City | Stirring the local church to return to their first love. | https://brand.theword.world/letterhead/revival-to-my-city | https://brand.theword.world/documents/revival-to-my-city |
-| BURN | EVERY1 Movement | Empowering the local church to do the Great Commission & walk in God's calling. | https://brand.theword.world/letterhead/every1 | https://brand.theword.world/documents/every1 |
-| TRAIN | School of the Local Church | Training the local church to know their authority in Christ & build a real relationship with Jesus. | https://brand.theword.world/letterhead/school-of-the-local-church | https://brand.theword.world/documents/school-of-the-local-church |
+| CLEAN | White or Parchment. The most whitespace of the three. | Midnight on light. DM Sans led. | 5% ceiling. The quietest door. | Before the fire. Calm, open, unhurried. |
+| BURN | Midnight, full bleed wherever it can be. | Parchment on Midnight. Ember for links and buttons. | The full tenth. This door owns the fire. | The fire itself. Loudest, fastest, most footage. |
+| TRAIN | Word Blue structure on Parchment. | Parchment on Word Blue. The most typographic door. | 5% ceiling. Structure carries it, not colour. | A building. Ordered, sequential, institutional. |
 
 Every initiative surface carries the endorsement line: *A ministry of THE WORD FOR ALL THE WORLD*
 
@@ -371,10 +379,11 @@ replace it.
 
 ## 15. Version history
 
-### Brand Guide v5.0
+### Brand Guide v5.1
 
 | Version | Date | Owner | Changed | Approved |
 | --- | --- | --- | --- | --- |
+| 5.1 | 2026-08-15 | Nathan Zimmer | Sub-brand identity system added to §11. The three doors are now told apart by ground, Flame ceiling, and register rather than by three separate palettes, and each card renders in the identity it describes. Each door links to its messaging document. No new colours. | Joel Zimmer, Nathan Zimmer |
 | 5.0 | 2026-08-15 | Nathan Zimmer | Guide restated as the single source of truth rather than against the retired PDF: Supersedes line dropped, prophecy moved to the Messaging Guide, governmental-iconography boundary and retired colours moved to the anti-patterns record, voice filter de-duplicated, website example retired, design tokens renamed and moved to §08, colour rationale restated as five colours doing one job, swatches set on one row, changelog rebuilt with owner and approval, em dashes removed throughout. | Joel Zimmer, Nathan Zimmer |
 | 4.5 | 2026-08-15 | Nathan Zimmer | Signature masters published as approved assets, the initiative documents signed in real ink rather than an italic stand-in, and a Signatures page added to the portal. | Joel Zimmer, Nathan Zimmer |
 | 4.4 | not recorded | not recorded | Do/Don’t pairs aligned like-for-like, so each rule and its violation share a row. | not recorded |
