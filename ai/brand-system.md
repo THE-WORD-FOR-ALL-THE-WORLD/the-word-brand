@@ -1,6 +1,6 @@
-# THE WORD FOR ALL THE WORLD — Brand System
+# THE WORD FOR ALL THE WORLD: Brand System
 
-> **Brand system v4.4 · Messaging guide v1.0 · Updated August 2026**
+> **Brand system v4.4 · Messaging guide v1.0 · Updated 2026-08-15**
 > Canonical source: <https://brand.theword.world/ai/manifest.json>
 > The complete standard, assembled for machine reading. The human guides are at <https://brand.theword.world/brand> and <https://brand.theword.world/brand/messaging>.
 
@@ -20,8 +20,6 @@ The whole identity is two layers held in tension. When in doubt: the institution
 
 Two layers held in tension. **The institution** is the parent, THE WORD FOR ALL THE WORLD: deep navy, warm paper, serif headlines, dated documents, signatures. It speaks for the record, the prophecy, the official numbers, and the donor relationship. **The movement** is CLEAN, BURN, and TRAIN: bold sans, Flame, real footage. Revival To My City, EVERY1, and the School of the Local Church speak here, for events, activation, testimonies, and the field.
 
-When in doubt: the institution stays quiet, and the content burns.
-
 **Boundary.** We never use governmental iconography. No seals, no flags, no eagles. We carry authority; we do not imitate office.
 
 ## 2. The foundation
@@ -34,7 +32,7 @@ When in doubt: the institution stays quiet, and the content burns.
 
 **Mission.** To strengthen the local church to do the Great Commission. Fire starts fire. We burn for Jesus in locations across the world, and they catch it, because they're dry enough.
 
-**Vision.** Every tribe, every tongue, every nation, and EVERY1, will know the name Jesus.
+**Vision.** Every tribe, every tongue, every nation, and EVERY1, will know the name Jesus. (Hebrews 8:11)
 
 **The rally cry.** EVERY1 Will Know The Name Jesus.
 

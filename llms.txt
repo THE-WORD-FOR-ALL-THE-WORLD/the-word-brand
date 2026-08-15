@@ -1,4 +1,4 @@
-# THE WORD FOR ALL THE WORLD — Brand System
+# THE WORD FOR ALL THE WORLD: Brand System
 
 > The canonical brand system for THE WORD FOR ALL THE WORLD: visual identity, voice and
 > messaging, design tokens, approved assets, and a brand audit. Machine-readable copies of

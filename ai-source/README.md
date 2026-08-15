@@ -1,4 +1,4 @@
-# ai-source — the hand-authored half of the AI layer
+# ai-source: the hand-authored half of the AI layer
 
 Everything an AI agent reads lives at `https://brand.theword.world/ai/`. Those published
 files are built from two sources:

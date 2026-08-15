@@ -8,14 +8,19 @@
     "governance": "This system changes one way: a proposed edit in writing, approval by Joel Zimmer and Nathan Zimmer, a version bump, and a changelog entry. No silent edits.",
     "usage": "Free to read, quote, and follow for work produced for or about THE WORD FOR ALL THE WORLD. Not a license to use the wordmark, photography, or video for any other purpose.",
     "contact": "brand@theword.world",
-    "updated": null,
+    "updated": "2026-08-15",
     "_why": {
-      "updated": "Leave null to let the build stamp the Brand Guide's issued date. Set an explicit ISO date only to record a publication date that differs from the guide's own."
+      "updated": "ISO date of the last published change to the brand system. The /brand-release skill bumps this on every release. Set it to null to fall back to the Brand Guide's issued date, which is coarser."
     }
   },
 
   "tokens": {
     "_why": "Empty by design. Colors, type, and system tokens are read from the Brand Guide so the two can never disagree. Add an entry here only to publish a machine-only value that has no place on the visual page, and say why."
+  },
+
+  "lint": {
+    "allowedColors": ["#33536F", "#1A3A5C", "#5C2418", "#123153", "#2B4A68", "#4A6A88", "#1D3A57"],
+    "_why": "Gradient stops used only in the guides' own placeholder panels, which stand in for full-bleed field footage until the footage is cut. The Brand Guide labels them as non-brand placeholders. Remove each one from this list as its panel is replaced with real footage."
   },
 
   "extraPages": [],

@@ -150,7 +150,7 @@
       "spec": {
         "font": "DM Sans, 13px",
         "color": "@muted-text",
-        "structure": "what happened — then event · place · date"
+        "structure": "what happened, then event · place · date"
       },
       "rules": [
         "Names where known and permitted.",

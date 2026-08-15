@@ -3,10 +3,32 @@ name: Deploy to Cloudflare Pages
 on:
   push:
     branches: [main]
+  pull_request:
   workflow_dispatch:
 
 jobs:
+  verify:
+    name: Verify the brand system
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      # The AI layer claims to be canonical. These two steps are what make that
+      # claim true: stale or inconsistent output never reaches production.
+      - name: The AI layer matches the visual guides
+        run: python3 tools/build_ai.py --check
+
+      - name: The portal agrees with itself
+        run: python3 tools/brand_lint.py
+
   deploy:
+    name: Deploy
+    needs: verify
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:

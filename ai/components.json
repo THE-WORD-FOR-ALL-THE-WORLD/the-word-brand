@@ -1,7 +1,7 @@
 {
   "version": "4.4",
   "messagingVersion": "1.0",
-  "updated": "August 2026",
+  "updated": "2026-08-15",
   "authority": "canonical",
   "note": "Specs are authored against token names and resolved against the current Brand Guide at build time. `tokenRefs` records the original reference so a palette change updates every component here automatically.",
   "components": [
@@ -182,7 +182,7 @@
       "spec": {
         "font": "DM Sans, 13px",
         "color": "80% Midnight (light grounds) · 75% Parchment (dark)",
-        "structure": "what happened — then event · place · date"
+        "structure": "what happened, then event · place · date"
       },
       "rules": [
         "Names where known and permitted.",

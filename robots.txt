@@ -1,3 +1,7 @@
+# THE WORD FOR ALL THE WORLD — brand system.
+# Open on purpose, to search engines and to AI agents alike.
+# Machine-readable entry point: https://brand.theword.world/ai/manifest.json
+
 User-agent: *
 Allow: /
 

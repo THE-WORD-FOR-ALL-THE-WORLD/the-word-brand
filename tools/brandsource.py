@@ -306,8 +306,16 @@ def parse_messaging_guide(path: str = MESSAGING_GUIDE) -> dict:
     )
 
     pillars = {}
-    for m in re.finditer(r'<div class="lab">(Purpose|Mission|Vision)</div>\s*<div class="txt">(.*?)</div>', s, re.S):
-        pillars[m.group(1).lower()] = strip_tags(m.group(2))
+    for m in re.finditer(
+        r'<div class="lab">(Purpose|Mission|Vision)</div>\s*<div class="txt">(.*?)</div>'
+        r'(?:\s*<span class="vref">([^<]*)</span>)?',
+        s,
+        re.S,
+    ):
+        text = strip_tags(m.group(2))
+        if m.group(3):
+            text = f"{text} ({strip_tags(m.group(3))})"
+        pillars[m.group(1).lower()] = text
     require_count(list(pillars), 3, "purpose/mission/vision pillars", path)
     out["pillars"] = pillars
 

@@ -109,12 +109,11 @@
 
   /* masthead · asymmetric */
   .masthead .mrow{display:flex;justify-content:space-between;align-items:flex-start;gap:24px;padding-bottom:20px;border-bottom:1px solid var(--rule);}
-  .masthead .mrow img{height:20px;width:auto;margin-top:4px;}
+  .masthead .mrow img{height:15px;width:auto;margin-top:5px;}
   .masthead .mmeta{text-align:right;font-size:11.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);line-height:1.9;}
   .masthead .doctitle{font-family:var(--serif-display);font-weight:400;font-size:clamp(34px,5vw,48px);line-height:1.1;margin:34px 0 14px;}
   .masthead .doctitle em{font-style:italic;}
-  .masthead .standfirst{font-size:17px;line-height:1.65;color:var(--ink-soft);max-width:56ch;margin:0 0 34px;}
-  .masthead .mrule{border:none;border-top:2px solid var(--midnight);margin:0 0 8px;}
+  .masthead .standfirst{font-size:17px;line-height:1.65;color:var(--ink-soft);max-width:56ch;margin:0 0 10px;}
 
   /* section register · margin numerals */
   .dsec{display:grid;grid-template-columns:96px minmax(0,1fr);column-gap:36px;padding-top:30px;margin-top:44px;}
@@ -137,8 +136,8 @@
   .telling{font-family:var(--serif-text);font-size:18px;line-height:1.7;max-width:58ch;margin:14px 0;}
   .flag{background:rgba(193,58,36,.08);border:1px dashed var(--ember);border-radius:3px;padding:2px 6px;color:var(--ember);font-weight:600;}
   .dcontent table{width:100%;border-collapse:collapse;font-size:14.5px;margin:14px 0 12px;}
-  .dcontent th{text-align:left;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:8px 14px 10px 0;}
-  .dcontent td{padding:0 14px 16px 0;vertical-align:top;}
+  .dcontent th{text-align:left;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:8px 14px 8px 0;border-bottom:1px solid var(--midnight);}
+  .dcontent td{padding:10px 14px 10px 0;border-bottom:1px solid var(--rule);vertical-align:top;}
   .bp{display:grid;grid-template-columns:130px minmax(0,1fr);column-gap:22px;padding:14px 0;}
   .bp:first-of-type{margin-top:16px;}
   .bp .bl{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--word-blue);padding-top:4px;}
@@ -160,12 +159,14 @@
   .slot .s1{font-family:var(--serif-text);font-size:17px;margin-bottom:4px;}
   .slot .s2{font-size:13px;line-height:1.55;color:rgba(11,26,45,.78);}
 
-  /* adoption · symmetrical close */
-  .adoption{margin-top:52px;border-top:2px solid var(--midnight);padding-top:36px;text-align:center;}
-  .sigrow{display:flex;justify-content:center;gap:72px;flex-wrap:wrap;}
+  /* adoption · signatures left, divider before doc info */
+  .adoption{margin-top:64px;}
+  .sigrow{display:flex;flex-direction:column;gap:30px;}
   .sig .name{font-family:var(--serif-display);font-style:italic;font-size:27px;color:var(--word-blue);}
-  .sig .role{margin-top:8px;padding-top:8px;border-top:1px solid var(--rule);font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(11,26,45,.75);min-width:190px;}
-  .adoption .ad{margin-top:36px;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);}
+  .sig .role{margin-top:8px;padding-top:8px;border-top:1px solid var(--rule);font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(11,26,45,.75);width:210px;}
+  .adoption .ad{margin-top:30px;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);}
+  .adoption .frule{border:none;border-top:2px solid var(--midnight);margin:34px 0 14px;}
+  .adoption .docinfo{font-size:11.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);}
 
   table.pt{width:100%;border-collapse:collapse;}
   table.pt > thead.runhead{display:none;}
@@ -199,7 +200,7 @@
     .dsec{grid-template-columns:72px minmax(0,1fr);margin-top:30px;padding-top:0;}
     .dnum,.dtitle{break-after:avoid;}
     .record,.plain,.bp,.person,.ban,.slot,.missionline,.telling{break-inside:avoid;}
-    .adoption{break-inside:avoid;border-top:2px solid var(--midnight);margin-top:40px;padding-top:26px;}
+    .adoption{break-inside:avoid;margin-top:40px;}
     .dcontent tr{break-inside:avoid;}
     a{color:inherit;text-decoration:none;}
     @page{margin:0.95in 0.6in 0.7in;}
@@ -356,11 +357,10 @@
     <header class="masthead">
       <div class="mrow">
         <img src="/assets/logos/wordmark-midnight-ink.png" alt="THE WORD FOR ALL THE WORLD">
-        <div class="mmeta">Version 1.0 · August 2026<br>Companion to Brand Guide v4.4</div>
+        <div class="mmeta">Version 1.0 · August 2026</div>
       </div>
       <h1 class="doctitle">Brand <em>Messaging Guide</em></h1>
       <p class="standfirst">The single source for what this ministry says, to whom, and in what words. Where wording conflicts anywhere else, this document rules.</p>
-      <hr class="mrule">
     </header>
     <div class="docbody">
 
@@ -642,6 +642,8 @@
           <div class="sig"><div class="name">Nathan Zimmer</div><div class="role">Approved and Recorded</div></div>
         </div>
         <div class="ad">Entered into the record · August 2026</div>
+        <hr class="frule">
+        <div class="docinfo">The Word for All the World · Brand Messaging Guide · Version 1.0</div>
       </div>
 
     </div>

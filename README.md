@@ -1,60 +1,214 @@
-# THE WORD — Brand Portal
+# THE WORD FOR ALL THE WORLD: Brand System
 
-Brand site for **THE WORD FOR ALL THE WORLD**, published at
-**https://brand.theword.world** via Cloudflare Pages.
+The single source of truth for how this ministry looks, speaks, and is represented, by anyone and
+by anything. Published at **[brand.theword.world](https://brand.theword.world)** via Cloudflare
+Pages, open to people, search engines, and AI agents alike.
 
-The site is publicly readable and open to crawlers, including AI assistants. You can hand
-`https://brand.theword.world` (or `https://brand.theword.world/llms.txt`) to Claude, ChatGPT,
-or any other tool as a link and it will be able to read the whole brand system.
+One system, two faces:
 
-## Structure
+- **The portal** is the human face. Beautiful, readable, printable guides.
+- **[`/ai`](https://brand.theword.world/ai/)** is the machine face. The same standards as raw
+  Markdown and JSON, versioned, checksummed, and built for agents to retrieve.
 
+Both are generated from the same sources, so they cannot disagree.
+
+---
+
+## Where to start
+
+| You are | Go here |
+| --- | --- |
+| A person who needs the brand | [Brand Guide](https://brand.theword.world/brand) and [Messaging Guide](https://brand.theword.world/brand/messaging) |
+| An AI agent, or pointing one at this | [`/ai/manifest.json`](https://brand.theword.world/ai/manifest.json) |
+| Setting up a tool or another repository | [Give it to an AI](#give-it-to-an-ai) below |
+| Changing the brand | [`/brand-release`](.claude/skills/brand-release/SKILL.md) |
+| Checking work against the brand | [`/brand-audit`](.claude/skills/brand-audit/SKILL.md) |
+| Maintaining this repository | [How it is built](#how-it-is-built) below |
+
+---
+
+## The directory
+
+### Human-facing guides
+
+| Guide | URL | What it governs |
+| --- | --- | --- |
+| Brand Guide | [`/brand`](https://brand.theword.world/brand) | How we look. Design direction, the six laws, color, tokens and states, typography, logo, photography and video, the record, sub-brands, voice, changelog. |
+| Messaging Guide | [`/brand/messaging`](https://brand.theword.world/brand/messaging) | How we speak. The foundation, the prophecy, origin, identity, values, message architecture, the journey, the five audiences, voice and vocabulary, proof policy, governance. |
+| Initiative brand guides | [`/letterhead`](https://brand.theword.world/letterhead) | How each initiative looks under the parent brand. |
+| Initiative messaging documents | [`/documents`](https://brand.theword.world/documents) | What each initiative is, in the words of the ministry. |
+
+### The three initiatives
+
+One house, three named front doors, in a fixed order.
+
+| Stage | Initiative | Brand guide | Messaging document |
+| --- | --- | --- | --- |
+| CLEAN | Revival To My City | [`/letterhead/revival-to-my-city`](https://brand.theword.world/letterhead/revival-to-my-city) | [`/documents/revival-to-my-city`](https://brand.theword.world/documents/revival-to-my-city) |
+| BURN | EVERY1 Movement | [`/letterhead/every1`](https://brand.theword.world/letterhead/every1) | [`/documents/every1`](https://brand.theword.world/documents/every1) |
+| TRAIN | School of the Local Church | [`/letterhead/school-of-the-local-church`](https://brand.theword.world/letterhead/school-of-the-local-church) | [`/documents/school-of-the-local-church`](https://brand.theword.world/documents/school-of-the-local-church) |
+
+### The machine-readable layer
+
+Raw Markdown and JSON, no navigation, no scripts, no decoration. Served with permissive CORS and
+correct content types so any agent can fetch them.
+
+| File | What it is |
+| --- | --- |
+| [`/ai/manifest.json`](https://brand.theword.world/ai/manifest.json) | **The doorway.** Versions, links, and a SHA-256 for every other file. Agents read this first. |
+| [`/ai/brand-system.md`](https://brand.theword.world/ai/brand-system.md) | The complete standard, visual and verbal, as one document. |
+| [`/ai/SKILL.md`](https://brand.theword.world/ai/SKILL.md) | The installable agent skill: retrieval and audit workflow. |
+| [`/ai/tokens.json`](https://brand.theword.world/ai/tokens.json) | Colors, typography, system tokens and states. |
+| [`/ai/audit.md`](https://brand.theword.world/ai/audit.md) | The rubric every piece of work is checked against, with its report template. |
+| [`/ai/components.json`](https://brand.theword.world/ai/components.json) | Component specs, written against token names and resolved to current values. |
+| [`/ai/assets.json`](https://brand.theword.world/ai/assets.json) | Every approved logo, photograph, and video, with usage rules and known gaps. |
+| [`/ai/approved-examples.md`](https://brand.theword.world/ai/approved-examples.md) | Worked output that passes the audit. |
+| [`/ai/anti-patterns.md`](https://brand.theword.world/ai/anti-patterns.md) | What not to do, including every DON'T and every banned word. |
+| [`/llms.txt`](https://brand.theword.world/llms.txt) | Discovery file for tools that look for one. |
+
+### Skills
+
+| Skill | Use it when |
+| --- | --- |
+| [`/brand-release`](.claude/skills/brand-release/SKILL.md) | Changing anything the published standard says. Handles the edit, version bump, changelog, rebuild, and commit. |
+| [`/brand-sync`](.claude/skills/brand-sync/SKILL.md) | Regenerating and validating the AI layer after an edit. |
+| [`/brand-audit`](.claude/skills/brand-audit/SKILL.md) | Checking any work against the current standard. |
+| [`/brand-new-page`](.claude/skills/brand-new-page/SKILL.md) | Adding a page, guide, or initiative to the portal. |
+| [`/brand-skills`](.claude/skills/brand-skills/SKILL.md) | Creating, editing, or retiring the skills themselves. |
+| [`the-word-brand`](skills/the-word-brand/SKILL.md) | The installable loader for other projects and other AI tools. |
+
+---
+
+## Give it to an AI
+
+Three ways, in order of reliability.
+
+**1. Install the skill.** Most reliable, because the tool then knows the retrieval workflow without
+being told. See [`skills/README.md`](skills/README.md) for per-tool instructions. Then just say:
+
+> Use THE WORD brand to create and audit this.
+
+**2. Put it in the repository.** Any project whose work must be on brand gets an `AGENTS.md` or
+`CLAUDE.md` containing:
+
+```markdown
+All branded work must use the current THE WORD Brand System.
+
+Before creating or reviewing branded work, retrieve:
+https://brand.theword.world/ai/manifest.json
+
+Follow the skill and audit resources declared by that manifest. Do not use cached
+standards when the current manifest is accessible. State the brand-system version
+you used in your audit report.
 ```
-├── index.html            # Portal homepage (document hub)
-├── brand/index.html      # Brand Guide       → brand.theword.world/brand
-├── brand/messaging/index.html  # Messaging Guide → brand.theword.world/brand/messaging
-├── templates/          # Document templates   → brand.theword.world/templates/<name>
-├── assets/
-│   ├── logos/
-│   ├── fonts/
-│   └── images/
-├── archive/            # Retired versions of guides
-├── _headers            # Cloudflare Pages headers
-├── robots.txt          # Allows all crawlers, points to the sitemap
-├── sitemap.xml         # Every public page
-└── llms.txt            # Machine-readable index for AI assistants
+
+**3. Paste it into the conversation.** Works with any assistant that can read a URL:
+
+```text
+Before beginning, retrieve https://brand.theword.world/ai/manifest.json. Follow the
+current brand system and skill identified in that manifest. When finished, audit the
+result using the current audit standard and state which brand-system version you used.
 ```
 
-Each guide lives in its own folder as `index.html`, so `brand/index.html` is served at
-`/brand`. To add a new guide (e.g. Letterhead):
+To confirm any of these worked, ask: *"What version of THE WORD brand system are you working from,
+and what is the hex value of Ember?"* A working setup fetches the manifest and answers with the
+current version and `#C13A24`.
 
-1. Create `letterhead/index.html` (ask Claude/ChatGPT to draft or revise it).
-2. Add a card for it on the homepage (`index.html`) and remove the "Coming soon" state.
-3. Commit and push to `main` — Cloudflare Pages publishes automatically in ~30 seconds.
-4. Review at `brand.theword.world/letterhead`. To roll back, revert the commit.
+---
 
-## Cloudflare setup (one-time)
+## How it is built
 
-1. **Pages**: Cloudflare dashboard → Workers & Pages → Create → Pages →
-   Connect to Git → select this repo. Framework preset: *None*, build command: *empty*,
-   output directory: `/`. Deploy.
-2. **Custom domain**: In the Pages project → Custom domains → add `brand.theword.world`
-   (the `theword.world` zone is already on Cloudflare, so this is one click).
-3. **Access**: the site is intentionally public so AI tools and search engines can read it.
-   Do **not** put a Cloudflare Access application in front of `brand.theword.world`. If one
-   exists, remove it (Zero Trust → Access → Applications), otherwise every crawler gets the
-   login page instead of the site.
-4. **Indexing**: allowed via `robots.txt`, `sitemap.xml`, and the per-page `robots` meta tag.
-   Add new pages to `sitemap.xml` and `llms.txt` when you create them.
+### The architecture, in one rule
+
+> The visual guides own every mechanical fact. `ai-source/` owns everything an agent needs that no
+> visual page states. `ai/` is generated from both and is never edited by hand.
+
+Change a hex in the Brand Guide and `/ai/tokens.json` follows on the next build. Change how agents
+should behave and you edit `ai-source/`, where no generator can touch it. Nothing is stated in two
+places, so nothing can go stale in one of them.
+
+```text
+brand/index.html            ─┐
+brand/messaging/index.html   ├─→ tools/build_ai.py ─→ ai/            (generated, published)
+assets/ letterhead/ documents/│                    ─→ skills/         (generated, installable)
+ai-source/                  ─┘                     ─→ llms.txt, sitemap.xml, _headers
+
+tools/brand_lint.py ─→ proves the pages, the AI layer, and delivery still agree
+```
+
+### Layout
+
+```text
+├── index.html              Portal homepage
+├── brand/                  Brand Guide, and messaging/ for the Messaging Guide
+├── letterhead/             Initiative brand guides        (generated by tools/gen_docs.py)
+├── documents/              Initiative messaging documents (generated by tools/gen_docs.py)
+├── assets/                 logos · images · videos · fonts
+├── ai/                     GENERATED. The machine-readable layer. Never edit by hand.
+├── ai-source/              HAND-AUTHORED. Audit rubric, agent rules, components, examples, skill.
+├── skills/                 GENERATED. The installable loader skill.
+├── .claude/skills/         Maintenance skills for this repository.
+├── tools/
+│   ├── brandsource.py      Extraction: reads the guides, returns structured data
+│   ├── build_ai.py         Generation: writes ai/, skills/, llms.txt, sitemap.xml, _headers
+│   ├── brand_lint.py       Validation: drift detection across the whole portal
+│   └── gen_docs.py         Generates the initiative guides and documents
+├── archive/                Retired versions of guides
+├── _headers                Cloudflare Pages headers, /ai block generated
+├── robots.txt              Open to all crawlers
+├── sitemap.xml             GENERATED
+└── llms.txt                GENERATED
+```
+
+### The two commands
+
+```bash
+python3 tools/build_ai.py      # regenerate everything derived
+python3 tools/brand_lint.py    # prove it all still agrees
+```
+
+Run both after any change. Commit the regenerated files together with the change that caused them:
+a commit where the guide says one thing and the manifest says another is a commit where the site is
+lying about being canonical.
+
+### What keeps it honest for years
+
+This system claims to be canonical. Four mechanisms make that claim survive turnover, redesigns,
+and time:
+
+1. **The build fails rather than lies.** `tools/brandsource.py` raises `SourceError` when a pattern
+   it depends on stops matching in a guide. It never falls back to a stale or default value, so the
+   AI layer cannot quietly drift away from the visual guides.
+2. **The linter checks the whole portal, not just the build.** Palette drift between pages,
+   improvised colors, text on Flame, unapproved fonts, broken asset links, discovery gaps, manifest
+   checksums, navigation consistency, and the two copies of the skill. Eleven checks, listed in
+   [`/brand-sync`](.claude/skills/brand-sync/SKILL.md).
+3. **CI blocks the deploy.** The GitHub Action runs the build in `--check` mode and the linter
+   before deploying. Stale or inconsistent output never reaches `brand.theword.world`.
+4. **The manifest is checksummed and versioned.** Every file carries a SHA-256 and a version, so an
+   agent can tell whether a cached copy is current, and every audit report names the version it was
+   measured against.
+
+### Cloudflare setup, one time
+
+1. **Pages**: dashboard → Workers & Pages → Create → Pages → Connect to Git → this repo. Framework
+   preset *None*, build command empty, output directory `/`.
+2. **Custom domain**: add `brand.theword.world` in the Pages project.
+3. **Access**: leave it public. Do **not** put a Cloudflare Access application in front of this
+   site: every crawler and every agent would get the login page instead of the standards.
+4. **Deploy**: pushing to `main` publishes in about thirty seconds, gated by the checks above.
+
+---
 
 ## Conventions
 
-- Brand tokens (from the Brand Guide): midnight `#0B1A2D`, word blue `#023D6F`,
-  parchment `#F7F3EC`, flame `#F85842`, ember `#C13A24`.
-- Fonts: DM Serif Display (headlines), DM Serif Text, DM Sans (body) — loaded from Google Fonts.
-- Old versions of a guide go to `archive/` rather than being deleted.
-- Every page shares the same chrome: `.sitenav` (wordmark + Home / Brand Guide / Messaging,
-  `.active` on the current page) over a full-bleed video hero, and the unified midnight
-  footer (wordmark · tagline · domain). When adding a page, copy the chrome from an
-  existing guide and add its nav link to **all** pages.
-- Text over footage: midnight scrim + white type only — never Flame (Brand Guide law).
+- **No em dashes** in prose written for this repository. Use a colon, a comma, or a period.
+- Brand tokens are stated once, in the Brand Guide's `:root` block. Every other page copies those
+  values, and the linter fails if any page drifts.
+- Text over footage: Midnight scrim, white or Parchment type. Never Flame. This is standing law.
+- Every page shares the same chrome: `.sitenav` over a full-bleed video hero, and the midnight
+  footer. A new page adds its nav link to every other page.
+- Old versions of a guide go to `archive/` rather than being deleted, so an audit citing v4.3 can
+  still be checked against v4.3.
+- Every change to a published standard gets a version bump and a changelog entry. No silent edits,
+  ever. That rule is written into the guides themselves, and it applies to this repository too.
