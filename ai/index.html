@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow, max-snippet:-1">
+<title>AI Layer · THE WORD FOR ALL THE WORLD</title>
+<meta name="description" content="Machine-readable brand system for THE WORD FOR ALL THE WORLD. Start at manifest.json.">
+<link rel="alternate" type="application/json" href="/ai/manifest.json" title="AI manifest">
+<style>
+  :root{--midnight:#0B1A2D;--word-blue:#023D6F;--parchment:#F7F3EC;--ember:#C13A24;--rule:rgba(11,26,45,.18);}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font:16px/1.7 -apple-system,'Segoe UI',Helvetica,Arial,sans-serif;color:var(--midnight);background:var(--parchment);padding:64px 24px;}
+  main{max-width:760px;margin:0 auto;}
+  .eyebrow{font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--ember);}
+  h1{font-size:34px;line-height:1.15;margin:14px 0 10px;font-weight:600;}
+  p{margin-bottom:14px;}
+  code{background:rgba(11,26,45,.06);padding:1px 6px;border-radius:3px;font-size:14px;}
+  table{width:100%;border-collapse:collapse;margin:26px 0;font-size:15px;}
+  th{text-align:left;font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:10px 12px 10px 0;border-bottom:1px solid var(--midnight);}
+  td{padding:11px 12px 11px 0;border-bottom:1px solid var(--rule);vertical-align:top;}
+  a{color:var(--word-blue);}
+  a:hover{color:var(--ember);}
+  footer{margin-top:44px;padding-top:20px;border-top:1px solid var(--rule);font-size:13px;color:rgba(11,26,45,.75);}
+</style>
+</head>
+<body>
+<main>
+  <span class="eyebrow">Machine-readable layer · v4.4</span>
+  <h1>The AI entry point for THE WORD brand system</h1>
+  <p>Every file below is raw Markdown or JSON, served without navigation, scripts, or decoration.
+     Agents should start at <a href="/ai/manifest.json">manifest.json</a>, which names every current
+     resource with its version and checksum.</p>
+  <p>Humans want <a href="/brand">the Brand Guide</a> and
+     <a href="/brand/messaging">the Messaging Guide</a> instead.</p>
+  <table>
+    <tr><th>Resource</th><th>What it is</th></tr>
+    <tr><td><a href="/ai/manifest.json">manifest.json</a></td><td>The doorway. Versions, checksums, and links to everything else.</td></tr>
+    <tr><td><a href="/ai/brand-system.md">brand-system.md</a></td><td>The complete brand standard as one document.</td></tr>
+    <tr><td><a href="/ai/SKILL.md">SKILL.md</a></td><td>Installable agent skill: the retrieval and audit workflow.</td></tr>
+    <tr><td><a href="/ai/tokens.json">tokens.json</a></td><td>Colors, typography, system tokens and states.</td></tr>
+    <tr><td><a href="/ai/audit.md">audit.md</a></td><td>The brand audit rubric and report template.</td></tr>
+    <tr><td><a href="/ai/components.json">components.json</a></td><td>Component specifications, resolved against current tokens.</td></tr>
+    <tr><td><a href="/ai/assets.json">assets.json</a></td><td>Approved logos, photography, and video, with usage rules.</td></tr>
+    <tr><td><a href="/ai/approved-examples.md">approved-examples.md</a></td><td>Worked output that passes the audit.</td></tr>
+    <tr><td><a href="/ai/anti-patterns.md">anti-patterns.md</a></td><td>What not to do, including every DON'T and every banned word.</td></tr>
+  </table>
+  <p>To point any AI tool at this system, paste this:</p>
+  <p><code>Before beginning, retrieve https://brand.theword.world/ai/manifest.json. Follow the brand
+     system and skill it names. Audit the result against the audit resource and state which
+     brand-system version you used.</code></p>
+  <footer>Brand system v4.4 · Messaging guide v1.0 · Updated August 2026<br>
+  brand.theword.world</footer>
+</main>
+</body>
+</html>

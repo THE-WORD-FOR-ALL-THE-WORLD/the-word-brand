@@ -1,0 +1,286 @@
+{
+  "version": "4.4",
+  "messagingVersion": "1.0",
+  "updated": "August 2026",
+  "authority": "canonical",
+  "note": "Specs are authored against token names and resolved against the current Brand Guide at build time. `tokenRefs` records the original reference so a palette change updates every component here automatically.",
+  "components": [
+    {
+      "id": "button-primary",
+      "name": "Primary button",
+      "use": "The main call to action. One per view.",
+      "spec": {
+        "background": "#C13A24",
+        "color": "#FFFFFF",
+        "hover": "#A62F1B",
+        "font": "DM Sans 700, 14.5px, letter-spacing .04em",
+        "padding": "14px 28px",
+        "radius": "3px",
+        "contrast": "5.4:1, passes WCAG AA"
+      },
+      "rules": [
+        "Never Flame fill. Flame on a button is 3.3:1 and fails AA.",
+        "The label is sentence case or title case, never all caps, never a command shouted.",
+        "The focus ring is 2px Ember, 3px offset, and Flame when the button sits on Midnight."
+      ],
+      "html": "<a class=\"btn\" href=\"/partner\">Partner With Us</a>",
+      "tokenRefs": {
+        "background": "@ember",
+        "color": "@white",
+        "hover": "@button-hover"
+      }
+    },
+    {
+      "id": "button-ghost",
+      "name": "Ghost button",
+      "use": "The secondary action beside a primary button, on Midnight or over footage.",
+      "spec": {
+        "background": "transparent",
+        "color": "#F7F3EC",
+        "border": "1.5px solid rgba(247,243,236,.5)",
+        "hover": "rgba(247,243,236,.1) fill",
+        "radius": "3px"
+      },
+      "rules": [
+        "Only on dark grounds. On Parchment, the secondary action is a text link in Ember.",
+        "Never two ghost buttons in a row. One primary, one ghost, then stop."
+      ],
+      "html": "<a class=\"btn ghost\" href=\"/happening\">See What's Happening</a>",
+      "tokenRefs": {
+        "color": "@parchment"
+      }
+    },
+    {
+      "id": "eyebrow",
+      "name": "Eyebrow / kicker",
+      "use": "Opens a section or a record. Names what the reader is about to read.",
+      "spec": {
+        "font": "DM Sans 600, 12px",
+        "letterSpacing": ".18em",
+        "transform": "uppercase",
+        "color": "#C13A24 on light grounds, #F85842 on Midnight"
+      },
+      "rules": [
+        "Every record opens with one. Law II.",
+        "All caps belongs here, to labels, and to the wordmark. Never to the serif."
+      ],
+      "html": "<span class=\"eyebrow\">03 — Color System</span>",
+      "tokenRefs": {
+        "color": "@ember on light grounds, @flame on Midnight"
+      }
+    },
+    {
+      "id": "headline-serif",
+      "name": "Serif headline",
+      "use": "Section and page headlines where the institution speaks.",
+      "spec": {
+        "font": "DM Serif Display Regular, clamp(34px, 4.8vw, 52px)",
+        "lineHeight": "1.08",
+        "case": "sentence case",
+        "emphasis": "at most one italic word"
+      },
+      "rules": [
+        "No bold cut exists. For more weight, go bigger.",
+        "Never all caps.",
+        "Below 36px, use DM Serif Text. Below 22px, use DM Sans."
+      ],
+      "html": "<h2>No one told them it is <em>already here.</em></h2>",
+      "tokenRefs": {}
+    },
+    {
+      "id": "body",
+      "name": "Body copy",
+      "use": "Every extended reading passage.",
+      "spec": {
+        "font": "DM Sans 400, 17px",
+        "lineHeight": "1.7",
+        "color": "#0B1A2D on light grounds, #F7F3EC on Midnight",
+        "measure": "max-width 660px",
+        "muted": "80% Midnight (light grounds) · 75% Parchment (dark)"
+      },
+      "rules": [
+        "Always DM Sans. The serif never carries extended reading.",
+        "Never Flame body text on a light ground.",
+        "Short sentences, one idea each."
+      ],
+      "tokenRefs": {
+        "color": "@midnight on light grounds, @parchment on Midnight",
+        "muted": "@muted-text"
+      }
+    },
+    {
+      "id": "card",
+      "name": "Card",
+      "use": "A repeated unit in a grid: a guide, an initiative, a document.",
+      "spec": {
+        "background": "#FFFFFF",
+        "border": "1px solid rgba(11,26,45,.18)",
+        "radius": "4px",
+        "padding": "30px 28px",
+        "hoverBorder": "#C13A24",
+        "hoverShadow": "0 10px 30px rgba(11,26,45,.1)"
+      },
+      "rules": [
+        "Cards sit on Parchment, never on Midnight, unless the whole band is dark and the card inverts.",
+        "Card text is Midnight. Watch for light-on-light inherited from a dark parent."
+      ],
+      "tokenRefs": {
+        "background": "@white",
+        "border": "1px solid @rule",
+        "hoverBorder": "@ember"
+      }
+    },
+    {
+      "id": "record-document",
+      "name": "Record document",
+      "use": "The canonical treatment for the prophecy, vision statements, official impact summaries, field reports, and initiative documents. Law II and Law IV in their purest form.",
+      "spec": {
+        "ground": "#F7F3EC",
+        "rules": "hairline, 1px rgba(11,26,45,.18)",
+        "kicker": "letterspaced DM Sans 600 uppercase",
+        "quote": "DM Serif Text italic, 22 to 34px",
+        "dateline": "what, where, when",
+        "signature": "scanned ink"
+      },
+      "rules": [
+        "Never decorated. No color blocks, no illustration, no icons.",
+        "Closes with a dateline and, where authority is claimed, real signatures.",
+        "A script font standing in for ink is a violation."
+      ],
+      "html": "<div class=\"record\"><span class=\"qk\">The Word · A Prophecy</span><div class=\"verse\">…</div><div class=\"dateline\">Received December 2019</div></div>",
+      "tokenRefs": {
+        "ground": "@parchment",
+        "rules": "hairline, 1px @rule"
+      }
+    },
+    {
+      "id": "hero-video",
+      "name": "Full-bleed video hero",
+      "use": "Page and priority-panel heroes.",
+      "spec": {
+        "video": "muted, looping, playsinline, 6 to 15 seconds of real field footage",
+        "poster": "required still frame",
+        "scrim": "Midnight gradient, ~70% at text",
+        "textColor": "#FFFFFF or #F7F3EC"
+      },
+      "rules": [
+        "Never text over footage without the scrim.",
+        "Never Flame or Ember text over footage.",
+        "The still fallback is honored under prefers-reduced-motion and on slow connections.",
+        "Nothing stock. Documentary footage from our own conferences, crusades, and streets."
+      ],
+      "html": "<video autoplay muted loop playsinline poster=\"/assets/images/crowd-evening-poster.jpg\"><source src=\"/assets/videos/crowd-evening.mp4\" type=\"video/mp4\"></video><div class=\"scrim\"></div>",
+      "tokenRefs": {
+        "scrim": "@photo-video-scrim",
+        "textColor": "@white or @parchment"
+      }
+    },
+    {
+      "id": "photo-caption",
+      "name": "Photo caption",
+      "use": "Every published photograph. A photo without its record does not publish.",
+      "spec": {
+        "font": "DM Sans, 13px",
+        "color": "80% Midnight (light grounds) · 75% Parchment (dark)",
+        "structure": "what happened — then event · place · date"
+      },
+      "rules": [
+        "Names where known and permitted.",
+        "Bracketed fields mark anything not yet verified against the ministry record.",
+        "Written at capture, never from memory."
+      ],
+      "html": "<p class=\"caption\">The Word opened — attendees follow the teaching with Bibles and notes.<br><small>SLC Conference · [City], Uganda · 30 Jul 2026</small></p>",
+      "tokenRefs": {
+        "color": "@muted-text"
+      }
+    },
+    {
+      "id": "testimony",
+      "name": "Testimony",
+      "use": "The record of what God did. Four slots, always in order.",
+      "spec": {
+        "slots": [
+          "Before: life as it was, in the person's own words",
+          "Encounter: the moment Jesus intervened, where and when",
+          "Transformation: what changed, specific, verifiable, honest",
+          "Outcome: life now, and the invitation to respond"
+        ],
+        "attribution": "Name · City · Shared with permission"
+      },
+      "rules": [
+        "Real, consented, and named. Never fabricated, never composited, never anonymous.",
+        "Closes with an invitation to respond."
+      ],
+      "tokenRefs": {}
+    },
+    {
+      "id": "lower-third",
+      "name": "Video lower third",
+      "use": "Naming a speaker on screen.",
+      "spec": {
+        "font": "DM Sans, letterspaced caps",
+        "ground": "the Midnight scrim bar",
+        "accent": "optional Flame tick",
+        "content": "name, then role"
+      },
+      "rules": [
+        "Nothing animated, nothing bouncing.",
+        "Sits on the scrim, never straight on the footage."
+      ],
+      "tokenRefs": {}
+    },
+    {
+      "id": "stat-figure",
+      "name": "Official-record figure",
+      "use": "Impact reports and per-conference reports.",
+      "spec": {
+        "numeral": "DM Serif Display, #F85842, on #0B1A2D",
+        "label": "DM Sans 600 uppercase, letterspaced, #F7F3EC"
+      },
+      "rules": [
+        "This is Flame's job: display numerals and small uppercase labels on Midnight.",
+        "Numbers come from the official ministry record only, never estimates, never memory.",
+        "The figure carries a source line naming the record and its period."
+      ],
+      "html": "<div class=\"stat\"><div class=\"fig\">1,057</div><div class=\"lab\">Salvations</div></div>",
+      "tokenRefs": {
+        "numeral": "DM Serif Display, @flame, on @midnight",
+        "label": "DM Sans 600 uppercase, letterspaced, @parchment"
+      }
+    },
+    {
+      "id": "endorsement-line",
+      "name": "Sub-brand endorsement",
+      "use": "Wherever an initiative's name appears.",
+      "spec": {
+        "text": "A ministry of THE WORD FOR ALL THE WORLD",
+        "font": "DM Sans 600, small, letterspaced",
+        "placement": "directly beneath the initiative name or in the same lockup"
+      },
+      "rules": [
+        "Required on every initiative surface. Law III.",
+        "One recorded exception: the future EVERY1 app, on the YouVersion model.",
+        "Vanity domains redirect into the initiative's page. They never become separate homes."
+      ],
+      "html": "<div class=\"endorse\">A ministry of THE WORD FOR ALL THE WORLD</div>",
+      "tokenRefs": {}
+    },
+    {
+      "id": "site-chrome",
+      "name": "Portal navigation and footer",
+      "use": "Shared chrome on every page of the brand portal.",
+      "spec": {
+        "nav": "wordmark left, uppercase DM Sans 600 links right, over the hero, .active on the current page",
+        "footer": "#0B1A2D ground, wordmark · tagline · domain",
+        "tagline": "Every tribe. Every tongue. Every nation. EVERY1."
+      },
+      "rules": [
+        "A new page copies the chrome from an existing page and adds its own link to every other page.",
+        "The nav sits over a full-bleed video hero with the scrim in place."
+      ],
+      "tokenRefs": {
+        "footer": "@midnight ground, wordmark · tagline · domain"
+      }
+    }
+  ]
+}

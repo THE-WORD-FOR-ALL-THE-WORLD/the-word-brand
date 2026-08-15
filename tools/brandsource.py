@@ -69,6 +69,44 @@ def sha256(text: str) -> str:
     return hashlib.sha256(text.encode("utf-8")).hexdigest()
 
 
+def _section_prose(body: str) -> dict:
+    """Pull the headline, lede, rule lists, and captions out of one guide section.
+
+    Deliberately generic: it reads the structures the guides already use, so new
+    prose added to a section shows up in the AI layer without a code change.
+    """
+    head = re.search(r"<h2>(.*?)</h2>", body, re.S)
+    lede = re.search(r'<p class="lede">(.*?)</p>', body, re.S)
+    if not lede:
+        lede = re.search(r"</h2>\s*<p>(.*?)</p>", body, re.S)
+
+    groups = []
+    for m in re.finditer(r"<h3>(.*?)</h3>(.*?)(?=<h3>|$)", body, re.S):
+        rules = []
+        for li in re.finditer(r"<li>(.*?)</li>", m.group(2), re.S):
+            item = li.group(1)
+            term = re.match(r"\s*<strong>(.*?)</strong>(.*)", item, re.S)
+            if term:
+                rules.append({"term": strip_tags(term.group(1)), "text": strip_tags(term.group(2))})
+            else:
+                rules.append({"term": "", "text": strip_tags(item)})
+        if rules:
+            groups.append({"heading": strip_tags(m.group(1)), "rules": rules})
+
+    captions = [
+        strip_tags(m.group(1))
+        for m in re.finditer(r'<p class="caption"[^>]*>(.*?)</p>', body, re.S)
+        if strip_tags(m.group(1))
+    ]
+
+    return {
+        "headline": strip_tags(head.group(1)) if head else "",
+        "lede": strip_tags(lede.group(1)) if lede else "",
+        "ruleGroups": groups,
+        "captions": captions,
+    }
+
+
 # ---------------------------------------------------------------- brand guide
 
 
@@ -183,16 +221,20 @@ def parse_brand_guide(path: str = BRAND_GUIDE) -> dict:
     require_count(pairs, 10, "do/don't cards", path)
     out["doDont"] = pairs
 
-    # --- section index
+    # --- section index, with the prose each section carries
     sections = []
     eyebrows = re.findall(r'<span class="eyebrow">([^<]+)</span>', s)
     ids = re.findall(r'<section id="([^"]+)"', s)
-    for sid, eyebrow in zip(ids, eyebrows):
+    bodies = re.findall(r'<section id="[^"]+".*?</section>', s, re.S)
+    for sid, eyebrow, body in zip(ids, eyebrows, bodies):
         label = strip_tags(eyebrow)
         num, _, title = label.partition("—")
-        sections.append({"id": sid, "number": num.strip(), "title": title.strip() or label})
+        entry = {"id": sid, "number": num.strip(), "title": title.strip() or label}
+        entry.update(_section_prose(body))
+        sections.append(entry)
     require_count(sections, 12, "guide sections", path)
     out["sections"] = sections
+    out["sectionsById"] = {sec["id"]: sec for sec in sections}
 
     # --- typography faces
     faces = []

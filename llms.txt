@@ -1,33 +1,43 @@
-# THE WORD FOR ALL THE WORLD — Brand Portal
+# THE WORD FOR ALL THE WORLD — Brand System
 
-> The canonical brand system for THE WORD FOR ALL THE WORLD: visual identity,
-> voice and messaging, and per-initiative brand guides. Point an AI assistant at
-> this site to have it write, design, or review anything on-brand.
+> The canonical brand system for THE WORD FOR ALL THE WORLD: visual identity, voice and
+> messaging, design tokens, approved assets, and a brand audit. Machine-readable copies of
+> everything live under /ai/. Start there.
 
-Brand tokens: midnight `#0B1A2D`, word blue `#023D6F`, parchment `#F7F3EC`,
-flame `#F85842`, ember `#C13A24`.
-Typefaces: DM Serif Display (headlines), DM Serif Text, DM Sans (body).
-Standing brand law: text over video or photo footage uses a midnight scrim with
-white type only, never Flame.
+## Start here
 
-## Core guides
+- [AI manifest](https://brand.theword.world/ai/manifest.json): The doorway. Names every current resource, with versions and checksums.
+- [Agent skill](https://brand.theword.world/ai/SKILL.md): The retrieval and audit workflow, in installable Agent Skills format.
+- [Brand system](https://brand.theword.world/ai/brand-system.md): The complete standard as one Markdown document.
+- [Design tokens](https://brand.theword.world/ai/tokens.json): Colors, typography, system tokens and states.
+- [Brand audit](https://brand.theword.world/ai/audit.md): The rubric every piece of work is checked against.
+- [Components](https://brand.theword.world/ai/components.json): Component specifications resolved against current tokens.
+- [Assets](https://brand.theword.world/ai/assets.json): Every approved logo, photograph, and video, with usage rules.
+- [Approved examples](https://brand.theword.world/ai/approved-examples.md): Worked output that passes the audit.
+- [Anti-patterns](https://brand.theword.world/ai/anti-patterns.md): What not to do, including every DON'T and every banned word.
 
-- [Brand Guide](https://brand.theword.world/brand): Full visual identity — logo usage, color system, typography, layout, and imagery rules.
-- [Messaging Guide](https://brand.theword.world/brand/messaging): Voice, tone, vocabulary, and how we speak to every audience.
+## Facts at a glance
 
-## Initiative brand guides
+Brand system version 4.4, messaging guide version 1.0, issued August 2026.
+Palette: Midnight `#0B1A2D`, Word Blue `#023D6F`, Parchment `#F7F3EC`, Flame `#F85842`, Ember `#C13A24`, White `#FFFFFF`.
+Typefaces: DM Serif Display, DM Serif Text, DM Sans.
+Proportion: 60 / 30 / 10, Flame never above a tenth and never carrying text.
+Standing law: text over video or photo footage uses a Midnight scrim with white type only, never Flame.
+Documentary imagery only. Nothing stock, nothing staged, nothing generated.
+Public mission line: Strengthening the local church to fulfill the Great Commission, until EVERY1 knows the name Jesus.
 
-- [Initiative Brand Guides index](https://brand.theword.world/letterhead): Hub for each initiative's own brand expression under the parent brand.
-- [The EVERY1 Movement](https://brand.theword.world/letterhead/every1)
-- [Revival To My City](https://brand.theword.world/letterhead/revival-to-my-city)
-- [School of the Local Church](https://brand.theword.world/letterhead/school-of-the-local-church)
+## Human-facing guides
 
-## Initiative messaging documents
+- [Brand Guide](https://brand.theword.world/brand): Full visual identity. Logo usage, color, typography, layout, photography and video.
+- [Messaging Guide](https://brand.theword.world/brand/messaging): Voice, tone, vocabulary, audiences, and proof policy.
 
-- [Documents index](https://brand.theword.world/documents): Initiative messaging documents in ordinance form.
-- [The EVERY1 Movement](https://brand.theword.world/documents/every1)
-- [Revival To My City](https://brand.theword.world/documents/revival-to-my-city)
-- [School of the Local Church](https://brand.theword.world/documents/school-of-the-local-church)
+## The three initiatives
+
+- [Initiative brand guides](https://brand.theword.world/letterhead): How each initiative looks under the parent brand.
+- [Initiative messaging documents](https://brand.theword.world/documents): What each initiative is, in the words of the ministry.
+- [EVERY1 Movement](https://brand.theword.world/letterhead/every1) · [messaging document](https://brand.theword.world/documents/every1)
+- [Revival To My City](https://brand.theword.world/letterhead/revival-to-my-city) · [messaging document](https://brand.theword.world/documents/revival-to-my-city)
+- [School of the Local Church](https://brand.theword.world/letterhead/school-of-the-local-church) · [messaging document](https://brand.theword.world/documents/school-of-the-local-church)
 
 ## Optional
 

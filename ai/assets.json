@@ -1,0 +1,213 @@
+{
+  "version": "4.4",
+  "messagingVersion": "1.0",
+  "updated": "August 2026",
+  "authority": "canonical",
+  "rule": "Use these assets. Never generate photography or video of people or ministry, and never substitute stock. If the asset you need is not listed, request it and leave the slot empty.",
+  "counts": {
+    "total": 17,
+    "approved": 16,
+    "counterExamples": 1
+  },
+  "assets": [
+    {
+      "file": "assets/images/bibles-distribution.jpg",
+      "url": "https://brand.theword.world/assets/images/bibles-distribution.jpg",
+      "kind": "image",
+      "group": "images",
+      "bytes": 133138,
+      "status": "approved",
+      "capture": "SLC Conference · [City], Uganda · 31 Jul 2026",
+      "note": "Brand-object photography: black covers and red page edges are Flame on Midnight, unplanned. Caption location pending verification."
+    },
+    {
+      "file": "assets/images/conference-tent-teaching.jpg",
+      "url": "https://brand.theword.world/assets/images/conference-tent-teaching.jpg",
+      "kind": "image",
+      "group": "images",
+      "bytes": 173079,
+      "status": "approved",
+      "capture": "SLC Conference · [City], Uganda · 30 Jul 2026",
+      "note": "The §07 exemplar for photography as a record. Caption location pending verification against the ministry record."
+    },
+    {
+      "file": "assets/images/crowd-evening-poster.jpg",
+      "url": "https://brand.theword.world/assets/images/crowd-evening-poster.jpg",
+      "kind": "image",
+      "group": "images",
+      "bytes": 111620,
+      "status": "approved",
+      "note": "Still fallback for crowd-evening.mp4. Every loop ships with its poster."
+    },
+    {
+      "file": "assets/images/hero-congregation.jpg",
+      "url": "https://brand.theword.world/assets/images/hero-congregation.jpg",
+      "kind": "image",
+      "group": "images",
+      "bytes": 525838,
+      "status": "approved",
+      "capture": "Ministry's own conference photography, July 2026",
+      "note": "Documentary hero still. Text over it requires the Midnight scrim."
+    },
+    {
+      "file": "assets/images/hero-crowd-dusk.jpg",
+      "url": "https://brand.theword.world/assets/images/hero-crowd-dusk.jpg",
+      "kind": "image",
+      "group": "images",
+      "bytes": 461174,
+      "status": "approved",
+      "capture": "Ministry's own conference photography, July 2026",
+      "note": "Documentary hero still, golden-hour capture."
+    },
+    {
+      "file": "assets/images/hero-tent-poster.jpg",
+      "url": "https://brand.theword.world/assets/images/hero-tent-poster.jpg",
+      "kind": "image",
+      "group": "images",
+      "bytes": 106472,
+      "status": "approved",
+      "note": "Still fallback for hero-tent.mp4."
+    },
+    {
+      "file": "assets/images/hero-worship.jpg",
+      "url": "https://brand.theword.world/assets/images/hero-worship.jpg",
+      "kind": "image",
+      "group": "images",
+      "bytes": 447617,
+      "status": "approved",
+      "capture": "Ministry's own conference photography, July 2026",
+      "note": "Documentary hero still."
+    },
+    {
+      "file": "assets/images/tent-congregation-poster.jpg",
+      "url": "https://brand.theword.world/assets/images/tent-congregation-poster.jpg",
+      "kind": "image",
+      "group": "images",
+      "bytes": 90487,
+      "status": "approved",
+      "note": "Still fallback for tent-congregation.mp4."
+    },
+    {
+      "file": "assets/logos/the-word-for-all-the-world.png",
+      "url": "https://brand.theword.world/assets/logos/the-word-for-all-the-world.png",
+      "kind": "image",
+      "group": "logos",
+      "bytes": 2564,
+      "status": "approved",
+      "grounds": [
+        "midnight",
+        "word-blue",
+        "photography with a Midnight scrim"
+      ],
+      "note": "The default reversed wordmark used in the portal navigation and footer.",
+      "name": "Wordmark, reversed"
+    },
+    {
+      "file": "assets/logos/wordmark-midnight-ink.png",
+      "url": "https://brand.theword.world/assets/logos/wordmark-midnight-ink.png",
+      "kind": "image",
+      "group": "logos",
+      "bytes": 2392,
+      "status": "approved",
+      "grounds": [
+        "parchment",
+        "white"
+      ],
+      "note": "The letterhead mark. Use on printed and printable documents.",
+      "name": "Wordmark, Midnight ink"
+    },
+    {
+      "file": "assets/logos/wordmark-on-flame-not-allowed.png",
+      "url": "https://brand.theword.world/assets/logos/wordmark-on-flame-not-allowed.png",
+      "kind": "image",
+      "group": "logos",
+      "bytes": 2564,
+      "status": "counter-example",
+      "grounds": [],
+      "note": "Not permitted. Published only to show the violation. The mark cannot compete with calls to action, and Flame never carries the logo.",
+      "name": "Wordmark on Flame"
+    },
+    {
+      "file": "assets/logos/wordmark-on-midnight.png",
+      "url": "https://brand.theword.world/assets/logos/wordmark-on-midnight.png",
+      "kind": "image",
+      "group": "logos",
+      "bytes": 2564,
+      "status": "approved",
+      "grounds": [
+        "midnight"
+      ],
+      "note": "Reference lockup showing the flagship pairing.",
+      "name": "Wordmark on Midnight"
+    },
+    {
+      "file": "assets/logos/wordmark-on-word-blue.png",
+      "url": "https://brand.theword.world/assets/logos/wordmark-on-word-blue.png",
+      "kind": "image",
+      "group": "logos",
+      "bytes": 2564,
+      "status": "approved",
+      "grounds": [
+        "word-blue"
+      ],
+      "note": "Secondary structural ground. Use where Word Blue carries logo continuity.",
+      "name": "Wordmark on Word Blue"
+    },
+    {
+      "file": "assets/logos/wordmark-over-photo-scrim.png",
+      "url": "https://brand.theword.world/assets/logos/wordmark-over-photo-scrim.png",
+      "kind": "image",
+      "group": "logos",
+      "bytes": 2564,
+      "status": "approved",
+      "grounds": [
+        "photography with a Midnight scrim"
+      ],
+      "note": "The only approved treatment of the mark over imagery. The scrim is not optional.",
+      "name": "Wordmark over photography"
+    },
+    {
+      "file": "assets/videos/crowd-evening.mp4",
+      "url": "https://brand.theword.world/assets/videos/crowd-evening.mp4",
+      "kind": "video",
+      "group": "videos",
+      "bytes": 2768692,
+      "status": "approved",
+      "capture": "SLC conference footage, Uganda, July 2026",
+      "poster": "assets/images/crowd-evening-poster.jpg",
+      "note": "Muted looping hero footage. Used on the Brand Guide cover."
+    },
+    {
+      "file": "assets/videos/hero-tent.mp4",
+      "url": "https://brand.theword.world/assets/videos/hero-tent.mp4",
+      "kind": "video",
+      "group": "videos",
+      "bytes": 2051179,
+      "status": "approved",
+      "capture": "SLC conference footage, Uganda, July 2026",
+      "poster": "assets/images/hero-tent-poster.jpg",
+      "note": "Muted looping hero footage."
+    },
+    {
+      "file": "assets/videos/tent-congregation.mp4",
+      "url": "https://brand.theword.world/assets/videos/tent-congregation.mp4",
+      "kind": "video",
+      "group": "videos",
+      "bytes": 2285873,
+      "status": "approved",
+      "capture": "SLC conference footage, Uganda, July 2026",
+      "poster": "assets/images/tent-congregation-poster.jpg",
+      "note": "Muted looping hero footage."
+    }
+  ],
+  "notesWithoutFiles": [],
+  "gaps": [
+    "Wordmark masters in SVG and 2x/3x PNG (White, Midnight, Word Blue) are recorded as approved in Brand Guide §06 but are not yet published in this repository. Until they are, request them rather than recreating the mark.",
+    "Prayer and ministry moments up close",
+    "A Bible passing from one hand to another",
+    "Testimony portraits",
+    "Exteriors that establish place",
+    "Details: open Bible and pen, the offering basket",
+    "Vertical (9:16) capture of every key moment, alongside the horizontal frames"
+  ]
+}
