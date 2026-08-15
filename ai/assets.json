@@ -112,7 +112,7 @@
       "url": "https://brand.theword.world/assets/images/rtmc-city-gathering-poster.jpg",
       "kind": "image",
       "group": "images",
-      "bytes": 96655,
+      "bytes": 103787,
       "status": "approved",
       "note": "Still fallback for rtmc-city-gathering.mp4."
     },
@@ -473,11 +473,11 @@
       "url": "https://brand.theword.world/assets/videos/rtmc-city-gathering.mp4",
       "kind": "video",
       "group": "videos",
-      "bytes": 2860934,
+      "bytes": 2773380,
       "status": "approved",
       "capture": "SLC Conference · Sanga, Mbarara, Uganda · 30 Jul 2026",
       "poster": "assets/images/rtmc-city-gathering-poster.jpg",
-      "note": "Muted looping hero for the CLEAN door. A city-wide gathering with hands raised, in daylight. Replaced an evening loop that measured roughly half the brightness and half the sharpness, which fought CLEAN's light register.",
+      "note": "Muted looping hero for the CLEAN door. A city-wide gathering with hands raised, in daylight. Replaced an evening loop that measured roughly half the brightness and half the sharpness, which fought CLEAN's light register. Highlights were then pulled down: the sky as shot sat around the same luminance as the white page ground, so the band dissolved into it and the white above read as grey. The correction is exposure only, applied to the highlights, and recovers what the camera overexposed. Midtones, skin tones and colour are as captured. Do not restyle it further.",
       "name": "Loop, Revival To My City"
     },
     {

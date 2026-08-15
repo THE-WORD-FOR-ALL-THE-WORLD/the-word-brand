@@ -119,8 +119,8 @@
       "name": "assets.json",
       "url": "https://brand.theword.world/ai/assets.json",
       "description": "Approved logos, photography, and video, with usage rules.",
-      "bytes": 21840,
-      "sha256": "a7066a64ebec31d8035ad77a02ad24c8c4bc980c2888a98bd2432f0d81a23241"
+      "bytes": 22189,
+      "sha256": "d9e0b1e4da7702dd3abd1cbc98b48beed40f163fd0c712db6955fec80682b338"
     },
     {
       "name": "approved-examples.md",
