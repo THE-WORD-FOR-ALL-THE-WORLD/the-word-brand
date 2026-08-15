@@ -167,7 +167,9 @@
   .sig .role{margin-top:8px;padding-top:8px;border-top:1px solid var(--rule);font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(11,26,45,.75);min-width:190px;}
   .adoption .ad{margin-top:36px;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);}
 
-  .runhead{display:none;}
+  table.pt{width:100%;border-collapse:collapse;}
+  table.pt > thead.runhead{display:none;}
+  table.pt > tbody > tr > td.ptcell{padding:0;border:none;}
 
   footer{background:var(--midnight);color:rgba(247,243,236,.75);padding:40px 0;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;font-weight:500;}
   footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
@@ -180,8 +182,6 @@
     .person,.ban,.bp{grid-template-columns:1fr;row-gap:6px;}
     .masthead .mrow{flex-direction:column;}
     .masthead .mmeta{text-align:left;}
-    .adoption{grid-template-columns:1fr;}
-    .adoption .ad,.sigrow,.sealline{grid-column:1;}
   }
   @media(max-width:640px){section{padding:72px 0;}}
 
@@ -189,15 +189,19 @@
     .sitenav,.cover,.toc,.pres,.toolbar,footer{display:none !important;}
     body{background:var(--white);}
     .docwrap{padding:0;}
-    .paper{max-width:none;margin:0;border:none;box-shadow:none;padding:0.25in 0 0 0;}
-    .runhead{display:flex;position:fixed;top:0;left:0;right:0;justify-content:space-between;font-size:8.5pt;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(11,26,45,.6);border-bottom:0.5pt solid rgba(11,26,45,.3);padding-bottom:4pt;background:var(--white);}
+    .paper{max-width:none;margin:0;border:none;box-shadow:none;padding:0;}
+    table.pt > thead.runhead{display:table-header-group;}
+    .runhead td{padding:0;border:none;}
+    .runhead .rh{display:flex;justify-content:space-between;font-size:8.5pt;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(11,26,45,.6);border-bottom:0.5pt solid rgba(11,26,45,.3);padding-bottom:5pt;margin-bottom:22pt;}
+    .masthead .doctitle{margin-top:24px;}
     .dcontent{font-size:10.5pt;line-height:1.6;}
-    .dsec{grid-template-columns:72px minmax(0,1fr);}
+    .dsec{grid-template-columns:72px minmax(0,1fr);break-before:page;border-top:none;margin-top:0;padding-top:0;}
     .dtitle{break-after:avoid;}
-    .record,.plain,.bp,.person,.ban,.slot,.missionline,.telling,.adoption{break-inside:avoid;}
+    .record,.plain,.bp,.person,.ban,.slot,.missionline,.telling{break-inside:avoid;}
+    .adoption{break-before:page;border-top:none;margin-top:0;padding-top:40px;}
     .dcontent tr{break-inside:avoid;}
     a{color:inherit;text-decoration:none;}
-    @page{margin:0.75in 0.6in 0.7in;}
+    @page{margin:0.95in 0.6in 0.7in;}
   }
 </style>
 </head>
@@ -345,7 +349,9 @@
     <button class="printbtn" onclick="window.print()">Print this document</button>
   </div>
   <article class="paper">
-    <div class="runhead"><span>The Word for All the World</span><span>Brand Messaging Guide · v1.0</span></div>
+    <table class="pt">
+    <thead class="runhead"><tr><td><div class="rh"><span>The Word for All the World</span><span>Brand Messaging Guide · v1.0</span></div></td></tr></thead>
+    <tbody><tr><td class="ptcell">
     <header class="masthead">
       <div class="mrow">
         <img src="/assets/logos/wordmark-midnight-ink.png" alt="THE WORD FOR ALL THE WORLD">
@@ -638,6 +644,8 @@
       </div>
 
     </div>
+    </td></tr></tbody>
+    </table>
   </article>
 </div>
 
