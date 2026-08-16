@@ -1,5 +1,5 @@
 {
-  "version": "5.6",
+  "version": "5.7",
   "messagingVersion": "1.0",
   "updated": "2026-08-15",
   "authority": "canonical",
@@ -323,6 +323,34 @@
       "name": "Wordmark over photography"
     },
     {
+      "file": "assets/signatures/joel-zimmer-compact.png",
+      "url": "https://brand.theword.world/assets/signatures/joel-zimmer-compact.png",
+      "kind": "image",
+      "group": "signatures",
+      "bytes": 1555433,
+      "status": "approved",
+      "grounds": [
+        "parchment",
+        "white"
+      ],
+      "note": "Transparent PNG of Joel Zimmer's compact signature, 1200px tall. Same rule: SVG unless the destination refuses it.",
+      "name": "Signature, Joel Zimmer, compact, raster"
+    },
+    {
+      "file": "assets/signatures/joel-zimmer-compact.svg",
+      "url": "https://brand.theword.world/assets/signatures/joel-zimmer-compact.svg",
+      "kind": "vector",
+      "group": "signatures",
+      "bytes": 14738,
+      "status": "approved",
+      "grounds": [
+        "parchment",
+        "white"
+      ],
+      "note": "Tightest of the three, and the most upright and open: largest J bowl, clearest gap between the names. The one that survives being scaled down.",
+      "name": "Signature, Joel Zimmer, compact"
+    },
+    {
       "file": "assets/signatures/joel-zimmer-display.png",
       "url": "https://brand.theword.world/assets/signatures/joel-zimmer-display.png",
       "kind": "image",
@@ -351,39 +379,11 @@
       "name": "Signature, Joel Zimmer, display"
     },
     {
-      "file": "assets/signatures/joel-zimmer-extended.png",
-      "url": "https://brand.theword.world/assets/signatures/joel-zimmer-extended.png",
-      "kind": "image",
-      "group": "signatures",
-      "bytes": 1536121,
-      "status": "approved",
-      "grounds": [
-        "parchment",
-        "white"
-      ],
-      "note": "Transparent PNG of Joel Zimmer's extended signature, 1200px tall. Same rule: SVG unless the destination refuses it.",
-      "name": "Signature, Joel Zimmer, extended, raster"
-    },
-    {
-      "file": "assets/signatures/joel-zimmer-extended.svg",
-      "url": "https://brand.theword.world/assets/signatures/joel-zimmer-extended.svg",
-      "kind": "vector",
-      "group": "signatures",
-      "bytes": 18440,
-      "status": "approved",
-      "grounds": [
-        "parchment",
-        "white"
-      ],
-      "note": "The widest of the three, with a trailing stroke carrying almost a third of the total width. Use it where the signature line is wide and the default would leave the rule half empty.",
-      "name": "Signature, Joel Zimmer, extended"
-    },
-    {
       "file": "assets/signatures/joel-zimmer.png",
       "url": "https://brand.theword.world/assets/signatures/joel-zimmer.png",
       "kind": "image",
       "group": "signatures",
-      "bytes": 1555433,
+      "bytes": 1536121,
       "status": "approved",
       "grounds": [
         "parchment",
@@ -397,13 +397,13 @@
       "url": "https://brand.theword.world/assets/signatures/joel-zimmer.svg",
       "kind": "vector",
       "group": "signatures",
-      "bytes": 14724,
+      "bytes": 18425,
       "status": "approved",
       "grounds": [
         "parchment",
         "white"
       ],
-      "note": "Joel Zimmer's default signature. The most upright and open of the three, with the largest J bowl and the clearest gap between the names, so it is the one to place on documents and letterhead unless there is a reason to reach for another. Vector master: scale it, never redraw it.",
+      "note": "Joel Zimmer's default signature. The widest of the three, with a trailing stroke carrying almost a third of the total width, so it fills a signature line rather than sitting short of it. Place this one on documents and letterhead unless there is a reason to reach for another. Vector master: scale it, never redraw it.",
       "name": "Signature, Joel Zimmer"
     },
     {

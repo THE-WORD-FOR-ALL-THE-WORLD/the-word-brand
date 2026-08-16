@@ -1,6 +1,6 @@
 # Approved Examples
 
-> **Brand system v5.6 · Messaging guide v1.0 · Updated 2026-08-15**
+> **Brand system v5.7 · Messaging guide v1.0 · Updated 2026-08-15**
 > Canonical source: <https://brand.theword.world/ai/manifest.json>
 > This file is hand-authored in `ai-source/` and published unchanged. The build never rewrites its body.
 

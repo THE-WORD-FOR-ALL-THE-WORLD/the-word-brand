@@ -129,7 +129,7 @@
         "parchment",
         "white"
       ],
-      "note": "Joel Zimmer's default signature. The most upright and open of the three, with the largest J bowl and the clearest gap between the names, so it is the one to place on documents and letterhead unless there is a reason to reach for another. Vector master: scale it, never redraw it."
+      "note": "Joel Zimmer's default signature. The widest of the three, with a trailing stroke carrying almost a third of the total width, so it fills a signature line rather than sitting short of it. Place this one on documents and letterhead unless there is a reason to reach for another. Vector master: scale it, never redraw it."
     },
     "assets/signatures/joel-zimmer.png": {
       "name": "Signature, Joel Zimmer, raster",
@@ -158,23 +158,23 @@
       ],
       "note": "Transparent PNG of Joel Zimmer's display signature, 1200px tall. Same rule: SVG unless the destination refuses it."
     },
-    "assets/signatures/joel-zimmer-extended.svg": {
-      "name": "Signature, Joel Zimmer, extended",
+    "assets/signatures/joel-zimmer-compact.svg": {
+      "name": "Signature, Joel Zimmer, compact",
       "status": "approved",
       "grounds": [
         "parchment",
         "white"
       ],
-      "note": "The widest of the three, with a trailing stroke carrying almost a third of the total width. Use it where the signature line is wide and the default would leave the rule half empty."
+      "note": "Tightest of the three, and the most upright and open: largest J bowl, clearest gap between the names. The one that survives being scaled down."
     },
-    "assets/signatures/joel-zimmer-extended.png": {
-      "name": "Signature, Joel Zimmer, extended, raster",
+    "assets/signatures/joel-zimmer-compact.png": {
+      "name": "Signature, Joel Zimmer, compact, raster",
       "status": "approved",
       "grounds": [
         "parchment",
         "white"
       ],
-      "note": "Transparent PNG of Joel Zimmer's extended signature, 1200px tall. Same rule: SVG unless the destination refuses it."
+      "note": "Transparent PNG of Joel Zimmer's compact signature, 1200px tall. Same rule: SVG unless the destination refuses it."
     },
     "assets/images/hero-congregation.jpg": {
       "status": "approved",

@@ -1,6 +1,6 @@
 # THE WORD FOR ALL THE WORLD: Brand System
 
-> **Brand system v5.6 · Messaging guide v1.0 · Updated 2026-08-15**
+> **Brand system v5.7 · Messaging guide v1.0 · Updated 2026-08-15**
 > Canonical source: <https://brand.theword.world/ai/manifest.json>
 > The complete standard, assembled for machine reading. The human guides are at <https://brand.theword.world/brand> and <https://brand.theword.world/brand/messaging>.
 
@@ -379,10 +379,11 @@ replace it.
 
 ## 15. Version history
 
-### Brand Guide v5.6
+### Brand Guide v5.7
 
 | Version | Date | Owner | Changed | Approved |
 | --- | --- | --- | --- | --- |
+| 5.7 | 2026-08-15 | Nathan Zimmer | Joel Zimmer's default signature changes to the wide form, the one whose trailing stroke fills a signature line rather than sitting short of it. It takes joel-zimmer.svg and is now what the adoption band and the initiative documents carry. The upright form it replaces is the narrowest of the three and becomes joel-zimmer-compact.svg, which brings his set to the same default, display, and compact forms as Nathan's. The joel-zimmer-extended.svg filename published at v5.6 is withdrawn. | Joel Zimmer, Nathan Zimmer |
 | 5.6 | 2026-08-15 | Nathan Zimmer | Joel Zimmer's signature masters published as approved assets in three forms, default, display, and extended, traced from the original ink and drawn as vectors. Every place his name is signed now carries real ink rather than an empty rule: this guide's adoption band and all three initiative documents. The Signatures page becomes a two-signer kit of seven masters, ordered the way a document is signed. | Joel Zimmer, Nathan Zimmer |
 | 5.5 | 2026-08-15 | Nathan Zimmer | Revival To My City has an approved mark. The chosen exploration is redrawn as vector, set in DM Sans at weight 900 and converted to outlines, and published in five forms. The raster explorations are withdrawn. Its brand guide drops the framed hero panel and leads with the mark on white, with the footage following as its own band. | Joel Zimmer, Nathan Zimmer |
 | 5.4 | 2026-08-15 | Nathan Zimmer | Revival To My City moves to a White base, which its spec already permitted, and its hero loop is replaced with a daylight city gathering that measures twice the brightness and twice the sharpness of the evening clip it retires. Eight candidate marks published as explorations at assets/logos/rtmc-explorations/, none approved, with the requirement that the chosen one is redrawn as vector before use. | Joel Zimmer, Nathan Zimmer |
