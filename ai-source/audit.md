@@ -26,7 +26,7 @@ An audit that was not run against the current manifest is not an audit. Fetch
 | G4 | **Flame carrying text** | Any text set in Flame, or any text sitting directly on Flame. Fire at text size is Ember. |
 | G5 | **Text on footage without a scrim** | Type over photography or video without the Midnight scrim, or in a color other than White or Parchment. |
 | G6 | **Missing endorsement** | An initiative's name appears without "A ministry of THE WORD FOR ALL THE WORLD." |
-| G7 | **Governmental iconography** | Seals, crests, flags, eagles, or any device that imitates a government office. |
+| G7 | **Governmental iconography** | Seals, crests, flags, eagles, or any device that imitates a government office. One recorded exception: the School of the Local Church's approved academic seal, on the School's own credentials only (Brand Guide §11, v5.8). The seal anywhere else, or any other seal, fails. |
 | G8 | **Unattributed authority** | A vision statement, field report, testimony, or official record published without the name of the person or office behind it. |
 | G9 | **Banned language** | Any term from the Messaging Guide's hype, corporate-polish, or churchy-insider lists, used straight rather than explained. |
 | G10 | **Wrong hero** | The copy makes THE WORD the hero of the story instead of the believer and the local church. |

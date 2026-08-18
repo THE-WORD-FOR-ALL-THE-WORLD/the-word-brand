@@ -490,6 +490,20 @@ SUB_CSS = """
   body.clean .lab{color:var(--ember);}
   body.clean .blk{margin-bottom:82px;}
   .prov{margin-top:14px;font-size:13px;color:rgba(11,26,45,.8);max-width:74ch;}
+
+  /* TRAIN opens in the identity it describes: Word Blue structure on Parchment */
+  body.train .trainhero{background:var(--word-blue);color:var(--parchment);padding:clamp(150px,17vw,200px) 0 clamp(56px,7vw,84px);}
+  body.train .trainhero .stageword{font-size:clamp(40px,6vw,72px);font-weight:700;letter-spacing:.06em;line-height:1;}
+  body.train .trainhero h1{font-family:var(--serif-display);font-weight:400;font-size:clamp(30px,4.4vw,48px);line-height:1.12;margin-top:10px;}
+  body.train .trainhero .mission{margin-top:16px;max-width:560px;color:rgba(247,243,236,.9);}
+  body.train .trainhero .tickrule{justify-content:flex-start;margin:26px 0 0;}
+  body.train .trainhero .endorse{display:inline-block;margin-top:26px;padding-top:14px;border-top:1px solid rgba(247,243,236,.3);font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:rgba(247,243,236,.85);}
+  body.train .filmcap{background:var(--parchment);}
+
+  /* the city instance lockup demo (CLEAN) */
+  .lockupdemo{background:var(--white);border:1px solid var(--rule);border-radius:4px;padding:44px 30px;text-align:center;margin-top:20px;}
+  .lockupdemo img{width:min(420px,80%);height:auto;}
+  .lockupdemo .cityline{margin-top:18px;font-size:15px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--midnight);}
 """
 
 SUBS = [
@@ -502,6 +516,20 @@ SUBS = [
         typerule="Midnight on light. DM Sans led.",
         flame="5% ceiling. The quietest door.",
         register="Before the fire. Calm, open, unhurried.",
+        avatar="The bare mark, Midnight on White. The tick rule survives a circular crop; the endorsement line does not have to.",
+        handle="@revivaltomycity, recorded in Brand Guide &sect;12.",
+        kindhead="An event brand.",
+        kindtext="Revival To My City lives on posters, dates, and city names. Its real design system "
+                 "is not a page, it is the city instance: how the mark locks up with a city and a "
+                 "date, the poster, the stage backdrop, the countdown graphic. The name itself is "
+                 "built for this, because \"My City\" becomes each city's own sentence, and most "
+                 "people will meet this brand on a poster before they meet it in a room.",
+        capture=[
+            "<strong>Night altar calls.</strong> The room responding: hands, tears, the front filling.",
+            "<strong>The city by day.</strong> Streets, markets, and skylines of the host city, so each instance can open with its own place.",
+            "<strong>The host church serving.</strong> Local people running their own room: ministry of helps, prayer teams, setup.",
+            "<strong>The empty venue.</strong> The room before anyone arrives, for the countdown and the record.",
+        ],
         why="CLEAN is the first movement of the journey. A heart is cleaned before it burns, so this "
             "door is the invitation, not the intensity. Its work happens in evening services: worship, "
             "preaching, the altar call, and testimonies captured as they are given.",
@@ -523,6 +551,18 @@ SUBS = [
         typerule="Parchment on Midnight. Ember for links and buttons.",
         flame="The full tenth. This door owns the fire.",
         register="The fire itself. Loudest, fastest, most footage.",
+        avatar="The 1 glyph, Parchment on Midnight, once the mark is approved. Until then, the parent wordmark on Midnight.",
+        handle="@every1movement, recorded in Brand Guide &sect;12.",
+        kindhead="A movement brand.",
+        kindtext="EVERY1 lives on phones and in other people's feeds. It carries the loosest rules "
+                 "of the three, the strongest single glyph, and assets designed to be given away. "
+                 "The full-bleed Midnight, the footage, and the pace are the right instincts; the "
+                 "participation layer below is what makes it a movement.",
+        capture=[
+            "<strong>One-to-one, away from any stage.</strong> Two people and a Bible: workplaces, campuses, doorways, bus stops.",
+            "<strong>The handoff.</strong> A believer giving something: a Bible, a meal, their time.",
+            "<strong>Vertical first.</strong> Every key moment captured 9:16 alongside the horizontal frame, because this door is watched on phones.",
+        ],
         why="BURN is the second movement. A cleaned heart catches fire, and fire starts fire. This door "
             "is not an event, it is a lifestyle: ordinary believers sharing Jesus where they already "
             "live, work, and study. Membership is simple, and it is measured by whether you have shared "
@@ -542,14 +582,27 @@ SUBS = [
         mission="Training the local church to know their authority in Christ and build a real relationship with Jesus.",
         video="slc-teaching-session",
         ground="Word Blue structure on Parchment.",
-        typerule="Parchment on Word Blue. The most typographic door.",
+        typerule="Parchment on Word Blue. The most typographic door, with the recorded serif allowance for credentials.",
         flame="5% ceiling. Structure carries it, not colour.",
         register="A building. Ordered, sequential, institutional.",
+        avatar="The seal, Parchment on Word Blue, once it is approved. Until then, the parent wordmark on Word Blue.",
+        handle="@schoolofthelocalchurch, recorded in Brand Guide &sect;12.",
+        kindhead="An institution.",
+        kindtext="The School is credential-grade design: a seal, a certificate, a numbering system, "
+                 "and the recorded serif allowance. A school signals permanence through type and "
+                 "structure, so structure here is stated exactly, never implied.",
+        capture=[
+            "<strong>The classroom.</strong> Teaching sessions, open Bibles, pens moving.",
+            "<strong>The materials.</strong> The course books and Bibles as objects, received and used.",
+            "<strong>The credential moment.</strong> Graduates with certificates, named and consented, for the record.",
+        ],
         why="TRAIN is the third movement, and the one that lasts. Fire that is not trained goes out. "
             "This door teaches believers their authority in Christ and how to build a real relationship "
             "with Jesus, starting with the free personal evangelism course.",
         rules=[
             "<strong>Structure carries the weight.</strong> Word Blue blocks, rules, and numbered sequence do the work that colour does elsewhere.",
+            "<strong>The serif allowance.</strong> The only door that sets type in the parent's serif: credential and course titles, certificates, and diploma text, per Brand Guide &sect;11. Everything else stays DM Sans.",
+            "<strong>The seal.</strong> The only door that carries one. Single colour, the School's own credentials only, never another door's work, never decoration.",
             "<strong>The most typographic door.</strong> Sessions, modules, and steps are numbered and ordered. If it can be a sequence, it is one.",
             "<strong>Flame at five percent.</strong> A school is not a rally. The fire is in what is taught, not in the layout.",
             "<strong>Everything is a record.</strong> Course names, session numbers, and dates are stated exactly, because a school that is vague about its own curriculum is not a school.",
@@ -598,6 +651,96 @@ def marks_block():
     return NL.join(head + rows + tail) + NL
 
 
+# Door-specific system blocks, inserted after "Place in the journey".
+# Each door is a different species of brand (Brand Guide §11), so each carries
+# a different asset system: the event brand gets the city instance, the
+# movement brand gets the participation layer, the institution gets the
+# credential system.
+EXTRAS = {
+    "revival-to-my-city": """    <div class="blk">
+      <div class="lab">The city instance</div>
+      <h2>The unit of this identity.</h2>
+      <p class="lede">Revival To My City is met on a poster before it is met in a room, so the unit of
+      this identity is not a page. It is the city instance: the mark, a city, and a date, locked up
+      as one announcement.</p>
+      <div class="lockupdemo">
+        <img src="/assets/logos/rtmc/rtmc-wordmark-bare.svg" alt="Revival To My City mark with the city and date line beneath">
+        <div class="cityline">[City] &middot; [Month Year]</div>
+      </div>
+      <p class="prov">The bracketed line is the template. A real instance sets a real city and real
+      dates from the record, in letterspaced DM Sans caps beneath the mark. The lockup is never
+      redrawn per city; only that line changes.</p>
+      <ul class="doorrules">
+        <li><strong>The poster.</strong> The mark or the stage word, the city and date line, one action, and the endorsement line. Footage runs full bleed behind the Midnight scrim with White or Parchment type only, or the poster stays paper with Midnight type. Flame keeps the 5% ceiling: the single tick and nothing more.</li>
+        <li><strong>The stage backdrop.</strong> The reversed mark and the city line, nothing else. The room provides the colour.</li>
+        <li><strong>The countdown.</strong> The poster reduced: mark, city and date line, and the days remaining as the only numeral on the surface.</li>
+        <li><strong>The record.</strong> Every city instance is entered into the record, city, venue, dates, and host church, before anything is printed.</li>
+      </ul>
+    </div>
+
+""",
+    "every1": """    <div class="blk">
+      <div class="lab">The participation layer</div>
+      <h2>Assets designed to be given away.</h2>
+      <p class="lede">A movement's identity lives on its people's own feeds, or it is not a movement.
+      These assets exist to leave official hands.</p>
+      <ul class="doorrules">
+        <li><strong>The 1 is the glyph.</strong> The commissioned mark leads with the numeral: an app icon, a profile badge, a sticker, a shape simple enough to survive at sixty pixels with no endorsement line in frame.</li>
+        <li><strong>Share cards ride along.</strong> Every official EVERY1 surface ships with a version a member can post themselves: square and vertical, footage behind the scrim, one line of Parchment type.</li>
+        <li><strong>The loosest rules in the house.</strong> Official surfaces follow this guide. What a member does with the badge on their own feed is not audited; it is the movement working.</li>
+        <li><strong>The app icon comes first.</strong> The planned app follows the YouVersion model, so the glyph must carry the whole identity with the parent invisible. It is designed before the app is built, not after.</li>
+      </ul>
+    </div>
+
+""",
+    "school-of-the-local-church": """    <div class="blk">
+      <div class="lab">The credential system</div>
+      <h2>Structure, stated exactly.</h2>
+      <p class="lede">"Structure carries it" is measurable here, not a mood. The School's structure is
+      a numbering system, a certificate, and the recorded serif allowance.</p>
+      <ul class="doorrules">
+        <li><strong>The serif allowance.</strong> Credential and course titles in DM Serif Display, diploma text in DM Serif Text, recorded in Brand Guide &sect;11. The only door permitted the parent's serif. Body copy, labels, and interfaces stay DM Sans.</li>
+        <li><strong>The numbering system.</strong> Courses are numbered from SLC 101 upward, and inside a course the unit reads Module 04 &middot; Session 3. If it can be a sequence, it is one, and the numbers are stated exactly, because a school that is vague about its own curriculum is not a school.</li>
+        <li><strong>The certificate.</strong> Letterhead paper, the student's name in serif, the course number and name, the completion date from the record, the two signatures, and the seal. Nothing else.</li>
+        <li><strong>The wax.</strong> A presented credential may carry the physical seal, pressed in deep Ember-red wax or blind embossed. Wax is for the School's own credentials only.</li>
+      </ul>
+    </div>
+
+""",
+}
+
+# Mark status for the doors whose mark is commissioned but not yet approved.
+# Rendered in the {marks} slot that RTMC fills with its published forms.
+MARKSTATE = {
+    "every1": """    <div class="blk">
+      <div class="lab">The mark</div>
+      <h2>Commissioned, not yet approved.</h2>
+      <p class="lede">The EVERY1 mark is commissioned from the family grammar: heavy DM Sans caps
+      converted to outlines, the hairline rule split by a single Flame tick, the endorsement line
+      beneath, and the 1 built to stand alone at avatar scale with the parent invisible.</p>
+      <div class="warn"><strong>Until a form is approved and published here, EVERY1 surfaces carry the
+      parent wordmark beside the stage word BURN.</strong> No one draws an interim mark. A mark that is
+      needed and does not exist is requested, not improvised.</div>
+    </div>
+
+""",
+    "school-of-the-local-church": """    <div class="blk">
+      <div class="lab">The seal</div>
+      <h2>Commissioned, not yet approved.</h2>
+      <p class="lede">The School's mark is its academic seal, recorded in Brand Guide &sect;11: a shield
+      bearing the Lion of Judah, ringed with the School's name, drawn in a single colour, with masters
+      for print, blind emboss, and wax. It is ecclesiastical, not governmental, and it is the only seal
+      in the house. It never appears on another door's work, and never as decoration to make a page
+      feel official.</p>
+      <div class="warn"><strong>Until the seal is approved and published here, the School's surfaces
+      carry the parent wordmark beside the stage word TRAIN, and certificates close with the two
+      signatures and the letterhead rule alone.</strong> No one draws an interim seal.</div>
+    </div>
+
+""",
+}
+
+
 DOOR_HERO = """<div class="door">
   <video autoplay muted loop playsinline poster="/assets/images/{video}-poster.jpg">
     <source src="/assets/videos/{video}.mp4" type="video/mp4">
@@ -627,6 +770,23 @@ MARK_HERO = """<div class="markhero">
 <div class="filmcap">Sanga, Mbarara &middot; 30 Jul 2026</div>
 """
 
+TRAIN_HERO = """<div class="trainhero">
+  <div class="wrap">
+    <div class="stageword">{stage}</div>
+    <h1>{title}</h1>
+    <p class="mission">{mission}</p>
+    <div class="tickrule"><span class="ln"></span><span class="tk"></span><span class="ln"></span></div>
+    <div class="endorse">A ministry of THE WORD FOR ALL THE WORLD</div>
+  </div>
+</div>
+<div class="filmband">
+  <video autoplay muted loop playsinline poster="/assets/images/{video}-poster.jpg">
+    <source src="/assets/videos/{video}.mp4" type="video/mp4">
+  </video>
+</div>
+<div class="filmcap">Sanga, Mbarara &middot; 30 Jul 2026</div>
+"""
+
 
 SUB_PAGE = """
 {hero}
@@ -635,6 +795,12 @@ SUB_PAGE = """
     <div class="docbar">
       <a href="/brand/#architecture">&larr; Brand Guide &sect;11</a>
       <a href="/documents/{slug}/">Messaging document &rarr;</a>
+    </div>
+
+    <div class="blk">
+      <div class="lab">What kind of brand this is</div>
+      <h2>{kindhead}</h2>
+      <p class="lede">{kindtext}</p>
     </div>
 
     <div class="blk">
@@ -647,6 +813,8 @@ SUB_PAGE = """
         <tr><th>Type</th><td>{typerule}</td></tr>
         <tr><th>Flame</th><td>{flame}</td></tr>
         <tr><th>Register</th><td>{register}</td></tr>
+        <tr><th>Avatar</th><td>{avatar}</td></tr>
+        <tr><th>Handle</th><td>{handle}</td></tr>
         <tr><th>Endorsement</th><td>Every surface carries the line <em>A ministry of THE WORD FOR ALL THE WORLD.</em> It is not optional.</td></tr>
       </table>
     </div>
@@ -657,7 +825,7 @@ SUB_PAGE = """
       <p class="lede">{why}</p>
     </div>
 
-    <div class="blk">
+{extras}    <div class="blk">
       <div class="lab">The ground in use</div>
       <h2>Documentary capture, from the record.</h2>
       <p class="lede">Real moments from real ministry. Nothing stock, nothing staged, nothing generated.
@@ -667,6 +835,16 @@ SUB_PAGE = """
       <p class="prov">Dates come from the capture record. The location is recorded as Sanga, Mbarara,
       Uganda in the capture folder and is pending confirmation against the official ministry record,
       so it is stated here and not yet frozen into the guide.</p>
+    </div>
+
+    <div class="blk">
+      <div class="lab">The capture brief</div>
+      <h2>What this door still needs shot.</h2>
+      <p class="lede">Today all three doors draw from one conference, so the three guides read as three
+      views of one event. Three ministries need three libraries. These are the shots this door records
+      next, and the brief is recorded as a gap in the asset record.</p>
+      <ul class="doorrules">
+{capture}      </ul>
     </div>
 
 {marks}    <div class="blk">
@@ -701,11 +879,19 @@ for d in SUBS:
                   f'<div class="c2">SLC Conference &middot; Sanga, Mbarara &middot; {date}</div></figcaption>\n'
                   f'        </figure>\n')
     rules = "".join(f"        <li>{r}</li>\n" for r in d["rules"])
-    fields = {k: v for k, v in d.items() if k not in ("rules", "shots")}
-    fields["marks"] = marks_block() if d["slug"] == "revival-to-my-city" else ""
-    tmpl = MARK_HERO if d["slug"] == "revival-to-my-city" else DOOR_HERO
+    capture = "".join(f"        <li>{c}</li>\n" for c in d["capture"])
+    fields = {k: v for k, v in d.items() if k not in ("rules", "shots", "capture")}
+    fields["marks"] = marks_block() if d["slug"] == "revival-to-my-city" else MARKSTATE.get(d["slug"], "")
+    fields["extras"] = EXTRAS.get(d["slug"], "")
+    if d["slug"] == "revival-to-my-city":
+        tmpl = MARK_HERO
+    elif d["slug"] == "school-of-the-local-church":
+        tmpl = TRAIN_HERO
+    else:
+        tmpl = DOOR_HERO
     invert_nav = d["slug"] == "revival-to-my-city"
     fields["hero"] = tmpl.format(**fields)
+    fields["capture"] = capture
     html = HEAD.format(title=f"{d['name']} · Initiative Brand Guide", extra_css=SUB_CSS,
                        band_pad="0", doc_active="", lh_active="")
     html = html.replace("<body>", f"<body class=\"{d['stage'].lower()}\">")

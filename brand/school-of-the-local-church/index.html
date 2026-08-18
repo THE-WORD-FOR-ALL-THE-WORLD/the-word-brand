@@ -159,6 +159,20 @@
   body.clean .blk{margin-bottom:82px;}
   .prov{margin-top:14px;font-size:13px;color:rgba(11,26,45,.8);max-width:74ch;}
 
+  /* TRAIN opens in the identity it describes: Word Blue structure on Parchment */
+  body.train .trainhero{background:var(--word-blue);color:var(--parchment);padding:clamp(150px,17vw,200px) 0 clamp(56px,7vw,84px);}
+  body.train .trainhero .stageword{font-size:clamp(40px,6vw,72px);font-weight:700;letter-spacing:.06em;line-height:1;}
+  body.train .trainhero h1{font-family:var(--serif-display);font-weight:400;font-size:clamp(30px,4.4vw,48px);line-height:1.12;margin-top:10px;}
+  body.train .trainhero .mission{margin-top:16px;max-width:560px;color:rgba(247,243,236,.9);}
+  body.train .trainhero .tickrule{justify-content:flex-start;margin:26px 0 0;}
+  body.train .trainhero .endorse{display:inline-block;margin-top:26px;padding-top:14px;border-top:1px solid rgba(247,243,236,.3);font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:rgba(247,243,236,.85);}
+  body.train .filmcap{background:var(--parchment);}
+
+  /* the city instance lockup demo (CLEAN) */
+  .lockupdemo{background:var(--white);border:1px solid var(--rule);border-radius:4px;padding:44px 30px;text-align:center;margin-top:20px;}
+  .lockupdemo img{width:min(420px,80%);height:auto;}
+  .lockupdemo .cityline{margin-top:18px;font-size:15px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--midnight);}
+
 </style>
 </head>
 <body class="train">
@@ -179,21 +193,21 @@
   </div>
 </nav>
 
-<div class="door">
+<div class="trainhero">
+  <div class="wrap">
+    <div class="stageword">TRAIN</div>
+    <h1>School of the <em>Local Church</em></h1>
+    <p class="mission">Training the local church to know their authority in Christ and build a real relationship with Jesus.</p>
+    <div class="tickrule"><span class="ln"></span><span class="tk"></span><span class="ln"></span></div>
+    <div class="endorse">A ministry of THE WORD FOR ALL THE WORLD</div>
+  </div>
+</div>
+<div class="filmband">
   <video autoplay muted loop playsinline poster="/assets/images/slc-teaching-session-poster.jpg">
     <source src="/assets/videos/slc-teaching-session.mp4" type="video/mp4">
   </video>
-  <div class="scrim"></div>
-  <div class="inner">
-    <div class="panel">
-      <div class="stageword">TRAIN</div>
-      <h1>School of the <em>Local Church</em></h1>
-      <p class="mission">Training the local church to know their authority in Christ and build a real relationship with Jesus.</p>
-      <div class="tickrule"><span class="ln"></span><span class="tk"></span><span class="ln"></span></div>
-      <div class="endorse">A ministry of THE WORD FOR ALL THE WORLD</div>
-    </div>
-  </div>
 </div>
+<div class="filmcap">Sanga, Mbarara &middot; 30 Jul 2026</div>
 
 <main>
   <div class="wrap">
@@ -203,15 +217,23 @@
     </div>
 
     <div class="blk">
+      <div class="lab">What kind of brand this is</div>
+      <h2>An institution.</h2>
+      <p class="lede">The School is credential-grade design: a seal, a certificate, a numbering system, and the recorded serif allowance. A school signals permanence through type and structure, so structure here is stated exactly, never implied.</p>
+    </div>
+
+    <div class="blk">
       <div class="lab">Identity</div>
       <h2>What this door owns.</h2>
       <p class="lede">The three doors are told apart by temperature and proportion, not by three separate
       palettes, so the house still reads as one house. This is what School of the Local Church owns.</p>
       <table class="spec">
         <tr><th>Ground</th><td>Word Blue structure on Parchment.</td></tr>
-        <tr><th>Type</th><td>Parchment on Word Blue. The most typographic door.</td></tr>
+        <tr><th>Type</th><td>Parchment on Word Blue. The most typographic door, with the recorded serif allowance for credentials.</td></tr>
         <tr><th>Flame</th><td>5% ceiling. Structure carries it, not colour.</td></tr>
         <tr><th>Register</th><td>A building. Ordered, sequential, institutional.</td></tr>
+        <tr><th>Avatar</th><td>The seal, Parchment on Word Blue, once it is approved. Until then, the parent wordmark on Word Blue.</td></tr>
+        <tr><th>Handle</th><td>@schoolofthelocalchurch, recorded in Brand Guide &sect;12.</td></tr>
         <tr><th>Endorsement</th><td>Every surface carries the line <em>A ministry of THE WORD FOR ALL THE WORLD.</em> It is not optional.</td></tr>
       </table>
     </div>
@@ -220,6 +242,19 @@
       <div class="lab">Place in the journey</div>
       <h2>Why this door exists.</h2>
       <p class="lede">TRAIN is the third movement, and the one that lasts. Fire that is not trained goes out. This door teaches believers their authority in Christ and how to build a real relationship with Jesus, starting with the free personal evangelism course.</p>
+    </div>
+
+    <div class="blk">
+      <div class="lab">The credential system</div>
+      <h2>Structure, stated exactly.</h2>
+      <p class="lede">"Structure carries it" is measurable here, not a mood. The School's structure is
+      a numbering system, a certificate, and the recorded serif allowance.</p>
+      <ul class="doorrules">
+        <li><strong>The serif allowance.</strong> Credential and course titles in DM Serif Display, diploma text in DM Serif Text, recorded in Brand Guide &sect;11. The only door permitted the parent's serif. Body copy, labels, and interfaces stay DM Sans.</li>
+        <li><strong>The numbering system.</strong> Courses are numbered from SLC 101 upward, and inside a course the unit reads Module 04 &middot; Session 3. If it can be a sequence, it is one, and the numbers are stated exactly, because a school that is vague about its own curriculum is not a school.</li>
+        <li><strong>The certificate.</strong> Letterhead paper, the student's name in serif, the course number and name, the completion date from the record, the two signatures, and the seal. Nothing else.</li>
+        <li><strong>The wax.</strong> A presented credential may carry the physical seal, pressed in deep Ember-red wax or blind embossed. Wax is for the School's own credentials only.</li>
+      </ul>
     </div>
 
     <div class="blk">
@@ -243,12 +278,40 @@
     </div>
 
     <div class="blk">
+      <div class="lab">The capture brief</div>
+      <h2>What this door still needs shot.</h2>
+      <p class="lede">Today all three doors draw from one conference, so the three guides read as three
+      views of one event. Three ministries need three libraries. These are the shots this door records
+      next, and the brief is recorded as a gap in the asset record.</p>
+      <ul class="doorrules">
+        <li><strong>The classroom.</strong> Teaching sessions, open Bibles, pens moving.</li>
+        <li><strong>The materials.</strong> The course books and Bibles as objects, received and used.</li>
+        <li><strong>The credential moment.</strong> Graduates with certificates, named and consented, for the record.</li>
+      </ul>
+    </div>
+
+    <div class="blk">
+      <div class="lab">The seal</div>
+      <h2>Commissioned, not yet approved.</h2>
+      <p class="lede">The School's mark is its academic seal, recorded in Brand Guide &sect;11: a shield
+      bearing the Lion of Judah, ringed with the School's name, drawn in a single colour, with masters
+      for print, blind emboss, and wax. It is ecclesiastical, not governmental, and it is the only seal
+      in the house. It never appears on another door's work, and never as decoration to make a page
+      feel official.</p>
+      <div class="warn"><strong>Until the seal is approved and published here, the School's surfaces
+      carry the parent wordmark beside the stage word TRAIN, and certificates close with the two
+      signatures and the letterhead rule alone.</strong> No one draws an interim seal.</div>
+    </div>
+
+    <div class="blk">
       <div class="lab">Rules that differ from the parent</div>
       <h2>Where this door departs.</h2>
       <p class="lede">Everything in the Brand Guide applies here. These are the points where School of the Local Church
       is deliberately not the parent.</p>
       <ul class="doorrules">
         <li><strong>Structure carries the weight.</strong> Word Blue blocks, rules, and numbered sequence do the work that colour does elsewhere.</li>
+        <li><strong>The serif allowance.</strong> The only door that sets type in the parent's serif: credential and course titles, certificates, and diploma text, per Brand Guide &sect;11. Everything else stays DM Sans.</li>
+        <li><strong>The seal.</strong> The only door that carries one. Single colour, the School's own credentials only, never another door's work, never decoration.</li>
         <li><strong>The most typographic door.</strong> Sessions, modules, and steps are numbered and ordered. If it can be a sequence, it is one.</li>
         <li><strong>Flame at five percent.</strong> A school is not a rally. The fire is in what is taught, not in the layout.</li>
         <li><strong>Everything is a record.</strong> Course names, session numbers, and dates are stated exactly, because a school that is vague about its own curriculum is not a school.</li>

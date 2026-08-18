@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Brand Guide v5.7 · THE WORD FOR ALL THE WORLD</title>
+<title>Brand Guide v5.8 · THE WORD FOR ALL THE WORLD</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Serif+Text:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400;1,9..40,700&display=swap" rel="stylesheet">
@@ -268,6 +268,20 @@
   .logo-chip{border-radius:4px;padding:44px 30px;display:flex;align-items:center;justify-content:center;border:1px solid var(--rule-light);}
   .logo-chip img{max-width:100%;height:auto;}
 
+  /* channel facts · §12 · read like an ingredients panel */
+  .chanwrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin:36px 0 12px;align-items:start;}
+  .chanfacts{background:var(--white);border:2px solid var(--midnight);border-radius:4px;padding:20px 18px 14px;color:var(--midnight);}
+  .chanfacts .cfname{font-size:17px;font-weight:800;letter-spacing:.02em;line-height:1.25;}
+  .chanfacts .cfserv{font-size:10.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(11,26,45,.72);margin:6px 0 10px;}
+  .chanfacts .cfbar{border-top:7px solid var(--midnight);}
+  .chanfacts table{width:100%;border-collapse:collapse;}
+  .chanfacts td{padding:8px 0;border-bottom:1px solid var(--rule);font-size:13.5px;vertical-align:baseline;}
+  .chanfacts tr:last-child td{border-bottom:none;}
+  .chanfacts .cfp{font-weight:700;padding-right:10px;}
+  .chanfacts .cfh{text-align:right;font-weight:500;word-break:break-word;}
+  .chanfacts .cfh.mut{color:rgba(11,26,45,.62);font-weight:400;font-style:italic;}
+  .chanfacts .cffoot{border-top:4px solid var(--midnight);margin-top:2px;padding-top:10px;font-size:9.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(11,26,45,.72);}
+
   .filter-card{border:1px solid var(--rule);border-left:3px solid var(--ember);border-radius:4px;background:var(--white);padding:34px;max-width:700px;margin-top:28px;}
   .filter-card .q{font-family:var(--serif-text);font-size:21px;line-height:1.5;}
   .filter-card .a{margin-top:16px;font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ember);}
@@ -318,7 +332,7 @@
   </video>
   <div class="scrim"></div>
   <div class="inner">
-    <span class="kicker">Brand Guide · Version 5.7</span>
+    <span class="kicker">Brand Guide · Version 5.8</span>
     <h1>THE WORD<br>FOR ALL <em>THE WORLD</em></h1>
     <div class="rule"></div>
     <div class="meta">
@@ -344,6 +358,7 @@
       <li><a href="#tokens">Design tokens for development</a></li>
       <li><a href="#action">The language in action</a></li>
       <li><a href="#architecture">Sub-brands</a></li>
+      <li><a href="#channels">Channels</a></li>
       <li><a href="#voice">Voice</a></li>
       <li><a href="#changelog">Changelog</a></li>
     </ol>
@@ -777,7 +792,7 @@
   <div class="wrap">
     <div class="slidehead"><span class="eyebrow">11 · Sub-Brands</span><span class="slideno">The Word · Brand Guide</span></div>
     <h2>One house.<br>Three named front doors.</h2>
-    <p>Law III applied. The outreaches lead in their own moments and always carry the endorsement line. Sub-brand materials are DM Sans led, and the serif appears only where the parent speaks.</p>
+    <p>Law III applied. The outreaches lead in their own moments and always carry the endorsement line. Sub-brand materials are DM Sans led, and the serif appears only where the parent speaks, with one recorded allowance: the School of the Local Church sets credentials, certificates, and course titles in the serif under its own guide.</p>
     <p>The three doors are a sequence, not a menu: a heart is cleaned, then it burns, then it is trained to keep burning. They are told apart by temperature and proportion rather than by three separate palettes, so the house still reads as one house. Each door owns a ground, a Flame ceiling, and a register, and the cards below are rendered in the identity they describe.</p>
     <div class="phases">
       <div class="phase clean">
@@ -815,22 +830,117 @@
         <div class="endorse">A ministry of THE WORD FOR ALL THE WORLD</div>
         <dl class="ident">
           <div><dt>Ground</dt><dd>Word Blue structure on Parchment.</dd></div>
-          <div><dt>Type</dt><dd>Parchment on Word Blue. The most typographic door.</dd></div>
+          <div><dt>Type</dt><dd>Parchment on Word Blue. The most typographic door, with the recorded serif allowance for credentials.</dd></div>
           <div><dt>Flame</dt><dd>5% ceiling. Structure carries it, not colour.</dd></div>
           <div><dt>Register</dt><dd>A building. Ordered, sequential, institutional.</dd></div>
+          <div><dt>Seal</dt><dd>The School's academic seal, the only seal in the house.</dd></div>
         </dl>
         <a class="doorlink" href="/brand/school-of-the-local-church/">Brand guide &rarr;</a>
         <a class="doorlink second" href="/documents/school-of-the-local-church/">Messaging document &rarr;</a>
       </div>
     </div>
+
+    <h3>Three kinds of brand</h3>
+    <p>The doors are not three flavours of one thing. Each is a different species of brand, and each species carries a different asset system. The full system for each lives in its own guide.</p>
+    <ul class="rules">
+      <li><strong>Revival To My City is an event brand.</strong> It lives on posters, dates, and city names. Its real design system is the city instance: how the mark locks up with a city and a date, the poster, the stage backdrop, the countdown graphic. The name is built for this, because "My City" becomes each city's own sentence, and most people meet this brand on a poster before they meet it in a room.</li>
+      <li><strong>EVERY1 is a movement brand.</strong> It lives on phones and in other people's feeds, so it carries the loosest rules of the three, the strongest single glyph, and assets designed to be given away. A movement whose identity lives only on official surfaces is not a movement.</li>
+      <li><strong>School of the Local Church is an institution.</strong> It carries credential-grade design: a seal, a certificate, and a course numbering system. A school signals permanence through type and structure, so it holds the recorded serif allowance and the house's only seal.</li>
+    </ul>
+
+    <h3>When a door grows up</h3>
+    <p>Each door is expected to grow into its own ecosystem, large enough to feel like its own house. Growth is governed the way everything here is governed: on the record.</p>
+    <ul class="rules">
+      <li><strong>Every door carries a mark from one family grammar.</strong> Heavy DM Sans caps converted to outlines, a hairline rule split by a single Flame tick, and the endorsement line beneath. Revival To My City's mark is approved. The EVERY1 mark and the School's seal are commissioned. Until each is approved, that door uses the parent wordmark beside its stage word, and no one draws an interim mark.</li>
+      <li><strong>Every door owns an avatar.</strong> Below roughly one hundred pixels, ground and proportion stop telling the doors apart; only the ground and the mark survive. Each initiative guide states what its door looks like as a circle on a phone: CLEAN on White, BURN on Midnight, TRAIN on Word Blue.</li>
+      <li><strong>Growth has triggers, not drift.</strong> A door earns its own handles, its own capture library, its own domain redirect, and wider identity latitude when its work requires them, and every grant is a changelog entry. The recorded handle for every voice lives in the Channels section.</li>
+      <li><strong>The endorsement line survives everything.</strong> Whatever a door grows into, its surfaces carry the line. The one standing exception remains the EVERY1 app, on the YouVersion model.</li>
+    </ul>
+
+    <h3>The School's allowances</h3>
+    <ul class="rules">
+      <li><strong>The serif allowance.</strong> The School sets credential and course titles in DM Serif Display and diploma text in DM Serif Text, the only door permitted the parent's serif. Body copy, labels, and interfaces stay DM Sans.</li>
+      <li><strong>The academic seal.</strong> A shield bearing the Lion of Judah, ringed with the School's name, drawn in a single colour, with masters for print, blind emboss, and wax. It is ecclesiastical, not governmental: the boundary against governmental iconography stands everywhere else in the house, and the seal never appears on another door's work or as decoration to make any page feel official.</li>
+    </ul>
+
+    <p class="caption">None of this abandons the one-house discipline. It decides, on the record, how the house behaves when the children grow up. That is the decision this system exists to record.</p>
     <p class="caption">Exception on record: the EVERY1 app follows the YouVersion model and will not visibly promote the parent. Until it ships, EVERY1 follows this guide. RTMC's script-logo exploration ("Revival" cursive) remains open and compatible. The script is custom lettering, not a brand font.</p>
   </div>
 </section>
 
-<!-- 10 VOICE -->
+<!-- 10 CHANNELS -->
+<section id="channels">
+  <div class="wrap">
+    <div class="slidehead"><span class="eyebrow">12 · Channels</span><span class="slideno">The Word · Brand Guide</span></div>
+    <h2>The handle is the name,<br>at <em>avatar</em> scale.</h2>
+    <p class="lede">Where this house is found, one label per voice, read the way an ingredients panel is read. A door opens an account only on the platforms its kind of brand needs, so no channel goes quiet. Any platform not listed for a door is carried by the parent.</p>
+    <div class="chanwrap">
+      <div class="chanfacts">
+        <div class="cfname">THE WORD FOR ALL THE WORLD</div>
+        <div class="cfserv">The parent institution · the record</div>
+        <div class="cfbar"></div>
+        <table>
+          <tr><td class="cfp">Website</td><td class="cfh">theword.world</td></tr>
+          <tr><td class="cfp">Instagram</td><td class="cfh">@theword.world</td></tr>
+          <tr><td class="cfp">YouTube</td><td class="cfh">@theword.world</td></tr>
+          <tr><td class="cfp">Facebook</td><td class="cfh">theword.world</td></tr>
+          <tr><td class="cfp">TikTok</td><td class="cfh">@theword.world</td></tr>
+          <tr><td class="cfp">X</td><td class="cfh">@thewordworld</td></tr>
+        </table>
+        <div class="cffoot">Every tribe. Every tongue. Every nation. EVERY1.</div>
+      </div>
+      <div class="chanfacts">
+        <div class="cfname">Revival To My City</div>
+        <div class="cfserv">Event brand · CLEAN</div>
+        <div class="cfbar"></div>
+        <table>
+          <tr><td class="cfp">Home</td><td class="cfh mut">a named page under theword.world</td></tr>
+          <tr><td class="cfp">Instagram</td><td class="cfh">@revivaltomycity</td></tr>
+          <tr><td class="cfp">Facebook</td><td class="cfh">revivaltomycity</td></tr>
+          <tr><td class="cfp">X</td><td class="cfh">@revivaltomycity</td></tr>
+          <tr><td class="cfp">YouTube</td><td class="cfh mut">carried by the parent</td></tr>
+          <tr><td class="cfp">TikTok</td><td class="cfh mut">carried by the parent</td></tr>
+        </table>
+        <div class="cffoot">A ministry of THE WORD FOR ALL THE WORLD</div>
+      </div>
+      <div class="chanfacts">
+        <div class="cfname">EVERY1 Movement</div>
+        <div class="cfserv">Movement brand · BURN</div>
+        <div class="cfbar"></div>
+        <table>
+          <tr><td class="cfp">Home</td><td class="cfh mut">a named page under theword.world</td></tr>
+          <tr><td class="cfp">Instagram</td><td class="cfh">@every1movement</td></tr>
+          <tr><td class="cfp">TikTok</td><td class="cfh">@every1movement</td></tr>
+          <tr><td class="cfp">YouTube</td><td class="cfh">@every1movement</td></tr>
+          <tr><td class="cfp">Facebook</td><td class="cfh">every1movement</td></tr>
+          <tr><td class="cfp">X</td><td class="cfh">@every1movement</td></tr>
+          <tr><td class="cfp">App</td><td class="cfh mut">planned · YouVersion model</td></tr>
+        </table>
+        <div class="cffoot">A ministry of THE WORD FOR ALL THE WORLD</div>
+      </div>
+      <div class="chanfacts">
+        <div class="cfname">School of the Local Church</div>
+        <div class="cfserv">Institution · TRAIN</div>
+        <div class="cfbar"></div>
+        <table>
+          <tr><td class="cfp">Home</td><td class="cfh mut">a named page under theword.world</td></tr>
+          <tr><td class="cfp">YouTube</td><td class="cfh">@schoolofthelocalchurch</td></tr>
+          <tr><td class="cfp">Instagram</td><td class="cfh">@schoolofthelocalchurch</td></tr>
+          <tr><td class="cfp">Facebook</td><td class="cfh">schoolofthelocalchurch</td></tr>
+          <tr><td class="cfp">X</td><td class="cfh mut">carried by the parent</td></tr>
+          <tr><td class="cfp">TikTok</td><td class="cfh mut">carried by the parent</td></tr>
+        </table>
+        <div class="cffoot">A ministry of THE WORD FOR ALL THE WORLD</div>
+      </div>
+    </div>
+    <p class="caption">These handles are the recorded standard, not a claim that every account exists. Registration status is pending confirmation against the account record. A handle that cannot be secured on a platform comes back to this table through a changelog entry, never as an improvised variant. X carries no dots, so the parent's X handle drops them; every other platform carries the handle exactly as written.</p>
+  </div>
+</section>
+
+<!-- 11 VOICE -->
 <section id="voice" class="dark">
   <div class="wrap">
-    <div class="slidehead"><span class="eyebrow">12 · Voice</span><span class="slideno">The Word · Brand Guide</span></div>
+    <div class="slidehead"><span class="eyebrow">13 · Voice</span><span class="slideno">The Word · Brand Guide</span></div>
     <h2>Bold, clear, simple, direct.</h2>
     <p>Pastoral with prophetic urgency. Invitation-first. Short, punchy sentences. Never polished-corporate, never hype. Recurring language: <em>real relationship with Jesus · first love · fire starts fire · turn your heart back to Jesus · walk with Jesus.</em> Full rules live in the Voice &amp; Vision Sheet.</p>
     <p class="caption" style="margin-top:28px;">Voice is governed in full by the <a href="/brand/messaging/" style="color:var(--flame);">Brand Messaging Guide</a>: the audiences, the vocabulary, the banned words, the proof policy, and the test every line is held to.</p>
@@ -840,11 +950,12 @@
 <!-- 11 CHANGELOG -->
 <section id="changelog">
   <div class="wrap">
-    <div class="slidehead"><span class="eyebrow">13 · Changelog</span><span class="slideno">The Word · Brand Guide</span></div>
+    <div class="slidehead"><span class="eyebrow">14 · Changelog</span><span class="slideno">The Word · Brand Guide</span></div>
     <h2>Every change, on the <em>record.</em></h2>
     <p class="lede">This guide changes one way: a proposed edit in writing, approval by Joel Zimmer and Nathan Zimmer, a version bump, and a row in this table. No silent edits, ever. The same table is published for machines at <a href="/ai/brand-system.md" style="color:var(--word-blue);">/ai/brand-system.md</a>, so an audit report can name the exact version it was measured against.</p>
     <table>
       <tr><th style="width:66px;">Version</th><th style="width:104px;">Date</th><th style="width:120px;">Owner</th><th>Changed</th><th style="width:150px;">Approved</th></tr>
+      <tr><td>5.8</td><td>2026-08-17</td><td>Nathan Zimmer</td><td>Sub-brand growth release. §11 records the three doors as three kinds of brand, an event brand, a movement brand, and an institution, and states how the house behaves when the children grow up: one mark family grammar, an avatar for every door, and growth by trigger and changelog entry rather than drift. The School of the Local Church receives the recorded serif allowance and the house's only seal, an academic shield bearing the Lion of Judah, as a scoped exception to the governmental-iconography boundary, which stands everywhere else. §12 Channels added, recording the standard handle for every voice. Each initiative guide gains its kind, its avatar, its capture brief, and its mark status; Revival To My City gains the city instance and the poster spec, EVERY1 gains the participation layer, and the School gains the seal, certificate, and numbering specs and now opens in the Word Blue structural identity it describes.</td><td>Joel Zimmer, Nathan Zimmer</td></tr>
       <tr><td>5.7</td><td>2026-08-15</td><td>Nathan Zimmer</td><td>Joel Zimmer's default signature changes to the wide form, the one whose trailing stroke fills a signature line rather than sitting short of it. It takes joel-zimmer.svg and is now what the adoption band and the initiative documents carry. The upright form it replaces is the narrowest of the three and becomes joel-zimmer-compact.svg, which brings his set to the same default, display, and compact forms as Nathan's. The joel-zimmer-extended.svg filename published at v5.6 is withdrawn.</td><td>Joel Zimmer, Nathan Zimmer</td></tr>
       <tr><td>5.6</td><td>2026-08-15</td><td>Nathan Zimmer</td><td>Joel Zimmer's signature masters published as approved assets in three forms, default, display, and extended, traced from the original ink and drawn as vectors. Every place his name is signed now carries real ink rather than an empty rule: this guide's adoption band and all three initiative documents. The Signatures page becomes a two-signer kit of seven masters, ordered the way a document is signed.</td><td>Joel Zimmer, Nathan Zimmer</td></tr>
       <tr><td>5.5</td><td>2026-08-15</td><td>Nathan Zimmer</td><td>Revival To My City has an approved mark. The chosen exploration is redrawn as vector, set in DM Sans at weight 900 and converted to outlines, and published in five forms. The raster explorations are withdrawn. Its brand guide drops the framed hero panel and leads with the mark on white, with the footage following as its own band.</td><td>Joel Zimmer, Nathan Zimmer</td></tr>
@@ -873,7 +984,7 @@
   <div class="wrap">
     <div class="inner">
       <div class="ad">Adopted and entered into the record</div>
-      <div class="vline">Brand Guide version 5.7 · Approved 15 August 2026</div>
+      <div class="vline">Brand Guide version 5.8 · Approved 17 August 2026</div>
       <div class="sigrow">
         <div class="sig">
           <div class="ink"><img src="/assets/signatures/joel-zimmer.svg" alt="Signed by Joel Zimmer"></div>

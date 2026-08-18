@@ -1,6 +1,6 @@
 # Anti-patterns
 
-> **Brand system v5.7 · Messaging guide v1.0 · Updated 2026-08-15**
+> **Brand system v5.8 · Messaging guide v1.0 · Updated 2026-08-17**
 > Canonical source: <https://brand.theword.world/ai/manifest.json>
 > What not to do. The first section is hand-authored; the rest is generated from the guides.
 
@@ -67,7 +67,10 @@ that a designer would not.
 
 - **Reaching for governmental iconography.** No seals, no crests, no flags, no eagles, and no device
   that imitates a government office. The formality of this system comes from restraint, dated
-  records, and signatures, not from costume. We carry authority. We do not imitate office.
+  records, and signatures, not from costume. We carry authority. We do not imitate office. One
+  scoped exception is on record at Brand Guide v5.8: the School of the Local Church's academic
+  seal, ecclesiastical rather than governmental, used only on the School's own credentials under
+  §11's rules. Any other seal, anywhere else in the house, is still this anti-pattern.
 - **Dressing a document as a legal instrument it is not.** A record carries a kicker, a dateline, and
   a signature because those things are true of it. Adding notary marks, reference numbers, or seals
   to make a page feel official is fabrication in visual form.

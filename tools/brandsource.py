@@ -306,6 +306,28 @@ def parse_brand_guide(path: str = BRAND_GUIDE) -> dict:
     require_count(subs, 3, "sub-brand cards", path)
     out["subBrands"] = subs
 
+    # --- channels (§12, v5.8): the recorded handle for every voice
+    channels = []
+    chan_sec = re.search(r'<section id="channels".*?</section>', s, re.S)
+    if chan_sec:
+        for m in re.finditer(
+            r'<div class="chanfacts">\s*<div class="cfname">(.*?)</div>\s*'
+            r'<div class="cfserv">(.*?)</div>(.*?)</table>',
+            chan_sec.group(0),
+            re.S,
+        ):
+            rows = [
+                (strip_tags(platform), strip_tags(handle))
+                for platform, handle in re.findall(
+                    r'<td class="cfp">(.*?)</td><td class="cfh[^"]*">(.*?)</td>', m.group(3), re.S
+                )
+            ]
+            channels.append(
+                {"name": strip_tags(m.group(1)), "kind": strip_tags(m.group(2)), "rows": rows}
+            )
+        require_count(channels, 4, "channel facts cards", path)
+    out["channels"] = channels
+
     return out
 
 

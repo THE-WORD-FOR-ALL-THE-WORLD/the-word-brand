@@ -1,7 +1,7 @@
 {
-  "version": "5.7",
+  "version": "5.8",
   "messagingVersion": "1.0",
-  "updated": "2026-08-15",
+  "updated": "2026-08-17",
   "authority": "canonical",
   "rule": "Use these assets. Never generate photography or video of people or ministry, and never substitute stock. If the asset you need is not listed, request it and leave the slot empty.",
   "counts": {
@@ -598,6 +598,9 @@
     "Testimony portraits",
     "Exteriors that establish place",
     "Details: open Bible and pen, the offering basket",
-    "Vertical (9:16) capture of every key moment, alongside the horizontal frames"
+    "Vertical (9:16) capture of every key moment, alongside the horizontal frames",
+    "The EVERY1 mark, commissioned from the family grammar (Brand Guide §11, v5.8): heavy DM Sans caps as outlines, hairline rule with a single Flame tick, endorsement line, and the 1 built to stand alone at avatar scale. Until approved, EVERY1 surfaces carry the parent wordmark beside BURN.",
+    "The School of the Local Church academic seal (Brand Guide §11, v5.8): a shield bearing the Lion of Judah, ringed with the School's name, single colour, with masters for print, blind emboss, and wax. Until approved, certificates close with the two signatures and the letterhead rule alone.",
+    "Per-door capture libraries (Brand Guide §11, v5.8). RTMC: night altar calls, the host city by day, the host church serving, the empty venue. EVERY1: one-to-one moments away from any stage, the handoff, vertical 9:16 first. SLC: the classroom, the materials, the credential moment. Today all three doors draw from one conference."
   ]
 }

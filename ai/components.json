@@ -1,7 +1,7 @@
 {
-  "version": "5.7",
+  "version": "5.8",
   "messagingVersion": "1.0",
-  "updated": "2026-08-15",
+  "updated": "2026-08-17",
   "authority": "canonical",
   "note": "Specs are authored against token names and resolved against the current Brand Guide at build time. `tokenRefs` records the original reference so a palette change updates every component here automatically.",
   "components": [

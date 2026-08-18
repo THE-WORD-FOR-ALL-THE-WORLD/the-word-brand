@@ -1,6 +1,6 @@
 # THE WORD FOR ALL THE WORLD: Brand System
 
-> **Brand system v5.7 · Messaging guide v1.0 · Updated 2026-08-15**
+> **Brand system v5.8 · Messaging guide v1.0 · Updated 2026-08-17**
 > Canonical source: <https://brand.theword.world/ai/manifest.json>
 > The complete standard, assembled for machine reading. The human guides are at <https://brand.theword.world/brand> and <https://brand.theword.world/brand/messaging>.
 
@@ -20,7 +20,7 @@ The whole identity is two layers held in tension. When in doubt: the institution
 
 Two layers held in tension. **The institution** is the parent, THE WORD FOR ALL THE WORLD: deep navy, warm paper, serif headlines, dated documents, signatures. It speaks for the record, the prophecy, the official numbers, and the donor relationship. **The movement** is CLEAN, BURN, and TRAIN: bold sans, Flame, real footage. Revival To My City, EVERY1, and the School of the Local Church speak here, for events, activation, testimonies, and the field.
 
-**Boundary.** We never use governmental iconography. No seals, no flags, no eagles. We carry authority; we do not imitate office.
+**Boundary.** We never use governmental iconography. No seals, no flags, no eagles. We carry authority; we do not imitate office. One scoped exception is on record (v5.8): the School of the Local Church carries an academic seal, ecclesiastical rather than governmental, under the rules in the sub-brands section. It is the only seal in the house and never appears outside the School's own credentials.
 
 ## 2. The foundation
 
@@ -192,7 +192,7 @@ Every record carries the marks of a record: a letterspaced kicker, a dateline of
 
 ## 10. The house and its named front doors
 
-Law III applied. The outreaches lead in their own moments and always carry the endorsement line. Sub-brand materials are DM Sans led, and the serif appears only where the parent speaks.
+Law III applied. The outreaches lead in their own moments and always carry the endorsement line. Sub-brand materials are DM Sans led, and the serif appears only where the parent speaks, with one recorded allowance: the School of the Local Church sets credentials, certificates, and course titles in the serif under its own guide.
 
 | Stage | Initiative | Mission | Messaging document |
 | --- | --- | --- | --- |
@@ -206,13 +206,84 @@ Each door is told apart by ground, Flame ceiling, and register, not by a separat
 | --- | --- | --- | --- | --- |
 | CLEAN | White or Parchment. The most whitespace of the three. | Midnight on light. DM Sans led. | 5% ceiling. The quietest door. | Before the fire. Calm, open, unhurried. |
 | BURN | Midnight, full bleed wherever it can be. | Parchment on Midnight. Ember for links and buttons. | The full tenth. This door owns the fire. | The fire itself. Loudest, fastest, most footage. |
-| TRAIN | Word Blue structure on Parchment. | Parchment on Word Blue. The most typographic door. | 5% ceiling. Structure carries it, not colour. | A building. Ordered, sequential, institutional. |
+| TRAIN | Word Blue structure on Parchment. | Parchment on Word Blue. The most typographic door, with the recorded serif allowance for credentials. | 5% ceiling. Structure carries it, not colour. | A building. Ordered, sequential, institutional. |
 
 Every initiative surface carries the endorsement line: *A ministry of THE WORD FOR ALL THE WORLD*
 
+### Three kinds of brand
+
+- **Revival To My City is an event brand.** It lives on posters, dates, and city names. Its real design system is the city instance: how the mark locks up with a city and a date, the poster, the stage backdrop, the countdown graphic. The name is built for this, because "My City" becomes each city's own sentence, and most people meet this brand on a poster before they meet it in a room.
+- **EVERY1 is a movement brand.** It lives on phones and in other people's feeds, so it carries the loosest rules of the three, the strongest single glyph, and assets designed to be given away. A movement whose identity lives only on official surfaces is not a movement.
+- **School of the Local Church is an institution.** It carries credential-grade design: a seal, a certificate, and a course numbering system. A school signals permanence through type and structure, so it holds the recorded serif allowance and the house's only seal.
+
+### When a door grows up
+
+- **Every door carries a mark from one family grammar.** Heavy DM Sans caps converted to outlines, a hairline rule split by a single Flame tick, and the endorsement line beneath. Revival To My City's mark is approved. The EVERY1 mark and the School's seal are commissioned. Until each is approved, that door uses the parent wordmark beside its stage word, and no one draws an interim mark.
+- **Every door owns an avatar.** Below roughly one hundred pixels, ground and proportion stop telling the doors apart; only the ground and the mark survive. Each initiative guide states what its door looks like as a circle on a phone: CLEAN on White, BURN on Midnight, TRAIN on Word Blue.
+- **Growth has triggers, not drift.** A door earns its own handles, its own capture library, its own domain redirect, and wider identity latitude when its work requires them, and every grant is a changelog entry. The recorded handle for every voice lives in the Channels section.
+- **The endorsement line survives everything.** Whatever a door grows into, its surfaces carry the line. The one standing exception remains the EVERY1 app, on the YouVersion model.
+
+### The School's allowances
+
+- **The serif allowance.** The School sets credential and course titles in DM Serif Display and diploma text in DM Serif Text, the only door permitted the parent's serif. Body copy, labels, and interfaces stay DM Sans.
+- **The academic seal.** A shield bearing the Lion of Judah, ringed with the School's name, drawn in a single colour, with masters for print, blind emboss, and wax. It is ecclesiastical, not governmental: the boundary against governmental iconography stands everywhere else in the house, and the seal never appears on another door's work or as decoration to make any page feel official.
+
+None of this abandons the one-house discipline. It decides, on the record, how the house behaves when the children grow up. That is the decision this system exists to record.
+
 Exception on record: the EVERY1 app follows the YouVersion model and will not visibly promote the parent. Until it ships, EVERY1 follows this guide. RTMC's script-logo exploration ("Revival" cursive) remains open and compatible. The script is custom lettering, not a brand font.
 
-## 11. Voice
+## 11. Channels and handles
+
+Where this house is found, one label per voice, read the way an ingredients panel is read. A door opens an account only on the platforms its kind of brand needs, so no channel goes quiet. Any platform not listed for a door is carried by the parent.
+
+### THE WORD FOR ALL THE WORLD (The parent institution · the record)
+
+| Platform | Handle |
+| --- | --- |
+| Website | theword.world |
+| Instagram | @theword.world |
+| YouTube | @theword.world |
+| Facebook | theword.world |
+| TikTok | @theword.world |
+| X | @thewordworld |
+
+### Revival To My City (Event brand · CLEAN)
+
+| Platform | Handle |
+| --- | --- |
+| Home | a named page under theword.world |
+| Instagram | @revivaltomycity |
+| Facebook | revivaltomycity |
+| X | @revivaltomycity |
+| YouTube | carried by the parent |
+| TikTok | carried by the parent |
+
+### EVERY1 Movement (Movement brand · BURN)
+
+| Platform | Handle |
+| --- | --- |
+| Home | a named page under theword.world |
+| Instagram | @every1movement |
+| TikTok | @every1movement |
+| YouTube | @every1movement |
+| Facebook | every1movement |
+| X | @every1movement |
+| App | planned · YouVersion model |
+
+### School of the Local Church (Institution · TRAIN)
+
+| Platform | Handle |
+| --- | --- |
+| Home | a named page under theword.world |
+| YouTube | @schoolofthelocalchurch |
+| Instagram | @schoolofthelocalchurch |
+| Facebook | schoolofthelocalchurch |
+| X | carried by the parent |
+| TikTok | carried by the parent |
+
+These handles are the recorded standard, not a claim that every account exists. Registration status is pending confirmation against the account record. A handle that cannot be secured on a platform comes back to this table through a changelog entry, never as an improvised variant. X carries no dots, so the parent's X handle drops them; every other platform carries the handle exactly as written.
+
+## 12. Voice
 
 **Bold, clear, simple, direct.** Pastoral with prophetic urgency. Invitation-first. Short, punchy sentences. Never polished-corporate, never hype. Recurring language: real relationship with Jesus · first love · fire starts fire · turn your heart back to Jesus · walk with Jesus. Full rules live in the Voice & Vision Sheet.
 
@@ -260,7 +331,7 @@ Theological words such as repentance, salvation, and Holy Spirit baptism are nev
 | "Join us as we press into a fresh anointing and contend for breakthrough." | "Come. Jesus is moving. Bring the person you've been praying for." |
 | "We provide comprehensive discipleship solutions for local church partners." | "We train the local church to walk with Jesus." |
 
-## 12. Message architecture
+## 13. Message architecture
 
 The believer is the hero. We are the guide. That order never flips. Messaging never makes THE WORD the hero of the story.
 
@@ -274,7 +345,7 @@ The believer is the hero. We are the guide. That order never flips. Messaging ne
 | The stakes | If the church stays asleep, people keep searching for life in all the wrong places and entire cities stay unchanged. |
 | The success | Believers become bold, the Great Commission is fulfilled, cities are transformed. The world knows Jesus. |
 
-## 13. The five people we speak to
+## 14. The five people we speak to
 
 Every piece is aimed at one of these five. Know which one before writing a word. The "needs to hear" line is the heart of the message: say it in your own words, but say that.
 
@@ -313,7 +384,7 @@ Every piece is aimed at one of these five. Know which one before writing a word.
 - **Needs to hear:** "Fund what heaven is doing. Every number we report comes from the official record. You will always know exactly what your partnership did."
 - **First step:** sponsor a Revival To My City · scholarship School students.
 
-## 14. How an agent uses this system
+## 15. How an agent uses this system
 
 These rules govern AI work specifically. They sit alongside the brand law above, they do not
 replace it.
@@ -377,12 +448,13 @@ replace it.
     an initiative guide and a parent guide appear to disagree, the parent guide rules unless the
     initiative guide records an explicit exception. Report any conflict you find.
 
-## 15. Version history
+## 16. Version history
 
-### Brand Guide v5.7
+### Brand Guide v5.8
 
 | Version | Date | Owner | Changed | Approved |
 | --- | --- | --- | --- | --- |
+| 5.8 | 2026-08-17 | Nathan Zimmer | Sub-brand growth release. §11 records the three doors as three kinds of brand, an event brand, a movement brand, and an institution, and states how the house behaves when the children grow up: one mark family grammar, an avatar for every door, and growth by trigger and changelog entry rather than drift. The School of the Local Church receives the recorded serif allowance and the house's only seal, an academic shield bearing the Lion of Judah, as a scoped exception to the governmental-iconography boundary, which stands everywhere else. §12 Channels added, recording the standard handle for every voice. Each initiative guide gains its kind, its avatar, its capture brief, and its mark status; Revival To My City gains the city instance and the poster spec, EVERY1 gains the participation layer, and the School gains the seal, certificate, and numbering specs and now opens in the Word Blue structural identity it describes. | Joel Zimmer, Nathan Zimmer |
 | 5.7 | 2026-08-15 | Nathan Zimmer | Joel Zimmer's default signature changes to the wide form, the one whose trailing stroke fills a signature line rather than sitting short of it. It takes joel-zimmer.svg and is now what the adoption band and the initiative documents carry. The upright form it replaces is the narrowest of the three and becomes joel-zimmer-compact.svg, which brings his set to the same default, display, and compact forms as Nathan's. The joel-zimmer-extended.svg filename published at v5.6 is withdrawn. | Joel Zimmer, Nathan Zimmer |
 | 5.6 | 2026-08-15 | Nathan Zimmer | Joel Zimmer's signature masters published as approved assets in three forms, default, display, and extended, traced from the original ink and drawn as vectors. Every place his name is signed now carries real ink rather than an empty rule: this guide's adoption band and all three initiative documents. The Signatures page becomes a two-signer kit of seven masters, ordered the way a document is signed. | Joel Zimmer, Nathan Zimmer |
 | 5.5 | 2026-08-15 | Nathan Zimmer | Revival To My City has an approved mark. The chosen exploration is redrawn as vector, set in DM Sans at weight 900 and converted to outlines, and published in five forms. The raster explorations are withdrawn. Its brand guide drops the framed hero panel and leads with the mark on white, with the footage following as its own band. | Joel Zimmer, Nathan Zimmer |

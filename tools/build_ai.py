@@ -211,7 +211,10 @@ def build_brand_system(brand: dict, messaging: dict, tokens: dict, updated: str,
     )
     md += (
         "**Boundary.** We never use governmental iconography. No seals, no flags, no eagles. "
-        "We carry authority; we do not imitate office.\n\n"
+        "We carry authority; we do not imitate office. One scoped exception is on record (v5.8): "
+        "the School of the Local Church carries an academic seal, ecclesiastical rather than "
+        "governmental, under the rules in the sub-brands section. It is the only seal in the "
+        "house and never appears outside the School's own credentials.\n\n"
     )
 
     # 2. The foundation
@@ -349,11 +352,27 @@ def build_brand_system(brand: dict, messaging: dict, tokens: dict, updated: str,
         f"\nEvery initiative surface carries the endorsement line: "
         f"*{brand['subBrands'][0]['endorsement']}*\n\n"
     )
+    for group in sec["architecture"]["ruleGroups"]:
+        md += f"### {group['heading']}\n\n"
+        for rule in group["rules"]:
+            term = f"**{rule['term']}** " if rule["term"] else ""
+            md += f"- {term}{rule['text']}\n"
+        md += "\n"
     for caption in sec["architecture"]["captions"]:
         md += f"{caption}\n\n"
 
-    # 11. Voice
-    md += "## 11. Voice\n\n"
+    # 11. Channels
+    md += "## 11. Channels and handles\n\n"
+    md += f"{sec['channels']['lede']}\n\n"
+    for chan in brand["channels"]:
+        md += f"### {chan['name']} ({chan['kind']})\n\n"
+        md += md_table(["Platform", "Handle"], [[p, h] for p, h in chan["rows"]])
+        md += "\n"
+    for caption in sec["channels"]["captions"]:
+        md += f"{caption}\n\n"
+
+    # 12. Voice
+    md += "## 12. Voice\n\n"
     md += f"**{sec['voice']['headline']}** {sec['voice']['lede']}\n\n"
     md += f"**The filter.** {messaging['filter']}\n\n"
     md += f"**Standing rules.** {messaging['standingRules']}\n\n"
@@ -371,8 +390,8 @@ def build_brand_system(brand: dict, messaging: dict, tokens: dict, updated: str,
         md += md_table(["Never this", "Always this"], [[r["never"], r["always"]] for r in messaging["rewrites"]])
         md += "\n"
 
-    # 12. Message architecture
-    md += "## 12. Message architecture\n\n"
+    # 13. Message architecture
+    md += "## 13. Message architecture\n\n"
     md += (
         "The believer is the hero. We are the guide. That order never flips. Messaging never makes "
         "THE WORD the hero of the story.\n\n"
@@ -380,8 +399,8 @@ def build_brand_system(brand: dict, messaging: dict, tokens: dict, updated: str,
     md += md_table(["Element", "Canonical language"], [[a["element"], a["canonical"]] for a in messaging["architecture"]])
     md += "\n"
 
-    # 13. Audiences
-    md += "## 13. The five people we speak to\n\n"
+    # 14. Audiences
+    md += "## 14. The five people we speak to\n\n"
     md += (
         "Every piece is aimed at one of these five. Know which one before writing a word. The "
         "\"needs to hear\" line is the heart of the message: say it in your own words, but say that.\n\n"
@@ -393,14 +412,14 @@ def build_brand_system(brand: dict, messaging: dict, tokens: dict, updated: str,
         md += f"- **Needs to hear:** {person['needsToHear']}\n"
         md += f"- **First step:** {person['firstStep']}\n\n"
 
-    # 14. Agent rules, hand-authored
-    md += "## 14. " + read_source("agent-rules.md").split("\n", 1)[0].lstrip("# ").strip() + "\n\n"
+    # 15. Agent rules, hand-authored
+    md += "## 15. " + read_source("agent-rules.md").split("\n", 1)[0].lstrip("# ").strip() + "\n\n"
     body = read_source("agent-rules.md").split("\n", 1)[1].lstrip("\n")
     md += re.sub(r"^### ", "#### ", re.sub(r"^## ", "### ", body, flags=re.M), flags=re.M)
     md += "\n"
 
-    # 15. Version history
-    md += "## 15. Version history\n\n"
+    # 16. Version history
+    md += "## 16. Version history\n\n"
     heading = f"### Brand Guide v{brand['version']}"
     if brand["supersedes"]:
         heading += f", against {brand['supersedes']}"
