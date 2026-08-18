@@ -504,6 +504,20 @@ SUB_CSS = """
   .lockupdemo{background:var(--white);border:1px solid var(--rule);border-radius:4px;padding:44px 30px;text-align:center;margin-top:20px;}
   .lockupdemo img{width:min(420px,80%);height:auto;}
   .lockupdemo .cityline{margin-top:18px;font-size:15px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--midnight);}
+
+  /* channel facts · read like an ingredients panel · the parent's card lives in Brand Guide §12 */
+  .chanwrap{display:grid;grid-template-columns:minmax(250px,440px);gap:16px;margin-top:20px;}
+  .chanfacts{background:var(--white);border:2px solid var(--midnight);border-radius:4px;padding:20px 18px 14px;color:var(--midnight);}
+  .chanfacts .cfname{font-size:17px;font-weight:800;letter-spacing:.02em;line-height:1.25;}
+  .chanfacts .cfserv{font-size:10.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(11,26,45,.72);margin:6px 0 10px;}
+  .chanfacts .cfbar{border-top:7px solid var(--midnight);}
+  .chanfacts table{width:100%;border-collapse:collapse;margin:0;background:none;border:none;}
+  .chanfacts td{padding:8px 0;border-bottom:1px solid var(--rule);font-size:13.5px;vertical-align:baseline;}
+  .chanfacts tr:last-child td{border-bottom:none;}
+  .chanfacts .cfp{font-weight:700;padding-right:10px;}
+  .chanfacts .cfh{text-align:right;font-weight:500;word-break:break-word;}
+  .chanfacts .cfh.mut{color:rgba(11,26,45,.62);font-weight:400;font-style:italic;}
+  .chanfacts .cffoot{border-top:4px solid var(--midnight);margin-top:2px;padding-top:10px;font-size:9.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(11,26,45,.72);}
 """
 
 SUBS = [
@@ -517,7 +531,7 @@ SUBS = [
         flame="5% ceiling. The quietest door.",
         register="Before the fire. Calm, open, unhurried.",
         avatar="The bare mark, Midnight on White. The tick rule survives a circular crop; the endorsement line does not have to.",
-        handle="@revivaltomycity, recorded in Brand Guide &sect;12.",
+        handle="@revivaltomycity, recorded in the Channels section of this guide.",
         kindhead="An event brand.",
         kindtext="Revival To My City lives on posters, dates, and city names. Its real design system "
                  "is not a page, it is the city instance: how the mark locks up with a city and a "
@@ -552,7 +566,7 @@ SUBS = [
         flame="The full tenth. This door owns the fire.",
         register="The fire itself. Loudest, fastest, most footage.",
         avatar="The 1 glyph, Parchment on Midnight, once the mark is approved. Until then, the parent wordmark on Midnight.",
-        handle="@every1movement, recorded in Brand Guide &sect;12.",
+        handle="@every1movement, recorded in the Channels section of this guide.",
         kindhead="A movement brand.",
         kindtext="EVERY1 lives on phones and in other people's feeds. It carries the loosest rules "
                  "of the three, the strongest single glyph, and assets designed to be given away. "
@@ -586,7 +600,7 @@ SUBS = [
         flame="5% ceiling. Structure carries it, not colour.",
         register="A building. Ordered, sequential, institutional.",
         avatar="The seal, Parchment on Word Blue, once it is approved. Until then, the parent wordmark on Word Blue.",
-        handle="@schoolofthelocalchurch, recorded in Brand Guide &sect;12.",
+        handle="@schoolofthelocalchurch, recorded in the Channels section of this guide.",
         kindhead="An institution.",
         kindtext="The School is credential-grade design: a seal, a certificate, a numbering system, "
                  "and the recorded serif allowance. A school signals permanence through type and "
@@ -708,6 +722,81 @@ EXTRAS = {
 
 """,
 }
+
+# Each door's channel facts card. The parent's card lives in Brand Guide §12;
+# a door's card lives here, beside the identity it belongs to. Platforms a
+# door does not list are carried by the parent's accounts.
+CHANNELS = {
+    "revival-to-my-city": dict(
+        kind="Event brand · CLEAN",
+        rows=[
+            ("Home", "a named page under theword.world", True),
+            ("Instagram", "@revivaltomycity", False),
+            ("Facebook", "revivaltomycity", False),
+            ("X", "@revivaltomycity", False),
+            ("YouTube", "carried by the parent", True),
+            ("TikTok", "carried by the parent", True),
+        ],
+    ),
+    "every1": dict(
+        kind="Movement brand · BURN",
+        rows=[
+            ("Home", "a named page under theword.world", True),
+            ("Instagram", "@every1movement", False),
+            ("TikTok", "@every1movement", False),
+            ("YouTube", "@every1movement", False),
+            ("Facebook", "every1movement", False),
+            ("X", "@every1movement", False),
+            ("App", "planned · YouVersion model", True),
+        ],
+    ),
+    "school-of-the-local-church": dict(
+        kind="Institution · TRAIN",
+        rows=[
+            ("Home", "a named page under theword.world", True),
+            ("YouTube", "@schoolofthelocalchurch", False),
+            ("Instagram", "@schoolofthelocalchurch", False),
+            ("Facebook", "schoolofthelocalchurch", False),
+            ("X", "carried by the parent", True),
+            ("TikTok", "carried by the parent", True),
+        ],
+    ),
+}
+
+
+def channels_block(name: str, slug: str) -> str:
+    chan = CHANNELS[slug]
+    rows = ""
+    for platform, handle, muted in chan["rows"]:
+        cls = "cfh mut" if muted else "cfh"
+        rows += f'          <tr><td class="cfp">{platform}</td><td class="{cls}">{handle}</td></tr>\n'
+    return (
+        '    <div class="blk">\n'
+        '      <div class="lab">Channels</div>\n'
+        '      <h2>Where this door is found.</h2>\n'
+        '      <p class="lede">One label per platform, read the way an ingredients panel is read. This\n'
+        '      door opens an account only on the platforms its kind of brand needs, so no channel goes\n'
+        "      quiet. Anything not listed is carried by the parent, whose own channel facts live in\n"
+        '      Brand Guide &sect;12.</p>\n'
+        '      <div class="chanwrap">\n'
+        '        <div class="chanfacts">\n'
+        f'          <div class="cfname">{name}</div>\n'
+        f'          <div class="cfserv">{chan["kind"]}</div>\n'
+        '          <div class="cfbar"></div>\n'
+        '          <table>\n'
+        f"{rows}"
+        '          </table>\n'
+        '          <div class="cffoot">A ministry of THE WORD FOR ALL THE WORLD</div>\n'
+        '        </div>\n'
+        '      </div>\n'
+        '      <p class="prov">These handles are the recorded standard, not a claim that every account\n'
+        '      exists. Registration status is pending confirmation against the account record. A handle\n'
+        '      that cannot be secured on a platform comes back here through a changelog entry, never as\n'
+        '      an improvised variant.</p>\n'
+        '    </div>\n'
+        '\n'
+    )
+
 
 # Mark status for the doors whose mark is commissioned but not yet approved.
 # Rendered in the {marks} slot that RTMC fills with its published forms.
@@ -847,7 +936,7 @@ SUB_PAGE = """
 {capture}      </ul>
     </div>
 
-{marks}    <div class="blk">
+{marks}{channels}    <div class="blk">
       <div class="lab">Rules that differ from the parent</div>
       <h2>Where this door departs.</h2>
       <p class="lede">Everything in the Brand Guide applies here. These are the points where {name}
@@ -883,6 +972,7 @@ for d in SUBS:
     fields = {k: v for k, v in d.items() if k not in ("rules", "shots", "capture")}
     fields["marks"] = marks_block() if d["slug"] == "revival-to-my-city" else MARKSTATE.get(d["slug"], "")
     fields["extras"] = EXTRAS.get(d["slug"], "")
+    fields["channels"] = channels_block(d["name"], d["slug"])
     if d["slug"] == "revival-to-my-city":
         tmpl = MARK_HERO
     elif d["slug"] == "school-of-the-local-church":

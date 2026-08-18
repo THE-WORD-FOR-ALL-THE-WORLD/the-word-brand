@@ -1,6 +1,6 @@
 # THE WORD FOR ALL THE WORLD: Brand System
 
-> **Brand system v5.8 · Messaging guide v1.0 · Updated 2026-08-17**
+> **Brand system v5.9 · Messaging guide v1.0 · Updated 2026-08-17**
 > Canonical source: <https://brand.theword.world/ai/manifest.json>
 > The complete standard, assembled for machine reading. The human guides are at <https://brand.theword.world/brand> and <https://brand.theword.world/brand/messaging>.
 
@@ -220,7 +220,7 @@ Every initiative surface carries the endorsement line: *A ministry of THE WORD F
 
 - **Every door carries a mark from one family grammar.** Heavy DM Sans caps converted to outlines, a hairline rule split by a single Flame tick, and the endorsement line beneath. Revival To My City's mark is approved. The EVERY1 mark and the School's seal are commissioned. Until each is approved, that door uses the parent wordmark beside its stage word, and no one draws an interim mark.
 - **Every door owns an avatar.** Below roughly one hundred pixels, ground and proportion stop telling the doors apart; only the ground and the mark survive. Each initiative guide states what its door looks like as a circle on a phone: CLEAN on White, BURN on Midnight, TRAIN on Word Blue.
-- **Growth has triggers, not drift.** A door earns its own handles, its own capture library, its own domain redirect, and wider identity latitude when its work requires them, and every grant is a changelog entry. The recorded handle for every voice lives in the Channels section.
+- **Growth has triggers, not drift.** A door earns its own handles, its own capture library, its own domain redirect, and wider identity latitude when its work requires them, and every grant is a changelog entry. The parent's handles live in the Channels section; each door's handles are recorded in its own guide, because a door's channels are part of the identity that door owns.
 - **The endorsement line survives everything.** Whatever a door grows into, its surfaces carry the line. The one standing exception remains the EVERY1 app, on the YouVersion model.
 
 ### The School's allowances
@@ -234,7 +234,7 @@ Exception on record: the EVERY1 app follows the YouVersion model and will not vi
 
 ## 11. Channels and handles
 
-Where this house is found, one label per voice, read the way an ingredients panel is read. A door opens an account only on the platforms its kind of brand needs, so no channel goes quiet. Any platform not listed for a door is carried by the parent.
+Where the parent institution is found, one label per platform, read the way an ingredients panel is read. This section records the parent's channels only. Each door's channel facts live in that door's own guide, because a door's handles are part of the identity it owns, and any platform a door does not list is carried by these accounts.
 
 ### THE WORD FOR ALL THE WORLD (The parent institution · the record)
 
@@ -246,6 +246,8 @@ Where this house is found, one label per voice, read the way an ingredients pane
 | Facebook | theword.world |
 | TikTok | @theword.world |
 | X | @thewordworld |
+
+Each door's channel facts are recorded in its own brand guide and collected here so the machine layer stays complete.
 
 ### Revival To My City (Event brand · CLEAN)
 
@@ -282,6 +284,8 @@ Where this house is found, one label per voice, read the way an ingredients pane
 | TikTok | carried by the parent |
 
 These handles are the recorded standard, not a claim that every account exists. Registration status is pending confirmation against the account record. A handle that cannot be secured on a platform comes back to this table through a changelog entry, never as an improvised variant. X carries no dots, so the parent's X handle drops them; every other platform carries the handle exactly as written.
+
+The doors' channel facts: Revival To My City · EVERY1 Movement · School of the Local Church. Each card lives beside the identity it belongs to.
 
 ## 12. Voice
 
@@ -450,10 +454,11 @@ replace it.
 
 ## 16. Version history
 
-### Brand Guide v5.8
+### Brand Guide v5.9
 
 | Version | Date | Owner | Changed | Approved |
 | --- | --- | --- | --- | --- |
+| 5.9 | 2026-08-17 | Nathan Zimmer | Channels split by owner. §12 now records the parent's channel facts alone, and each initiative's channel facts card moves into its own brand guide, beside the identity it belongs to. No handle changed. Each door's Handle row now points at its own guide rather than at §12. | Joel Zimmer, Nathan Zimmer |
 | 5.8 | 2026-08-17 | Nathan Zimmer | Sub-brand growth release. §11 records the three doors as three kinds of brand, an event brand, a movement brand, and an institution, and states how the house behaves when the children grow up: one mark family grammar, an avatar for every door, and growth by trigger and changelog entry rather than drift. The School of the Local Church receives the recorded serif allowance and the house's only seal, an academic shield bearing the Lion of Judah, as a scoped exception to the governmental-iconography boundary, which stands everywhere else. §12 Channels added, recording the standard handle for every voice. Each initiative guide gains its kind, its avatar, its capture brief, and its mark status; Revival To My City gains the city instance and the poster spec, EVERY1 gains the participation layer, and the School gains the seal, certificate, and numbering specs and now opens in the Word Blue structural identity it describes. | Joel Zimmer, Nathan Zimmer |
 | 5.7 | 2026-08-15 | Nathan Zimmer | Joel Zimmer's default signature changes to the wide form, the one whose trailing stroke fills a signature line rather than sitting short of it. It takes joel-zimmer.svg and is now what the adoption band and the initiative documents carry. The upright form it replaces is the narrowest of the three and becomes joel-zimmer-compact.svg, which brings his set to the same default, display, and compact forms as Nathan's. The joel-zimmer-extended.svg filename published at v5.6 is withdrawn. | Joel Zimmer, Nathan Zimmer |
 | 5.6 | 2026-08-15 | Nathan Zimmer | Joel Zimmer's signature masters published as approved assets in three forms, default, display, and extended, traced from the original ink and drawn as vectors. Every place his name is signed now carries real ink rather than an empty rule: this guide's adoption band and all three initiative documents. The Signatures page becomes a two-signer kit of seven masters, ordered the way a document is signed. | Joel Zimmer, Nathan Zimmer |

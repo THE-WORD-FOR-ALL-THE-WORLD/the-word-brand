@@ -368,6 +368,14 @@ def build_brand_system(brand: dict, messaging: dict, tokens: dict, updated: str,
         md += f"### {chan['name']} ({chan['kind']})\n\n"
         md += md_table(["Platform", "Handle"], [[p, h] for p, h in chan["rows"]])
         md += "\n"
+    md += (
+        "Each door's channel facts are recorded in its own brand guide and collected here "
+        "so the machine layer stays complete.\n\n"
+    )
+    for chan in bs.door_channels():
+        md += f"### {chan['name']} ({chan['kind']})\n\n"
+        md += md_table(["Platform", "Handle"], [[p, h] for p, h in chan["rows"]])
+        md += "\n"
     for caption in sec["channels"]["captions"]:
         md += f"{caption}\n\n"
 
