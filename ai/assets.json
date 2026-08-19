@@ -254,7 +254,7 @@
       }
     ]
   },
-  "version": "6.5",
+  "version": "6.6",
   "messagingVersion": "1.0",
   "updated": "2026-08-19",
   "authority": "canonical",
@@ -1098,7 +1098,7 @@
       "url": "https://brand.theword.world/assets/logos/school/png/school-cobrand-1600.png",
       "kind": "image",
       "group": "png",
-      "bytes": 53466,
+      "bytes": 54815,
       "status": "approved",
       "grounds": [],
       "configuration": "cobrand",
@@ -1108,14 +1108,14 @@
         "print": "74mm"
       },
       "note": "THE WORD beside the School, divided by a hairline rule. This is how this door carries its endorsement: the parent is shown rather than stated.  Raster at 1600px wide, never scale up.",
-      "name": "Co-brand lockup with the parent, two-tone, word blue and white"
+      "name": "Co-brand lockup with the parent, midnight lion, word blue name"
     },
     {
       "file": "assets/logos/school/png/school-cobrand-3200.png",
       "url": "https://brand.theword.world/assets/logos/school/png/school-cobrand-3200.png",
       "kind": "image",
       "group": "png",
-      "bytes": 116528,
+      "bytes": 118826,
       "status": "approved",
       "grounds": [],
       "configuration": "cobrand",
@@ -1125,14 +1125,14 @@
         "print": "74mm"
       },
       "note": "THE WORD beside the School, divided by a hairline rule. This is how this door carries its endorsement: the parent is shown rather than stated.  Raster at 3200px wide, never scale up.",
-      "name": "Co-brand lockup with the parent, two-tone, word blue and white"
+      "name": "Co-brand lockup with the parent, midnight lion, word blue name"
     },
     {
       "file": "assets/logos/school/png/school-cobrand-400.png",
       "url": "https://brand.theword.world/assets/logos/school/png/school-cobrand-400.png",
       "kind": "image",
       "group": "png",
-      "bytes": 11617,
+      "bytes": 11839,
       "status": "approved",
       "grounds": [],
       "configuration": "cobrand",
@@ -1142,14 +1142,14 @@
         "print": "74mm"
       },
       "note": "THE WORD beside the School, divided by a hairline rule. This is how this door carries its endorsement: the parent is shown rather than stated.  Raster at 400px wide, never scale up.",
-      "name": "Co-brand lockup with the parent, two-tone, word blue and white"
+      "name": "Co-brand lockup with the parent, midnight lion, word blue name"
     },
     {
       "file": "assets/logos/school/png/school-cobrand-800.png",
       "url": "https://brand.theword.world/assets/logos/school/png/school-cobrand-800.png",
       "kind": "image",
       "group": "png",
-      "bytes": 25050,
+      "bytes": 25683,
       "status": "approved",
       "grounds": [],
       "configuration": "cobrand",
@@ -1159,7 +1159,7 @@
         "print": "74mm"
       },
       "note": "THE WORD beside the School, divided by a hairline rule. This is how this door carries its endorsement: the parent is shown rather than stated.  Raster at 800px wide, never scale up.",
-      "name": "Co-brand lockup with the parent, two-tone, word blue and white"
+      "name": "Co-brand lockup with the parent, midnight lion, word blue name"
     },
     {
       "file": "assets/logos/school/png/school-cobrand-black-1600.png",
@@ -1246,7 +1246,7 @@
       "url": "https://brand.theword.world/assets/logos/school/png/school-cobrand-reversed-1600.png",
       "kind": "image",
       "group": "png",
-      "bytes": 52264,
+      "bytes": 52799,
       "status": "approved",
       "grounds": [],
       "configuration": "cobrand",
@@ -1263,7 +1263,7 @@
       "url": "https://brand.theword.world/assets/logos/school/png/school-cobrand-reversed-3200.png",
       "kind": "image",
       "group": "png",
-      "bytes": 112936,
+      "bytes": 114917,
       "status": "approved",
       "grounds": [],
       "configuration": "cobrand",
@@ -1280,7 +1280,7 @@
       "url": "https://brand.theword.world/assets/logos/school/png/school-cobrand-reversed-400.png",
       "kind": "image",
       "group": "png",
-      "bytes": 11023,
+      "bytes": 10567,
       "status": "approved",
       "grounds": [],
       "configuration": "cobrand",
@@ -1297,7 +1297,7 @@
       "url": "https://brand.theword.world/assets/logos/school/png/school-cobrand-reversed-800.png",
       "kind": "image",
       "group": "png",
-      "bytes": 24393,
+      "bytes": 24088,
       "status": "approved",
       "grounds": [],
       "configuration": "cobrand",
@@ -1314,7 +1314,7 @@
       "url": "https://brand.theword.world/assets/logos/school/png/school-horizontal-1600.png",
       "kind": "image",
       "group": "png",
-      "bytes": 87221,
+      "bytes": 88773,
       "status": "approved",
       "grounds": [],
       "configuration": "horizontal",
@@ -1324,14 +1324,14 @@
         "print": "42mm"
       },
       "note": "The default mark. Course materials, certificates, slide masters, letterhead, and anywhere the space is wider than it is tall.  Raster at 1600px wide, never scale up.",
-      "name": "Horizontal lockup, two-tone, word blue and white"
+      "name": "Horizontal lockup, midnight lion, word blue name"
     },
     {
       "file": "assets/logos/school/png/school-horizontal-3200.png",
       "url": "https://brand.theword.world/assets/logos/school/png/school-horizontal-3200.png",
       "kind": "image",
       "group": "png",
-      "bytes": 191484,
+      "bytes": 196548,
       "status": "approved",
       "grounds": [],
       "configuration": "horizontal",
@@ -1341,14 +1341,14 @@
         "print": "42mm"
       },
       "note": "The default mark. Course materials, certificates, slide masters, letterhead, and anywhere the space is wider than it is tall.  Raster at 3200px wide, never scale up.",
-      "name": "Horizontal lockup, two-tone, word blue and white"
+      "name": "Horizontal lockup, midnight lion, word blue name"
     },
     {
       "file": "assets/logos/school/png/school-horizontal-400.png",
       "url": "https://brand.theword.world/assets/logos/school/png/school-horizontal-400.png",
       "kind": "image",
       "group": "png",
-      "bytes": 19579,
+      "bytes": 20137,
       "status": "approved",
       "grounds": [],
       "configuration": "horizontal",
@@ -1358,14 +1358,14 @@
         "print": "42mm"
       },
       "note": "The default mark. Course materials, certificates, slide masters, letterhead, and anywhere the space is wider than it is tall.  Raster at 400px wide, never scale up.",
-      "name": "Horizontal lockup, two-tone, word blue and white"
+      "name": "Horizontal lockup, midnight lion, word blue name"
     },
     {
       "file": "assets/logos/school/png/school-horizontal-800.png",
       "url": "https://brand.theword.world/assets/logos/school/png/school-horizontal-800.png",
       "kind": "image",
       "group": "png",
-      "bytes": 40983,
+      "bytes": 41967,
       "status": "approved",
       "grounds": [],
       "configuration": "horizontal",
@@ -1375,7 +1375,7 @@
         "print": "42mm"
       },
       "note": "The default mark. Course materials, certificates, slide masters, letterhead, and anywhere the space is wider than it is tall.  Raster at 800px wide, never scale up.",
-      "name": "Horizontal lockup, two-tone, word blue and white"
+      "name": "Horizontal lockup, midnight lion, word blue name"
     },
     {
       "file": "assets/logos/school/png/school-horizontal-black-1600.png",
@@ -1462,7 +1462,7 @@
       "url": "https://brand.theword.world/assets/logos/school/png/school-horizontal-reversed-1600.png",
       "kind": "image",
       "group": "png",
-      "bytes": 85543,
+      "bytes": 86969,
       "status": "approved",
       "grounds": [],
       "configuration": "horizontal",
@@ -1479,7 +1479,7 @@
       "url": "https://brand.theword.world/assets/logos/school/png/school-horizontal-reversed-3200.png",
       "kind": "image",
       "group": "png",
-      "bytes": 188208,
+      "bytes": 191520,
       "status": "approved",
       "grounds": [],
       "configuration": "horizontal",
@@ -1496,7 +1496,7 @@
       "url": "https://brand.theword.world/assets/logos/school/png/school-horizontal-reversed-400.png",
       "kind": "image",
       "group": "png",
-      "bytes": 18894,
+      "bytes": 18899,
       "status": "approved",
       "grounds": [],
       "configuration": "horizontal",
@@ -1513,7 +1513,7 @@
       "url": "https://brand.theword.world/assets/logos/school/png/school-horizontal-reversed-800.png",
       "kind": "image",
       "group": "png",
-      "bytes": 39972,
+      "bytes": 40484,
       "status": "approved",
       "grounds": [],
       "configuration": "horizontal",
@@ -1530,7 +1530,7 @@
       "url": "https://brand.theword.world/assets/logos/school/png/school-lion-1024.png",
       "kind": "image",
       "group": "png",
-      "bytes": 90836,
+      "bytes": 92154,
       "status": "approved",
       "grounds": [],
       "configuration": "lion",
@@ -1540,14 +1540,14 @@
         "print": "12mm"
       },
       "note": "The crowned Lion of Judah on its own. Profile pictures, app icons, stickers, embossing, and any square too small to read words in. It is detailed, so it has a higher floor than a wordmark would.  Raster at 1024px wide, never scale up.",
-      "name": "The lion, two-tone, word blue and white"
+      "name": "The lion, midnight lion, word blue name"
     },
     {
       "file": "assets/logos/school/png/school-lion-2048.png",
       "url": "https://brand.theword.world/assets/logos/school/png/school-lion-2048.png",
       "kind": "image",
       "group": "png",
-      "bytes": 200991,
+      "bytes": 205833,
       "status": "approved",
       "grounds": [],
       "configuration": "lion",
@@ -1557,14 +1557,14 @@
         "print": "12mm"
       },
       "note": "The crowned Lion of Judah on its own. Profile pictures, app icons, stickers, embossing, and any square too small to read words in. It is detailed, so it has a higher floor than a wordmark would.  Raster at 2048px wide, never scale up.",
-      "name": "The lion, two-tone, word blue and white"
+      "name": "The lion, midnight lion, word blue name"
     },
     {
       "file": "assets/logos/school/png/school-lion-512.png",
       "url": "https://brand.theword.world/assets/logos/school/png/school-lion-512.png",
       "kind": "image",
       "group": "png",
-      "bytes": 42622,
+      "bytes": 43589,
       "status": "approved",
       "grounds": [],
       "configuration": "lion",
@@ -1574,7 +1574,7 @@
         "print": "12mm"
       },
       "note": "The crowned Lion of Judah on its own. Profile pictures, app icons, stickers, embossing, and any square too small to read words in. It is detailed, so it has a higher floor than a wordmark would.  Raster at 512px wide, never scale up.",
-      "name": "The lion, two-tone, word blue and white"
+      "name": "The lion, midnight lion, word blue name"
     },
     {
       "file": "assets/logos/school/png/school-lion-black-1024.png",
@@ -1641,7 +1641,7 @@
       "url": "https://brand.theword.world/assets/logos/school/png/school-lion-reversed-1024.png",
       "kind": "image",
       "group": "png",
-      "bytes": 90836,
+      "bytes": 92154,
       "status": "approved",
       "grounds": [],
       "configuration": "lion",
@@ -1658,7 +1658,7 @@
       "url": "https://brand.theword.world/assets/logos/school/png/school-lion-reversed-2048.png",
       "kind": "image",
       "group": "png",
-      "bytes": 200991,
+      "bytes": 205833,
       "status": "approved",
       "grounds": [],
       "configuration": "lion",
@@ -1675,7 +1675,7 @@
       "url": "https://brand.theword.world/assets/logos/school/png/school-lion-reversed-512.png",
       "kind": "image",
       "group": "png",
-      "bytes": 42622,
+      "bytes": 43589,
       "status": "approved",
       "grounds": [],
       "configuration": "lion",
@@ -1692,7 +1692,7 @@
       "url": "https://brand.theword.world/assets/logos/school/png/school-stacked-1600.png",
       "kind": "image",
       "group": "png",
-      "bytes": 135790,
+      "bytes": 139598,
       "status": "approved",
       "grounds": [],
       "configuration": "stacked",
@@ -1702,14 +1702,14 @@
         "print": "34mm"
       },
       "note": "Square and portrait spaces, and the form that carries the founding date: covers, posters, apparel, and commemorative print.  Raster at 1600px wide, never scale up.",
-      "name": "Stacked lockup, EST 2024, two-tone, word blue and white"
+      "name": "Stacked lockup, EST 2024, midnight lion, word blue name"
     },
     {
       "file": "assets/logos/school/png/school-stacked-3200.png",
       "url": "https://brand.theword.world/assets/logos/school/png/school-stacked-3200.png",
       "kind": "image",
       "group": "png",
-      "bytes": 304784,
+      "bytes": 313518,
       "status": "approved",
       "grounds": [],
       "configuration": "stacked",
@@ -1719,14 +1719,14 @@
         "print": "34mm"
       },
       "note": "Square and portrait spaces, and the form that carries the founding date: covers, posters, apparel, and commemorative print.  Raster at 3200px wide, never scale up.",
-      "name": "Stacked lockup, EST 2024, two-tone, word blue and white"
+      "name": "Stacked lockup, EST 2024, midnight lion, word blue name"
     },
     {
       "file": "assets/logos/school/png/school-stacked-400.png",
       "url": "https://brand.theword.world/assets/logos/school/png/school-stacked-400.png",
       "kind": "image",
       "group": "png",
-      "bytes": 30799,
+      "bytes": 31843,
       "status": "approved",
       "grounds": [],
       "configuration": "stacked",
@@ -1736,14 +1736,14 @@
         "print": "34mm"
       },
       "note": "Square and portrait spaces, and the form that carries the founding date: covers, posters, apparel, and commemorative print.  Raster at 400px wide, never scale up.",
-      "name": "Stacked lockup, EST 2024, two-tone, word blue and white"
+      "name": "Stacked lockup, EST 2024, midnight lion, word blue name"
     },
     {
       "file": "assets/logos/school/png/school-stacked-800.png",
       "url": "https://brand.theword.world/assets/logos/school/png/school-stacked-800.png",
       "kind": "image",
       "group": "png",
-      "bytes": 64129,
+      "bytes": 65945,
       "status": "approved",
       "grounds": [],
       "configuration": "stacked",
@@ -1753,7 +1753,7 @@
         "print": "34mm"
       },
       "note": "Square and portrait spaces, and the form that carries the founding date: covers, posters, apparel, and commemorative print.  Raster at 800px wide, never scale up.",
-      "name": "Stacked lockup, EST 2024, two-tone, word blue and white"
+      "name": "Stacked lockup, EST 2024, midnight lion, word blue name"
     },
     {
       "file": "assets/logos/school/png/school-stacked-black-1600.png",
@@ -1840,7 +1840,7 @@
       "url": "https://brand.theword.world/assets/logos/school/png/school-stacked-reversed-1600.png",
       "kind": "image",
       "group": "png",
-      "bytes": 132831,
+      "bytes": 134997,
       "status": "approved",
       "grounds": [],
       "configuration": "stacked",
@@ -1857,7 +1857,7 @@
       "url": "https://brand.theword.world/assets/logos/school/png/school-stacked-reversed-3200.png",
       "kind": "image",
       "group": "png",
-      "bytes": 298322,
+      "bytes": 303356,
       "status": "approved",
       "grounds": [],
       "configuration": "stacked",
@@ -1874,7 +1874,7 @@
       "url": "https://brand.theword.world/assets/logos/school/png/school-stacked-reversed-400.png",
       "kind": "image",
       "group": "png",
-      "bytes": 29697,
+      "bytes": 30073,
       "status": "approved",
       "grounds": [],
       "configuration": "stacked",
@@ -1891,7 +1891,7 @@
       "url": "https://brand.theword.world/assets/logos/school/png/school-stacked-reversed-800.png",
       "kind": "image",
       "group": "png",
-      "bytes": 62067,
+      "bytes": 62677,
       "status": "approved",
       "grounds": [],
       "configuration": "stacked",
@@ -1955,7 +1955,7 @@
         "print": "74mm"
       },
       "note": "THE WORD beside the School, divided by a hairline rule. This is how this door carries its endorsement: the parent is shown rather than stated.  Vector master, scale freely.",
-      "name": "Co-brand lockup with the parent, two-tone, word blue and white"
+      "name": "Co-brand lockup with the parent, midnight lion, word blue name"
     },
     {
       "file": "assets/logos/school/school-horizontal-black.svg",
@@ -2009,7 +2009,7 @@
         "print": "42mm"
       },
       "note": "The default mark. Course materials, certificates, slide masters, letterhead, and anywhere the space is wider than it is tall.  Vector master, scale freely.",
-      "name": "Horizontal lockup, two-tone, word blue and white"
+      "name": "Horizontal lockup, midnight lion, word blue name"
     },
     {
       "file": "assets/logos/school/school-lion-black.svg",
@@ -2063,7 +2063,7 @@
         "print": "12mm"
       },
       "note": "The crowned Lion of Judah on its own. Profile pictures, app icons, stickers, embossing, and any square too small to read words in. It is detailed, so it has a higher floor than a wordmark would.  Vector master, scale freely.",
-      "name": "The lion, two-tone, word blue and white"
+      "name": "The lion, midnight lion, word blue name"
     },
     {
       "file": "assets/logos/school/school-stacked-black.svg",
@@ -2117,7 +2117,7 @@
         "print": "34mm"
       },
       "note": "Square and portrait spaces, and the form that carries the founding date: covers, posters, apparel, and commemorative print.  Vector master, scale freely.",
-      "name": "Stacked lockup, EST 2024, two-tone, word blue and white"
+      "name": "Stacked lockup, EST 2024, midnight lion, word blue name"
     },
     {
       "file": "assets/logos/the-word/favicon/apple-touch-icon-180.png",

@@ -263,20 +263,20 @@ RTMC_CONFIGS = [
 SLC_INKS = {
     "": {
         "hex": "#023D6F",
-        "roles": {"dark": "#023D6F", "light": "#FFFFFF", "text": "#023D6F"},
-        "name": "Two-tone, Word Blue and White",
+        "roles": {"dark": "#0B1A2D", "light": "#FFFFFF", "text": "#023D6F"},
+        "name": "Midnight lion, Word Blue name",
         "grounds": ["parchment", "white"],
         "note": "The default. Use on Parchment and White.",
     },
     "-reversed": {
         "hex": "#FFFFFF",
-        "roles": {"dark": "#023D6F", "light": "#FFFFFF", "text": "#FFFFFF"},
+        "roles": {"dark": "#0B1A2D", "light": "#FFFFFF", "text": "#FFFFFF"},
         "name": "Reversed",
         "grounds": ["word-blue", "midnight", "photography with a Midnight scrim"],
         "note": (
             "For Word Blue, which is this door's own ground, and for Midnight and scrimmed "
-            "footage. The lion is unchanged: its Word Blue structure becomes the ground showing "
-            "through. Only the wordmark flips to white."
+            "footage. The lion does not change: it is the same Midnight and White on every "
+            "ground. Only the name flips to white."
         ),
     },
     "-black": {
@@ -396,10 +396,10 @@ BRANDS = [
         "inks": SLC_INKS,
         "favicons": False,
         "intro": (
-            "The School is the TRAIN door, and its mark is the crowned Lion of Judah. It is "
-            "two-tone: the lion's structure in Word Blue, its interior in White. Word Blue is "
-            "this door's own ground, so the lion is built to let the ground do half the drawing, "
-            "which is why the same artwork reads on paper and on Word Blue without being redrawn."
+            "The School is the TRAIN door, and its mark is the crowned Lion of Judah. The lion "
+            "is Midnight over White and never changes; the name beside it is Word Blue, and flips "
+            "to white on a dark ground. Because the lion's interior is left open rather than "
+            "painted, one drawing reads on Parchment, on Word Blue, and on Midnight alike."
         ),
     },
 ]
