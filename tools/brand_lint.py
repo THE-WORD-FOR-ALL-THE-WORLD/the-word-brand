@@ -200,10 +200,27 @@ def check_discovery(ai_dir: str):
     llms = bs.read(os.path.join(REPO, "llms.txt"))
     headers = bs.read(os.path.join(REPO, "_headers"))
 
+    # Just the card index, not the whole homepage: the nav carries every front door
+    # already, so checking the full page would pass no matter what the cards say.
+    home = bs.read(os.path.join(REPO, "index.html"))
+    cards = re.search(r'<div class="cards">(.*?)\n\s*</div>\s*</div>\s*</main>', home, re.S)
+    home = cards.group(1) if cards else ""
+    if not cards:
+        warn("L8", "index.html has no card index to check. Has the homepage been restructured?")
     for page in bs.published_pages():
         url = f"{bs.SITE}{page}" if page != "/" else f"{bs.SITE}/"
         if url not in sitemap:
             err("L8", f"{page} is published but missing from sitemap.xml. Run tools/build_ai.py.")
+        if page == "/":
+            continue
+        # llms.txt and the homepage card index are the two hand-curated lists of what
+        # exists. A new page that reaches neither is published but unfindable.
+        if url not in llms:
+            err("L8", f"{page} is published but missing from llms.txt. Add it in tools/build_ai.py.")
+        # Only top-level front doors belong in the homepage card index. A sub-page is
+        # reached through its own section, which is the design rather than a gap.
+        if page.count("/") == 1 and f'href="{page}/"' not in home and f'href="{page}"' not in home:
+            warn("L8", f"{page} is a front door but the homepage card index does not link to it.")
 
     if f"{bs.SITE}/ai/manifest.json" not in llms:
         err("L8", "llms.txt does not point at the AI manifest. Run tools/build_ai.py.")

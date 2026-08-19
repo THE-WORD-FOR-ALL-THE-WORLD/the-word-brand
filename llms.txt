@@ -30,6 +30,7 @@ Public mission line: Strengthening the local church to fulfill the Great Commiss
 
 - [Brand Guide](https://brand.theword.world/brand): Full visual identity. Logo usage, color, typography, layout, photography and video.
 - [Messaging Guide](https://brand.theword.world/brand/messaging): Voice, tone, vocabulary, audiences, and proof policy.
+- [Assets](https://brand.theword.world/assets): Every approved logo in every format, with its clear space, minimum size, and ink rules. Fonts, download packs, and the photography policy.
 - [Signatures](https://brand.theword.world/signatures): The signature masters that sign the record, and the law governing where each may be placed.
 
 ## The three initiatives
