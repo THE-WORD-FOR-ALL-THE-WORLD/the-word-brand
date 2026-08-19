@@ -222,6 +222,16 @@ def check_discovery(ai_dir: str):
         if page.count("/") == 1 and f'href="{page}/"' not in home and f'href="{page}"' not in home:
             warn("L8", f"{page} is a front door but the homepage card index does not link to it.")
 
+    # Without a 404.html, Cloudflare Pages answers every unmatched path with index.html
+    # and a 200. An agent that mistypes an /ai/ URL then parses the homepage as if it
+    # were the resource, which breaks the one promise this portal makes.
+    if not os.path.exists(os.path.join(REPO, "404.html")):
+        err(
+            "L8",
+            "404.html is missing. Without it Cloudflare Pages serves the homepage with a 200 "
+            "for every path that does not exist, so nothing can tell a real resource from a typo.",
+        )
+
     if f"{bs.SITE}/ai/manifest.json" not in llms:
         err("L8", "llms.txt does not point at the AI manifest. Run tools/build_ai.py.")
 
