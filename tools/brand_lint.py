@@ -304,7 +304,7 @@ def check_logo_sources(files: list):
     link straight at a master, which is working artwork rather than a published file.
     """
     published = "/assets/logos/the-word/"
-    allowed_other = ("/assets/logos/rtmc/",)
+    allowed_other = ("/assets/logos/rtmc/", "/assets/logos/every1/")
     for rel in files:
         s = bs.read(os.path.join(REPO, rel))
         for m in re.finditer(r'(?:src|href)="(/assets/logos/[^"]+)"', s):

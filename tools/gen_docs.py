@@ -391,6 +391,13 @@ SUB_CSS = """
   .door .endorse{margin-top:26px;padding-top:14px;border-top:1px solid rgba(247,243,236,.3);font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:rgba(247,243,236,.85);}
   @media (prefers-reduced-motion: reduce){.door video{display:none;}}
 
+  /* BURN leads with its own mark rather than a serif line. The stage word drops to a
+     label so the mark is the largest thing on the door, and the endorsement line is set
+     on the surface because the approved forms do not carry one. */
+  .door .markline{margin-top:8px;}
+  .door .markline img{width:min(520px,80%);height:auto;display:block;}
+  body.burn .door .stageword{font-size:clamp(13px,1.6vw,16px);font-weight:700;letter-spacing:.22em;line-height:1;color:rgba(247,243,236,.85);}
+
   .tickrule{display:flex;align-items:center;justify-content:center;gap:12px;margin:26px 0 0;max-width:430px;}
   .tickrule .ln{flex:1;border-top:1px solid currentColor;opacity:.55;}
   .tickrule .tk{width:32px;border-top:3px solid var(--flame);}
@@ -566,7 +573,7 @@ SUBS = [
         typerule="Parchment on Midnight. Ember for links and buttons.",
         flame="The full tenth. This door owns the fire.",
         register="The fire itself. Loudest, fastest, most footage.",
-        avatar="The 1 glyph, Parchment on Midnight, once the mark is approved. Until then, the parent wordmark on Midnight.",
+        avatar="The 1 glyph in Flame, on its own Midnight plate. Published, and the only avatar this door uses.",
         handle="@every1movement, recorded in the Channels section of this guide.",
         kindhead="A movement brand.",
         kindtext="EVERY1 lives on phones and in other people's feeds. It carries the loosest rules "
@@ -627,39 +634,60 @@ SUBS = [
     ),
 ]
 
-MARKS = [
- ("rtmc-wordmark",               False, "Primary lockup",      "The full mark with the endorsement line. The default everywhere the name is introduced."),
- ("rtmc-wordmark-reversed",      True,  "Reversed lockup",     "For Midnight grounds and for footage carrying a scrim."),
- ("rtmc-wordmark-bare",          False, "Mark only",           "Where the endorsement line is already carried elsewhere on the surface."),
- ("rtmc-wordmark-bare-reversed", True,  "Mark only, reversed", "Banner and hero use on Midnight."),
- ("rtmc-wordmark-stacked",       False, "Stacked",             "For square and portrait spaces where the single line runs too wide."),
-]
+# The published forms each door carries, in the order they are shown.
+# `dir` is the folder under assets/logos/; a door absent from here has no approved
+# mark and falls through to MARKSTATE instead.
+MARKS = {
+ "revival-to-my-city": ("rtmc", "One lockup, five forms.",
+  "Heavy caps in Midnight, a hairline rule split by a single Flame tick, and the endorsement line "
+  "beneath. The tick is the only Flame on the mark, which keeps it inside CLEAN's 5% ceiling. Every "
+  "form is vector, so it scales without limit and recolours by changing one fill value.",
+  "Do not re-set it in another face, do not stretch it, and do not rebuild the tick rule by hand.", [
+   ("rtmc-wordmark",               False, "Primary lockup",      "The full mark with the endorsement line. The default everywhere the name is introduced."),
+   ("rtmc-wordmark-reversed",      True,  "Reversed lockup",     "For Midnight grounds and for footage carrying a scrim."),
+   ("rtmc-wordmark-bare",          False, "Mark only",           "Where the endorsement line is already carried elsewhere on the surface."),
+   ("rtmc-wordmark-bare-reversed", True,  "Mark only, reversed", "Banner and hero use on Midnight."),
+   ("rtmc-wordmark-stacked",       False, "Stacked",             "For square and portrait spaces where the single line runs too wide."),
+  ]),
+ "every1": ("every1", "One word, and the 1 that leaves it.",
+  "Heavy caps with the numeral drawn as its own shape, standing at a quarter again the cap height of "
+  "EVERY and carrying the only Flame on the mark. The 1 is the same drawing in every form, which is "
+  "what lets it leave the wordmark and still be the movement. Every form is vector, so it scales "
+  "without limit and recolours by changing one fill value.",
+  "Do not re-set it in another face, do not stretch it, and do not redraw the numeral by hand. The "
+  "approved forms carry no endorsement line, so the surface sets that line itself.", [
+   ("every1-wordmark",          False, "Wordmark",            "The default wherever the name is introduced on a light ground."),
+   ("every1-wordmark-reversed", True,  "Wordmark, reversed",  "Midnight grounds and footage carrying a scrim, which is where this door lives."),
+   ("every1-vision",            False, "Vision lockup",       "The wordmark with the vision above and below, both lines tracked to its exact width."),
+   ("every1-vision-reversed",   True,  "Vision lockup, reversed", "The same lockup for Midnight and for scrimmed footage."),
+   ("every1-glyph",             True,  "The 1 glyph",         "The avatar. Stickers, watermarks, profile marks, and the planned app, with the parent invisible."),
+   ("every1-app-icon",          False, "App icon",            "The glyph on its own Midnight plate, with the safe area the rounded corners need."),
+  ]),
+}
 
 
-def marks_block():
+def marks_block(slug):
+    dirname, head_line, lede, dont, forms = MARKS[slug]
     rows = []
-    for name, dark, label, note in MARKS:
+    for name, dark, label, note in forms:
         cls = "art dark" if dark else "art"
         rows.append('        <figure class="mark">')
-        rows.append(f'          <div class="{cls}"><img src="/assets/logos/rtmc/{name}.svg" alt="{label}"></div>')
+        rows.append(f'          <div class="{cls}"><img src="/assets/logos/{dirname}/{name}.svg" alt="{label}"></div>')
         rows.append(f'          <figcaption class="lbl"><b>{label}</b>{note}</figcaption>')
         rows.append('        </figure>')
     head = [
         '    <div class="blk">',
         '      <div class="lab">The mark</div>',
-        '      <h2>One lockup, five forms.</h2>',
-        '      <p class="lede">Heavy caps in Midnight, a hairline rule split by a single Flame tick, '
-        'and the endorsement line beneath. The tick is the only Flame on the mark, which keeps it '
-        "inside CLEAN's 5% ceiling. Every form is vector, so it scales without limit and recolours "
-        'by changing one fill value.</p>',
+        f'      <h2>{head_line}</h2>',
+        f'      <p class="lede">{lede}</p>',
         '      <div class="marks">',
     ]
     tail = [
         '      </div>',
         '      <div class="warn"><strong>Set in DM Sans at weight 900, converted to outlines.</strong> '
         'The mark is artwork, not live text, so it never needs the font installed to render and never '
-        'reflows. Do not re-set it in another face, do not stretch it, and do not rebuild the tick rule '
-        'by hand. If a size or colour you need does not exist, request it.</div>',
+        'reflows. '
+        f'{dont} If a size or colour you need does not exist, request it.</div>',
         '    </div>',
         '',
     ]
@@ -700,10 +728,10 @@ EXTRAS = {
       <p class="lede">A movement's identity lives on its people's own feeds, or it is not a movement.
       These assets exist to leave official hands.</p>
       <ul class="doorrules">
-        <li><strong>The 1 is the glyph.</strong> The commissioned mark leads with the numeral: an app icon, a profile badge, a sticker, a shape simple enough to survive at sixty pixels with no endorsement line in frame.</li>
+        <li><strong>The 1 is the glyph.</strong> The mark leads with the numeral, and the numeral is published on its own: an app icon, a profile badge, a sticker, a shape simple enough to survive at sixty pixels with no endorsement line in frame.</li>
         <li><strong>Share cards ride along.</strong> Every official EVERY1 surface ships with a version a member can post themselves: square and vertical, footage behind the scrim, one line of Parchment type.</li>
         <li><strong>The loosest rules in the house.</strong> Official surfaces follow this guide. What a member does with the badge on their own feed is not audited; it is the movement working.</li>
-        <li><strong>The app icon comes first.</strong> The planned app follows the YouVersion model, so the glyph must carry the whole identity with the parent invisible. It is designed before the app is built, not after.</li>
+        <li><strong>The app icon comes first.</strong> The planned app follows the YouVersion model, so the glyph carries the whole identity with the parent invisible. It was drawn before the app was built, not after, and it is published here already.</li>
       </ul>
     </div>
 
@@ -800,20 +828,8 @@ def channels_block(name: str, slug: str) -> str:
 
 
 # Mark status for the doors whose mark is commissioned but not yet approved.
-# Rendered in the {marks} slot that RTMC fills with its published forms.
+# Rendered in the {marks} slot that a door with published forms fills from MARKS.
 MARKSTATE = {
-    "every1": """    <div class="blk">
-      <div class="lab">The mark</div>
-      <h2>Commissioned, not yet approved.</h2>
-      <p class="lede">The EVERY1 mark is commissioned from the family grammar: heavy DM Sans caps
-      converted to outlines, the hairline rule split by a single Flame tick, the endorsement line
-      beneath, and the 1 built to stand alone at avatar scale with the parent invisible.</p>
-      <div class="warn"><strong>Until a form is approved and published here, EVERY1 surfaces carry the
-      parent wordmark beside the stage word BURN.</strong> No one draws an interim mark. A mark that is
-      needed and does not exist is requested, not improvised.</div>
-    </div>
-
-""",
     "school-of-the-local-church": """    <div class="blk">
       <div class="lab">The seal</div>
       <h2>Commissioned, not yet approved.</h2>
@@ -858,6 +874,23 @@ MARK_HERO = """<div class="markhero">
   </video>
 </div>
 <div class="filmcap">Sanga, Mbarara &middot; 30 Jul 2026</div>
+"""
+
+MARK_DOOR_HERO = """<div class="door">
+  <video autoplay muted loop playsinline poster="/assets/images/{video}-poster.jpg">
+    <source src="/assets/videos/{video}.mp4" type="video/mp4">
+  </video>
+  <div class="scrim"></div>
+  <div class="inner">
+    <div class="panel">
+      <div class="stageword">{stage}</div>
+      <h1 class="markline"><img src="/assets/logos/every1/every1-wordmark-reversed.svg" alt="{name}"></h1>
+      <p class="mission">{mission}</p>
+      <div class="tickrule"><span class="ln"></span><span class="tk"></span><span class="ln"></span></div>
+      <div class="endorse">A ministry of THE WORD FOR ALL THE WORLD</div>
+    </div>
+  </div>
+</div>
 """
 
 TRAIN_HERO = """<div class="trainhero">
@@ -971,13 +1004,15 @@ for d in SUBS:
     rules = "".join(f"        <li>{r}</li>\n" for r in d["rules"])
     capture = "".join(f"        <li>{c}</li>\n" for c in d["capture"])
     fields = {k: v for k, v in d.items() if k not in ("rules", "shots", "capture")}
-    fields["marks"] = marks_block() if d["slug"] == "revival-to-my-city" else MARKSTATE.get(d["slug"], "")
+    fields["marks"] = marks_block(d["slug"]) if d["slug"] in MARKS else MARKSTATE.get(d["slug"], "")
     fields["extras"] = EXTRAS.get(d["slug"], "")
     fields["channels"] = channels_block(d["name"], d["slug"])
     if d["slug"] == "revival-to-my-city":
         tmpl = MARK_HERO
     elif d["slug"] == "school-of-the-local-church":
         tmpl = TRAIN_HERO
+    elif d["slug"] == "every1":
+        tmpl = MARK_DOOR_HERO
     else:
         tmpl = DOOR_HERO
     invert_nav = d["slug"] == "revival-to-my-city"

@@ -58,6 +58,13 @@
   .door .endorse{margin-top:26px;padding-top:14px;border-top:1px solid rgba(247,243,236,.3);font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:rgba(247,243,236,.85);}
   @media (prefers-reduced-motion: reduce){.door video{display:none;}}
 
+  /* BURN leads with its own mark rather than a serif line. The stage word drops to a
+     label so the mark is the largest thing on the door, and the endorsement line is set
+     on the surface because the approved forms do not carry one. */
+  .door .markline{margin-top:8px;}
+  .door .markline img{width:min(520px,80%);height:auto;display:block;}
+  body.burn .door .stageword{font-size:clamp(13px,1.6vw,16px);font-weight:700;letter-spacing:.22em;line-height:1;color:rgba(247,243,236,.85);}
+
   .tickrule{display:flex;align-items:center;justify-content:center;gap:12px;margin:26px 0 0;max-width:430px;}
   .tickrule .ln{flex:1;border-top:1px solid currentColor;opacity:.55;}
   .tickrule .tk{width:32px;border-top:3px solid var(--flame);}

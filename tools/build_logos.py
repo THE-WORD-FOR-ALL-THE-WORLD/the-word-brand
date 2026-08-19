@@ -948,6 +948,12 @@ PACKS = [
         "note": "The approved RTMC wordmark in all its published forms.",
         "globs": ["assets/logos/rtmc/*.svg"],
     },
+    {
+        "file": "assets/downloads/every1-logos.zip",
+        "name": "EVERY1 Movement",
+        "note": "The approved EVERY1 wordmark, the vision lockup, and the 1 glyph, in every published form.",
+        "globs": ["assets/logos/every1/*.svg"],
+    },
 ]
 # Signatures are deliberately not packaged. They are the real signatures of real people,
 # and /signatures already offers each one on its own with the rules attached. A one-click
