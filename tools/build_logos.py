@@ -458,7 +458,15 @@ def make_svg(brand, master, cfg, ink_suffix, ink):
     # Every fill becomes the ink for that path's role. Groups carry the default so
     # per-path currentColor still resolves for single-tone masters.
     body = _FILL_ATTR_RE.sub("", body)
-    body = _G_OPEN_RE.sub(lambda m: f'<g{m.group(1)} fill="{ink_for(ink, None)}">', body)
+    def repaint_group(m):
+        # A self-closing <g/> must stay self-closing. Injecting an attribute into it
+        # would turn it into an opening tag and unbalance everything after it.
+        attrs = m.group(1)
+        if attrs.rstrip().endswith("/"):
+            return m.group(0)
+        return f'<g{attrs} fill="{ink_for(ink, None)}">'
+
+    body = _G_OPEN_RE.sub(repaint_group, body)
 
     def repaint(m):
         attrs = m.group(1)
@@ -665,12 +673,13 @@ def build(check):
             "Never rebuild a lockup by typesetting it. Use the published file.",
         ],
         "provenance": (
-            "The masters in assets/logos/_masters are a vector reconstruction, not an original "
-            "drawing. The THE WORD letterforms and the microphone are an autotrace on a 0.25-unit "
-            "grid, roughly 1/394 of the mark's height, so curves are dense polygons rather than "
-            "Bezier curves. This is invisible on screen and in normal print. On large-format work, "
-            "a banner, a vehicle, or a building sign, faceting can become visible under close "
-            "inspection, and the mark should be redrawn as true curves before that use."
+            "THE WORD's masters are a vector reconstruction, not an original drawing: the "
+            "letterforms and the microphone are an autotrace on a 0.25-unit grid, roughly 1/394 of "
+            "the mark's height, so their curves are dense polygons rather than Bezier curves. This "
+            "is invisible on screen and in normal print, but faceting can show on large-format work "
+            "such as a banner, a vehicle, or a building sign, and the mark should be redrawn as true "
+            "curves before that use. Revival To My City is not affected: its master is real font "
+            "outlines with true curves, and only its brackets are drawn geometry."
         ),
         "configurations": entries,
         "packs": PACKS,
