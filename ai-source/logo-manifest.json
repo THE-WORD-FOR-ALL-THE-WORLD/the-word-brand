@@ -40,7 +40,7 @@
     "Never set the mark below its published minimum width.",
     "Never rebuild a lockup by typesetting it. Use the published file."
   ],
-  "provenance": "The masters in assets/logos/_masters are a vector reconstruction, not an original drawing. The THE WORD letterforms and the microphone are an autotrace on a 0.25-unit grid, roughly 1/394 of the mark's height, so curves are dense polygons rather than Bezier curves. This is invisible on screen and in normal print. On large-format work, a banner, a vehicle, or a building sign, faceting can become visible under close inspection, and the mark should be redrawn as true curves before that use.",
+  "provenance": "THE WORD's masters are a vector reconstruction, not an original drawing: the letterforms and the microphone are an autotrace on a 0.25-unit grid, roughly 1/394 of the mark's height, so their curves are dense polygons rather than Bezier curves. This is invisible on screen and in normal print, but faceting can show on large-format work such as a banner, a vehicle, or a building sign, and the mark should be redrawn as true curves before that use. Revival To My City is not affected: its master is real font outlines with true curves, and only its brackets are drawn geometry.",
   "configurations": [
     {
       "brand": "the-word",
@@ -555,8 +555,8 @@
       "name": "Primary lockup",
       "primary": true,
       "use": "The mark. Posters, city instances, stage backdrops, social, and every surface where the name is introduced. The brackets around MY CITY are a variable: a city instance may replace the words inside them with its own city, and nothing else in the mark moves.",
-      "aspect": 3.625,
-      "capHeight": 299.5,
+      "aspect": 3.0668,
+      "capHeight": 82.97,
       "clearSpace": "0.5x the cap height of EVIVAL on all four sides",
       "clearSpaceReference": "the cap height of EVIVAL",
       "clearSpaceRatio": 0.5,
@@ -660,8 +660,8 @@
       "name": "Co-brand lockup with the parent",
       "primary": false,
       "use": "THE WORD beside Revival To My City, divided by a hairline rule. This is how the door carries its endorsement: the parent is shown rather than stated. Use it in navigation, on letterhead, and on any surface where the parent is not otherwise present.",
-      "aspect": 6.6383,
-      "capHeight": 199.0,
+      "aspect": 6.0154,
+      "capHeight": 52.29,
       "clearSpace": "0.5x the cap height of EVIVAL on all four sides",
       "clearSpaceReference": "the cap height of EVIVAL",
       "clearSpaceRatio": 0.5,

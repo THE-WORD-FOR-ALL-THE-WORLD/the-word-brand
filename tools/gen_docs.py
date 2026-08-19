@@ -654,7 +654,10 @@ MARKS = {
   "is ITC New Baskerville, and <b>TO MY CITY</b> is DM Sans, the house sans. The R&rsquo;s leg sweeps "
   "out and cradles the rest of the word, and that gesture is the mark. The Word Blue brackets around "
   "<b>MY CITY</b> are not decoration, they are a blank: this door&rsquo;s identity is the city instance, "
-  "and the mark says so on its face.",
+  "and the mark says so on its face. The brackets are drawn geometry rather than typed characters, "
+  "set to fixed proportions of the sub-line&rsquo;s cap height: each arm is 0.54 of it, each stroke "
+  "0.114, and the frame clears the words by 0.42 on every side. They are built by the logo build, not "
+  "by hand, which is why every published form has them in exactly the same place.",
   "Hello Paris and ITC New Baskerville are licensed faces, not house fonts, and are installed nowhere. "
   "Nobody can re-set this mark, extend it, or add a word to it.",
   "Set in Hello Paris, ITC New Baskerville, and DM Sans, converted to outlines.", [
