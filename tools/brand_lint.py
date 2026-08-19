@@ -189,8 +189,10 @@ def check_asset_links(files: list):
     for rel in files:
         s = bs.read(os.path.join(REPO, rel))
         for m in re.finditer(r'(?:src|href|poster)="(/assets/[^"]+)"', s):
-            target = os.path.join(REPO, m.group(1).lstrip("/"))
-            if not os.path.exists(target):
+            # Download links carry a ?v= stamp so a version bump defeats any cache.
+            # The file on disk is the path without it.
+            path = m.group(1).split("?", 1)[0].split("#", 1)[0]
+            if not os.path.exists(os.path.join(REPO, path.lstrip("/"))):
                 err("L7", f"{rel} points at {m.group(1)}, which does not exist.")
 
 

@@ -29,7 +29,19 @@ import sys
 import zipfile
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import brandsource as bs  # noqa: E402
 import svgkit  # noqa: E402
+
+
+def brand_version():
+    """Current Brand Guide version, used to bust caches on download links."""
+    try:
+        return bs.parse_brand_guide()["version"]
+    except Exception:
+        return "0"
+
+
+VER = brand_version()
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 MASTERS = os.path.join(REPO, "assets", "logos", "_masters")
@@ -780,10 +792,10 @@ def mark_card(brand, cfg, entry, master):
 
     widths = GLYPH_SIZES if cfg.get("square") else PNG_WIDTHS
     png_links = " ".join(
-        f'<a href="{base}/png/{stem}-{p}.png" download>{p}px</a>' for p in widths
+        f'<a href="{base}/png/{stem}-{p}.png?v={VER}" download>{p}px</a>' for p in widths
     )
     png_rev = " ".join(
-        f'<a href="{base}/png/{stem}-reversed-{p}.png" download>{p}px</a>' for p in widths
+        f'<a href="{base}/png/{stem}-reversed-{p}.png?v={VER}" download>{p}px</a>' for p in widths
     )
     tag = "The default mark" if cfg["primary"] else "Alternate"
 
@@ -807,9 +819,9 @@ def mark_card(brand, cfg, entry, master):
           </dl>
 
           <div class="grab">
-            <a href="{svg}" download>SVG</a>
-            <a class="ghost" href="{base}/{stem}-reversed.svg" download>SVG reversed</a>
-            <a class="ghost" href="{base}/{stem}-black.svg" download>SVG black</a>
+            <a href="{svg}?v={VER}" download>SVG</a>
+            <a class="ghost" href="{base}/{stem}-reversed.svg?v={VER}" download>SVG reversed</a>
+            <a class="ghost" href="{base}/{stem}-black.svg?v={VER}" download>SVG black</a>
           </div>
           <div class="sizes"><span>PNG, Midnight</span>{png_links}</div>
           <div class="sizes"><span>PNG, reversed</span>{png_rev}</div>
@@ -852,7 +864,7 @@ def render_page(masters, entries):
         f"""        <div class="pack">
           <h3>{p['name']}</h3>
           <p>{p['note']}</p>
-          <a href="/{p['file']}" download>Download · {kb(p['file'])}</a>
+          <a href="/{p['file']}?v={VER}" download>Download · {kb(p['file'])}</a>
         </div>"""
         for p in PACKS
         if os.path.exists(os.path.join(REPO, p["file"]))
