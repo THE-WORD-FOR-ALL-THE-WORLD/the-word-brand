@@ -758,6 +758,408 @@
           "width": 3200
         }
       ]
+    },
+    {
+      "brand": "slc",
+      "slug": "horizontal",
+      "name": "Horizontal lockup",
+      "primary": true,
+      "use": "The default mark. Course materials, certificates, slide masters, letterhead, and anywhere the space is wider than it is tall.",
+      "aspect": 2.5122,
+      "capHeight": 62.51,
+      "clearSpace": "0.5x the cap height of School on all four sides",
+      "clearSpaceReference": "the cap height of School",
+      "clearSpaceRatio": 0.5,
+      "minimumWidth": {
+        "screen": "190px",
+        "print": "42mm"
+      },
+      "files": [
+        {
+          "file": "assets/logos/school/school-horizontal.svg",
+          "format": "svg",
+          "ink": "Two-tone, Midnight and White"
+        },
+        {
+          "file": "assets/logos/school/png/school-horizontal-400.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and White",
+          "width": 400
+        },
+        {
+          "file": "assets/logos/school/png/school-horizontal-800.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and White",
+          "width": 800
+        },
+        {
+          "file": "assets/logos/school/png/school-horizontal-1600.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and White",
+          "width": 1600
+        },
+        {
+          "file": "assets/logos/school/png/school-horizontal-3200.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and White",
+          "width": 3200
+        },
+        {
+          "file": "assets/logos/school/school-horizontal-reversed.svg",
+          "format": "svg",
+          "ink": "Reversed"
+        },
+        {
+          "file": "assets/logos/school/png/school-horizontal-reversed-400.png",
+          "format": "png",
+          "ink": "Reversed",
+          "width": 400
+        },
+        {
+          "file": "assets/logos/school/png/school-horizontal-reversed-800.png",
+          "format": "png",
+          "ink": "Reversed",
+          "width": 800
+        },
+        {
+          "file": "assets/logos/school/png/school-horizontal-reversed-1600.png",
+          "format": "png",
+          "ink": "Reversed",
+          "width": 1600
+        },
+        {
+          "file": "assets/logos/school/png/school-horizontal-reversed-3200.png",
+          "format": "png",
+          "ink": "Reversed",
+          "width": 3200
+        },
+        {
+          "file": "assets/logos/school/school-horizontal-black.svg",
+          "format": "svg",
+          "ink": "One colour, black"
+        },
+        {
+          "file": "assets/logos/school/png/school-horizontal-black-400.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 400
+        },
+        {
+          "file": "assets/logos/school/png/school-horizontal-black-800.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 800
+        },
+        {
+          "file": "assets/logos/school/png/school-horizontal-black-1600.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 1600
+        },
+        {
+          "file": "assets/logos/school/png/school-horizontal-black-3200.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 3200
+        }
+      ]
+    },
+    {
+      "brand": "slc",
+      "slug": "stacked",
+      "name": "Stacked lockup, EST 2024",
+      "primary": false,
+      "use": "Square and portrait spaces, and the form that carries the founding date: covers, posters, apparel, and commemorative print.",
+      "aspect": 1.2533,
+      "capHeight": 122.76,
+      "clearSpace": "0.5x the cap height of School on all four sides",
+      "clearSpaceReference": "the cap height of School",
+      "clearSpaceRatio": 0.5,
+      "minimumWidth": {
+        "screen": "150px",
+        "print": "34mm"
+      },
+      "files": [
+        {
+          "file": "assets/logos/school/school-stacked.svg",
+          "format": "svg",
+          "ink": "Two-tone, Midnight and White"
+        },
+        {
+          "file": "assets/logos/school/png/school-stacked-400.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and White",
+          "width": 400
+        },
+        {
+          "file": "assets/logos/school/png/school-stacked-800.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and White",
+          "width": 800
+        },
+        {
+          "file": "assets/logos/school/png/school-stacked-1600.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and White",
+          "width": 1600
+        },
+        {
+          "file": "assets/logos/school/png/school-stacked-3200.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and White",
+          "width": 3200
+        },
+        {
+          "file": "assets/logos/school/school-stacked-reversed.svg",
+          "format": "svg",
+          "ink": "Reversed"
+        },
+        {
+          "file": "assets/logos/school/png/school-stacked-reversed-400.png",
+          "format": "png",
+          "ink": "Reversed",
+          "width": 400
+        },
+        {
+          "file": "assets/logos/school/png/school-stacked-reversed-800.png",
+          "format": "png",
+          "ink": "Reversed",
+          "width": 800
+        },
+        {
+          "file": "assets/logos/school/png/school-stacked-reversed-1600.png",
+          "format": "png",
+          "ink": "Reversed",
+          "width": 1600
+        },
+        {
+          "file": "assets/logos/school/png/school-stacked-reversed-3200.png",
+          "format": "png",
+          "ink": "Reversed",
+          "width": 3200
+        },
+        {
+          "file": "assets/logos/school/school-stacked-black.svg",
+          "format": "svg",
+          "ink": "One colour, black"
+        },
+        {
+          "file": "assets/logos/school/png/school-stacked-black-400.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 400
+        },
+        {
+          "file": "assets/logos/school/png/school-stacked-black-800.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 800
+        },
+        {
+          "file": "assets/logos/school/png/school-stacked-black-1600.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 1600
+        },
+        {
+          "file": "assets/logos/school/png/school-stacked-black-3200.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 3200
+        }
+      ]
+    },
+    {
+      "brand": "slc",
+      "slug": "lion",
+      "name": "The lion",
+      "primary": false,
+      "use": "The crowned Lion of Judah on its own. Profile pictures, app icons, stickers, embossing, and any square too small to read words in. It is detailed, so it has a higher floor than a wordmark would.",
+      "aspect": 0.7163,
+      "capHeight": 361.91,
+      "clearSpace": "0.25x its own height on all four sides",
+      "clearSpaceReference": "its own height",
+      "clearSpaceRatio": 0.25,
+      "minimumWidth": {
+        "screen": "40px",
+        "print": "12mm"
+      },
+      "files": [
+        {
+          "file": "assets/logos/school/school-lion.svg",
+          "format": "svg",
+          "ink": "Two-tone, Midnight and White"
+        },
+        {
+          "file": "assets/logos/school/png/school-lion-512.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and White",
+          "width": 512
+        },
+        {
+          "file": "assets/logos/school/png/school-lion-1024.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and White",
+          "width": 1024
+        },
+        {
+          "file": "assets/logos/school/png/school-lion-2048.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and White",
+          "width": 2048
+        },
+        {
+          "file": "assets/logos/school/school-lion-reversed.svg",
+          "format": "svg",
+          "ink": "Reversed"
+        },
+        {
+          "file": "assets/logos/school/png/school-lion-reversed-512.png",
+          "format": "png",
+          "ink": "Reversed",
+          "width": 512
+        },
+        {
+          "file": "assets/logos/school/png/school-lion-reversed-1024.png",
+          "format": "png",
+          "ink": "Reversed",
+          "width": 1024
+        },
+        {
+          "file": "assets/logos/school/png/school-lion-reversed-2048.png",
+          "format": "png",
+          "ink": "Reversed",
+          "width": 2048
+        },
+        {
+          "file": "assets/logos/school/school-lion-black.svg",
+          "format": "svg",
+          "ink": "One colour, black"
+        },
+        {
+          "file": "assets/logos/school/png/school-lion-black-512.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 512
+        },
+        {
+          "file": "assets/logos/school/png/school-lion-black-1024.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 1024
+        },
+        {
+          "file": "assets/logos/school/png/school-lion-black-2048.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 2048
+        }
+      ]
+    },
+    {
+      "brand": "slc",
+      "slug": "cobrand",
+      "name": "Co-brand lockup with the parent",
+      "primary": false,
+      "use": "THE WORD beside the School, divided by a hairline rule. This is how this door carries its endorsement: the parent is shown rather than stated.",
+      "aspect": 4.917,
+      "capHeight": 33.8,
+      "clearSpace": "0.5x the cap height of School on all four sides",
+      "clearSpaceReference": "the cap height of School",
+      "clearSpaceRatio": 0.5,
+      "minimumWidth": {
+        "screen": "330px",
+        "print": "74mm"
+      },
+      "files": [
+        {
+          "file": "assets/logos/school/school-cobrand.svg",
+          "format": "svg",
+          "ink": "Two-tone, Midnight and White"
+        },
+        {
+          "file": "assets/logos/school/png/school-cobrand-400.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and White",
+          "width": 400
+        },
+        {
+          "file": "assets/logos/school/png/school-cobrand-800.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and White",
+          "width": 800
+        },
+        {
+          "file": "assets/logos/school/png/school-cobrand-1600.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and White",
+          "width": 1600
+        },
+        {
+          "file": "assets/logos/school/png/school-cobrand-3200.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and White",
+          "width": 3200
+        },
+        {
+          "file": "assets/logos/school/school-cobrand-reversed.svg",
+          "format": "svg",
+          "ink": "Reversed"
+        },
+        {
+          "file": "assets/logos/school/png/school-cobrand-reversed-400.png",
+          "format": "png",
+          "ink": "Reversed",
+          "width": 400
+        },
+        {
+          "file": "assets/logos/school/png/school-cobrand-reversed-800.png",
+          "format": "png",
+          "ink": "Reversed",
+          "width": 800
+        },
+        {
+          "file": "assets/logos/school/png/school-cobrand-reversed-1600.png",
+          "format": "png",
+          "ink": "Reversed",
+          "width": 1600
+        },
+        {
+          "file": "assets/logos/school/png/school-cobrand-reversed-3200.png",
+          "format": "png",
+          "ink": "Reversed",
+          "width": 3200
+        },
+        {
+          "file": "assets/logos/school/school-cobrand-black.svg",
+          "format": "svg",
+          "ink": "One colour, black"
+        },
+        {
+          "file": "assets/logos/school/png/school-cobrand-black-400.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 400
+        },
+        {
+          "file": "assets/logos/school/png/school-cobrand-black-800.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 800
+        },
+        {
+          "file": "assets/logos/school/png/school-cobrand-black-1600.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 1600
+        },
+        {
+          "file": "assets/logos/school/png/school-cobrand-black-3200.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 3200
+        }
+      ]
     }
   ],
   "packs": [
@@ -787,6 +1189,14 @@
         "assets/logos/the-word/favicon/*.png"
       ],
       "readme": true
+    },
+    {
+      "file": "assets/downloads/school-of-the-local-church-logos.zip",
+      "name": "School of the Local Church",
+      "note": "The crowned lion in every published form: horizontal, stacked, the lion alone, and the co-brand lockup.",
+      "globs": [
+        "assets/logos/school/*.svg"
+      ]
     },
     {
       "file": "assets/downloads/revival-to-my-city-logos.zip",

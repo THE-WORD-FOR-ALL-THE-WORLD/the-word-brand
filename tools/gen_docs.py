@@ -83,9 +83,18 @@ NAV_PARENT = """    <a class="logo" href="/" aria-label="THE WORD FOR ALL THE WO
       <img src="/assets/logos/the-word/the-word-horizontal-reversed.svg" alt="THE WORD FOR ALL THE WORLD">
     </a>"""
 
-NAV_COBRAND = """    <a class="logo cobrand" href="/" aria-label="Revival To My City, a ministry of THE WORD FOR ALL THE WORLD">
-      <img src="/assets/logos/rtmc/rtmc-cobrand.svg" alt="THE WORD FOR ALL THE WORLD and Revival To My City">
-    </a>"""
+def nav_cobrand(slug, name, mark):
+    return (f'    <a class="logo cobrand" href="/" aria-label="{name}, a ministry of THE WORD FOR ALL THE WORLD">\n'
+            f'      <img src="{mark}" alt="THE WORD FOR ALL THE WORLD and {name}">\n'
+            '    </a>')
+
+
+NAV_COBRAND = {
+    "revival-to-my-city": nav_cobrand("revival-to-my-city", "Revival To My City",
+                                      "/assets/logos/rtmc/rtmc-cobrand.svg"),
+    "school-of-the-local-church": nav_cobrand("school-of-the-local-church", "School of the Local Church",
+                                              "/assets/logos/school/school-cobrand-reversed.svg"),
+}
 
 
 FOOT = """
@@ -448,8 +457,8 @@ SUB_CSS = """
   body.clean .sitenav .links a:hover{color:var(--ember);}
   body.clean .sitenav .links a.active{color:var(--midnight);border-bottom-color:rgba(11,26,45,.45);}
 
-  .markhero{background:var(--white);padding:clamp(104px,9vw,118px) 32px clamp(26px,3.4vw,38px);text-align:center;}
-  .markhero .mission{margin:0 auto;max-width:560px;font-size:clamp(18px,2.1vw,22px);line-height:1.5;color:rgba(11,26,45,.88);}
+  .markhero{background:var(--white);height:clamp(96px,8vw,112px);}
+  .missionlede{font-family:var(--serif-text);font-weight:400;font-size:clamp(23px,3vw,31px);line-height:1.35;max-width:22ch;margin:0 0 52px;color:var(--midnight);}
   .filmband{position:relative;height:min(58vh,520px);overflow:hidden;background:var(--midnight);}
   .filmband video,.filmband img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
   @media (prefers-reduced-motion: reduce){.filmband video{display:none;}}
@@ -659,12 +668,32 @@ MARKS = {
   "by hand, which is why every published form has them in exactly the same place.",
   "Hello Paris and ITC New Baskerville are licensed faces, not house fonts, and are installed nowhere. "
   "Nobody can re-set this mark, extend it, or add a word to it.",
-  "Set in Hello Paris, ITC New Baskerville, and DM Sans, converted to outlines.", [
+  "Set in Hello Paris, ITC New Baskerville, and DM Sans, converted to outlines.",
+  "https://canva.link/ou17pf8asqkgg3c", [
    ("rtmc-primary",          False, "Primary lockup",     "The mark. The default everywhere the name is introduced."),
    ("rtmc-primary-reversed", True,  "Reversed",           "Midnight grounds and footage carrying a scrim. One colour: the brackets go white, because Word Blue disappears on Midnight."),
    ("rtmc-cobrand",          False, "Co-brand lockup",    "THE WORD beside the door, divided by a hairline. This is how this door carries its endorsement, by showing the parent rather than stating it."),
    ("rtmc-cobrand-reversed", True,  "Co-brand, reversed", "The same lockup on Midnight and on scrimmed footage."),
    ("rtmc-primary-black",    False, "One colour",         "Embroidery, engraving, newsprint, and any vendor who asks for pure black."),
+  ]),
+ "school-of-the-local-church": ("school", "A crowned lion, and a ground that does half the drawing.",
+  "The mark is the Lion of Judah wearing a crown, beside <b>School</b> in the house serif over "
+  "<b>OF THE LOCAL CHURCH</b> letterspaced in DM Sans. It is two tones and no more: the lion&rsquo;s "
+  "structure in Midnight, its interior in White. That is the whole trick. The interior is not painted "
+  "on, it is left open, so on paper the ground shows through as white and on Midnight the same artwork "
+  "reads as a white lion with the ground doing the separating. One drawing, both grounds, nothing "
+  "redrawn.",
+  "Do not re-set it in another face, do not stretch it, do not recolour the lion, and do not fill in "
+  "its interior. The four-colour version it was designed from is superseded; the light blue in it was "
+  "never a brand colour.",
+  "Set in the house serif and DM Sans, with the lion converted to outlines.",
+  "https://canva.link/5577z0y930kvzam", [
+   ("school-horizontal",          False, "Horizontal lockup",  "The default. Course materials, certificates, slide masters, and letterhead."),
+   ("school-horizontal-reversed", True,  "Reversed",           "Midnight grounds and scrimmed footage. Only the wordmark flips; the lion is the same artwork."),
+   ("school-stacked",             False, "Stacked, EST 2024",  "Square and portrait spaces, and the form that carries the founding date."),
+   ("school-lion",                False, "The lion",           "The mark reduced to the lion. Profile pictures, app icons, stickers, and embossing."),
+   ("school-cobrand",             False, "Co-brand lockup",    "THE WORD beside the door, divided by a hairline. This is how the School carries its endorsement."),
+   ("school-horizontal-black",    False, "One colour",         "Embroidery, engraving, and newsprint. The interior knocks out to white rather than filling in."),
   ]),
  "every1": ("every1", "One word, and the 1 that leaves it.",
   "Heavy caps with the numeral drawn as its own shape, standing at a quarter again the cap height of "
@@ -673,7 +702,8 @@ MARKS = {
   "without limit and recolours by changing one fill value.",
   "Do not re-set it in another face, do not stretch it, and do not redraw the numeral by hand. The "
   "approved forms carry no endorsement line, so the surface sets that line itself.",
-  "Set in DM Sans at weight 900, converted to outlines.", [
+  "Set in DM Sans at weight 900, converted to outlines.",
+  None, [
    ("every1-wordmark",          False, "Wordmark",            "The default wherever the name is introduced on a light ground."),
    ("every1-wordmark-reversed", True,  "Wordmark, reversed",  "Midnight grounds and footage carrying a scrim, which is where this door lives."),
    ("every1-vision",            False, "Vision lockup",       "The wordmark with the vision above and below, both lines tracked to its exact width."),
@@ -685,7 +715,7 @@ MARKS = {
 
 
 def marks_block(slug):
-    dirname, head_line, lede, dont, setin, forms = MARKS[slug]
+    dirname, head_line, lede, dont, setin, source, forms = MARKS[slug]
     rows = []
     for name, dark, label, note in forms:
         cls = "art dark" if dark else "art"
@@ -708,6 +738,12 @@ def marks_block(slug):
         '    </div>',
         '',
     ]
+    if source:
+        tail.insert(-2,
+            '      <p class="prov">The editable original lives at '
+            f'<a href="{source}" rel="noopener">{source}</a>. Changes start there and come back '
+            'through the inbox, because the published files are generated and a hand edit to one '
+            'of them is overwritten by the next build.</p>')
     return NL.join(head + rows + tail) + NL
 
 
@@ -849,20 +885,7 @@ def channels_block(name: str, slug: str) -> str:
 # Mark status for the doors whose mark is commissioned but not yet approved.
 # Rendered in the {marks} slot that a door with published forms fills from MARKS.
 MARKSTATE = {
-    "school-of-the-local-church": """    <div class="blk">
-      <div class="lab">The seal</div>
-      <h2>Commissioned, not yet approved.</h2>
-      <p class="lede">The School's mark is its academic seal, recorded in Brand Guide &sect;11: a shield
-      bearing the Lion of Judah, ringed with the School's name, drawn in a single colour, with masters
-      for print, blind emboss, and wax. It is ecclesiastical, not governmental, and it is the only seal
-      in the house. It never appears on another door's work, and never as decoration to make a page
-      feel official.</p>
-      <div class="warn"><strong>Until the seal is approved and published here, the School's surfaces
-      carry the parent wordmark beside the stage word TRAIN, and certificates close with the two
-      signatures and the letterhead rule alone.</strong> No one draws an interim seal.</div>
-    </div>
 
-""",
 }
 
 
@@ -883,9 +906,7 @@ DOOR_HERO = """<div class="door">
 </div>
 """
 
-MARK_HERO = """<div class="markhero">
-  <p class="mission">{mission}</p>
-</div>
+MARK_HERO = """<div class="markhero"></div>
 <div class="filmband">
   <video autoplay muted loop playsinline poster="/assets/images/{video}-poster.jpg">
     <source src="/assets/videos/{video}.mp4" type="video/mp4">
@@ -917,7 +938,6 @@ TRAIN_HERO = """<div class="trainhero">
     <h1>{title}</h1>
     <p class="mission">{mission}</p>
     <div class="tickrule"><span class="ln"></span><span class="tk"></span><span class="ln"></span></div>
-    <div class="endorse">A ministry of THE WORD FOR ALL THE WORLD</div>
   </div>
 </div>
 <div class="filmband">
@@ -937,7 +957,7 @@ SUB_PAGE = """
       <a href="/brand/#architecture">&larr; Brand Guide &sect;11</a>
       <a href="/documents/{slug}/">Messaging document &rarr;</a>
     </div>
-
+{missionlede}
     <div class="blk">
       <div class="lab">What kind of brand this is</div>
       <h2>{kindhead}</h2>
@@ -1035,9 +1055,15 @@ for d in SUBS:
         tmpl = DOOR_HERO
     invert_nav = d["slug"] == "revival-to-my-city"
     fields["hero"] = tmpl.format(**fields)
+    # Revival To My City opens its content with the mission rather than its page,
+    # because its mark now lives in the navigation and the footage leads.
+    fields["missionlede"] = (
+        f'    <p class="missionlede">{d["mission"]}</p>\n'
+        if d["slug"] == "revival-to-my-city" else ""
+    )
     fields["capture"] = capture
     html = HEAD.format(title=f"{d['name']} · Initiative Brand Guide", extra_css=SUB_CSS,
-                       navlogo=NAV_COBRAND if d["slug"] == "revival-to-my-city" else NAV_PARENT,
+                       navlogo=NAV_COBRAND.get(d["slug"], NAV_PARENT),
                        band_pad="0", doc_active="", lh_active="")
     html = html.replace("<body>", f"<body class=\"{d['stage'].lower()}\">")
     if invert_nav:

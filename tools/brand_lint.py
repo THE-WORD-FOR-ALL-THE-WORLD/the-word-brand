@@ -311,22 +311,33 @@ def check_logo_sources(files: list):
     """
     L12: every logo a live page shows comes from the published set.
 
-    The retired 368x32 wordmark PNGs live in archive/ so an archived guide still
-    renders. Nothing in the live portal may reach back for them, and no page may
-    link straight at a master, which is working artwork rather than a published file.
+    The published brands are whichever directories exist under assets/logos/, so a new
+    door needs no change here. An underscore prefix means working artwork: _masters
+    holds the approved originals and _inbox holds files on their way to becoming one,
+    and neither is a thing a page may link to. Retired marks live in archive/ so an
+    archived guide still renders, and nothing live may reach back for them.
     """
-    published = "/assets/logos/the-word/"
-    allowed_other = ("/assets/logos/rtmc/", "/assets/logos/every1/")
+    root = os.path.join(REPO, "assets", "logos")
+    published = {
+        d for d in os.listdir(root)
+        if os.path.isdir(os.path.join(root, d)) and not d.startswith("_")
+    } if os.path.isdir(root) else set()
+
     for rel in files:
         s = bs.read(os.path.join(REPO, rel))
-        for m in re.finditer(r'(?:src|href)="(/assets/logos/[^"]+)"', s):
-            url = m.group(1)
-            if url.startswith(published) or url.startswith(allowed_other):
+        for m in re.finditer(r'(?:src|href)="(/assets/logos/([^"/]+)/[^"]*|/assets/logos/[^"/]+)"', s):
+            url = m.group(1).split("?", 1)[0]
+            folder = m.group(2)
+            if folder in published:
                 continue
-            if "/_masters/" in url or "/_inbox/" in url:
+            if folder and folder.startswith("_"):
                 err("L12", f"{rel}: links to working artwork {url}. Link to the published file.")
             else:
-                err("L12", f"{rel}: uses a retired logo {url}. The published marks are at {published}.")
+                err(
+                    "L12",
+                    f"{rel}: uses a logo outside the published set, {url}. "
+                    f"Published brands: {', '.join(sorted(published)) or 'none'}.",
+                )
 
 
 # ---------------------------------------------------------------- main
