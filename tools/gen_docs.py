@@ -38,6 +38,7 @@ HEAD = """<!DOCTYPE html>
   .sitenav{{position:absolute;top:0;left:0;right:0;z-index:10;}}
   .sitenav .bar{{max-width:1240px;margin:0 auto;padding:26px 36px;display:flex;justify-content:space-between;align-items:center;gap:20px;}}
   .sitenav .logo img{{height:20px;width:auto;display:block;}}
+  .sitenav .logo.cobrand img{{height:44px;}}
   .sitenav .links{{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:12px 28px;font-size:12.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;}}
   .sitenav .links a{{color:rgba(247,243,236,.9);text-decoration:none;}}
   .sitenav .links a:hover{{color:var(--white);}}
@@ -61,9 +62,7 @@ HEAD = """<!DOCTYPE html>
 
 <nav class="sitenav">
   <div class="bar">
-    <a class="logo" href="/" aria-label="THE WORD FOR ALL THE WORLD, portal home">
-      <img src="/assets/logos/the-word/the-word-horizontal-reversed.svg" alt="THE WORD FOR ALL THE WORLD">
-    </a>
+{navlogo}
     <div class="links">
       <a href="/">Home</a>
       <a href="/brand/">Brand Guide</a>
@@ -76,6 +75,18 @@ HEAD = """<!DOCTYPE html>
   </div>
 </nav>
 """
+
+# The nav mark. A door that has its own approved mark carries the co-brand lockup
+# instead of the parent alone, which is how that door shows its endorsement rather
+# than stating it in a line of type. Brand Guide §11.
+NAV_PARENT = """    <a class="logo" href="/" aria-label="THE WORD FOR ALL THE WORLD, portal home">
+      <img src="/assets/logos/the-word/the-word-horizontal-reversed.svg" alt="THE WORD FOR ALL THE WORLD">
+    </a>"""
+
+NAV_COBRAND = """    <a class="logo cobrand" href="/" aria-label="Revival To My City, a ministry of THE WORD FOR ALL THE WORLD">
+      <img src="/assets/logos/rtmc/rtmc-cobrand.svg" alt="THE WORD FOR ALL THE WORLD and Revival To My City">
+    </a>"""
+
 
 FOOT = """
 <footer>
@@ -345,7 +356,7 @@ for section, cfg in SECTIONS.items():
     doc_a = ' class="active"' if cfg["active"] == "doc" else ""
     lh_a = ' class="active"' if cfg["active"] == "lh" else ""
     for slug, name, stage, mission in INITIATIVES:
-        html = HEAD.format(title=f"{name} · {cfg['doc_suffix']}", extra_css=DOC_CSS,
+        html = HEAD.format(title=f"{name} · {cfg['doc_suffix']}", extra_css=DOC_CSS, navlogo=NAV_PARENT,
                            band_pad="96px 0 24px", doc_active=doc_a, lh_active=lh_a)
         html += DOC_PAGE.format(backurl=f"/{section}/", backlabel=cfg["backlabel"],
                                 doctitle=TITLES[slug], metaline=cfg["metaline"],
@@ -355,7 +366,7 @@ for section, cfg in SECTIONS.items():
         path = os.path.join(REPO, section, slug, "index.html")
         open(path, "w").write(html)
         print(path, len(html))
-    html = HEAD.format(title=cfg["index_title"], extra_css=INDEX_CSS,
+    html = HEAD.format(title=cfg["index_title"], extra_css=INDEX_CSS, navlogo=NAV_PARENT,
                        band_pad="150px 0 64px", doc_active=doc_a, lh_active=lh_a)
     html += '\n<div class="band">\n  <span class="kicker">One Journey · Three Initiatives</span>\n'
     html += f'  <h1>{cfg["index_h1"]}</h1>\n  <p>{cfg["index_sub"]}</p>\n</div>\n'
@@ -390,6 +401,13 @@ SUB_CSS = """
   .door .mission{margin-top:16px;max-width:560px;color:rgba(247,243,236,.9);}
   .door .endorse{margin-top:26px;padding-top:14px;border-top:1px solid rgba(247,243,236,.3);font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:rgba(247,243,236,.85);}
   @media (prefers-reduced-motion: reduce){.door video{display:none;}}
+
+  /* BURN leads with its own mark rather than a serif line. The stage word drops to a
+     label so the mark is the largest thing on the door, and the endorsement line is set
+     on the surface because the approved forms do not carry one. */
+  .door .markline{margin-top:8px;}
+  .door .markline img{width:min(520px,80%);height:auto;display:block;}
+  body.burn .door .stageword{font-size:clamp(13px,1.6vw,16px);font-weight:700;letter-spacing:.22em;line-height:1;color:rgba(247,243,236,.85);}
 
   .tickrule{display:flex;align-items:center;justify-content:center;gap:12px;margin:26px 0 0;max-width:430px;}
   .tickrule .ln{flex:1;border-top:1px solid currentColor;opacity:.55;}
@@ -566,7 +584,7 @@ SUBS = [
         typerule="Parchment on Midnight. Ember for links and buttons.",
         flame="The full tenth. This door owns the fire.",
         register="The fire itself. Loudest, fastest, most footage.",
-        avatar="The 1 glyph, Parchment on Midnight, once the mark is approved. Until then, the parent wordmark on Midnight.",
+        avatar="The 1 glyph in Flame, on its own Midnight plate. Published, and the only avatar this door uses.",
         handle="@every1movement, recorded in the Channels section of this guide.",
         kindhead="A movement brand.",
         kindtext="EVERY1 lives on phones and in other people's feeds. It carries the loosest rules "
@@ -627,39 +645,64 @@ SUBS = [
     ),
 ]
 
-MARKS = [
- ("rtmc-wordmark",               False, "Primary lockup",      "The full mark with the endorsement line. The default everywhere the name is introduced."),
- ("rtmc-wordmark-reversed",      True,  "Reversed lockup",     "For Midnight grounds and for footage carrying a scrim."),
- ("rtmc-wordmark-bare",          False, "Mark only",           "Where the endorsement line is already carried elsewhere on the surface."),
- ("rtmc-wordmark-bare-reversed", True,  "Mark only, reversed", "Banner and hero use on Midnight."),
- ("rtmc-wordmark-stacked",       False, "Stacked",             "For square and portrait spaces where the single line runs too wide."),
-]
+# The published forms each door carries, in the order they are shown.
+# `dir` is the folder under assets/logos/; a door absent from here has no approved
+# mark and falls through to MARKSTATE instead.
+MARKS = {
+ "revival-to-my-city": ("rtmc", "A serif, and a bracket that is a blank to be filled.",
+  "The wordmark is three faces converted to outlines: the swash <b>R</b> is Hello Paris, <b>EVIVAL</b> "
+  "is ITC New Baskerville, and <b>TO MY CITY</b> is DM Sans, the house sans. The R&rsquo;s leg sweeps "
+  "out and cradles the rest of the word, and that gesture is the mark. The Word Blue brackets around "
+  "<b>MY CITY</b> are not decoration, they are a blank: this door&rsquo;s identity is the city instance, "
+  "and the mark says so on its face.",
+  "Hello Paris and ITC New Baskerville are licensed faces, not house fonts, and are installed nowhere. "
+  "Nobody can re-set this mark, extend it, or add a word to it.",
+  "Set in Hello Paris, ITC New Baskerville, and DM Sans, converted to outlines.", [
+   ("rtmc-primary",          False, "Primary lockup",     "The mark. The default everywhere the name is introduced."),
+   ("rtmc-primary-reversed", True,  "Reversed",           "Midnight grounds and footage carrying a scrim. One colour: the brackets go white, because Word Blue disappears on Midnight."),
+   ("rtmc-cobrand",          False, "Co-brand lockup",    "THE WORD beside the door, divided by a hairline. This is how this door carries its endorsement, by showing the parent rather than stating it."),
+   ("rtmc-cobrand-reversed", True,  "Co-brand, reversed", "The same lockup on Midnight and on scrimmed footage."),
+   ("rtmc-primary-black",    False, "One colour",         "Embroidery, engraving, newsprint, and any vendor who asks for pure black."),
+  ]),
+ "every1": ("every1", "One word, and the 1 that leaves it.",
+  "Heavy caps with the numeral drawn as its own shape, standing at a quarter again the cap height of "
+  "EVERY and carrying the only Flame on the mark. The 1 is the same drawing in every form, which is "
+  "what lets it leave the wordmark and still be the movement. Every form is vector, so it scales "
+  "without limit and recolours by changing one fill value.",
+  "Do not re-set it in another face, do not stretch it, and do not redraw the numeral by hand. The "
+  "approved forms carry no endorsement line, so the surface sets that line itself.",
+  "Set in DM Sans at weight 900, converted to outlines.", [
+   ("every1-wordmark",          False, "Wordmark",            "The default wherever the name is introduced on a light ground."),
+   ("every1-wordmark-reversed", True,  "Wordmark, reversed",  "Midnight grounds and footage carrying a scrim, which is where this door lives."),
+   ("every1-vision",            False, "Vision lockup",       "The wordmark with the vision above and below, both lines tracked to its exact width."),
+   ("every1-vision-reversed",   True,  "Vision lockup, reversed", "The same lockup for Midnight and for scrimmed footage."),
+   ("every1-glyph",             True,  "The 1 glyph",         "The avatar. Stickers, watermarks, profile marks, and the planned app, with the parent invisible."),
+   ("every1-app-icon",          False, "App icon",            "The glyph on its own Midnight plate, with the safe area the rounded corners need."),
+  ]),
+}
 
 
-def marks_block():
+def marks_block(slug):
+    dirname, head_line, lede, dont, setin, forms = MARKS[slug]
     rows = []
-    for name, dark, label, note in MARKS:
+    for name, dark, label, note in forms:
         cls = "art dark" if dark else "art"
         rows.append('        <figure class="mark">')
-        rows.append(f'          <div class="{cls}"><img src="/assets/logos/rtmc/{name}.svg" alt="{label}"></div>')
+        rows.append(f'          <div class="{cls}"><img src="/assets/logos/{dirname}/{name}.svg" alt="{label}"></div>')
         rows.append(f'          <figcaption class="lbl"><b>{label}</b>{note}</figcaption>')
         rows.append('        </figure>')
     head = [
         '    <div class="blk">',
         '      <div class="lab">The mark</div>',
-        '      <h2>One lockup, five forms.</h2>',
-        '      <p class="lede">Heavy caps in Midnight, a hairline rule split by a single Flame tick, '
-        'and the endorsement line beneath. The tick is the only Flame on the mark, which keeps it '
-        "inside CLEAN's 5% ceiling. Every form is vector, so it scales without limit and recolours "
-        'by changing one fill value.</p>',
+        f'      <h2>{head_line}</h2>',
+        f'      <p class="lede">{lede}</p>',
         '      <div class="marks">',
     ]
     tail = [
         '      </div>',
-        '      <div class="warn"><strong>Set in DM Sans at weight 900, converted to outlines.</strong> '
-        'The mark is artwork, not live text, so it never needs the font installed to render and never '
-        'reflows. Do not re-set it in another face, do not stretch it, and do not rebuild the tick rule '
-        'by hand. If a size or colour you need does not exist, request it.</div>',
+        f'      <div class="warn"><strong>{setin}</strong> '
+        'The mark is artwork, not live text, so it never needs the font installed and never reflows. '
+        f'{dont} If a size or colour you need does not exist, request it.</div>',
         '    </div>',
         '',
     ]
@@ -679,14 +722,16 @@ EXTRAS = {
       this identity is not a page. It is the city instance: the mark, a city, and a date, locked up
       as one announcement.</p>
       <div class="lockupdemo">
-        <img src="/assets/logos/rtmc/rtmc-wordmark-bare.svg" alt="Revival To My City mark with the city and date line beneath">
+        <img src="/assets/logos/rtmc/rtmc-primary.svg" alt="Revival To My City, whose bracketed field holds the city name">
         <div class="cityline">[City] &middot; [Month Year]</div>
       </div>
-      <p class="prov">The bracketed line is the template. A real instance sets a real city and real
-      dates from the record, in letterspaced DM Sans caps beneath the mark. The lockup is never
-      redrawn per city; only that line changes.</p>
+      <p class="prov">The mark already carries the blank. <b>MY CITY</b> sits inside Word Blue brackets
+      because it is the field a city fills: Kampala, Mbarara, Jinja. Replacing those two words is the
+      only permitted change to the artwork, it is made once per instance from the record, and it is set
+      in DM Sans to match the line it replaces. The date line beneath is letterspaced DM Sans caps. The
+      lockup is never redrawn per city, and no other word in the mark ever moves.</p>
       <ul class="doorrules">
-        <li><strong>The poster.</strong> The mark or the stage word, the city and date line, one action, and the endorsement line. Footage runs full bleed behind the Midnight scrim with White or Parchment type only, or the poster stays paper with Midnight type. Flame keeps the 5% ceiling: the single tick and nothing more.</li>
+        <li><strong>The poster.</strong> The mark or the stage word, the city and date line, one action, and the endorsement, which is either the co-brand lockup or the line set beneath. Footage runs full bleed behind the Midnight scrim with White or Parchment type only, or the poster stays paper with Midnight type. The mark itself carries no Flame, so the 5% ceiling is spent on the surface: a rule, a numeral, one tick, and nothing more.</li>
         <li><strong>The stage backdrop.</strong> The reversed mark and the city line, nothing else. The room provides the colour.</li>
         <li><strong>The countdown.</strong> The poster reduced: mark, city and date line, and the days remaining as the only numeral on the surface.</li>
         <li><strong>The record.</strong> Every city instance is entered into the record, city, venue, dates, and host church, before anything is printed.</li>
@@ -700,10 +745,10 @@ EXTRAS = {
       <p class="lede">A movement's identity lives on its people's own feeds, or it is not a movement.
       These assets exist to leave official hands.</p>
       <ul class="doorrules">
-        <li><strong>The 1 is the glyph.</strong> The commissioned mark leads with the numeral: an app icon, a profile badge, a sticker, a shape simple enough to survive at sixty pixels with no endorsement line in frame.</li>
+        <li><strong>The 1 is the glyph.</strong> The mark leads with the numeral, and the numeral is published on its own: an app icon, a profile badge, a sticker, a shape simple enough to survive at sixty pixels with no endorsement line in frame.</li>
         <li><strong>Share cards ride along.</strong> Every official EVERY1 surface ships with a version a member can post themselves: square and vertical, footage behind the scrim, one line of Parchment type.</li>
         <li><strong>The loosest rules in the house.</strong> Official surfaces follow this guide. What a member does with the badge on their own feed is not audited; it is the movement working.</li>
-        <li><strong>The app icon comes first.</strong> The planned app follows the YouVersion model, so the glyph must carry the whole identity with the parent invisible. It is designed before the app is built, not after.</li>
+        <li><strong>The app icon comes first.</strong> The planned app follows the YouVersion model, so the glyph carries the whole identity with the parent invisible. It was drawn before the app was built, not after, and it is published here already.</li>
       </ul>
     </div>
 
@@ -800,20 +845,8 @@ def channels_block(name: str, slug: str) -> str:
 
 
 # Mark status for the doors whose mark is commissioned but not yet approved.
-# Rendered in the {marks} slot that RTMC fills with its published forms.
+# Rendered in the {marks} slot that a door with published forms fills from MARKS.
 MARKSTATE = {
-    "every1": """    <div class="blk">
-      <div class="lab">The mark</div>
-      <h2>Commissioned, not yet approved.</h2>
-      <p class="lede">The EVERY1 mark is commissioned from the family grammar: heavy DM Sans caps
-      converted to outlines, the hairline rule split by a single Flame tick, the endorsement line
-      beneath, and the 1 built to stand alone at avatar scale with the parent invisible.</p>
-      <div class="warn"><strong>Until a form is approved and published here, EVERY1 surfaces carry the
-      parent wordmark beside the stage word BURN.</strong> No one draws an interim mark. A mark that is
-      needed and does not exist is requested, not improvised.</div>
-    </div>
-
-""",
     "school-of-the-local-church": """    <div class="blk">
       <div class="lab">The seal</div>
       <h2>Commissioned, not yet approved.</h2>
@@ -849,7 +882,7 @@ DOOR_HERO = """<div class="door">
 """
 
 MARK_HERO = """<div class="markhero">
-  <img src="/assets/logos/rtmc/rtmc-wordmark.svg" alt="Revival To My City, a ministry of THE WORD FOR ALL THE WORLD">
+  <img src="/assets/logos/rtmc/rtmc-primary.svg" alt="Revival To My City">
   <p class="mission">{mission}</p>
 </div>
 <div class="filmband">
@@ -858,6 +891,23 @@ MARK_HERO = """<div class="markhero">
   </video>
 </div>
 <div class="filmcap">Sanga, Mbarara &middot; 30 Jul 2026</div>
+"""
+
+MARK_DOOR_HERO = """<div class="door">
+  <video autoplay muted loop playsinline poster="/assets/images/{video}-poster.jpg">
+    <source src="/assets/videos/{video}.mp4" type="video/mp4">
+  </video>
+  <div class="scrim"></div>
+  <div class="inner">
+    <div class="panel">
+      <div class="stageword">{stage}</div>
+      <h1 class="markline"><img src="/assets/logos/every1/every1-wordmark-reversed.svg" alt="{name}"></h1>
+      <p class="mission">{mission}</p>
+      <div class="tickrule"><span class="ln"></span><span class="tk"></span><span class="ln"></span></div>
+      <div class="endorse">A ministry of THE WORD FOR ALL THE WORLD</div>
+    </div>
+  </div>
+</div>
 """
 
 TRAIN_HERO = """<div class="trainhero">
@@ -971,19 +1021,22 @@ for d in SUBS:
     rules = "".join(f"        <li>{r}</li>\n" for r in d["rules"])
     capture = "".join(f"        <li>{c}</li>\n" for c in d["capture"])
     fields = {k: v for k, v in d.items() if k not in ("rules", "shots", "capture")}
-    fields["marks"] = marks_block() if d["slug"] == "revival-to-my-city" else MARKSTATE.get(d["slug"], "")
+    fields["marks"] = marks_block(d["slug"]) if d["slug"] in MARKS else MARKSTATE.get(d["slug"], "")
     fields["extras"] = EXTRAS.get(d["slug"], "")
     fields["channels"] = channels_block(d["name"], d["slug"])
     if d["slug"] == "revival-to-my-city":
         tmpl = MARK_HERO
     elif d["slug"] == "school-of-the-local-church":
         tmpl = TRAIN_HERO
+    elif d["slug"] == "every1":
+        tmpl = MARK_DOOR_HERO
     else:
         tmpl = DOOR_HERO
     invert_nav = d["slug"] == "revival-to-my-city"
     fields["hero"] = tmpl.format(**fields)
     fields["capture"] = capture
     html = HEAD.format(title=f"{d['name']} · Initiative Brand Guide", extra_css=SUB_CSS,
+                       navlogo=NAV_COBRAND if d["slug"] == "revival-to-my-city" else NAV_PARENT,
                        band_pad="0", doc_active="", lh_active="")
     html = html.replace("<body>", f"<body class=\"{d['stage'].lower()}\">")
     if invert_nav:

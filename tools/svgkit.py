@@ -270,12 +270,15 @@ _ATTR_RE = re.compile(r'([\w:-]+)\s*=\s*"([^"]*)"')
 class Shape:
     """One filled path, already in the document's own user space."""
 
-    __slots__ = ("subpaths", "fill", "rule")
+    __slots__ = ("subpaths", "fill", "rule", "role")
 
-    def __init__(self, subpaths, fill, rule):
+    def __init__(self, subpaths, fill, rule, role=None):
         self.subpaths = subpaths
         self.fill = fill
         self.rule = rule
+        # data-role names the part this path plays in the mark, so a build can
+        # re-ink a two-tone logo without knowing which hex it started as.
+        self.role = role
 
 
 def load(path):
@@ -320,7 +323,9 @@ def load(path):
         subs = [[mat_apply(mat, x, y) for (x, y) in sp] for sp in parse_path(d)]
         subs = [s for s in subs if len(s) >= 3]
         if subs:
-            shapes.append(Shape(subs, fill, attrs.get("fill-rule", "nonzero")))
+            shapes.append(
+                Shape(subs, fill, attrs.get("fill-rule", "nonzero"), attrs.get("data-role"))
+            )
 
     return shapes, viewbox
 

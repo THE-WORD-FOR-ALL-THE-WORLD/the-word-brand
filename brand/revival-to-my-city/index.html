@@ -31,6 +31,7 @@
   .sitenav{position:absolute;top:0;left:0;right:0;z-index:10;}
   .sitenav .bar{max-width:1240px;margin:0 auto;padding:26px 36px;display:flex;justify-content:space-between;align-items:center;gap:20px;}
   .sitenav .logo img{height:20px;width:auto;display:block;}
+  .sitenav .logo.cobrand img{height:44px;}
   .sitenav .links{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:12px 28px;font-size:12.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;}
   .sitenav .links a{color:rgba(247,243,236,.9);text-decoration:none;}
   .sitenav .links a:hover{color:var(--white);}
@@ -57,6 +58,13 @@
   .door .mission{margin-top:16px;max-width:560px;color:rgba(247,243,236,.9);}
   .door .endorse{margin-top:26px;padding-top:14px;border-top:1px solid rgba(247,243,236,.3);font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:rgba(247,243,236,.85);}
   @media (prefers-reduced-motion: reduce){.door video{display:none;}}
+
+  /* BURN leads with its own mark rather than a serif line. The stage word drops to a
+     label so the mark is the largest thing on the door, and the endorsement line is set
+     on the surface because the approved forms do not carry one. */
+  .door .markline{margin-top:8px;}
+  .door .markline img{width:min(520px,80%);height:auto;display:block;}
+  body.burn .door .stageword{font-size:clamp(13px,1.6vw,16px);font-weight:700;letter-spacing:.22em;line-height:1;color:rgba(247,243,236,.85);}
 
   .tickrule{display:flex;align-items:center;justify-content:center;gap:12px;margin:26px 0 0;max-width:430px;}
   .tickrule .ln{flex:1;border-top:1px solid currentColor;opacity:.55;}
@@ -193,8 +201,8 @@
 
 <nav class="sitenav">
   <div class="bar">
-    <a class="logo" href="/" aria-label="THE WORD FOR ALL THE WORLD, portal home">
-      <img src="/assets/logos/the-word/the-word-horizontal.svg" alt="THE WORD FOR ALL THE WORLD">
+    <a class="logo cobrand" href="/" aria-label="Revival To My City, a ministry of THE WORD FOR ALL THE WORLD">
+      <img src="/assets/logos/rtmc/rtmc-cobrand.svg" alt="THE WORD FOR ALL THE WORLD and Revival To My City">
     </a>
     <div class="links">
       <a href="/">Home</a>
@@ -209,7 +217,7 @@
 </nav>
 
 <div class="markhero">
-  <img src="/assets/logos/rtmc/rtmc-wordmark.svg" alt="Revival To My City, a ministry of THE WORD FOR ALL THE WORLD">
+  <img src="/assets/logos/rtmc/rtmc-primary.svg" alt="Revival To My City">
   <p class="mission">Stirring the local church to return to their first love.</p>
 </div>
 <div class="filmband">
@@ -261,14 +269,16 @@
       this identity is not a page. It is the city instance: the mark, a city, and a date, locked up
       as one announcement.</p>
       <div class="lockupdemo">
-        <img src="/assets/logos/rtmc/rtmc-wordmark-bare.svg" alt="Revival To My City mark with the city and date line beneath">
+        <img src="/assets/logos/rtmc/rtmc-primary.svg" alt="Revival To My City, whose bracketed field holds the city name">
         <div class="cityline">[City] &middot; [Month Year]</div>
       </div>
-      <p class="prov">The bracketed line is the template. A real instance sets a real city and real
-      dates from the record, in letterspaced DM Sans caps beneath the mark. The lockup is never
-      redrawn per city; only that line changes.</p>
+      <p class="prov">The mark already carries the blank. <b>MY CITY</b> sits inside Word Blue brackets
+      because it is the field a city fills: Kampala, Mbarara, Jinja. Replacing those two words is the
+      only permitted change to the artwork, it is made once per instance from the record, and it is set
+      in DM Sans to match the line it replaces. The date line beneath is letterspaced DM Sans caps. The
+      lockup is never redrawn per city, and no other word in the mark ever moves.</p>
       <ul class="doorrules">
-        <li><strong>The poster.</strong> The mark or the stage word, the city and date line, one action, and the endorsement line. Footage runs full bleed behind the Midnight scrim with White or Parchment type only, or the poster stays paper with Midnight type. Flame keeps the 5% ceiling: the single tick and nothing more.</li>
+        <li><strong>The poster.</strong> The mark or the stage word, the city and date line, one action, and the endorsement, which is either the co-brand lockup or the line set beneath. Footage runs full bleed behind the Midnight scrim with White or Parchment type only, or the poster stays paper with Midnight type. The mark itself carries no Flame, so the 5% ceiling is spent on the surface: a rule, a numeral, one tick, and nothing more.</li>
         <li><strong>The stage backdrop.</strong> The reversed mark and the city line, nothing else. The room provides the colour.</li>
         <li><strong>The countdown.</strong> The poster reduced: mark, city and date line, and the days remaining as the only numeral on the surface.</li>
         <li><strong>The record.</strong> Every city instance is entered into the record, city, venue, dates, and host church, before anything is printed.</li>
@@ -311,31 +321,31 @@
 
     <div class="blk">
       <div class="lab">The mark</div>
-      <h2>One lockup, five forms.</h2>
-      <p class="lede">Heavy caps in Midnight, a hairline rule split by a single Flame tick, and the endorsement line beneath. The tick is the only Flame on the mark, which keeps it inside CLEAN's 5% ceiling. Every form is vector, so it scales without limit and recolours by changing one fill value.</p>
+      <h2>A serif, and a bracket that is a blank to be filled.</h2>
+      <p class="lede">The wordmark is three faces converted to outlines: the swash <b>R</b> is Hello Paris, <b>EVIVAL</b> is ITC New Baskerville, and <b>TO MY CITY</b> is DM Sans, the house sans. The R&rsquo;s leg sweeps out and cradles the rest of the word, and that gesture is the mark. The Word Blue brackets around <b>MY CITY</b> are not decoration, they are a blank: this door&rsquo;s identity is the city instance, and the mark says so on its face.</p>
       <div class="marks">
         <figure class="mark">
-          <div class="art"><img src="/assets/logos/rtmc/rtmc-wordmark.svg" alt="Primary lockup"></div>
-          <figcaption class="lbl"><b>Primary lockup</b>The full mark with the endorsement line. The default everywhere the name is introduced.</figcaption>
+          <div class="art"><img src="/assets/logos/rtmc/rtmc-primary.svg" alt="Primary lockup"></div>
+          <figcaption class="lbl"><b>Primary lockup</b>The mark. The default everywhere the name is introduced.</figcaption>
         </figure>
         <figure class="mark">
-          <div class="art dark"><img src="/assets/logos/rtmc/rtmc-wordmark-reversed.svg" alt="Reversed lockup"></div>
-          <figcaption class="lbl"><b>Reversed lockup</b>For Midnight grounds and for footage carrying a scrim.</figcaption>
+          <div class="art dark"><img src="/assets/logos/rtmc/rtmc-primary-reversed.svg" alt="Reversed"></div>
+          <figcaption class="lbl"><b>Reversed</b>Midnight grounds and footage carrying a scrim. One colour: the brackets go white, because Word Blue disappears on Midnight.</figcaption>
         </figure>
         <figure class="mark">
-          <div class="art"><img src="/assets/logos/rtmc/rtmc-wordmark-bare.svg" alt="Mark only"></div>
-          <figcaption class="lbl"><b>Mark only</b>Where the endorsement line is already carried elsewhere on the surface.</figcaption>
+          <div class="art"><img src="/assets/logos/rtmc/rtmc-cobrand.svg" alt="Co-brand lockup"></div>
+          <figcaption class="lbl"><b>Co-brand lockup</b>THE WORD beside the door, divided by a hairline. This is how this door carries its endorsement, by showing the parent rather than stating it.</figcaption>
         </figure>
         <figure class="mark">
-          <div class="art dark"><img src="/assets/logos/rtmc/rtmc-wordmark-bare-reversed.svg" alt="Mark only, reversed"></div>
-          <figcaption class="lbl"><b>Mark only, reversed</b>Banner and hero use on Midnight.</figcaption>
+          <div class="art dark"><img src="/assets/logos/rtmc/rtmc-cobrand-reversed.svg" alt="Co-brand, reversed"></div>
+          <figcaption class="lbl"><b>Co-brand, reversed</b>The same lockup on Midnight and on scrimmed footage.</figcaption>
         </figure>
         <figure class="mark">
-          <div class="art"><img src="/assets/logos/rtmc/rtmc-wordmark-stacked.svg" alt="Stacked"></div>
-          <figcaption class="lbl"><b>Stacked</b>For square and portrait spaces where the single line runs too wide.</figcaption>
+          <div class="art"><img src="/assets/logos/rtmc/rtmc-primary-black.svg" alt="One colour"></div>
+          <figcaption class="lbl"><b>One colour</b>Embroidery, engraving, newsprint, and any vendor who asks for pure black.</figcaption>
         </figure>
       </div>
-      <div class="warn"><strong>Set in DM Sans at weight 900, converted to outlines.</strong> The mark is artwork, not live text, so it never needs the font installed to render and never reflows. Do not re-set it in another face, do not stretch it, and do not rebuild the tick rule by hand. If a size or colour you need does not exist, request it.</div>
+      <div class="warn"><strong>Set in Hello Paris, ITC New Baskerville, and DM Sans, converted to outlines.</strong> The mark is artwork, not live text, so it never needs the font installed and never reflows. Hello Paris and ITC New Baskerville are licensed faces, not house fonts, and are installed nowhere. Nobody can re-set this mark, extend it, or add a word to it. If a size or colour you need does not exist, request it.</div>
     </div>
 
     <div class="blk">

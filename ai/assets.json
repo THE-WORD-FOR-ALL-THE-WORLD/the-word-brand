@@ -45,6 +45,7 @@
     ],
     "configurations": [
       {
+        "brand": "the-word",
         "slug": "horizontal",
         "name": "Horizontal lockup",
         "primary": true,
@@ -60,6 +61,7 @@
         }
       },
       {
+        "brand": "the-word",
         "slug": "stacked",
         "name": "Stacked lockup",
         "primary": false,
@@ -75,6 +77,7 @@
         }
       },
       {
+        "brand": "the-word",
         "slug": "bare",
         "name": "Bare wordmark",
         "primary": false,
@@ -90,6 +93,7 @@
         }
       },
       {
+        "brand": "the-word",
         "slug": "glyph",
         "name": "Microphone glyph",
         "primary": false,
@@ -105,6 +109,7 @@
         }
       },
       {
+        "brand": "the-word",
         "slug": "heritage",
         "name": "Heritage lockup, EST 2018",
         "primary": false,
@@ -117,6 +122,38 @@
         "minimumWidth": {
           "screen": "140px",
           "print": "30mm"
+        }
+      },
+      {
+        "brand": "rtmc",
+        "slug": "primary",
+        "name": "Primary lockup",
+        "primary": true,
+        "use": "The mark. Posters, city instances, stage backdrops, social, and every surface where the name is introduced. The brackets around MY CITY are a variable: a city instance may replace the words inside them with its own city, and nothing else in the mark moves.",
+        "aspect": 3.625,
+        "capHeight": 299.5,
+        "clearSpace": "0.5x the cap height of EVIVAL on all four sides",
+        "clearSpaceReference": "the cap height of EVIVAL",
+        "clearSpaceRatio": 0.5,
+        "minimumWidth": {
+          "screen": "160px",
+          "print": "36mm"
+        }
+      },
+      {
+        "brand": "rtmc",
+        "slug": "cobrand",
+        "name": "Co-brand lockup with the parent",
+        "primary": false,
+        "use": "THE WORD beside Revival To My City, divided by a hairline rule. This is how the door carries its endorsement: the parent is shown rather than stated. Use it in navigation, on letterhead, and on any surface where the parent is not otherwise present.",
+        "aspect": 6.6383,
+        "capHeight": 199.0,
+        "clearSpace": "0.5x the cap height of EVIVAL on all four sides",
+        "clearSpaceReference": "the cap height of EVIVAL",
+        "clearSpaceRatio": 0.5,
+        "minimumWidth": {
+          "screen": "295px",
+          "print": "66mm"
         }
       }
     ],
@@ -140,17 +177,22 @@
         "name": "Revival To My City",
         "url": "https://brand.theword.world/assets/downloads/revival-to-my-city-logos.zip",
         "note": "The approved RTMC wordmark in all its published forms."
+      },
+      {
+        "name": "EVERY1 Movement",
+        "url": "https://brand.theword.world/assets/downloads/every1-logos.zip",
+        "note": "The approved EVERY1 wordmark, the vision lockup, and the 1 glyph, in every published form."
       }
     ]
   },
-  "version": "6.0",
+  "version": "6.2",
   "messagingVersion": "1.0",
   "updated": "2026-08-19",
   "authority": "canonical",
   "rule": "Use these assets. Never generate photography or video of people or ministry, and never substitute stock. If the asset you need is not listed, request it and leave the slot empty.",
   "counts": {
-    "total": 120,
-    "approved": 114,
+    "total": 151,
+    "approved": 145,
     "counterExamples": 0
   },
   "assets": [
@@ -319,73 +361,668 @@
       "note": "Still fallback for tent-congregation.mp4."
     },
     {
-      "file": "assets/logos/rtmc/rtmc-wordmark-bare-reversed.svg",
-      "url": "https://brand.theword.world/assets/logos/rtmc/rtmc-wordmark-bare-reversed.svg",
+      "file": "assets/logos/every1/every1-app-icon.svg",
+      "url": "https://brand.theword.world/assets/logos/every1/every1-app-icon.svg",
       "kind": "vector",
-      "group": "rtmc",
-      "bytes": 6592,
+      "group": "every1",
+      "bytes": 625,
       "status": "approved",
       "grounds": [
-        "midnight"
+        "its own Midnight plate"
       ],
-      "note": "Banner and hero use on Midnight. Set in DM Sans at weight 900 and converted to outlines, so it is artwork rather than live text: it needs no font installed, never reflows, and recolours by changing one fill value. Never re-set it in another face, never stretch it, never rebuild the tick rule by hand.",
-      "name": "Revival To My City, mark only, reversed"
+      "note": "The 1 on a Midnight plate, square, at 60% of the plate so the safe area survives the rounded corners every OS applies. App icons, home-screen icons, and profile pictures. Never place the plate inside another coloured shape and never re-cut the plate in another colour.",
+      "name": "EVERY1, app icon"
     },
     {
-      "file": "assets/logos/rtmc/rtmc-wordmark-bare.svg",
-      "url": "https://brand.theword.world/assets/logos/rtmc/rtmc-wordmark-bare.svg",
+      "file": "assets/logos/every1/every1-glyph.svg",
+      "url": "https://brand.theword.world/assets/logos/every1/every1-glyph.svg",
       "kind": "vector",
-      "group": "rtmc",
-      "bytes": 6592,
+      "group": "every1",
+      "bytes": 488,
       "status": "approved",
       "grounds": [
+        "midnight",
         "white",
         "parchment"
       ],
-      "note": "Where the endorsement line is already carried elsewhere on the surface. Set in DM Sans at weight 900 and converted to outlines, so it is artwork rather than live text: it needs no font installed, never reflows, and recolours by changing one fill value. Never re-set it in another face, never stretch it, never rebuild the tick rule by hand.",
-      "name": "Revival To My City, mark only"
+      "note": "The 1 alone, Flame, transparent. This is the door's avatar and the shape the planned app carries with the parent invisible. Stickers, watermarks, profile marks, and any square too small for the wordmark. Clear space: 0.25x its own height on all four sides. Minimum 24px. Never on Flame, and never set beside the wordmark as a second 1.",
+      "name": "EVERY1, the 1 glyph"
     },
     {
-      "file": "assets/logos/rtmc/rtmc-wordmark-reversed.svg",
-      "url": "https://brand.theword.world/assets/logos/rtmc/rtmc-wordmark-reversed.svg",
+      "file": "assets/logos/every1/every1-vision-reversed.svg",
+      "url": "https://brand.theword.world/assets/logos/every1/every1-vision-reversed.svg",
       "kind": "vector",
-      "group": "rtmc",
-      "bytes": 27752,
+      "group": "every1",
+      "bytes": 17127,
       "status": "approved",
       "grounds": [
         "midnight",
         "photography with a Midnight scrim"
       ],
-      "note": "For Midnight grounds and for footage carrying a scrim. Set in DM Sans at weight 900 and converted to outlines, so it is artwork rather than live text: it needs no font installed, never reflows, and recolours by changing one fill value. Never re-set it in another face, never stretch it, never rebuild the tick rule by hand.",
-      "name": "Revival To My City, reversed lockup"
+      "note": "The vision lockup for Midnight grounds and for footage carrying a scrim. Set in DM Sans at weight 900 and converted to outlines, so it is artwork rather than live text: it needs no font installed, never reflows, and recolours by changing one fill value. The 1 is the same drawing in every EVERY1 form. Never re-set it in another face, never stretch it, and never redraw the numeral by hand.",
+      "name": "EVERY1, vision lockup, reversed"
     },
     {
-      "file": "assets/logos/rtmc/rtmc-wordmark-stacked.svg",
-      "url": "https://brand.theword.world/assets/logos/rtmc/rtmc-wordmark-stacked.svg",
+      "file": "assets/logos/every1/every1-vision.svg",
+      "url": "https://brand.theword.world/assets/logos/every1/every1-vision.svg",
       "kind": "vector",
-      "group": "rtmc",
-      "bytes": 27844,
+      "group": "every1",
+      "bytes": 17107,
       "status": "approved",
       "grounds": [
         "white",
         "parchment"
       ],
-      "note": "For square and portrait spaces where the single line runs too wide. Set in DM Sans at weight 900 and converted to outlines, so it is artwork rather than live text: it needs no font installed, never reflows, and recolours by changing one fill value. Never re-set it in another face, never stretch it, never rebuild the tick rule by hand.",
-      "name": "Revival To My City, stacked lockup"
+      "note": "The wordmark with the vision above and below it: EVERY TRIBE, EVERY TONGUE, EVERY NATION / WILL KNOW THE NAME JESUS. Both lines are tracked to the exact width of the wordmark, and that alignment is the lockup. Use where the movement is being introduced rather than referred to. Set in DM Sans at weight 900 and converted to outlines, so it is artwork rather than live text: it needs no font installed, never reflows, and recolours by changing one fill value. The 1 is the same drawing in every EVERY1 form. Never re-set it in another face, never stretch it, and never redraw the numeral by hand.",
+      "name": "EVERY1, vision lockup"
     },
     {
-      "file": "assets/logos/rtmc/rtmc-wordmark.svg",
-      "url": "https://brand.theword.world/assets/logos/rtmc/rtmc-wordmark.svg",
+      "file": "assets/logos/every1/every1-wordmark-reversed.svg",
+      "url": "https://brand.theword.world/assets/logos/every1/every1-wordmark-reversed.svg",
       "kind": "vector",
-      "group": "rtmc",
-      "bytes": 27752,
+      "group": "every1",
+      "bytes": 1623,
+      "status": "approved",
+      "grounds": [
+        "midnight",
+        "photography with a Midnight scrim"
+      ],
+      "note": "For Midnight grounds and for footage carrying a scrim, which is where this door lives. EVERY reverses to white; the 1 stays Flame. Set in DM Sans at weight 900 and converted to outlines, so it is artwork rather than live text: it needs no font installed, never reflows, and recolours by changing one fill value. The 1 is the same drawing in every EVERY1 form. Never re-set it in another face, never stretch it, and never redraw the numeral by hand.",
+      "name": "EVERY1, wordmark, reversed"
+    },
+    {
+      "file": "assets/logos/every1/every1-wordmark.svg",
+      "url": "https://brand.theword.world/assets/logos/every1/every1-wordmark.svg",
+      "kind": "vector",
+      "group": "every1",
+      "bytes": 1603,
       "status": "approved",
       "grounds": [
         "white",
         "parchment"
       ],
-      "note": "The full mark with the endorsement line. Default wherever the name is introduced. Set in DM Sans at weight 900 and converted to outlines, so it is artwork rather than live text: it needs no font installed, never reflows, and recolours by changing one fill value. Never re-set it in another face, never stretch it, never rebuild the tick rule by hand.",
-      "name": "Revival To My City, primary lockup"
+      "note": "The default mark wherever the name is introduced on a light ground. The 1 stands at 1.25x the cap height of EVERY and is the only Flame on the mark. Set in DM Sans at weight 900 and converted to outlines, so it is artwork rather than live text: it needs no font installed, never reflows, and recolours by changing one fill value. The 1 is the same drawing in every EVERY1 form. Never re-set it in another face, never stretch it, and never redraw the numeral by hand.",
+      "name": "EVERY1, wordmark"
+    },
+    {
+      "file": "assets/logos/rtmc/png/rtmc-cobrand-1600.png",
+      "url": "https://brand.theword.world/assets/logos/rtmc/png/rtmc-cobrand-1600.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 26421,
+      "status": "approved",
+      "grounds": [],
+      "configuration": "cobrand",
+      "clearSpace": "0.5x the cap height of EVIVAL on all four sides",
+      "minimumWidth": {
+        "screen": "295px",
+        "print": "66mm"
+      },
+      "note": "THE WORD beside Revival To My City, divided by a hairline rule. This is how the door carries its endorsement: the parent is shown rather than stated. Use it in navigation, on letterhead, and on any surface where the parent is not otherwise present.  Raster at 1600px wide, never scale up.",
+      "name": "Co-brand lockup with the parent, two-tone, midnight and word blue"
+    },
+    {
+      "file": "assets/logos/rtmc/png/rtmc-cobrand-3200.png",
+      "url": "https://brand.theword.world/assets/logos/rtmc/png/rtmc-cobrand-3200.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 57862,
+      "status": "approved",
+      "grounds": [],
+      "configuration": "cobrand",
+      "clearSpace": "0.5x the cap height of EVIVAL on all four sides",
+      "minimumWidth": {
+        "screen": "295px",
+        "print": "66mm"
+      },
+      "note": "THE WORD beside Revival To My City, divided by a hairline rule. This is how the door carries its endorsement: the parent is shown rather than stated. Use it in navigation, on letterhead, and on any surface where the parent is not otherwise present.  Raster at 3200px wide, never scale up.",
+      "name": "Co-brand lockup with the parent, two-tone, midnight and word blue"
+    },
+    {
+      "file": "assets/logos/rtmc/png/rtmc-cobrand-400.png",
+      "url": "https://brand.theword.world/assets/logos/rtmc/png/rtmc-cobrand-400.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 6007,
+      "status": "approved",
+      "grounds": [],
+      "configuration": "cobrand",
+      "clearSpace": "0.5x the cap height of EVIVAL on all four sides",
+      "minimumWidth": {
+        "screen": "295px",
+        "print": "66mm"
+      },
+      "note": "THE WORD beside Revival To My City, divided by a hairline rule. This is how the door carries its endorsement: the parent is shown rather than stated. Use it in navigation, on letterhead, and on any surface where the parent is not otherwise present.  Raster at 400px wide, never scale up.",
+      "name": "Co-brand lockup with the parent, two-tone, midnight and word blue"
+    },
+    {
+      "file": "assets/logos/rtmc/png/rtmc-cobrand-800.png",
+      "url": "https://brand.theword.world/assets/logos/rtmc/png/rtmc-cobrand-800.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 12658,
+      "status": "approved",
+      "grounds": [],
+      "configuration": "cobrand",
+      "clearSpace": "0.5x the cap height of EVIVAL on all four sides",
+      "minimumWidth": {
+        "screen": "295px",
+        "print": "66mm"
+      },
+      "note": "THE WORD beside Revival To My City, divided by a hairline rule. This is how the door carries its endorsement: the parent is shown rather than stated. Use it in navigation, on letterhead, and on any surface where the parent is not otherwise present.  Raster at 800px wide, never scale up.",
+      "name": "Co-brand lockup with the parent, two-tone, midnight and word blue"
+    },
+    {
+      "file": "assets/logos/rtmc/png/rtmc-cobrand-black-1600.png",
+      "url": "https://brand.theword.world/assets/logos/rtmc/png/rtmc-cobrand-black-1600.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 17025,
+      "status": "approved",
+      "grounds": [
+        "white",
+        "parchment"
+      ],
+      "configuration": "cobrand",
+      "clearSpace": "0.5x the cap height of EVIVAL on all four sides",
+      "minimumWidth": {
+        "screen": "295px",
+        "print": "66mm"
+      },
+      "note": "THE WORD beside Revival To My City, divided by a hairline rule. This is how the door carries its endorsement: the parent is shown rather than stated. Use it in navigation, on letterhead, and on any surface where the parent is not otherwise present. For single-colour reproduction only: embroidery, engraving, newsprint, stamps, and any vendor who asks for pure black. On screen use the Midnight ink instead. Raster at 1600px wide, never scale up.",
+      "name": "Co-brand lockup with the parent, one colour, black"
+    },
+    {
+      "file": "assets/logos/rtmc/png/rtmc-cobrand-black-3200.png",
+      "url": "https://brand.theword.world/assets/logos/rtmc/png/rtmc-cobrand-black-3200.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 38078,
+      "status": "approved",
+      "grounds": [
+        "white",
+        "parchment"
+      ],
+      "configuration": "cobrand",
+      "clearSpace": "0.5x the cap height of EVIVAL on all four sides",
+      "minimumWidth": {
+        "screen": "295px",
+        "print": "66mm"
+      },
+      "note": "THE WORD beside Revival To My City, divided by a hairline rule. This is how the door carries its endorsement: the parent is shown rather than stated. Use it in navigation, on letterhead, and on any surface where the parent is not otherwise present. For single-colour reproduction only: embroidery, engraving, newsprint, stamps, and any vendor who asks for pure black. On screen use the Midnight ink instead. Raster at 3200px wide, never scale up.",
+      "name": "Co-brand lockup with the parent, one colour, black"
+    },
+    {
+      "file": "assets/logos/rtmc/png/rtmc-cobrand-black-400.png",
+      "url": "https://brand.theword.world/assets/logos/rtmc/png/rtmc-cobrand-black-400.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 3549,
+      "status": "approved",
+      "grounds": [
+        "white",
+        "parchment"
+      ],
+      "configuration": "cobrand",
+      "clearSpace": "0.5x the cap height of EVIVAL on all four sides",
+      "minimumWidth": {
+        "screen": "295px",
+        "print": "66mm"
+      },
+      "note": "THE WORD beside Revival To My City, divided by a hairline rule. This is how the door carries its endorsement: the parent is shown rather than stated. Use it in navigation, on letterhead, and on any surface where the parent is not otherwise present. For single-colour reproduction only: embroidery, engraving, newsprint, stamps, and any vendor who asks for pure black. On screen use the Midnight ink instead. Raster at 400px wide, never scale up.",
+      "name": "Co-brand lockup with the parent, one colour, black"
+    },
+    {
+      "file": "assets/logos/rtmc/png/rtmc-cobrand-black-800.png",
+      "url": "https://brand.theword.world/assets/logos/rtmc/png/rtmc-cobrand-black-800.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 7838,
+      "status": "approved",
+      "grounds": [
+        "white",
+        "parchment"
+      ],
+      "configuration": "cobrand",
+      "clearSpace": "0.5x the cap height of EVIVAL on all four sides",
+      "minimumWidth": {
+        "screen": "295px",
+        "print": "66mm"
+      },
+      "note": "THE WORD beside Revival To My City, divided by a hairline rule. This is how the door carries its endorsement: the parent is shown rather than stated. Use it in navigation, on letterhead, and on any surface where the parent is not otherwise present. For single-colour reproduction only: embroidery, engraving, newsprint, stamps, and any vendor who asks for pure black. On screen use the Midnight ink instead. Raster at 800px wide, never scale up.",
+      "name": "Co-brand lockup with the parent, one colour, black"
+    },
+    {
+      "file": "assets/logos/rtmc/png/rtmc-cobrand-reversed-1600.png",
+      "url": "https://brand.theword.world/assets/logos/rtmc/png/rtmc-cobrand-reversed-1600.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 21718,
+      "status": "approved",
+      "grounds": [
+        "midnight",
+        "word-blue",
+        "photography with a Midnight scrim"
+      ],
+      "configuration": "cobrand",
+      "clearSpace": "0.5x the cap height of EVIVAL on all four sides",
+      "minimumWidth": {
+        "screen": "295px",
+        "print": "66mm"
+      },
+      "note": "THE WORD beside Revival To My City, divided by a hairline rule. This is how the door carries its endorsement: the parent is shown rather than stated. Use it in navigation, on letterhead, and on any surface where the parent is not otherwise present. Use on Midnight, on Word Blue, and over photography that carries a Midnight scrim. Raster at 1600px wide, never scale up.",
+      "name": "Co-brand lockup with the parent, reversed, white"
+    },
+    {
+      "file": "assets/logos/rtmc/png/rtmc-cobrand-reversed-3200.png",
+      "url": "https://brand.theword.world/assets/logos/rtmc/png/rtmc-cobrand-reversed-3200.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 48790,
+      "status": "approved",
+      "grounds": [
+        "midnight",
+        "word-blue",
+        "photography with a Midnight scrim"
+      ],
+      "configuration": "cobrand",
+      "clearSpace": "0.5x the cap height of EVIVAL on all four sides",
+      "minimumWidth": {
+        "screen": "295px",
+        "print": "66mm"
+      },
+      "note": "THE WORD beside Revival To My City, divided by a hairline rule. This is how the door carries its endorsement: the parent is shown rather than stated. Use it in navigation, on letterhead, and on any surface where the parent is not otherwise present. Use on Midnight, on Word Blue, and over photography that carries a Midnight scrim. Raster at 3200px wide, never scale up.",
+      "name": "Co-brand lockup with the parent, reversed, white"
+    },
+    {
+      "file": "assets/logos/rtmc/png/rtmc-cobrand-reversed-400.png",
+      "url": "https://brand.theword.world/assets/logos/rtmc/png/rtmc-cobrand-reversed-400.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 4538,
+      "status": "approved",
+      "grounds": [
+        "midnight",
+        "word-blue",
+        "photography with a Midnight scrim"
+      ],
+      "configuration": "cobrand",
+      "clearSpace": "0.5x the cap height of EVIVAL on all four sides",
+      "minimumWidth": {
+        "screen": "295px",
+        "print": "66mm"
+      },
+      "note": "THE WORD beside Revival To My City, divided by a hairline rule. This is how the door carries its endorsement: the parent is shown rather than stated. Use it in navigation, on letterhead, and on any surface where the parent is not otherwise present. Use on Midnight, on Word Blue, and over photography that carries a Midnight scrim. Raster at 400px wide, never scale up.",
+      "name": "Co-brand lockup with the parent, reversed, white"
+    },
+    {
+      "file": "assets/logos/rtmc/png/rtmc-cobrand-reversed-800.png",
+      "url": "https://brand.theword.world/assets/logos/rtmc/png/rtmc-cobrand-reversed-800.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 9988,
+      "status": "approved",
+      "grounds": [
+        "midnight",
+        "word-blue",
+        "photography with a Midnight scrim"
+      ],
+      "configuration": "cobrand",
+      "clearSpace": "0.5x the cap height of EVIVAL on all four sides",
+      "minimumWidth": {
+        "screen": "295px",
+        "print": "66mm"
+      },
+      "note": "THE WORD beside Revival To My City, divided by a hairline rule. This is how the door carries its endorsement: the parent is shown rather than stated. Use it in navigation, on letterhead, and on any surface where the parent is not otherwise present. Use on Midnight, on Word Blue, and over photography that carries a Midnight scrim. Raster at 800px wide, never scale up.",
+      "name": "Co-brand lockup with the parent, reversed, white"
+    },
+    {
+      "file": "assets/logos/rtmc/png/rtmc-primary-1600.png",
+      "url": "https://brand.theword.world/assets/logos/rtmc/png/rtmc-primary-1600.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 33449,
+      "status": "approved",
+      "grounds": [],
+      "configuration": "primary",
+      "clearSpace": "0.5x the cap height of EVIVAL on all four sides",
+      "minimumWidth": {
+        "screen": "160px",
+        "print": "36mm"
+      },
+      "note": "The mark. Posters, city instances, stage backdrops, social, and every surface where the name is introduced. The brackets around MY CITY are a variable: a city instance may replace the words inside them with its own city, and nothing else in the mark moves.  Raster at 1600px wide, never scale up.",
+      "name": "Primary lockup, two-tone, midnight and word blue"
+    },
+    {
+      "file": "assets/logos/rtmc/png/rtmc-primary-3200.png",
+      "url": "https://brand.theword.world/assets/logos/rtmc/png/rtmc-primary-3200.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 75747,
+      "status": "approved",
+      "grounds": [],
+      "configuration": "primary",
+      "clearSpace": "0.5x the cap height of EVIVAL on all four sides",
+      "minimumWidth": {
+        "screen": "160px",
+        "print": "36mm"
+      },
+      "note": "The mark. Posters, city instances, stage backdrops, social, and every surface where the name is introduced. The brackets around MY CITY are a variable: a city instance may replace the words inside them with its own city, and nothing else in the mark moves.  Raster at 3200px wide, never scale up.",
+      "name": "Primary lockup, two-tone, midnight and word blue"
+    },
+    {
+      "file": "assets/logos/rtmc/png/rtmc-primary-400.png",
+      "url": "https://brand.theword.world/assets/logos/rtmc/png/rtmc-primary-400.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 7992,
+      "status": "approved",
+      "grounds": [],
+      "configuration": "primary",
+      "clearSpace": "0.5x the cap height of EVIVAL on all four sides",
+      "minimumWidth": {
+        "screen": "160px",
+        "print": "36mm"
+      },
+      "note": "The mark. Posters, city instances, stage backdrops, social, and every surface where the name is introduced. The brackets around MY CITY are a variable: a city instance may replace the words inside them with its own city, and nothing else in the mark moves.  Raster at 400px wide, never scale up.",
+      "name": "Primary lockup, two-tone, midnight and word blue"
+    },
+    {
+      "file": "assets/logos/rtmc/png/rtmc-primary-800.png",
+      "url": "https://brand.theword.world/assets/logos/rtmc/png/rtmc-primary-800.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 16272,
+      "status": "approved",
+      "grounds": [],
+      "configuration": "primary",
+      "clearSpace": "0.5x the cap height of EVIVAL on all four sides",
+      "minimumWidth": {
+        "screen": "160px",
+        "print": "36mm"
+      },
+      "note": "The mark. Posters, city instances, stage backdrops, social, and every surface where the name is introduced. The brackets around MY CITY are a variable: a city instance may replace the words inside them with its own city, and nothing else in the mark moves.  Raster at 800px wide, never scale up.",
+      "name": "Primary lockup, two-tone, midnight and word blue"
+    },
+    {
+      "file": "assets/logos/rtmc/png/rtmc-primary-black-1600.png",
+      "url": "https://brand.theword.world/assets/logos/rtmc/png/rtmc-primary-black-1600.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 22208,
+      "status": "approved",
+      "grounds": [
+        "white",
+        "parchment"
+      ],
+      "configuration": "primary",
+      "clearSpace": "0.5x the cap height of EVIVAL on all four sides",
+      "minimumWidth": {
+        "screen": "160px",
+        "print": "36mm"
+      },
+      "note": "The mark. Posters, city instances, stage backdrops, social, and every surface where the name is introduced. The brackets around MY CITY are a variable: a city instance may replace the words inside them with its own city, and nothing else in the mark moves. For single-colour reproduction only: embroidery, engraving, newsprint, stamps, and any vendor who asks for pure black. On screen use the Midnight ink instead. Raster at 1600px wide, never scale up.",
+      "name": "Primary lockup, one colour, black"
+    },
+    {
+      "file": "assets/logos/rtmc/png/rtmc-primary-black-3200.png",
+      "url": "https://brand.theword.world/assets/logos/rtmc/png/rtmc-primary-black-3200.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 52952,
+      "status": "approved",
+      "grounds": [
+        "white",
+        "parchment"
+      ],
+      "configuration": "primary",
+      "clearSpace": "0.5x the cap height of EVIVAL on all four sides",
+      "minimumWidth": {
+        "screen": "160px",
+        "print": "36mm"
+      },
+      "note": "The mark. Posters, city instances, stage backdrops, social, and every surface where the name is introduced. The brackets around MY CITY are a variable: a city instance may replace the words inside them with its own city, and nothing else in the mark moves. For single-colour reproduction only: embroidery, engraving, newsprint, stamps, and any vendor who asks for pure black. On screen use the Midnight ink instead. Raster at 3200px wide, never scale up.",
+      "name": "Primary lockup, one colour, black"
+    },
+    {
+      "file": "assets/logos/rtmc/png/rtmc-primary-black-400.png",
+      "url": "https://brand.theword.world/assets/logos/rtmc/png/rtmc-primary-black-400.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 4748,
+      "status": "approved",
+      "grounds": [
+        "white",
+        "parchment"
+      ],
+      "configuration": "primary",
+      "clearSpace": "0.5x the cap height of EVIVAL on all four sides",
+      "minimumWidth": {
+        "screen": "160px",
+        "print": "36mm"
+      },
+      "note": "The mark. Posters, city instances, stage backdrops, social, and every surface where the name is introduced. The brackets around MY CITY are a variable: a city instance may replace the words inside them with its own city, and nothing else in the mark moves. For single-colour reproduction only: embroidery, engraving, newsprint, stamps, and any vendor who asks for pure black. On screen use the Midnight ink instead. Raster at 400px wide, never scale up.",
+      "name": "Primary lockup, one colour, black"
+    },
+    {
+      "file": "assets/logos/rtmc/png/rtmc-primary-black-800.png",
+      "url": "https://brand.theword.world/assets/logos/rtmc/png/rtmc-primary-black-800.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 10369,
+      "status": "approved",
+      "grounds": [
+        "white",
+        "parchment"
+      ],
+      "configuration": "primary",
+      "clearSpace": "0.5x the cap height of EVIVAL on all four sides",
+      "minimumWidth": {
+        "screen": "160px",
+        "print": "36mm"
+      },
+      "note": "The mark. Posters, city instances, stage backdrops, social, and every surface where the name is introduced. The brackets around MY CITY are a variable: a city instance may replace the words inside them with its own city, and nothing else in the mark moves. For single-colour reproduction only: embroidery, engraving, newsprint, stamps, and any vendor who asks for pure black. On screen use the Midnight ink instead. Raster at 800px wide, never scale up.",
+      "name": "Primary lockup, one colour, black"
+    },
+    {
+      "file": "assets/logos/rtmc/png/rtmc-primary-reversed-1600.png",
+      "url": "https://brand.theword.world/assets/logos/rtmc/png/rtmc-primary-reversed-1600.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 27598,
+      "status": "approved",
+      "grounds": [
+        "midnight",
+        "word-blue",
+        "photography with a Midnight scrim"
+      ],
+      "configuration": "primary",
+      "clearSpace": "0.5x the cap height of EVIVAL on all four sides",
+      "minimumWidth": {
+        "screen": "160px",
+        "print": "36mm"
+      },
+      "note": "The mark. Posters, city instances, stage backdrops, social, and every surface where the name is introduced. The brackets around MY CITY are a variable: a city instance may replace the words inside them with its own city, and nothing else in the mark moves. Use on Midnight, on Word Blue, and over photography that carries a Midnight scrim. Raster at 1600px wide, never scale up.",
+      "name": "Primary lockup, reversed, white"
+    },
+    {
+      "file": "assets/logos/rtmc/png/rtmc-primary-reversed-3200.png",
+      "url": "https://brand.theword.world/assets/logos/rtmc/png/rtmc-primary-reversed-3200.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 65886,
+      "status": "approved",
+      "grounds": [
+        "midnight",
+        "word-blue",
+        "photography with a Midnight scrim"
+      ],
+      "configuration": "primary",
+      "clearSpace": "0.5x the cap height of EVIVAL on all four sides",
+      "minimumWidth": {
+        "screen": "160px",
+        "print": "36mm"
+      },
+      "note": "The mark. Posters, city instances, stage backdrops, social, and every surface where the name is introduced. The brackets around MY CITY are a variable: a city instance may replace the words inside them with its own city, and nothing else in the mark moves. Use on Midnight, on Word Blue, and over photography that carries a Midnight scrim. Raster at 3200px wide, never scale up.",
+      "name": "Primary lockup, reversed, white"
+    },
+    {
+      "file": "assets/logos/rtmc/png/rtmc-primary-reversed-400.png",
+      "url": "https://brand.theword.world/assets/logos/rtmc/png/rtmc-primary-reversed-400.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 5969,
+      "status": "approved",
+      "grounds": [
+        "midnight",
+        "word-blue",
+        "photography with a Midnight scrim"
+      ],
+      "configuration": "primary",
+      "clearSpace": "0.5x the cap height of EVIVAL on all four sides",
+      "minimumWidth": {
+        "screen": "160px",
+        "print": "36mm"
+      },
+      "note": "The mark. Posters, city instances, stage backdrops, social, and every surface where the name is introduced. The brackets around MY CITY are a variable: a city instance may replace the words inside them with its own city, and nothing else in the mark moves. Use on Midnight, on Word Blue, and over photography that carries a Midnight scrim. Raster at 400px wide, never scale up.",
+      "name": "Primary lockup, reversed, white"
+    },
+    {
+      "file": "assets/logos/rtmc/png/rtmc-primary-reversed-800.png",
+      "url": "https://brand.theword.world/assets/logos/rtmc/png/rtmc-primary-reversed-800.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 13193,
+      "status": "approved",
+      "grounds": [
+        "midnight",
+        "word-blue",
+        "photography with a Midnight scrim"
+      ],
+      "configuration": "primary",
+      "clearSpace": "0.5x the cap height of EVIVAL on all four sides",
+      "minimumWidth": {
+        "screen": "160px",
+        "print": "36mm"
+      },
+      "note": "The mark. Posters, city instances, stage backdrops, social, and every surface where the name is introduced. The brackets around MY CITY are a variable: a city instance may replace the words inside them with its own city, and nothing else in the mark moves. Use on Midnight, on Word Blue, and over photography that carries a Midnight scrim. Raster at 800px wide, never scale up.",
+      "name": "Primary lockup, reversed, white"
+    },
+    {
+      "file": "assets/logos/rtmc/rtmc-cobrand-black.svg",
+      "url": "https://brand.theword.world/assets/logos/rtmc/rtmc-cobrand-black.svg",
+      "kind": "vector",
+      "group": "rtmc",
+      "bytes": 74099,
+      "status": "approved",
+      "grounds": [
+        "white",
+        "parchment"
+      ],
+      "configuration": "cobrand",
+      "clearSpace": "0.5x the cap height of EVIVAL on all four sides",
+      "minimumWidth": {
+        "screen": "295px",
+        "print": "66mm"
+      },
+      "note": "THE WORD beside Revival To My City, divided by a hairline rule. This is how the door carries its endorsement: the parent is shown rather than stated. Use it in navigation, on letterhead, and on any surface where the parent is not otherwise present. For single-colour reproduction only: embroidery, engraving, newsprint, stamps, and any vendor who asks for pure black. On screen use the Midnight ink instead. Vector master, scale freely.",
+      "name": "Co-brand lockup with the parent, one colour, black"
+    },
+    {
+      "file": "assets/logos/rtmc/rtmc-cobrand-reversed.svg",
+      "url": "https://brand.theword.world/assets/logos/rtmc/rtmc-cobrand-reversed.svg",
+      "kind": "vector",
+      "group": "rtmc",
+      "bytes": 74099,
+      "status": "approved",
+      "grounds": [
+        "midnight",
+        "word-blue",
+        "photography with a Midnight scrim"
+      ],
+      "configuration": "cobrand",
+      "clearSpace": "0.5x the cap height of EVIVAL on all four sides",
+      "minimumWidth": {
+        "screen": "295px",
+        "print": "66mm"
+      },
+      "note": "THE WORD beside Revival To My City, divided by a hairline rule. This is how the door carries its endorsement: the parent is shown rather than stated. Use it in navigation, on letterhead, and on any surface where the parent is not otherwise present. Use on Midnight, on Word Blue, and over photography that carries a Midnight scrim. Vector master, scale freely.",
+      "name": "Co-brand lockup with the parent, reversed, white"
+    },
+    {
+      "file": "assets/logos/rtmc/rtmc-cobrand.svg",
+      "url": "https://brand.theword.world/assets/logos/rtmc/rtmc-cobrand.svg",
+      "kind": "vector",
+      "group": "rtmc",
+      "bytes": 74099,
+      "status": "approved",
+      "grounds": [],
+      "configuration": "cobrand",
+      "clearSpace": "0.5x the cap height of EVIVAL on all four sides",
+      "minimumWidth": {
+        "screen": "295px",
+        "print": "66mm"
+      },
+      "note": "THE WORD beside Revival To My City, divided by a hairline rule. This is how the door carries its endorsement: the parent is shown rather than stated. Use it in navigation, on letterhead, and on any surface where the parent is not otherwise present.  Vector master, scale freely.",
+      "name": "Co-brand lockup with the parent, two-tone, midnight and word blue"
+    },
+    {
+      "file": "assets/logos/rtmc/rtmc-primary-black.svg",
+      "url": "https://brand.theword.world/assets/logos/rtmc/rtmc-primary-black.svg",
+      "kind": "vector",
+      "group": "rtmc",
+      "bytes": 8984,
+      "status": "approved",
+      "grounds": [
+        "white",
+        "parchment"
+      ],
+      "configuration": "primary",
+      "clearSpace": "0.5x the cap height of EVIVAL on all four sides",
+      "minimumWidth": {
+        "screen": "160px",
+        "print": "36mm"
+      },
+      "note": "The mark. Posters, city instances, stage backdrops, social, and every surface where the name is introduced. The brackets around MY CITY are a variable: a city instance may replace the words inside them with its own city, and nothing else in the mark moves. For single-colour reproduction only: embroidery, engraving, newsprint, stamps, and any vendor who asks for pure black. On screen use the Midnight ink instead. Vector master, scale freely.",
+      "name": "Primary lockup, one colour, black"
+    },
+    {
+      "file": "assets/logos/rtmc/rtmc-primary-reversed.svg",
+      "url": "https://brand.theword.world/assets/logos/rtmc/rtmc-primary-reversed.svg",
+      "kind": "vector",
+      "group": "rtmc",
+      "bytes": 8984,
+      "status": "approved",
+      "grounds": [
+        "midnight",
+        "word-blue",
+        "photography with a Midnight scrim"
+      ],
+      "configuration": "primary",
+      "clearSpace": "0.5x the cap height of EVIVAL on all four sides",
+      "minimumWidth": {
+        "screen": "160px",
+        "print": "36mm"
+      },
+      "note": "The mark. Posters, city instances, stage backdrops, social, and every surface where the name is introduced. The brackets around MY CITY are a variable: a city instance may replace the words inside them with its own city, and nothing else in the mark moves. Use on Midnight, on Word Blue, and over photography that carries a Midnight scrim. Vector master, scale freely.",
+      "name": "Primary lockup, reversed, white"
+    },
+    {
+      "file": "assets/logos/rtmc/rtmc-primary.svg",
+      "url": "https://brand.theword.world/assets/logos/rtmc/rtmc-primary.svg",
+      "kind": "vector",
+      "group": "rtmc",
+      "bytes": 8984,
+      "status": "approved",
+      "grounds": [],
+      "configuration": "primary",
+      "clearSpace": "0.5x the cap height of EVIVAL on all four sides",
+      "minimumWidth": {
+        "screen": "160px",
+        "print": "36mm"
+      },
+      "note": "The mark. Posters, city instances, stage backdrops, social, and every surface where the name is introduced. The brackets around MY CITY are a variable: a city instance may replace the words inside them with its own city, and nothing else in the mark moves.  Vector master, scale freely.",
+      "name": "Primary lockup, two-tone, midnight and word blue"
     },
     {
       "file": "assets/logos/the-word/favicon/apple-touch-icon-180.png",
@@ -2168,6 +2805,8 @@
   "notesWithoutFiles": [],
   "gaps": [
     "The logo masters are a vector reconstruction, not an original drawing: the letterforms and the microphone are an autotrace, so curves are dense polygons. Invisible on screen and in normal print. Before any large-format use, a banner, a vehicle wrap, or a building sign, the mark should be redrawn as true curves and approved. Until then request large-format artwork rather than scaling these files up.",
+    "EVERY1 has no endorsed lockup. The approved forms carry the mark alone, so every EVERY1 surface must set the line A ministry of THE WORD FOR ALL THE WORLD itself, per Brand Guide §11. A lockup that carries the line as artwork is requested, not improvised.",
+    "EVERY1 has no single-colour form. The parent publishes a one-colour black for embroidery, engraving, and newsprint; EVERY1 does not. Request artwork rather than flattening the Flame 1 to black by hand.",
     "No published partnership or co-brand lockup. /assets states the rules for building one, and the first approved use is to be published there so nobody rebuilds it a second way.",
     "A reversed signature for dark grounds. Every signature published here is Midnight ink and works only on Parchment or white. Nothing signed may appear on Midnight, Word Blue, or footage until a reversed master exists. Recolor the SVG fill rather than inverting the raster.",
     "Location on every July 2026 caption is recorded as Sanga, Mbarara, Uganda from the capture folder and has not yet been confirmed against the official ministry record. Confirm it, then unbracket the older captions that still read [City].",
@@ -2177,7 +2816,6 @@
     "Exteriors that establish place",
     "Details: open Bible and pen, the offering basket",
     "Vertical (9:16) capture of every key moment, alongside the horizontal frames",
-    "The EVERY1 mark, commissioned from the family grammar (Brand Guide §11, v5.8): heavy DM Sans caps as outlines, hairline rule with a single Flame tick, endorsement line, and the 1 built to stand alone at avatar scale. Until approved, EVERY1 surfaces carry the parent wordmark beside BURN.",
     "The School of the Local Church academic seal (Brand Guide §11, v5.8): a shield bearing the Lion of Judah, ringed with the School's name, single colour, with masters for print, blind emboss, and wax. Until approved, certificates close with the two signatures and the letterhead rule alone.",
     "Per-door capture libraries (Brand Guide §11, v5.8). RTMC: night altar calls, the host city by day, the host church serving, the empty venue. EVERY1: one-to-one moments away from any stage, the handoff, vertical 9:16 first. SLC: the classroom, the materials, the credential moment. Today all three doors draw from one conference."
   ]

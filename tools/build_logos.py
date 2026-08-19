@@ -33,9 +33,23 @@ import svgkit  # noqa: E402
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 MASTERS = os.path.join(REPO, "assets", "logos", "_masters")
-OUT = os.path.join(REPO, "assets", "logos", "the-word")
-PNG = os.path.join(OUT, "png")
-FAVICON = os.path.join(OUT, "favicon")
+LOGOS = os.path.join(REPO, "assets", "logos")
+
+
+def out_dir(brand):
+    return os.path.join(LOGOS, brand["dir"])
+
+
+def png_dir(brand):
+    return os.path.join(out_dir(brand), "png")
+
+
+def rel(brand, *parts):
+    """Repository-relative path of a published logo file, for manifests and pages."""
+    return "/".join(("assets", "logos", brand["dir"]) + parts)
+
+
+FAVICON = os.path.join(LOGOS, "the-word", "favicon")
 DOWNLOADS = os.path.join(REPO, "assets", "downloads")
 MANIFEST = os.path.join(REPO, "ai-source", "logo-manifest.json")
 
@@ -44,21 +58,26 @@ MANIFEST = os.path.join(REPO, "ai-source", "logo-manifest.json")
 ZIP_DATE = (2026, 1, 1, 0, 0, 0)
 
 # The three inks, and the grounds the Brand Guide permits each one on.
+# `roles` maps a master's data-role to a colour. A single-tone mark has one entry,
+# "word", which is also what an untagged path falls back to.
 INKS = {
     "": {
         "hex": "#0B1A2D",
+        "roles": {"word": "#0B1A2D"},
         "name": "Midnight ink",
         "grounds": ["parchment", "white"],
         "note": "The default. Use on Parchment and White.",
     },
     "-reversed": {
         "hex": "#FFFFFF",
+        "roles": {"word": "#FFFFFF"},
         "name": "Reversed, white",
         "grounds": ["midnight", "word-blue", "photography with a Midnight scrim"],
         "note": "Use on Midnight, on Word Blue, and over photography that carries a Midnight scrim.",
     },
     "-black": {
         "hex": "#000000",
+        "roles": {"word": "#000000"},
         "name": "One colour, black",
         "grounds": ["white", "parchment"],
         "note": (
@@ -84,7 +103,7 @@ FAVICONS = [
 
 # One entry per master. `clear` is the clear-space rule as a multiple of the cap
 # height of THE WORD, which the build measures from the artwork itself.
-CONFIGS = [
+THE_WORD_CONFIGS = [
     {
         "slug": "horizontal",
         "master": "the-word-logo",
@@ -130,6 +149,7 @@ CONFIGS = [
         "name": "Microphone glyph",
         "primary": False,
         "cap_is_height": True,
+        "square": True,
         "clear": 0.25,
         "min_px": 24,
         "min_mm": 8,
@@ -153,6 +173,117 @@ CONFIGS = [
     },
 ]
 
+
+# Revival To My City is two-tone: the wordmark in Midnight, the [MY CITY] brackets in
+# Word Blue. Reversed and one-colour collapse both roles to a single colour, because
+# Word Blue on Midnight fails contrast, which the Brand Guide already forbids for text.
+RTMC_INKS = {
+    "": {
+        "hex": "#0B1A2D",
+        "roles": {"word": "#0B1A2D", "accent": "#023D6F"},
+        "name": "Two-tone, Midnight and Word Blue",
+        "grounds": ["parchment", "white"],
+        "note": "The default. Use on Parchment and White, which is this door's ground.",
+    },
+    "-reversed": {
+        "hex": "#FFFFFF",
+        "roles": {"word": "#FFFFFF", "accent": "#FFFFFF"},
+        "name": "Reversed, white",
+        "grounds": ["midnight", "photography with a Midnight scrim"],
+        "note": (
+            "One colour. The brackets go white rather than Word Blue, which would disappear "
+            "against Midnight."
+        ),
+    },
+    "-black": {
+        "hex": "#000000",
+        "roles": {"word": "#000000", "accent": "#000000"},
+        "name": "One colour, black",
+        "grounds": ["white", "parchment"],
+        "note": "Embroidery, engraving, newsprint, and any vendor who asks for pure black.",
+    },
+}
+
+RTMC_CONFIGS = [
+    {
+        "slug": "primary",
+        "master": "revival-to-my-city",
+        "name": "Primary lockup",
+        "primary": True,
+        "clear": 0.5,
+        "min_px": 160,
+        "min_mm": 36,
+        "use": (
+            "The mark. Posters, city instances, stage backdrops, social, and every surface where "
+            "the name is introduced. The brackets around MY CITY are a variable: a city instance "
+            "may replace the words inside them with its own city, and nothing else in the mark moves."
+        ),
+    },
+    {
+        "slug": "cobrand",
+        # Composed from two approved masters rather than drawn a third time. `ratio` is
+        # the parent's cap height as a fraction of RTMC's: below 1 because THE WORD is a
+        # heavy sans and would overpower this serif at matched measurement.
+        "compose": {
+            "left": "the-word-bare",
+            "right": "revival-to-my-city",
+            "ratio": 0.65,
+            "gap": 0.55,
+            "rule": 0.05,
+        },
+        "name": "Co-brand lockup with the parent",
+        "primary": False,
+        "clear": 0.5,
+        "min_px": 295,
+        "min_mm": 66,
+        "use": (
+            "THE WORD beside Revival To My City, divided by a hairline rule. This is how the door "
+            "carries its endorsement: the parent is shown rather than stated. Use it in navigation, "
+            "on letterhead, and on any surface where the parent is not otherwise present."
+        ),
+    },
+]
+
+# One entry per brand that publishes marks. `dir` is the folder under assets/logos/
+# and `stem` prefixes every filename, so a mark is identifiable from its name alone.
+# Only the parent brand cuts the site icon set, which is what `favicons` gates.
+BRANDS = [
+    {
+        "key": "the-word",
+        "name": "THE WORD FOR ALL THE WORLD",
+        "dir": "the-word",
+        "stem": "the-word",
+        "cap_ref": "the cap height of THE WORD",
+        "configs": THE_WORD_CONFIGS,
+        "inks": INKS,
+        "favicons": True,
+    },
+    {
+        "key": "rtmc",
+        "name": "Revival To My City",
+        "dir": "rtmc",
+        "stem": "rtmc",
+        "cap_ref": "the cap height of EVIVAL",
+        "configs": RTMC_CONFIGS,
+        "inks": RTMC_INKS,
+        "intro": (
+            "Revival To My City is the CLEAN door, and the only initiative with an approved mark of "
+            "its own. It is two-tone by design: the wordmark in Midnight, the brackets around MY CITY "
+            "in Word Blue, because those brackets are a field a city fills with its own name. Reversed "
+            "and one-colour collapse to a single ink."
+        ),
+        "favicons": False,
+    },
+]
+
+
+def brand_by_key(key):
+    for b in BRANDS:
+        if b["key"] == key:
+            return b
+    raise SystemExit(f"unknown brand: {key}")
+
+
 # ── reading the masters ───────────────────────────────────────────────────────
 
 _RECT_RE = re.compile(r"<rect\b[^>]*/>\s*", re.S)
@@ -162,6 +293,12 @@ _DESC_RE = re.compile(r"<desc\b[^>]*>.*?</desc>\s*", re.S)
 _COMMENT_RE = re.compile(r"<!--.*?-->\s*", re.S)
 _G_OPEN_RE = re.compile(r"<g\b([^>]*)>")
 _FILL_ATTR_RE = re.compile(r'\s(?:fill|color)="[^"]*"')
+
+
+
+def ink_for(ink, role):
+    """Colour for one path under one ink. An untagged path is the wordmark."""
+    return ink["roles"].get(role or "word", ink["hex"])
 
 
 def cap_height(shapes, box):
@@ -196,7 +333,110 @@ def read_master(slug, cap_is_height=False):
     return {"src": open(path, encoding="utf-8").read(), "shapes": shapes, "box": box, "cap": cap}
 
 
-def make_svg(master, cfg, ink_suffix, ink):
+
+def primary_cap(shapes, box):
+    """
+    Cap height of a mark's main wordmark line.
+
+    Takes the median height of the sizeable subpaths, which lands on the repeated
+    letter height and ignores both an oversized initial and a small sub-line. Used
+    to size two marks against each other in a co-brand lockup.
+    """
+    floor = (box[3] - box[1]) * 0.25
+    hs = sorted(
+        max(p[1] for p in sp) - min(p[1] for p in sp)
+        for sh in shapes
+        if (sh.role or "word") == "word"
+        for sp in sh.subpaths
+        if max(p[1] for p in sp) - min(p[1] for p in sp) > floor
+    )
+    if not hs:
+        return box[3] - box[1]
+    mid = len(hs) // 2
+    return hs[mid] if len(hs) % 2 else (hs[mid - 1] + hs[mid]) / 2
+
+
+def _emit(shapes, box, title, note):
+    """Serialise composed shapes back to SVG. Lossless: every path here is a polygon."""
+    def n(v):
+        return f"{round(v, 2):g}"
+
+    by_role = {}
+    for sh in shapes:
+        by_role.setdefault(sh.role or "word", []).append(sh)
+    body = []
+    for role, group in by_role.items():
+        d = "".join(
+            "M" + "L".join(f"{n(x)},{n(y)}" for x, y in sp) + "Z"
+            for sh in group
+            for sp in sh.subpaths
+        )
+        body.append(f'  <path data-role="{role}" fill="{group[0].fill}" d="{d}"/>')
+    w, h = box[2] - box[0], box[3] - box[1]
+    return (
+        f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="{n(box[0])} {n(box[1])} {n(w)} {n(h)}" '
+        f'width="{n(w)}" height="{n(h)}" role="img" aria-labelledby="title">\n'
+        f"  <title id=\"title\">{title}</title>\n"
+        f"  <!-- {note} -->\n" + "\n".join(body) + "\n</svg>\n"
+    )
+
+
+def compose_master(spec, loaded):
+    """
+    Build a co-brand lockup from two approved masters, rather than drawing a third.
+
+    The two wordmarks are scaled so their cap heights sit at the ratio the spec asks
+    for, centred on a shared axis, and separated by a hairline rule with the parent's
+    full clear space either side. Because it is composed, it cannot drift from either
+    mark: change a master and the lockup changes with it.
+    """
+    left, right = loaded[spec["left"]], loaded[spec["right"]]
+    rcap = primary_cap(right["shapes"], right["box"])
+    lcap = primary_cap(left["shapes"], left["box"])
+    scale = (rcap * spec["ratio"]) / lcap
+
+    lw = (left["box"][2] - left["box"][0]) * scale
+    lh = (left["box"][3] - left["box"][1]) * scale
+    rw = right["box"][2] - right["box"][0]
+    rh = right["box"][3] - right["box"][1]
+
+    gap = rcap * spec["gap"]          # clear space either side of the rule
+    rule_w = rcap * spec["rule"]      # hairline, scaled so it holds at the minimum size
+    height = max(lh, rh)
+    total = lw + gap + rule_w + gap + rw
+
+    def place(master, dx, dy, sc):
+        out = []
+        bx, by = master["box"][0], master["box"][1]
+        for sh in master["shapes"]:
+            subs = [[((x - bx) * sc + dx, (y - by) * sc + dy) for x, y in sp] for sp in sh.subpaths]
+            out.append(svgkit.Shape(subs, sh.fill, sh.rule, sh.role))
+        return out
+
+    shapes = place(left, 0, (height - lh) / 2, scale)
+    shapes += place(right, lw + gap + rule_w + gap, (height - rh) / 2, 1.0)
+
+    # The divider, drawn as a rectangle so it scales with the artwork.
+    x = lw + gap
+    y0, y1 = height * 0.5 - rcap * 0.62, height * 0.5 + rcap * 0.62
+    shapes.append(
+        svgkit.Shape([[(x, y0), (x + rule_w, y0), (x + rule_w, y1), (x, y1)]], "#0B1A2D", "nonzero", "rule")
+    )
+
+    box = (0.0, 0.0, total, height)
+    note = (
+        "GENERATED by tools/build_logos.py from the-word-bare and revival-to-my-city. "
+        "Do not edit: edit a master and rebuild."
+    )
+    return {
+        "src": _emit(shapes, box, "Co-brand lockup", note),
+        "shapes": shapes,
+        "box": box,
+        "cap": rcap,
+    }
+
+
+def make_svg(brand, master, cfg, ink_suffix, ink):
     """
     Emit one published SVG: the master's own path data, re-inked and tight-cropped.
 
@@ -215,18 +455,30 @@ def make_svg(master, cfg, ink_suffix, ink):
     body = _SVG_OPEN_RE.sub("", body, count=1)
     body = body.replace("</svg>", "").strip()
 
-    # Every fill becomes the ink. Groups carry it so per-path currentColor resolves.
+    # Every fill becomes the ink for that path's role. Groups carry the default so
+    # per-path currentColor still resolves for single-tone masters.
     body = _FILL_ATTR_RE.sub("", body)
-    body = _G_OPEN_RE.sub(lambda m: f'<g{m.group(1)} fill="{ink["hex"]}">', body)
-    body = re.sub(r"<path\b", f'<path fill="{ink["hex"]}"', body)
+    body = _G_OPEN_RE.sub(lambda m: f'<g{m.group(1)} fill="{ink_for(ink, None)}">', body)
 
-    label = f'THE WORD FOR ALL THE WORLD, {cfg["name"].lower()}'
+    def repaint(m):
+        attrs = m.group(1)
+        role = re.search(r'data-role="([^"]*)"', attrs)
+        return f'<path fill="{ink_for(ink, role.group(1) if role else None)}"{attrs}>'
+
+    body = re.sub(r"<path\b([^>]*)>", repaint, body)
+
+    label = f'{brand["name"]}, {cfg["name"].lower()}'
+    origin = (
+        "composed from " + ", ".join(f"{cfg['compose'][k]}.svg" for k in ("left", "right"))
+        if "compose" in cfg
+        else f"assets/logos/_masters/{cfg['master']}.svg"
+    )
     lines = [
         f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="{r(x0)} {r(y0)} {r(w)} {r(h)}" '
         f'width="{r(w)}" height="{r(h)}" role="img" aria-label="{label}">',
         f"  <title>{label}</title>",
-        f"  <!-- Generated by tools/build_logos.py from assets/logos/_masters/{cfg['master']}.svg. "
-        f"Do not edit by hand. Clear space: {cfg['clear']}x {clear_ref(cfg)} "
+        f"  <!-- Generated by tools/build_logos.py from {origin}. "
+        f"Do not edit by hand. Clear space: {cfg['clear']}x {clear_ref(cfg, brand)} "
         f"({r(master['cap'] * cfg['clear'])} units here) on all four sides. "
         f"Minimum width {cfg['min_px']}px / {cfg['min_mm']}mm. -->",
         "  " + body,
@@ -236,9 +488,11 @@ def make_svg(master, cfg, ink_suffix, ink):
     return "\n".join(lines)
 
 
-def clear_ref(cfg):
+def clear_ref(cfg, brand=None):
     """What the clear-space rule is measured against, in words a human can act on."""
-    return "its own height" if cfg.get("cap_is_height") else "the cap height of THE WORD"
+    if cfg.get("cap_is_height"):
+        return "its own height"
+    return (brand or {}).get("cap_ref", "the cap height of THE WORD")
 
 
 def r(v):
@@ -249,7 +503,7 @@ def r(v):
 # ── rasterizing ───────────────────────────────────────────────────────────────
 
 
-def render(master, ink_hex, width, height=None, pad=0.0, square=False):
+def render(master, ink, width, height=None, pad=0.0, square=False):
     from PIL import Image
 
     x0, y0, x1, y1 = master["box"]
@@ -262,7 +516,12 @@ def render(master, ink_hex, width, height=None, pad=0.0, square=False):
     s = width / aw
     height = height or max(1, round(ah * s))
 
-    shapes = [svgkit.Shape(sh.subpaths, ink_hex, sh.rule) for sh in master["shapes"]]
+    if isinstance(ink, str):  # a bare hex, used by the icon set
+        ink = {"hex": ink, "roles": {"word": ink}}
+    shapes = [
+        svgkit.Shape(sh.subpaths, ink_for(ink, sh.role), sh.rule, sh.role)
+        for sh in master["shapes"]
+    ]
     return svgkit.rasterize(shapes, width, height, lambda x, y: ((x - x0) * s, (y - y0) * s))
 
 
@@ -307,36 +566,42 @@ def build(check):
 
     w = Writer(check)
     masters = {}
+    loaded = {}  # by master filename, so a composed lockup can reach its parts
     entries = []
 
-    for cfg in CONFIGS:
-        m = read_master(cfg["master"], cfg.get("cap_is_height", False))
+    for brand in BRANDS:
+      for cfg in brand["configs"]:
+        if "compose" in cfg:
+            m = compose_master(cfg["compose"], loaded)
+        else:
+            m = read_master(cfg["master"], cfg.get("cap_is_height", False))
+            loaded[cfg["master"]] = m
         masters[cfg["slug"]] = m
         x0, y0, x1, y1 = m["box"]
         aw, ah = x1 - x0, y1 - y0
 
         files = []
-        for suffix, ink in INKS.items():
-            stem = f"the-word-{cfg['slug']}{suffix}"
-            w.text(os.path.join(OUT, f"{stem}.svg"), make_svg(m, cfg, suffix, ink))
-            files.append({"file": f"assets/logos/the-word/{stem}.svg", "format": "svg", "ink": ink["name"]})
+        for suffix, ink in brand["inks"].items():
+            stem = f"{brand['stem']}-{cfg['slug']}{suffix}"
+            w.text(os.path.join(out_dir(brand), f"{stem}.svg"), make_svg(brand, m, cfg, suffix, ink))
+            files.append({"file": rel(brand, f"{stem}.svg"), "format": "svg", "ink": ink["name"]})
 
-            widths = GLYPH_SIZES if cfg["slug"] == "glyph" else PNG_WIDTHS
+            widths = GLYPH_SIZES if cfg.get("square") else PNG_WIDTHS
             for px in widths:
                 name = f"{stem}-{px}.png"
                 # The manifest is written the same way in both modes, so --check compares
                 # like for like. Only the pixels are skipped, because CI has no Pillow.
                 if check:
-                    if not os.path.exists(os.path.join(PNG, name)):
-                        w.stale.append(f"assets/logos/the-word/png/{name}")
+                    if not os.path.exists(os.path.join(png_dir(brand), name)):
+                        w.stale.append(rel(brand, "png", name))
                 else:
                     w.image(
-                        os.path.join(PNG, name),
-                        render(m, ink["hex"], px, square=(cfg["slug"] == "glyph")),
+                        os.path.join(png_dir(brand), name),
+                        render(m, ink, px, square=bool(cfg.get("square"))),
                     )
                 files.append(
                     {
-                        "file": f"assets/logos/the-word/png/{name}",
+                        "file": rel(brand, "png", name),
                         "format": "png",
                         "ink": ink["name"],
                         "width": px,
@@ -345,21 +610,22 @@ def build(check):
 
         entries.append(
             {
+                "brand": brand["key"],
                 "slug": cfg["slug"],
                 "name": cfg["name"],
                 "primary": cfg["primary"],
                 "use": cfg["use"],
                 "aspect": round(aw / ah, 4),
                 "capHeight": round(m["cap"], 2),
-                "clearSpace": f"{cfg['clear']}x {clear_ref(cfg)} on all four sides",
-                "clearSpaceReference": clear_ref(cfg),
+                "clearSpace": f"{cfg['clear']}x {clear_ref(cfg, brand)} on all four sides",
+                "clearSpaceReference": clear_ref(cfg, brand),
                 "clearSpaceRatio": cfg["clear"],
                 "minimumWidth": {"screen": f"{cfg['min_px']}px", "print": f"{cfg['min_mm']}mm"},
                 "files": files,
             }
         )
 
-    # The glyph doubles as the site icon set.
+    # Only the parent brand cuts the site icon set, from its glyph.
     g = masters["glyph"]
     if check:
         for name, _px, _pad, _plate in FAVICONS:
@@ -423,7 +689,8 @@ def build(check):
         print("Logo files are current.")
         return 0
 
-    print(f"Wrote {w.written} file(s) from {len(CONFIGS)} master(s).")
+    total = sum(len(b["configs"]) for b in BRANDS)
+    print(f"Wrote {w.written} file(s) from {total} master(s) across {len(BRANDS)} brand(s).")
     return 0
 
 
@@ -489,50 +756,51 @@ def kb(path):
     return f"{n / 1024 / 1024:.1f} MB" if n >= 1024 * 1024 else f"{max(1, round(n / 1024))} KB"
 
 
-def mark_card(cfg, entry, master):
+def mark_card(brand, cfg, entry, master):
     """One logo configuration: specimen on both grounds, the specs, and every download."""
     slug = cfg["slug"]
     x0, y0, x1, y1 = master["box"]
     aw, ah = x1 - x0, y1 - y0
-    base = "/assets/logos/the-word"
-    svg = f"{base}/the-word-{slug}.svg"
+    base = f"/assets/logos/{brand['dir']}"
+    stem = f"{brand['stem']}-{slug}"
+    svg = f"{base}/{stem}.svg"
 
     # Clear space as a percentage of the artwork's width. CSS resolves percentage
     # padding against width on all four sides, so one number gives an even margin.
     clear_pct = round(cfg["clear"] * master["cap"] / aw * 100, 2)
 
-    widths = GLYPH_SIZES if slug == "glyph" else PNG_WIDTHS
+    widths = GLYPH_SIZES if cfg.get("square") else PNG_WIDTHS
     png_links = " ".join(
-        f'<a href="{base}/png/the-word-{slug}-{p}.png" download>{p}px</a>' for p in widths
+        f'<a href="{base}/png/{stem}-{p}.png" download>{p}px</a>' for p in widths
     )
     png_rev = " ".join(
-        f'<a href="{base}/png/the-word-{slug}-reversed-{p}.png" download>{p}px</a>' for p in widths
+        f'<a href="{base}/png/{stem}-reversed-{p}.png" download>{p}px</a>' for p in widths
     )
     tag = "The default mark" if cfg["primary"] else "Alternate"
 
     return f"""
-        <div class="card" id="{slug}">
+        <div class="card" id="{brand['key']}-{slug}">
           <div class="card-h">
             <h3>{cfg['name']}</h3>
-            <span class="meta">{tag} · {r(aw)} × {r(ah)} · SVG {kb(f'assets/logos/the-word/the-word-{slug}.svg')}</span>
+            <span class="meta">{tag} · {r(aw)} × {r(ah)} · SVG {kb(f"assets/logos/{brand['dir']}/{stem}.svg")}</span>
           </div>
-          <code class="slug">the-word-{slug}.svg</code>
+          <code class="slug">{stem}.svg</code>
           <p class="use">{cfg['use']}</p>
 
           <div class="two">
             <div class="stage light"><img src="{svg}" alt="{cfg['name']}, Midnight ink on Parchment" loading="lazy"></div>
-            <div class="stage dark"><img src="{base}/the-word-{slug}-reversed.svg" alt="{cfg['name']}, reversed on Midnight" loading="lazy"></div>
+            <div class="stage dark"><img src="{base}/{stem}-reversed.svg" alt="{cfg['name']}, reversed on Midnight" loading="lazy"></div>
           </div>
 
           <dl class="specs">
-            <div><dt>Clear space</dt><dd>{cfg['clear']}× {clear_ref(cfg)}, all four sides</dd></div>
+            <div><dt>Clear space</dt><dd>{cfg['clear']}× {clear_ref(cfg, brand)}, all four sides</dd></div>
             <div><dt>Minimum width</dt><dd>{cfg['min_px']}px screen · {cfg['min_mm']}mm print</dd></div>
           </dl>
 
           <div class="grab">
             <a href="{svg}" download>SVG</a>
-            <a class="ghost" href="{base}/the-word-{slug}-reversed.svg" download>SVG reversed</a>
-            <a class="ghost" href="{base}/the-word-{slug}-black.svg" download>SVG black</a>
+            <a class="ghost" href="{base}/{stem}-reversed.svg" download>SVG reversed</a>
+            <a class="ghost" href="{base}/{stem}-black.svg" download>SVG black</a>
           </div>
           <div class="sizes"><span>PNG, Midnight</span>{png_links}</div>
           <div class="sizes"><span>PNG, reversed</span>{png_rev}</div>
@@ -540,16 +808,35 @@ def mark_card(cfg, entry, master):
 
 
 def render_page(masters, entries):
-    cards = "\n".join(
-        mark_card(cfg, e, masters[cfg["slug"]]) for cfg, e in zip(CONFIGS, entries)
-    )
+    by_slug = {e["slug"]: e for e in entries}
+    sections = []
+    for i, brand in enumerate(BRANDS):
+        cards = "\n".join(
+            mark_card(brand, cfg, by_slug[cfg["slug"]], masters[cfg["slug"]])
+            for cfg in brand["configs"]
+        )
+        if i == 0:
+            sections.append(cards)
+            continue
+        sections.append(f"""      </div>
+    </div>
+
+    <div class="blk">
+      <div class="section-label">{brand['name']}</div>
+      <h2>The door's own mark.</h2>
+      <p class="lede">{brand['intro']}</p>
+      <div class="kit">
+{cards}""")
+    cards = "\n".join(sections)
 
     ink_rows = "\n".join(
-        f"        <tr><td><code>the-word-&lt;mark&gt;{s or ''}.svg</code></td>"
+        f"        <tr><td><code>{b['stem']}-&lt;mark&gt;{sfx or ''}.svg</code></td>"
+        f"<td>{b['name']}</td>"
         f'<td><span class="sw" style="background:{i["hex"]};'
-        f'{"border:1px solid var(--rule);" if i["hex"] == "#FFFFFF" else ""}"></span>{i["name"]} '
-        f'<code>{i["hex"]}</code></td><td>{i["note"]}</td></tr>'
-        for s, i in INKS.items()
+        f'{"border:1px solid var(--rule);" if i["hex"] == "#FFFFFF" else ""}"></span>{i["name"]}</td>'
+        f"<td>{i['note']}</td></tr>"
+        for b in BRANDS
+        for sfx, i in b["inks"].items()
     )
 
     pack_cards = "\n".join(
@@ -577,7 +864,7 @@ def render_page(masters, entries):
 
     hz = masters["horizontal"]
     hx0, hy0, hx1, hy1 = hz["box"]
-    clear_pct = round(CONFIGS[0]["clear"] * hz["cap"] / (hx1 - hx0) * 100, 2)
+    clear_pct = round(THE_WORD_CONFIGS[0]["clear"] * hz["cap"] / (hx1 - hx0) * 100, 2)
 
     return f"""<!DOCTYPE html>
 <html lang="en">
@@ -665,7 +952,7 @@ def render_page(masters, entries):
   .stage.light{{background:var(--parchment);}}
   .stage.dark{{background:var(--midnight);border-color:transparent;}}
   .stage img{{width:100%;max-width:330px;height:auto;display:block;}}
-  #glyph .stage img{{max-width:104px;}}
+  #the-word-glyph .stage img{{max-width:104px;}}
 
   .specs{{display:flex;flex-wrap:wrap;gap:10px 34px;margin-top:16px;padding-top:14px;border-top:1px solid var(--rule);}}
   .specs dt{{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(11,26,45,.6);}}
@@ -781,8 +1068,9 @@ def render_page(masters, entries):
     <div class="blk">
       <div class="section-label">Ink</div>
       <h2>Which colour, and where it is allowed.</h2>
+      <p class="lede">THE WORD is one ink at a time. Revival To My City is two-tone by default, because the brackets around MY CITY are a field rather than lettering, and collapses to one ink when reversed or printed in a single colour.</p>
       <table>
-        <tr><th>File</th><th>Ink</th><th>Use it on</th></tr>
+        <tr><th>File</th><th>Brand</th><th>Ink</th><th>Use it on</th></tr>
 {ink_rows}
       </table>
       <p class="note">There is no Flame version, no Ember version, and no Word Blue version of the mark. Word Blue is a ground the reversed mark sits on, not an ink the mark is drawn in.</p>
@@ -907,6 +1195,12 @@ PACKS = [
         "note": "The approved RTMC wordmark in all its published forms.",
         "globs": ["assets/logos/rtmc/*.svg"],
     },
+    {
+        "file": "assets/downloads/every1-logos.zip",
+        "name": "EVERY1 Movement",
+        "note": "The approved EVERY1 wordmark, the vision lockup, and the 1 glyph, in every published form.",
+        "globs": ["assets/logos/every1/*.svg"],
+    },
 ]
 # Signatures are deliberately not packaged. They are the real signatures of real people,
 # and /signatures already offers each one on its own with the rules attached. A one-click
@@ -924,7 +1218,7 @@ def pack_readme():
         "WHICH FILE",
         "",
     ]
-    for c in CONFIGS:
+    for c in THE_WORD_CONFIGS:
         lines += [f"  {c['name']}  (the-word-{c['slug']}-*)", f"    {c['use']}", ""]
     lines += ["INK", ""]
     for suffix, ink in INKS.items():

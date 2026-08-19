@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img">
+<rect width="1600" height="900" fill="#FFFFFF"/>
+
+  <g fill="#0B1A2D" font-family="DejaVu Sans, Arial, sans-serif" text-anchor="middle">
+    <text x="800" y="285" font-size="38" font-weight="500" textLength="1180" lengthAdjust="spacing">EVERY TRIBE, EVERY TONGUE, EVERY NATION</text>
+    <text x="710" y="560" font-size="250" font-weight="900" letter-spacing="-12">EVERY</text>
+    <text x="800" y="645" font-size="42" font-weight="600" textLength="1180" lengthAdjust="spacing">WILL KNOW THE NAME JESUS.</text>
+  </g>
+  <path fill="#F85842" d="M1260 350H1360V560H1285V420L1215 458V395L1260 370Z"/>
+</svg>
