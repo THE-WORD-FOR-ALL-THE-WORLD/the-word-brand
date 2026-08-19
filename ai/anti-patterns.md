@@ -1,6 +1,6 @@
 # Anti-patterns
 
-> **Brand system v5.9 · Messaging guide v1.0 · Updated 2026-08-17**
+> **Brand system v6.0 · Messaging guide v1.0 · Updated 2026-08-19**
 > Canonical source: <https://brand.theword.world/ai/manifest.json>
 > What not to do. The first section is hand-authored; the rest is generated from the guides.
 
@@ -112,6 +112,7 @@ Generated from the guide's Do / Don't cards, in document order.
 | Caps done wrong: never the serif in all caps. | Caps done right: DM Sans labels for eyebrows, nav, and the wordmark zone. |
 | Body text: never the serif below 22px. | Body text: always DM Sans, with true bold and italics. |
 | Logo on color: never Flame. The mark cannot compete with CTAs. | Logo on imagery: photography with a Midnight scrim. |
+| Small and square: never the full lockup below its floor. | Small and square: the glyph, which is drawn to survive it. |
 | Text over footage: never Flame, never without the scrim. | Text over footage: Midnight scrim, white serif, sentence case. |
 
 ## Every banned word

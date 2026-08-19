@@ -1,55 +1,6 @@
 {
   "_README": "Usage notes for published assets, keyed by repository path. The build scans assets/ for the inventory and merges these notes in. A file with no note still publishes, it just carries no guidance. The build never overwrites this file. Add a note whenever an asset has a rule attached to it, and always when an asset is a counter-example.",
   "notes": {
-    "assets/logos/the-word-for-all-the-world.png": {
-      "name": "Wordmark, reversed",
-      "status": "approved",
-      "grounds": [
-        "midnight",
-        "word-blue",
-        "photography with a Midnight scrim"
-      ],
-      "note": "The default reversed wordmark used in the portal navigation and footer."
-    },
-    "assets/logos/wordmark-midnight-ink.png": {
-      "name": "Wordmark, Midnight ink",
-      "status": "approved",
-      "grounds": [
-        "parchment",
-        "white"
-      ],
-      "note": "The letterhead mark. Use on printed and printable documents."
-    },
-    "assets/logos/wordmark-on-midnight.png": {
-      "name": "Wordmark on Midnight",
-      "status": "approved",
-      "grounds": [
-        "midnight"
-      ],
-      "note": "Reference lockup showing the flagship pairing."
-    },
-    "assets/logos/wordmark-on-word-blue.png": {
-      "name": "Wordmark on Word Blue",
-      "status": "approved",
-      "grounds": [
-        "word-blue"
-      ],
-      "note": "Secondary structural ground. Use where Word Blue carries logo continuity."
-    },
-    "assets/logos/wordmark-over-photo-scrim.png": {
-      "name": "Wordmark over photography",
-      "status": "approved",
-      "grounds": [
-        "photography with a Midnight scrim"
-      ],
-      "note": "The only approved treatment of the mark over imagery. The scrim is not optional."
-    },
-    "assets/logos/wordmark-on-flame-not-allowed.png": {
-      "name": "Wordmark on Flame",
-      "status": "counter-example",
-      "grounds": [],
-      "note": "Not permitted. Published only to show the violation. The mark cannot compete with calls to action, and Flame never carries the logo."
-    },
     "assets/signatures/nathaniel-zimmer.svg": {
       "name": "Signature, Nathaniel Zimmer",
       "status": "approved",
@@ -193,12 +144,12 @@
     },
     "assets/images/conference-tent-teaching.jpg": {
       "status": "approved",
-      "capture": "SLC Conference · [City], Uganda · 30 Jul 2026",
-      "note": "The §07 exemplar for photography as a record. Caption location pending verification against the ministry record."
+      "capture": "SLC Conference \u00b7 [City], Uganda \u00b7 30 Jul 2026",
+      "note": "The \u00a707 exemplar for photography as a record. Caption location pending verification against the ministry record."
     },
     "assets/images/bibles-distribution.jpg": {
       "status": "approved",
-      "capture": "SLC Conference · [City], Uganda · 31 Jul 2026",
+      "capture": "SLC Conference \u00b7 [City], Uganda \u00b7 31 Jul 2026",
       "note": "Brand-object photography: black covers and red page edges are Flame on Midnight, unplanned. Caption location pending verification."
     },
     "assets/images/crowd-evening-poster.jpg": {
@@ -234,7 +185,7 @@
     "assets/videos/every1-community-gathering.mp4": {
       "name": "Loop, EVERY1 Movement",
       "status": "approved",
-      "capture": "SLC Conference · Sanga, Mbarara, Uganda · 30 Jul 2026",
+      "capture": "SLC Conference \u00b7 Sanga, Mbarara, Uganda \u00b7 30 Jul 2026",
       "poster": "assets/images/every1-community-gathering-poster.jpg",
       "note": "Muted looping hero for the BURN door. Believers gathered outdoors in the community. Every loop ships with its poster."
     },
@@ -245,7 +196,7 @@
     "assets/videos/slc-teaching-session.mp4": {
       "name": "Loop, School of the Local Church",
       "status": "approved",
-      "capture": "SLC Conference · Sanga, Mbarara, Uganda · 30 Jul 2026",
+      "capture": "SLC Conference \u00b7 Sanga, Mbarara, Uganda \u00b7 30 Jul 2026",
       "poster": "assets/images/slc-teaching-session-poster.jpg",
       "note": "Muted looping hero for the TRAIN door. A teaching session under the conference tent. Every loop ships with its poster."
     },
@@ -255,38 +206,38 @@
     },
     "assets/images/rtmc-crowd-hands-raised.jpg": {
       "status": "approved",
-      "capture": "SLC Conference · Sanga, Mbarara, Uganda · 31 Jul 2026",
+      "capture": "SLC Conference \u00b7 Sanga, Mbarara, Uganda \u00b7 31 Jul 2026",
       "note": "An evening congregation with hands raised during the service. Documentary capture for the CLEAN door."
     },
     "assets/images/rtmc-preaching-evening.jpg": {
       "status": "approved",
-      "capture": "SLC Conference · Sanga, Mbarara, Uganda · 31 Jul 2026",
+      "capture": "SLC Conference \u00b7 Sanga, Mbarara, Uganda \u00b7 31 Jul 2026",
       "note": "Preaching to the evening crowd from the open-air platform. Documentary capture for the CLEAN door."
     },
     "assets/images/every1-one-to-one.jpg": {
       "status": "approved",
-      "capture": "SLC Conference · Sanga, Mbarara, Uganda · 31 Jul 2026",
+      "capture": "SLC Conference \u00b7 Sanga, Mbarara, Uganda \u00b7 31 Jul 2026",
       "note": "One believer greeting another at the front of the tent. The person-to-person image of the BURN door."
     },
     "assets/images/every1-ministry-in-the-tent.jpg": {
       "status": "approved",
-      "capture": "SLC Conference · Sanga, Mbarara, Uganda · 30 Jul 2026",
+      "capture": "SLC Conference \u00b7 Sanga, Mbarara, Uganda \u00b7 30 Jul 2026",
       "note": "Serving the seated rows individually rather than from the platform. Documentary capture for the BURN door."
     },
     "assets/images/slc-attendees-taking-notes.jpg": {
       "status": "approved",
-      "capture": "SLC Conference · Sanga, Mbarara, Uganda · 30 Jul 2026",
+      "capture": "SLC Conference \u00b7 Sanga, Mbarara, Uganda \u00b7 30 Jul 2026",
       "note": "Attendees following the teaching with open Bibles and notebooks. The study image of the TRAIN door."
     },
     "assets/images/slc-bibles-received.jpg": {
       "status": "approved",
-      "capture": "SLC Conference · Sanga, Mbarara, Uganda · 31 Jul 2026",
+      "capture": "SLC Conference \u00b7 Sanga, Mbarara, Uganda \u00b7 31 Jul 2026",
       "note": "Bibles and the personal evangelism course handed to attendees. Documentary capture for the TRAIN door."
     },
     "assets/videos/rtmc-city-gathering.mp4": {
       "name": "Loop, Revival To My City",
       "status": "approved",
-      "capture": "SLC Conference · Sanga, Mbarara, Uganda · 30 Jul 2026",
+      "capture": "SLC Conference \u00b7 Sanga, Mbarara, Uganda \u00b7 30 Jul 2026",
       "poster": "assets/images/rtmc-city-gathering-poster.jpg",
       "note": "Muted looping hero for the CLEAN door. A city-wide gathering with hands raised, in daylight. Replaced an evening loop that measured roughly half the brightness and half the sharpness, which fought CLEAN's light register. Highlights were then pulled down: the sky as shot sat around the same luminance as the white page ground, so the band dissolved into it and the white above read as grey. The correction is exposure only, applied to the highlights, and recovers what the camera overexposed. Midtones, skin tones and colour are as captured. Do not restyle it further."
     },
@@ -340,17 +291,18 @@
     }
   },
   "gaps": [
+    "The logo masters are a vector reconstruction, not an original drawing: the letterforms and the microphone are an autotrace, so curves are dense polygons. Invisible on screen and in normal print. Before any large-format use, a banner, a vehicle wrap, or a building sign, the mark should be redrawn as true curves and approved. Until then request large-format artwork rather than scaling these files up.",
+    "No published partnership or co-brand lockup. /assets states the rules for building one, and the first approved use is to be published there so nobody rebuilds it a second way.",
     "A reversed signature for dark grounds. Every signature published here is Midnight ink and works only on Parchment or white. Nothing signed may appear on Midnight, Word Blue, or footage until a reversed master exists. Recolor the SVG fill rather than inverting the raster.",
     "Location on every July 2026 caption is recorded as Sanga, Mbarara, Uganda from the capture folder and has not yet been confirmed against the official ministry record. Confirm it, then unbracket the older captions that still read [City].",
-    "Wordmark masters in SVG and 2x/3x PNG (White, Midnight, Word Blue) are recorded as approved in Brand Guide §06 but are not yet published in this repository. Until they are, request them rather than recreating the mark.",
     "Prayer and ministry moments up close",
     "A Bible passing from one hand to another",
     "Testimony portraits",
     "Exteriors that establish place",
     "Details: open Bible and pen, the offering basket",
     "Vertical (9:16) capture of every key moment, alongside the horizontal frames",
-    "The EVERY1 mark, commissioned from the family grammar (Brand Guide §11, v5.8): heavy DM Sans caps as outlines, hairline rule with a single Flame tick, endorsement line, and the 1 built to stand alone at avatar scale. Until approved, EVERY1 surfaces carry the parent wordmark beside BURN.",
-    "The School of the Local Church academic seal (Brand Guide §11, v5.8): a shield bearing the Lion of Judah, ringed with the School's name, single colour, with masters for print, blind emboss, and wax. Until approved, certificates close with the two signatures and the letterhead rule alone.",
-    "Per-door capture libraries (Brand Guide §11, v5.8). RTMC: night altar calls, the host city by day, the host church serving, the empty venue. EVERY1: one-to-one moments away from any stage, the handoff, vertical 9:16 first. SLC: the classroom, the materials, the credential moment. Today all three doors draw from one conference."
+    "The EVERY1 mark, commissioned from the family grammar (Brand Guide \u00a711, v5.8): heavy DM Sans caps as outlines, hairline rule with a single Flame tick, endorsement line, and the 1 built to stand alone at avatar scale. Until approved, EVERY1 surfaces carry the parent wordmark beside BURN.",
+    "The School of the Local Church academic seal (Brand Guide \u00a711, v5.8): a shield bearing the Lion of Judah, ringed with the School's name, single colour, with masters for print, blind emboss, and wax. Until approved, certificates close with the two signatures and the letterhead rule alone.",
+    "Per-door capture libraries (Brand Guide \u00a711, v5.8). RTMC: night altar calls, the host city by day, the host church serving, the empty venue. EVERY1: one-to-one moments away from any stage, the handoff, vertical 9:16 first. SLC: the classroom, the materials, the credential moment. Today all three doors draw from one conference."
   ]
 }

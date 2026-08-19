@@ -485,9 +485,41 @@ def build_anti_patterns(brand: dict, messaging: dict, updated: str) -> str:
     return md
 
 
+def logo_autonotes(logos: dict) -> dict:
+    """
+    Usage notes for the generated logo files, derived rather than hand-written.
+
+    There are dozens of them, one per configuration per ink per width. Writing a note
+    for each by hand would guarantee they rot, so each one is built from the rule the
+    configuration and the ink already carry.
+    """
+    inks = {i["hex"]: i for i in logos.get("inks", [])}
+    by_name = {i["name"]: i for i in inks.values()}
+    out = {}
+    for cfg in logos.get("configurations", []):
+        for f in cfg.get("files", []):
+            ink = by_name.get(f["ink"], {})
+            size = f" at {f['width']}px wide" if f.get("width") else ""
+            out[f["file"]] = {
+                "name": f"{cfg['name']}, {f['ink'].lower()}",
+                "status": "approved",
+                "grounds": ink.get("grounds", []),
+                "configuration": cfg["slug"],
+                "clearSpace": cfg["clearSpace"],
+                "minimumWidth": cfg["minimumWidth"],
+                "note": (
+                    f"{cfg['use']} {ink.get('note', '')} "
+                    f"{'Vector master, scale freely.' if f['format'] == 'svg' else 'Raster' + size + ', never scale up.'}"
+                ).strip(),
+            }
+    return out
+
+
 def build_assets(brand: dict, messaging: dict, updated: str, notes: dict) -> dict:
     inventory = bs.scan_assets()
-    known = notes.get("notes", {})
+    logos = read_source_json("logo-manifest.json")
+    known = dict(logo_autonotes(logos))
+    known.update(notes.get("notes", {}))  # a hand-written note always wins
     used = set()
     for asset in inventory:
         note = known.get(asset["file"])
@@ -498,8 +530,26 @@ def build_assets(brand: dict, messaging: dict, updated: str, notes: dict) -> dic
                 asset["name"] = note["name"]
         else:
             asset["status"] = "published, no usage note recorded"
-    orphans = sorted(set(known) - used)
+    orphans = sorted(set(notes.get("notes", {})) - used)
     return {
+        "logos": {
+            "rule": (
+                "Choose a logo from this block, not from the flat inventory below. Pick the "
+                "configuration that fits the space, then the ink that suits the ground, then SVG "
+                "unless the destination refuses it."
+            ),
+            "page": f"{SITE}/assets",
+            "provenance": logos.get("provenance", ""),
+            "inks": logos.get("inks", []),
+            "never": logos.get("never", []),
+            "configurations": [
+                {k: v for k, v in c.items() if k != "files"} for c in logos.get("configurations", [])
+            ],
+            "packs": [
+                {"name": p["name"], "url": f"{SITE}/{p['file']}", "note": p["note"]}
+                for p in logos.get("packs", [])
+            ],
+        },
         "version": brand["version"],
         "messagingVersion": messaging["version"],
         "updated": updated,

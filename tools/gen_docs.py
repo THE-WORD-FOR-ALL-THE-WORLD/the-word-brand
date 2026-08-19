@@ -62,7 +62,7 @@ HEAD = """<!DOCTYPE html>
 <nav class="sitenav">
   <div class="bar">
     <a class="logo" href="/" aria-label="THE WORD FOR ALL THE WORLD, portal home">
-      <img src="/assets/logos/the-word-for-all-the-world.png" alt="THE WORD FOR ALL THE WORLD">
+      <img src="/assets/logos/the-word/the-word-horizontal-reversed.svg" alt="THE WORD FOR ALL THE WORLD">
     </a>
     <div class="links">
       <a href="/">Home</a>
@@ -71,6 +71,7 @@ HEAD = """<!DOCTYPE html>
       <a href="/documents/"{doc_active}>Documents</a>
       <a href="/letterhead/"{lh_active}>Letterhead</a>
       <a href="/signatures/">Signatures</a>
+      <a href="/assets/">Assets</a>
     </div>
   </div>
 </nav>
@@ -79,7 +80,7 @@ HEAD = """<!DOCTYPE html>
 FOOT = """
 <footer>
   <div class="wrap">
-    <a href="/" aria-label="THE WORD FOR ALL THE WORLD, portal home"><img src="/assets/logos/the-word-for-all-the-world.png" alt="THE WORD FOR ALL THE WORLD"></a>
+    <a href="/" aria-label="THE WORD FOR ALL THE WORLD, portal home"><img src="/assets/logos/the-word/the-word-horizontal-reversed.svg" alt="THE WORD FOR ALL THE WORLD"></a>
     <span>Every tribe. Every tongue. Every nation. EVERY1.</span>
     <span>brand.theword.world · Internal use</span>
   </div>
@@ -149,7 +150,7 @@ DOC_PAGE = """
   </div>
   <article class="paper">
     <div class="letterhead">
-      <img src="/assets/logos/wordmark-midnight-ink.png" alt="THE WORD FOR ALL THE WORLD">
+      <img src="/assets/logos/the-word/the-word-horizontal.svg" alt="THE WORD FOR ALL THE WORLD">
     </div>
     <h1 class="doctitle">{doctitle}</h1>
     <div class="docmeta">{metaline}</div>
@@ -986,8 +987,8 @@ for d in SUBS:
                        band_pad="0", doc_active="", lh_active="")
     html = html.replace("<body>", f"<body class=\"{d['stage'].lower()}\">")
     if invert_nav:
-        html = html.replace("/assets/logos/the-word-for-all-the-world.png",
-                            "/assets/logos/wordmark-midnight-ink.png", 1)
+        html = html.replace("/assets/logos/the-word/the-word-horizontal-reversed.svg",
+                            "/assets/logos/the-word/the-word-horizontal.svg", 1)
     html += SUB_PAGE.format(shots=shots, rules=rules, **fields)
     html += FOOT
     outdir = os.path.join(REPO, "brand", d["slug"])

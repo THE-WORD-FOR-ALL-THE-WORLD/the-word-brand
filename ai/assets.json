@@ -1,13 +1,157 @@
 {
-  "version": "5.9",
+  "logos": {
+    "rule": "Choose a logo from this block, not from the flat inventory below. Pick the configuration that fits the space, then the ink that suits the ground, then SVG unless the destination refuses it.",
+    "page": "https://brand.theword.world/assets",
+    "provenance": "The masters in assets/logos/_masters are a vector reconstruction, not an original drawing. The THE WORD letterforms and the microphone are an autotrace on a 0.25-unit grid, roughly 1/394 of the mark's height, so curves are dense polygons rather than Bezier curves. This is invisible on screen and in normal print. On large-format work, a banner, a vehicle, or a building sign, faceting can become visible under close inspection, and the mark should be redrawn as true curves before that use.",
+    "inks": [
+      {
+        "suffix": "(none)",
+        "hex": "#0B1A2D",
+        "name": "Midnight ink",
+        "grounds": [
+          "parchment",
+          "white"
+        ],
+        "note": "The default. Use on Parchment and White."
+      },
+      {
+        "suffix": "-reversed",
+        "hex": "#FFFFFF",
+        "name": "Reversed, white",
+        "grounds": [
+          "midnight",
+          "word-blue",
+          "photography with a Midnight scrim"
+        ],
+        "note": "Use on Midnight, on Word Blue, and over photography that carries a Midnight scrim."
+      },
+      {
+        "suffix": "-black",
+        "hex": "#000000",
+        "name": "One colour, black",
+        "grounds": [
+          "white",
+          "parchment"
+        ],
+        "note": "For single-colour reproduction only: embroidery, engraving, newsprint, stamps, and any vendor who asks for pure black. On screen use the Midnight ink instead."
+      }
+    ],
+    "never": [
+      "Never place any logo on Flame (#F85842).",
+      "Never redraw, restretch, rotate, or recolour the mark outside the three published inks.",
+      "Never add effects: no shadow, glow, bevel, outline, or gradient.",
+      "Never set the mark below its published minimum width.",
+      "Never rebuild a lockup by typesetting it. Use the published file."
+    ],
+    "configurations": [
+      {
+        "slug": "horizontal",
+        "name": "Horizontal lockup",
+        "primary": true,
+        "use": "The default mark. Site navigation, letterhead, email headers, banners, slide masters, and video lower-thirds. Anywhere the space is wider than it is tall.",
+        "aspect": 10.7005,
+        "capHeight": 93.5,
+        "clearSpace": "0.5x the cap height of THE WORD on all four sides",
+        "clearSpaceReference": "the cap height of THE WORD",
+        "clearSpaceRatio": 0.5,
+        "minimumWidth": {
+          "screen": "180px",
+          "print": "40mm"
+        }
+      },
+      {
+        "slug": "stacked",
+        "name": "Stacked lockup",
+        "primary": false,
+        "use": "Square and portrait spaces: merchandise, book and report covers, posters, tote bags, and social posts that are not wide.",
+        "aspect": 4.2615,
+        "capHeight": 129.28,
+        "clearSpace": "0.5x the cap height of THE WORD on all four sides",
+        "clearSpaceReference": "the cap height of THE WORD",
+        "clearSpaceRatio": 0.5,
+        "minimumWidth": {
+          "screen": "120px",
+          "print": "25mm"
+        }
+      },
+      {
+        "slug": "bare",
+        "name": "Bare wordmark",
+        "primary": false,
+        "use": "THE WORD with no endorsement line. Use where the sub-line would fall below legibility, or where the surrounding context already says who we are.",
+        "aspect": 7.3426,
+        "capHeight": 129.28,
+        "clearSpace": "0.5x the cap height of THE WORD on all four sides",
+        "clearSpaceReference": "the cap height of THE WORD",
+        "clearSpaceRatio": 0.5,
+        "minimumWidth": {
+          "screen": "90px",
+          "print": "20mm"
+        }
+      },
+      {
+        "slug": "glyph",
+        "name": "Microphone glyph",
+        "primary": false,
+        "use": "The mark reduced to the microphone O. Favicons, app icons, profile pictures, stickers, watermarks, and any square that is too small for the wordmark to be read.",
+        "aspect": 1.0076,
+        "capHeight": 720.0,
+        "clearSpace": "0.25x its own height on all four sides",
+        "clearSpaceReference": "its own height",
+        "clearSpaceRatio": 0.25,
+        "minimumWidth": {
+          "screen": "24px",
+          "print": "8mm"
+        }
+      },
+      {
+        "slug": "heritage",
+        "name": "Heritage lockup, EST 2018",
+        "primary": false,
+        "use": "The founding date lockup. Certificates, commemorative print, apparel, and anywhere the record of when this began is part of the point. Not the default mark.",
+        "aspect": 2.5181,
+        "capHeight": 129.28,
+        "clearSpace": "0.4x the cap height of THE WORD on all four sides",
+        "clearSpaceReference": "the cap height of THE WORD",
+        "clearSpaceRatio": 0.4,
+        "minimumWidth": {
+          "screen": "140px",
+          "print": "30mm"
+        }
+      }
+    ],
+    "packs": [
+      {
+        "name": "Vector pack, SVG",
+        "url": "https://brand.theword.world/assets/downloads/the-word-logos-svg.zip",
+        "note": "Every configuration in all three inks. For designers, printers, and anyone using Illustrator, Figma, or Word."
+      },
+      {
+        "name": "Raster pack, PNG",
+        "url": "https://brand.theword.world/assets/downloads/the-word-logos-png.zip",
+        "note": "Every configuration in all three inks, at four widths, transparent. For Google Docs, Slides, Canva, and email."
+      },
+      {
+        "name": "Complete logo pack",
+        "url": "https://brand.theword.world/assets/downloads/the-word-logos-all.zip",
+        "note": "Vector, raster, and the icon set, with the usage rules included as a text file."
+      },
+      {
+        "name": "Revival To My City",
+        "url": "https://brand.theword.world/assets/downloads/revival-to-my-city-logos.zip",
+        "note": "The approved RTMC wordmark in all its published forms."
+      }
+    ]
+  },
+  "version": "6.0",
   "messagingVersion": "1.0",
-  "updated": "2026-08-17",
+  "updated": "2026-08-19",
   "authority": "canonical",
   "rule": "Use these assets. Never generate photography or video of people or ministry, and never substitute stock. If the asset you need is not listed, request it and leave the slot empty.",
   "counts": {
-    "total": 48,
-    "approved": 47,
-    "counterExamples": 1
+    "total": 120,
+    "approved": 114,
+    "counterExamples": 0
   },
   "assets": [
     {
@@ -244,83 +388,1516 @@
       "name": "Revival To My City, primary lockup"
     },
     {
-      "file": "assets/logos/the-word-for-all-the-world.png",
-      "url": "https://brand.theword.world/assets/logos/the-word-for-all-the-world.png",
+      "file": "assets/logos/the-word/favicon/apple-touch-icon-180.png",
+      "url": "https://brand.theword.world/assets/logos/the-word/favicon/apple-touch-icon-180.png",
       "kind": "image",
-      "group": "logos",
-      "bytes": 2564,
+      "group": "favicon",
+      "bytes": 4401,
+      "status": "published, no usage note recorded"
+    },
+    {
+      "file": "assets/logos/the-word/favicon/favicon-16.png",
+      "url": "https://brand.theword.world/assets/logos/the-word/favicon/favicon-16.png",
+      "kind": "image",
+      "group": "favicon",
+      "bytes": 513,
+      "status": "published, no usage note recorded"
+    },
+    {
+      "file": "assets/logos/the-word/favicon/favicon-32.png",
+      "url": "https://brand.theword.world/assets/logos/the-word/favicon/favicon-32.png",
+      "kind": "image",
+      "group": "favicon",
+      "bytes": 974,
+      "status": "published, no usage note recorded"
+    },
+    {
+      "file": "assets/logos/the-word/favicon/favicon-48.png",
+      "url": "https://brand.theword.world/assets/logos/the-word/favicon/favicon-48.png",
+      "kind": "image",
+      "group": "favicon",
+      "bytes": 1372,
+      "status": "published, no usage note recorded"
+    },
+    {
+      "file": "assets/logos/the-word/favicon/icon-192.png",
+      "url": "https://brand.theword.world/assets/logos/the-word/favicon/icon-192.png",
+      "kind": "image",
+      "group": "favicon",
+      "bytes": 4499,
+      "status": "published, no usage note recorded"
+    },
+    {
+      "file": "assets/logos/the-word/favicon/icon-512.png",
+      "url": "https://brand.theword.world/assets/logos/the-word/favicon/icon-512.png",
+      "kind": "image",
+      "group": "favicon",
+      "bytes": 8401,
+      "status": "published, no usage note recorded"
+    },
+    {
+      "file": "assets/logos/the-word/png/the-word-bare-1600.png",
+      "url": "https://brand.theword.world/assets/logos/the-word/png/the-word-bare-1600.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 17586,
+      "status": "approved",
+      "grounds": [
+        "parchment",
+        "white"
+      ],
+      "configuration": "bare",
+      "clearSpace": "0.5x the cap height of THE WORD on all four sides",
+      "minimumWidth": {
+        "screen": "90px",
+        "print": "20mm"
+      },
+      "note": "THE WORD with no endorsement line. Use where the sub-line would fall below legibility, or where the surrounding context already says who we are. The default. Use on Parchment and White. Raster at 1600px wide, never scale up.",
+      "name": "Bare wordmark, midnight ink"
+    },
+    {
+      "file": "assets/logos/the-word/png/the-word-bare-3200.png",
+      "url": "https://brand.theword.world/assets/logos/the-word/png/the-word-bare-3200.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 34244,
+      "status": "approved",
+      "grounds": [
+        "parchment",
+        "white"
+      ],
+      "configuration": "bare",
+      "clearSpace": "0.5x the cap height of THE WORD on all four sides",
+      "minimumWidth": {
+        "screen": "90px",
+        "print": "20mm"
+      },
+      "note": "THE WORD with no endorsement line. Use where the sub-line would fall below legibility, or where the surrounding context already says who we are. The default. Use on Parchment and White. Raster at 3200px wide, never scale up.",
+      "name": "Bare wordmark, midnight ink"
+    },
+    {
+      "file": "assets/logos/the-word/png/the-word-bare-400.png",
+      "url": "https://brand.theword.world/assets/logos/the-word/png/the-word-bare-400.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 4503,
+      "status": "approved",
+      "grounds": [
+        "parchment",
+        "white"
+      ],
+      "configuration": "bare",
+      "clearSpace": "0.5x the cap height of THE WORD on all four sides",
+      "minimumWidth": {
+        "screen": "90px",
+        "print": "20mm"
+      },
+      "note": "THE WORD with no endorsement line. Use where the sub-line would fall below legibility, or where the surrounding context already says who we are. The default. Use on Parchment and White. Raster at 400px wide, never scale up.",
+      "name": "Bare wordmark, midnight ink"
+    },
+    {
+      "file": "assets/logos/the-word/png/the-word-bare-800.png",
+      "url": "https://brand.theword.world/assets/logos/the-word/png/the-word-bare-800.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 9078,
+      "status": "approved",
+      "grounds": [
+        "parchment",
+        "white"
+      ],
+      "configuration": "bare",
+      "clearSpace": "0.5x the cap height of THE WORD on all four sides",
+      "minimumWidth": {
+        "screen": "90px",
+        "print": "20mm"
+      },
+      "note": "THE WORD with no endorsement line. Use where the sub-line would fall below legibility, or where the surrounding context already says who we are. The default. Use on Parchment and White. Raster at 800px wide, never scale up.",
+      "name": "Bare wordmark, midnight ink"
+    },
+    {
+      "file": "assets/logos/the-word/png/the-word-bare-black-1600.png",
+      "url": "https://brand.theword.world/assets/logos/the-word/png/the-word-bare-black-1600.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 11952,
+      "status": "approved",
+      "grounds": [
+        "white",
+        "parchment"
+      ],
+      "configuration": "bare",
+      "clearSpace": "0.5x the cap height of THE WORD on all four sides",
+      "minimumWidth": {
+        "screen": "90px",
+        "print": "20mm"
+      },
+      "note": "THE WORD with no endorsement line. Use where the sub-line would fall below legibility, or where the surrounding context already says who we are. For single-colour reproduction only: embroidery, engraving, newsprint, stamps, and any vendor who asks for pure black. On screen use the Midnight ink instead. Raster at 1600px wide, never scale up.",
+      "name": "Bare wordmark, one colour, black"
+    },
+    {
+      "file": "assets/logos/the-word/png/the-word-bare-black-3200.png",
+      "url": "https://brand.theword.world/assets/logos/the-word/png/the-word-bare-black-3200.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 23733,
+      "status": "approved",
+      "grounds": [
+        "white",
+        "parchment"
+      ],
+      "configuration": "bare",
+      "clearSpace": "0.5x the cap height of THE WORD on all four sides",
+      "minimumWidth": {
+        "screen": "90px",
+        "print": "20mm"
+      },
+      "note": "THE WORD with no endorsement line. Use where the sub-line would fall below legibility, or where the surrounding context already says who we are. For single-colour reproduction only: embroidery, engraving, newsprint, stamps, and any vendor who asks for pure black. On screen use the Midnight ink instead. Raster at 3200px wide, never scale up.",
+      "name": "Bare wordmark, one colour, black"
+    },
+    {
+      "file": "assets/logos/the-word/png/the-word-bare-black-400.png",
+      "url": "https://brand.theword.world/assets/logos/the-word/png/the-word-bare-black-400.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 2827,
+      "status": "approved",
+      "grounds": [
+        "white",
+        "parchment"
+      ],
+      "configuration": "bare",
+      "clearSpace": "0.5x the cap height of THE WORD on all four sides",
+      "minimumWidth": {
+        "screen": "90px",
+        "print": "20mm"
+      },
+      "note": "THE WORD with no endorsement line. Use where the sub-line would fall below legibility, or where the surrounding context already says who we are. For single-colour reproduction only: embroidery, engraving, newsprint, stamps, and any vendor who asks for pure black. On screen use the Midnight ink instead. Raster at 400px wide, never scale up.",
+      "name": "Bare wordmark, one colour, black"
+    },
+    {
+      "file": "assets/logos/the-word/png/the-word-bare-black-800.png",
+      "url": "https://brand.theword.world/assets/logos/the-word/png/the-word-bare-black-800.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 5960,
+      "status": "approved",
+      "grounds": [
+        "white",
+        "parchment"
+      ],
+      "configuration": "bare",
+      "clearSpace": "0.5x the cap height of THE WORD on all four sides",
+      "minimumWidth": {
+        "screen": "90px",
+        "print": "20mm"
+      },
+      "note": "THE WORD with no endorsement line. Use where the sub-line would fall below legibility, or where the surrounding context already says who we are. For single-colour reproduction only: embroidery, engraving, newsprint, stamps, and any vendor who asks for pure black. On screen use the Midnight ink instead. Raster at 800px wide, never scale up.",
+      "name": "Bare wordmark, one colour, black"
+    },
+    {
+      "file": "assets/logos/the-word/png/the-word-bare-reversed-1600.png",
+      "url": "https://brand.theword.world/assets/logos/the-word/png/the-word-bare-reversed-1600.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 14816,
       "status": "approved",
       "grounds": [
         "midnight",
         "word-blue",
         "photography with a Midnight scrim"
       ],
-      "note": "The default reversed wordmark used in the portal navigation and footer.",
-      "name": "Wordmark, reversed"
+      "configuration": "bare",
+      "clearSpace": "0.5x the cap height of THE WORD on all four sides",
+      "minimumWidth": {
+        "screen": "90px",
+        "print": "20mm"
+      },
+      "note": "THE WORD with no endorsement line. Use where the sub-line would fall below legibility, or where the surrounding context already says who we are. Use on Midnight, on Word Blue, and over photography that carries a Midnight scrim. Raster at 1600px wide, never scale up.",
+      "name": "Bare wordmark, reversed, white"
     },
     {
-      "file": "assets/logos/wordmark-midnight-ink.png",
-      "url": "https://brand.theword.world/assets/logos/wordmark-midnight-ink.png",
+      "file": "assets/logos/the-word/png/the-word-bare-reversed-3200.png",
+      "url": "https://brand.theword.world/assets/logos/the-word/png/the-word-bare-reversed-3200.png",
       "kind": "image",
-      "group": "logos",
-      "bytes": 2392,
+      "group": "png",
+      "bytes": 29764,
+      "status": "approved",
+      "grounds": [
+        "midnight",
+        "word-blue",
+        "photography with a Midnight scrim"
+      ],
+      "configuration": "bare",
+      "clearSpace": "0.5x the cap height of THE WORD on all four sides",
+      "minimumWidth": {
+        "screen": "90px",
+        "print": "20mm"
+      },
+      "note": "THE WORD with no endorsement line. Use where the sub-line would fall below legibility, or where the surrounding context already says who we are. Use on Midnight, on Word Blue, and over photography that carries a Midnight scrim. Raster at 3200px wide, never scale up.",
+      "name": "Bare wordmark, reversed, white"
+    },
+    {
+      "file": "assets/logos/the-word/png/the-word-bare-reversed-400.png",
+      "url": "https://brand.theword.world/assets/logos/the-word/png/the-word-bare-reversed-400.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 3754,
+      "status": "approved",
+      "grounds": [
+        "midnight",
+        "word-blue",
+        "photography with a Midnight scrim"
+      ],
+      "configuration": "bare",
+      "clearSpace": "0.5x the cap height of THE WORD on all four sides",
+      "minimumWidth": {
+        "screen": "90px",
+        "print": "20mm"
+      },
+      "note": "THE WORD with no endorsement line. Use where the sub-line would fall below legibility, or where the surrounding context already says who we are. Use on Midnight, on Word Blue, and over photography that carries a Midnight scrim. Raster at 400px wide, never scale up.",
+      "name": "Bare wordmark, reversed, white"
+    },
+    {
+      "file": "assets/logos/the-word/png/the-word-bare-reversed-800.png",
+      "url": "https://brand.theword.world/assets/logos/the-word/png/the-word-bare-reversed-800.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 7717,
+      "status": "approved",
+      "grounds": [
+        "midnight",
+        "word-blue",
+        "photography with a Midnight scrim"
+      ],
+      "configuration": "bare",
+      "clearSpace": "0.5x the cap height of THE WORD on all four sides",
+      "minimumWidth": {
+        "screen": "90px",
+        "print": "20mm"
+      },
+      "note": "THE WORD with no endorsement line. Use where the sub-line would fall below legibility, or where the surrounding context already says who we are. Use on Midnight, on Word Blue, and over photography that carries a Midnight scrim. Raster at 800px wide, never scale up.",
+      "name": "Bare wordmark, reversed, white"
+    },
+    {
+      "file": "assets/logos/the-word/png/the-word-glyph-1024.png",
+      "url": "https://brand.theword.world/assets/logos/the-word/png/the-word-glyph-1024.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 20838,
       "status": "approved",
       "grounds": [
         "parchment",
         "white"
       ],
-      "note": "The letterhead mark. Use on printed and printable documents.",
-      "name": "Wordmark, Midnight ink"
+      "configuration": "glyph",
+      "clearSpace": "0.25x its own height on all four sides",
+      "minimumWidth": {
+        "screen": "24px",
+        "print": "8mm"
+      },
+      "note": "The mark reduced to the microphone O. Favicons, app icons, profile pictures, stickers, watermarks, and any square that is too small for the wordmark to be read. The default. Use on Parchment and White. Raster at 1024px wide, never scale up.",
+      "name": "Microphone glyph, midnight ink"
     },
     {
-      "file": "assets/logos/wordmark-on-flame-not-allowed.png",
-      "url": "https://brand.theword.world/assets/logos/wordmark-on-flame-not-allowed.png",
+      "file": "assets/logos/the-word/png/the-word-glyph-2048.png",
+      "url": "https://brand.theword.world/assets/logos/the-word/png/the-word-glyph-2048.png",
       "kind": "image",
-      "group": "logos",
-      "bytes": 2564,
-      "status": "counter-example",
-      "grounds": [],
-      "note": "Not permitted. Published only to show the violation. The mark cannot compete with calls to action, and Flame never carries the logo.",
-      "name": "Wordmark on Flame"
-    },
-    {
-      "file": "assets/logos/wordmark-on-midnight.png",
-      "url": "https://brand.theword.world/assets/logos/wordmark-on-midnight.png",
-      "kind": "image",
-      "group": "logos",
-      "bytes": 2564,
+      "group": "png",
+      "bytes": 39710,
       "status": "approved",
       "grounds": [
-        "midnight"
+        "parchment",
+        "white"
       ],
-      "note": "Reference lockup showing the flagship pairing.",
-      "name": "Wordmark on Midnight"
+      "configuration": "glyph",
+      "clearSpace": "0.25x its own height on all four sides",
+      "minimumWidth": {
+        "screen": "24px",
+        "print": "8mm"
+      },
+      "note": "The mark reduced to the microphone O. Favicons, app icons, profile pictures, stickers, watermarks, and any square that is too small for the wordmark to be read. The default. Use on Parchment and White. Raster at 2048px wide, never scale up.",
+      "name": "Microphone glyph, midnight ink"
     },
     {
-      "file": "assets/logos/wordmark-on-word-blue.png",
-      "url": "https://brand.theword.world/assets/logos/wordmark-on-word-blue.png",
+      "file": "assets/logos/the-word/png/the-word-glyph-512.png",
+      "url": "https://brand.theword.world/assets/logos/the-word/png/the-word-glyph-512.png",
       "kind": "image",
-      "group": "logos",
-      "bytes": 2564,
+      "group": "png",
+      "bytes": 12328,
       "status": "approved",
       "grounds": [
-        "word-blue"
+        "parchment",
+        "white"
       ],
-      "note": "Secondary structural ground. Use where Word Blue carries logo continuity.",
-      "name": "Wordmark on Word Blue"
+      "configuration": "glyph",
+      "clearSpace": "0.25x its own height on all four sides",
+      "minimumWidth": {
+        "screen": "24px",
+        "print": "8mm"
+      },
+      "note": "The mark reduced to the microphone O. Favicons, app icons, profile pictures, stickers, watermarks, and any square that is too small for the wordmark to be read. The default. Use on Parchment and White. Raster at 512px wide, never scale up.",
+      "name": "Microphone glyph, midnight ink"
     },
     {
-      "file": "assets/logos/wordmark-over-photo-scrim.png",
-      "url": "https://brand.theword.world/assets/logos/wordmark-over-photo-scrim.png",
+      "file": "assets/logos/the-word/png/the-word-glyph-black-1024.png",
+      "url": "https://brand.theword.world/assets/logos/the-word/png/the-word-glyph-black-1024.png",
       "kind": "image",
-      "group": "logos",
-      "bytes": 2564,
+      "group": "png",
+      "bytes": 15552,
       "status": "approved",
       "grounds": [
+        "white",
+        "parchment"
+      ],
+      "configuration": "glyph",
+      "clearSpace": "0.25x its own height on all four sides",
+      "minimumWidth": {
+        "screen": "24px",
+        "print": "8mm"
+      },
+      "note": "The mark reduced to the microphone O. Favicons, app icons, profile pictures, stickers, watermarks, and any square that is too small for the wordmark to be read. For single-colour reproduction only: embroidery, engraving, newsprint, stamps, and any vendor who asks for pure black. On screen use the Midnight ink instead. Raster at 1024px wide, never scale up.",
+      "name": "Microphone glyph, one colour, black"
+    },
+    {
+      "file": "assets/logos/the-word/png/the-word-glyph-black-2048.png",
+      "url": "https://brand.theword.world/assets/logos/the-word/png/the-word-glyph-black-2048.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 31171,
+      "status": "approved",
+      "grounds": [
+        "white",
+        "parchment"
+      ],
+      "configuration": "glyph",
+      "clearSpace": "0.25x its own height on all four sides",
+      "minimumWidth": {
+        "screen": "24px",
+        "print": "8mm"
+      },
+      "note": "The mark reduced to the microphone O. Favicons, app icons, profile pictures, stickers, watermarks, and any square that is too small for the wordmark to be read. For single-colour reproduction only: embroidery, engraving, newsprint, stamps, and any vendor who asks for pure black. On screen use the Midnight ink instead. Raster at 2048px wide, never scale up.",
+      "name": "Microphone glyph, one colour, black"
+    },
+    {
+      "file": "assets/logos/the-word/png/the-word-glyph-black-512.png",
+      "url": "https://brand.theword.world/assets/logos/the-word/png/the-word-glyph-black-512.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 8714,
+      "status": "approved",
+      "grounds": [
+        "white",
+        "parchment"
+      ],
+      "configuration": "glyph",
+      "clearSpace": "0.25x its own height on all four sides",
+      "minimumWidth": {
+        "screen": "24px",
+        "print": "8mm"
+      },
+      "note": "The mark reduced to the microphone O. Favicons, app icons, profile pictures, stickers, watermarks, and any square that is too small for the wordmark to be read. For single-colour reproduction only: embroidery, engraving, newsprint, stamps, and any vendor who asks for pure black. On screen use the Midnight ink instead. Raster at 512px wide, never scale up.",
+      "name": "Microphone glyph, one colour, black"
+    },
+    {
+      "file": "assets/logos/the-word/png/the-word-glyph-reversed-1024.png",
+      "url": "https://brand.theword.world/assets/logos/the-word/png/the-word-glyph-reversed-1024.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 18553,
+      "status": "approved",
+      "grounds": [
+        "midnight",
+        "word-blue",
         "photography with a Midnight scrim"
       ],
-      "note": "The only approved treatment of the mark over imagery. The scrim is not optional.",
-      "name": "Wordmark over photography"
+      "configuration": "glyph",
+      "clearSpace": "0.25x its own height on all four sides",
+      "minimumWidth": {
+        "screen": "24px",
+        "print": "8mm"
+      },
+      "note": "The mark reduced to the microphone O. Favicons, app icons, profile pictures, stickers, watermarks, and any square that is too small for the wordmark to be read. Use on Midnight, on Word Blue, and over photography that carries a Midnight scrim. Raster at 1024px wide, never scale up.",
+      "name": "Microphone glyph, reversed, white"
+    },
+    {
+      "file": "assets/logos/the-word/png/the-word-glyph-reversed-2048.png",
+      "url": "https://brand.theword.world/assets/logos/the-word/png/the-word-glyph-reversed-2048.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 36368,
+      "status": "approved",
+      "grounds": [
+        "midnight",
+        "word-blue",
+        "photography with a Midnight scrim"
+      ],
+      "configuration": "glyph",
+      "clearSpace": "0.25x its own height on all four sides",
+      "minimumWidth": {
+        "screen": "24px",
+        "print": "8mm"
+      },
+      "note": "The mark reduced to the microphone O. Favicons, app icons, profile pictures, stickers, watermarks, and any square that is too small for the wordmark to be read. Use on Midnight, on Word Blue, and over photography that carries a Midnight scrim. Raster at 2048px wide, never scale up.",
+      "name": "Microphone glyph, reversed, white"
+    },
+    {
+      "file": "assets/logos/the-word/png/the-word-glyph-reversed-512.png",
+      "url": "https://brand.theword.world/assets/logos/the-word/png/the-word-glyph-reversed-512.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 10690,
+      "status": "approved",
+      "grounds": [
+        "midnight",
+        "word-blue",
+        "photography with a Midnight scrim"
+      ],
+      "configuration": "glyph",
+      "clearSpace": "0.25x its own height on all four sides",
+      "minimumWidth": {
+        "screen": "24px",
+        "print": "8mm"
+      },
+      "note": "The mark reduced to the microphone O. Favicons, app icons, profile pictures, stickers, watermarks, and any square that is too small for the wordmark to be read. Use on Midnight, on Word Blue, and over photography that carries a Midnight scrim. Raster at 512px wide, never scale up.",
+      "name": "Microphone glyph, reversed, white"
+    },
+    {
+      "file": "assets/logos/the-word/png/the-word-heritage-1600.png",
+      "url": "https://brand.theword.world/assets/logos/the-word/png/the-word-heritage-1600.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 34585,
+      "status": "approved",
+      "grounds": [
+        "parchment",
+        "white"
+      ],
+      "configuration": "heritage",
+      "clearSpace": "0.4x the cap height of THE WORD on all four sides",
+      "minimumWidth": {
+        "screen": "140px",
+        "print": "30mm"
+      },
+      "note": "The founding date lockup. Certificates, commemorative print, apparel, and anywhere the record of when this began is part of the point. Not the default mark. The default. Use on Parchment and White. Raster at 1600px wide, never scale up.",
+      "name": "Heritage lockup, EST 2018, midnight ink"
+    },
+    {
+      "file": "assets/logos/the-word/png/the-word-heritage-3200.png",
+      "url": "https://brand.theword.world/assets/logos/the-word/png/the-word-heritage-3200.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 73903,
+      "status": "approved",
+      "grounds": [
+        "parchment",
+        "white"
+      ],
+      "configuration": "heritage",
+      "clearSpace": "0.4x the cap height of THE WORD on all four sides",
+      "minimumWidth": {
+        "screen": "140px",
+        "print": "30mm"
+      },
+      "note": "The founding date lockup. Certificates, commemorative print, apparel, and anywhere the record of when this began is part of the point. Not the default mark. The default. Use on Parchment and White. Raster at 3200px wide, never scale up.",
+      "name": "Heritage lockup, EST 2018, midnight ink"
+    },
+    {
+      "file": "assets/logos/the-word/png/the-word-heritage-400.png",
+      "url": "https://brand.theword.world/assets/logos/the-word/png/the-word-heritage-400.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 9070,
+      "status": "approved",
+      "grounds": [
+        "parchment",
+        "white"
+      ],
+      "configuration": "heritage",
+      "clearSpace": "0.4x the cap height of THE WORD on all four sides",
+      "minimumWidth": {
+        "screen": "140px",
+        "print": "30mm"
+      },
+      "note": "The founding date lockup. Certificates, commemorative print, apparel, and anywhere the record of when this began is part of the point. Not the default mark. The default. Use on Parchment and White. Raster at 400px wide, never scale up.",
+      "name": "Heritage lockup, EST 2018, midnight ink"
+    },
+    {
+      "file": "assets/logos/the-word/png/the-word-heritage-800.png",
+      "url": "https://brand.theword.world/assets/logos/the-word/png/the-word-heritage-800.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 18131,
+      "status": "approved",
+      "grounds": [
+        "parchment",
+        "white"
+      ],
+      "configuration": "heritage",
+      "clearSpace": "0.4x the cap height of THE WORD on all four sides",
+      "minimumWidth": {
+        "screen": "140px",
+        "print": "30mm"
+      },
+      "note": "The founding date lockup. Certificates, commemorative print, apparel, and anywhere the record of when this began is part of the point. Not the default mark. The default. Use on Parchment and White. Raster at 800px wide, never scale up.",
+      "name": "Heritage lockup, EST 2018, midnight ink"
+    },
+    {
+      "file": "assets/logos/the-word/png/the-word-heritage-black-1600.png",
+      "url": "https://brand.theword.world/assets/logos/the-word/png/the-word-heritage-black-1600.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 23316,
+      "status": "approved",
+      "grounds": [
+        "white",
+        "parchment"
+      ],
+      "configuration": "heritage",
+      "clearSpace": "0.4x the cap height of THE WORD on all four sides",
+      "minimumWidth": {
+        "screen": "140px",
+        "print": "30mm"
+      },
+      "note": "The founding date lockup. Certificates, commemorative print, apparel, and anywhere the record of when this began is part of the point. Not the default mark. For single-colour reproduction only: embroidery, engraving, newsprint, stamps, and any vendor who asks for pure black. On screen use the Midnight ink instead. Raster at 1600px wide, never scale up.",
+      "name": "Heritage lockup, EST 2018, one colour, black"
+    },
+    {
+      "file": "assets/logos/the-word/png/the-word-heritage-black-3200.png",
+      "url": "https://brand.theword.world/assets/logos/the-word/png/the-word-heritage-black-3200.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 52511,
+      "status": "approved",
+      "grounds": [
+        "white",
+        "parchment"
+      ],
+      "configuration": "heritage",
+      "clearSpace": "0.4x the cap height of THE WORD on all four sides",
+      "minimumWidth": {
+        "screen": "140px",
+        "print": "30mm"
+      },
+      "note": "The founding date lockup. Certificates, commemorative print, apparel, and anywhere the record of when this began is part of the point. Not the default mark. For single-colour reproduction only: embroidery, engraving, newsprint, stamps, and any vendor who asks for pure black. On screen use the Midnight ink instead. Raster at 3200px wide, never scale up.",
+      "name": "Heritage lockup, EST 2018, one colour, black"
+    },
+    {
+      "file": "assets/logos/the-word/png/the-word-heritage-black-400.png",
+      "url": "https://brand.theword.world/assets/logos/the-word/png/the-word-heritage-black-400.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 5620,
+      "status": "approved",
+      "grounds": [
+        "white",
+        "parchment"
+      ],
+      "configuration": "heritage",
+      "clearSpace": "0.4x the cap height of THE WORD on all four sides",
+      "minimumWidth": {
+        "screen": "140px",
+        "print": "30mm"
+      },
+      "note": "The founding date lockup. Certificates, commemorative print, apparel, and anywhere the record of when this began is part of the point. Not the default mark. For single-colour reproduction only: embroidery, engraving, newsprint, stamps, and any vendor who asks for pure black. On screen use the Midnight ink instead. Raster at 400px wide, never scale up.",
+      "name": "Heritage lockup, EST 2018, one colour, black"
+    },
+    {
+      "file": "assets/logos/the-word/png/the-word-heritage-black-800.png",
+      "url": "https://brand.theword.world/assets/logos/the-word/png/the-word-heritage-black-800.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 11923,
+      "status": "approved",
+      "grounds": [
+        "white",
+        "parchment"
+      ],
+      "configuration": "heritage",
+      "clearSpace": "0.4x the cap height of THE WORD on all four sides",
+      "minimumWidth": {
+        "screen": "140px",
+        "print": "30mm"
+      },
+      "note": "The founding date lockup. Certificates, commemorative print, apparel, and anywhere the record of when this began is part of the point. Not the default mark. For single-colour reproduction only: embroidery, engraving, newsprint, stamps, and any vendor who asks for pure black. On screen use the Midnight ink instead. Raster at 800px wide, never scale up.",
+      "name": "Heritage lockup, EST 2018, one colour, black"
+    },
+    {
+      "file": "assets/logos/the-word/png/the-word-heritage-reversed-1600.png",
+      "url": "https://brand.theword.world/assets/logos/the-word/png/the-word-heritage-reversed-1600.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 29146,
+      "status": "approved",
+      "grounds": [
+        "midnight",
+        "word-blue",
+        "photography with a Midnight scrim"
+      ],
+      "configuration": "heritage",
+      "clearSpace": "0.4x the cap height of THE WORD on all four sides",
+      "minimumWidth": {
+        "screen": "140px",
+        "print": "30mm"
+      },
+      "note": "The founding date lockup. Certificates, commemorative print, apparel, and anywhere the record of when this began is part of the point. Not the default mark. Use on Midnight, on Word Blue, and over photography that carries a Midnight scrim. Raster at 1600px wide, never scale up.",
+      "name": "Heritage lockup, EST 2018, reversed, white"
+    },
+    {
+      "file": "assets/logos/the-word/png/the-word-heritage-reversed-3200.png",
+      "url": "https://brand.theword.world/assets/logos/the-word/png/the-word-heritage-reversed-3200.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 64788,
+      "status": "approved",
+      "grounds": [
+        "midnight",
+        "word-blue",
+        "photography with a Midnight scrim"
+      ],
+      "configuration": "heritage",
+      "clearSpace": "0.4x the cap height of THE WORD on all four sides",
+      "minimumWidth": {
+        "screen": "140px",
+        "print": "30mm"
+      },
+      "note": "The founding date lockup. Certificates, commemorative print, apparel, and anywhere the record of when this began is part of the point. Not the default mark. Use on Midnight, on Word Blue, and over photography that carries a Midnight scrim. Raster at 3200px wide, never scale up.",
+      "name": "Heritage lockup, EST 2018, reversed, white"
+    },
+    {
+      "file": "assets/logos/the-word/png/the-word-heritage-reversed-400.png",
+      "url": "https://brand.theword.world/assets/logos/the-word/png/the-word-heritage-reversed-400.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 7381,
+      "status": "approved",
+      "grounds": [
+        "midnight",
+        "word-blue",
+        "photography with a Midnight scrim"
+      ],
+      "configuration": "heritage",
+      "clearSpace": "0.4x the cap height of THE WORD on all four sides",
+      "minimumWidth": {
+        "screen": "140px",
+        "print": "30mm"
+      },
+      "note": "The founding date lockup. Certificates, commemorative print, apparel, and anywhere the record of when this began is part of the point. Not the default mark. Use on Midnight, on Word Blue, and over photography that carries a Midnight scrim. Raster at 400px wide, never scale up.",
+      "name": "Heritage lockup, EST 2018, reversed, white"
+    },
+    {
+      "file": "assets/logos/the-word/png/the-word-heritage-reversed-800.png",
+      "url": "https://brand.theword.world/assets/logos/the-word/png/the-word-heritage-reversed-800.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 15306,
+      "status": "approved",
+      "grounds": [
+        "midnight",
+        "word-blue",
+        "photography with a Midnight scrim"
+      ],
+      "configuration": "heritage",
+      "clearSpace": "0.4x the cap height of THE WORD on all four sides",
+      "minimumWidth": {
+        "screen": "140px",
+        "print": "30mm"
+      },
+      "note": "The founding date lockup. Certificates, commemorative print, apparel, and anywhere the record of when this began is part of the point. Not the default mark. Use on Midnight, on Word Blue, and over photography that carries a Midnight scrim. Raster at 800px wide, never scale up.",
+      "name": "Heritage lockup, EST 2018, reversed, white"
+    },
+    {
+      "file": "assets/logos/the-word/png/the-word-horizontal-1600.png",
+      "url": "https://brand.theword.world/assets/logos/the-word/png/the-word-horizontal-1600.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 21952,
+      "status": "approved",
+      "grounds": [
+        "parchment",
+        "white"
+      ],
+      "configuration": "horizontal",
+      "clearSpace": "0.5x the cap height of THE WORD on all four sides",
+      "minimumWidth": {
+        "screen": "180px",
+        "print": "40mm"
+      },
+      "note": "The default mark. Site navigation, letterhead, email headers, banners, slide masters, and video lower-thirds. Anywhere the space is wider than it is tall. The default. Use on Parchment and White. Raster at 1600px wide, never scale up.",
+      "name": "Horizontal lockup, midnight ink"
+    },
+    {
+      "file": "assets/logos/the-word/png/the-word-horizontal-3200.png",
+      "url": "https://brand.theword.world/assets/logos/the-word/png/the-word-horizontal-3200.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 41320,
+      "status": "approved",
+      "grounds": [
+        "parchment",
+        "white"
+      ],
+      "configuration": "horizontal",
+      "clearSpace": "0.5x the cap height of THE WORD on all four sides",
+      "minimumWidth": {
+        "screen": "180px",
+        "print": "40mm"
+      },
+      "note": "The default mark. Site navigation, letterhead, email headers, banners, slide masters, and video lower-thirds. Anywhere the space is wider than it is tall. The default. Use on Parchment and White. Raster at 3200px wide, never scale up.",
+      "name": "Horizontal lockup, midnight ink"
+    },
+    {
+      "file": "assets/logos/the-word/png/the-word-horizontal-400.png",
+      "url": "https://brand.theword.world/assets/logos/the-word/png/the-word-horizontal-400.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 4999,
+      "status": "approved",
+      "grounds": [
+        "parchment",
+        "white"
+      ],
+      "configuration": "horizontal",
+      "clearSpace": "0.5x the cap height of THE WORD on all four sides",
+      "minimumWidth": {
+        "screen": "180px",
+        "print": "40mm"
+      },
+      "note": "The default mark. Site navigation, letterhead, email headers, banners, slide masters, and video lower-thirds. Anywhere the space is wider than it is tall. The default. Use on Parchment and White. Raster at 400px wide, never scale up.",
+      "name": "Horizontal lockup, midnight ink"
+    },
+    {
+      "file": "assets/logos/the-word/png/the-word-horizontal-800.png",
+      "url": "https://brand.theword.world/assets/logos/the-word/png/the-word-horizontal-800.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 10338,
+      "status": "approved",
+      "grounds": [
+        "parchment",
+        "white"
+      ],
+      "configuration": "horizontal",
+      "clearSpace": "0.5x the cap height of THE WORD on all four sides",
+      "minimumWidth": {
+        "screen": "180px",
+        "print": "40mm"
+      },
+      "note": "The default mark. Site navigation, letterhead, email headers, banners, slide masters, and video lower-thirds. Anywhere the space is wider than it is tall. The default. Use on Parchment and White. Raster at 800px wide, never scale up.",
+      "name": "Horizontal lockup, midnight ink"
+    },
+    {
+      "file": "assets/logos/the-word/png/the-word-horizontal-black-1600.png",
+      "url": "https://brand.theword.world/assets/logos/the-word/png/the-word-horizontal-black-1600.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 14422,
+      "status": "approved",
+      "grounds": [
+        "white",
+        "parchment"
+      ],
+      "configuration": "horizontal",
+      "clearSpace": "0.5x the cap height of THE WORD on all four sides",
+      "minimumWidth": {
+        "screen": "180px",
+        "print": "40mm"
+      },
+      "note": "The default mark. Site navigation, letterhead, email headers, banners, slide masters, and video lower-thirds. Anywhere the space is wider than it is tall. For single-colour reproduction only: embroidery, engraving, newsprint, stamps, and any vendor who asks for pure black. On screen use the Midnight ink instead. Raster at 1600px wide, never scale up.",
+      "name": "Horizontal lockup, one colour, black"
+    },
+    {
+      "file": "assets/logos/the-word/png/the-word-horizontal-black-3200.png",
+      "url": "https://brand.theword.world/assets/logos/the-word/png/the-word-horizontal-black-3200.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 27281,
+      "status": "approved",
+      "grounds": [
+        "white",
+        "parchment"
+      ],
+      "configuration": "horizontal",
+      "clearSpace": "0.5x the cap height of THE WORD on all four sides",
+      "minimumWidth": {
+        "screen": "180px",
+        "print": "40mm"
+      },
+      "note": "The default mark. Site navigation, letterhead, email headers, banners, slide masters, and video lower-thirds. Anywhere the space is wider than it is tall. For single-colour reproduction only: embroidery, engraving, newsprint, stamps, and any vendor who asks for pure black. On screen use the Midnight ink instead. Raster at 3200px wide, never scale up.",
+      "name": "Horizontal lockup, one colour, black"
+    },
+    {
+      "file": "assets/logos/the-word/png/the-word-horizontal-black-400.png",
+      "url": "https://brand.theword.world/assets/logos/the-word/png/the-word-horizontal-black-400.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 3147,
+      "status": "approved",
+      "grounds": [
+        "white",
+        "parchment"
+      ],
+      "configuration": "horizontal",
+      "clearSpace": "0.5x the cap height of THE WORD on all four sides",
+      "minimumWidth": {
+        "screen": "180px",
+        "print": "40mm"
+      },
+      "note": "The default mark. Site navigation, letterhead, email headers, banners, slide masters, and video lower-thirds. Anywhere the space is wider than it is tall. For single-colour reproduction only: embroidery, engraving, newsprint, stamps, and any vendor who asks for pure black. On screen use the Midnight ink instead. Raster at 400px wide, never scale up.",
+      "name": "Horizontal lockup, one colour, black"
+    },
+    {
+      "file": "assets/logos/the-word/png/the-word-horizontal-black-800.png",
+      "url": "https://brand.theword.world/assets/logos/the-word/png/the-word-horizontal-black-800.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 6681,
+      "status": "approved",
+      "grounds": [
+        "white",
+        "parchment"
+      ],
+      "configuration": "horizontal",
+      "clearSpace": "0.5x the cap height of THE WORD on all four sides",
+      "minimumWidth": {
+        "screen": "180px",
+        "print": "40mm"
+      },
+      "note": "The default mark. Site navigation, letterhead, email headers, banners, slide masters, and video lower-thirds. Anywhere the space is wider than it is tall. For single-colour reproduction only: embroidery, engraving, newsprint, stamps, and any vendor who asks for pure black. On screen use the Midnight ink instead. Raster at 800px wide, never scale up.",
+      "name": "Horizontal lockup, one colour, black"
+    },
+    {
+      "file": "assets/logos/the-word/png/the-word-horizontal-reversed-1600.png",
+      "url": "https://brand.theword.world/assets/logos/the-word/png/the-word-horizontal-reversed-1600.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 18807,
+      "status": "approved",
+      "grounds": [
+        "midnight",
+        "word-blue",
+        "photography with a Midnight scrim"
+      ],
+      "configuration": "horizontal",
+      "clearSpace": "0.5x the cap height of THE WORD on all four sides",
+      "minimumWidth": {
+        "screen": "180px",
+        "print": "40mm"
+      },
+      "note": "The default mark. Site navigation, letterhead, email headers, banners, slide masters, and video lower-thirds. Anywhere the space is wider than it is tall. Use on Midnight, on Word Blue, and over photography that carries a Midnight scrim. Raster at 1600px wide, never scale up.",
+      "name": "Horizontal lockup, reversed, white"
+    },
+    {
+      "file": "assets/logos/the-word/png/the-word-horizontal-reversed-3200.png",
+      "url": "https://brand.theword.world/assets/logos/the-word/png/the-word-horizontal-reversed-3200.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 34879,
+      "status": "approved",
+      "grounds": [
+        "midnight",
+        "word-blue",
+        "photography with a Midnight scrim"
+      ],
+      "configuration": "horizontal",
+      "clearSpace": "0.5x the cap height of THE WORD on all four sides",
+      "minimumWidth": {
+        "screen": "180px",
+        "print": "40mm"
+      },
+      "note": "The default mark. Site navigation, letterhead, email headers, banners, slide masters, and video lower-thirds. Anywhere the space is wider than it is tall. Use on Midnight, on Word Blue, and over photography that carries a Midnight scrim. Raster at 3200px wide, never scale up.",
+      "name": "Horizontal lockup, reversed, white"
+    },
+    {
+      "file": "assets/logos/the-word/png/the-word-horizontal-reversed-400.png",
+      "url": "https://brand.theword.world/assets/logos/the-word/png/the-word-horizontal-reversed-400.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 4179,
+      "status": "approved",
+      "grounds": [
+        "midnight",
+        "word-blue",
+        "photography with a Midnight scrim"
+      ],
+      "configuration": "horizontal",
+      "clearSpace": "0.5x the cap height of THE WORD on all four sides",
+      "minimumWidth": {
+        "screen": "180px",
+        "print": "40mm"
+      },
+      "note": "The default mark. Site navigation, letterhead, email headers, banners, slide masters, and video lower-thirds. Anywhere the space is wider than it is tall. Use on Midnight, on Word Blue, and over photography that carries a Midnight scrim. Raster at 400px wide, never scale up.",
+      "name": "Horizontal lockup, reversed, white"
+    },
+    {
+      "file": "assets/logos/the-word/png/the-word-horizontal-reversed-800.png",
+      "url": "https://brand.theword.world/assets/logos/the-word/png/the-word-horizontal-reversed-800.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 8735,
+      "status": "approved",
+      "grounds": [
+        "midnight",
+        "word-blue",
+        "photography with a Midnight scrim"
+      ],
+      "configuration": "horizontal",
+      "clearSpace": "0.5x the cap height of THE WORD on all four sides",
+      "minimumWidth": {
+        "screen": "180px",
+        "print": "40mm"
+      },
+      "note": "The default mark. Site navigation, letterhead, email headers, banners, slide masters, and video lower-thirds. Anywhere the space is wider than it is tall. Use on Midnight, on Word Blue, and over photography that carries a Midnight scrim. Raster at 800px wide, never scale up.",
+      "name": "Horizontal lockup, reversed, white"
+    },
+    {
+      "file": "assets/logos/the-word/png/the-word-stacked-1600.png",
+      "url": "https://brand.theword.world/assets/logos/the-word/png/the-word-stacked-1600.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 27056,
+      "status": "approved",
+      "grounds": [
+        "parchment",
+        "white"
+      ],
+      "configuration": "stacked",
+      "clearSpace": "0.5x the cap height of THE WORD on all four sides",
+      "minimumWidth": {
+        "screen": "120px",
+        "print": "25mm"
+      },
+      "note": "Square and portrait spaces: merchandise, book and report covers, posters, tote bags, and social posts that are not wide. The default. Use on Parchment and White. Raster at 1600px wide, never scale up.",
+      "name": "Stacked lockup, midnight ink"
+    },
+    {
+      "file": "assets/logos/the-word/png/the-word-stacked-3200.png",
+      "url": "https://brand.theword.world/assets/logos/the-word/png/the-word-stacked-3200.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 55889,
+      "status": "approved",
+      "grounds": [
+        "parchment",
+        "white"
+      ],
+      "configuration": "stacked",
+      "clearSpace": "0.5x the cap height of THE WORD on all four sides",
+      "minimumWidth": {
+        "screen": "120px",
+        "print": "25mm"
+      },
+      "note": "Square and portrait spaces: merchandise, book and report covers, posters, tote bags, and social posts that are not wide. The default. Use on Parchment and White. Raster at 3200px wide, never scale up.",
+      "name": "Stacked lockup, midnight ink"
+    },
+    {
+      "file": "assets/logos/the-word/png/the-word-stacked-400.png",
+      "url": "https://brand.theword.world/assets/logos/the-word/png/the-word-stacked-400.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 7332,
+      "status": "approved",
+      "grounds": [
+        "parchment",
+        "white"
+      ],
+      "configuration": "stacked",
+      "clearSpace": "0.5x the cap height of THE WORD on all four sides",
+      "minimumWidth": {
+        "screen": "120px",
+        "print": "25mm"
+      },
+      "note": "Square and portrait spaces: merchandise, book and report covers, posters, tote bags, and social posts that are not wide. The default. Use on Parchment and White. Raster at 400px wide, never scale up.",
+      "name": "Stacked lockup, midnight ink"
+    },
+    {
+      "file": "assets/logos/the-word/png/the-word-stacked-800.png",
+      "url": "https://brand.theword.world/assets/logos/the-word/png/the-word-stacked-800.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 14594,
+      "status": "approved",
+      "grounds": [
+        "parchment",
+        "white"
+      ],
+      "configuration": "stacked",
+      "clearSpace": "0.5x the cap height of THE WORD on all four sides",
+      "minimumWidth": {
+        "screen": "120px",
+        "print": "25mm"
+      },
+      "note": "Square and portrait spaces: merchandise, book and report covers, posters, tote bags, and social posts that are not wide. The default. Use on Parchment and White. Raster at 800px wide, never scale up.",
+      "name": "Stacked lockup, midnight ink"
+    },
+    {
+      "file": "assets/logos/the-word/png/the-word-stacked-black-1600.png",
+      "url": "https://brand.theword.world/assets/logos/the-word/png/the-word-stacked-black-1600.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 18466,
+      "status": "approved",
+      "grounds": [
+        "white",
+        "parchment"
+      ],
+      "configuration": "stacked",
+      "clearSpace": "0.5x the cap height of THE WORD on all four sides",
+      "minimumWidth": {
+        "screen": "120px",
+        "print": "25mm"
+      },
+      "note": "Square and portrait spaces: merchandise, book and report covers, posters, tote bags, and social posts that are not wide. For single-colour reproduction only: embroidery, engraving, newsprint, stamps, and any vendor who asks for pure black. On screen use the Midnight ink instead. Raster at 1600px wide, never scale up.",
+      "name": "Stacked lockup, one colour, black"
+    },
+    {
+      "file": "assets/logos/the-word/png/the-word-stacked-black-3200.png",
+      "url": "https://brand.theword.world/assets/logos/the-word/png/the-word-stacked-black-3200.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 39449,
+      "status": "approved",
+      "grounds": [
+        "white",
+        "parchment"
+      ],
+      "configuration": "stacked",
+      "clearSpace": "0.5x the cap height of THE WORD on all four sides",
+      "minimumWidth": {
+        "screen": "120px",
+        "print": "25mm"
+      },
+      "note": "Square and portrait spaces: merchandise, book and report covers, posters, tote bags, and social posts that are not wide. For single-colour reproduction only: embroidery, engraving, newsprint, stamps, and any vendor who asks for pure black. On screen use the Midnight ink instead. Raster at 3200px wide, never scale up.",
+      "name": "Stacked lockup, one colour, black"
+    },
+    {
+      "file": "assets/logos/the-word/png/the-word-stacked-black-400.png",
+      "url": "https://brand.theword.world/assets/logos/the-word/png/the-word-stacked-black-400.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 4666,
+      "status": "approved",
+      "grounds": [
+        "white",
+        "parchment"
+      ],
+      "configuration": "stacked",
+      "clearSpace": "0.5x the cap height of THE WORD on all four sides",
+      "minimumWidth": {
+        "screen": "120px",
+        "print": "25mm"
+      },
+      "note": "Square and portrait spaces: merchandise, book and report covers, posters, tote bags, and social posts that are not wide. For single-colour reproduction only: embroidery, engraving, newsprint, stamps, and any vendor who asks for pure black. On screen use the Midnight ink instead. Raster at 400px wide, never scale up.",
+      "name": "Stacked lockup, one colour, black"
+    },
+    {
+      "file": "assets/logos/the-word/png/the-word-stacked-black-800.png",
+      "url": "https://brand.theword.world/assets/logos/the-word/png/the-word-stacked-black-800.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 9645,
+      "status": "approved",
+      "grounds": [
+        "white",
+        "parchment"
+      ],
+      "configuration": "stacked",
+      "clearSpace": "0.5x the cap height of THE WORD on all four sides",
+      "minimumWidth": {
+        "screen": "120px",
+        "print": "25mm"
+      },
+      "note": "Square and portrait spaces: merchandise, book and report covers, posters, tote bags, and social posts that are not wide. For single-colour reproduction only: embroidery, engraving, newsprint, stamps, and any vendor who asks for pure black. On screen use the Midnight ink instead. Raster at 800px wide, never scale up.",
+      "name": "Stacked lockup, one colour, black"
+    },
+    {
+      "file": "assets/logos/the-word/png/the-word-stacked-reversed-1600.png",
+      "url": "https://brand.theword.world/assets/logos/the-word/png/the-word-stacked-reversed-1600.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 23037,
+      "status": "approved",
+      "grounds": [
+        "midnight",
+        "word-blue",
+        "photography with a Midnight scrim"
+      ],
+      "configuration": "stacked",
+      "clearSpace": "0.5x the cap height of THE WORD on all four sides",
+      "minimumWidth": {
+        "screen": "120px",
+        "print": "25mm"
+      },
+      "note": "Square and portrait spaces: merchandise, book and report covers, posters, tote bags, and social posts that are not wide. Use on Midnight, on Word Blue, and over photography that carries a Midnight scrim. Raster at 1600px wide, never scale up.",
+      "name": "Stacked lockup, reversed, white"
+    },
+    {
+      "file": "assets/logos/the-word/png/the-word-stacked-reversed-3200.png",
+      "url": "https://brand.theword.world/assets/logos/the-word/png/the-word-stacked-reversed-3200.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 49161,
+      "status": "approved",
+      "grounds": [
+        "midnight",
+        "word-blue",
+        "photography with a Midnight scrim"
+      ],
+      "configuration": "stacked",
+      "clearSpace": "0.5x the cap height of THE WORD on all four sides",
+      "minimumWidth": {
+        "screen": "120px",
+        "print": "25mm"
+      },
+      "note": "Square and portrait spaces: merchandise, book and report covers, posters, tote bags, and social posts that are not wide. Use on Midnight, on Word Blue, and over photography that carries a Midnight scrim. Raster at 3200px wide, never scale up.",
+      "name": "Stacked lockup, reversed, white"
+    },
+    {
+      "file": "assets/logos/the-word/png/the-word-stacked-reversed-400.png",
+      "url": "https://brand.theword.world/assets/logos/the-word/png/the-word-stacked-reversed-400.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 6148,
+      "status": "approved",
+      "grounds": [
+        "midnight",
+        "word-blue",
+        "photography with a Midnight scrim"
+      ],
+      "configuration": "stacked",
+      "clearSpace": "0.5x the cap height of THE WORD on all four sides",
+      "minimumWidth": {
+        "screen": "120px",
+        "print": "25mm"
+      },
+      "note": "Square and portrait spaces: merchandise, book and report covers, posters, tote bags, and social posts that are not wide. Use on Midnight, on Word Blue, and over photography that carries a Midnight scrim. Raster at 400px wide, never scale up.",
+      "name": "Stacked lockup, reversed, white"
+    },
+    {
+      "file": "assets/logos/the-word/png/the-word-stacked-reversed-800.png",
+      "url": "https://brand.theword.world/assets/logos/the-word/png/the-word-stacked-reversed-800.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 12450,
+      "status": "approved",
+      "grounds": [
+        "midnight",
+        "word-blue",
+        "photography with a Midnight scrim"
+      ],
+      "configuration": "stacked",
+      "clearSpace": "0.5x the cap height of THE WORD on all four sides",
+      "minimumWidth": {
+        "screen": "120px",
+        "print": "25mm"
+      },
+      "note": "Square and portrait spaces: merchandise, book and report covers, posters, tote bags, and social posts that are not wide. Use on Midnight, on Word Blue, and over photography that carries a Midnight scrim. Raster at 800px wide, never scale up.",
+      "name": "Stacked lockup, reversed, white"
+    },
+    {
+      "file": "assets/logos/the-word/the-word-bare-black.svg",
+      "url": "https://brand.theword.world/assets/logos/the-word/the-word-bare-black.svg",
+      "kind": "vector",
+      "group": "the-word",
+      "bytes": 55368,
+      "status": "approved",
+      "grounds": [
+        "white",
+        "parchment"
+      ],
+      "configuration": "bare",
+      "clearSpace": "0.5x the cap height of THE WORD on all four sides",
+      "minimumWidth": {
+        "screen": "90px",
+        "print": "20mm"
+      },
+      "note": "THE WORD with no endorsement line. Use where the sub-line would fall below legibility, or where the surrounding context already says who we are. For single-colour reproduction only: embroidery, engraving, newsprint, stamps, and any vendor who asks for pure black. On screen use the Midnight ink instead. Vector master, scale freely.",
+      "name": "Bare wordmark, one colour, black"
+    },
+    {
+      "file": "assets/logos/the-word/the-word-bare-reversed.svg",
+      "url": "https://brand.theword.world/assets/logos/the-word/the-word-bare-reversed.svg",
+      "kind": "vector",
+      "group": "the-word",
+      "bytes": 55368,
+      "status": "approved",
+      "grounds": [
+        "midnight",
+        "word-blue",
+        "photography with a Midnight scrim"
+      ],
+      "configuration": "bare",
+      "clearSpace": "0.5x the cap height of THE WORD on all four sides",
+      "minimumWidth": {
+        "screen": "90px",
+        "print": "20mm"
+      },
+      "note": "THE WORD with no endorsement line. Use where the sub-line would fall below legibility, or where the surrounding context already says who we are. Use on Midnight, on Word Blue, and over photography that carries a Midnight scrim. Vector master, scale freely.",
+      "name": "Bare wordmark, reversed, white"
+    },
+    {
+      "file": "assets/logos/the-word/the-word-bare.svg",
+      "url": "https://brand.theword.world/assets/logos/the-word/the-word-bare.svg",
+      "kind": "vector",
+      "group": "the-word",
+      "bytes": 55368,
+      "status": "approved",
+      "grounds": [
+        "parchment",
+        "white"
+      ],
+      "configuration": "bare",
+      "clearSpace": "0.5x the cap height of THE WORD on all four sides",
+      "minimumWidth": {
+        "screen": "90px",
+        "print": "20mm"
+      },
+      "note": "THE WORD with no endorsement line. Use where the sub-line would fall below legibility, or where the surrounding context already says who we are. The default. Use on Parchment and White. Vector master, scale freely.",
+      "name": "Bare wordmark, midnight ink"
+    },
+    {
+      "file": "assets/logos/the-word/the-word-glyph-black.svg",
+      "url": "https://brand.theword.world/assets/logos/the-word/the-word-glyph-black.svg",
+      "kind": "vector",
+      "group": "the-word",
+      "bytes": 22502,
+      "status": "approved",
+      "grounds": [
+        "white",
+        "parchment"
+      ],
+      "configuration": "glyph",
+      "clearSpace": "0.25x its own height on all four sides",
+      "minimumWidth": {
+        "screen": "24px",
+        "print": "8mm"
+      },
+      "note": "The mark reduced to the microphone O. Favicons, app icons, profile pictures, stickers, watermarks, and any square that is too small for the wordmark to be read. For single-colour reproduction only: embroidery, engraving, newsprint, stamps, and any vendor who asks for pure black. On screen use the Midnight ink instead. Vector master, scale freely.",
+      "name": "Microphone glyph, one colour, black"
+    },
+    {
+      "file": "assets/logos/the-word/the-word-glyph-reversed.svg",
+      "url": "https://brand.theword.world/assets/logos/the-word/the-word-glyph-reversed.svg",
+      "kind": "vector",
+      "group": "the-word",
+      "bytes": 22502,
+      "status": "approved",
+      "grounds": [
+        "midnight",
+        "word-blue",
+        "photography with a Midnight scrim"
+      ],
+      "configuration": "glyph",
+      "clearSpace": "0.25x its own height on all four sides",
+      "minimumWidth": {
+        "screen": "24px",
+        "print": "8mm"
+      },
+      "note": "The mark reduced to the microphone O. Favicons, app icons, profile pictures, stickers, watermarks, and any square that is too small for the wordmark to be read. Use on Midnight, on Word Blue, and over photography that carries a Midnight scrim. Vector master, scale freely.",
+      "name": "Microphone glyph, reversed, white"
+    },
+    {
+      "file": "assets/logos/the-word/the-word-glyph.svg",
+      "url": "https://brand.theword.world/assets/logos/the-word/the-word-glyph.svg",
+      "kind": "vector",
+      "group": "the-word",
+      "bytes": 22502,
+      "status": "approved",
+      "grounds": [
+        "parchment",
+        "white"
+      ],
+      "configuration": "glyph",
+      "clearSpace": "0.25x its own height on all four sides",
+      "minimumWidth": {
+        "screen": "24px",
+        "print": "8mm"
+      },
+      "note": "The mark reduced to the microphone O. Favicons, app icons, profile pictures, stickers, watermarks, and any square that is too small for the wordmark to be read. The default. Use on Parchment and White. Vector master, scale freely.",
+      "name": "Microphone glyph, midnight ink"
+    },
+    {
+      "file": "assets/logos/the-word/the-word-heritage-black.svg",
+      "url": "https://brand.theword.world/assets/logos/the-word/the-word-heritage-black.svg",
+      "kind": "vector",
+      "group": "the-word",
+      "bytes": 60221,
+      "status": "approved",
+      "grounds": [
+        "white",
+        "parchment"
+      ],
+      "configuration": "heritage",
+      "clearSpace": "0.4x the cap height of THE WORD on all four sides",
+      "minimumWidth": {
+        "screen": "140px",
+        "print": "30mm"
+      },
+      "note": "The founding date lockup. Certificates, commemorative print, apparel, and anywhere the record of when this began is part of the point. Not the default mark. For single-colour reproduction only: embroidery, engraving, newsprint, stamps, and any vendor who asks for pure black. On screen use the Midnight ink instead. Vector master, scale freely.",
+      "name": "Heritage lockup, EST 2018, one colour, black"
+    },
+    {
+      "file": "assets/logos/the-word/the-word-heritage-reversed.svg",
+      "url": "https://brand.theword.world/assets/logos/the-word/the-word-heritage-reversed.svg",
+      "kind": "vector",
+      "group": "the-word",
+      "bytes": 60221,
+      "status": "approved",
+      "grounds": [
+        "midnight",
+        "word-blue",
+        "photography with a Midnight scrim"
+      ],
+      "configuration": "heritage",
+      "clearSpace": "0.4x the cap height of THE WORD on all four sides",
+      "minimumWidth": {
+        "screen": "140px",
+        "print": "30mm"
+      },
+      "note": "The founding date lockup. Certificates, commemorative print, apparel, and anywhere the record of when this began is part of the point. Not the default mark. Use on Midnight, on Word Blue, and over photography that carries a Midnight scrim. Vector master, scale freely.",
+      "name": "Heritage lockup, EST 2018, reversed, white"
+    },
+    {
+      "file": "assets/logos/the-word/the-word-heritage.svg",
+      "url": "https://brand.theword.world/assets/logos/the-word/the-word-heritage.svg",
+      "kind": "vector",
+      "group": "the-word",
+      "bytes": 60221,
+      "status": "approved",
+      "grounds": [
+        "parchment",
+        "white"
+      ],
+      "configuration": "heritage",
+      "clearSpace": "0.4x the cap height of THE WORD on all four sides",
+      "minimumWidth": {
+        "screen": "140px",
+        "print": "30mm"
+      },
+      "note": "The founding date lockup. Certificates, commemorative print, apparel, and anywhere the record of when this began is part of the point. Not the default mark. The default. Use on Parchment and White. Vector master, scale freely.",
+      "name": "Heritage lockup, EST 2018, midnight ink"
+    },
+    {
+      "file": "assets/logos/the-word/the-word-horizontal-black.svg",
+      "url": "https://brand.theword.world/assets/logos/the-word/the-word-horizontal-black.svg",
+      "kind": "vector",
+      "group": "the-word",
+      "bytes": 97965,
+      "status": "approved",
+      "grounds": [
+        "white",
+        "parchment"
+      ],
+      "configuration": "horizontal",
+      "clearSpace": "0.5x the cap height of THE WORD on all four sides",
+      "minimumWidth": {
+        "screen": "180px",
+        "print": "40mm"
+      },
+      "note": "The default mark. Site navigation, letterhead, email headers, banners, slide masters, and video lower-thirds. Anywhere the space is wider than it is tall. For single-colour reproduction only: embroidery, engraving, newsprint, stamps, and any vendor who asks for pure black. On screen use the Midnight ink instead. Vector master, scale freely.",
+      "name": "Horizontal lockup, one colour, black"
+    },
+    {
+      "file": "assets/logos/the-word/the-word-horizontal-reversed.svg",
+      "url": "https://brand.theword.world/assets/logos/the-word/the-word-horizontal-reversed.svg",
+      "kind": "vector",
+      "group": "the-word",
+      "bytes": 97965,
+      "status": "approved",
+      "grounds": [
+        "midnight",
+        "word-blue",
+        "photography with a Midnight scrim"
+      ],
+      "configuration": "horizontal",
+      "clearSpace": "0.5x the cap height of THE WORD on all four sides",
+      "minimumWidth": {
+        "screen": "180px",
+        "print": "40mm"
+      },
+      "note": "The default mark. Site navigation, letterhead, email headers, banners, slide masters, and video lower-thirds. Anywhere the space is wider than it is tall. Use on Midnight, on Word Blue, and over photography that carries a Midnight scrim. Vector master, scale freely.",
+      "name": "Horizontal lockup, reversed, white"
+    },
+    {
+      "file": "assets/logos/the-word/the-word-horizontal.svg",
+      "url": "https://brand.theword.world/assets/logos/the-word/the-word-horizontal.svg",
+      "kind": "vector",
+      "group": "the-word",
+      "bytes": 97965,
+      "status": "approved",
+      "grounds": [
+        "parchment",
+        "white"
+      ],
+      "configuration": "horizontal",
+      "clearSpace": "0.5x the cap height of THE WORD on all four sides",
+      "minimumWidth": {
+        "screen": "180px",
+        "print": "40mm"
+      },
+      "note": "The default mark. Site navigation, letterhead, email headers, banners, slide masters, and video lower-thirds. Anywhere the space is wider than it is tall. The default. Use on Parchment and White. Vector master, scale freely.",
+      "name": "Horizontal lockup, midnight ink"
+    },
+    {
+      "file": "assets/logos/the-word/the-word-stacked-black.svg",
+      "url": "https://brand.theword.world/assets/logos/the-word/the-word-stacked-black.svg",
+      "kind": "vector",
+      "group": "the-word",
+      "bytes": 58088,
+      "status": "approved",
+      "grounds": [
+        "white",
+        "parchment"
+      ],
+      "configuration": "stacked",
+      "clearSpace": "0.5x the cap height of THE WORD on all four sides",
+      "minimumWidth": {
+        "screen": "120px",
+        "print": "25mm"
+      },
+      "note": "Square and portrait spaces: merchandise, book and report covers, posters, tote bags, and social posts that are not wide. For single-colour reproduction only: embroidery, engraving, newsprint, stamps, and any vendor who asks for pure black. On screen use the Midnight ink instead. Vector master, scale freely.",
+      "name": "Stacked lockup, one colour, black"
+    },
+    {
+      "file": "assets/logos/the-word/the-word-stacked-reversed.svg",
+      "url": "https://brand.theword.world/assets/logos/the-word/the-word-stacked-reversed.svg",
+      "kind": "vector",
+      "group": "the-word",
+      "bytes": 58088,
+      "status": "approved",
+      "grounds": [
+        "midnight",
+        "word-blue",
+        "photography with a Midnight scrim"
+      ],
+      "configuration": "stacked",
+      "clearSpace": "0.5x the cap height of THE WORD on all four sides",
+      "minimumWidth": {
+        "screen": "120px",
+        "print": "25mm"
+      },
+      "note": "Square and portrait spaces: merchandise, book and report covers, posters, tote bags, and social posts that are not wide. Use on Midnight, on Word Blue, and over photography that carries a Midnight scrim. Vector master, scale freely.",
+      "name": "Stacked lockup, reversed, white"
+    },
+    {
+      "file": "assets/logos/the-word/the-word-stacked.svg",
+      "url": "https://brand.theword.world/assets/logos/the-word/the-word-stacked.svg",
+      "kind": "vector",
+      "group": "the-word",
+      "bytes": 58088,
+      "status": "approved",
+      "grounds": [
+        "parchment",
+        "white"
+      ],
+      "configuration": "stacked",
+      "clearSpace": "0.5x the cap height of THE WORD on all four sides",
+      "minimumWidth": {
+        "screen": "120px",
+        "print": "25mm"
+      },
+      "note": "Square and portrait spaces: merchandise, book and report covers, posters, tote bags, and social posts that are not wide. The default. Use on Parchment and White. Vector master, scale freely.",
+      "name": "Stacked lockup, midnight ink"
     },
     {
       "file": "assets/signatures/joel-zimmer-compact.png",
@@ -590,9 +2167,10 @@
   ],
   "notesWithoutFiles": [],
   "gaps": [
+    "The logo masters are a vector reconstruction, not an original drawing: the letterforms and the microphone are an autotrace, so curves are dense polygons. Invisible on screen and in normal print. Before any large-format use, a banner, a vehicle wrap, or a building sign, the mark should be redrawn as true curves and approved. Until then request large-format artwork rather than scaling these files up.",
+    "No published partnership or co-brand lockup. /assets states the rules for building one, and the first approved use is to be published there so nobody rebuilds it a second way.",
     "A reversed signature for dark grounds. Every signature published here is Midnight ink and works only on Parchment or white. Nothing signed may appear on Midnight, Word Blue, or footage until a reversed master exists. Recolor the SVG fill rather than inverting the raster.",
     "Location on every July 2026 caption is recorded as Sanga, Mbarara, Uganda from the capture folder and has not yet been confirmed against the official ministry record. Confirm it, then unbracket the older captions that still read [City].",
-    "Wordmark masters in SVG and 2x/3x PNG (White, Midnight, Word Blue) are recorded as approved in Brand Guide §06 but are not yet published in this repository. Until they are, request them rather than recreating the mark.",
     "Prayer and ministry moments up close",
     "A Bible passing from one hand to another",
     "Testimony portraits",

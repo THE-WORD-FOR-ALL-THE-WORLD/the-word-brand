@@ -19,6 +19,9 @@ jobs:
 
       # The AI layer claims to be canonical. These two steps are what make that
       # claim true: stale or inconsistent output never reaches production.
+      - name: The logo files match the approved masters
+        run: python3 tools/build_logos.py --check
+
       - name: The AI layer matches the visual guides
         run: python3 tools/build_ai.py --check
 
