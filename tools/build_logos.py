@@ -262,20 +262,21 @@ RTMC_CONFIGS = [
 # "light" interior carries the shape either way. Only the text has to flip.
 SLC_INKS = {
     "": {
-        "hex": "#0B1A2D",
-        "roles": {"dark": "#0B1A2D", "light": "#FFFFFF", "text": "#0B1A2D"},
-        "name": "Two-tone, Midnight and White",
+        "hex": "#023D6F",
+        "roles": {"dark": "#023D6F", "light": "#FFFFFF", "text": "#023D6F"},
+        "name": "Two-tone, Word Blue and White",
         "grounds": ["parchment", "white"],
         "note": "The default. Use on Parchment and White.",
     },
     "-reversed": {
         "hex": "#FFFFFF",
-        "roles": {"dark": "#0B1A2D", "light": "#FFFFFF", "text": "#FFFFFF"},
+        "roles": {"dark": "#023D6F", "light": "#FFFFFF", "text": "#FFFFFF"},
         "name": "Reversed",
-        "grounds": ["midnight", "photography with a Midnight scrim"],
+        "grounds": ["word-blue", "midnight", "photography with a Midnight scrim"],
         "note": (
-            "For Midnight and for scrimmed footage. The lion is unchanged: its dark "
-            "structure becomes the ground showing through. Only the wordmark flips to white."
+            "For Word Blue, which is this door's own ground, and for Midnight and scrimmed "
+            "footage. The lion is unchanged: its Word Blue structure becomes the ground showing "
+            "through. Only the wordmark flips to white."
         ),
     },
     "-black": {
@@ -396,9 +397,9 @@ BRANDS = [
         "favicons": False,
         "intro": (
             "The School is the TRAIN door, and its mark is the crowned Lion of Judah. It is "
-            "two-tone: the lion's structure in Midnight, its interior in White. The lion is "
-            "built so the ground does half the drawing, which is why the same artwork reads "
-            "on paper and on Midnight without being redrawn."
+            "two-tone: the lion's structure in Word Blue, its interior in White. Word Blue is "
+            "this door's own ground, so the lion is built to let the ground do half the drawing, "
+            "which is why the same artwork reads on paper and on Word Blue without being redrawn."
         ),
     },
 ]
