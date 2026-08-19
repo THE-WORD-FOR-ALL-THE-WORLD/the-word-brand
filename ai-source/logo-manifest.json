@@ -43,6 +43,7 @@
   "provenance": "The masters in assets/logos/_masters are a vector reconstruction, not an original drawing. The THE WORD letterforms and the microphone are an autotrace on a 0.25-unit grid, roughly 1/394 of the mark's height, so curves are dense polygons rather than Bezier curves. This is invisible on screen and in normal print. On large-format work, a banner, a vehicle, or a building sign, faceting can become visible under close inspection, and the mark should be redrawn as true curves before that use.",
   "configurations": [
     {
+      "brand": "the-word",
       "slug": "horizontal",
       "name": "Horizontal lockup",
       "primary": true,
@@ -147,6 +148,7 @@
       ]
     },
     {
+      "brand": "the-word",
       "slug": "stacked",
       "name": "Stacked lockup",
       "primary": false,
@@ -251,6 +253,7 @@
       ]
     },
     {
+      "brand": "the-word",
       "slug": "bare",
       "name": "Bare wordmark",
       "primary": false,
@@ -355,6 +358,7 @@
       ]
     },
     {
+      "brand": "the-word",
       "slug": "glyph",
       "name": "Microphone glyph",
       "primary": false,
@@ -441,6 +445,7 @@
       ]
     },
     {
+      "brand": "the-word",
       "slug": "heritage",
       "name": "Heritage lockup, EST 2018",
       "primary": false,

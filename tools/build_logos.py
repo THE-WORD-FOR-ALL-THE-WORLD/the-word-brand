@@ -33,9 +33,23 @@ import svgkit  # noqa: E402
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 MASTERS = os.path.join(REPO, "assets", "logos", "_masters")
-OUT = os.path.join(REPO, "assets", "logos", "the-word")
-PNG = os.path.join(OUT, "png")
-FAVICON = os.path.join(OUT, "favicon")
+LOGOS = os.path.join(REPO, "assets", "logos")
+
+
+def out_dir(brand):
+    return os.path.join(LOGOS, brand["dir"])
+
+
+def png_dir(brand):
+    return os.path.join(out_dir(brand), "png")
+
+
+def rel(brand, *parts):
+    """Repository-relative path of a published logo file, for manifests and pages."""
+    return "/".join(("assets", "logos", brand["dir"]) + parts)
+
+
+FAVICON = os.path.join(LOGOS, "the-word", "favicon")
 DOWNLOADS = os.path.join(REPO, "assets", "downloads")
 MANIFEST = os.path.join(REPO, "ai-source", "logo-manifest.json")
 
@@ -84,7 +98,7 @@ FAVICONS = [
 
 # One entry per master. `clear` is the clear-space rule as a multiple of the cap
 # height of THE WORD, which the build measures from the artwork itself.
-CONFIGS = [
+THE_WORD_CONFIGS = [
     {
         "slug": "horizontal",
         "master": "the-word-logo",
@@ -130,6 +144,7 @@ CONFIGS = [
         "name": "Microphone glyph",
         "primary": False,
         "cap_is_height": True,
+        "square": True,
         "clear": 0.25,
         "min_px": 24,
         "min_mm": 8,
@@ -152,6 +167,29 @@ CONFIGS = [
         ),
     },
 ]
+
+
+# One entry per brand that publishes marks. `dir` is the folder under assets/logos/
+# and `stem` prefixes every filename, so a mark is identifiable from its name alone.
+# Only the parent brand cuts the site icon set, which is what `favicons` gates.
+BRANDS = [
+    {
+        "key": "the-word",
+        "name": "THE WORD FOR ALL THE WORLD",
+        "dir": "the-word",
+        "stem": "the-word",
+        "configs": THE_WORD_CONFIGS,
+        "favicons": True,
+    },
+]
+
+
+def brand_by_key(key):
+    for b in BRANDS:
+        if b["key"] == key:
+            return b
+    raise SystemExit(f"unknown brand: {key}")
+
 
 # ── reading the masters ───────────────────────────────────────────────────────
 
@@ -309,7 +347,8 @@ def build(check):
     masters = {}
     entries = []
 
-    for cfg in CONFIGS:
+    for brand in BRANDS:
+      for cfg in brand["configs"]:
         m = read_master(cfg["master"], cfg.get("cap_is_height", False))
         masters[cfg["slug"]] = m
         x0, y0, x1, y1 = m["box"]
@@ -317,26 +356,26 @@ def build(check):
 
         files = []
         for suffix, ink in INKS.items():
-            stem = f"the-word-{cfg['slug']}{suffix}"
-            w.text(os.path.join(OUT, f"{stem}.svg"), make_svg(m, cfg, suffix, ink))
-            files.append({"file": f"assets/logos/the-word/{stem}.svg", "format": "svg", "ink": ink["name"]})
+            stem = f"{brand['stem']}-{cfg['slug']}{suffix}"
+            w.text(os.path.join(out_dir(brand), f"{stem}.svg"), make_svg(m, cfg, suffix, ink))
+            files.append({"file": rel(brand, f"{stem}.svg"), "format": "svg", "ink": ink["name"]})
 
-            widths = GLYPH_SIZES if cfg["slug"] == "glyph" else PNG_WIDTHS
+            widths = GLYPH_SIZES if cfg.get("square") else PNG_WIDTHS
             for px in widths:
                 name = f"{stem}-{px}.png"
                 # The manifest is written the same way in both modes, so --check compares
                 # like for like. Only the pixels are skipped, because CI has no Pillow.
                 if check:
-                    if not os.path.exists(os.path.join(PNG, name)):
-                        w.stale.append(f"assets/logos/the-word/png/{name}")
+                    if not os.path.exists(os.path.join(png_dir(brand), name)):
+                        w.stale.append(rel(brand, "png", name))
                 else:
                     w.image(
-                        os.path.join(PNG, name),
-                        render(m, ink["hex"], px, square=(cfg["slug"] == "glyph")),
+                        os.path.join(png_dir(brand), name),
+                        render(m, ink["hex"], px, square=bool(cfg.get("square"))),
                     )
                 files.append(
                     {
-                        "file": f"assets/logos/the-word/png/{name}",
+                        "file": rel(brand, "png", name),
                         "format": "png",
                         "ink": ink["name"],
                         "width": px,
@@ -345,6 +384,7 @@ def build(check):
 
         entries.append(
             {
+                "brand": brand["key"],
                 "slug": cfg["slug"],
                 "name": cfg["name"],
                 "primary": cfg["primary"],
@@ -359,7 +399,7 @@ def build(check):
             }
         )
 
-    # The glyph doubles as the site icon set.
+    # Only the parent brand cuts the site icon set, from its glyph.
     g = masters["glyph"]
     if check:
         for name, _px, _pad, _plate in FAVICONS:
@@ -423,7 +463,8 @@ def build(check):
         print("Logo files are current.")
         return 0
 
-    print(f"Wrote {w.written} file(s) from {len(CONFIGS)} master(s).")
+    total = sum(len(b["configs"]) for b in BRANDS)
+    print(f"Wrote {w.written} file(s) from {total} master(s) across {len(BRANDS)} brand(s).")
     return 0
 
 
@@ -541,7 +582,7 @@ def mark_card(cfg, entry, master):
 
 def render_page(masters, entries):
     cards = "\n".join(
-        mark_card(cfg, e, masters[cfg["slug"]]) for cfg, e in zip(CONFIGS, entries)
+        mark_card(cfg, e, masters[cfg["slug"]]) for cfg, e in zip(THE_WORD_CONFIGS, entries)
     )
 
     ink_rows = "\n".join(
@@ -577,7 +618,7 @@ def render_page(masters, entries):
 
     hz = masters["horizontal"]
     hx0, hy0, hx1, hy1 = hz["box"]
-    clear_pct = round(CONFIGS[0]["clear"] * hz["cap"] / (hx1 - hx0) * 100, 2)
+    clear_pct = round(THE_WORD_CONFIGS[0]["clear"] * hz["cap"] / (hx1 - hx0) * 100, 2)
 
     return f"""<!DOCTYPE html>
 <html lang="en">
@@ -924,7 +965,7 @@ def pack_readme():
         "WHICH FILE",
         "",
     ]
-    for c in CONFIGS:
+    for c in THE_WORD_CONFIGS:
         lines += [f"  {c['name']}  (the-word-{c['slug']}-*)", f"    {c['use']}", ""]
     lines += ["INK", ""]
     for suffix, ink in INKS.items():
