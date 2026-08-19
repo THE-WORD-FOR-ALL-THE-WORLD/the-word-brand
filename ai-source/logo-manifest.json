@@ -548,6 +548,216 @@
           "width": 3200
         }
       ]
+    },
+    {
+      "brand": "rtmc",
+      "slug": "primary",
+      "name": "Primary lockup",
+      "primary": true,
+      "use": "The mark. Posters, city instances, stage backdrops, social, and every surface where the name is introduced. The brackets around MY CITY are a variable: a city instance may replace the words inside them with its own city, and nothing else in the mark moves.",
+      "aspect": 3.625,
+      "capHeight": 299.5,
+      "clearSpace": "0.5x the cap height of EVIVAL on all four sides",
+      "clearSpaceReference": "the cap height of EVIVAL",
+      "clearSpaceRatio": 0.5,
+      "minimumWidth": {
+        "screen": "160px",
+        "print": "36mm"
+      },
+      "files": [
+        {
+          "file": "assets/logos/rtmc/rtmc-primary.svg",
+          "format": "svg",
+          "ink": "Two-tone, Midnight and Word Blue"
+        },
+        {
+          "file": "assets/logos/rtmc/png/rtmc-primary-400.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and Word Blue",
+          "width": 400
+        },
+        {
+          "file": "assets/logos/rtmc/png/rtmc-primary-800.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and Word Blue",
+          "width": 800
+        },
+        {
+          "file": "assets/logos/rtmc/png/rtmc-primary-1600.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and Word Blue",
+          "width": 1600
+        },
+        {
+          "file": "assets/logos/rtmc/png/rtmc-primary-3200.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and Word Blue",
+          "width": 3200
+        },
+        {
+          "file": "assets/logos/rtmc/rtmc-primary-reversed.svg",
+          "format": "svg",
+          "ink": "Reversed, white"
+        },
+        {
+          "file": "assets/logos/rtmc/png/rtmc-primary-reversed-400.png",
+          "format": "png",
+          "ink": "Reversed, white",
+          "width": 400
+        },
+        {
+          "file": "assets/logos/rtmc/png/rtmc-primary-reversed-800.png",
+          "format": "png",
+          "ink": "Reversed, white",
+          "width": 800
+        },
+        {
+          "file": "assets/logos/rtmc/png/rtmc-primary-reversed-1600.png",
+          "format": "png",
+          "ink": "Reversed, white",
+          "width": 1600
+        },
+        {
+          "file": "assets/logos/rtmc/png/rtmc-primary-reversed-3200.png",
+          "format": "png",
+          "ink": "Reversed, white",
+          "width": 3200
+        },
+        {
+          "file": "assets/logos/rtmc/rtmc-primary-black.svg",
+          "format": "svg",
+          "ink": "One colour, black"
+        },
+        {
+          "file": "assets/logos/rtmc/png/rtmc-primary-black-400.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 400
+        },
+        {
+          "file": "assets/logos/rtmc/png/rtmc-primary-black-800.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 800
+        },
+        {
+          "file": "assets/logos/rtmc/png/rtmc-primary-black-1600.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 1600
+        },
+        {
+          "file": "assets/logos/rtmc/png/rtmc-primary-black-3200.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 3200
+        }
+      ]
+    },
+    {
+      "brand": "rtmc",
+      "slug": "cobrand",
+      "name": "Co-brand lockup with the parent",
+      "primary": false,
+      "use": "THE WORD beside Revival To My City, divided by a hairline rule. This is how the door carries its endorsement: the parent is shown rather than stated. Use it in navigation, on letterhead, and on any surface where the parent is not otherwise present.",
+      "aspect": 6.6383,
+      "capHeight": 199.0,
+      "clearSpace": "0.5x the cap height of EVIVAL on all four sides",
+      "clearSpaceReference": "the cap height of EVIVAL",
+      "clearSpaceRatio": 0.5,
+      "minimumWidth": {
+        "screen": "295px",
+        "print": "66mm"
+      },
+      "files": [
+        {
+          "file": "assets/logos/rtmc/rtmc-cobrand.svg",
+          "format": "svg",
+          "ink": "Two-tone, Midnight and Word Blue"
+        },
+        {
+          "file": "assets/logos/rtmc/png/rtmc-cobrand-400.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and Word Blue",
+          "width": 400
+        },
+        {
+          "file": "assets/logos/rtmc/png/rtmc-cobrand-800.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and Word Blue",
+          "width": 800
+        },
+        {
+          "file": "assets/logos/rtmc/png/rtmc-cobrand-1600.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and Word Blue",
+          "width": 1600
+        },
+        {
+          "file": "assets/logos/rtmc/png/rtmc-cobrand-3200.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and Word Blue",
+          "width": 3200
+        },
+        {
+          "file": "assets/logos/rtmc/rtmc-cobrand-reversed.svg",
+          "format": "svg",
+          "ink": "Reversed, white"
+        },
+        {
+          "file": "assets/logos/rtmc/png/rtmc-cobrand-reversed-400.png",
+          "format": "png",
+          "ink": "Reversed, white",
+          "width": 400
+        },
+        {
+          "file": "assets/logos/rtmc/png/rtmc-cobrand-reversed-800.png",
+          "format": "png",
+          "ink": "Reversed, white",
+          "width": 800
+        },
+        {
+          "file": "assets/logos/rtmc/png/rtmc-cobrand-reversed-1600.png",
+          "format": "png",
+          "ink": "Reversed, white",
+          "width": 1600
+        },
+        {
+          "file": "assets/logos/rtmc/png/rtmc-cobrand-reversed-3200.png",
+          "format": "png",
+          "ink": "Reversed, white",
+          "width": 3200
+        },
+        {
+          "file": "assets/logos/rtmc/rtmc-cobrand-black.svg",
+          "format": "svg",
+          "ink": "One colour, black"
+        },
+        {
+          "file": "assets/logos/rtmc/png/rtmc-cobrand-black-400.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 400
+        },
+        {
+          "file": "assets/logos/rtmc/png/rtmc-cobrand-black-800.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 800
+        },
+        {
+          "file": "assets/logos/rtmc/png/rtmc-cobrand-black-1600.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 1600
+        },
+        {
+          "file": "assets/logos/rtmc/png/rtmc-cobrand-black-3200.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 3200
+        }
+      ]
     }
   ],
   "packs": [

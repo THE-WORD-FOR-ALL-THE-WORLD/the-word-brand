@@ -245,50 +245,6 @@
       "status": "approved",
       "note": "Still fallback for rtmc-city-gathering.mp4."
     },
-    "assets/logos/rtmc/rtmc-wordmark.svg": {
-      "name": "Revival To My City, primary lockup",
-      "status": "approved",
-      "grounds": [
-        "white",
-        "parchment"
-      ],
-      "note": "The full mark with the endorsement line. Default wherever the name is introduced. Set in DM Sans at weight 900 and converted to outlines, so it is artwork rather than live text: it needs no font installed, never reflows, and recolours by changing one fill value. Never re-set it in another face, never stretch it, never rebuild the tick rule by hand."
-    },
-    "assets/logos/rtmc/rtmc-wordmark-reversed.svg": {
-      "name": "Revival To My City, reversed lockup",
-      "status": "approved",
-      "grounds": [
-        "midnight",
-        "photography with a Midnight scrim"
-      ],
-      "note": "For Midnight grounds and for footage carrying a scrim. Set in DM Sans at weight 900 and converted to outlines, so it is artwork rather than live text: it needs no font installed, never reflows, and recolours by changing one fill value. Never re-set it in another face, never stretch it, never rebuild the tick rule by hand."
-    },
-    "assets/logos/rtmc/rtmc-wordmark-bare.svg": {
-      "name": "Revival To My City, mark only",
-      "status": "approved",
-      "grounds": [
-        "white",
-        "parchment"
-      ],
-      "note": "Where the endorsement line is already carried elsewhere on the surface. Set in DM Sans at weight 900 and converted to outlines, so it is artwork rather than live text: it needs no font installed, never reflows, and recolours by changing one fill value. Never re-set it in another face, never stretch it, never rebuild the tick rule by hand."
-    },
-    "assets/logos/rtmc/rtmc-wordmark-bare-reversed.svg": {
-      "name": "Revival To My City, mark only, reversed",
-      "status": "approved",
-      "grounds": [
-        "midnight"
-      ],
-      "note": "Banner and hero use on Midnight. Set in DM Sans at weight 900 and converted to outlines, so it is artwork rather than live text: it needs no font installed, never reflows, and recolours by changing one fill value. Never re-set it in another face, never stretch it, never rebuild the tick rule by hand."
-    },
-    "assets/logos/rtmc/rtmc-wordmark-stacked.svg": {
-      "name": "Revival To My City, stacked lockup",
-      "status": "approved",
-      "grounds": [
-        "white",
-        "parchment"
-      ],
-      "note": "For square and portrait spaces where the single line runs too wide. Set in DM Sans at weight 900 and converted to outlines, so it is artwork rather than live text: it needs no font installed, never reflows, and recolours by changing one fill value. Never re-set it in another face, never stretch it, never rebuild the tick rule by hand."
-    },
     "assets/logos/every1/every1-wordmark.svg": {
       "name": "EVERY1, wordmark",
       "status": "approved",
