@@ -679,11 +679,10 @@ MARKS = {
  "school-of-the-local-church": ("school", "A crowned lion, and a ground that does half the drawing.",
   "The mark is the Lion of Judah wearing a crown, beside <b>School</b> in the house serif over "
   "<b>OF THE LOCAL CHURCH</b> letterspaced in DM Sans. It is two tones and no more: the lion&rsquo;s "
-  "structure in Word Blue, its interior in White. That is the whole trick. The interior is not painted "
-  "on, it is left open, so on paper the ground shows through as white and on Word Blue, this door&rsquo;s "
-  "own ground, the same artwork "
-  "reads as a white lion with the ground doing the separating. One drawing, both grounds, nothing "
-  "redrawn.",
+  "is Midnight over White, and the name beside it is Word Blue. That is the whole trick. The interior is not painted "
+  "on, it is left open, so the ground shows through it. One drawing "
+  "therefore reads on Parchment, on Word Blue, and on Midnight alike, with only the name flipping to "
+  "white on the dark ones. Nothing is redrawn per ground.",
   "Do not re-set it in another face, do not stretch it, do not recolour the lion, and do not fill in "
   "its interior. The four-colour version it was designed from is superseded; the light blue in it was "
   "never a brand colour.",
