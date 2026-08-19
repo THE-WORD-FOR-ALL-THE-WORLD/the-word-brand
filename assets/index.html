@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<title>Assets · THE WORD FOR ALL THE WORLD</title>
+<meta name="description" content="Every approved logo, in every format, with the clear space, minimum size, and colour rules that come with it. Fonts, photography, video, and download packs for THE WORD FOR ALL THE WORLD.">
+<link rel="icon" href="/assets/logos/the-word/favicon/favicon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="/assets/logos/the-word/favicon/apple-touch-icon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Serif+Text:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --midnight:#0B1A2D;
+    --word-blue:#023D6F;
+    --parchment:#F7F3EC;
+    --flame:#F85842;
+    --ember:#C13A24;
+    --white:#FFFFFF;
+    --rule:rgba(11,26,45,.18);
+    --rule-light:rgba(247,243,236,.22);
+    --serif-display:'DM Serif Display', Georgia, 'Times New Roman', serif;
+    --serif-text:'DM Serif Text', Georgia, 'Times New Roman', serif;
+    --sans:'DM Sans', -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  @media (prefers-reduced-motion: no-preference){html{scroll-behavior:smooth;}}
+  body{font-family:var(--sans);font-size:17px;line-height:1.7;color:var(--midnight);background:var(--parchment);-webkit-font-smoothing:antialiased;}
+  a:focus-visible,button:focus-visible{outline:2px solid var(--ember);outline-offset:3px;border-radius:3px;}
+  .sitenav a:focus-visible,.band a:focus-visible,footer a:focus-visible{outline-color:var(--flame);}
+  .wrap{max-width:1020px;margin:0 auto;padding:0 32px;width:100%;}
+
+  /* site nav · unified chrome */
+  .sitenav{position:absolute;top:0;left:0;right:0;z-index:10;}
+  .sitenav .bar{max-width:1240px;margin:0 auto;padding:26px 36px;display:flex;justify-content:space-between;align-items:center;gap:20px;}
+  .sitenav .logo img{height:20px;width:auto;display:block;}
+  .sitenav .links{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:12px 28px;font-size:12.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;}
+  .sitenav .links a{color:rgba(247,243,236,.9);text-decoration:none;}
+  .sitenav .links a:hover{color:var(--white);}
+  .sitenav .links a.active{color:var(--white);border-bottom:1px solid rgba(255,255,255,.6);padding-bottom:2px;}
+
+  .band{background:var(--midnight);color:var(--parchment);padding:150px 0 64px;text-align:center;}
+  .band .kicker{font-size:13px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--white);opacity:.8;margin-bottom:18px;display:block;}
+  .band h1{font-family:var(--serif-display);font-weight:400;line-height:1.1;font-size:clamp(34px,5vw,54px);}
+  .band h1 em{font-style:italic;}
+  .band p{margin:18px auto 0;max-width:640px;color:rgba(247,243,236,.85);}
+
+  main{padding:72px 0 96px;}
+  .section-label{font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--ember);margin-bottom:24px;}
+  h2{font-family:var(--serif-text);font-weight:400;font-size:clamp(26px,3.4vw,36px);line-height:1.2;margin-bottom:16px;}
+  .lede{max-width:70ch;color:rgba(11,26,45,.85);}
+  .lede a{color:var(--word-blue);}
+  .lede a:hover{color:var(--ember);}
+  .blk{margin-top:64px;}
+
+  .law{background:var(--white);border:1px solid var(--rule);border-left:3px solid var(--word-blue);padding:28px 30px;margin-top:8px;}
+  .law ol{margin:0 0 0 20px;}
+  .law li{margin-bottom:12px;font-size:15.5px;line-height:1.7;}
+  .law li:last-child{margin-bottom:0;}
+  .law li b{font-weight:700;}
+
+  /* clear space diagram */
+  .diagram{display:grid;grid-template-columns:1fr;gap:18px;margin-top:24px;}
+  @media(min-width:760px){.diagram{grid-template-columns:1.4fr 1fr;align-items:center;}}
+  .cs-box{background:var(--white);border:1px solid var(--rule);padding:34px;}
+  .cs-inner{outline:1.5px dashed var(--ember);outline-offset:0;padding:4.44%;}
+  .cs-inner img{width:100%;height:auto;display:block;}
+  .cs-note{font-size:15px;color:rgba(11,26,45,.85);}
+  .cs-note b{display:block;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ember);margin-bottom:8px;}
+
+  /* mark cards */
+  .kit{margin-top:26px;display:grid;gap:26px;}
+  .card{background:var(--white);border:1px solid var(--rule);border-radius:4px;padding:26px 28px 24px;scroll-margin-top:20px;}
+  .card-h{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:6px;}
+  .card-h h3{font-family:var(--serif-text);font-weight:400;font-size:23px;line-height:1.2;}
+  .card-h .meta{font-size:11.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(11,26,45,.8);}
+  .card .slug{font-family:'SF Mono', Consolas, monospace;font-size:12.5px;color:var(--word-blue);background:rgba(2,61,111,.07);border-radius:3px;padding:2px 7px;}
+  .card .use{font-size:14.5px;color:rgba(11,26,45,.8);margin:10px 0 20px;max-width:66ch;}
+  .two{display:grid;grid-template-columns:1fr;gap:12px;}
+  @media(min-width:620px){.two{grid-template-columns:1fr 1fr;}}
+  .stage{border:1px solid var(--rule);border-radius:3px;padding:30px 26px;display:flex;align-items:center;justify-content:center;min-height:120px;}
+  .stage.light{background:var(--parchment);}
+  .stage.dark{background:var(--midnight);border-color:transparent;}
+  .stage img{width:100%;max-width:330px;height:auto;display:block;}
+  #glyph .stage img{max-width:104px;}
+
+  .specs{display:flex;flex-wrap:wrap;gap:10px 34px;margin-top:16px;padding-top:14px;border-top:1px solid var(--rule);}
+  .specs dt{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(11,26,45,.6);}
+  .specs dd{font-size:14.5px;}
+
+  .grab{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px;}
+  .grab a{font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;color:var(--white);background:var(--ember);border-radius:3px;padding:10px 16px;}
+  .grab a:hover{background:#A62F1B;}
+  .grab a.ghost{background:transparent;color:var(--word-blue);border:1px solid var(--rule);}
+  .grab a.ghost:hover{color:var(--ember);border-color:var(--ember);background:transparent;}
+  .sizes{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;margin-top:12px;font-size:13px;}
+  .sizes span{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(11,26,45,.55);min-width:118px;}
+  .sizes a{color:var(--word-blue);text-decoration:none;border-bottom:1px solid rgba(2,61,111,.3);}
+  .sizes a:hover{color:var(--ember);border-color:var(--ember);}
+
+  table{width:100%;border-collapse:collapse;margin-top:14px;font-size:15px;background:var(--white);border:1px solid var(--rule);}
+  th,td{text-align:left;padding:13px 16px;border-bottom:1px solid var(--rule);vertical-align:top;}
+  tr:last-child td{border-bottom:none;}
+  th{font-size:11.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(11,26,45,.8);}
+  td code{font-family:'SF Mono', Consolas, monospace;font-size:12.5px;background:rgba(2,61,111,.07);border-radius:3px;padding:1px 6px;}
+  .sw{display:inline-block;width:12px;height:12px;border-radius:2px;margin-right:7px;vertical-align:-1px;}
+
+  .packs{display:grid;gap:16px;margin-top:24px;grid-template-columns:1fr;}
+  @media(min-width:700px){.packs{grid-template-columns:1fr 1fr;}}
+  .pack{background:var(--white);border:1px solid var(--rule);border-radius:4px;padding:22px 24px;display:flex;flex-direction:column;gap:8px;}
+  .pack h3{font-family:var(--serif-text);font-weight:400;font-size:20px;}
+  .pack p{font-size:14.5px;color:rgba(11,26,45,.8);flex:1;}
+  .pack a{align-self:flex-start;font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;color:var(--white);background:var(--word-blue);border-radius:3px;padding:10px 16px;margin-top:6px;}
+  .pack a:hover{background:var(--ember);}
+
+  .fonts{display:grid;gap:16px;margin-top:24px;}
+  .font{background:var(--white);border:1px solid var(--rule);border-radius:4px;padding:22px 24px;display:flex;gap:24px;align-items:flex-start;}
+  .font .aa{font-size:56px;line-height:1;color:var(--midnight);min-width:80px;text-align:center;}
+  .font h3{font-family:var(--serif-text);font-weight:400;font-size:21px;display:inline;}
+  .font .role{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ember);margin-left:10px;}
+  .font p{font-size:14.5px;color:rgba(11,26,45,.8);margin:8px 0 10px;max-width:62ch;}
+  .font a{font-size:13px;color:var(--word-blue);text-decoration:none;border-bottom:1px solid rgba(2,61,111,.3);}
+  .font a:hover{color:var(--ember);border-color:var(--ember);}
+  pre{background:var(--midnight);color:rgba(247,243,236,.92);border-radius:4px;padding:18px 20px;margin-top:16px;overflow-x:auto;font-family:'SF Mono', Consolas, monospace;font-size:12.5px;line-height:1.7;}
+
+  .note{max-width:70ch;margin-top:14px;font-size:15px;color:rgba(11,26,45,.8);}
+  .note code{font-family:'SF Mono', Consolas, monospace;font-size:13px;background:rgba(2,61,111,.07);border-radius:3px;padding:1px 6px;}
+  .note a{color:var(--word-blue);}
+  .note a:hover{color:var(--ember);}
+
+  footer{background:var(--midnight);color:rgba(247,243,236,.75);padding:40px 0;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;font-weight:500;}
+  footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+  footer img{height:16px;width:auto;display:block;opacity:.9;}
+  @media(max-width:640px){.sitenav .bar{padding:20px 24px;}.font{flex-direction:column;gap:12px;}}
+</style>
+</head>
+<body>
+
+<nav class="sitenav">
+  <div class="bar">
+    <a class="logo" href="/" aria-label="THE WORD FOR ALL THE WORLD, portal home">
+      <img src="/assets/logos/the-word/the-word-horizontal-reversed.svg" alt="THE WORD FOR ALL THE WORLD">
+    </a>
+    <div class="links">
+      <a href="/">Home</a>
+      <a href="/brand/">Brand Guide</a>
+      <a href="/brand/messaging/">Messaging</a>
+      <a href="/documents/">Documents</a>
+      <a href="/letterhead/">Letterhead</a>
+      <a href="/signatures/">Signatures</a>
+      <a href="/assets/" class="active">Assets</a>
+    </div>
+  </div>
+</nav>
+
+<div class="band">
+  <span class="kicker">Assets · Logos, Fonts, Files</span>
+  <h1>Take the mark.<br>Use it <em>right.</em></h1>
+  <p>Every approved logo, in every format anyone has ever asked us for, with the rules attached rather than filed somewhere else. Nothing here needs permission to download. Everything here has a rule about how it may be placed.</p>
+</div>
+
+<main>
+  <div class="wrap">
+
+    <div class="section-label">The Law</div>
+    <h2>Five rules, and they are not negotiable.</h2>
+    <p class="lede">Brand Guide <a href="/brand/#logo">§05</a> says the wordmark is fixed and is not redrawn. These are the mechanics of that sentence.</p>
+    <div class="law">
+      <ol>
+        <li><b>Never on Flame.</b> Flame <code>#F85842</code> is for calls to action. The mark cannot compete with a button, so it never sits on one. Midnight, Word Blue, Parchment, White, or photography carrying a Midnight scrim.</li>
+        <li><b>Never redraw it.</b> Do not retype it, restretch it, rotate it, outline it, or rebuild a lockup by setting the words yourself. Download the file. If the format you need is not here, ask for it.</li>
+        <li><b>Never recolour it.</b> Three inks are published and no fourth exists. Not a brand colour, not a client colour, not a gradient.</li>
+        <li><b>Never add effects.</b> No drop shadow, glow, bevel, outline, or stroke. The mark is flat.</li>
+        <li><b>Never crowd it, never shrink it past the floor.</b> Clear space and minimum size are published per mark below and both are measured, not estimated.</li>
+      </ol>
+    </div>
+
+    <div class="diagram">
+      <div class="cs-box">
+        <div class="cs-inner"><img src="/assets/logos/the-word/the-word-horizontal.svg" alt="The horizontal lockup with its clear space shown as a dashed boundary"></div>
+      </div>
+      <div class="cs-note">
+        <b>Clear space</b>
+        Keep a margin equal to half the cap height of THE WORD on all four sides. Nothing enters it: no text, no rule, no photograph edge, no other logo, no page trim. The dashed line is the boundary, not the mark.
+      </div>
+    </div>
+
+    <div class="blk">
+      <div class="section-label">The Marks</div>
+      <h2>Five configurations, three inks each.</h2>
+      <p class="lede">Every file below is generated from the same approved artwork, so a PNG and an SVG of the same mark are the same shape. Transparent backgrounds throughout, cropped to the artwork, so you control the spacing using the clear-space rule above.</p>
+
+      <div class="kit">
+
+        <div class="card" id="horizontal">
+          <div class="card-h">
+            <h3>Horizontal lockup</h3>
+            <span class="meta">The default mark · 1054 × 98.5 · SVG 96 KB</span>
+          </div>
+          <code class="slug">the-word-horizontal.svg</code>
+          <p class="use">The default mark. Site navigation, letterhead, email headers, banners, slide masters, and video lower-thirds. Anywhere the space is wider than it is tall.</p>
+
+          <div class="two">
+            <div class="stage light"><img src="/assets/logos/the-word/the-word-horizontal.svg" alt="Horizontal lockup, Midnight ink on Parchment" loading="lazy"></div>
+            <div class="stage dark"><img src="/assets/logos/the-word/the-word-horizontal-reversed.svg" alt="Horizontal lockup, reversed on Midnight" loading="lazy"></div>
+          </div>
+
+          <dl class="specs">
+            <div><dt>Clear space</dt><dd>0.5× the cap height of THE WORD, all four sides</dd></div>
+            <div><dt>Minimum width</dt><dd>180px screen · 40mm print</dd></div>
+          </dl>
+
+          <div class="grab">
+            <a href="/assets/logos/the-word/the-word-horizontal.svg" download>SVG</a>
+            <a class="ghost" href="/assets/logos/the-word/the-word-horizontal-reversed.svg" download>SVG reversed</a>
+            <a class="ghost" href="/assets/logos/the-word/the-word-horizontal-black.svg" download>SVG black</a>
+          </div>
+          <div class="sizes"><span>PNG, Midnight</span><a href="/assets/logos/the-word/png/the-word-horizontal-400.png" download>400px</a> <a href="/assets/logos/the-word/png/the-word-horizontal-800.png" download>800px</a> <a href="/assets/logos/the-word/png/the-word-horizontal-1600.png" download>1600px</a> <a href="/assets/logos/the-word/png/the-word-horizontal-3200.png" download>3200px</a></div>
+          <div class="sizes"><span>PNG, reversed</span><a href="/assets/logos/the-word/png/the-word-horizontal-reversed-400.png" download>400px</a> <a href="/assets/logos/the-word/png/the-word-horizontal-reversed-800.png" download>800px</a> <a href="/assets/logos/the-word/png/the-word-horizontal-reversed-1600.png" download>1600px</a> <a href="/assets/logos/the-word/png/the-word-horizontal-reversed-3200.png" download>3200px</a></div>
+        </div>
+
+        <div class="card" id="stacked">
+          <div class="card-h">
+            <h3>Stacked lockup</h3>
+            <span class="meta">Alternate · 1000 × 234.66 · SVG 57 KB</span>
+          </div>
+          <code class="slug">the-word-stacked.svg</code>
+          <p class="use">Square and portrait spaces: merchandise, book and report covers, posters, tote bags, and social posts that are not wide.</p>
+
+          <div class="two">
+            <div class="stage light"><img src="/assets/logos/the-word/the-word-stacked.svg" alt="Stacked lockup, Midnight ink on Parchment" loading="lazy"></div>
+            <div class="stage dark"><img src="/assets/logos/the-word/the-word-stacked-reversed.svg" alt="Stacked lockup, reversed on Midnight" loading="lazy"></div>
+          </div>
+
+          <dl class="specs">
+            <div><dt>Clear space</dt><dd>0.5× the cap height of THE WORD, all four sides</dd></div>
+            <div><dt>Minimum width</dt><dd>120px screen · 25mm print</dd></div>
+          </dl>
+
+          <div class="grab">
+            <a href="/assets/logos/the-word/the-word-stacked.svg" download>SVG</a>
+            <a class="ghost" href="/assets/logos/the-word/the-word-stacked-reversed.svg" download>SVG reversed</a>
+            <a class="ghost" href="/assets/logos/the-word/the-word-stacked-black.svg" download>SVG black</a>
+          </div>
+          <div class="sizes"><span>PNG, Midnight</span><a href="/assets/logos/the-word/png/the-word-stacked-400.png" download>400px</a> <a href="/assets/logos/the-word/png/the-word-stacked-800.png" download>800px</a> <a href="/assets/logos/the-word/png/the-word-stacked-1600.png" download>1600px</a> <a href="/assets/logos/the-word/png/the-word-stacked-3200.png" download>3200px</a></div>
+          <div class="sizes"><span>PNG, reversed</span><a href="/assets/logos/the-word/png/the-word-stacked-reversed-400.png" download>400px</a> <a href="/assets/logos/the-word/png/the-word-stacked-reversed-800.png" download>800px</a> <a href="/assets/logos/the-word/png/the-word-stacked-reversed-1600.png" download>1600px</a> <a href="/assets/logos/the-word/png/the-word-stacked-reversed-3200.png" download>3200px</a></div>
+        </div>
+
+        <div class="card" id="bare">
+          <div class="card-h">
+            <h3>Bare wordmark</h3>
+            <span class="meta">Alternate · 1000 × 136.19 · SVG 54 KB</span>
+          </div>
+          <code class="slug">the-word-bare.svg</code>
+          <p class="use">THE WORD with no endorsement line. Use where the sub-line would fall below legibility, or where the surrounding context already says who we are.</p>
+
+          <div class="two">
+            <div class="stage light"><img src="/assets/logos/the-word/the-word-bare.svg" alt="Bare wordmark, Midnight ink on Parchment" loading="lazy"></div>
+            <div class="stage dark"><img src="/assets/logos/the-word/the-word-bare-reversed.svg" alt="Bare wordmark, reversed on Midnight" loading="lazy"></div>
+          </div>
+
+          <dl class="specs">
+            <div><dt>Clear space</dt><dd>0.5× the cap height of THE WORD, all four sides</dd></div>
+            <div><dt>Minimum width</dt><dd>90px screen · 20mm print</dd></div>
+          </dl>
+
+          <div class="grab">
+            <a href="/assets/logos/the-word/the-word-bare.svg" download>SVG</a>
+            <a class="ghost" href="/assets/logos/the-word/the-word-bare-reversed.svg" download>SVG reversed</a>
+            <a class="ghost" href="/assets/logos/the-word/the-word-bare-black.svg" download>SVG black</a>
+          </div>
+          <div class="sizes"><span>PNG, Midnight</span><a href="/assets/logos/the-word/png/the-word-bare-400.png" download>400px</a> <a href="/assets/logos/the-word/png/the-word-bare-800.png" download>800px</a> <a href="/assets/logos/the-word/png/the-word-bare-1600.png" download>1600px</a> <a href="/assets/logos/the-word/png/the-word-bare-3200.png" download>3200px</a></div>
+          <div class="sizes"><span>PNG, reversed</span><a href="/assets/logos/the-word/png/the-word-bare-reversed-400.png" download>400px</a> <a href="/assets/logos/the-word/png/the-word-bare-reversed-800.png" download>800px</a> <a href="/assets/logos/the-word/png/the-word-bare-reversed-1600.png" download>1600px</a> <a href="/assets/logos/the-word/png/the-word-bare-reversed-3200.png" download>3200px</a></div>
+        </div>
+
+        <div class="card" id="glyph">
+          <div class="card-h">
+            <h3>Microphone glyph</h3>
+            <span class="meta">Alternate · 725.48 × 720 · SVG 22 KB</span>
+          </div>
+          <code class="slug">the-word-glyph.svg</code>
+          <p class="use">The mark reduced to the microphone O. Favicons, app icons, profile pictures, stickers, watermarks, and any square that is too small for the wordmark to be read.</p>
+
+          <div class="two">
+            <div class="stage light"><img src="/assets/logos/the-word/the-word-glyph.svg" alt="Microphone glyph, Midnight ink on Parchment" loading="lazy"></div>
+            <div class="stage dark"><img src="/assets/logos/the-word/the-word-glyph-reversed.svg" alt="Microphone glyph, reversed on Midnight" loading="lazy"></div>
+          </div>
+
+          <dl class="specs">
+            <div><dt>Clear space</dt><dd>0.25× its own height, all four sides</dd></div>
+            <div><dt>Minimum width</dt><dd>24px screen · 8mm print</dd></div>
+          </dl>
+
+          <div class="grab">
+            <a href="/assets/logos/the-word/the-word-glyph.svg" download>SVG</a>
+            <a class="ghost" href="/assets/logos/the-word/the-word-glyph-reversed.svg" download>SVG reversed</a>
+            <a class="ghost" href="/assets/logos/the-word/the-word-glyph-black.svg" download>SVG black</a>
+          </div>
+          <div class="sizes"><span>PNG, Midnight</span><a href="/assets/logos/the-word/png/the-word-glyph-512.png" download>512px</a> <a href="/assets/logos/the-word/png/the-word-glyph-1024.png" download>1024px</a> <a href="/assets/logos/the-word/png/the-word-glyph-2048.png" download>2048px</a></div>
+          <div class="sizes"><span>PNG, reversed</span><a href="/assets/logos/the-word/png/the-word-glyph-reversed-512.png" download>512px</a> <a href="/assets/logos/the-word/png/the-word-glyph-reversed-1024.png" download>1024px</a> <a href="/assets/logos/the-word/png/the-word-glyph-reversed-2048.png" download>2048px</a></div>
+        </div>
+
+        <div class="card" id="heritage">
+          <div class="card-h">
+            <h3>Heritage lockup, EST 2018</h3>
+            <span class="meta">Alternate · 1000 × 397.13 · SVG 59 KB</span>
+          </div>
+          <code class="slug">the-word-heritage.svg</code>
+          <p class="use">The founding date lockup. Certificates, commemorative print, apparel, and anywhere the record of when this began is part of the point. Not the default mark.</p>
+
+          <div class="two">
+            <div class="stage light"><img src="/assets/logos/the-word/the-word-heritage.svg" alt="Heritage lockup, EST 2018, Midnight ink on Parchment" loading="lazy"></div>
+            <div class="stage dark"><img src="/assets/logos/the-word/the-word-heritage-reversed.svg" alt="Heritage lockup, EST 2018, reversed on Midnight" loading="lazy"></div>
+          </div>
+
+          <dl class="specs">
+            <div><dt>Clear space</dt><dd>0.4× the cap height of THE WORD, all four sides</dd></div>
+            <div><dt>Minimum width</dt><dd>140px screen · 30mm print</dd></div>
+          </dl>
+
+          <div class="grab">
+            <a href="/assets/logos/the-word/the-word-heritage.svg" download>SVG</a>
+            <a class="ghost" href="/assets/logos/the-word/the-word-heritage-reversed.svg" download>SVG reversed</a>
+            <a class="ghost" href="/assets/logos/the-word/the-word-heritage-black.svg" download>SVG black</a>
+          </div>
+          <div class="sizes"><span>PNG, Midnight</span><a href="/assets/logos/the-word/png/the-word-heritage-400.png" download>400px</a> <a href="/assets/logos/the-word/png/the-word-heritage-800.png" download>800px</a> <a href="/assets/logos/the-word/png/the-word-heritage-1600.png" download>1600px</a> <a href="/assets/logos/the-word/png/the-word-heritage-3200.png" download>3200px</a></div>
+          <div class="sizes"><span>PNG, reversed</span><a href="/assets/logos/the-word/png/the-word-heritage-reversed-400.png" download>400px</a> <a href="/assets/logos/the-word/png/the-word-heritage-reversed-800.png" download>800px</a> <a href="/assets/logos/the-word/png/the-word-heritage-reversed-1600.png" download>1600px</a> <a href="/assets/logos/the-word/png/the-word-heritage-reversed-3200.png" download>3200px</a></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="blk">
+      <div class="section-label">Ink</div>
+      <h2>Which colour, and where it is allowed.</h2>
+      <table>
+        <tr><th>File</th><th>Ink</th><th>Use it on</th></tr>
+        <tr><td><code>the-word-&lt;mark&gt;.svg</code></td><td><span class="sw" style="background:#0B1A2D;"></span>Midnight ink <code>#0B1A2D</code></td><td>The default. Use on Parchment and White.</td></tr>
+        <tr><td><code>the-word-&lt;mark&gt;-reversed.svg</code></td><td><span class="sw" style="background:#FFFFFF;border:1px solid var(--rule);"></span>Reversed, white <code>#FFFFFF</code></td><td>Use on Midnight, on Word Blue, and over photography that carries a Midnight scrim.</td></tr>
+        <tr><td><code>the-word-&lt;mark&gt;-black.svg</code></td><td><span class="sw" style="background:#000000;"></span>One colour, black <code>#000000</code></td><td>For single-colour reproduction only: embroidery, engraving, newsprint, stamps, and any vendor who asks for pure black. On screen use the Midnight ink instead.</td></tr>
+      </table>
+      <p class="note">There is no Flame version, no Ember version, and no Word Blue version of the mark. Word Blue is a ground the reversed mark sits on, not an ink the mark is drawn in.</p>
+    </div>
+
+    <div class="blk">
+      <div class="section-label">Which File</div>
+      <h2>SVG everywhere it is accepted.</h2>
+      <p class="lede">The vector is the master. Reach for a PNG only where the destination refuses SVG. Pick a PNG at least twice the width it will be displayed at, and never scale one up.</p>
+      <table>
+        <tr><th>Where it is going</th><th>Use</th><th>Why</th></tr>
+        <tr><td>A website or app</td><td><code>.svg</code></td><td>Sharp at every screen density, and smaller than the PNG it replaces.</td></tr>
+        <tr><td>Microsoft Word or PowerPoint</td><td><code>.svg</code></td><td>Insert, then Pictures. Stays sharp when printed or exported to PDF.</td></tr>
+        <tr><td>Google Docs or Slides</td><td><code>.png</code></td><td>Google will not import SVG. Use 1600px and let it scale down.</td></tr>
+        <tr><td>Canva</td><td><code>.png</code></td><td>SVG upload needs a paid plan. The 1600px file covers most layouts.</td></tr>
+        <tr><td>Email signature or newsletter</td><td><code>.png</code></td><td>Most email clients block SVG. Use 400px or 800px.</td></tr>
+        <tr><td>Figma, Illustrator, Affinity</td><td><code>.svg</code></td><td>Imports as editable paths and can join a shared library.</td></tr>
+        <tr><td>A printer, a banner, a vehicle</td><td><code>.svg</code></td><td>Send the vector and the hex values. Never send a PNG to a printer.</td></tr>
+        <tr><td>Embroidery or engraving</td><td><code>-black.svg</code></td><td>One colour, no anti-aliasing to misread. The vendor digitises from this.</td></tr>
+        <tr><td>A social profile picture</td><td><code>glyph</code></td><td>The wordmark is unreadable in a circle. The glyph is built for it.</td></tr>
+      </table>
+    </div>
+
+    <div class="blk">
+      <div class="section-label">Packs</div>
+      <h2>Everything at once.</h2>
+      <p class="lede">For handing to a printer, a partner, a new designer, or anyone who asked for "the logo files" and meant all of them. Each pack carries the usage rules as a text file alongside the artwork.</p>
+      <div class="packs">
+        <div class="pack">
+          <h3>Vector pack, SVG</h3>
+          <p>Every configuration in all three inks. For designers, printers, and anyone using Illustrator, Figma, or Word.</p>
+          <a href="/assets/downloads/the-word-logos-svg.zip" download>Download · 172 KB</a>
+        </div>
+        <div class="pack">
+          <h3>Raster pack, PNG</h3>
+          <p>Every configuration in all three inks, at four widths, transparent. For Google Docs, Slides, Canva, and email.</p>
+          <a href="/assets/downloads/the-word-logos-png.zip" download>Download · 974 KB</a>
+        </div>
+        <div class="pack">
+          <h3>Complete logo pack</h3>
+          <p>Vector, raster, and the icon set, with the usage rules included as a text file.</p>
+          <a href="/assets/downloads/the-word-logos-all.zip" download>Download · 1.1 MB</a>
+        </div>
+        <div class="pack">
+          <h3>Revival To My City</h3>
+          <p>The approved RTMC wordmark in all its published forms.</p>
+          <a href="/assets/downloads/revival-to-my-city-logos.zip" download>Download · 30 KB</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="blk">
+      <div class="section-label">Partnership Lockups</div>
+      <h2>When our mark sits beside someone else's.</h2>
+      <p class="lede">There is no published co-brand lockup yet, so build one from the rules rather than improvising a new mark.</p>
+      <div class="law">
+        <ol>
+          <li><b>Equal optical weight, never equal measurement.</b> Match the partner's mark to ours by how large it reads, not by matching pixel heights. A tall square mark set to our wordmark's height will overpower it.</li>
+          <li><b>Separate with a hairline rule.</b> A 1px vertical rule in Midnight at 20% opacity, with our full clear space on both sides of it. Never overlap, never touch, never enclose either mark in a box.</li>
+          <li><b>We lead when we are the host, and follow when we are the guest.</b> The organisation whose event, venue, or publication it is goes first.</li>
+          <li><b>The endorsement line is words, not artwork.</b> Set "In partnership with" or "A ministry of" in DM Sans 600, uppercase, letterspaced 0.18em, at 40% of the cap height of THE WORD. It sits above the marks, never between them.</li>
+          <li><b>A partnership lockup is approved once, then reused.</b> Send the first use to <a href="mailto:brand@theword.world">brand@theword.world</a>. It gets published here so nobody rebuilds it a second way.</li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="blk">
+      <div class="section-label">Fonts</div>
+      <h2>Two families, free to everyone.</h2>
+      <p class="lede">DM Serif and DM Sans were drawn as companions on shared proportions, which is why the pages read as one rhythm. Both are free on Google Fonts under the Open Font License, so every volunteer, partner, and field team can install them at no cost. Brand Guide <a href="/brand/#type">§04</a> governs how they are set.</p>
+      <div class="fonts">
+        <div class="font">
+          <div class="aa" style="font-family:'DM Serif Display', Georgia, 'Times New Roman', serif;">Aa</div>
+          <div class="fmeta">
+            <h3>DM Serif Display</h3>
+            <span class="role">Headlines</span>
+            <p>Every headline and every display numeral. Sentence case, at most one italic word for emphasis. One weight exists, so there is no bold: go bigger instead.</p>
+            <a href="https://fonts.google.com/specimen/DM+Serif+Display" rel="noopener">Get it on Google Fonts</a>
+          </div>
+        </div>
+        <div class="font">
+          <div class="aa" style="font-family:'DM Serif Text', Georgia, 'Times New Roman', serif;">Aa</div>
+          <div class="fmeta">
+            <h3>DM Serif Text</h3>
+            <span class="role">Pull quotes</span>
+            <p>Scripture, pull quotes, and section headings. Never below 22px, where it turns harder to read rather than more formal.</p>
+            <a href="https://fonts.google.com/specimen/DM+Serif+Text" rel="noopener">Get it on Google Fonts</a>
+          </div>
+        </div>
+        <div class="font">
+          <div class="aa" style="font-family:'DM Sans', -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;">Aa</div>
+          <div class="fmeta">
+            <h3>DM Sans</h3>
+            <span class="role">Everything else</span>
+            <p>Body copy, navigation, buttons, eyebrows, labels, captions, and tables. True bold and true italics. This is the face the wordmark was drawn beside.</p>
+            <a href="https://fonts.google.com/specimen/DM+Sans" rel="noopener">Get it on Google Fonts</a>
+          </div>
+        </div>
+      </div>
+      <p class="note">On the web, paste this into the <code>&lt;head&gt;</code> before your stylesheet. It loads all three faces in the weights this system uses, and nothing it does not.</p>
+      <pre>&lt;link rel="preconnect" href="https://fonts.googleapis.com"&gt;
+&lt;link rel="preconnect" href="https://fonts.gstatic.com" crossorigin&gt;
+&lt;link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&amp;family=DM+Serif+Text:ital@0;1&amp;family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&amp;display=swap" rel="stylesheet"&gt;</pre>
+      <p class="note">In Word, Canva, or Adobe, install the families from the Google Fonts links above rather than substituting. Georgia is the serif fallback and Arial the sans fallback when a system genuinely cannot take a font, for example an email template or a government form. Never substitute a different display face.</p>
+    </div>
+
+    <div class="blk">
+      <div class="section-label">Photography and Video</div>
+      <h2>Real people. Real fire. Real change.</h2>
+      <p class="lede">The photographs and footage in <a href="/ai/assets.json">the published inventory</a> are the approved library. Brand Guide <a href="/brand/#media">§06</a> governs how they are used, and two rules matter more than the rest.</p>
+      <div class="law">
+        <ol>
+          <li><b>Never generate or substitute imagery of people or ministry.</b> No stock, no AI, no illustration standing in for a moment that did not happen. If the picture you need does not exist, request it and leave the slot empty.</li>
+          <li><b>Type over footage sits on a Midnight scrim at roughly 70% at the text, and is White or Parchment.</b> Never Flame, never Ember, over photography.</li>
+        </ol>
+      </div>
+      <p class="note">Need a photograph or a clip that is not in the library: <a href="mailto:brand@theword.world">brand@theword.world</a>. Say what it is for and what has to be visible in it.</p>
+    </div>
+
+    <div class="blk">
+      <div class="section-label">For Agents</div>
+      <h2>Everything here is machine-readable.</h2>
+      <p class="note">Every file on this page is listed in <a href="/ai/assets.json">/ai/assets.json</a> with its status, its approved grounds, its clear space, its minimum size, and its usage note. An agent choosing a logo reads that file rather than this one, and <a href="/ai/manifest.json">/ai/manifest.json</a> carries its checksum. Provenance for each master, including how the artwork was produced, is recorded there.</p>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a href="/" aria-label="THE WORD FOR ALL THE WORLD, portal home"><img src="/assets/logos/the-word/the-word-horizontal-reversed.svg" alt="THE WORD FOR ALL THE WORLD"></a>
+    <span>Every tribe. Every tongue. Every nation. EVERY1.</span>
+    <span>brand.theword.world · Internal use</span>
+  </div>
+</footer>
+
+</body>
+</html>

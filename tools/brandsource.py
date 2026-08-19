@@ -529,7 +529,11 @@ def scan_assets() -> list:
     """Inventory of every published asset, taken from the filesystem."""
     out = []
     base = os.path.join(REPO, "assets")
-    for root, _dirs, files in os.walk(base):
+    for root, dirs, files in os.walk(base):
+        # A leading underscore means working material, not a published asset:
+        # _masters holds the approved artwork every logo is derived from, and
+        # _inbox holds files on their way to becoming masters. Neither ships.
+        dirs[:] = [d for d in dirs if not d.startswith("_")]
         for name in sorted(files):
             if name.startswith("."):
                 continue
@@ -554,11 +558,14 @@ def published_pages() -> list:
     """Every human-facing page in the portal, for the sitemap and llms.txt."""
     pages = []
     for root, dirs, files in os.walk(REPO):
+        # assets/ is walked rather than skipped: it holds the raw files, but it also
+        # holds the Assets page. Only directories with an index.html become pages, so
+        # the media subfolders are picked up by neither.
         dirs[:] = [
             d
             for d in dirs
-            if d
-            not in {".git", ".github", ".wrangler", "assets", "tools", "ai", "ai-source", ".claude", "skills", "archive"}
+            if not d.startswith("_")
+            and d not in {".git", ".github", ".wrangler", "tools", "ai", "ai-source", ".claude", "skills", "archive"}
         ]
         if "index.html" in files:
             rel = os.path.relpath(root, REPO).replace(os.sep, "/")

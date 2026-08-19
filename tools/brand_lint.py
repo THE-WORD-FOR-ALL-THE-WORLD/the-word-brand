@@ -278,6 +278,28 @@ def check_skill_copies():
         err("L11", "ai/SKILL.md and skills/the-word-brand/SKILL.md have drifted apart. Run tools/build_ai.py.")
 
 
+def check_logo_sources(files: list):
+    """
+    L12: every logo a live page shows comes from the published set.
+
+    The retired 368x32 wordmark PNGs live in archive/ so an archived guide still
+    renders. Nothing in the live portal may reach back for them, and no page may
+    link straight at a master, which is working artwork rather than a published file.
+    """
+    published = "/assets/logos/the-word/"
+    allowed_other = ("/assets/logos/rtmc/",)
+    for rel in files:
+        s = bs.read(os.path.join(REPO, rel))
+        for m in re.finditer(r'(?:src|href)="(/assets/logos/[^"]+)"', s):
+            url = m.group(1)
+            if url.startswith(published) or url.startswith(allowed_other):
+                continue
+            if "/_masters/" in url or "/_inbox/" in url:
+                err("L12", f"{rel}: links to working artwork {url}. Link to the published file.")
+            else:
+                err("L12", f"{rel}: uses a retired logo {url}. The published marks are at {published}.")
+
+
 # ---------------------------------------------------------------- main
 
 
@@ -302,6 +324,7 @@ def main() -> int:
     check_text_on_flame(files)
     check_fonts(files)
     check_asset_links(files)
+    check_logo_sources(files)
     check_navigation(files)
     check_skill_copies()
     if os.path.isdir(ai_dir):
