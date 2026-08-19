@@ -256,6 +256,105 @@ RTMC_CONFIGS = [
     },
 ]
 
+# School of the Local Church. Two tones, and the lion is built so the ground does
+# half the drawing: its "dark" structure sits at Midnight on both inks, so on paper
+# it is the ink and on Midnight it becomes the ground showing through, while the
+# "light" interior carries the shape either way. Only the text has to flip.
+SLC_INKS = {
+    "": {
+        "hex": "#0B1A2D",
+        "roles": {"dark": "#0B1A2D", "light": "#FFFFFF", "text": "#0B1A2D"},
+        "name": "Two-tone, Midnight and White",
+        "grounds": ["parchment", "white"],
+        "note": "The default. Use on Parchment and White.",
+    },
+    "-reversed": {
+        "hex": "#FFFFFF",
+        "roles": {"dark": "#0B1A2D", "light": "#FFFFFF", "text": "#FFFFFF"},
+        "name": "Reversed",
+        "grounds": ["midnight", "photography with a Midnight scrim"],
+        "note": (
+            "For Midnight and for scrimmed footage. The lion is unchanged: its dark "
+            "structure becomes the ground showing through. Only the wordmark flips to white."
+        ),
+    },
+    "-black": {
+        "hex": "#000000",
+        "roles": {"dark": "#000000", "light": "#FFFFFF", "text": "#000000"},
+        "name": "One colour, black",
+        "grounds": ["white", "parchment"],
+        "note": (
+            "Embroidery, engraving, newsprint, and stamps. The interior knocks out to white "
+            "rather than filling in, which is what keeps the lion from becoming a blob."
+        ),
+    },
+}
+
+SLC_CONFIGS = [
+    {
+        "slug": "horizontal",
+        "master": "school-horizontal",
+        "name": "Horizontal lockup",
+        "primary": True,
+        "clear": 0.5,
+        "min_px": 190,
+        "min_mm": 42,
+        "use": (
+            "The default mark. Course materials, certificates, slide masters, letterhead, and "
+            "anywhere the space is wider than it is tall."
+        ),
+    },
+    {
+        "slug": "stacked",
+        "master": "school-stacked",
+        "name": "Stacked lockup, EST 2024",
+        "primary": False,
+        "clear": 0.5,
+        "min_px": 150,
+        "min_mm": 34,
+        "use": (
+            "Square and portrait spaces, and the form that carries the founding date: covers, "
+            "posters, apparel, and commemorative print."
+        ),
+    },
+    {
+        "slug": "lion",
+        "master": "school-lion",
+        "name": "The lion",
+        "primary": False,
+        "cap_is_height": True,
+        "square": True,
+        "clear": 0.25,
+        "min_px": 40,
+        "min_mm": 12,
+        "use": (
+            "The crowned Lion of Judah on its own. Profile pictures, app icons, stickers, "
+            "embossing, and any square too small to read words in. It is detailed, so it has "
+            "a higher floor than a wordmark would."
+        ),
+    },
+    {
+        "slug": "cobrand",
+        # Composed from two approved masters, like RTMC's.
+        "compose": {
+            "left": "the-word-bare",
+            "right": "school-horizontal",
+            "ratio": 0.9,
+            "gap": 0.55,
+            "rule": 0.05,
+        },
+        "name": "Co-brand lockup with the parent",
+        "primary": False,
+        "clear": 0.5,
+        "min_px": 330,
+        "min_mm": 74,
+        "use": (
+            "THE WORD beside the School, divided by a hairline rule. This is how this door "
+            "carries its endorsement: the parent is shown rather than stated."
+        ),
+    },
+]
+
 # One entry per brand that publishes marks. `dir` is the folder under assets/logos/
 # and `stem` prefixes every filename, so a mark is identifiable from its name alone.
 # Only the parent brand cuts the site icon set, which is what `favicons` gates.
@@ -285,6 +384,22 @@ BRANDS = [
             "and one-colour collapse to a single ink."
         ),
         "favicons": False,
+    },
+    {
+        "key": "slc",
+        "name": "School of the Local Church",
+        "dir": "school",
+        "stem": "school",
+        "cap_ref": "the cap height of School",
+        "configs": SLC_CONFIGS,
+        "inks": SLC_INKS,
+        "favicons": False,
+        "intro": (
+            "The School is the TRAIN door, and its mark is the crowned Lion of Judah. It is "
+            "two-tone: the lion's structure in Midnight, its interior in White. The lion is "
+            "built so the ground does half the drawing, which is why the same artwork reads "
+            "on paper and on Midnight without being redrawn."
+        ),
     },
 ]
 
@@ -353,12 +468,16 @@ def primary_cap(shapes, box):
     Takes the median height of the sizeable subpaths, which lands on the repeated
     letter height and ignores both an oversized initial and a small sub-line. Used
     to size two marks against each other in a co-brand lockup.
+
+    Only lettering counts. A mark whose artwork is tagged with its own roles, like the
+    School's lion, would otherwise be measured by its illustration rather than by the
+    words beside it, and the parent would end up sized against a lion's mane.
     """
     floor = (box[3] - box[1]) * 0.25
     hs = sorted(
         max(p[1] for p in sp) - min(p[1] for p in sp)
         for sh in shapes
-        if (sh.role or "word") == "word"
+        if (sh.role or "word") in ("word", "text")
         for sp in sh.subpaths
         if max(p[1] for p in sp) - min(p[1] for p in sp) > floor
     )
@@ -476,7 +595,10 @@ def make_svg(brand, master, cfg, ink_suffix, ink):
         attrs = m.group(1)
         if attrs.rstrip().endswith("/"):
             return m.group(0)
-        return f'<g{attrs} fill="{ink_for(ink, None)}">'
+        # A group may name the part it holds, which is how a mark whose text and
+        # artwork are inked differently keeps them apart.
+        role = re.search(r'data-role="([^"]*)"', attrs)
+        return f'<g{attrs} fill="{ink_for(ink, role.group(1) if role else None)}">'
 
     body = _G_OPEN_RE.sub(repaint_group, body)
 
@@ -1209,6 +1331,12 @@ PACKS = [
             "assets/logos/the-word/favicon/*.png",
         ],
         "readme": True,
+    },
+    {
+        "file": "assets/downloads/school-of-the-local-church-logos.zip",
+        "name": "School of the Local Church",
+        "note": "The crowned lion in every published form: horizontal, stacked, the lion alone, and the co-brand lockup.",
+        "globs": ["assets/logos/school/*.svg"],
     },
     {
         "file": "assets/downloads/revival-to-my-city-logos.zip",

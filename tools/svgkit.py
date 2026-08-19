@@ -289,7 +289,7 @@ def load(path):
 
     shapes = []
     # Inherited state per nesting level: transform, fill, and the value currentColor resolves to.
-    stack = [(IDENTITY, "#000000", "#000000")]
+    stack = [(IDENTITY, "#000000", "#000000", None)]
 
     for m in _TAG_RE.finditer(src):
         if m.group(4):  # </g>
@@ -298,9 +298,10 @@ def load(path):
             continue
         tag, attrs_raw, selfclose = m.group(1), m.group(2) or "", m.group(3)
         attrs = dict(_ATTR_RE.findall(attrs_raw))
-        pmat, pfill, pcolor = stack[-1]
+        pmat, pfill, pcolor, prole = stack[-1]
 
         mat = mat_mul(pmat, parse_transform(attrs.get("transform", "")))
+        role = attrs.get("data-role", prole)
         color = attrs.get("color", pcolor)
         fill = attrs.get("fill", pfill)
         if fill == "currentColor":
@@ -308,11 +309,11 @@ def load(path):
 
         if tag == "svg":
             # The root can carry color/fill that everything below inherits.
-            stack[0] = (mat, fill, color)
+            stack[0] = (mat, fill, color, role)
             continue
         if tag == "g":
             if not selfclose:
-                stack.append((mat, fill, color))
+                stack.append((mat, fill, color, role))
             continue
 
         if fill.lower() in ("none", "transparent"):
@@ -324,7 +325,7 @@ def load(path):
         subs = [s for s in subs if len(s) >= 3]
         if subs:
             shapes.append(
-                Shape(subs, fill, attrs.get("fill-rule", "nonzero"), attrs.get("data-role"))
+                Shape(subs, fill, attrs.get("fill-rule", "nonzero"), role)
             )
 
     return shapes, viewbox
@@ -359,13 +360,14 @@ def _hex_rgb(c):
 
 def _coverage(shape, w, h, xform, ss):
     """
-    Scanline fill of one shape into a coverage bytearray, honouring its fill rule.
+    Scanline fill of one shape, honouring its fill rule.
 
-    Supersampled ss× vertically and horizontally, then box-filtered by the caller,
-    which is what gives the edges their antialiasing.
+    Only the shape's own bounding box is rasterized, not the whole canvas. A mark like
+    the School's lion is dozens of small shapes on a large canvas, and filling the full
+    canvas for each one made the build spend most of its time on empty pixels.
+
+    Returns (coverage, width, height, x_offset, y_offset) in supersampled pixels.
     """
-    W, H = w * ss, h * ss
-    cov = bytearray(W * H)
     edges = []
     for sp in shape.subpaths:
         pts = [xform(x, y) for x, y in sp]
@@ -377,39 +379,54 @@ def _coverage(shape, w, h, xform, ss):
                 continue
             edges.append((min(y0, y1), max(y0, y1), x0, y0, x1, y1, 1 if y1 > y0 else -1))
     if not edges:
-        return cov, W, H
+        return bytearray(), 0, 0, 0, 0
 
+    CW, CH = w * ss, h * ss
+    xs = [e[2] for e in edges] + [e[4] for e in edges]
+    ox = max(0, int(math.floor(min(xs))))
+    ex = min(CW, int(math.ceil(max(xs))) + 1)
+    oy = max(0, int(math.floor(min(e[0] for e in edges))))
+    ey = min(CH, int(math.ceil(max(e[1] for e in edges))) + 1)
+    # Snap the origin to the supersample grid so the box filter lines up with pixels.
+    ox -= ox % ss
+    oy -= oy % ss
+    ex += (-(ex - ox)) % ss
+    ey += (-(ey - oy)) % ss
+    ex, ey = min(ex, CW), min(ey, CH)
+    W, H = ex - ox, ey - oy
+    if W <= 0 or H <= 0:
+        return bytearray(), 0, 0, 0, 0
+
+    cov = bytearray(W * H)
     edges.sort(key=lambda e: e[0])
-    ymin = max(0, int(math.floor(min(e[0] for e in edges))))
-    ymax = min(H - 1, int(math.ceil(max(e[1] for e in edges))))
     evenodd = shape.rule == "evenodd"
     active, nxt = [], 0
 
-    for py in range(ymin, ymax + 1):
-        yc = py + 0.5
+    for py in range(H):
+        yc = oy + py + 0.5
         while nxt < len(edges) and edges[nxt][0] <= yc:
             active.append(edges[nxt])
             nxt += 1
         if active:
             active = [e for e in active if e[1] > yc]
-        xs = []
+        xs_hits = []
         for lo, hi, x0, y0, x1, y1, wind in active:
             if lo <= yc < hi:
-                xs.append((x0 + (yc - y0) * (x1 - x0) / (y1 - y0), wind))
-        if not xs:
+                xs_hits.append((x0 + (yc - y0) * (x1 - x0) / (y1 - y0), wind))
+        if not xs_hits:
             continue
-        xs.sort()
+        xs_hits.sort()
         row = py * W
         if evenodd:
-            for i in range(0, len(xs) - 1, 2):
-                _span(cov, row, xs[i][0], xs[i + 1][0], W)
+            for i in range(0, len(xs_hits) - 1, 2):
+                _span(cov, row, xs_hits[i][0] - ox, xs_hits[i + 1][0] - ox, W)
         else:
             depth = 0
-            for i in range(len(xs) - 1):
-                depth += xs[i][1]
+            for i in range(len(xs_hits) - 1):
+                depth += xs_hits[i][1]
                 if depth != 0:
-                    _span(cov, row, xs[i][0], xs[i + 1][0], W)
-    return cov, W, H
+                    _span(cov, row, xs_hits[i][0] - ox, xs_hits[i + 1][0] - ox, W)
+    return cov, W, H, ox, oy
 
 
 def _span(cov, row, xa, xb, W):
@@ -437,7 +454,10 @@ def rasterize(shapes, width, height, xform, supersample=4):
         rgb = _hex_rgb(sh.fill)
         if rgb is None:
             continue
-        cov, W, H = _coverage(sh, width, height, xform, ss)
-        mask = Image.frombytes("L", (W, H), bytes(cov)).resize((width, height), Image.BOX)
-        out.paste(Image.new("RGBA", (width, height), rgb + (255,)), (0, 0), mask)
+        cov, W, H, ox, oy = _coverage(sh, width, height, xform, ss)
+        if not W or not H:
+            continue
+        mask = Image.frombytes("L", (W, H), bytes(cov)).resize((W // ss, H // ss), Image.BOX)
+        tile = Image.new("RGBA", (W // ss, H // ss), rgb + (255,))
+        out.paste(tile, (ox // ss, oy // ss), mask)
     return out

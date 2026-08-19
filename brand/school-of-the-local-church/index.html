@@ -105,8 +105,8 @@
   body.clean .sitenav .links a:hover{color:var(--ember);}
   body.clean .sitenav .links a.active{color:var(--midnight);border-bottom-color:rgba(11,26,45,.45);}
 
-  .markhero{background:var(--white);padding:clamp(104px,9vw,118px) 32px clamp(26px,3.4vw,38px);text-align:center;}
-  .markhero .mission{margin:0 auto;max-width:560px;font-size:clamp(18px,2.1vw,22px);line-height:1.5;color:rgba(11,26,45,.88);}
+  .markhero{background:var(--white);height:clamp(96px,8vw,112px);}
+  .missionlede{font-family:var(--serif-text);font-weight:400;font-size:clamp(23px,3vw,31px);line-height:1.35;max-width:22ch;margin:0 0 52px;color:var(--midnight);}
   .filmband{position:relative;height:min(58vh,520px);overflow:hidden;background:var(--midnight);}
   .filmband video,.filmband img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
   @media (prefers-reduced-motion: reduce){.filmband video{display:none;}}
@@ -200,8 +200,8 @@
 
 <nav class="sitenav">
   <div class="bar">
-    <a class="logo" href="/" aria-label="THE WORD FOR ALL THE WORLD, portal home">
-      <img src="/assets/logos/the-word/the-word-horizontal-reversed.svg" alt="THE WORD FOR ALL THE WORLD">
+    <a class="logo cobrand" href="/" aria-label="School of the Local Church, a ministry of THE WORD FOR ALL THE WORLD">
+      <img src="/assets/logos/school/school-cobrand-reversed.svg" alt="THE WORD FOR ALL THE WORLD and School of the Local Church">
     </a>
     <div class="links">
       <a href="/">Home</a>
@@ -221,7 +221,6 @@
     <h1>School of the <em>Local Church</em></h1>
     <p class="mission">Training the local church to know their authority in Christ and build a real relationship with Jesus.</p>
     <div class="tickrule"><span class="ln"></span><span class="tk"></span><span class="ln"></span></div>
-    <div class="endorse">A ministry of THE WORD FOR ALL THE WORLD</div>
   </div>
 </div>
 <div class="filmband">
@@ -313,16 +312,37 @@
     </div>
 
     <div class="blk">
-      <div class="lab">The seal</div>
-      <h2>Commissioned, not yet approved.</h2>
-      <p class="lede">The School's mark is its academic seal, recorded in Brand Guide &sect;11: a shield
-      bearing the Lion of Judah, ringed with the School's name, drawn in a single colour, with masters
-      for print, blind emboss, and wax. It is ecclesiastical, not governmental, and it is the only seal
-      in the house. It never appears on another door's work, and never as decoration to make a page
-      feel official.</p>
-      <div class="warn"><strong>Until the seal is approved and published here, the School's surfaces
-      carry the parent wordmark beside the stage word TRAIN, and certificates close with the two
-      signatures and the letterhead rule alone.</strong> No one draws an interim seal.</div>
+      <div class="lab">The mark</div>
+      <h2>A crowned lion, and a ground that does half the drawing.</h2>
+      <p class="lede">The mark is the Lion of Judah wearing a crown, beside <b>School</b> in the house serif over <b>OF THE LOCAL CHURCH</b> letterspaced in DM Sans. It is two tones and no more: the lion&rsquo;s structure in Midnight, its interior in White. That is the whole trick. The interior is not painted on, it is left open, so on paper the ground shows through as white and on Midnight the same artwork reads as a white lion with the ground doing the separating. One drawing, both grounds, nothing redrawn.</p>
+      <div class="marks">
+        <figure class="mark">
+          <div class="art"><img src="/assets/logos/school/school-horizontal.svg" alt="Horizontal lockup"></div>
+          <figcaption class="lbl"><b>Horizontal lockup</b>The default. Course materials, certificates, slide masters, and letterhead.</figcaption>
+        </figure>
+        <figure class="mark">
+          <div class="art dark"><img src="/assets/logos/school/school-horizontal-reversed.svg" alt="Reversed"></div>
+          <figcaption class="lbl"><b>Reversed</b>Midnight grounds and scrimmed footage. Only the wordmark flips; the lion is the same artwork.</figcaption>
+        </figure>
+        <figure class="mark">
+          <div class="art"><img src="/assets/logos/school/school-stacked.svg" alt="Stacked, EST 2024"></div>
+          <figcaption class="lbl"><b>Stacked, EST 2024</b>Square and portrait spaces, and the form that carries the founding date.</figcaption>
+        </figure>
+        <figure class="mark">
+          <div class="art"><img src="/assets/logos/school/school-lion.svg" alt="The lion"></div>
+          <figcaption class="lbl"><b>The lion</b>The mark reduced to the lion. Profile pictures, app icons, stickers, and embossing.</figcaption>
+        </figure>
+        <figure class="mark">
+          <div class="art"><img src="/assets/logos/school/school-cobrand.svg" alt="Co-brand lockup"></div>
+          <figcaption class="lbl"><b>Co-brand lockup</b>THE WORD beside the door, divided by a hairline. This is how the School carries its endorsement.</figcaption>
+        </figure>
+        <figure class="mark">
+          <div class="art"><img src="/assets/logos/school/school-horizontal-black.svg" alt="One colour"></div>
+          <figcaption class="lbl"><b>One colour</b>Embroidery, engraving, and newsprint. The interior knocks out to white rather than filling in.</figcaption>
+        </figure>
+      </div>
+      <div class="warn"><strong>Set in the house serif and DM Sans, with the lion converted to outlines.</strong> The mark is artwork, not live text, so it never needs the font installed and never reflows. Do not re-set it in another face, do not stretch it, do not recolour the lion, and do not fill in its interior. The four-colour version it was designed from is superseded; the light blue in it was never a brand colour. If a size or colour you need does not exist, request it.</div>
+      <p class="prov">The editable original lives at <a href="https://canva.link/5577z0y930kvzam" rel="noopener">https://canva.link/5577z0y930kvzam</a>. Changes start there and come back through the inbox, because the published files are generated and a hand edit to one of them is overwritten by the next build.</p>
     </div>
 
     <div class="blk">

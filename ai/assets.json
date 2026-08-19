@@ -155,6 +155,70 @@
           "screen": "295px",
           "print": "66mm"
         }
+      },
+      {
+        "brand": "slc",
+        "slug": "horizontal",
+        "name": "Horizontal lockup",
+        "primary": true,
+        "use": "The default mark. Course materials, certificates, slide masters, letterhead, and anywhere the space is wider than it is tall.",
+        "aspect": 2.5122,
+        "capHeight": 62.51,
+        "clearSpace": "0.5x the cap height of School on all four sides",
+        "clearSpaceReference": "the cap height of School",
+        "clearSpaceRatio": 0.5,
+        "minimumWidth": {
+          "screen": "190px",
+          "print": "42mm"
+        }
+      },
+      {
+        "brand": "slc",
+        "slug": "stacked",
+        "name": "Stacked lockup, EST 2024",
+        "primary": false,
+        "use": "Square and portrait spaces, and the form that carries the founding date: covers, posters, apparel, and commemorative print.",
+        "aspect": 1.2533,
+        "capHeight": 122.76,
+        "clearSpace": "0.5x the cap height of School on all four sides",
+        "clearSpaceReference": "the cap height of School",
+        "clearSpaceRatio": 0.5,
+        "minimumWidth": {
+          "screen": "150px",
+          "print": "34mm"
+        }
+      },
+      {
+        "brand": "slc",
+        "slug": "lion",
+        "name": "The lion",
+        "primary": false,
+        "use": "The crowned Lion of Judah on its own. Profile pictures, app icons, stickers, embossing, and any square too small to read words in. It is detailed, so it has a higher floor than a wordmark would.",
+        "aspect": 0.7163,
+        "capHeight": 361.91,
+        "clearSpace": "0.25x its own height on all four sides",
+        "clearSpaceReference": "its own height",
+        "clearSpaceRatio": 0.25,
+        "minimumWidth": {
+          "screen": "40px",
+          "print": "12mm"
+        }
+      },
+      {
+        "brand": "slc",
+        "slug": "cobrand",
+        "name": "Co-brand lockup with the parent",
+        "primary": false,
+        "use": "THE WORD beside the School, divided by a hairline rule. This is how this door carries its endorsement: the parent is shown rather than stated.",
+        "aspect": 4.917,
+        "capHeight": 33.8,
+        "clearSpace": "0.5x the cap height of School on all four sides",
+        "clearSpaceReference": "the cap height of School",
+        "clearSpaceRatio": 0.5,
+        "minimumWidth": {
+          "screen": "330px",
+          "print": "74mm"
+        }
       }
     ],
     "packs": [
@@ -174,6 +238,11 @@
         "note": "Vector, raster, and the icon set, with the usage rules included as a text file."
       },
       {
+        "name": "School of the Local Church",
+        "url": "https://brand.theword.world/assets/downloads/school-of-the-local-church-logos.zip",
+        "note": "The crowned lion in every published form: horizontal, stacked, the lion alone, and the co-brand lockup."
+      },
+      {
         "name": "Revival To My City",
         "url": "https://brand.theword.world/assets/downloads/revival-to-my-city-logos.zip",
         "note": "The approved RTMC wordmark in all its published forms."
@@ -185,14 +254,14 @@
       }
     ]
   },
-  "version": "6.3",
+  "version": "6.4",
   "messagingVersion": "1.0",
   "updated": "2026-08-19",
   "authority": "canonical",
   "rule": "Use these assets. Never generate photography or video of people or ministry, and never substitute stock. If the asset you need is not listed, request it and leave the slot empty.",
   "counts": {
-    "total": 151,
-    "approved": 145,
+    "total": 208,
+    "approved": 202,
     "counterExamples": 0
   },
   "assets": [
@@ -1023,6 +1092,1032 @@
       },
       "note": "The mark. Posters, city instances, stage backdrops, social, and every surface where the name is introduced. The brackets around MY CITY are a variable: a city instance may replace the words inside them with its own city, and nothing else in the mark moves.  Vector master, scale freely.",
       "name": "Primary lockup, two-tone, midnight and word blue"
+    },
+    {
+      "file": "assets/logos/school/png/school-cobrand-1600.png",
+      "url": "https://brand.theword.world/assets/logos/school/png/school-cobrand-1600.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 54652,
+      "status": "approved",
+      "grounds": [],
+      "configuration": "cobrand",
+      "clearSpace": "0.5x the cap height of School on all four sides",
+      "minimumWidth": {
+        "screen": "330px",
+        "print": "74mm"
+      },
+      "note": "THE WORD beside the School, divided by a hairline rule. This is how this door carries its endorsement: the parent is shown rather than stated.  Raster at 1600px wide, never scale up.",
+      "name": "Co-brand lockup with the parent, two-tone, midnight and white"
+    },
+    {
+      "file": "assets/logos/school/png/school-cobrand-3200.png",
+      "url": "https://brand.theword.world/assets/logos/school/png/school-cobrand-3200.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 118336,
+      "status": "approved",
+      "grounds": [],
+      "configuration": "cobrand",
+      "clearSpace": "0.5x the cap height of School on all four sides",
+      "minimumWidth": {
+        "screen": "330px",
+        "print": "74mm"
+      },
+      "note": "THE WORD beside the School, divided by a hairline rule. This is how this door carries its endorsement: the parent is shown rather than stated.  Raster at 3200px wide, never scale up.",
+      "name": "Co-brand lockup with the parent, two-tone, midnight and white"
+    },
+    {
+      "file": "assets/logos/school/png/school-cobrand-400.png",
+      "url": "https://brand.theword.world/assets/logos/school/png/school-cobrand-400.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 11581,
+      "status": "approved",
+      "grounds": [],
+      "configuration": "cobrand",
+      "clearSpace": "0.5x the cap height of School on all four sides",
+      "minimumWidth": {
+        "screen": "330px",
+        "print": "74mm"
+      },
+      "note": "THE WORD beside the School, divided by a hairline rule. This is how this door carries its endorsement: the parent is shown rather than stated.  Raster at 400px wide, never scale up.",
+      "name": "Co-brand lockup with the parent, two-tone, midnight and white"
+    },
+    {
+      "file": "assets/logos/school/png/school-cobrand-800.png",
+      "url": "https://brand.theword.world/assets/logos/school/png/school-cobrand-800.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 25495,
+      "status": "approved",
+      "grounds": [],
+      "configuration": "cobrand",
+      "clearSpace": "0.5x the cap height of School on all four sides",
+      "minimumWidth": {
+        "screen": "330px",
+        "print": "74mm"
+      },
+      "note": "THE WORD beside the School, divided by a hairline rule. This is how this door carries its endorsement: the parent is shown rather than stated.  Raster at 800px wide, never scale up.",
+      "name": "Co-brand lockup with the parent, two-tone, midnight and white"
+    },
+    {
+      "file": "assets/logos/school/png/school-cobrand-black-1600.png",
+      "url": "https://brand.theword.world/assets/logos/school/png/school-cobrand-black-1600.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 36556,
+      "status": "approved",
+      "grounds": [
+        "white",
+        "parchment"
+      ],
+      "configuration": "cobrand",
+      "clearSpace": "0.5x the cap height of School on all four sides",
+      "minimumWidth": {
+        "screen": "330px",
+        "print": "74mm"
+      },
+      "note": "THE WORD beside the School, divided by a hairline rule. This is how this door carries its endorsement: the parent is shown rather than stated. For single-colour reproduction only: embroidery, engraving, newsprint, stamps, and any vendor who asks for pure black. On screen use the Midnight ink instead. Raster at 1600px wide, never scale up.",
+      "name": "Co-brand lockup with the parent, one colour, black"
+    },
+    {
+      "file": "assets/logos/school/png/school-cobrand-black-3200.png",
+      "url": "https://brand.theword.world/assets/logos/school/png/school-cobrand-black-3200.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 83589,
+      "status": "approved",
+      "grounds": [
+        "white",
+        "parchment"
+      ],
+      "configuration": "cobrand",
+      "clearSpace": "0.5x the cap height of School on all four sides",
+      "minimumWidth": {
+        "screen": "330px",
+        "print": "74mm"
+      },
+      "note": "THE WORD beside the School, divided by a hairline rule. This is how this door carries its endorsement: the parent is shown rather than stated. For single-colour reproduction only: embroidery, engraving, newsprint, stamps, and any vendor who asks for pure black. On screen use the Midnight ink instead. Raster at 3200px wide, never scale up.",
+      "name": "Co-brand lockup with the parent, one colour, black"
+    },
+    {
+      "file": "assets/logos/school/png/school-cobrand-black-400.png",
+      "url": "https://brand.theword.world/assets/logos/school/png/school-cobrand-black-400.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 7356,
+      "status": "approved",
+      "grounds": [
+        "white",
+        "parchment"
+      ],
+      "configuration": "cobrand",
+      "clearSpace": "0.5x the cap height of School on all four sides",
+      "minimumWidth": {
+        "screen": "330px",
+        "print": "74mm"
+      },
+      "note": "THE WORD beside the School, divided by a hairline rule. This is how this door carries its endorsement: the parent is shown rather than stated. For single-colour reproduction only: embroidery, engraving, newsprint, stamps, and any vendor who asks for pure black. On screen use the Midnight ink instead. Raster at 400px wide, never scale up.",
+      "name": "Co-brand lockup with the parent, one colour, black"
+    },
+    {
+      "file": "assets/logos/school/png/school-cobrand-black-800.png",
+      "url": "https://brand.theword.world/assets/logos/school/png/school-cobrand-black-800.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 16376,
+      "status": "approved",
+      "grounds": [
+        "white",
+        "parchment"
+      ],
+      "configuration": "cobrand",
+      "clearSpace": "0.5x the cap height of School on all four sides",
+      "minimumWidth": {
+        "screen": "330px",
+        "print": "74mm"
+      },
+      "note": "THE WORD beside the School, divided by a hairline rule. This is how this door carries its endorsement: the parent is shown rather than stated. For single-colour reproduction only: embroidery, engraving, newsprint, stamps, and any vendor who asks for pure black. On screen use the Midnight ink instead. Raster at 800px wide, never scale up.",
+      "name": "Co-brand lockup with the parent, one colour, black"
+    },
+    {
+      "file": "assets/logos/school/png/school-cobrand-reversed-1600.png",
+      "url": "https://brand.theword.world/assets/logos/school/png/school-cobrand-reversed-1600.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 52799,
+      "status": "approved",
+      "grounds": [],
+      "configuration": "cobrand",
+      "clearSpace": "0.5x the cap height of School on all four sides",
+      "minimumWidth": {
+        "screen": "330px",
+        "print": "74mm"
+      },
+      "note": "THE WORD beside the School, divided by a hairline rule. This is how this door carries its endorsement: the parent is shown rather than stated.  Raster at 1600px wide, never scale up.",
+      "name": "Co-brand lockup with the parent, reversed"
+    },
+    {
+      "file": "assets/logos/school/png/school-cobrand-reversed-3200.png",
+      "url": "https://brand.theword.world/assets/logos/school/png/school-cobrand-reversed-3200.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 114917,
+      "status": "approved",
+      "grounds": [],
+      "configuration": "cobrand",
+      "clearSpace": "0.5x the cap height of School on all four sides",
+      "minimumWidth": {
+        "screen": "330px",
+        "print": "74mm"
+      },
+      "note": "THE WORD beside the School, divided by a hairline rule. This is how this door carries its endorsement: the parent is shown rather than stated.  Raster at 3200px wide, never scale up.",
+      "name": "Co-brand lockup with the parent, reversed"
+    },
+    {
+      "file": "assets/logos/school/png/school-cobrand-reversed-400.png",
+      "url": "https://brand.theword.world/assets/logos/school/png/school-cobrand-reversed-400.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 10567,
+      "status": "approved",
+      "grounds": [],
+      "configuration": "cobrand",
+      "clearSpace": "0.5x the cap height of School on all four sides",
+      "minimumWidth": {
+        "screen": "330px",
+        "print": "74mm"
+      },
+      "note": "THE WORD beside the School, divided by a hairline rule. This is how this door carries its endorsement: the parent is shown rather than stated.  Raster at 400px wide, never scale up.",
+      "name": "Co-brand lockup with the parent, reversed"
+    },
+    {
+      "file": "assets/logos/school/png/school-cobrand-reversed-800.png",
+      "url": "https://brand.theword.world/assets/logos/school/png/school-cobrand-reversed-800.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 24088,
+      "status": "approved",
+      "grounds": [],
+      "configuration": "cobrand",
+      "clearSpace": "0.5x the cap height of School on all four sides",
+      "minimumWidth": {
+        "screen": "330px",
+        "print": "74mm"
+      },
+      "note": "THE WORD beside the School, divided by a hairline rule. This is how this door carries its endorsement: the parent is shown rather than stated.  Raster at 800px wide, never scale up.",
+      "name": "Co-brand lockup with the parent, reversed"
+    },
+    {
+      "file": "assets/logos/school/png/school-horizontal-1600.png",
+      "url": "https://brand.theword.world/assets/logos/school/png/school-horizontal-1600.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 87856,
+      "status": "approved",
+      "grounds": [],
+      "configuration": "horizontal",
+      "clearSpace": "0.5x the cap height of School on all four sides",
+      "minimumWidth": {
+        "screen": "190px",
+        "print": "42mm"
+      },
+      "note": "The default mark. Course materials, certificates, slide masters, letterhead, and anywhere the space is wider than it is tall.  Raster at 1600px wide, never scale up.",
+      "name": "Horizontal lockup, two-tone, midnight and white"
+    },
+    {
+      "file": "assets/logos/school/png/school-horizontal-3200.png",
+      "url": "https://brand.theword.world/assets/logos/school/png/school-horizontal-3200.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 196034,
+      "status": "approved",
+      "grounds": [],
+      "configuration": "horizontal",
+      "clearSpace": "0.5x the cap height of School on all four sides",
+      "minimumWidth": {
+        "screen": "190px",
+        "print": "42mm"
+      },
+      "note": "The default mark. Course materials, certificates, slide masters, letterhead, and anywhere the space is wider than it is tall.  Raster at 3200px wide, never scale up.",
+      "name": "Horizontal lockup, two-tone, midnight and white"
+    },
+    {
+      "file": "assets/logos/school/png/school-horizontal-400.png",
+      "url": "https://brand.theword.world/assets/logos/school/png/school-horizontal-400.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 19659,
+      "status": "approved",
+      "grounds": [],
+      "configuration": "horizontal",
+      "clearSpace": "0.5x the cap height of School on all four sides",
+      "minimumWidth": {
+        "screen": "190px",
+        "print": "42mm"
+      },
+      "note": "The default mark. Course materials, certificates, slide masters, letterhead, and anywhere the space is wider than it is tall.  Raster at 400px wide, never scale up.",
+      "name": "Horizontal lockup, two-tone, midnight and white"
+    },
+    {
+      "file": "assets/logos/school/png/school-horizontal-800.png",
+      "url": "https://brand.theword.world/assets/logos/school/png/school-horizontal-800.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 41341,
+      "status": "approved",
+      "grounds": [],
+      "configuration": "horizontal",
+      "clearSpace": "0.5x the cap height of School on all four sides",
+      "minimumWidth": {
+        "screen": "190px",
+        "print": "42mm"
+      },
+      "note": "The default mark. Course materials, certificates, slide masters, letterhead, and anywhere the space is wider than it is tall.  Raster at 800px wide, never scale up.",
+      "name": "Horizontal lockup, two-tone, midnight and white"
+    },
+    {
+      "file": "assets/logos/school/png/school-horizontal-black-1600.png",
+      "url": "https://brand.theword.world/assets/logos/school/png/school-horizontal-black-1600.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 61731,
+      "status": "approved",
+      "grounds": [
+        "white",
+        "parchment"
+      ],
+      "configuration": "horizontal",
+      "clearSpace": "0.5x the cap height of School on all four sides",
+      "minimumWidth": {
+        "screen": "190px",
+        "print": "42mm"
+      },
+      "note": "The default mark. Course materials, certificates, slide masters, letterhead, and anywhere the space is wider than it is tall. For single-colour reproduction only: embroidery, engraving, newsprint, stamps, and any vendor who asks for pure black. On screen use the Midnight ink instead. Raster at 1600px wide, never scale up.",
+      "name": "Horizontal lockup, one colour, black"
+    },
+    {
+      "file": "assets/logos/school/png/school-horizontal-black-3200.png",
+      "url": "https://brand.theword.world/assets/logos/school/png/school-horizontal-black-3200.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 146192,
+      "status": "approved",
+      "grounds": [
+        "white",
+        "parchment"
+      ],
+      "configuration": "horizontal",
+      "clearSpace": "0.5x the cap height of School on all four sides",
+      "minimumWidth": {
+        "screen": "190px",
+        "print": "42mm"
+      },
+      "note": "The default mark. Course materials, certificates, slide masters, letterhead, and anywhere the space is wider than it is tall. For single-colour reproduction only: embroidery, engraving, newsprint, stamps, and any vendor who asks for pure black. On screen use the Midnight ink instead. Raster at 3200px wide, never scale up.",
+      "name": "Horizontal lockup, one colour, black"
+    },
+    {
+      "file": "assets/logos/school/png/school-horizontal-black-400.png",
+      "url": "https://brand.theword.world/assets/logos/school/png/school-horizontal-black-400.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 12076,
+      "status": "approved",
+      "grounds": [
+        "white",
+        "parchment"
+      ],
+      "configuration": "horizontal",
+      "clearSpace": "0.5x the cap height of School on all four sides",
+      "minimumWidth": {
+        "screen": "190px",
+        "print": "42mm"
+      },
+      "note": "The default mark. Course materials, certificates, slide masters, letterhead, and anywhere the space is wider than it is tall. For single-colour reproduction only: embroidery, engraving, newsprint, stamps, and any vendor who asks for pure black. On screen use the Midnight ink instead. Raster at 400px wide, never scale up.",
+      "name": "Horizontal lockup, one colour, black"
+    },
+    {
+      "file": "assets/logos/school/png/school-horizontal-black-800.png",
+      "url": "https://brand.theword.world/assets/logos/school/png/school-horizontal-black-800.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 26795,
+      "status": "approved",
+      "grounds": [
+        "white",
+        "parchment"
+      ],
+      "configuration": "horizontal",
+      "clearSpace": "0.5x the cap height of School on all four sides",
+      "minimumWidth": {
+        "screen": "190px",
+        "print": "42mm"
+      },
+      "note": "The default mark. Course materials, certificates, slide masters, letterhead, and anywhere the space is wider than it is tall. For single-colour reproduction only: embroidery, engraving, newsprint, stamps, and any vendor who asks for pure black. On screen use the Midnight ink instead. Raster at 800px wide, never scale up.",
+      "name": "Horizontal lockup, one colour, black"
+    },
+    {
+      "file": "assets/logos/school/png/school-horizontal-reversed-1600.png",
+      "url": "https://brand.theword.world/assets/logos/school/png/school-horizontal-reversed-1600.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 86969,
+      "status": "approved",
+      "grounds": [],
+      "configuration": "horizontal",
+      "clearSpace": "0.5x the cap height of School on all four sides",
+      "minimumWidth": {
+        "screen": "190px",
+        "print": "42mm"
+      },
+      "note": "The default mark. Course materials, certificates, slide masters, letterhead, and anywhere the space is wider than it is tall.  Raster at 1600px wide, never scale up.",
+      "name": "Horizontal lockup, reversed"
+    },
+    {
+      "file": "assets/logos/school/png/school-horizontal-reversed-3200.png",
+      "url": "https://brand.theword.world/assets/logos/school/png/school-horizontal-reversed-3200.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 191520,
+      "status": "approved",
+      "grounds": [],
+      "configuration": "horizontal",
+      "clearSpace": "0.5x the cap height of School on all four sides",
+      "minimumWidth": {
+        "screen": "190px",
+        "print": "42mm"
+      },
+      "note": "The default mark. Course materials, certificates, slide masters, letterhead, and anywhere the space is wider than it is tall.  Raster at 3200px wide, never scale up.",
+      "name": "Horizontal lockup, reversed"
+    },
+    {
+      "file": "assets/logos/school/png/school-horizontal-reversed-400.png",
+      "url": "https://brand.theword.world/assets/logos/school/png/school-horizontal-reversed-400.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 18899,
+      "status": "approved",
+      "grounds": [],
+      "configuration": "horizontal",
+      "clearSpace": "0.5x the cap height of School on all four sides",
+      "minimumWidth": {
+        "screen": "190px",
+        "print": "42mm"
+      },
+      "note": "The default mark. Course materials, certificates, slide masters, letterhead, and anywhere the space is wider than it is tall.  Raster at 400px wide, never scale up.",
+      "name": "Horizontal lockup, reversed"
+    },
+    {
+      "file": "assets/logos/school/png/school-horizontal-reversed-800.png",
+      "url": "https://brand.theword.world/assets/logos/school/png/school-horizontal-reversed-800.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 40484,
+      "status": "approved",
+      "grounds": [],
+      "configuration": "horizontal",
+      "clearSpace": "0.5x the cap height of School on all four sides",
+      "minimumWidth": {
+        "screen": "190px",
+        "print": "42mm"
+      },
+      "note": "The default mark. Course materials, certificates, slide masters, letterhead, and anywhere the space is wider than it is tall.  Raster at 800px wide, never scale up.",
+      "name": "Horizontal lockup, reversed"
+    },
+    {
+      "file": "assets/logos/school/png/school-lion-1024.png",
+      "url": "https://brand.theword.world/assets/logos/school/png/school-lion-1024.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 92154,
+      "status": "approved",
+      "grounds": [],
+      "configuration": "lion",
+      "clearSpace": "0.25x its own height on all four sides",
+      "minimumWidth": {
+        "screen": "40px",
+        "print": "12mm"
+      },
+      "note": "The crowned Lion of Judah on its own. Profile pictures, app icons, stickers, embossing, and any square too small to read words in. It is detailed, so it has a higher floor than a wordmark would.  Raster at 1024px wide, never scale up.",
+      "name": "The lion, two-tone, midnight and white"
+    },
+    {
+      "file": "assets/logos/school/png/school-lion-2048.png",
+      "url": "https://brand.theword.world/assets/logos/school/png/school-lion-2048.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 205833,
+      "status": "approved",
+      "grounds": [],
+      "configuration": "lion",
+      "clearSpace": "0.25x its own height on all four sides",
+      "minimumWidth": {
+        "screen": "40px",
+        "print": "12mm"
+      },
+      "note": "The crowned Lion of Judah on its own. Profile pictures, app icons, stickers, embossing, and any square too small to read words in. It is detailed, so it has a higher floor than a wordmark would.  Raster at 2048px wide, never scale up.",
+      "name": "The lion, two-tone, midnight and white"
+    },
+    {
+      "file": "assets/logos/school/png/school-lion-512.png",
+      "url": "https://brand.theword.world/assets/logos/school/png/school-lion-512.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 43589,
+      "status": "approved",
+      "grounds": [],
+      "configuration": "lion",
+      "clearSpace": "0.25x its own height on all four sides",
+      "minimumWidth": {
+        "screen": "40px",
+        "print": "12mm"
+      },
+      "note": "The crowned Lion of Judah on its own. Profile pictures, app icons, stickers, embossing, and any square too small to read words in. It is detailed, so it has a higher floor than a wordmark would.  Raster at 512px wide, never scale up.",
+      "name": "The lion, two-tone, midnight and white"
+    },
+    {
+      "file": "assets/logos/school/png/school-lion-black-1024.png",
+      "url": "https://brand.theword.world/assets/logos/school/png/school-lion-black-1024.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 70892,
+      "status": "approved",
+      "grounds": [
+        "white",
+        "parchment"
+      ],
+      "configuration": "lion",
+      "clearSpace": "0.25x its own height on all four sides",
+      "minimumWidth": {
+        "screen": "40px",
+        "print": "12mm"
+      },
+      "note": "The crowned Lion of Judah on its own. Profile pictures, app icons, stickers, embossing, and any square too small to read words in. It is detailed, so it has a higher floor than a wordmark would. For single-colour reproduction only: embroidery, engraving, newsprint, stamps, and any vendor who asks for pure black. On screen use the Midnight ink instead. Raster at 1024px wide, never scale up.",
+      "name": "The lion, one colour, black"
+    },
+    {
+      "file": "assets/logos/school/png/school-lion-black-2048.png",
+      "url": "https://brand.theword.world/assets/logos/school/png/school-lion-black-2048.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 174486,
+      "status": "approved",
+      "grounds": [
+        "white",
+        "parchment"
+      ],
+      "configuration": "lion",
+      "clearSpace": "0.25x its own height on all four sides",
+      "minimumWidth": {
+        "screen": "40px",
+        "print": "12mm"
+      },
+      "note": "The crowned Lion of Judah on its own. Profile pictures, app icons, stickers, embossing, and any square too small to read words in. It is detailed, so it has a higher floor than a wordmark would. For single-colour reproduction only: embroidery, engraving, newsprint, stamps, and any vendor who asks for pure black. On screen use the Midnight ink instead. Raster at 2048px wide, never scale up.",
+      "name": "The lion, one colour, black"
+    },
+    {
+      "file": "assets/logos/school/png/school-lion-black-512.png",
+      "url": "https://brand.theword.world/assets/logos/school/png/school-lion-black-512.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 30761,
+      "status": "approved",
+      "grounds": [
+        "white",
+        "parchment"
+      ],
+      "configuration": "lion",
+      "clearSpace": "0.25x its own height on all four sides",
+      "minimumWidth": {
+        "screen": "40px",
+        "print": "12mm"
+      },
+      "note": "The crowned Lion of Judah on its own. Profile pictures, app icons, stickers, embossing, and any square too small to read words in. It is detailed, so it has a higher floor than a wordmark would. For single-colour reproduction only: embroidery, engraving, newsprint, stamps, and any vendor who asks for pure black. On screen use the Midnight ink instead. Raster at 512px wide, never scale up.",
+      "name": "The lion, one colour, black"
+    },
+    {
+      "file": "assets/logos/school/png/school-lion-reversed-1024.png",
+      "url": "https://brand.theword.world/assets/logos/school/png/school-lion-reversed-1024.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 92154,
+      "status": "approved",
+      "grounds": [],
+      "configuration": "lion",
+      "clearSpace": "0.25x its own height on all four sides",
+      "minimumWidth": {
+        "screen": "40px",
+        "print": "12mm"
+      },
+      "note": "The crowned Lion of Judah on its own. Profile pictures, app icons, stickers, embossing, and any square too small to read words in. It is detailed, so it has a higher floor than a wordmark would.  Raster at 1024px wide, never scale up.",
+      "name": "The lion, reversed"
+    },
+    {
+      "file": "assets/logos/school/png/school-lion-reversed-2048.png",
+      "url": "https://brand.theword.world/assets/logos/school/png/school-lion-reversed-2048.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 205833,
+      "status": "approved",
+      "grounds": [],
+      "configuration": "lion",
+      "clearSpace": "0.25x its own height on all four sides",
+      "minimumWidth": {
+        "screen": "40px",
+        "print": "12mm"
+      },
+      "note": "The crowned Lion of Judah on its own. Profile pictures, app icons, stickers, embossing, and any square too small to read words in. It is detailed, so it has a higher floor than a wordmark would.  Raster at 2048px wide, never scale up.",
+      "name": "The lion, reversed"
+    },
+    {
+      "file": "assets/logos/school/png/school-lion-reversed-512.png",
+      "url": "https://brand.theword.world/assets/logos/school/png/school-lion-reversed-512.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 43589,
+      "status": "approved",
+      "grounds": [],
+      "configuration": "lion",
+      "clearSpace": "0.25x its own height on all four sides",
+      "minimumWidth": {
+        "screen": "40px",
+        "print": "12mm"
+      },
+      "note": "The crowned Lion of Judah on its own. Profile pictures, app icons, stickers, embossing, and any square too small to read words in. It is detailed, so it has a higher floor than a wordmark would.  Raster at 512px wide, never scale up.",
+      "name": "The lion, reversed"
+    },
+    {
+      "file": "assets/logos/school/png/school-stacked-1600.png",
+      "url": "https://brand.theword.world/assets/logos/school/png/school-stacked-1600.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 138337,
+      "status": "approved",
+      "grounds": [],
+      "configuration": "stacked",
+      "clearSpace": "0.5x the cap height of School on all four sides",
+      "minimumWidth": {
+        "screen": "150px",
+        "print": "34mm"
+      },
+      "note": "Square and portrait spaces, and the form that carries the founding date: covers, posters, apparel, and commemorative print.  Raster at 1600px wide, never scale up.",
+      "name": "Stacked lockup, EST 2024, two-tone, midnight and white"
+    },
+    {
+      "file": "assets/logos/school/png/school-stacked-3200.png",
+      "url": "https://brand.theword.world/assets/logos/school/png/school-stacked-3200.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 310942,
+      "status": "approved",
+      "grounds": [],
+      "configuration": "stacked",
+      "clearSpace": "0.5x the cap height of School on all four sides",
+      "minimumWidth": {
+        "screen": "150px",
+        "print": "34mm"
+      },
+      "note": "Square and portrait spaces, and the form that carries the founding date: covers, posters, apparel, and commemorative print.  Raster at 3200px wide, never scale up.",
+      "name": "Stacked lockup, EST 2024, two-tone, midnight and white"
+    },
+    {
+      "file": "assets/logos/school/png/school-stacked-400.png",
+      "url": "https://brand.theword.world/assets/logos/school/png/school-stacked-400.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 31425,
+      "status": "approved",
+      "grounds": [],
+      "configuration": "stacked",
+      "clearSpace": "0.5x the cap height of School on all four sides",
+      "minimumWidth": {
+        "screen": "150px",
+        "print": "34mm"
+      },
+      "note": "Square and portrait spaces, and the form that carries the founding date: covers, posters, apparel, and commemorative print.  Raster at 400px wide, never scale up.",
+      "name": "Stacked lockup, EST 2024, two-tone, midnight and white"
+    },
+    {
+      "file": "assets/logos/school/png/school-stacked-800.png",
+      "url": "https://brand.theword.world/assets/logos/school/png/school-stacked-800.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 65289,
+      "status": "approved",
+      "grounds": [],
+      "configuration": "stacked",
+      "clearSpace": "0.5x the cap height of School on all four sides",
+      "minimumWidth": {
+        "screen": "150px",
+        "print": "34mm"
+      },
+      "note": "Square and portrait spaces, and the form that carries the founding date: covers, posters, apparel, and commemorative print.  Raster at 800px wide, never scale up.",
+      "name": "Stacked lockup, EST 2024, two-tone, midnight and white"
+    },
+    {
+      "file": "assets/logos/school/png/school-stacked-black-1600.png",
+      "url": "https://brand.theword.world/assets/logos/school/png/school-stacked-black-1600.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 101744,
+      "status": "approved",
+      "grounds": [
+        "white",
+        "parchment"
+      ],
+      "configuration": "stacked",
+      "clearSpace": "0.5x the cap height of School on all four sides",
+      "minimumWidth": {
+        "screen": "150px",
+        "print": "34mm"
+      },
+      "note": "Square and portrait spaces, and the form that carries the founding date: covers, posters, apparel, and commemorative print. For single-colour reproduction only: embroidery, engraving, newsprint, stamps, and any vendor who asks for pure black. On screen use the Midnight ink instead. Raster at 1600px wide, never scale up.",
+      "name": "Stacked lockup, EST 2024, one colour, black"
+    },
+    {
+      "file": "assets/logos/school/png/school-stacked-black-3200.png",
+      "url": "https://brand.theword.world/assets/logos/school/png/school-stacked-black-3200.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 246479,
+      "status": "approved",
+      "grounds": [
+        "white",
+        "parchment"
+      ],
+      "configuration": "stacked",
+      "clearSpace": "0.5x the cap height of School on all four sides",
+      "minimumWidth": {
+        "screen": "150px",
+        "print": "34mm"
+      },
+      "note": "Square and portrait spaces, and the form that carries the founding date: covers, posters, apparel, and commemorative print. For single-colour reproduction only: embroidery, engraving, newsprint, stamps, and any vendor who asks for pure black. On screen use the Midnight ink instead. Raster at 3200px wide, never scale up.",
+      "name": "Stacked lockup, EST 2024, one colour, black"
+    },
+    {
+      "file": "assets/logos/school/png/school-stacked-black-400.png",
+      "url": "https://brand.theword.world/assets/logos/school/png/school-stacked-black-400.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 19866,
+      "status": "approved",
+      "grounds": [
+        "white",
+        "parchment"
+      ],
+      "configuration": "stacked",
+      "clearSpace": "0.5x the cap height of School on all four sides",
+      "minimumWidth": {
+        "screen": "150px",
+        "print": "34mm"
+      },
+      "note": "Square and portrait spaces, and the form that carries the founding date: covers, posters, apparel, and commemorative print. For single-colour reproduction only: embroidery, engraving, newsprint, stamps, and any vendor who asks for pure black. On screen use the Midnight ink instead. Raster at 400px wide, never scale up.",
+      "name": "Stacked lockup, EST 2024, one colour, black"
+    },
+    {
+      "file": "assets/logos/school/png/school-stacked-black-800.png",
+      "url": "https://brand.theword.world/assets/logos/school/png/school-stacked-black-800.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 43938,
+      "status": "approved",
+      "grounds": [
+        "white",
+        "parchment"
+      ],
+      "configuration": "stacked",
+      "clearSpace": "0.5x the cap height of School on all four sides",
+      "minimumWidth": {
+        "screen": "150px",
+        "print": "34mm"
+      },
+      "note": "Square and portrait spaces, and the form that carries the founding date: covers, posters, apparel, and commemorative print. For single-colour reproduction only: embroidery, engraving, newsprint, stamps, and any vendor who asks for pure black. On screen use the Midnight ink instead. Raster at 800px wide, never scale up.",
+      "name": "Stacked lockup, EST 2024, one colour, black"
+    },
+    {
+      "file": "assets/logos/school/png/school-stacked-reversed-1600.png",
+      "url": "https://brand.theword.world/assets/logos/school/png/school-stacked-reversed-1600.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 134997,
+      "status": "approved",
+      "grounds": [],
+      "configuration": "stacked",
+      "clearSpace": "0.5x the cap height of School on all four sides",
+      "minimumWidth": {
+        "screen": "150px",
+        "print": "34mm"
+      },
+      "note": "Square and portrait spaces, and the form that carries the founding date: covers, posters, apparel, and commemorative print.  Raster at 1600px wide, never scale up.",
+      "name": "Stacked lockup, EST 2024, reversed"
+    },
+    {
+      "file": "assets/logos/school/png/school-stacked-reversed-3200.png",
+      "url": "https://brand.theword.world/assets/logos/school/png/school-stacked-reversed-3200.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 303356,
+      "status": "approved",
+      "grounds": [],
+      "configuration": "stacked",
+      "clearSpace": "0.5x the cap height of School on all four sides",
+      "minimumWidth": {
+        "screen": "150px",
+        "print": "34mm"
+      },
+      "note": "Square and portrait spaces, and the form that carries the founding date: covers, posters, apparel, and commemorative print.  Raster at 3200px wide, never scale up.",
+      "name": "Stacked lockup, EST 2024, reversed"
+    },
+    {
+      "file": "assets/logos/school/png/school-stacked-reversed-400.png",
+      "url": "https://brand.theword.world/assets/logos/school/png/school-stacked-reversed-400.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 30073,
+      "status": "approved",
+      "grounds": [],
+      "configuration": "stacked",
+      "clearSpace": "0.5x the cap height of School on all four sides",
+      "minimumWidth": {
+        "screen": "150px",
+        "print": "34mm"
+      },
+      "note": "Square and portrait spaces, and the form that carries the founding date: covers, posters, apparel, and commemorative print.  Raster at 400px wide, never scale up.",
+      "name": "Stacked lockup, EST 2024, reversed"
+    },
+    {
+      "file": "assets/logos/school/png/school-stacked-reversed-800.png",
+      "url": "https://brand.theword.world/assets/logos/school/png/school-stacked-reversed-800.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 62677,
+      "status": "approved",
+      "grounds": [],
+      "configuration": "stacked",
+      "clearSpace": "0.5x the cap height of School on all four sides",
+      "minimumWidth": {
+        "screen": "150px",
+        "print": "34mm"
+      },
+      "note": "Square and portrait spaces, and the form that carries the founding date: covers, posters, apparel, and commemorative print.  Raster at 800px wide, never scale up.",
+      "name": "Stacked lockup, EST 2024, reversed"
+    },
+    {
+      "file": "assets/logos/school/school-cobrand-black.svg",
+      "url": "https://brand.theword.world/assets/logos/school/school-cobrand-black.svg",
+      "kind": "vector",
+      "group": "school",
+      "bytes": 101478,
+      "status": "approved",
+      "grounds": [
+        "white",
+        "parchment"
+      ],
+      "configuration": "cobrand",
+      "clearSpace": "0.5x the cap height of School on all four sides",
+      "minimumWidth": {
+        "screen": "330px",
+        "print": "74mm"
+      },
+      "note": "THE WORD beside the School, divided by a hairline rule. This is how this door carries its endorsement: the parent is shown rather than stated. For single-colour reproduction only: embroidery, engraving, newsprint, stamps, and any vendor who asks for pure black. On screen use the Midnight ink instead. Vector master, scale freely.",
+      "name": "Co-brand lockup with the parent, one colour, black"
+    },
+    {
+      "file": "assets/logos/school/school-cobrand-reversed.svg",
+      "url": "https://brand.theword.world/assets/logos/school/school-cobrand-reversed.svg",
+      "kind": "vector",
+      "group": "school",
+      "bytes": 101478,
+      "status": "approved",
+      "grounds": [],
+      "configuration": "cobrand",
+      "clearSpace": "0.5x the cap height of School on all four sides",
+      "minimumWidth": {
+        "screen": "330px",
+        "print": "74mm"
+      },
+      "note": "THE WORD beside the School, divided by a hairline rule. This is how this door carries its endorsement: the parent is shown rather than stated.  Vector master, scale freely.",
+      "name": "Co-brand lockup with the parent, reversed"
+    },
+    {
+      "file": "assets/logos/school/school-cobrand.svg",
+      "url": "https://brand.theword.world/assets/logos/school/school-cobrand.svg",
+      "kind": "vector",
+      "group": "school",
+      "bytes": 101478,
+      "status": "approved",
+      "grounds": [],
+      "configuration": "cobrand",
+      "clearSpace": "0.5x the cap height of School on all four sides",
+      "minimumWidth": {
+        "screen": "330px",
+        "print": "74mm"
+      },
+      "note": "THE WORD beside the School, divided by a hairline rule. This is how this door carries its endorsement: the parent is shown rather than stated.  Vector master, scale freely.",
+      "name": "Co-brand lockup with the parent, two-tone, midnight and white"
+    },
+    {
+      "file": "assets/logos/school/school-horizontal-black.svg",
+      "url": "https://brand.theword.world/assets/logos/school/school-horizontal-black.svg",
+      "kind": "vector",
+      "group": "school",
+      "bytes": 81368,
+      "status": "approved",
+      "grounds": [
+        "white",
+        "parchment"
+      ],
+      "configuration": "horizontal",
+      "clearSpace": "0.5x the cap height of School on all four sides",
+      "minimumWidth": {
+        "screen": "190px",
+        "print": "42mm"
+      },
+      "note": "The default mark. Course materials, certificates, slide masters, letterhead, and anywhere the space is wider than it is tall. For single-colour reproduction only: embroidery, engraving, newsprint, stamps, and any vendor who asks for pure black. On screen use the Midnight ink instead. Vector master, scale freely.",
+      "name": "Horizontal lockup, one colour, black"
+    },
+    {
+      "file": "assets/logos/school/school-horizontal-reversed.svg",
+      "url": "https://brand.theword.world/assets/logos/school/school-horizontal-reversed.svg",
+      "kind": "vector",
+      "group": "school",
+      "bytes": 81368,
+      "status": "approved",
+      "grounds": [],
+      "configuration": "horizontal",
+      "clearSpace": "0.5x the cap height of School on all four sides",
+      "minimumWidth": {
+        "screen": "190px",
+        "print": "42mm"
+      },
+      "note": "The default mark. Course materials, certificates, slide masters, letterhead, and anywhere the space is wider than it is tall.  Vector master, scale freely.",
+      "name": "Horizontal lockup, reversed"
+    },
+    {
+      "file": "assets/logos/school/school-horizontal.svg",
+      "url": "https://brand.theword.world/assets/logos/school/school-horizontal.svg",
+      "kind": "vector",
+      "group": "school",
+      "bytes": 81368,
+      "status": "approved",
+      "grounds": [],
+      "configuration": "horizontal",
+      "clearSpace": "0.5x the cap height of School on all four sides",
+      "minimumWidth": {
+        "screen": "190px",
+        "print": "42mm"
+      },
+      "note": "The default mark. Course materials, certificates, slide masters, letterhead, and anywhere the space is wider than it is tall.  Vector master, scale freely.",
+      "name": "Horizontal lockup, two-tone, midnight and white"
+    },
+    {
+      "file": "assets/logos/school/school-lion-black.svg",
+      "url": "https://brand.theword.world/assets/logos/school/school-lion-black.svg",
+      "kind": "vector",
+      "group": "school",
+      "bytes": 78130,
+      "status": "approved",
+      "grounds": [
+        "white",
+        "parchment"
+      ],
+      "configuration": "lion",
+      "clearSpace": "0.25x its own height on all four sides",
+      "minimumWidth": {
+        "screen": "40px",
+        "print": "12mm"
+      },
+      "note": "The crowned Lion of Judah on its own. Profile pictures, app icons, stickers, embossing, and any square too small to read words in. It is detailed, so it has a higher floor than a wordmark would. For single-colour reproduction only: embroidery, engraving, newsprint, stamps, and any vendor who asks for pure black. On screen use the Midnight ink instead. Vector master, scale freely.",
+      "name": "The lion, one colour, black"
+    },
+    {
+      "file": "assets/logos/school/school-lion-reversed.svg",
+      "url": "https://brand.theword.world/assets/logos/school/school-lion-reversed.svg",
+      "kind": "vector",
+      "group": "school",
+      "bytes": 78130,
+      "status": "approved",
+      "grounds": [],
+      "configuration": "lion",
+      "clearSpace": "0.25x its own height on all four sides",
+      "minimumWidth": {
+        "screen": "40px",
+        "print": "12mm"
+      },
+      "note": "The crowned Lion of Judah on its own. Profile pictures, app icons, stickers, embossing, and any square too small to read words in. It is detailed, so it has a higher floor than a wordmark would.  Vector master, scale freely.",
+      "name": "The lion, reversed"
+    },
+    {
+      "file": "assets/logos/school/school-lion.svg",
+      "url": "https://brand.theword.world/assets/logos/school/school-lion.svg",
+      "kind": "vector",
+      "group": "school",
+      "bytes": 78130,
+      "status": "approved",
+      "grounds": [],
+      "configuration": "lion",
+      "clearSpace": "0.25x its own height on all four sides",
+      "minimumWidth": {
+        "screen": "40px",
+        "print": "12mm"
+      },
+      "note": "The crowned Lion of Judah on its own. Profile pictures, app icons, stickers, embossing, and any square too small to read words in. It is detailed, so it has a higher floor than a wordmark would.  Vector master, scale freely.",
+      "name": "The lion, two-tone, midnight and white"
+    },
+    {
+      "file": "assets/logos/school/school-stacked-black.svg",
+      "url": "https://brand.theword.world/assets/logos/school/school-stacked-black.svg",
+      "kind": "vector",
+      "group": "school",
+      "bytes": 92969,
+      "status": "approved",
+      "grounds": [
+        "white",
+        "parchment"
+      ],
+      "configuration": "stacked",
+      "clearSpace": "0.5x the cap height of School on all four sides",
+      "minimumWidth": {
+        "screen": "150px",
+        "print": "34mm"
+      },
+      "note": "Square and portrait spaces, and the form that carries the founding date: covers, posters, apparel, and commemorative print. For single-colour reproduction only: embroidery, engraving, newsprint, stamps, and any vendor who asks for pure black. On screen use the Midnight ink instead. Vector master, scale freely.",
+      "name": "Stacked lockup, EST 2024, one colour, black"
+    },
+    {
+      "file": "assets/logos/school/school-stacked-reversed.svg",
+      "url": "https://brand.theword.world/assets/logos/school/school-stacked-reversed.svg",
+      "kind": "vector",
+      "group": "school",
+      "bytes": 92969,
+      "status": "approved",
+      "grounds": [],
+      "configuration": "stacked",
+      "clearSpace": "0.5x the cap height of School on all four sides",
+      "minimumWidth": {
+        "screen": "150px",
+        "print": "34mm"
+      },
+      "note": "Square and portrait spaces, and the form that carries the founding date: covers, posters, apparel, and commemorative print.  Vector master, scale freely.",
+      "name": "Stacked lockup, EST 2024, reversed"
+    },
+    {
+      "file": "assets/logos/school/school-stacked.svg",
+      "url": "https://brand.theword.world/assets/logos/school/school-stacked.svg",
+      "kind": "vector",
+      "group": "school",
+      "bytes": 92969,
+      "status": "approved",
+      "grounds": [],
+      "configuration": "stacked",
+      "clearSpace": "0.5x the cap height of School on all four sides",
+      "minimumWidth": {
+        "screen": "150px",
+        "print": "34mm"
+      },
+      "note": "Square and portrait spaces, and the form that carries the founding date: covers, posters, apparel, and commemorative print.  Vector master, scale freely.",
+      "name": "Stacked lockup, EST 2024, two-tone, midnight and white"
     },
     {
       "file": "assets/logos/the-word/favicon/apple-touch-icon-180.png",
