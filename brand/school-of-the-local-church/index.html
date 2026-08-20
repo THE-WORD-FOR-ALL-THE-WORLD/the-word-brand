@@ -52,6 +52,37 @@
   footer img{height:16px;width:auto;display:block;opacity:.9;}
   @media(max-width:640px){.sitenav .bar{padding:20px 24px;}}
 
+  /* --- the 1 as a mask ------------------------------------------------------ */
+  /* EVERY1's signature move: photography cut into the numeral rather than placed
+     beside it. The ratio below is written by the build from the published manifest,
+     so redrawing the numeral cannot leave every masked image stretched.
+  
+     The mask is a shape, not a mark, so it takes no ink. What shows through is the
+     photograph, and every rule about photography still applies to it: documentary
+     capture, consent obtained, and a caption wherever it is published. */
+  
+  .mask-1 {
+    display: block;
+    aspect-ratio: 0.6432;
+    -webkit-mask-image: url("/assets/logos/every1/every1-numeral.svg");
+            mask-image: url("/assets/logos/every1/every1-numeral.svg");
+    -webkit-mask-repeat: no-repeat;  mask-repeat: no-repeat;
+    -webkit-mask-position: center;   mask-position: center;
+    -webkit-mask-size: contain;      mask-size: contain;
+    background: var(--midnight);
+  }
+  .mask-1 > img, .mask-1 > video {
+    width: 100%; height: 100%; object-fit: cover; display: block;
+  }
+  .maskdemo{display:grid;grid-template-columns:1fr;gap:26px;align-items:start;margin-top:22px;}
+  .maskdemo > .mask-1{width:200px;}
+  @media(min-width:820px){.maskdemo{grid-template-columns:220px 1fr;gap:38px;}}
+  .usegrid{display:grid;grid-template-columns:1fr;gap:26px;margin-top:22px;}
+  @media(min-width:760px){.usegrid{grid-template-columns:1fr 1fr;}}
+  .usegrid figure{margin:0;}
+  .usegrid img{width:100%;height:auto;display:block;border:1px solid var(--rule);border-radius:4px;background:var(--parchment);}
+  .usegrid figcaption{margin-top:10px;font-size:13px;line-height:1.6;color:rgba(247,243,236,.75);}
+
   .door{position:relative;min-height:74vh;display:flex;align-items:flex-end;background:var(--midnight);overflow:hidden;}
   .door video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
   .door .scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,26,45,.72) 0%,rgba(11,26,45,.45) 45%,rgba(11,26,45,.92) 100%);}

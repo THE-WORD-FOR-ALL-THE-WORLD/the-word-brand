@@ -382,14 +382,14 @@
       }
     ]
   },
-  "version": "7.1",
+  "version": "7.2",
   "messagingVersion": "1.0",
   "updated": "2026-08-20",
   "authority": "canonical",
   "rule": "Use these assets. Never generate photography or video of people or ministry, and never substitute stock. If the asset you need is not listed, request it and leave the slot empty.",
   "counts": {
     "total": 339,
-    "approved": 316,
+    "approved": 320,
     "counterExamples": 0
   },
   "assets": [
@@ -524,7 +524,9 @@
       "kind": "image",
       "group": "images",
       "bytes": 873895,
-      "status": "published, no usage note recorded"
+      "status": "approved",
+      "capture": "Generated design mockup, not photography and not the record",
+      "note": "The EVERY1 app sign-in screen. Shows the reversed horizontal lockup on Midnight, an Ember primary button, and the vision line at the foot. Ember carries the action and never Flame: white on Flame is 3.3:1 and fails AA. Shows how the identity is built, never what happened. It is not documentary capture and may not be published as a photograph of an event."
     },
     {
       "file": "assets/images/every1-community-gathering-poster.jpg",
@@ -541,7 +543,9 @@
       "kind": "image",
       "group": "images",
       "bytes": 1009258,
-      "status": "published, no usage note recorded"
+      "status": "approved",
+      "capture": "Generated design mockup, not photography and not the record",
+      "note": "Six country lockups: USA, Nigeria, Uganda, Brazil, India and the Philippines. Every bar carries its own flag; USA is the recorded exception and carries brand colours. Shows how the identity is built, never what happened. It is not documentary capture and may not be published as a photograph of an event."
     },
     {
       "file": "assets/images/every1-kit-flat-lay.png",
@@ -549,7 +553,9 @@
       "kind": "image",
       "group": "images",
       "bytes": 2538621,
-      "status": "published, no usage note recorded"
+      "status": "approved",
+      "capture": "Generated design mockup, not photography and not the record",
+      "note": "The activation kit: shirts, banner and lanyards carrying the country lockups. Shows how the identity is built, never what happened. It is not documentary capture and may not be published as a photograph of an event."
     },
     {
       "file": "assets/images/every1-ministry-in-the-tent.jpg",
@@ -577,7 +583,9 @@
       "kind": "image",
       "group": "images",
       "bytes": 2211569,
-      "status": "published, no usage note recorded"
+      "status": "approved",
+      "capture": "Generated design mockup, not photography and not the record",
+      "note": "An EVERY1 social profile and grid. The E1 icon is the avatar, because a lockup in a circle is unreadable. The photographs inside the grid tiles are generated placeholders and are not photography either: they may not be lifted out and published. Shows how the identity is built, never what happened. It is not documentary capture and may not be published as a photograph of an event."
     },
     {
       "file": "assets/images/hero-congregation.jpg",

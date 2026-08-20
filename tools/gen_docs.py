@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Generate the initiative messaging documents (/documents)."""
 import os
+import re
 
 NL = chr(10)
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -431,7 +432,42 @@ for section, cfg in SECTIONS.items():
 # One brand guide per named front door. Each renders in the identity it
 # describes, per Brand Guide §11: a ground, a Flame ceiling, and a register.
 
+def rules_from_brand_css(*selectors_start_with):
+    """Lift named rule blocks out of the generated brand.css.
+
+    A door page cannot link brand.css: it shares eight class names with the page's
+    own stylesheet, so the component layer would quietly change things nobody asked
+    it to. Copying the rules by hand would state them twice. So they are read out of
+    the generated file at build time, which keeps brand.css the only place the mask
+    is defined and lets the page follow it without inheriting the rest.
+    """
+    path = os.path.join(REPO, "assets", "brand.css")
+    if not os.path.exists(path):
+        raise SystemExit("assets/brand.css is missing. Run tools/build_ai.py first.")
+    css = open(path, encoding="utf-8").read()
+    out = []
+    for m in re.finditer(r"(@supports[^{]*\{(?:[^{}]|\{[^{}]*\})*\}|[^{}@]+\{[^{}]*\})", css):
+        block = m.group(1).strip()
+        head = block.split("{", 1)[0].strip()
+        target = head[len("@supports"):].strip() if head.startswith("@supports") else head
+        if any(sel in target or sel in block.split("{", 1)[0] for sel in selectors_start_with):
+            out.append(block)
+    if not out:
+        raise SystemExit(f"brand.css has no rules matching {selectors_start_with}")
+    return "\n".join("  " + line for line in "\n".join(out).splitlines())
+
+
 SUB_CSS = """
+{mask_rules}
+  .maskdemo{display:grid;grid-template-columns:1fr;gap:26px;align-items:start;margin-top:22px;}
+  .maskdemo > .mask-1{width:200px;}
+  @media(min-width:820px){.maskdemo{grid-template-columns:220px 1fr;gap:38px;}}
+  .usegrid{display:grid;grid-template-columns:1fr;gap:26px;margin-top:22px;}
+  @media(min-width:760px){.usegrid{grid-template-columns:1fr 1fr;}}
+  .usegrid figure{margin:0;}
+  .usegrid img{width:100%;height:auto;display:block;border:1px solid var(--rule);border-radius:4px;background:var(--parchment);}
+  .usegrid figcaption{margin-top:10px;font-size:13px;line-height:1.6;color:rgba(247,243,236,.75);}
+
   .door{position:relative;min-height:74vh;display:flex;align-items:flex-end;background:var(--midnight);overflow:hidden;}
   .door video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
   .door .scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,26,45,.72) 0%,rgba(11,26,45,.45) 45%,rgba(11,26,45,.92) 100%);}
@@ -578,6 +614,8 @@ SUB_CSS = """
   .chanfacts .cfh.mut{color:rgba(11,26,45,.62);font-weight:400;font-style:italic;}
   .chanfacts .cffoot{border-top:4px solid var(--midnight);margin-top:2px;padding-top:10px;font-size:9.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(11,26,45,.72);}
 """
+
+SUB_CSS = SUB_CSS.replace("{mask_rules}", rules_from_brand_css(".mask-1"))
 
 SUBS = [
     dict(
@@ -825,6 +863,53 @@ EXTRAS = {
         <li><strong>The loosest rules in the house.</strong> Official surfaces follow this guide. What a member does with the badge on their own feed is not audited; it is the movement working.</li>
         <li><strong>The icon comes first.</strong> The app and the activation platform follow the YouVersion model, so the E1 icon carries the whole identity on its own. It was drawn before the app was built, not after, and it is published here already.</li>
       </ul>
+    </div>
+
+    <div class="blk">
+      <div class="lab">The 1 as a mask</div>
+      <h2>Photography cut into the numeral.</h2>
+      <p class="lede">This door&rsquo;s loudest move, and the one thing it does that no other door does.
+      A photograph is cut into the shape of the 1 rather than set beside it, so the mark and the
+      picture are the same object.</p>
+      <div class="maskdemo">
+        <figure class="mask-1"><img src="/assets/images/every1-one-to-one.jpg" alt="One believer greeting another at the front of the tent."></figure>
+        <div>
+          <ul class="doorrules">
+            <li><strong>The shape is the published file.</strong> <code>every1-numeral.svg</code>, never a redrawing and never a font character. It is a mask, so it takes no ink and is never recoloured.</li>
+            <li><strong>The photograph still obeys every rule.</strong> Documentary capture, consent before the shutter, a caption where it is published. A shape does not exempt a picture.</li>
+            <li><strong>It holds a photograph and nothing else.</strong> Never type, never a logo, never another mark. No outline, no shadow, no rotation.</li>
+            <li><strong>One per view.</strong> Used twice on a page it stops being a signature and becomes a pattern.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="blk">
+      <div class="lab">In use</div>
+      <h2>What it looks like built.</h2>
+      <p class="lede">Design mockups, not the record. Nothing here is a photograph of an event, and
+      none of it may be published as one.</p>
+      <div class="usegrid">
+        <figure><img src="/assets/images/every1-app-sign-in.png" alt="The EVERY1 app sign-in screen: the horizontal lockup reversed on Midnight, an Ember primary button, and the vision line at the foot."><figcaption>The app. Ember carries the action, never Flame: white on Flame is 3.3:1 and fails.</figcaption></figure>
+        <figure><img src="/assets/images/every1-social-profile.png" alt="An EVERY1 social profile and grid, the E1 icon as the avatar."><figcaption>Social. The E1 icon is the avatar, because a lockup in a circle is unreadable.</figcaption></figure>
+        <figure><img src="/assets/images/every1-country-lockups.png" alt="Six country lockups: USA, Nigeria, Uganda, Brazil, India and the Philippines."><figcaption>Country lockups. Every country carries its own flag; USA is the one exception.</figcaption></figure>
+        <figure><img src="/assets/images/every1-kit-flat-lay.png" alt="EVERY1 shirts, a banner and lanyards carrying the country lockups."><figcaption>The activation kit. Shirts, banner, lanyards.</figcaption></figure>
+      </div>
+    </div>
+
+    <div class="blk">
+      <div class="lab">A new country</div>
+      <h2>Drawn, not generated.</h2>
+      <p class="lede">A country lockup carries its country&rsquo;s name as outlined type, so the build
+      cannot compose one. Each is drawn.</p>
+      <div class="law">
+        <ol>
+          <li><b>They come from the source file.</b> New country lockups are made in the EVERY1 Canva file, <a href="https://canva.link/saa5nitous3vxts">canva.link/saa5nitous3vxts</a>, which is where every mark on this page came from.</li>
+          <li><b>The bar carries the country&rsquo;s flag.</b> Its colours are the flag&rsquo;s, which is the recorded exception to the six-colour palette. USA is the single exception to the exception: its bar is Flame, White and Midnight, because the flag is close enough that a true red and blue reads as a mistake.</li>
+          <li><b>A segment must survive its ground.</b> A black or Midnight segment disappears on Midnight. On a dark ground it lifts, and the published files already do this.</li>
+          <li><b>It arrives through the drop zone.</b> Put the export in <code>assets/logos/_inbox/</code>, promote it, and it is cut in three inks with its clear space and minimum size recorded. Email <a href="mailto:brand@theword.world">brand@theword.world</a>.</li>
+        </ol>
+      </div>
     </div>
 
 """,

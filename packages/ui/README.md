@@ -1,6 +1,6 @@
 # @theword/ui
 
-React components for THE WORD FOR ALL THE WORLD, implementing brand system v7.1
+React components for THE WORD FOR ALL THE WORLD, implementing brand system v7.2
 (updated 2026-08-20).
 
 **This package is a consumer, never a source.** The specifications live at
@@ -77,6 +77,7 @@ module.exports = { transpilePackages: ["@theword/ui"] }
 - **skeleton**: Available as a class in brand.css. A React wrapper lands when an application needs one.
 - **empty-state**: Available as a class in brand.css. A React wrapper lands when an application needs one.
 - **avatar**: Available as a class in brand.css. A React wrapper lands when an application needs one.
+- **numeral-mask**: Available as a class in brand.css. A React wrapper lands when an application needs one.
 
 ## Naming
 
