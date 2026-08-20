@@ -1870,7 +1870,10 @@ GOVERNANCE_PAGE = """<!DOCTYPE html>
 <link rel="stylesheet" href="/assets/fonts/fonts.css">
 <link rel="stylesheet" href="/assets/brand.css">
 <style>
-  .wrap { max-width: 940px; margin: 0 auto; padding: 0 var(--space-5); }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 var(--space-5); }
+  /* Policies and procedures are read, so they keep a reading measure. Processes
+     are looked at, so they get the full width. */
+  #panel-policies, #panel-procedures { max-width: 900px; }
   nav.chrome { border-bottom: 1px solid var(--border); }
   nav.chrome .bar { max-width: 1240px; margin: 0 auto; padding: var(--space-4) var(--space-5); display: flex; justify-content: space-between; align-items: center; gap: var(--space-4); }
   nav.chrome .logo img { height: 17px; width: auto; display: block; }
@@ -1880,7 +1883,7 @@ GOVERNANCE_PAGE = """<!DOCTYPE html>
   @media (min-width: 1100px) { nav.chrome .links { display: flex; } }
 
   header.masthead { padding: var(--space-8) 0 var(--space-7); border-bottom: 1px solid var(--border); }
-  header.masthead h1 { margin-top: var(--space-2); }
+  header.masthead h1 { margin-top: var(--space-2); max-width: 20ch; }
 
   /* The three definitions sit at the top, because the whole point of this page
      is that they are three different things that had been reading as one. */
@@ -1902,25 +1905,82 @@ GOVERNANCE_PAGE = """<!DOCTYPE html>
   .policy p { margin: 0; font-size: var(--text-body-small); line-height: 1.6; }
   .policy .why { color: var(--text-muted); margin-top: 4px; }
 
-  /* Processes: drawn as a chain, because that is what a process is. */
-  .process { margin-bottom: var(--space-7); }
-  .process > h3 { font-family: var(--serif-text); font-weight: 400; font-size: var(--text-title); margin: 0; }
-  .process > .when { font-size: var(--text-body-small); color: var(--text-muted); margin: var(--space-2) 0 var(--space-4); }
-  .chain { display: flex; flex-wrap: wrap; align-items: stretch; gap: var(--space-3); }
-  .chain .stage { flex: 1 1 150px; border: 1px solid var(--border); border-radius: var(--radius-card); padding: var(--space-4); background: var(--surface); }
+  /* Processes: drawn as a chain, because that is what a process is. A chain needs
+     room to read as one movement, so this panel runs wider than the others and
+     each process gets a whole block of the page rather than a paragraph of it. */
+  .process { padding: var(--space-8) 0; }
+  .process + .process { border-top: 1px solid var(--border-soft); }
+  .process > h3 { font-family: var(--serif-text); font-weight: 400; font-size: var(--text-title-large); line-height: var(--leading-title-large); margin: 0; }
+  .process > .when { font-size: var(--text-body-small); color: var(--text-muted); margin: var(--space-3) 0 var(--space-6); }
+
+  /* A grid, not a flex row with arrow elements between the cards. Six stages
+     across 1072px leaves 89px of content per card, so the grid holds a 190px
+     floor and wraps to a second row instead. The connector is drawn on the card
+     rather than being its own item, so a wrap can never orphan an arrow. */
+  .chain {
+    display: grid;
+    grid-template-columns: repeat(var(--cols, 3), minmax(0, 1fr));
+    gap: var(--space-6) var(--space-5);
+  }
+  @media (max-width: 1000px) {
+    .chain { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .chain .stage:not(:last-child)::after { content: "\\2192"; }
+    .chain .stage:nth-child(2n)::after,
+    .chain .stage:last-child::after { content: none; }
+  }
+  .chain .stage {
+    position: relative;
+    border: 1px solid var(--border); border-radius: var(--radius-card);
+    padding: var(--space-5); background: var(--surface);
+    display: flex; flex-direction: column;
+  }
+  .chain .stage:not(:last-child)::after {
+    content: "\\2192";
+    position: absolute; top: 50%; right: calc(var(--space-5) * -1);
+    width: var(--space-5); text-align: center;
+    transform: translateY(-50%);
+    color: var(--text-faint); font-size: 16px; line-height: 1;
+    pointer-events: none;
+  }
+  /* A connector belongs between two cards, not at the end of a row pointing into
+     the margin. The column count is known, so the card that closes a row drops
+     it, and each breakpoint restates that for its own column count. */
+  .chain.cols-3 .stage:nth-child(3n)::after,
+  .chain.cols-4 .stage:nth-child(4n)::after { content: none; }
   .chain .stage .n { font-size: 11px; font-weight: 600; letter-spacing: .12em; color: var(--accent-text); font-variant-numeric: tabular-nums; }
-  .chain .stage h4 { font-family: var(--sans); font-weight: 700; font-size: var(--text-body-small); margin: 4px 0 var(--space-2); }
-  .chain .stage p { margin: 0; font-size: var(--text-caption); line-height: 1.5; color: var(--text-muted); }
-  .chain .arrow { align-self: center; color: var(--text-faint); flex: 0 0 auto; }
-  .process > .ends { margin-top: var(--space-4); font-size: var(--text-body-small); }
+  .chain .stage h4 { font-family: var(--sans); font-weight: 700; font-size: var(--text-body-small); margin: var(--space-2) 0 var(--space-3); }
+  .chain .stage p { margin: 0; font-size: var(--text-caption); line-height: 1.55; color: var(--text-muted); }
+
+  .process > .ends {
+    margin-top: var(--space-6); padding-top: var(--space-4);
+    border-top: 1px solid var(--border-soft);
+    font-size: var(--text-body-small);
+  }
   .process > .ends b { color: var(--accent-text); }
+
+  /* Below the width where six stages still read across, the chain stands up.
+     A wrapped horizontal row stops looking like one flow, which is the whole
+     reason for drawing it as a chain in the first place. */
+  /* One column below the width where even two stages read across. The connector
+     turns to point down, which is the same flow read the other way. */
+  @media (max-width: 620px) {
+    .chain { grid-template-columns: minmax(0, 1fr); gap: var(--space-6); }
+    .chain .stage:not(:last-child)::after {
+      content: "\\2192";
+      top: auto; right: auto; bottom: calc(var(--space-6) * -1);
+      left: 50%; width: auto;
+      transform: translate(-50%, 0) rotate(90deg);
+    }
+    .chain .stage:last-child::after { content: none; }
+    .chain .stage h4 { margin: 4px 0 var(--space-2); }
+  }
 
   /* Procedures: steps, folded away until somebody is actually doing the job. */
   .sop { border: 1px solid var(--border); border-radius: var(--radius-card); margin-bottom: var(--space-3); background: var(--surface); }
   .sop > summary { cursor: pointer; list-style: none; padding: var(--space-4) var(--space-5); display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--space-3); }
   .sop > summary::-webkit-details-marker { display: none; }
-  .sop > summary::before { content: "\203A"; color: var(--accent-text); width: 1em; flex: none; }
-  .sop[open] > summary::before { content: "\2304"; }
+  .sop > summary::before { content: "\\203A"; color: var(--accent-text); width: 1em; flex: none; }
+  .sop[open] > summary::before { content: "\\2304"; }
   .sop > summary h3 { font-family: var(--sans); font-weight: 700; font-size: var(--text-body-small); margin: 0; }
   .sop > summary .meta { font-size: var(--text-caption); color: var(--text-muted); }
   .sop .body { padding: 0 var(--space-5) var(--space-5) calc(1em + var(--space-5) + var(--space-3)); }
@@ -2056,12 +2116,19 @@ def build_governance_page(gov: dict, brand: dict) -> str:
         for g in gov["nonNegotiables"]["gates"]
     )
 
+    def cols(pr):
+        """Columns per chain, chosen so the rows come out balanced.
+
+        Four stages fit one row comfortably at 250px each. Five or six drop to
+        three columns, so six reads as three and three rather than five across
+        with one card stranded on its own.
+        """
+        return len(pr["stages"]) if len(pr["stages"]) <= 4 else 3
+
     processes = []
     for pr in gov["processes"]:
         stages = []
         for i, st in enumerate(pr["stages"]):
-            if i:
-                stages.append('          <span class="arrow" aria-hidden="true">&rarr;</span>')
             stages.append(
                 '          <div class="stage">\n'
                 '            <div class="n">' + f"{i + 1:02d}" + "</div>\n"
@@ -2077,7 +2144,8 @@ def build_governance_page(gov: dict, brand: dict) -> str:
             '      <div class="process">\n'
             "        <h3>" + esc(pr["name"]) + "</h3>\n"
             '        <p class="when">Starts when: ' + esc(pr["starts"]) + "</p>\n"
-            '        <div class="chain">\n' + "\n".join(stages) + "\n        </div>\n"
+            '        <div class="chain cols-' + str(cols(pr)) + '" style="--cols:' + str(cols(pr)) + '">\n'
+            + "\n".join(stages) + "\n        </div>\n"
             '        <p class="ends"><b>Ends when:</b> ' + esc(pr["ends"])
             + ("  &middot;  Procedures:" + links if links else "") + "</p>\n"
             "      </div>"
