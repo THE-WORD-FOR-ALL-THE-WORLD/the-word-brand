@@ -512,6 +512,110 @@ def check_stylesheet_vars():
     # published for other people to build with, not only for this stylesheet.
 
 
+SPECIFICITY = re.compile(r"#[\w-]+|\.[\w-]+|\[[^\]]+\]|::[\w-]+|:[\w-]+|\b[a-zA-Z][\w-]*")
+
+
+def specificity(selector: str) -> tuple:
+    """(id, class, element) for the selector shapes this repository actually uses."""
+    ids = classes = elements = 0
+    for token in SPECIFICITY.findall(selector):
+        if token.startswith("#"):
+            ids += 1
+        elif token.startswith("::"):
+            elements += 1
+        elif token.startswith(".") or token.startswith("[") or token.startswith(":"):
+            classes += 1
+        else:
+            elements += 1
+    return (ids, classes, elements)
+
+
+def _matches(selector: str, classes: set, tag: str, dark: bool) -> bool:
+    """Does this selector match an element with these classes, in this theme?
+
+    Only the forms this repository writes: descendant chains of tags and classes,
+    optionally led by [data-theme="dark"]. Anything carrying a combinator or a
+    pseudo class is treated as not matching, so the check stays conservative and
+    never invents a conflict that is not there.
+    """
+    if any(c in selector for c in (">", "+", "~", ":")):
+        return False
+    parts = selector.split()
+    if '[data-theme="dark"]' in parts:
+        if not dark:
+            return False
+        parts = [p for p in parts if p != '[data-theme="dark"]']
+    if not parts:
+        return False
+    bits = re.findall(r"\.[\w-]+|^[a-zA-Z][\w-]*", parts[-1])
+    if not bits:
+        return False
+    for bit in bits:
+        if bit.startswith("."):
+            if bit[1:] not in classes:
+                return False
+        elif bit != tag:
+            return False
+    return True
+
+
+def check_theme_swaps(files: list):
+    """L18: a light/dark pair resolves to exactly one visible element per theme.
+
+    A page that swaps two images by class is one specificity mistake away from
+    showing both, and showing both reads as a content bug rather than a CSS one.
+    That is what shipped in v7.0: `.topbar .brand img { display: block }` at 0,2,1
+    outranked `.mark-dark { display: none }` at 0,1,0, so both marks rendered, in
+    both themes, and the theme toggle did nothing at all.
+    """
+    for rel in files:
+        page = bs.read(os.path.join(REPO, rel))
+        css = "\n".join(re.findall(r"<style[^>]*>(.*?)</style>", page, re.S))
+        if not css:
+            continue
+
+        rules = []
+        for m in re.finditer(r"([^{}]+)\{([^}]*)\}", css):
+            decl = re.search(r"(?:^|;)\s*display\s*:\s*([\w-]+)", m.group(2))
+            if not decl:
+                continue
+            for selector in m.group(1).split(","):
+                selector = selector.strip()
+                if selector:
+                    rules.append((selector, specificity(selector), decl.group(1)))
+        if not rules:
+            continue
+
+        # Elements whose class names differ only by a -light / -dark suffix.
+        stems = {}
+        for m in re.finditer(r'<(\w+)[^>]*\sclass="([^"]*)"', page):
+            tag, classes = m.group(1), set(m.group(2).split())
+            for c in classes:
+                if c.endswith("-light") or c.endswith("-dark"):
+                    stem, variant = c.rsplit("-", 1)
+                    stems.setdefault(stem, {})[variant] = (tag, classes)
+
+        for stem, pair in stems.items():
+            if set(pair) != {"light", "dark"}:
+                continue
+            for dark in (False, True):
+                shown = []
+                for variant, (tag, classes) in sorted(pair.items()):
+                    winner, best = None, (-1, -1, -1)
+                    for selector, spec, value in rules:
+                        if _matches(selector, classes, tag, dark) and spec >= best:
+                            winner, best = value, spec
+                    if winner != "none":
+                        shown.append(variant)
+                if len(shown) != 1:
+                    err(
+                        "L18",
+                        f"{rel}: in {'dark' if dark else 'light'} mode the '{stem}' pair resolves "
+                        f"to {len(shown)} visible element(s) ({', '.join(shown) or 'none'}). "
+                        "Exactly one should show; check which display rule wins on specificity.",
+                    )
+
+
 def check_social_cards(files: list):
     """L13: every page previews correctly when it is shared.
 
@@ -599,6 +703,7 @@ def main() -> int:
     check_social_cards(files)
     check_consumers()
     check_stylesheet_vars()
+    check_theme_swaps(files)
     check_contrast(build_ai.build_tokens(brand, _messaging, overrides.get('manifest', {}).get('updated') or brand['issued'], overrides, bs.parse_scales(os.path.join(REPO, 'brand', 'index.html'))))
     check_navigation(files)
     check_skill_copies()
