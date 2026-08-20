@@ -1,6 +1,5 @@
 {
   "_README": "Hand-authored component specifications. Write values as token references (@midnight, @ember, @button-hover) and never as raw hex: the build resolves them against the current Brand Guide, so a palette change updates every component here automatically. The build never overwrites this file.",
-
   "components": [
     {
       "id": "button-primary",
@@ -20,7 +19,12 @@
         "The label is sentence case or title case, never all caps, never a command shouted.",
         "The focus ring is 2px Ember, 3px offset, and Flame when the button sits on Midnight."
       ],
-      "html": "<a class=\"btn\" href=\"/partner\">Partner With Us</a>"
+      "html": "<a class=\"btn\" href=\"/partner\">Partner With Us</a>",
+      "cssClass": "btn",
+      "previewGround": "light",
+      "tokenRefs": {},
+      "react": "Button",
+      "group": "Actions"
     },
     {
       "id": "button-ghost",
@@ -37,7 +41,12 @@
         "Only on dark grounds. On Parchment, the secondary action is a text link in Ember.",
         "Never two ghost buttons in a row. One primary, one ghost, then stop."
       ],
-      "html": "<a class=\"btn ghost\" href=\"/happening\">See What's Happening</a>"
+      "html": "<a class=\"btn ghost\" href=\"/happening\">See What's Happening</a>",
+      "cssClass": "btn ghost",
+      "previewGround": "dark",
+      "tokenRefs": {},
+      "react": "Button",
+      "group": "Actions"
     },
     {
       "id": "eyebrow",
@@ -53,7 +62,12 @@
         "Every record opens with one. Law II.",
         "All caps belongs here, to labels, and to the wordmark. Never to the serif."
       ],
-      "html": "<span class=\"eyebrow\">03 — Color System</span>"
+      "html": "<span class=\"eyebrow\">03 — Color System</span>",
+      "cssClass": "eyebrow",
+      "previewGround": "light",
+      "tokenRefs": {},
+      "react": "Eyebrow",
+      "group": "Typography"
     },
     {
       "id": "headline-serif",
@@ -70,7 +84,12 @@
         "Never all caps.",
         "Below 36px, use DM Serif Text. Below 22px, use DM Sans."
       ],
-      "html": "<h2>No one told them it is <em>already here.</em></h2>"
+      "html": "<h2>No one told them it is <em>already here.</em></h2>",
+      "cssClass": "headline",
+      "previewGround": "light",
+      "tokenRefs": {},
+      "react": "Headline",
+      "group": "Typography"
     },
     {
       "id": "body",
@@ -87,7 +106,13 @@
         "Always DM Sans. The serif never carries extended reading.",
         "Never Flame body text on a light ground.",
         "Short sentences, one idea each."
-      ]
+      ],
+      "html": "<div class=\"prose\">\n  <p>The local church is the plan. Not a strategy for it, the plan itself.</p>\n  <p class=\"muted\">Every tribe. Every tongue. Every nation.</p>\n</div>",
+      "cssClass": "prose",
+      "previewGround": "light",
+      "tokenRefs": {},
+      "reactNote": "a typographic rule, not a component",
+      "group": "Typography"
     },
     {
       "id": "card",
@@ -104,7 +129,13 @@
       "rules": [
         "Cards sit on Parchment, never on Midnight, unless the whole band is dark and the card inverts.",
         "Card text is Midnight. Watch for light-on-light inherited from a dark parent."
-      ]
+      ],
+      "html": "<a class=\"card\" href=\"/brand/\">\n  <span class=\"eyebrow\">01</span>\n  <h3 class=\"title\">Brand Guide</h3>\n  <p class=\"muted\">Identity, voice, colour, typography, and the laws of the brand.</p>\n</a>",
+      "cssClass": "card",
+      "previewGround": "light",
+      "tokenRefs": {},
+      "react": "Card",
+      "group": "Layout"
     },
     {
       "id": "record-document",
@@ -123,7 +154,12 @@
         "Closes with a dateline and, where authority is claimed, real signatures.",
         "A script font standing in for ink is a violation."
       ],
-      "html": "<div class=\"record\"><span class=\"qk\">The Word · A Prophecy</span><div class=\"verse\">…</div><div class=\"dateline\">Received December 2019</div></div>"
+      "html": "<div class=\"record\"><span class=\"qk\">The Word · A Prophecy</span><div class=\"verse\">…</div><div class=\"dateline\">Received December 2019</div></div>",
+      "cssClass": "record",
+      "previewGround": "light",
+      "tokenRefs": {},
+      "react": "Record",
+      "group": "The record"
     },
     {
       "id": "hero-video",
@@ -141,7 +177,12 @@
         "The still fallback is honored under prefers-reduced-motion and on slow connections.",
         "Nothing stock. Documentary footage from our own conferences, crusades, and streets."
       ],
-      "html": "<video autoplay muted loop playsinline poster=\"/assets/images/crowd-evening-poster.jpg\"><source src=\"/assets/videos/crowd-evening.mp4\" type=\"video/mp4\"></video><div class=\"scrim\"></div>"
+      "html": "<video autoplay muted loop playsinline poster=\"/assets/images/crowd-evening-poster.jpg\"><source src=\"/assets/videos/crowd-evening.mp4\" type=\"video/mp4\"></video><div class=\"scrim\"></div>",
+      "cssClass": "footage",
+      "previewGround": "dark",
+      "tokenRefs": {},
+      "react": "Footage",
+      "group": "Media"
     },
     {
       "id": "photo-caption",
@@ -157,7 +198,12 @@
         "Bracketed fields mark anything not yet verified against the ministry record.",
         "Written at capture, never from memory."
       ],
-      "html": "<p class=\"caption\">The Word opened — attendees follow the teaching with Bibles and notes.<br><small>SLC Conference · [City], Uganda · 30 Jul 2026</small></p>"
+      "html": "<p class=\"caption\">The Word opened — attendees follow the teaching with Bibles and notes.<br><small>SLC Conference · [City], Uganda · 30 Jul 2026</small></p>",
+      "cssClass": "caption",
+      "previewGround": "light",
+      "tokenRefs": {},
+      "react": "Caption",
+      "group": "Typography"
     },
     {
       "id": "testimony",
@@ -175,7 +221,13 @@
       "rules": [
         "Real, consented, and named. Never fabricated, never composited, never anonymous.",
         "Closes with an invitation to respond."
-      ]
+      ],
+      "html": "<div class=\"testimony\">\n  <p><b>Before</b> I had been in the city three years and knew no one.</p>\n  <p><b>Encounter</b> At the tent on the second night, someone prayed with me.</p>\n  <p><b>Transformation</b> I stopped drinking. My brother noticed first.</p>\n  <p><b>Outcome</b> I lead a small group now. Come and see for yourself.</p>\n  <p class=\"caption\">[Name] · [City] · Shared with permission</p>\n</div>",
+      "cssClass": "testimony",
+      "previewGround": "light",
+      "tokenRefs": {},
+      "reactNote": "a four-slot writing structure, not a component",
+      "group": "The record"
     },
     {
       "id": "lower-third",
@@ -190,7 +242,13 @@
       "rules": [
         "Nothing animated, nothing bouncing.",
         "Sits on the scrim, never straight on the footage."
-      ]
+      ],
+      "html": "<div class=\"lower-third\">\n  <div class=\"name\">Nathan Zimmer</div>\n  <div class=\"role\">Founder, THE WORD FOR ALL THE WORLD</div>\n</div>",
+      "cssClass": "lower-third",
+      "previewGround": "dark",
+      "tokenRefs": {},
+      "react": "LowerThird",
+      "group": "Media"
     },
     {
       "id": "stat-figure",
@@ -205,7 +263,12 @@
         "Numbers come from the official ministry record only, never estimates, never memory.",
         "The figure carries a source line naming the record and its period."
       ],
-      "html": "<div class=\"stat\"><div class=\"fig\">1,057</div><div class=\"lab\">Salvations</div></div>"
+      "html": "<div class=\"stat\"><div class=\"fig\">1,057</div><div class=\"lab\">Salvations</div></div>",
+      "cssClass": "stat",
+      "previewGround": "dark",
+      "tokenRefs": {},
+      "react": "Stat",
+      "group": "The record"
     },
     {
       "id": "endorsement-line",
@@ -221,7 +284,12 @@
         "One recorded exception: the future EVERY1 app, on the YouVersion model.",
         "Vanity domains redirect into the initiative's page. They never become separate homes."
       ],
-      "html": "<div class=\"endorse\">A ministry of THE WORD FOR ALL THE WORLD</div>"
+      "html": "<div class=\"endorse\">A ministry of THE WORD FOR ALL THE WORLD</div>",
+      "cssClass": "endorse",
+      "previewGround": "light",
+      "tokenRefs": {},
+      "react": "Endorsement",
+      "group": "The record"
     },
     {
       "id": "site-chrome",
@@ -235,7 +303,554 @@
       "rules": [
         "A new page copies the chrome from an existing page and adds its own link to every other page.",
         "The nav sits over a full-bleed video hero with the scrim in place."
-      ]
+      ],
+      "html": "<nav class=\"sitenav\">\n  <a class=\"logo\" href=\"/\"><img src=\"/assets/logos/the-word/the-word-horizontal-reversed.svg\" alt=\"THE WORD FOR ALL THE WORLD\"></a>\n  <div class=\"links\"><a href=\"/brand/\">Brand Guide</a><a href=\"/assets/\">Assets</a></div>\n</nav>",
+      "cssClass": "sitenav",
+      "previewGround": "dark",
+      "tokenRefs": {},
+      "reactNote": "per-application navigation, built from Eyebrow, Button, and the logo assets",
+      "group": "Navigation"
+    },
+    {
+      "id": "form-field",
+      "name": "Form field",
+      "use": "Every input on every surface: a partner form, a sign-up, a dashboard.",
+      "spec": {
+        "label": "DM Sans 600, 15px",
+        "input": "17px DM Sans on @wash, 1px @rule border, 4px radius, 44px minimum height",
+        "placeholder": "@ink-soft, never @ink-faint: a placeholder still has to be read",
+        "error": "@error-state text and border. Never Flame, never Ember.",
+        "hint": "13px @ink-muted, below the input, always present rather than appearing on failure"
+      },
+      "rules": [
+        "The touch target is 44px whatever the visual height.",
+        "An error names what is wrong and how to fix it. 'Invalid' is not an error message.",
+        "Never signal an error with colour alone: the message text carries it.",
+        "Ember is reserved for the action. An error is not an action."
+      ],
+      "html": "<div class=\"field\" data-state=\"error\">\n  <label for=\"email\">Email</label>\n  <input id=\"email\" type=\"email\" value=\"nathan@\" aria-describedby=\"email-error\">\n  <p class=\"error\" id=\"email-error\">Add everything after the @, for example theword.world.</p>\n</div>",
+      "tokenRefs": {
+        "input": "@wash on @rule",
+        "error": "@error-state"
+      },
+      "cssClass": "field",
+      "previewGround": "light",
+      "react": "Field",
+      "group": "Forms"
+    },
+    {
+      "id": "data-table",
+      "name": "Data table",
+      "use": "Official figures, schedules, and any grid of records.",
+      "spec": {
+        "header": "DM Sans 600 uppercase 12px, letterspaced .14em, @ink-muted on @parchment",
+        "cell": "15px DM Sans, @rule-soft bottom border",
+        "numerals": "tabular-nums wherever digits line up",
+        "scroll": "the table scrolls inside its own container, never the page"
+      },
+      "rules": [
+        "A wide table scrolls in its own frame. The page body never scrolls sideways.",
+        "Figures come from the official ministry record and carry a source line."
+      ],
+      "html": "<div class=\"table-scroll\">\n  <table>\n    <thead><tr><th>Conference</th><th>City</th><th>Salvations</th></tr></thead>\n    <tbody><tr><td>SLC</td><td>[City]</td><td>[n]</td></tr></tbody>\n  </table>\n</div>",
+      "tokenRefs": {
+        "header": "@ink-muted on @parchment",
+        "cell": "1px @rule-soft"
+      },
+      "cssClass": "table-scroll",
+      "previewGround": "light",
+      "react": "TableScroll",
+      "group": "Data display"
+    },
+    {
+      "id": "email-layout",
+      "name": "Email layout",
+      "use": "Every newsletter and transactional email.",
+      "spec": {
+        "width": "600px, the recorded email breakpoint",
+        "structure": "nested tables, not divs. Outlook renders the table and ignores the div.",
+        "css": "inline styles on every element. No stylesheet, no custom properties, no var().",
+        "fonts": "Georgia for the serif and Arial for the sans. The webfont will not load and the fallback is the design.",
+        "ground": "@parchment body, @white content table, @midnight footer",
+        "images": "PNG only, with alt text that carries the meaning when images are blocked"
+      },
+      "rules": [
+        "No SVG. Most clients strip it.",
+        "A dark-mode client may invert the ground: state colours explicitly on every cell and never rely on a default.",
+        "Every email carries a preheader, a reason the person is receiving it, and a working unsubscribe.",
+        "The logo is a PNG at 400px or 800px, never the vector."
+      ],
+      "html": "<table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" style=\"background:#F7F3EC;margin:0;padding:24px 0;\">\n  <tr><td align=\"center\">\n    <table role=\"presentation\" width=\"600\" cellpadding=\"0\" cellspacing=\"0\" style=\"width:600px;max-width:100%;background:#FFFFFF;\">\n      <tr><td style=\"padding:32px;font-family:Arial,sans-serif;font-size:17px;line-height:1.7;color:#0B1A2D;\">\n        Body copy goes here.\n      </td></tr>\n    </table>\n  </td></tr>\n</table>",
+      "tokenRefs": {
+        "ground": "@parchment",
+        "content": "@white",
+        "text": "@midnight"
+      },
+      "cssClass": "(email: inline styles only)",
+      "previewGround": "light",
+      "reactNote": "email markup: tables and inline styles, which React does not build",
+      "group": "Email"
+    },
+    {
+      "id": "email-button",
+      "name": "Email button",
+      "use": "The single call to action in an email.",
+      "spec": {
+        "build": "a table cell with a background, not a styled anchor: Outlook drops padding on an anchor",
+        "background": "@ember",
+        "color": "@white",
+        "padding": "14px 28px",
+        "radius": "3px"
+      },
+      "rules": [
+        "One per email.",
+        "Never Flame fill: it fails contrast at 3.3:1 in an email exactly as it does on the web.",
+        "The link text says what happens, and the URL is visible in the footer for clients that strip links."
+      ],
+      "html": "<table role=\"presentation\" cellpadding=\"0\" cellspacing=\"0\"><tr>\n  <td bgcolor=\"#C13A24\" style=\"border-radius:3px;\">\n    <a href=\"https://theword.world/partner\" style=\"display:inline-block;padding:14px 28px;font-family:Arial,sans-serif;font-size:15px;font-weight:bold;color:#FFFFFF;text-decoration:none;\">Partner With Us</a>\n  </td>\n</tr></table>",
+      "tokenRefs": {
+        "background": "@ember",
+        "color": "@white"
+      },
+      "cssClass": "(email: inline styles only)",
+      "previewGround": "light",
+      "reactNote": "email markup: tables and inline styles, which React does not build",
+      "group": "Email"
+    },
+    {
+      "id": "button-quiet",
+      "name": "Quiet button",
+      "use": "A tertiary action beside a primary and a ghost. Toolbar and menu actions.",
+      "group": "Actions",
+      "spec": {
+        "background": "transparent",
+        "color": "the themed accent",
+        "padding": "@space-2 @space-3"
+      },
+      "rules": [
+        "Never the only action on a view. It is the third choice, not the first.",
+        "Sits below 44px because it is not a primary target. Do not use it on a touch-first surface."
+      ],
+      "html": "<button class=\"btn quiet\">Copy link</button>",
+      "cssClass": "btn quiet",
+      "previewGround": "light",
+      "reactNote": "Available as a class in brand.css. A React wrapper lands when an application needs one.",
+      "tokenRefs": {}
+    },
+    {
+      "id": "badge",
+      "name": "Badge",
+      "use": "A short status or category label beside a title or in a table cell.",
+      "group": "Data display",
+      "spec": {
+        "font": "DM Sans 600, 11px, letterspaced .1em, uppercase",
+        "radius": "@radius-button",
+        "variants": "default, accent, solid, success, warning, error"
+      },
+      "rules": [
+        "A badge labels, it does not shout. Never more than two words.",
+        "The state variants take the themed state colours, which lift on a dark ground.",
+        "Never Flame: a badge is text at small size."
+      ],
+      "html": "<span class=\"badge\">Draft</span>\n<span class=\"badge\" data-state=\"accent\">CLEAN</span>\n<span class=\"badge\" data-state=\"solid\">Published</span>\n<span class=\"badge\" data-state=\"success\">Confirmed</span>\n<span class=\"badge\" data-state=\"warning\">Unverified</span>\n<span class=\"badge\" data-state=\"error\">Blocked</span>",
+      "cssClass": "badge",
+      "previewGround": "light",
+      "reactNote": "Available as a class in brand.css. A React wrapper lands when an application needs one.",
+      "tokenRefs": {}
+    },
+    {
+      "id": "alert",
+      "name": "Alert",
+      "use": "A message about the state of the page or the last action.",
+      "group": "Feedback",
+      "spec": {
+        "structure": "a coloured left rule, a title, and one line of explanation",
+        "states": "neutral, success, warning, error",
+        "title": "DM Sans 700, body text-body-small"
+      },
+      "rules": [
+        "Never colour alone. The title carries the meaning and the rule reinforces it.",
+        "An error says what went wrong and how to fix it. “Invalid” is not a message.",
+        "Never Flame and never Ember: Ember means the action, and an alert is not an action."
+      ],
+      "html": "<div class=\"alert\" data-state=\"error\">\n  <strong>The figure has no source</strong>\n  <p>Every published number names the record it came from. Add the record and the period it covers.</p>\n</div>\n<div class=\"alert\" data-state=\"success\">\n  <strong>Checked against the record</strong>\n  <p>All four figures match the July conference report.</p>\n</div>",
+      "cssClass": "alert",
+      "previewGround": "light",
+      "reactNote": "Available as a class in brand.css. A React wrapper lands when an application needs one.",
+      "tokenRefs": {}
+    },
+    {
+      "id": "inline-link",
+      "name": "Inline link",
+      "use": "A link inside a sentence.",
+      "group": "Typography",
+      "spec": {
+        "color": "the themed accent: Ember on light, Flame on dark",
+        "underline": "1px, thickening to 2px on hover"
+      },
+      "rules": [
+        "Always underlined. Colour alone is not a signal, and it is the first thing lost to colour blindness.",
+        "The link text says where it goes. Never “click here”, never a bare URL in prose."
+      ],
+      "html": "<p>Read the <a class=\"link\" href=\"/brand/\">Brand Guide</a> before building anything.</p>",
+      "cssClass": "link",
+      "previewGround": "light",
+      "reactNote": "Available as a class in brand.css. A React wrapper lands when an application needs one.",
+      "tokenRefs": {}
+    },
+    {
+      "id": "blockquote",
+      "name": "Pull quote",
+      "use": "A quotation lifted out of the flow, in the serif.",
+      "group": "Typography",
+      "spec": {
+        "font": "DM Serif Text italic, body text-title",
+        "rule": "2px left, in the themed accent",
+        "measure": "44 characters",
+        "attribution": "required"
+      },
+      "rules": [
+        "Attributed, always. An unattributed quotation is gate G8.",
+        "Never set over a photograph. That is the record document's job, on the scrim."
+      ],
+      "html": "<blockquote class=\"quote\">The local church is not a strategy for the plan. It is the plan.<cite>Nathan Zimmer</cite></blockquote>",
+      "cssClass": "quote",
+      "previewGround": "light",
+      "reactNote": "Available as a class in brand.css. A React wrapper lands when an application needs one.",
+      "tokenRefs": {}
+    },
+    {
+      "id": "code-block",
+      "name": "Code",
+      "use": "A token name, a file path, or a snippet somebody will copy.",
+      "group": "Typography",
+      "spec": {
+        "font": "SF Mono, Consolas, monospace at .88em",
+        "background": "the sunken surface",
+        "scroll": "its own container"
+      },
+      "rules": [
+        "A wide block scrolls inside its own frame. The page body never scrolls sideways."
+      ],
+      "html": "<p>Link <code class=\"code\">/assets/brand.css</code> and the brand is in place.</p>\n<pre class=\"code\"><code>&lt;link rel=\"stylesheet\" href=\"/assets/brand.css\"&gt;</code></pre>",
+      "cssClass": "code",
+      "previewGround": "light",
+      "reactNote": "Available as a class in brand.css. A React wrapper lands when an application needs one.",
+      "tokenRefs": {}
+    },
+    {
+      "id": "separator",
+      "name": "Separator",
+      "use": "A hairline between sections of a page or a menu.",
+      "group": "Layout",
+      "spec": {
+        "rule": "1px the hairline",
+        "spacing": "@space-6 above and below"
+      },
+      "rules": [
+        "The hairline is the only divider in this system. No thick rules, no double rules, no ornaments."
+      ],
+      "html": "<hr class=\"separator\">",
+      "cssClass": "separator",
+      "previewGround": "light",
+      "reactNote": "Available as a class in brand.css. A React wrapper lands when an application needs one.",
+      "tokenRefs": {}
+    },
+    {
+      "id": "panel",
+      "name": "Panel",
+      "use": "A raised container for a group of controls or a summary.",
+      "group": "Layout",
+      "spec": {
+        "background": "the raised surface",
+        "radius": "@radius-frame",
+        "elevation": "@elevation-raised"
+      },
+      "rules": [
+        "A panel lifts; a card sits. Use a card in a grid and a panel for something picked up out of the page."
+      ],
+      "html": "<div class=\"panel\">\n  <span class=\"eyebrow\">Summary</span>\n  <p class=\"muted\">Four figures, all matched to the July record.</p>\n</div>",
+      "cssClass": "panel",
+      "previewGround": "light",
+      "reactNote": "Available as a class in brand.css. A React wrapper lands when an application needs one.",
+      "tokenRefs": {}
+    },
+    {
+      "id": "choice",
+      "name": "Checkbox and radio",
+      "use": "Selection inside a form.",
+      "group": "Forms",
+      "spec": {
+        "control": "the native input, tinted with accent-color",
+        "size": "18px",
+        "target": "44px including its label"
+      },
+      "rules": [
+        "Native controls, tinted. Keyboard and screen reader behaviour is the platform's rather than something reimplemented badly.",
+        "The label is clickable, and it is part of the touch target."
+      ],
+      "html": "<label class=\"choice\"><input type=\"checkbox\" checked> Send me the field report</label>\n<label class=\"choice\"><input type=\"radio\" name=\"d\" checked> Every month</label>\n<label class=\"choice\"><input type=\"radio\" name=\"d\"> Only when something happens</label>",
+      "cssClass": "choice",
+      "previewGround": "light",
+      "reactNote": "Available as a class in brand.css. A React wrapper lands when an application needs one.",
+      "tokenRefs": {}
+    },
+    {
+      "id": "switch",
+      "name": "Switch",
+      "use": "An immediate on or off, with no save step.",
+      "group": "Forms",
+      "spec": {
+        "track": "42x24, radius 12px",
+        "thumb": "18px circle at @elevation-raised",
+        "on": "the themed accent fill"
+      },
+      "rules": [
+        "A switch takes effect immediately. If it needs saving, it is a checkbox.",
+        "The visible label says what being on means, not what the switch is called."
+      ],
+      "html": "<label class=\"switch\"><input type=\"checkbox\" checked><span class=\"track\"></span> Show unverified figures</label>",
+      "cssClass": "switch",
+      "previewGround": "light",
+      "reactNote": "Available as a class in brand.css. A React wrapper lands when an application needs one.",
+      "tokenRefs": {}
+    },
+    {
+      "id": "breadcrumb",
+      "name": "Breadcrumb",
+      "use": "Where this page sits, on any surface more than two levels deep.",
+      "group": "Navigation",
+      "spec": {
+        "font": "body text-caption, muted text",
+        "separator": "a forward slash at faint text"
+      },
+      "rules": [
+        "The current page is the last item and is not a link.",
+        "Never more than four levels. A fifth means the structure is wrong."
+      ],
+      "html": "<nav class=\"breadcrumb\" aria-label=\"Breadcrumb\"><ol>\n  <li><a href=\"/\">Portal</a></li>\n  <li><a href=\"/brand/\">Brand Guide</a></li>\n  <li aria-current=\"page\">Colour</li>\n</ol></nav>",
+      "cssClass": "breadcrumb",
+      "previewGround": "light",
+      "reactNote": "Available as a class in brand.css. A React wrapper lands when an application needs one.",
+      "tokenRefs": {}
+    },
+    {
+      "id": "tabs",
+      "name": "Tabs",
+      "use": "Switching between views of the same thing.",
+      "group": "Navigation",
+      "spec": {
+        "indicator": "2px bottom rule in the themed accent",
+        "rest": "muted text",
+        "active": "body text"
+      },
+      "rules": [
+        "Tabs switch views of one thing. They never navigate to a different page.",
+        "Between two and five. A sixth is a menu."
+      ],
+      "html": "<div class=\"tabs\" role=\"tablist\">\n  <button role=\"tab\" aria-selected=\"true\">Overview</button>\n  <button role=\"tab\" aria-selected=\"false\">Colour</button>\n  <button role=\"tab\" aria-selected=\"false\">Type</button>\n</div>",
+      "cssClass": "tabs",
+      "previewGround": "light",
+      "reactNote": "Available as a class in brand.css. A React wrapper lands when an application needs one.",
+      "tokenRefs": {}
+    },
+    {
+      "id": "pagination",
+      "name": "Pagination",
+      "use": "Moving through a long list of records.",
+      "group": "Navigation",
+      "spec": {
+        "target": "36px minimum per control",
+        "current": "the themed accent fill with a white label"
+      },
+      "rules": [
+        "The current page is marked with aria-current, not colour alone.",
+        "Always show first and last. A reader needs to know how far the list goes."
+      ],
+      "html": "<nav class=\"pagination\" aria-label=\"Pagination\">\n  <a href=\"#\">Previous</a>\n  <a href=\"#\">1</a>\n  <span aria-current=\"page\">2</span>\n  <a href=\"#\">3</a>\n  <a href=\"#\">Next</a>\n</nav>",
+      "cssClass": "pagination",
+      "previewGround": "light",
+      "reactNote": "Available as a class in brand.css. A React wrapper lands when an application needs one.",
+      "tokenRefs": {}
+    },
+    {
+      "id": "accordion",
+      "name": "Accordion",
+      "use": "Long reference content the reader scans before reading.",
+      "group": "Disclosure",
+      "spec": {
+        "control": "native details and summary",
+        "marker": "a plus turning to a minus, in the themed accent"
+      },
+      "rules": [
+        "Built on details and summary, so it works with no JavaScript and reads correctly to a screen reader.",
+        "Never hide something the reader needs in order to act. An accordion is for depth, not for tidiness."
+      ],
+      "html": "<div class=\"accordion\">\n  <details open><summary>What counts as an official figure</summary><div class=\"body\">A number that appears in the ministry record, with the period it covers.</div></details>\n  <details><summary>Who approves a change</summary><div class=\"body\">A written proposal, approval by Joel Zimmer and Nathan Zimmer, a version bump, and a changelog entry.</div></details>\n</div>",
+      "cssClass": "accordion",
+      "previewGround": "light",
+      "reactNote": "Available as a class in brand.css. A React wrapper lands when an application needs one.",
+      "tokenRefs": {}
+    },
+    {
+      "id": "dialog",
+      "name": "Dialog",
+      "use": "A decision that has to be made before anything else continues.",
+      "group": "Overlays",
+      "spec": {
+        "width": "480px maximum",
+        "elevation": "@elevation-overlay",
+        "actions": "right aligned, primary last"
+      },
+      "rules": [
+        "One decision per dialog. A dialog with two questions is a page.",
+        "Escape closes it, focus is trapped inside it, and focus returns to whatever opened it.",
+        "Never for information alone. That is an alert."
+      ],
+      "html": "<div class=\"dialog\" role=\"dialog\" aria-label=\"Retire this figure\">\n  <h3 class=\"title\">Retire this figure?</h3>\n  <p class=\"muted\">It stays in the archive and stops appearing in new reports.</p>\n  <div class=\"actions\"><button class=\"btn ghost\">Cancel</button><button class=\"btn\">Retire it</button></div>\n</div>",
+      "cssClass": "dialog",
+      "previewGround": "light",
+      "reactNote": "Available as a class in brand.css. A React wrapper lands when an application needs one.",
+      "tokenRefs": {}
+    },
+    {
+      "id": "dropdown-menu",
+      "name": "Menu",
+      "use": "Actions on the thing the reader is looking at.",
+      "group": "Overlays",
+      "spec": {
+        "width": "200px minimum",
+        "elevation": "@elevation-overlay",
+        "divider": "1px the soft hairline"
+      },
+      "rules": [
+        "Actions, not navigation. A menu of links is a nav.",
+        "A destructive action sits last, after a divider."
+      ],
+      "html": "<div class=\"menu\" role=\"menu\">\n  <button role=\"menuitem\">Duplicate</button>\n  <button role=\"menuitem\">Download SVG</button>\n  <hr>\n  <button role=\"menuitem\">Retire</button>\n</div>",
+      "cssClass": "menu",
+      "previewGround": "light",
+      "reactNote": "Available as a class in brand.css. A React wrapper lands when an application needs one.",
+      "tokenRefs": {}
+    },
+    {
+      "id": "tooltip",
+      "name": "Tooltip",
+      "use": "A short clarification of a control the reader is already looking at.",
+      "group": "Overlays",
+      "spec": {
+        "ground": "@midnight on both themes, so it reads as an overlay rather than a surface",
+        "font": "body text-caption"
+      },
+      "rules": [
+        "Never the only place information appears. A tooltip cannot be reached by touch or by a screen reader in the same way.",
+        "One line. If it needs two, it belongs on the page."
+      ],
+      "html": "<span class=\"tooltip\">Measured from the artwork, not the file</span>",
+      "cssClass": "tooltip",
+      "previewGround": "light",
+      "reactNote": "Available as a class in brand.css. A React wrapper lands when an application needs one.",
+      "tokenRefs": {}
+    },
+    {
+      "id": "toast",
+      "name": "Toast",
+      "use": "Confirmation that something the reader did has finished.",
+      "group": "Feedback",
+      "spec": {
+        "width": "380px maximum",
+        "rule": "3px left in the themed accent",
+        "elevation": "@elevation-overlay"
+      },
+      "rules": [
+        "Says what happened, in the past tense. “Published”, not “Publishing”.",
+        "Never carries the only copy of anything. It disappears.",
+        "Never announces an error that needs action. That is an alert, which stays."
+      ],
+      "html": "<div class=\"toast\" role=\"status\"><div><strong>Published</strong><br><span class=\"muted\">Brand system v7.0 is live.</span></div></div>",
+      "cssClass": "toast",
+      "previewGround": "light",
+      "reactNote": "Available as a class in brand.css. A React wrapper lands when an application needs one.",
+      "tokenRefs": {}
+    },
+    {
+      "id": "progress",
+      "name": "Progress",
+      "use": "How far through a known-length task the reader is.",
+      "group": "Feedback",
+      "spec": {
+        "height": "6px",
+        "fill": "the themed accent",
+        "track": "the sunken surface"
+      },
+      "rules": [
+        "Only for a task whose length is known. If it is not known, use a skeleton.",
+        "Carries a text label nearby. A bar alone is not a measurement."
+      ],
+      "html": "<div class=\"progress\" role=\"progressbar\" aria-valuenow=\"64\" aria-valuemin=\"0\" aria-valuemax=\"100\"><span style=\"width:64%\"></span></div>\n<p class=\"caption\">64% of the logo set rebuilt</p>",
+      "cssClass": "progress",
+      "previewGround": "light",
+      "reactNote": "Available as a class in brand.css. A React wrapper lands when an application needs one.",
+      "tokenRefs": {}
+    },
+    {
+      "id": "skeleton",
+      "name": "Skeleton",
+      "use": "The shape of content that has not arrived yet.",
+      "group": "Feedback",
+      "spec": {
+        "fill": "the sunken surface",
+        "shape": "matches the content it stands in for"
+      },
+      "rules": [
+        "Matches the shape of what is coming, so the layout does not jump when it arrives.",
+        "Never a spinner over a blank screen. Show the shape of the answer."
+      ],
+      "html": "<span class=\"skeleton\" style=\"width:70%;height:28px\"></span>\n<span class=\"skeleton\" style=\"width:100%;height:14px\"></span>\n<span class=\"skeleton\" style=\"width:88%;height:14px\"></span>",
+      "cssClass": "skeleton",
+      "previewGround": "light",
+      "reactNote": "Available as a class in brand.css. A React wrapper lands when an application needs one.",
+      "tokenRefs": {}
+    },
+    {
+      "id": "empty-state",
+      "name": "Empty state",
+      "use": "A list, a search, or a report with nothing in it yet.",
+      "group": "Feedback",
+      "spec": {
+        "border": "1px dashed the hairline",
+        "content": "what is missing, why, and the one thing to do about it"
+      },
+      "rules": [
+        "Never just “No results”. Say why it is empty and what to do next.",
+        "Invitation before information, the same as everywhere else."
+      ],
+      "html": "<div class=\"empty\">\n  <strong>No field reports yet</strong>\n  <p class=\"muted\">Reports appear here once a conference record is filed.</p>\n  <a class=\"btn\" href=\"#\">File a report</a>\n</div>",
+      "cssClass": "empty",
+      "previewGround": "light",
+      "reactNote": "Available as a class in brand.css. A React wrapper lands when an application needs one.",
+      "tokenRefs": {}
+    },
+    {
+      "id": "avatar",
+      "name": "Avatar",
+      "use": "A person or an account at small size.",
+      "group": "Data display",
+      "spec": {
+        "shape": "circle, the one circle in this system",
+        "ground": "@midnight",
+        "mark": "the glyph, never the wordmark"
+      },
+      "rules": [
+        "The wordmark is unreadable in a circle. The glyph is drawn for it.",
+        "A photograph of a person is used only with their consent, the same as any published image.",
+      "The image is marked aria-hidden: the name sits beside it, and a screen reader announcing the mark twice helps nobody. An avatar that is the only identification carries real alt text instead."
+      ],
+      "html": "<span class=\"avatar\"><img src=\"/assets/logos/the-word/the-word-glyph-reversed.svg\" alt=\"\" aria-hidden=\"true\"></span>",
+      "cssClass": "avatar",
+      "previewGround": "light",
+      "reactNote": "Available as a class in brand.css. A React wrapper lands when an application needs one.",
+      "tokenRefs": {}
     }
   ]
 }

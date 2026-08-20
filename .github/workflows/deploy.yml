@@ -28,6 +28,62 @@ jobs:
       - name: The portal agrees with itself
         run: python3 tools/brand_lint.py
 
+  # A pull request that only reports pass or fail gives a designer no way to see
+  # what their change looks like. Every PR gets its own URL on the same infra as
+  # production, so a proposed change to the standard can be reviewed as a page.
+  preview:
+    name: Preview
+    needs: verify
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Deploy preview
+        id: preview
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy . --project-name=the-word-brand --branch=${{ github.head_ref }}
+
+      - name: Comment the preview URL
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const url = "${{ steps.preview.outputs.deployment-url }}";
+            if (!url) return;
+            const body = [
+              "**Preview deployed**",
+              "",
+              `Portal: ${url}`,
+              `Brand Guide: ${url}/brand/`,
+              `Assets: ${url}/assets/`,
+              `AI manifest: ${url}/ai/manifest.json`,
+              "",
+              "_Rebuilt on every push to this pull request._",
+            ].join("\n");
+            const { data: comments } = await github.rest.issues.listComments({
+              owner: context.repo.owner, repo: context.repo.repo,
+              issue_number: context.issue.number,
+            });
+            const mine = comments.find(c =>
+              c.user.type === "Bot" && c.body.startsWith("**Preview deployed**"));
+            if (mine) {
+              await github.rest.issues.updateComment({
+                owner: context.repo.owner, repo: context.repo.repo,
+                comment_id: mine.id, body,
+              });
+            } else {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner, repo: context.repo.repo,
+                issue_number: context.issue.number, body,
+              });
+            }
+
   deploy:
     name: Deploy
     needs: verify

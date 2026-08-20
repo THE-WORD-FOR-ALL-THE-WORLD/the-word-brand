@@ -1,0 +1,39 @@
+name: THE WORD brand check
+description: >-
+  Run the mechanical half of THE WORD brand audit against files or URLs. Fails on
+  an unknown colour, a font outside the three, text in or on Flame, a banned word,
+  a missing endorsement line, a removed focus ring, or an image with no alt text.
+
+inputs:
+  targets:
+    description: Files or URLs to check, space separated. Globs are expanded by the shell.
+    required: true
+  strict:
+    description: Treat warnings as failures.
+    required: false
+    default: "false"
+
+runs:
+  using: composite
+  steps:
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: "3.12"
+
+    - name: Fetch the checker
+      shell: bash
+      run: |
+        mkdir -p "${RUNNER_TEMP}/brand"
+        curl -fsSL -o "${RUNNER_TEMP}/brand/brand_check.py" \
+          https://raw.githubusercontent.com/THE-WORD-FOR-ALL-THE-WORLD/the-word-brand/main/tools/brand_check.py
+
+    - name: Check
+      shell: bash
+      run: |
+        # Without a local ai/ directory the checker fetches the published manifest,
+        # so the work is always measured against the current standard rather than
+        # against a copy that was current when this workflow was written.
+        python3 "${RUNNER_TEMP}/brand/brand_check.py" \
+          ${{ inputs.strict == 'true' && '--strict' || '' }} \
+          ${{ inputs.targets }}

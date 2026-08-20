@@ -22,6 +22,7 @@ import sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 import brandsource as bs  # noqa: E402
+import build_ai  # noqa: E402
 
 REPO = bs.REPO
 SKIP_DIRS = {".git", ".github", ".wrangler", "node_modules", "archive"}
@@ -58,6 +59,12 @@ def strip_specimens(s: str) -> str:
     s = re.sub(r'<div class="ban">.*?</div>\s*</div>\s*</div>', "", s, flags=re.S)
     s = re.sub(r'<div class="ratio-bar">.*?</div>\s*</div>', "", s, flags=re.S)
     s = re.sub(r'<div class="swatches">.*?</div>\s*</div>\s*</div>', "", s, flags=re.S)
+    # The component gallery renders every component, including the site chrome.
+    # A rendered specimen and a copyable markup block are the subject matter, not
+    # the page's own markup, and reading them as such made L10 report that the
+    # gallery's navigation "differs from the rest of the portal".
+    s = re.sub(r'<div class="stage[^"]*">.*?</div>', "", s, flags=re.S)
+    s = re.sub(r"<pre>.*?</pre>", "", s, flags=re.S)
     return s
 
 
@@ -88,6 +95,11 @@ def check_ai_source_present():
         "anti-patterns.md",
         "approved-examples.md",
         "components.json",
+        "components.css",
+        "channels.json",
+        "copy-bank.json",
+        "consumers.json",
+        "governance.json",
         "asset-notes.json",
         "skill.md",
     ]
@@ -106,6 +118,15 @@ def check_palette_drift(brand: dict, files: list):
         s = bs.read(os.path.join(REPO, rel))
         root = re.search(r":root\{(.*?)\}", s, re.S)
         if not root:
+            # A page with no :root of its own has to be reading the generated one.
+            # Before brand.tokens.css existed this check simply skipped such a page,
+            # which meant a page could drop its tokens and silently go unchecked.
+            if "/assets/brand.tokens.css" not in s and "/assets/brand.css" not in s:
+                err(
+                    "L3",
+                    f"{rel} declares no brand tokens and links neither brand.tokens.css nor "
+                    "brand.css, so nothing ties it to the Brand Guide.",
+                )
             continue
         for m in re.finditer(r"--([a-z0-9-]+)\s*:\s*(#[0-9A-Fa-f]{3,8})\s*;", root.group(1)):
             name, value = m.group(1), m.group(2).upper()
@@ -274,7 +295,7 @@ def check_navigation(files: list):
     """L10: the portal chrome is the same on every page."""
     sets = {}
     for rel in files:
-        s = bs.read(os.path.join(REPO, rel))
+        s = strip_specimens(bs.read(os.path.join(REPO, rel)))
         nav = re.search(r'<div class="links">(.*?)</div>', s, re.S)
         if not nav:
             continue
@@ -305,6 +326,216 @@ def check_skill_copies():
             return
     if bs.read(published) != bs.read(installed):
         err("L11", "ai/SKILL.md and skills/the-word-brand/SKILL.md have drifted apart. Run tools/build_ai.py.")
+
+
+def _rgb(value: str, ground: tuple) -> tuple:
+    """A hex or rgba() token as solid RGB, composited over its stated ground."""
+    value = value.strip()
+    m = re.fullmatch(r"#([0-9A-Fa-f]{6})", value)
+    if m:
+        h = m.group(1)
+        return tuple(int(h[i : i + 2], 16) for i in (0, 2, 4))
+    m = re.fullmatch(r"rgba?\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*(?:,\s*([\d.]+)\s*)?\)", value)
+    if not m:
+        raise ValueError(f"cannot read the colour {value!r}")
+    r, g, b = (int(m.group(i)) for i in (1, 2, 3))
+    a = float(m.group(4)) if m.group(4) else 1.0
+    return tuple(round(c * a + gc * (1 - a)) for c, gc in zip((r, g, b), ground))
+
+
+def _luminance(rgb: tuple) -> float:
+    def channel(c):
+        c = c / 255
+        return c / 12.92 if c <= 0.03928 else ((c + 0.055) / 1.055) ** 2.4
+
+    r, g, b = (channel(c) for c in rgb)
+    return 0.2126 * r + 0.7152 * g + 0.0722 * b
+
+
+def contrast(fg: str, bg: str) -> float:
+    ground = _rgb(bg, (255, 255, 255))
+    a, b = _luminance(_rgb(fg, ground)), _luminance(ground)
+    hi, lo = max(a, b), min(a, b)
+    return (hi + 0.05) / (lo + 0.05)
+
+
+# Every pair the system actually puts on screen, with the ratio it has to clear.
+# 4.5 is WCAG AA for body text, 3.0 for large text and for a non-text boundary.
+# A pair listed here is a pair somebody will build, so a palette edit that breaks
+# one of them fails the build rather than shipping and being found by a reader.
+CONTRAST_PAIRS = [
+    ("ink", "parchment", 4.5, "body text on the light ground"),
+    ("ink", "white", 4.5, "body text on a card"),
+    ("ink-muted", "parchment", 4.5, "captions and metadata on the light ground"),
+    ("ink-muted", "white", 4.5, "captions on a card"),
+    ("ink-soft", "parchment", 3.0, "placeholder and inactive labels"),
+    ("ink-reversed", "midnight", 4.5, "body text on Midnight"),
+    ("ink-reversed-muted", "midnight", 4.5, "captions on Midnight"),
+    ("ink-reversed-soft", "midnight", 3.0, "placeholders on Midnight"),
+    ("ember", "parchment", 4.5, "links and labels on the light ground"),
+    ("ember", "white", 4.5, "links on a card"),
+    ("white", "ember", 4.5, "the primary button label"),
+    ("white", "button-hover", 4.5, "the primary button label, hovered"),
+    ("flame", "midnight", 3.0, "the official-record numeral, which is large text"),
+    ("parchment", "midnight", 4.5, "reversed body copy"),
+    ("error-state", "parchment", 4.5, "form error text"),
+    ("warning-state", "parchment", 4.5, "form warning text"),
+    # The dark theme. A card on a dark page sits on a lifted surface, not on the
+    # ground, and every one of these is measured against that surface because that
+    # is where the text actually lands.
+    ("ink-reversed", "surface-on-dark", 4.5, "body text on a dark card"),
+    ("ink-reversed-muted", "surface-on-dark", 4.5, "captions on a dark card"),
+    ("accent-on-dark", "surface-on-dark", 4.5, "links and labels on a dark card"),
+    ("accent-on-dark", "midnight", 4.5, "links and labels on the dark ground"),
+    ("success-on-dark", "surface-on-dark", 4.5, "the success state on a dark card"),
+    ("error-on-dark", "surface-on-dark", 4.5, "form error text on a dark card"),
+    ("warning-on-dark", "surface-on-dark", 4.5, "form warning text on a dark card"),
+    ("error-on-dark", "word-blue", 4.5, "form error text on the School's dark ground"),
+    ("warning-on-dark", "word-blue", 4.5, "form warning text on the School's dark ground"),
+]
+
+
+def check_contrast(tokens: dict):
+    """L14: every pair the guide puts on screen still passes WCAG AA.
+
+    The audit asks a human to check this by eye (H1). Half of it is arithmetic, and
+    arithmetic belongs in the build. Ember was chosen over Flame for text because
+    Flame is 3.3:1 and fails; nothing should be able to quietly undo that.
+    """
+    lookup = {k: c["hex"] for k, c in tokens["color"].items()}
+    lookup.update({k: v["value"] for k, v in tokens["neutral"].items()})
+    lookup.update({k: t["value"] for k, t in tokens["system"].items() if t["value"].startswith("#")})
+
+    for fg, bg, minimum, why in CONTRAST_PAIRS:
+        if fg not in lookup or bg not in lookup:
+            err("L14", f"the contrast pair {fg} on {bg} names a token that no longer exists.")
+            continue
+        try:
+            ratio = contrast(lookup[fg], lookup[bg])
+        except ValueError as exc:
+            err("L14", f"{fg} on {bg}: {exc}")
+            continue
+        if ratio + 0.005 < minimum:
+            err(
+                "L14",
+                f"{fg} on {bg} is {ratio:.2f}:1 and needs {minimum}:1 ({why}). "
+                "Change the value in the Brand Guide, or change what it is used for.",
+            )
+
+
+def check_consumers():
+    """L15: the React library still implements what the specifications say.
+
+    The library is hand-written and the specifications are published, so nothing
+    but a check keeps them in step. This catches the two ways they come apart: a
+    component specified with a React name that nothing exports, and a package
+    still stamped with an older brand version than the one being released.
+    """
+    spec_path = os.path.join(REPO, "ai", "components.json")
+    index_path = os.path.join(REPO, "packages", "ui", "src", "index.ts")
+    pkg_path = os.path.join(REPO, "packages", "ui", "package.json")
+    brand_pkg_path = os.path.join(REPO, "packages", "brand", "package.json")
+    if not os.path.exists(spec_path):
+        return
+    components = json.loads(bs.read(spec_path))
+    declared = components["version"]
+
+    if not os.path.exists(index_path):
+        err("L15", "packages/ui/src/index.ts is missing. The React library has no entry point.")
+    else:
+        exported = set(re.findall(r"export \{([^}]*)\}", bs.read(index_path)))
+        names = {n.strip() for group in exported for n in group.split(",") if n.strip()}
+        for c in components["components"]:
+            if c.get("react") and c["react"] not in names:
+                err(
+                    "L15",
+                    f"components.json says {c['id']} is implemented in React as {c['react']}, "
+                    "but packages/ui does not export it.",
+                )
+
+    # The registry: every surface running this brand, and what it is running.
+    registry_path = os.path.join(REPO, "ai-source", "consumers.json")
+    if os.path.exists(registry_path):
+        for c in json.loads(bs.read(registry_path))["consumers"]:
+            synced = c.get("syncedVersion")
+            if synced == "auto":
+                continue
+            if synced is None:
+                warn(
+                    "L16",
+                    f"{c['name']} ({c['kind']}) has never been synced. It is running an unknown "
+                    f"version of the brand while the system is at v{declared}.",
+                )
+            elif synced != declared:
+                warn(
+                    "L16",
+                    f"{c['name']} ({c['kind']}) is on v{synced}; the system is at v{declared}. "
+                    "Sync it, then update ai-source/consumers.json.",
+                )
+
+    for path in (pkg_path, brand_pkg_path):
+        if not os.path.exists(path):
+            err("L15", f"{os.path.relpath(path, REPO)} is missing. Run tools/build_ai.py.")
+            continue
+        pkg = json.loads(bs.read(path))
+        stamped = pkg.get("brand", {}).get("version")
+        if stamped != declared:
+            err(
+                "L15",
+                f"{pkg['name']} is stamped with brand v{stamped} but the system is v{declared}. "
+                "Run tools/build_ai.py.",
+            )
+
+
+def check_stylesheet_vars():
+    """L17: every variable brand.css uses is a variable brand.css defines.
+
+    A var() with no definition does not error. It falls back to whatever the
+    property inherits, so the page still renders and the mistake is invisible
+    until someone looks closely at the wrong ground. That is exactly how the dark
+    theme shipped referencing five colours the stylesheet never defined.
+    """
+    path = os.path.join(REPO, "assets", "brand.css")
+    if not os.path.exists(path):
+        err("L17", "assets/brand.css is missing. Run tools/build_ai.py.")
+        return
+    css = bs.read(path)
+    defined = set(re.findall(r"^\s*--([a-z0-9-]+)\s*:", css, re.M))
+    used = set(re.findall(r"var\(\s*--([a-z0-9-]+)", css))
+    for name in sorted(used - defined):
+        err(
+            "L17",
+            f"assets/brand.css uses --{name} and never defines it. A var() with no "
+            "definition falls back silently, so this renders wrong rather than failing.",
+        )
+    # A variable defined and never used is not an error: the token layer is
+    # published for other people to build with, not only for this stylesheet.
+
+
+def check_social_cards(files: list):
+    """L13: every page previews correctly when it is shared.
+
+    A brand URL is shared into a partner's inbox and a volunteer's group chat. A
+    page with no card previews as a blank rectangle, which reads as a dead link.
+    The card itself is generated by build_logos.py from the approved wordmark, so
+    this only has to check that each page claims it.
+    """
+    required = [
+        ('<meta property="og:title"', "an og:title"),
+        ('<meta property="og:description"', "an og:description"),
+        ('<meta property="og:image"', "an og:image"),
+        ('<meta property="og:url"', "an og:url"),
+        ('<meta name="description"', "a meta description"),
+        ('rel="icon"', "a favicon link"),
+    ]
+    card = os.path.join(REPO, "assets", "images", "og-card.png")
+    if not os.path.exists(card):
+        err("L13", "assets/images/og-card.png is missing. Run tools/build_logos.py.")
+    for rel in files:
+        s = bs.read(os.path.join(REPO, rel))
+        missing = [label for needle, label in required if needle not in s]
+        if missing:
+            err("L13", f"{rel} is missing {', '.join(missing)}.")
 
 
 def check_logo_sources(files: list):
@@ -365,6 +596,10 @@ def main() -> int:
     check_fonts(files)
     check_asset_links(files)
     check_logo_sources(files)
+    check_social_cards(files)
+    check_consumers()
+    check_stylesheet_vars()
+    check_contrast(build_ai.build_tokens(brand, _messaging, overrides.get('manifest', {}).get('updated') or brand['issued'], overrides, bs.parse_scales(os.path.join(REPO, 'brand', 'index.html'))))
     check_navigation(files)
     check_skill_copies()
     if os.path.isdir(ai_dir):

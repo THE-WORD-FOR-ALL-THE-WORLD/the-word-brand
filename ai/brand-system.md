@@ -1,6 +1,6 @@
 # THE WORD FOR ALL THE WORLD: Brand System
 
-> **Brand system v6.8 · Messaging guide v1.0 · Updated 2026-08-19**
+> **Brand system v7.0 · Messaging guide v1.0 · Updated 2026-08-20**
 > Canonical source: <https://brand.theword.world/ai/manifest.json>
 > The complete standard, assembled for machine reading. The human guides are at <https://brand.theword.world/brand> and <https://brand.theword.world/brand/messaging>.
 
@@ -122,6 +122,15 @@ These are the named values to build with. Every one is a design token: a decisio
 | Button hover | #A62F1B | Ember deepened ~10%. State-only. Never a palette color. |
 | Focus ring | 2px Ember (Flame on dark), 3px offset | Visible on every interactive element. Never removed. |
 | Success state | #5FAD56 | Forms and dashboards only. Never in brand layouts. |
+| Error state | #8C1D13 | Forms and dashboards only. Never Flame and never Ember: Ember means "this is the action", and an error is not an action. |
+| Warning state | #8A5B12 | Forms and dashboards only. Never Flame, which is a celebration colour and reads as one. |
+| Disabled control | 38% Midnight text on 5% Midnight fill | Low contrast is the message. The only place the muted floor may be crossed. |
+| Touch target | 44px minimum | Every control on every surface, however small it is drawn. |
+| Success on dark | #7FC177 | The success state lifted for a dark ground. The light value is 2.4:1 on Midnight and cannot be read there. |
+| Error on dark | #F0968A | The error state lifted for a dark ground. Passes on Midnight and on Word Blue alike. Still never Flame. |
+| Warning on dark | #E0B25C | The warning state lifted for a dark ground. Passes on Midnight and on Word Blue alike. |
+| Surface on dark | #172537 | Parchment at 5% over Midnight. The raised card and panel ground on a dark page. Any lighter and the accent drops below 4.5:1 on it, which is what fixes this value rather than taste. |
+| Accent on dark | #F85842 | Flame. Ember is 3.3:1 on Midnight and fails, so a text accent on a dark ground is Flame. This is the one place Flame carries text, and §03 records it. |
 | Photo/video scrim | Midnight gradient, ~70% at text | Required under any text on imagery (§07). |
 | Corner radius | 3px buttons · 4px cards · 6px frames | Three steps, no others. |
 | Muted text | 80% Midnight (light grounds) · 75% Parchment (dark) | Captions and metadata. Nothing lighter. It fails contrast. |
@@ -142,6 +151,8 @@ Stacks as the site renders them:
 - Sans: `'DM Sans', -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif`
 
 Three faces, and no others. All three come from Google Fonts, so every volunteer, partner, and field team can install them free. Where they cannot load, the fallbacks are Georgia for the serifs and the system sans for DM Sans. Proxima Nova is retired and is not used again.
+
+The serif has Regular and Italic and no bold cut. Where a headline needs more weight, it goes up a step rather than getting heavier.
 
 ## 7. Logo
 
@@ -457,10 +468,11 @@ replace it.
 
 ## 16. Version history
 
-### Brand Guide v6.8
+### Brand Guide v7.0
 
 | Version | Date | Owner | Changed | Approved |
 | --- | --- | --- | --- | --- |
+| 7.0 | 2026-08-20 | Nathan Zimmer | The toolkit release, answering the first system review (The Toolkit Gap). The guide stated six colours and three typefaces and stopped, so everything below that line was being invented per project. §03 gains a neutral ramp derived from Midnight and Parchment at recorded opacities, so dividers, placeholders, input fills, and disabled states stop being improvised and the palette stays six colours; it also gains the palette in CMYK, recorded as an unprofiled starting point and marked unconfirmed, with Pantone left bracketed until the marks are matched to a book. §04 gains a type scale of eleven steps, each naming its own family. §09 gains spacing, radius, elevation, motion, three breakpoints, a 44px touch target, and error and warning states, with the rule that neither may ever be Flame or Ember: Ember means “this is the action”, and an error is not an action. Every scale is published as a data table the build reads, so the guide remains the only place a value is stated. From it the build now emits brand.css, a tokens-only stylesheet every page in the portal links instead of carrying its own copy of the palette, a W3C Design Tokens file, typed TypeScript, a Tailwind preset, an Adobe swatch file, and two installable packages. The component set grows to forty, adding the interface parts every application needs and none of the guides happened to use: badges, alerts, tabs, breadcrumbs, pagination, an accordion, a dialog, a menu, a tooltip, a toast, progress, skeletons, an empty state, an avatar, checkboxes, radios, a switch, a form field, a data table, an email layout, and an email button. §09 gains a dark theme: a recorded surface for a raised card on a dark page, and lifted success, error, and warning values, because the light ones measure between 1.9:1 and 3.0:1 on Midnight and cannot be read there. The accent changes with the ground for the same reason, Ember being 3.3:1 on Midnight, which makes the Flame eyebrow §03 already specifies a rule rather than an exception. All forty are rendered live at /components/, on either ground, drawn by the published stylesheet, one component per screen rather than one continuous page. A governance section at /governance/ separates three things that had been reading as one: a policy is a standing rule about how the system is run, a process is the order work moves in, and a procedure is the steps for one job. Ten policies, five processes, and eight procedures, each held to one line by a build check, and the brand's own non-negotiables read out of the audit's gates rather than restated. A channel layer at /channels/ records the sizes, character limits, and safe areas for nine surfaces, with a bank of pre-approved copy checked against its own limits and against the banned-word lists at build time. One logo correction: the School’s co-brand lockup reversed its own mark but left THE WORD in Midnight, which on the School’s Word Blue ground is 1.6:1 and effectively invisible. A composed lockup now tags its parent half so an ink can colour it separately from the door’s own mark, and on the reversed ink the parent and the divider rule flip to white while the lion keeps its Midnight structure. No colour, typeface, or law changes: this release adds what was missing rather than altering what was there. | Joel Zimmer, Nathan Zimmer |
 | 6.8 | 2026-08-20 | Nathan Zimmer | The School’s reversed mark is shown on the ground it was drawn for. Its lion is structured in Midnight, so a Midnight display ground swallowed that structure and the mane flattened into a white silhouette: the artwork matched its source exactly, and the ground under it did not. The dark ground is now declared per door rather than assumed to be Midnight, and the School’s is Word Blue, on the assets page and on its own guide alike. §11 states the rule instead of leaving it to be discovered, and names it as the case §04 already forbids for Word Blue on Midnight: ink and ground must not be the same colour. No logo file changes. | Joel Zimmer, Nathan Zimmer |
 | 6.7 | 2026-08-20 | Nathan Zimmer | The School’s published forms are matched to the artwork as supplied. The files handed over are a pure recolour of the earlier set, verified path for path: geometry is untouched and only the fills moved, from #052744 and #99daff onto Midnight and White. The lion is Midnight over White and the name Word Blue, with one exception carried from the source: the horizontal lockup inks its lion Word Blue on light grounds, where the stacked lockup and the lion alone ink it Midnight. §11 records that exception rather than hiding it. The build gains per-configuration ink overrides so a single form can differ from its brand without a second master. Group wrappers are no longer painted, since every path carries its own fill, and a check now fails the build if that ever stops being true; roles are pushed onto the paths themselves so a re-ink cannot depend on nesting the textual pass cannot see. | Joel Zimmer, Nathan Zimmer |
 | 6.6 | 2026-08-19 | Nathan Zimmer | The School’s ink is corrected against its Canva source rather than against the files it was built from. The SVGs supplied to the repository were a stale export carrying #99daff and #052744; the live Canva design had already been moved onto the palette and uses only Midnight, Word Blue, and White. Sampling it settles the question the last two releases guessed at: the lion is Midnight over White and does not change on any ground, and the name beside it is Word Blue, flipping to white on dark. This supersedes v6.4, which inked the whole mark Midnight, and v6.5, which inked the whole mark Word Blue. Geometry was checked against the source at the same scale and matches to within a quarter of a percent, so only colour moved. Every School form, its co-brand lockup, and its pack are regenerated. | Joel Zimmer, Nathan Zimmer |

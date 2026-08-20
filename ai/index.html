@@ -6,6 +6,19 @@
 <meta name="robots" content="index, follow, max-snippet:-1">
 <title>AI Layer · THE WORD FOR ALL THE WORLD</title>
 <meta name="description" content="Machine-readable brand system for THE WORD FOR ALL THE WORLD. Start at manifest.json.">
+<link rel="icon" href="/assets/logos/the-word/favicon/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/assets/logos/the-word/favicon/favicon-16.png" sizes="16x16" type="image/png">
+<link rel="apple-touch-icon" href="/assets/logos/the-word/favicon/apple-touch-icon-180.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="THE WORD FOR ALL THE WORLD">
+<meta property="og:title" content="AI Layer">
+<meta property="og:description" content="Machine-readable brand system for THE WORD FOR ALL THE WORLD. Start at manifest.json.">
+<meta property="og:url" content="https://brand.theword.world/ai/">
+<meta property="og:image" content="https://brand.theword.world/assets/images/og-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="THE WORD FOR ALL THE WORLD">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="alternate" type="application/json" href="/ai/manifest.json" title="AI manifest">
 <style>
   :root{--midnight:#0B1A2D;--word-blue:#023D6F;--parchment:#F7F3EC;--flame:#F85842;--ember:#C13A24;--white:#FFFFFF;--rule:rgba(11,26,45,.18);}
@@ -26,7 +39,7 @@
 </head>
 <body>
 <main>
-  <span class="eyebrow">Machine-readable layer · v6.8</span>
+  <span class="eyebrow">Machine-readable layer · v7.0</span>
   <h1>The AI entry point for THE WORD brand system</h1>
   <p>Every file below is raw Markdown or JSON, served without navigation, scripts, or decoration.
      Agents should start at <a href="/ai/manifest.json">manifest.json</a>, which names every current
@@ -39,8 +52,14 @@
     <tr><td><a href="/ai/brand-system.md">brand-system.md</a></td><td>The complete brand standard as one document.</td></tr>
     <tr><td><a href="/ai/SKILL.md">SKILL.md</a></td><td>Installable agent skill: the retrieval and audit workflow.</td></tr>
     <tr><td><a href="/ai/tokens.json">tokens.json</a></td><td>Colors, typography, system tokens and states.</td></tr>
+    <tr><td><a href="/ai/tokens.dtcg.json">tokens.dtcg.json</a></td><td>The same tokens in W3C Design Tokens format, for design tooling.</td></tr>
+    <tr><td><a href="/ai/tokens.ts">tokens.ts</a></td><td>The same tokens as typed TypeScript exports, for applications.</td></tr>
+    <tr><td><a href="/ai/tailwind.preset.js">tailwind.preset.js</a></td><td>The same tokens as a Tailwind preset, replacing the default theme.</td></tr>
     <tr><td><a href="/ai/audit.md">audit.md</a></td><td>The brand audit rubric and report template.</td></tr>
     <tr><td><a href="/ai/components.json">components.json</a></td><td>Component specifications, resolved against current tokens.</td></tr>
+    <tr><td><a href="/ai/channels.json">channels.json</a></td><td>One entry per surface: sizes, safe areas, limits, rules, and the audit checks that apply.</td></tr>
+    <tr><td><a href="/ai/governance.json">governance.json</a></td><td>Policies, processes, and procedures: how this system is run, changed, and used.</td></tr>
+    <tr><td><a href="/ai/copy-bank.json">copy-bank.json</a></td><td>Pre-approved strings by channel, each within the character limit it was written against.</td></tr>
     <tr><td><a href="/ai/assets.json">assets.json</a></td><td>Approved logos, photography, and video, with usage rules.</td></tr>
     <tr><td><a href="/ai/approved-examples.md">approved-examples.md</a></td><td>Worked output that passes the audit.</td></tr>
     <tr><td><a href="/ai/anti-patterns.md">anti-patterns.md</a></td><td>What not to do, including every DON'T and every banned word.</td></tr>
@@ -49,7 +68,7 @@
   <p><code>Before beginning, retrieve https://brand.theword.world/ai/manifest.json. Follow the brand
      system and skill it names. Audit the result against the audit resource and state which
      brand-system version you used.</code></p>
-  <footer>Brand system v6.8 · Messaging guide v1.0 · Updated 2026-08-19<br>
+  <footer>Brand system v7.0 · Messaging guide v1.0 · Updated 2026-08-20<br>
   brand.theword.world</footer>
 </main>
 </body>

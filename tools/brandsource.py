@@ -177,7 +177,12 @@ def parse_brand_guide(path: str = BRAND_GUIDE) -> dict:
         re.search(r'<section id="tokens".*?</section>', s, re.S), "the tokens section", path
     ).group(0)
     system_tokens = []
-    for m in re.finditer(r"<tr><td>(.*?)</td><td>(.*?)</td><td>(.*?)</td></tr>", tokens_section, re.S):
+    # The named scales live in this section too, in their own tables. They are read
+    # by parse_scales() with their headers intact, so they are removed here rather
+    # than being flattened into name/value/rule triples they do not fit.
+    for m in re.finditer(
+        r"<tr><td>(.*?)</td><td>(.*?)</td><td>(.*?)</td></tr>", strip_scale_tables(tokens_section), re.S
+    ):
         system_tokens.append(
             {
                 "token": strip_tags(m.group(1)),
@@ -552,6 +557,79 @@ def scan_assets() -> list:
                 }
             )
     return sorted(out, key=lambda a: a["file"])
+
+
+SCALE_TABLE = re.compile(r'<table data-scale="([a-z-]+)"\s*>(.*?)</table>', re.S)
+
+
+def strip_scale_tables(section: str) -> str:
+    return SCALE_TABLE.sub("", section)
+
+
+def parse_scales(path: str) -> dict:
+    """Every <table data-scale="name"> in a guide, as a list of row dicts.
+
+    One reader for all of them. A new scale is a new table in the guide and needs
+    no change here, which is the point: the guide stays the place a value is
+    stated, and the build stays the place it is carried.
+    """
+    s = read(path)
+    out: dict = {}
+    for m in SCALE_TABLE.finditer(s):
+        name, body = m.group(1), m.group(2)
+        rows = re.findall(r"<tr>(.*?)</tr>", body, re.S)
+        if not rows:
+            raise SourceError(f"{path}: the '{name}' scale table has no rows.")
+        headers = [strip_tags(c).strip().lower() for c in re.findall(r"<th>(.*?)</th>", rows[0], re.S)]
+        if not headers:
+            raise SourceError(f"{path}: the '{name}' scale table has no header row.")
+        entries = []
+        for row in rows[1:]:
+            cells = [strip_tags(c).strip() for c in re.findall(r"<td>(.*?)</td>", row, re.S)]
+            if len(cells) != len(headers):
+                raise SourceError(
+                    f"{path}: a row in the '{name}' scale has {len(cells)} cells "
+                    f"but the header has {len(headers)}."
+                )
+            entries.append(dict(zip(headers, cells)))
+        if not entries:
+            raise SourceError(f"{path}: the '{name}' scale table has a header but no values.")
+        out[name] = entries
+    return out
+
+
+def scan_reviews() -> list:
+    """Every system review on the record, newest first.
+
+    A review is any directory under reviews/ with an index.html. Its title and
+    summary come from the page itself, so publishing a new review needs no edit
+    here: drop the directory in and it registers itself in llms.txt and the
+    sitemap on the next build.
+    """
+    root = os.path.join(REPO, "reviews")
+    if not os.path.isdir(root):
+        return []
+    out = []
+    for name in sorted(os.listdir(root), reverse=True):
+        index = os.path.join(root, name, "index.html")
+        if not os.path.isfile(index):
+            continue
+        page = read(index)
+        title = require(
+            re.search(r"<title>(.*?)(?:\s*·[^·<]*)?</title>", page, re.S),
+            "the review title",
+            index,
+        ).group(1).strip()
+        desc = re.search(r'<meta name="description" content="([^"]*)"', page)
+        out.append(
+            {
+                "slug": name,
+                "name": strip_tags(title),
+                "url": f"{SITE}/reviews/{name}",
+                "summary": strip_tags(desc.group(1)).strip() if desc else "",
+            }
+        )
+    return out
 
 
 def published_pages() -> list:

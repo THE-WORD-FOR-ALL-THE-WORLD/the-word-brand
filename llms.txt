@@ -18,7 +18,7 @@
 
 ## Facts at a glance
 
-Brand system version 6.8, messaging guide version 1.0, issued August 2026.
+Brand system version 7.0, messaging guide version 1.0, issued August 2026.
 Palette: Midnight `#0B1A2D`, Word Blue `#023D6F`, Parchment `#F7F3EC`, Flame `#F85842`, Ember `#C13A24`, White `#FFFFFF`.
 Typefaces: DM Serif Display, DM Serif Text, DM Sans.
 Proportion: 60 / 30 / 10, Flame never above a tenth and never carrying text.
@@ -32,6 +32,13 @@ Public mission line: Strengthening the local church to fulfill the Great Commiss
 - [Messaging Guide](https://brand.theword.world/brand/messaging): Voice, tone, vocabulary, audiences, and proof policy.
 - [Assets](https://brand.theword.world/assets): Every approved logo in every format, with its clear space, minimum size, and ink rules. Fonts, download packs, and the photography policy.
 - [Signatures](https://brand.theword.world/signatures): The signature masters that sign the record, and the law governing where each may be placed.
+- [Governance](https://brand.theword.world/governance): The policies, processes, and procedures that run this system, kept apart.
+- [Channels](https://brand.theword.world/channels): Every surface the brand lives on, with its sizes, limits, safe areas, rules, and approved copy.
+- [Channels, machine-readable](https://brand.theword.world/ai/channels.json): Every surface the brand lives on, with its sizes, limits, safe areas, and rules.
+- [Copy bank](https://brand.theword.world/ai/copy-bank.json): Pre-approved headlines, subject lines, calls to action, and boilerplate.
+- [Components](https://brand.theword.world/components): Every component rendered live from the published stylesheet, with its spec, rules, and copyable markup.
+- [Reviews](https://brand.theword.world/reviews): Every system review of this brand, in order, with what each found and the version it produced.
+- [System Review, August 2026](https://brand.theword.world/reviews/2026-08-system-review): A review of the brand system at v6.8 against what designers, engineers, ad buyers, and volunteers each need from it, with the plan it produced.
 
 ## The three initiatives
 

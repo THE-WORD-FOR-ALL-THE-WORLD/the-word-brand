@@ -3,8 +3,12 @@
   <url><loc>https://brand.theword.world/</loc><priority>1.0</priority></url>
   <url><loc>https://brand.theword.world/assets</loc><priority>0.9</priority></url>
   <url><loc>https://brand.theword.world/brand</loc><priority>0.9</priority></url>
+  <url><loc>https://brand.theword.world/channels</loc><priority>0.9</priority></url>
+  <url><loc>https://brand.theword.world/components</loc><priority>0.9</priority></url>
   <url><loc>https://brand.theword.world/documents</loc><priority>0.9</priority></url>
+  <url><loc>https://brand.theword.world/governance</loc><priority>0.9</priority></url>
   <url><loc>https://brand.theword.world/letterhead</loc><priority>0.9</priority></url>
+  <url><loc>https://brand.theword.world/reviews</loc><priority>0.9</priority></url>
   <url><loc>https://brand.theword.world/signatures</loc><priority>0.9</priority></url>
   <url><loc>https://brand.theword.world/brand/every1</loc><priority>0.7</priority></url>
   <url><loc>https://brand.theword.world/brand/messaging</loc><priority>0.7</priority></url>
@@ -13,13 +17,20 @@
   <url><loc>https://brand.theword.world/documents/every1</loc><priority>0.7</priority></url>
   <url><loc>https://brand.theword.world/documents/revival-to-my-city</loc><priority>0.7</priority></url>
   <url><loc>https://brand.theword.world/documents/school-of-the-local-church</loc><priority>0.7</priority></url>
+  <url><loc>https://brand.theword.world/reviews/2026-08-system-review</loc><priority>0.7</priority></url>
   <url><loc>https://brand.theword.world/ai/</loc><priority>0.9</priority></url>
   <url><loc>https://brand.theword.world/ai/manifest.json</loc><priority>0.6</priority></url>
   <url><loc>https://brand.theword.world/ai/brand-system.md</loc><priority>0.6</priority></url>
   <url><loc>https://brand.theword.world/ai/SKILL.md</loc><priority>0.6</priority></url>
   <url><loc>https://brand.theword.world/ai/tokens.json</loc><priority>0.6</priority></url>
+  <url><loc>https://brand.theword.world/ai/tokens.dtcg.json</loc><priority>0.6</priority></url>
+  <url><loc>https://brand.theword.world/ai/tokens.ts</loc><priority>0.6</priority></url>
+  <url><loc>https://brand.theword.world/ai/tailwind.preset.js</loc><priority>0.6</priority></url>
   <url><loc>https://brand.theword.world/ai/audit.md</loc><priority>0.6</priority></url>
   <url><loc>https://brand.theword.world/ai/components.json</loc><priority>0.6</priority></url>
+  <url><loc>https://brand.theword.world/ai/channels.json</loc><priority>0.6</priority></url>
+  <url><loc>https://brand.theword.world/ai/governance.json</loc><priority>0.6</priority></url>
+  <url><loc>https://brand.theword.world/ai/copy-bank.json</loc><priority>0.6</priority></url>
   <url><loc>https://brand.theword.world/ai/assets.json</loc><priority>0.6</priority></url>
   <url><loc>https://brand.theword.world/ai/approved-examples.md</loc><priority>0.6</priority></url>
   <url><loc>https://brand.theword.world/ai/anti-patterns.md</loc><priority>0.6</priority></url>

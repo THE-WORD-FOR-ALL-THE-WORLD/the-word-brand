@@ -1,0 +1,1830 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<title>Components · THE WORD FOR ALL THE WORLD</title>
+<meta name="description" content="Every component in the brand system, rendered live from the published stylesheet on both grounds, with its specification, its rules, and markup that can be copied.">
+<link rel="icon" href="/assets/logos/the-word/favicon/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/assets/logos/the-word/favicon/favicon-16.png" sizes="16x16" type="image/png">
+<link rel="apple-touch-icon" href="/assets/logos/the-word/favicon/apple-touch-icon-180.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="THE WORD FOR ALL THE WORLD">
+<meta property="og:title" content="Components">
+<meta property="og:description" content="Every component in the brand system, rendered live from the published stylesheet on both grounds, with its specification, its rules, and markup that can be copied.">
+<meta property="og:url" content="https://brand.theword.world/components">
+<meta property="og:image" content="https://brand.theword.world/assets/images/og-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="THE WORD FOR ALL THE WORLD">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="/assets/fonts/fonts.css">
+<link rel="stylesheet" href="/assets/brand.css">
+<script>
+  // Before first paint, so a dark reader never sees a light flash.
+  (function () {
+    try {
+      var saved = localStorage.getItem("theword-theme");
+      var dark = saved ? saved === "dark"
+        : window.matchMedia("(prefers-color-scheme: dark)").matches;
+      if (dark) document.documentElement.setAttribute("data-theme", "dark");
+    } catch (e) {}
+  })();
+</script>
+<style>
+  /* This page is the proof. Every specimen is drawn by /assets/brand.css, the
+     same file anyone else links. The only rules here are the gallery's own
+     furniture: the shell, the sidebar, and the frame around each specimen. */
+
+  /* The frame does not scroll. The main pane does, and it snaps, so a reader
+     moves component by component rather than down one continuous wall. */
+  html, body { height: 100%; overflow: hidden; }
+  .shell {
+    height: 100dvh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto minmax(0, 1fr);
+  }
+  @media (min-width: 900px) {
+    .shell { grid-template-columns: 248px minmax(0, 1fr); }
+  }
+
+  /* --- top bar --- */
+  .topbar {
+    z-index: 20;
+    display: flex; align-items: center; justify-content: space-between; gap: var(--space-4);
+    padding: var(--space-4) var(--space-5);
+    background: var(--ground);
+    border-bottom: 1px solid var(--border);
+    grid-column: 1 / -1;
+  }
+  .topbar .brand { display: flex; align-items: center; gap: var(--space-4); min-width: 0; }
+  .topbar .brand img { height: 17px; width: auto; display: block; }
+  .topbar .brand .where { font-size: var(--text-caption); color: var(--text-muted); white-space: nowrap; }
+  .topbar .right { display: flex; align-items: center; gap: var(--space-4); }
+  .topbar .links { display: none; gap: var(--space-4); font-size: 12.5px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; }
+  .topbar .links a { color: var(--text-muted); text-decoration: none; }
+  .topbar .links a:hover { color: var(--accent-text); }
+  @media (min-width: 1180px) { .topbar .links { display: flex; } }
+  .topbar a.home { display: flex; text-decoration: none; }
+
+  /* The mark is one drawing in two inks; swap which one is shown. */
+  .mark-dark { display: none; }
+  [data-theme="dark"] .mark-light { display: none; }
+  [data-theme="dark"] .mark-dark { display: block; }
+
+  .themetoggle {
+    appearance: none; cursor: pointer;
+    display: inline-flex; align-items: center; gap: var(--space-2);
+    background: none; border: 1px solid var(--border);
+    border-radius: var(--radius-button);
+    color: var(--text-muted);
+    font-family: var(--sans); font-weight: 600; font-size: var(--text-caption);
+    padding: 7px 12px;
+  }
+  .themetoggle:hover { border-color: var(--accent-text); color: var(--accent-text); }
+  .themetoggle .on-light { display: inline; }
+  .themetoggle .on-dark { display: none; }
+  [data-theme="dark"] .themetoggle .on-light { display: none; }
+  [data-theme="dark"] .themetoggle .on-dark { display: inline; }
+
+  /* --- sidebar --- */
+  .sidebar {
+    border-right: 1px solid var(--border);
+    padding: var(--space-5) 0 var(--space-8);
+    overflow-y: auto;
+    display: none;
+  }
+  @media (min-width: 900px) { .sidebar { display: block; } }
+  .sidebar .group { margin-bottom: var(--space-5); }
+  .sidebar .group > h2 {
+    font-family: var(--sans); font-weight: 600; font-size: var(--text-label);
+    letter-spacing: .14em; text-transform: uppercase; color: var(--text-soft);
+    margin: 0 0 var(--space-2); padding: 0 var(--space-5);
+  }
+  .sidebar a {
+    display: block; padding: 5px var(--space-5);
+    font-size: var(--text-body-small); line-height: 1.5;
+    color: var(--text-muted); text-decoration: none;
+    border-left: 2px solid transparent;
+  }
+  .sidebar a:hover { color: var(--text); background: var(--surface-sunken); }
+  .sidebar a.active { color: var(--accent-text); border-left-color: var(--accent-text); font-weight: 600; }
+
+  /* --- main --- */
+  .main {
+    min-width: 0;
+    overflow-y: auto;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+    overscroll-behavior: contain;
+  }
+  .main > .inner { max-width: 900px; margin: 0 auto; padding: 0 var(--space-5); }
+
+  /* Every screen is one component, and scroll-snap-stop keeps a fast flick from
+     skipping three of them. A screen that outgrows the viewport scrolls inside
+     itself rather than breaking the snap. */
+  .screen {
+    min-height: 100%;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: var(--space-7) 0;
+  }
+  .screen + .screen { border-top: 1px solid var(--border); }
+
+  .intro h1 { margin-top: var(--space-2); }
+  .spec { scroll-margin-top: 0; }
+
+  /* A short window, a phone in landscape, or a reader who has asked for less
+     motion: let the page scroll normally rather than fighting them. */
+  @media (max-height: 620px), (prefers-reduced-motion: reduce) {
+    .main { scroll-snap-type: none; scroll-behavior: auto; }
+    .screen { min-height: 0; justify-content: flex-start; }
+  }
+  .spec > .head { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--space-3); }
+  .spec > .head h2 {
+    font-family: var(--serif-display); font-weight: 400;
+    font-size: var(--text-display-small); line-height: var(--leading-display-small); margin: 0;
+  }
+  .spec > .head .id { font-family: 'SF Mono', Consolas, monospace; font-size: var(--text-caption); color: var(--text-soft); }
+  .spec > .use { color: var(--text-muted); max-width: 60ch; margin: var(--space-2) 0 0; }
+
+  .stage {
+    margin-top: var(--space-5);
+    border: 1px solid var(--border); border-radius: var(--radius-frame);
+    background: var(--surface); color: var(--text);
+    padding: var(--space-6);
+    display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-4);
+    overflow-x: auto;
+  }
+  /* A component that only exists on a dark ground keeps one, whatever the page
+     theme is: an official-record numeral has no light-ground form. */
+  .stage.forced-dark { background: var(--midnight); border-color: var(--rule-light); }
+  .stage.block { display: block; }
+
+  .cols { display: grid; grid-template-columns: 1fr; gap: var(--space-5); margin-top: var(--space-5); }
+  @media (min-width: 720px) { .cols { grid-template-columns: 1fr 1fr; } }
+  h3.sub {
+    font-family: var(--sans); font-weight: 600; font-size: var(--text-label);
+    letter-spacing: .14em; text-transform: uppercase; color: var(--text-soft);
+    margin: 0 0 var(--space-3);
+  }
+  dl.props { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: var(--space-2) var(--space-4); font-size: var(--text-body-small); }
+  dl.props dt { font-weight: 600; color: var(--text-muted); }
+  dl.props dd { margin: 0; }
+  ul.rules { margin: 0; padding-left: 1.1em; font-size: var(--text-body-small); line-height: 1.6; }
+  ul.rules li { margin-bottom: var(--space-2); }
+
+  details.markup { margin-top: var(--space-5); border: 1px solid var(--border); border-radius: var(--radius-card); }
+  details.markup > summary {
+    cursor: pointer; list-style: none; padding: var(--space-3) var(--space-4);
+    font-weight: 600; font-size: var(--text-body-small);
+  }
+  details.markup > summary::-webkit-details-marker { display: none; }
+  details.markup > summary::before { content: "›"; display: inline-block; width: 1.2em; }
+  details.markup[open] > summary::before { content: "⌄"; }
+  details.markup pre {
+    margin: 0; padding: var(--space-4); overflow-x: auto;
+    border-top: 1px solid var(--border); background: var(--surface-sunken);
+    font-family: 'SF Mono', Consolas, monospace; font-size: 13px; line-height: 1.6;
+  }
+</style>
+</head>
+<body>
+
+<div class="shell">
+
+  <header class="topbar">
+    <div class="brand">
+      <a class="home" href="/" aria-label="THE WORD FOR ALL THE WORLD, portal home">
+        <img class="mark-light" src="/assets/logos/the-word/the-word-horizontal.svg" alt="THE WORD FOR ALL THE WORLD">
+        <img class="mark-dark" src="/assets/logos/the-word/the-word-horizontal-reversed.svg" alt="THE WORD FOR ALL THE WORLD">
+      </a>
+      <span class="where">Components · v7.0</span>
+    </div>
+    <div class="right">
+      <div class="links">
+        <a href="/">Home</a>
+        <a href="/brand/">Brand Guide</a>
+        <a href="/brand/messaging/">Messaging</a>
+        <a href="/documents/">Documents</a>
+        <a href="/letterhead/">Letterhead</a>
+        <a href="/signatures/">Signatures</a>
+        <a href="/assets/">Assets</a>
+      </div>
+      <button class="themetoggle" id="themetoggle" type="button" aria-live="polite">
+        <span class="on-light">Dark</span><span class="on-dark">Light</span>
+      </button>
+    </div>
+  </header>
+
+  <nav class="sidebar" aria-label="Components">
+    <div class="group">
+      <h2>Actions</h2>
+      <a href="#button-primary">Primary button</a>
+      <a href="#button-ghost">Ghost button</a>
+      <a href="#button-quiet">Quiet button</a>
+    </div>
+    <div class="group">
+      <h2>Typography</h2>
+      <a href="#eyebrow">Eyebrow / kicker</a>
+      <a href="#headline-serif">Serif headline</a>
+      <a href="#body">Body copy</a>
+      <a href="#photo-caption">Photo caption</a>
+      <a href="#inline-link">Inline link</a>
+      <a href="#blockquote">Pull quote</a>
+      <a href="#code-block">Code</a>
+    </div>
+    <div class="group">
+      <h2>Layout</h2>
+      <a href="#card">Card</a>
+      <a href="#separator">Separator</a>
+      <a href="#panel">Panel</a>
+    </div>
+    <div class="group">
+      <h2>The record</h2>
+      <a href="#record-document">Record document</a>
+      <a href="#testimony">Testimony</a>
+      <a href="#stat-figure">Official-record figure</a>
+      <a href="#endorsement-line">Sub-brand endorsement</a>
+    </div>
+    <div class="group">
+      <h2>Media</h2>
+      <a href="#hero-video">Full-bleed video hero</a>
+      <a href="#lower-third">Video lower third</a>
+    </div>
+    <div class="group">
+      <h2>Navigation</h2>
+      <a href="#site-chrome">Portal navigation and footer</a>
+      <a href="#breadcrumb">Breadcrumb</a>
+      <a href="#tabs">Tabs</a>
+      <a href="#pagination">Pagination</a>
+    </div>
+    <div class="group">
+      <h2>Forms</h2>
+      <a href="#form-field">Form field</a>
+      <a href="#choice">Checkbox and radio</a>
+      <a href="#switch">Switch</a>
+    </div>
+    <div class="group">
+      <h2>Data display</h2>
+      <a href="#data-table">Data table</a>
+      <a href="#badge">Badge</a>
+      <a href="#avatar">Avatar</a>
+    </div>
+    <div class="group">
+      <h2>Email</h2>
+      <a href="#email-layout">Email layout</a>
+      <a href="#email-button">Email button</a>
+    </div>
+    <div class="group">
+      <h2>Feedback</h2>
+      <a href="#alert">Alert</a>
+      <a href="#toast">Toast</a>
+      <a href="#progress">Progress</a>
+      <a href="#skeleton">Skeleton</a>
+      <a href="#empty-state">Empty state</a>
+    </div>
+    <div class="group">
+      <h2>Disclosure</h2>
+      <a href="#accordion">Accordion</a>
+    </div>
+    <div class="group">
+      <h2>Overlays</h2>
+      <a href="#dialog">Dialog</a>
+      <a href="#dropdown-menu">Menu</a>
+      <a href="#tooltip">Tooltip</a>
+    </div>
+  </nav>
+
+  <main class="main">
+    <div class="inner">
+      <div class="intro screen">
+        <span class="eyebrow">The Component Library</span>
+        <h1 class="headline headline-small">Every part, drawn by the <em>published</em> stylesheet.</h1>
+        <div class="prose" style="margin-top:var(--space-5)">
+          <p>Not a picture of the components. The components, rendered by <a class="link" href="/assets/brand.css">the same file anyone else links</a>, so this page cannot show something the stylesheet does not do.</p>
+          <p>Switch the ground with the button above. Everything here works on Parchment and on Midnight, because the accent and the three state colours change with the ground: Ember is 3.3:1 on Midnight and fails, so a text accent on a dark ground is Flame.</p>
+          <p class="caption">40 components · brand system v7.0 · messaging v1.0 · generated 2026-08-20 · <a class="link" href="/ai/components.json">components.json</a></p>
+        </div>
+      </div>
+      <section class="spec screen" id="button-primary">
+        <div class="head">
+          <h2>Primary button</h2>
+          <span class="id">button-primary</span> · <span class="id">.btn</span>
+        </div>
+        <p class="use">The main call to action. One per view.</p>
+      <div class="stage">
+<a class="btn" href="/partner">Partner With Us</a>
+      </div>
+        <div class="cols">
+          <div>
+            <h3 class="sub">Specification</h3>
+            <dl class="props">
+          <dt>background</dt><dd>#C13A24</dd>
+          <dt>color</dt><dd>#FFFFFF</dd>
+          <dt>hover</dt><dd>#A62F1B</dd>
+          <dt>font</dt><dd>DM Sans 700, 14.5px, letter-spacing .04em</dd>
+          <dt>padding</dt><dd>14px 28px</dd>
+          <dt>radius</dt><dd>3px</dd>
+          <dt>contrast</dt><dd>5.4:1, passes WCAG AA</dd>
+            </dl>
+          </div>
+          <div>
+            <h3 class="sub">Rules</h3>
+            <ul class="rules">
+          <li>Never Flame fill. Flame on a button is 3.3:1 and fails AA.</li>
+          <li>The label is sentence case or title case, never all caps, never a command shouted.</li>
+          <li>The focus ring is 2px Ember, 3px offset, and Flame when the button sits on Midnight.</li>
+            </ul>
+          </div>
+        </div>
+      <details class="markup">
+        <summary>Markup</summary>
+        <pre>&lt;a class="btn" href="/partner"&gt;Partner With Us&lt;/a&gt;</pre>
+      </details>
+      </section>
+      <section class="spec screen" id="button-ghost">
+        <div class="head">
+          <h2>Ghost button</h2>
+          <span class="id">button-ghost</span> · <span class="id">.btn ghost</span>
+        </div>
+        <p class="use">The secondary action beside a primary button, on Midnight or over footage.</p>
+      <div class="stage forced-dark on-midnight">
+<a class="btn ghost" href="/happening">See What's Happening</a>
+      </div>
+        <div class="cols">
+          <div>
+            <h3 class="sub">Specification</h3>
+            <dl class="props">
+          <dt>background</dt><dd>transparent</dd>
+          <dt>color</dt><dd>#F7F3EC</dd>
+          <dt>border</dt><dd>1.5px solid rgba(247,243,236,.5)</dd>
+          <dt>hover</dt><dd>rgba(247,243,236,.1) fill</dd>
+          <dt>radius</dt><dd>3px</dd>
+            </dl>
+          </div>
+          <div>
+            <h3 class="sub">Rules</h3>
+            <ul class="rules">
+          <li>Only on dark grounds. On Parchment, the secondary action is a text link in Ember.</li>
+          <li>Never two ghost buttons in a row. One primary, one ghost, then stop.</li>
+            </ul>
+          </div>
+        </div>
+      <details class="markup">
+        <summary>Markup</summary>
+        <pre>&lt;a class="btn ghost" href="/happening"&gt;See What's Happening&lt;/a&gt;</pre>
+      </details>
+      </section>
+      <section class="spec screen" id="button-quiet">
+        <div class="head">
+          <h2>Quiet button</h2>
+          <span class="id">button-quiet</span> · <span class="id">.btn quiet</span>
+        </div>
+        <p class="use">A tertiary action beside a primary and a ghost. Toolbar and menu actions.</p>
+      <div class="stage">
+<button class="btn quiet">Copy link</button>
+      </div>
+        <div class="cols">
+          <div>
+            <h3 class="sub">Specification</h3>
+            <dl class="props">
+          <dt>background</dt><dd>transparent</dd>
+          <dt>color</dt><dd>the themed accent</dd>
+          <dt>padding</dt><dd>8px 12px</dd>
+            </dl>
+          </div>
+          <div>
+            <h3 class="sub">Rules</h3>
+            <ul class="rules">
+          <li>Never the only action on a view. It is the third choice, not the first.</li>
+          <li>Sits below 44px because it is not a primary target. Do not use it on a touch-first surface.</li>
+            </ul>
+          </div>
+        </div>
+      <details class="markup">
+        <summary>Markup</summary>
+        <pre>&lt;button class="btn quiet"&gt;Copy link&lt;/button&gt;</pre>
+      </details>
+      </section>
+      <section class="spec screen" id="eyebrow">
+        <div class="head">
+          <h2>Eyebrow / kicker</h2>
+          <span class="id">eyebrow</span> · <span class="id">.eyebrow</span>
+        </div>
+        <p class="use">Opens a section or a record. Names what the reader is about to read.</p>
+      <div class="stage">
+<span class="eyebrow">03 — Color System</span>
+      </div>
+        <div class="cols">
+          <div>
+            <h3 class="sub">Specification</h3>
+            <dl class="props">
+          <dt>font</dt><dd>DM Sans 600, 12px</dd>
+          <dt>letterSpacing</dt><dd>.18em</dd>
+          <dt>transform</dt><dd>uppercase</dd>
+          <dt>color</dt><dd>#C13A24 on light grounds, #F85842 on Midnight</dd>
+            </dl>
+          </div>
+          <div>
+            <h3 class="sub">Rules</h3>
+            <ul class="rules">
+          <li>Every record opens with one. Law II.</li>
+          <li>All caps belongs here, to labels, and to the wordmark. Never to the serif.</li>
+            </ul>
+          </div>
+        </div>
+      <details class="markup">
+        <summary>Markup</summary>
+        <pre>&lt;span class="eyebrow"&gt;03 — Color System&lt;/span&gt;</pre>
+      </details>
+      </section>
+      <section class="spec screen" id="headline-serif">
+        <div class="head">
+          <h2>Serif headline</h2>
+          <span class="id">headline-serif</span> · <span class="id">.headline</span>
+        </div>
+        <p class="use">Section and page headlines where the institution speaks.</p>
+      <div class="stage">
+<h2>No one told them it is <em>already here.</em></h2>
+      </div>
+        <div class="cols">
+          <div>
+            <h3 class="sub">Specification</h3>
+            <dl class="props">
+          <dt>font</dt><dd>DM Serif Display Regular, clamp(34px, 4.8vw, 52px)</dd>
+          <dt>lineHeight</dt><dd>1.08</dd>
+          <dt>case</dt><dd>sentence case</dd>
+          <dt>emphasis</dt><dd>at most one italic word</dd>
+            </dl>
+          </div>
+          <div>
+            <h3 class="sub">Rules</h3>
+            <ul class="rules">
+          <li>No bold cut exists. For more weight, go bigger.</li>
+          <li>Never all caps.</li>
+          <li>Below 36px, use DM Serif Text. Below 22px, use DM Sans.</li>
+            </ul>
+          </div>
+        </div>
+      <details class="markup">
+        <summary>Markup</summary>
+        <pre>&lt;h2&gt;No one told them it is &lt;em&gt;already here.&lt;/em&gt;&lt;/h2&gt;</pre>
+      </details>
+      </section>
+      <section class="spec screen" id="body">
+        <div class="head">
+          <h2>Body copy</h2>
+          <span class="id">body</span> · <span class="id">.prose</span>
+        </div>
+        <p class="use">Every extended reading passage.</p>
+      <div class="stage">
+<div class="prose">
+  <p>The local church is the plan. Not a strategy for it, the plan itself.</p>
+  <p class="muted">Every tribe. Every tongue. Every nation.</p>
+</div>
+      </div>
+        <div class="cols">
+          <div>
+            <h3 class="sub">Specification</h3>
+            <dl class="props">
+          <dt>font</dt><dd>DM Sans 400, 17px</dd>
+          <dt>lineHeight</dt><dd>1.7</dd>
+          <dt>color</dt><dd>#0B1A2D on light grounds, #F7F3EC on Midnight</dd>
+          <dt>measure</dt><dd>max-width 660px</dd>
+          <dt>muted</dt><dd>80% Midnight (light grounds) · 75% Parchment (dark)</dd>
+            </dl>
+          </div>
+          <div>
+            <h3 class="sub">Rules</h3>
+            <ul class="rules">
+          <li>Always DM Sans. The serif never carries extended reading.</li>
+          <li>Never Flame body text on a light ground.</li>
+          <li>Short sentences, one idea each.</li>
+            </ul>
+          </div>
+        </div>
+      <details class="markup">
+        <summary>Markup</summary>
+        <pre>&lt;div class="prose"&gt;
+  &lt;p&gt;The local church is the plan. Not a strategy for it, the plan itself.&lt;/p&gt;
+  &lt;p class="muted"&gt;Every tribe. Every tongue. Every nation.&lt;/p&gt;
+&lt;/div&gt;</pre>
+      </details>
+      </section>
+      <section class="spec screen" id="photo-caption">
+        <div class="head">
+          <h2>Photo caption</h2>
+          <span class="id">photo-caption</span> · <span class="id">.caption</span>
+        </div>
+        <p class="use">Every published photograph. A photo without its record does not publish.</p>
+      <div class="stage">
+<p class="caption">The Word opened — attendees follow the teaching with Bibles and notes.<br><small>SLC Conference · [City], Uganda · 30 Jul 2026</small></p>
+      </div>
+        <div class="cols">
+          <div>
+            <h3 class="sub">Specification</h3>
+            <dl class="props">
+          <dt>font</dt><dd>DM Sans, 13px</dd>
+          <dt>color</dt><dd>80% Midnight (light grounds) · 75% Parchment (dark)</dd>
+          <dt>structure</dt><dd>what happened, then event · place · date</dd>
+            </dl>
+          </div>
+          <div>
+            <h3 class="sub">Rules</h3>
+            <ul class="rules">
+          <li>Names where known and permitted.</li>
+          <li>Bracketed fields mark anything not yet verified against the ministry record.</li>
+          <li>Written at capture, never from memory.</li>
+            </ul>
+          </div>
+        </div>
+      <details class="markup">
+        <summary>Markup</summary>
+        <pre>&lt;p class="caption"&gt;The Word opened — attendees follow the teaching with Bibles and notes.&lt;br&gt;&lt;small&gt;SLC Conference · [City], Uganda · 30 Jul 2026&lt;/small&gt;&lt;/p&gt;</pre>
+      </details>
+      </section>
+      <section class="spec screen" id="inline-link">
+        <div class="head">
+          <h2>Inline link</h2>
+          <span class="id">inline-link</span> · <span class="id">.link</span>
+        </div>
+        <p class="use">A link inside a sentence.</p>
+      <div class="stage">
+<p>Read the <a class="link" href="/brand/">Brand Guide</a> before building anything.</p>
+      </div>
+        <div class="cols">
+          <div>
+            <h3 class="sub">Specification</h3>
+            <dl class="props">
+          <dt>color</dt><dd>the themed accent: Ember on light, Flame on dark</dd>
+          <dt>underline</dt><dd>1px, thickening to 2px on hover</dd>
+            </dl>
+          </div>
+          <div>
+            <h3 class="sub">Rules</h3>
+            <ul class="rules">
+          <li>Always underlined. Colour alone is not a signal, and it is the first thing lost to colour blindness.</li>
+          <li>The link text says where it goes. Never “click here”, never a bare URL in prose.</li>
+            </ul>
+          </div>
+        </div>
+      <details class="markup">
+        <summary>Markup</summary>
+        <pre>&lt;p&gt;Read the &lt;a class="link" href="/brand/"&gt;Brand Guide&lt;/a&gt; before building anything.&lt;/p&gt;</pre>
+      </details>
+      </section>
+      <section class="spec screen" id="blockquote">
+        <div class="head">
+          <h2>Pull quote</h2>
+          <span class="id">blockquote</span> · <span class="id">.quote</span>
+        </div>
+        <p class="use">A quotation lifted out of the flow, in the serif.</p>
+      <div class="stage">
+<blockquote class="quote">The local church is not a strategy for the plan. It is the plan.<cite>Nathan Zimmer</cite></blockquote>
+      </div>
+        <div class="cols">
+          <div>
+            <h3 class="sub">Specification</h3>
+            <dl class="props">
+          <dt>font</dt><dd>DM Serif Text italic, body text-title</dd>
+          <dt>rule</dt><dd>2px left, in the themed accent</dd>
+          <dt>measure</dt><dd>44 characters</dd>
+          <dt>attribution</dt><dd>required</dd>
+            </dl>
+          </div>
+          <div>
+            <h3 class="sub">Rules</h3>
+            <ul class="rules">
+          <li>Attributed, always. An unattributed quotation is gate G8.</li>
+          <li>Never set over a photograph. That is the record document's job, on the scrim.</li>
+            </ul>
+          </div>
+        </div>
+      <details class="markup">
+        <summary>Markup</summary>
+        <pre>&lt;blockquote class="quote"&gt;The local church is not a strategy for the plan. It is the plan.&lt;cite&gt;Nathan Zimmer&lt;/cite&gt;&lt;/blockquote&gt;</pre>
+      </details>
+      </section>
+      <section class="spec screen" id="code-block">
+        <div class="head">
+          <h2>Code</h2>
+          <span class="id">code-block</span> · <span class="id">.code</span>
+        </div>
+        <p class="use">A token name, a file path, or a snippet somebody will copy.</p>
+      <div class="stage">
+<p>Link <code class="code">/assets/brand.css</code> and the brand is in place.</p>
+<pre class="code"><code>&lt;link rel="stylesheet" href="/assets/brand.css"&gt;</code></pre>
+      </div>
+        <div class="cols">
+          <div>
+            <h3 class="sub">Specification</h3>
+            <dl class="props">
+          <dt>font</dt><dd>SF Mono, Consolas, monospace at .88em</dd>
+          <dt>background</dt><dd>the sunken surface</dd>
+          <dt>scroll</dt><dd>its own container</dd>
+            </dl>
+          </div>
+          <div>
+            <h3 class="sub">Rules</h3>
+            <ul class="rules">
+          <li>A wide block scrolls inside its own frame. The page body never scrolls sideways.</li>
+            </ul>
+          </div>
+        </div>
+      <details class="markup">
+        <summary>Markup</summary>
+        <pre>&lt;p&gt;Link &lt;code class="code"&gt;/assets/brand.css&lt;/code&gt; and the brand is in place.&lt;/p&gt;
+&lt;pre class="code"&gt;&lt;code&gt;&amp;lt;link rel="stylesheet" href="/assets/brand.css"&amp;gt;&lt;/code&gt;&lt;/pre&gt;</pre>
+      </details>
+      </section>
+      <section class="spec screen" id="card">
+        <div class="head">
+          <h2>Card</h2>
+          <span class="id">card</span> · <span class="id">.card</span>
+        </div>
+        <p class="use">A repeated unit in a grid: a guide, an initiative, a document.</p>
+      <div class="stage block">
+<a class="card" href="/brand/">
+  <span class="eyebrow">01</span>
+  <h3 class="title">Brand Guide</h3>
+  <p class="muted">Identity, voice, colour, typography, and the laws of the brand.</p>
+</a>
+      </div>
+        <div class="cols">
+          <div>
+            <h3 class="sub">Specification</h3>
+            <dl class="props">
+          <dt>background</dt><dd>#FFFFFF</dd>
+          <dt>border</dt><dd>1px solid rgba(11,26,45,.18)</dd>
+          <dt>radius</dt><dd>4px</dd>
+          <dt>padding</dt><dd>30px 28px</dd>
+          <dt>hoverBorder</dt><dd>#C13A24</dd>
+          <dt>hoverShadow</dt><dd>0 10px 30px rgba(11,26,45,.1)</dd>
+            </dl>
+          </div>
+          <div>
+            <h3 class="sub">Rules</h3>
+            <ul class="rules">
+          <li>Cards sit on Parchment, never on Midnight, unless the whole band is dark and the card inverts.</li>
+          <li>Card text is Midnight. Watch for light-on-light inherited from a dark parent.</li>
+            </ul>
+          </div>
+        </div>
+      <details class="markup">
+        <summary>Markup</summary>
+        <pre>&lt;a class="card" href="/brand/"&gt;
+  &lt;span class="eyebrow"&gt;01&lt;/span&gt;
+  &lt;h3 class="title"&gt;Brand Guide&lt;/h3&gt;
+  &lt;p class="muted"&gt;Identity, voice, colour, typography, and the laws of the brand.&lt;/p&gt;
+&lt;/a&gt;</pre>
+      </details>
+      </section>
+      <section class="spec screen" id="separator">
+        <div class="head">
+          <h2>Separator</h2>
+          <span class="id">separator</span> · <span class="id">.separator</span>
+        </div>
+        <p class="use">A hairline between sections of a page or a menu.</p>
+      <div class="stage">
+<hr class="separator">
+      </div>
+        <div class="cols">
+          <div>
+            <h3 class="sub">Specification</h3>
+            <dl class="props">
+          <dt>rule</dt><dd>1px the hairline</dd>
+          <dt>spacing</dt><dd>32px above and below</dd>
+            </dl>
+          </div>
+          <div>
+            <h3 class="sub">Rules</h3>
+            <ul class="rules">
+          <li>The hairline is the only divider in this system. No thick rules, no double rules, no ornaments.</li>
+            </ul>
+          </div>
+        </div>
+      <details class="markup">
+        <summary>Markup</summary>
+        <pre>&lt;hr class="separator"&gt;</pre>
+      </details>
+      </section>
+      <section class="spec screen" id="panel">
+        <div class="head">
+          <h2>Panel</h2>
+          <span class="id">panel</span> · <span class="id">.panel</span>
+        </div>
+        <p class="use">A raised container for a group of controls or a summary.</p>
+      <div class="stage">
+<div class="panel">
+  <span class="eyebrow">Summary</span>
+  <p class="muted">Four figures, all matched to the July record.</p>
+</div>
+      </div>
+        <div class="cols">
+          <div>
+            <h3 class="sub">Specification</h3>
+            <dl class="props">
+          <dt>background</dt><dd>the raised surface</dd>
+          <dt>radius</dt><dd>6px</dd>
+          <dt>elevation</dt><dd>0 2px 6px rgba(11,26,45,.06)</dd>
+            </dl>
+          </div>
+          <div>
+            <h3 class="sub">Rules</h3>
+            <ul class="rules">
+          <li>A panel lifts; a card sits. Use a card in a grid and a panel for something picked up out of the page.</li>
+            </ul>
+          </div>
+        </div>
+      <details class="markup">
+        <summary>Markup</summary>
+        <pre>&lt;div class="panel"&gt;
+  &lt;span class="eyebrow"&gt;Summary&lt;/span&gt;
+  &lt;p class="muted"&gt;Four figures, all matched to the July record.&lt;/p&gt;
+&lt;/div&gt;</pre>
+      </details>
+      </section>
+      <section class="spec screen" id="record-document">
+        <div class="head">
+          <h2>Record document</h2>
+          <span class="id">record-document</span> · <span class="id">.record</span>
+        </div>
+        <p class="use">The canonical treatment for the prophecy, vision statements, official impact summaries, field reports, and initiative documents. Law II and Law IV in their purest form.</p>
+      <div class="stage">
+<div class="record"><span class="qk">The Word · A Prophecy</span><div class="verse">…</div><div class="dateline">Received December 2019</div></div>
+      </div>
+        <div class="cols">
+          <div>
+            <h3 class="sub">Specification</h3>
+            <dl class="props">
+          <dt>ground</dt><dd>#F7F3EC</dd>
+          <dt>rules</dt><dd>hairline, 1px rgba(11,26,45,.18)</dd>
+          <dt>kicker</dt><dd>letterspaced DM Sans 600 uppercase</dd>
+          <dt>quote</dt><dd>DM Serif Text italic, 22 to 34px</dd>
+          <dt>dateline</dt><dd>what, where, when</dd>
+          <dt>signature</dt><dd>scanned ink</dd>
+            </dl>
+          </div>
+          <div>
+            <h3 class="sub">Rules</h3>
+            <ul class="rules">
+          <li>Never decorated. No color blocks, no illustration, no icons.</li>
+          <li>Closes with a dateline and, where authority is claimed, real signatures.</li>
+          <li>A script font standing in for ink is a violation.</li>
+            </ul>
+          </div>
+        </div>
+      <details class="markup">
+        <summary>Markup</summary>
+        <pre>&lt;div class="record"&gt;&lt;span class="qk"&gt;The Word · A Prophecy&lt;/span&gt;&lt;div class="verse"&gt;…&lt;/div&gt;&lt;div class="dateline"&gt;Received December 2019&lt;/div&gt;&lt;/div&gt;</pre>
+      </details>
+      </section>
+      <section class="spec screen" id="testimony">
+        <div class="head">
+          <h2>Testimony</h2>
+          <span class="id">testimony</span> · <span class="id">.testimony</span>
+        </div>
+        <p class="use">The record of what God did. Four slots, always in order.</p>
+      <div class="stage block">
+<div class="testimony">
+  <p><b>Before</b> I had been in the city three years and knew no one.</p>
+  <p><b>Encounter</b> At the tent on the second night, someone prayed with me.</p>
+  <p><b>Transformation</b> I stopped drinking. My brother noticed first.</p>
+  <p><b>Outcome</b> I lead a small group now. Come and see for yourself.</p>
+  <p class="caption">[Name] · [City] · Shared with permission</p>
+</div>
+      </div>
+        <div class="cols">
+          <div>
+            <h3 class="sub">Specification</h3>
+            <dl class="props">
+          <dt>slots</dt><dd>Before: life as it was, in the person's own words · Encounter: the moment Jesus intervened, where and when · Transformation: what changed, specific, verifiable, honest · Outcome: life now, and the invitation to respond</dd>
+          <dt>attribution</dt><dd>Name · City · Shared with permission</dd>
+            </dl>
+          </div>
+          <div>
+            <h3 class="sub">Rules</h3>
+            <ul class="rules">
+          <li>Real, consented, and named. Never fabricated, never composited, never anonymous.</li>
+          <li>Closes with an invitation to respond.</li>
+            </ul>
+          </div>
+        </div>
+      <details class="markup">
+        <summary>Markup</summary>
+        <pre>&lt;div class="testimony"&gt;
+  &lt;p&gt;&lt;b&gt;Before&lt;/b&gt; I had been in the city three years and knew no one.&lt;/p&gt;
+  &lt;p&gt;&lt;b&gt;Encounter&lt;/b&gt; At the tent on the second night, someone prayed with me.&lt;/p&gt;
+  &lt;p&gt;&lt;b&gt;Transformation&lt;/b&gt; I stopped drinking. My brother noticed first.&lt;/p&gt;
+  &lt;p&gt;&lt;b&gt;Outcome&lt;/b&gt; I lead a small group now. Come and see for yourself.&lt;/p&gt;
+  &lt;p class="caption"&gt;[Name] · [City] · Shared with permission&lt;/p&gt;
+&lt;/div&gt;</pre>
+      </details>
+      </section>
+      <section class="spec screen" id="stat-figure">
+        <div class="head">
+          <h2>Official-record figure</h2>
+          <span class="id">stat-figure</span> · <span class="id">.stat</span>
+        </div>
+        <p class="use">Impact reports and per-conference reports.</p>
+      <div class="stage forced-dark on-midnight">
+<div class="stat"><div class="fig">1,057</div><div class="lab">Salvations</div></div>
+      </div>
+        <div class="cols">
+          <div>
+            <h3 class="sub">Specification</h3>
+            <dl class="props">
+          <dt>numeral</dt><dd>DM Serif Display, #F85842, on #0B1A2D</dd>
+          <dt>label</dt><dd>DM Sans 600 uppercase, letterspaced, #F7F3EC</dd>
+            </dl>
+          </div>
+          <div>
+            <h3 class="sub">Rules</h3>
+            <ul class="rules">
+          <li>This is Flame's job: display numerals and small uppercase labels on Midnight.</li>
+          <li>Numbers come from the official ministry record only, never estimates, never memory.</li>
+          <li>The figure carries a source line naming the record and its period.</li>
+            </ul>
+          </div>
+        </div>
+      <details class="markup">
+        <summary>Markup</summary>
+        <pre>&lt;div class="stat"&gt;&lt;div class="fig"&gt;1,057&lt;/div&gt;&lt;div class="lab"&gt;Salvations&lt;/div&gt;&lt;/div&gt;</pre>
+      </details>
+      </section>
+      <section class="spec screen" id="endorsement-line">
+        <div class="head">
+          <h2>Sub-brand endorsement</h2>
+          <span class="id">endorsement-line</span> · <span class="id">.endorse</span>
+        </div>
+        <p class="use">Wherever an initiative's name appears.</p>
+      <div class="stage">
+<div class="endorse">A ministry of THE WORD FOR ALL THE WORLD</div>
+      </div>
+        <div class="cols">
+          <div>
+            <h3 class="sub">Specification</h3>
+            <dl class="props">
+          <dt>text</dt><dd>A ministry of THE WORD FOR ALL THE WORLD</dd>
+          <dt>font</dt><dd>DM Sans 600, small, letterspaced</dd>
+          <dt>placement</dt><dd>directly beneath the initiative name or in the same lockup</dd>
+            </dl>
+          </div>
+          <div>
+            <h3 class="sub">Rules</h3>
+            <ul class="rules">
+          <li>Required on every initiative surface. Law III.</li>
+          <li>One recorded exception: the future EVERY1 app, on the YouVersion model.</li>
+          <li>Vanity domains redirect into the initiative's page. They never become separate homes.</li>
+            </ul>
+          </div>
+        </div>
+      <details class="markup">
+        <summary>Markup</summary>
+        <pre>&lt;div class="endorse"&gt;A ministry of THE WORD FOR ALL THE WORLD&lt;/div&gt;</pre>
+      </details>
+      </section>
+      <section class="spec screen" id="hero-video">
+        <div class="head">
+          <h2>Full-bleed video hero</h2>
+          <span class="id">hero-video</span> · <span class="id">.footage</span>
+        </div>
+        <p class="use">Page and priority-panel heroes.</p>
+      <div class="stage forced-dark on-midnight">
+<video autoplay muted loop playsinline poster="/assets/images/crowd-evening-poster.jpg"><source src="/assets/videos/crowd-evening.mp4" type="video/mp4"></video><div class="scrim"></div>
+      </div>
+        <div class="cols">
+          <div>
+            <h3 class="sub">Specification</h3>
+            <dl class="props">
+          <dt>video</dt><dd>muted, looping, playsinline, 6 to 15 seconds of real field footage</dd>
+          <dt>poster</dt><dd>required still frame</dd>
+          <dt>scrim</dt><dd>Midnight gradient, ~70% at text</dd>
+          <dt>textColor</dt><dd>#FFFFFF or #F7F3EC</dd>
+            </dl>
+          </div>
+          <div>
+            <h3 class="sub">Rules</h3>
+            <ul class="rules">
+          <li>Never text over footage without the scrim.</li>
+          <li>Never Flame or Ember text over footage.</li>
+          <li>The still fallback is honored under prefers-reduced-motion and on slow connections.</li>
+          <li>Nothing stock. Documentary footage from our own conferences, crusades, and streets.</li>
+            </ul>
+          </div>
+        </div>
+      <details class="markup">
+        <summary>Markup</summary>
+        <pre>&lt;video autoplay muted loop playsinline poster="/assets/images/crowd-evening-poster.jpg"&gt;&lt;source src="/assets/videos/crowd-evening.mp4" type="video/mp4"&gt;&lt;/video&gt;&lt;div class="scrim"&gt;&lt;/div&gt;</pre>
+      </details>
+      </section>
+      <section class="spec screen" id="lower-third">
+        <div class="head">
+          <h2>Video lower third</h2>
+          <span class="id">lower-third</span> · <span class="id">.lower-third</span>
+        </div>
+        <p class="use">Naming a speaker on screen.</p>
+      <div class="stage forced-dark on-midnight">
+<div class="lower-third">
+  <div class="name">Nathan Zimmer</div>
+  <div class="role">Founder, THE WORD FOR ALL THE WORLD</div>
+</div>
+      </div>
+        <div class="cols">
+          <div>
+            <h3 class="sub">Specification</h3>
+            <dl class="props">
+          <dt>font</dt><dd>DM Sans, letterspaced caps</dd>
+          <dt>ground</dt><dd>the Midnight scrim bar</dd>
+          <dt>accent</dt><dd>optional Flame tick</dd>
+          <dt>content</dt><dd>name, then role</dd>
+            </dl>
+          </div>
+          <div>
+            <h3 class="sub">Rules</h3>
+            <ul class="rules">
+          <li>Nothing animated, nothing bouncing.</li>
+          <li>Sits on the scrim, never straight on the footage.</li>
+            </ul>
+          </div>
+        </div>
+      <details class="markup">
+        <summary>Markup</summary>
+        <pre>&lt;div class="lower-third"&gt;
+  &lt;div class="name"&gt;Nathan Zimmer&lt;/div&gt;
+  &lt;div class="role"&gt;Founder, THE WORD FOR ALL THE WORLD&lt;/div&gt;
+&lt;/div&gt;</pre>
+      </details>
+      </section>
+      <section class="spec screen" id="site-chrome">
+        <div class="head">
+          <h2>Portal navigation and footer</h2>
+          <span class="id">site-chrome</span> · <span class="id">.sitenav</span>
+        </div>
+        <p class="use">Shared chrome on every page of the brand portal.</p>
+      <div class="stage forced-dark on-midnight">
+<nav class="sitenav">
+  <a class="logo" href="/"><img src="/assets/logos/the-word/the-word-horizontal-reversed.svg" alt="THE WORD FOR ALL THE WORLD"></a>
+  <div class="links"><a href="/brand/">Brand Guide</a><a href="/assets/">Assets</a></div>
+</nav>
+      </div>
+        <div class="cols">
+          <div>
+            <h3 class="sub">Specification</h3>
+            <dl class="props">
+          <dt>nav</dt><dd>wordmark left, uppercase DM Sans 600 links right, over the hero, .active on the current page</dd>
+          <dt>footer</dt><dd>#0B1A2D ground, wordmark · tagline · domain</dd>
+          <dt>tagline</dt><dd>Every tribe. Every tongue. Every nation. EVERY1.</dd>
+            </dl>
+          </div>
+          <div>
+            <h3 class="sub">Rules</h3>
+            <ul class="rules">
+          <li>A new page copies the chrome from an existing page and adds its own link to every other page.</li>
+          <li>The nav sits over a full-bleed video hero with the scrim in place.</li>
+            </ul>
+          </div>
+        </div>
+      <details class="markup">
+        <summary>Markup</summary>
+        <pre>&lt;nav class="sitenav"&gt;
+  &lt;a class="logo" href="/"&gt;&lt;img src="/assets/logos/the-word/the-word-horizontal-reversed.svg" alt="THE WORD FOR ALL THE WORLD"&gt;&lt;/a&gt;
+  &lt;div class="links"&gt;&lt;a href="/brand/"&gt;Brand Guide&lt;/a&gt;&lt;a href="/assets/"&gt;Assets&lt;/a&gt;&lt;/div&gt;
+&lt;/nav&gt;</pre>
+      </details>
+      </section>
+      <section class="spec screen" id="breadcrumb">
+        <div class="head">
+          <h2>Breadcrumb</h2>
+          <span class="id">breadcrumb</span> · <span class="id">.breadcrumb</span>
+        </div>
+        <p class="use">Where this page sits, on any surface more than two levels deep.</p>
+      <div class="stage block">
+<nav class="breadcrumb" aria-label="Breadcrumb"><ol>
+  <li><a href="/">Portal</a></li>
+  <li><a href="/brand/">Brand Guide</a></li>
+  <li aria-current="page">Colour</li>
+</ol></nav>
+      </div>
+        <div class="cols">
+          <div>
+            <h3 class="sub">Specification</h3>
+            <dl class="props">
+          <dt>font</dt><dd>body text-caption, muted text</dd>
+          <dt>separator</dt><dd>a forward slash at faint text</dd>
+            </dl>
+          </div>
+          <div>
+            <h3 class="sub">Rules</h3>
+            <ul class="rules">
+          <li>The current page is the last item and is not a link.</li>
+          <li>Never more than four levels. A fifth means the structure is wrong.</li>
+            </ul>
+          </div>
+        </div>
+      <details class="markup">
+        <summary>Markup</summary>
+        <pre>&lt;nav class="breadcrumb" aria-label="Breadcrumb"&gt;&lt;ol&gt;
+  &lt;li&gt;&lt;a href="/"&gt;Portal&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="/brand/"&gt;Brand Guide&lt;/a&gt;&lt;/li&gt;
+  &lt;li aria-current="page"&gt;Colour&lt;/li&gt;
+&lt;/ol&gt;&lt;/nav&gt;</pre>
+      </details>
+      </section>
+      <section class="spec screen" id="tabs">
+        <div class="head">
+          <h2>Tabs</h2>
+          <span class="id">tabs</span> · <span class="id">.tabs</span>
+        </div>
+        <p class="use">Switching between views of the same thing.</p>
+      <div class="stage block">
+<div class="tabs" role="tablist">
+  <button role="tab" aria-selected="true">Overview</button>
+  <button role="tab" aria-selected="false">Colour</button>
+  <button role="tab" aria-selected="false">Type</button>
+</div>
+      </div>
+        <div class="cols">
+          <div>
+            <h3 class="sub">Specification</h3>
+            <dl class="props">
+          <dt>indicator</dt><dd>2px bottom rule in the themed accent</dd>
+          <dt>rest</dt><dd>muted text</dd>
+          <dt>active</dt><dd>body text</dd>
+            </dl>
+          </div>
+          <div>
+            <h3 class="sub">Rules</h3>
+            <ul class="rules">
+          <li>Tabs switch views of one thing. They never navigate to a different page.</li>
+          <li>Between two and five. A sixth is a menu.</li>
+            </ul>
+          </div>
+        </div>
+      <details class="markup">
+        <summary>Markup</summary>
+        <pre>&lt;div class="tabs" role="tablist"&gt;
+  &lt;button role="tab" aria-selected="true"&gt;Overview&lt;/button&gt;
+  &lt;button role="tab" aria-selected="false"&gt;Colour&lt;/button&gt;
+  &lt;button role="tab" aria-selected="false"&gt;Type&lt;/button&gt;
+&lt;/div&gt;</pre>
+      </details>
+      </section>
+      <section class="spec screen" id="pagination">
+        <div class="head">
+          <h2>Pagination</h2>
+          <span class="id">pagination</span> · <span class="id">.pagination</span>
+        </div>
+        <p class="use">Moving through a long list of records.</p>
+      <div class="stage block">
+<nav class="pagination" aria-label="Pagination">
+  <a href="#">Previous</a>
+  <a href="#">1</a>
+  <span aria-current="page">2</span>
+  <a href="#">3</a>
+  <a href="#">Next</a>
+</nav>
+      </div>
+        <div class="cols">
+          <div>
+            <h3 class="sub">Specification</h3>
+            <dl class="props">
+          <dt>target</dt><dd>36px minimum per control</dd>
+          <dt>current</dt><dd>the themed accent fill with a white label</dd>
+            </dl>
+          </div>
+          <div>
+            <h3 class="sub">Rules</h3>
+            <ul class="rules">
+          <li>The current page is marked with aria-current, not colour alone.</li>
+          <li>Always show first and last. A reader needs to know how far the list goes.</li>
+            </ul>
+          </div>
+        </div>
+      <details class="markup">
+        <summary>Markup</summary>
+        <pre>&lt;nav class="pagination" aria-label="Pagination"&gt;
+  &lt;a href="#"&gt;Previous&lt;/a&gt;
+  &lt;a href="#"&gt;1&lt;/a&gt;
+  &lt;span aria-current="page"&gt;2&lt;/span&gt;
+  &lt;a href="#"&gt;3&lt;/a&gt;
+  &lt;a href="#"&gt;Next&lt;/a&gt;
+&lt;/nav&gt;</pre>
+      </details>
+      </section>
+      <section class="spec screen" id="form-field">
+        <div class="head">
+          <h2>Form field</h2>
+          <span class="id">form-field</span> · <span class="id">.field</span>
+        </div>
+        <p class="use">Every input on every surface: a partner form, a sign-up, a dashboard.</p>
+      <div class="stage block">
+<div class="field" data-state="error">
+  <label for="email">Email</label>
+  <input id="email" type="email" value="nathan@" aria-describedby="email-error">
+  <p class="error" id="email-error">Add everything after the @, for example theword.world.</p>
+</div>
+      </div>
+        <div class="cols">
+          <div>
+            <h3 class="sub">Specification</h3>
+            <dl class="props">
+          <dt>label</dt><dd>DM Sans 600, 15px</dd>
+          <dt>input</dt><dd>17px DM Sans on rgba(11,26,45,.05), 1px rgba(11,26,45,.18) border, 4px radius, 44px minimum height</dd>
+          <dt>placeholder</dt><dd>rgba(11,26,45,.60), never rgba(11,26,45,.38): a placeholder still has to be read</dd>
+          <dt>error</dt><dd>#8C1D13 text and border. Never Flame, never Ember.</dd>
+          <dt>hint</dt><dd>13px rgba(11,26,45,.80), below the input, always present rather than appearing on failure</dd>
+            </dl>
+          </div>
+          <div>
+            <h3 class="sub">Rules</h3>
+            <ul class="rules">
+          <li>The touch target is 44px whatever the visual height.</li>
+          <li>An error names what is wrong and how to fix it. 'Invalid' is not an error message.</li>
+          <li>Never signal an error with colour alone: the message text carries it.</li>
+          <li>Ember is reserved for the action. An error is not an action.</li>
+            </ul>
+          </div>
+        </div>
+      <details class="markup">
+        <summary>Markup</summary>
+        <pre>&lt;div class="field" data-state="error"&gt;
+  &lt;label for="email"&gt;Email&lt;/label&gt;
+  &lt;input id="email" type="email" value="nathan@" aria-describedby="email-error"&gt;
+  &lt;p class="error" id="email-error"&gt;Add everything after the @, for example theword.world.&lt;/p&gt;
+&lt;/div&gt;</pre>
+      </details>
+      </section>
+      <section class="spec screen" id="choice">
+        <div class="head">
+          <h2>Checkbox and radio</h2>
+          <span class="id">choice</span> · <span class="id">.choice</span>
+        </div>
+        <p class="use">Selection inside a form.</p>
+      <div class="stage">
+<label class="choice"><input type="checkbox" checked> Send me the field report</label>
+<label class="choice"><input type="radio" name="d" checked> Every month</label>
+<label class="choice"><input type="radio" name="d"> Only when something happens</label>
+      </div>
+        <div class="cols">
+          <div>
+            <h3 class="sub">Specification</h3>
+            <dl class="props">
+          <dt>control</dt><dd>the native input, tinted with accent-color</dd>
+          <dt>size</dt><dd>18px</dd>
+          <dt>target</dt><dd>44px including its label</dd>
+            </dl>
+          </div>
+          <div>
+            <h3 class="sub">Rules</h3>
+            <ul class="rules">
+          <li>Native controls, tinted. Keyboard and screen reader behaviour is the platform's rather than something reimplemented badly.</li>
+          <li>The label is clickable, and it is part of the touch target.</li>
+            </ul>
+          </div>
+        </div>
+      <details class="markup">
+        <summary>Markup</summary>
+        <pre>&lt;label class="choice"&gt;&lt;input type="checkbox" checked&gt; Send me the field report&lt;/label&gt;
+&lt;label class="choice"&gt;&lt;input type="radio" name="d" checked&gt; Every month&lt;/label&gt;
+&lt;label class="choice"&gt;&lt;input type="radio" name="d"&gt; Only when something happens&lt;/label&gt;</pre>
+      </details>
+      </section>
+      <section class="spec screen" id="switch">
+        <div class="head">
+          <h2>Switch</h2>
+          <span class="id">switch</span> · <span class="id">.switch</span>
+        </div>
+        <p class="use">An immediate on or off, with no save step.</p>
+      <div class="stage">
+<label class="switch"><input type="checkbox" checked><span class="track"></span> Show unverified figures</label>
+      </div>
+        <div class="cols">
+          <div>
+            <h3 class="sub">Specification</h3>
+            <dl class="props">
+          <dt>track</dt><dd>42x24, radius 12px</dd>
+          <dt>thumb</dt><dd>18px circle at 0 2px 6px rgba(11,26,45,.06)</dd>
+          <dt>on</dt><dd>the themed accent fill</dd>
+            </dl>
+          </div>
+          <div>
+            <h3 class="sub">Rules</h3>
+            <ul class="rules">
+          <li>A switch takes effect immediately. If it needs saving, it is a checkbox.</li>
+          <li>The visible label says what being on means, not what the switch is called.</li>
+            </ul>
+          </div>
+        </div>
+      <details class="markup">
+        <summary>Markup</summary>
+        <pre>&lt;label class="switch"&gt;&lt;input type="checkbox" checked&gt;&lt;span class="track"&gt;&lt;/span&gt; Show unverified figures&lt;/label&gt;</pre>
+      </details>
+      </section>
+      <section class="spec screen" id="data-table">
+        <div class="head">
+          <h2>Data table</h2>
+          <span class="id">data-table</span> · <span class="id">.table-scroll</span>
+        </div>
+        <p class="use">Official figures, schedules, and any grid of records.</p>
+      <div class="stage block">
+<div class="table-scroll">
+  <table>
+    <thead><tr><th>Conference</th><th>City</th><th>Salvations</th></tr></thead>
+    <tbody><tr><td>SLC</td><td>[City]</td><td>[n]</td></tr></tbody>
+  </table>
+</div>
+      </div>
+        <div class="cols">
+          <div>
+            <h3 class="sub">Specification</h3>
+            <dl class="props">
+          <dt>header</dt><dd>DM Sans 600 uppercase 12px, letterspaced .14em, rgba(11,26,45,.80) on #F7F3EC</dd>
+          <dt>cell</dt><dd>15px DM Sans, rgba(11,26,45,.10) bottom border</dd>
+          <dt>numerals</dt><dd>tabular-nums wherever digits line up</dd>
+          <dt>scroll</dt><dd>the table scrolls inside its own container, never the page</dd>
+            </dl>
+          </div>
+          <div>
+            <h3 class="sub">Rules</h3>
+            <ul class="rules">
+          <li>A wide table scrolls in its own frame. The page body never scrolls sideways.</li>
+          <li>Figures come from the official ministry record and carry a source line.</li>
+            </ul>
+          </div>
+        </div>
+      <details class="markup">
+        <summary>Markup</summary>
+        <pre>&lt;div class="table-scroll"&gt;
+  &lt;table&gt;
+    &lt;thead&gt;&lt;tr&gt;&lt;th&gt;Conference&lt;/th&gt;&lt;th&gt;City&lt;/th&gt;&lt;th&gt;Salvations&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+    &lt;tbody&gt;&lt;tr&gt;&lt;td&gt;SLC&lt;/td&gt;&lt;td&gt;[City]&lt;/td&gt;&lt;td&gt;[n]&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;
+  &lt;/table&gt;
+&lt;/div&gt;</pre>
+      </details>
+      </section>
+      <section class="spec screen" id="badge">
+        <div class="head">
+          <h2>Badge</h2>
+          <span class="id">badge</span> · <span class="id">.badge</span>
+        </div>
+        <p class="use">A short status or category label beside a title or in a table cell.</p>
+      <div class="stage block">
+<span class="badge">Draft</span>
+<span class="badge" data-state="accent">CLEAN</span>
+<span class="badge" data-state="solid">Published</span>
+<span class="badge" data-state="success">Confirmed</span>
+<span class="badge" data-state="warning">Unverified</span>
+<span class="badge" data-state="error">Blocked</span>
+      </div>
+        <div class="cols">
+          <div>
+            <h3 class="sub">Specification</h3>
+            <dl class="props">
+          <dt>font</dt><dd>DM Sans 600, 11px, letterspaced .1em, uppercase</dd>
+          <dt>radius</dt><dd>3px</dd>
+          <dt>variants</dt><dd>default, accent, solid, success, warning, error</dd>
+            </dl>
+          </div>
+          <div>
+            <h3 class="sub">Rules</h3>
+            <ul class="rules">
+          <li>A badge labels, it does not shout. Never more than two words.</li>
+          <li>The state variants take the themed state colours, which lift on a dark ground.</li>
+          <li>Never Flame: a badge is text at small size.</li>
+            </ul>
+          </div>
+        </div>
+      <details class="markup">
+        <summary>Markup</summary>
+        <pre>&lt;span class="badge"&gt;Draft&lt;/span&gt;
+&lt;span class="badge" data-state="accent"&gt;CLEAN&lt;/span&gt;
+&lt;span class="badge" data-state="solid"&gt;Published&lt;/span&gt;
+&lt;span class="badge" data-state="success"&gt;Confirmed&lt;/span&gt;
+&lt;span class="badge" data-state="warning"&gt;Unverified&lt;/span&gt;
+&lt;span class="badge" data-state="error"&gt;Blocked&lt;/span&gt;</pre>
+      </details>
+      </section>
+      <section class="spec screen" id="avatar">
+        <div class="head">
+          <h2>Avatar</h2>
+          <span class="id">avatar</span> · <span class="id">.avatar</span>
+        </div>
+        <p class="use">A person or an account at small size.</p>
+      <div class="stage">
+<span class="avatar"><img src="/assets/logos/the-word/the-word-glyph-reversed.svg" alt="" aria-hidden="true"></span>
+      </div>
+        <div class="cols">
+          <div>
+            <h3 class="sub">Specification</h3>
+            <dl class="props">
+          <dt>shape</dt><dd>circle, the one circle in this system</dd>
+          <dt>ground</dt><dd>#0B1A2D</dd>
+          <dt>mark</dt><dd>the glyph, never the wordmark</dd>
+            </dl>
+          </div>
+          <div>
+            <h3 class="sub">Rules</h3>
+            <ul class="rules">
+          <li>The wordmark is unreadable in a circle. The glyph is drawn for it.</li>
+          <li>A photograph of a person is used only with their consent, the same as any published image.</li>
+          <li>The image is marked aria-hidden: the name sits beside it, and a screen reader announcing the mark twice helps nobody. An avatar that is the only identification carries real alt text instead.</li>
+            </ul>
+          </div>
+        </div>
+      <details class="markup">
+        <summary>Markup</summary>
+        <pre>&lt;span class="avatar"&gt;&lt;img src="/assets/logos/the-word/the-word-glyph-reversed.svg" alt="" aria-hidden="true"&gt;&lt;/span&gt;</pre>
+      </details>
+      </section>
+      <section class="spec screen" id="email-layout">
+        <div class="head">
+          <h2>Email layout</h2>
+          <span class="id">email-layout</span>
+        </div>
+        <p class="use">Every newsletter and transactional email.</p>
+      <div class="stage block">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#F7F3EC;margin:0;padding:24px 0;">
+  <tr><td align="center">
+    <table role="presentation" width="600" cellpadding="0" cellspacing="0" style="width:600px;max-width:100%;background:#FFFFFF;">
+      <tr><td style="padding:32px;font-family:Arial,sans-serif;font-size:17px;line-height:1.7;color:#0B1A2D;">
+        Body copy goes here.
+      </td></tr>
+    </table>
+  </td></tr>
+</table>
+      </div>
+        <div class="cols">
+          <div>
+            <h3 class="sub">Specification</h3>
+            <dl class="props">
+          <dt>width</dt><dd>600px, the recorded email breakpoint</dd>
+          <dt>structure</dt><dd>nested tables, not divs. Outlook renders the table and ignores the div.</dd>
+          <dt>css</dt><dd>inline styles on every element. No stylesheet, no custom properties, no var().</dd>
+          <dt>fonts</dt><dd>Georgia for the serif and Arial for the sans. The webfont will not load and the fallback is the design.</dd>
+          <dt>ground</dt><dd>#F7F3EC body, #FFFFFF content table, #0B1A2D footer</dd>
+          <dt>images</dt><dd>PNG only, with alt text that carries the meaning when images are blocked</dd>
+            </dl>
+          </div>
+          <div>
+            <h3 class="sub">Rules</h3>
+            <ul class="rules">
+          <li>No SVG. Most clients strip it.</li>
+          <li>A dark-mode client may invert the ground: state colours explicitly on every cell and never rely on a default.</li>
+          <li>Every email carries a preheader, a reason the person is receiving it, and a working unsubscribe.</li>
+          <li>The logo is a PNG at 400px or 800px, never the vector.</li>
+            </ul>
+          </div>
+        </div>
+      <details class="markup">
+        <summary>Markup</summary>
+        <pre>&lt;table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#F7F3EC;margin:0;padding:24px 0;"&gt;
+  &lt;tr&gt;&lt;td align="center"&gt;
+    &lt;table role="presentation" width="600" cellpadding="0" cellspacing="0" style="width:600px;max-width:100%;background:#FFFFFF;"&gt;
+      &lt;tr&gt;&lt;td style="padding:32px;font-family:Arial,sans-serif;font-size:17px;line-height:1.7;color:#0B1A2D;"&gt;
+        Body copy goes here.
+      &lt;/td&gt;&lt;/tr&gt;
+    &lt;/table&gt;
+  &lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;</pre>
+      </details>
+      </section>
+      <section class="spec screen" id="email-button">
+        <div class="head">
+          <h2>Email button</h2>
+          <span class="id">email-button</span>
+        </div>
+        <p class="use">The single call to action in an email.</p>
+      <div class="stage block">
+<table role="presentation" cellpadding="0" cellspacing="0"><tr>
+  <td bgcolor="#C13A24" style="border-radius:3px;">
+    <a href="https://theword.world/partner" style="display:inline-block;padding:14px 28px;font-family:Arial,sans-serif;font-size:15px;font-weight:bold;color:#FFFFFF;text-decoration:none;">Partner With Us</a>
+  </td>
+</tr></table>
+      </div>
+        <div class="cols">
+          <div>
+            <h3 class="sub">Specification</h3>
+            <dl class="props">
+          <dt>build</dt><dd>a table cell with a background, not a styled anchor: Outlook drops padding on an anchor</dd>
+          <dt>background</dt><dd>#C13A24</dd>
+          <dt>color</dt><dd>#FFFFFF</dd>
+          <dt>padding</dt><dd>14px 28px</dd>
+          <dt>radius</dt><dd>3px</dd>
+            </dl>
+          </div>
+          <div>
+            <h3 class="sub">Rules</h3>
+            <ul class="rules">
+          <li>One per email.</li>
+          <li>Never Flame fill: it fails contrast at 3.3:1 in an email exactly as it does on the web.</li>
+          <li>The link text says what happens, and the URL is visible in the footer for clients that strip links.</li>
+            </ul>
+          </div>
+        </div>
+      <details class="markup">
+        <summary>Markup</summary>
+        <pre>&lt;table role="presentation" cellpadding="0" cellspacing="0"&gt;&lt;tr&gt;
+  &lt;td bgcolor="#C13A24" style="border-radius:3px;"&gt;
+    &lt;a href="https://theword.world/partner" style="display:inline-block;padding:14px 28px;font-family:Arial,sans-serif;font-size:15px;font-weight:bold;color:#FFFFFF;text-decoration:none;"&gt;Partner With Us&lt;/a&gt;
+  &lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;</pre>
+      </details>
+      </section>
+      <section class="spec screen" id="alert">
+        <div class="head">
+          <h2>Alert</h2>
+          <span class="id">alert</span> · <span class="id">.alert</span>
+        </div>
+        <p class="use">A message about the state of the page or the last action.</p>
+      <div class="stage block">
+<div class="alert" data-state="error">
+  <strong>The figure has no source</strong>
+  <p>Every published number names the record it came from. Add the record and the period it covers.</p>
+</div>
+<div class="alert" data-state="success">
+  <strong>Checked against the record</strong>
+  <p>All four figures match the July conference report.</p>
+</div>
+      </div>
+        <div class="cols">
+          <div>
+            <h3 class="sub">Specification</h3>
+            <dl class="props">
+          <dt>structure</dt><dd>a coloured left rule, a title, and one line of explanation</dd>
+          <dt>states</dt><dd>neutral, success, warning, error</dd>
+          <dt>title</dt><dd>DM Sans 700, body text-body-small</dd>
+            </dl>
+          </div>
+          <div>
+            <h3 class="sub">Rules</h3>
+            <ul class="rules">
+          <li>Never colour alone. The title carries the meaning and the rule reinforces it.</li>
+          <li>An error says what went wrong and how to fix it. “Invalid” is not a message.</li>
+          <li>Never Flame and never Ember: Ember means the action, and an alert is not an action.</li>
+            </ul>
+          </div>
+        </div>
+      <details class="markup">
+        <summary>Markup</summary>
+        <pre>&lt;div class="alert" data-state="error"&gt;
+  &lt;strong&gt;The figure has no source&lt;/strong&gt;
+  &lt;p&gt;Every published number names the record it came from. Add the record and the period it covers.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="alert" data-state="success"&gt;
+  &lt;strong&gt;Checked against the record&lt;/strong&gt;
+  &lt;p&gt;All four figures match the July conference report.&lt;/p&gt;
+&lt;/div&gt;</pre>
+      </details>
+      </section>
+      <section class="spec screen" id="toast">
+        <div class="head">
+          <h2>Toast</h2>
+          <span class="id">toast</span> · <span class="id">.toast</span>
+        </div>
+        <p class="use">Confirmation that something the reader did has finished.</p>
+      <div class="stage">
+<div class="toast" role="status"><div><strong>Published</strong><br><span class="muted">Brand system v7.0 is live.</span></div></div>
+      </div>
+        <div class="cols">
+          <div>
+            <h3 class="sub">Specification</h3>
+            <dl class="props">
+          <dt>width</dt><dd>380px maximum</dd>
+          <dt>rule</dt><dd>3px left in the themed accent</dd>
+          <dt>elevation</dt><dd>0 24px 60px rgba(11,26,45,.18)</dd>
+            </dl>
+          </div>
+          <div>
+            <h3 class="sub">Rules</h3>
+            <ul class="rules">
+          <li>Says what happened, in the past tense. “Published”, not “Publishing”.</li>
+          <li>Never carries the only copy of anything. It disappears.</li>
+          <li>Never announces an error that needs action. That is an alert, which stays.</li>
+            </ul>
+          </div>
+        </div>
+      <details class="markup">
+        <summary>Markup</summary>
+        <pre>&lt;div class="toast" role="status"&gt;&lt;div&gt;&lt;strong&gt;Published&lt;/strong&gt;&lt;br&gt;&lt;span class="muted"&gt;Brand system v7.0 is live.&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;</pre>
+      </details>
+      </section>
+      <section class="spec screen" id="progress">
+        <div class="head">
+          <h2>Progress</h2>
+          <span class="id">progress</span> · <span class="id">.progress</span>
+        </div>
+        <p class="use">How far through a known-length task the reader is.</p>
+      <div class="stage">
+<div class="progress" role="progressbar" aria-valuenow="64" aria-valuemin="0" aria-valuemax="100"><span style="width:64%"></span></div>
+<p class="caption">64% of the logo set rebuilt</p>
+      </div>
+        <div class="cols">
+          <div>
+            <h3 class="sub">Specification</h3>
+            <dl class="props">
+          <dt>height</dt><dd>6px</dd>
+          <dt>fill</dt><dd>the themed accent</dd>
+          <dt>track</dt><dd>the sunken surface</dd>
+            </dl>
+          </div>
+          <div>
+            <h3 class="sub">Rules</h3>
+            <ul class="rules">
+          <li>Only for a task whose length is known. If it is not known, use a skeleton.</li>
+          <li>Carries a text label nearby. A bar alone is not a measurement.</li>
+            </ul>
+          </div>
+        </div>
+      <details class="markup">
+        <summary>Markup</summary>
+        <pre>&lt;div class="progress" role="progressbar" aria-valuenow="64" aria-valuemin="0" aria-valuemax="100"&gt;&lt;span style="width:64%"&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;p class="caption"&gt;64% of the logo set rebuilt&lt;/p&gt;</pre>
+      </details>
+      </section>
+      <section class="spec screen" id="skeleton">
+        <div class="head">
+          <h2>Skeleton</h2>
+          <span class="id">skeleton</span> · <span class="id">.skeleton</span>
+        </div>
+        <p class="use">The shape of content that has not arrived yet.</p>
+      <div class="stage">
+<span class="skeleton" style="width:70%;height:28px"></span>
+<span class="skeleton" style="width:100%;height:14px"></span>
+<span class="skeleton" style="width:88%;height:14px"></span>
+      </div>
+        <div class="cols">
+          <div>
+            <h3 class="sub">Specification</h3>
+            <dl class="props">
+          <dt>fill</dt><dd>the sunken surface</dd>
+          <dt>shape</dt><dd>matches the content it stands in for</dd>
+            </dl>
+          </div>
+          <div>
+            <h3 class="sub">Rules</h3>
+            <ul class="rules">
+          <li>Matches the shape of what is coming, so the layout does not jump when it arrives.</li>
+          <li>Never a spinner over a blank screen. Show the shape of the answer.</li>
+            </ul>
+          </div>
+        </div>
+      <details class="markup">
+        <summary>Markup</summary>
+        <pre>&lt;span class="skeleton" style="width:70%;height:28px"&gt;&lt;/span&gt;
+&lt;span class="skeleton" style="width:100%;height:14px"&gt;&lt;/span&gt;
+&lt;span class="skeleton" style="width:88%;height:14px"&gt;&lt;/span&gt;</pre>
+      </details>
+      </section>
+      <section class="spec screen" id="empty-state">
+        <div class="head">
+          <h2>Empty state</h2>
+          <span class="id">empty-state</span> · <span class="id">.empty</span>
+        </div>
+        <p class="use">A list, a search, or a report with nothing in it yet.</p>
+      <div class="stage block">
+<div class="empty">
+  <strong>No field reports yet</strong>
+  <p class="muted">Reports appear here once a conference record is filed.</p>
+  <a class="btn" href="#">File a report</a>
+</div>
+      </div>
+        <div class="cols">
+          <div>
+            <h3 class="sub">Specification</h3>
+            <dl class="props">
+          <dt>border</dt><dd>1px dashed the hairline</dd>
+          <dt>content</dt><dd>what is missing, why, and the one thing to do about it</dd>
+            </dl>
+          </div>
+          <div>
+            <h3 class="sub">Rules</h3>
+            <ul class="rules">
+          <li>Never just “No results”. Say why it is empty and what to do next.</li>
+          <li>Invitation before information, the same as everywhere else.</li>
+            </ul>
+          </div>
+        </div>
+      <details class="markup">
+        <summary>Markup</summary>
+        <pre>&lt;div class="empty"&gt;
+  &lt;strong&gt;No field reports yet&lt;/strong&gt;
+  &lt;p class="muted"&gt;Reports appear here once a conference record is filed.&lt;/p&gt;
+  &lt;a class="btn" href="#"&gt;File a report&lt;/a&gt;
+&lt;/div&gt;</pre>
+      </details>
+      </section>
+      <section class="spec screen" id="accordion">
+        <div class="head">
+          <h2>Accordion</h2>
+          <span class="id">accordion</span> · <span class="id">.accordion</span>
+        </div>
+        <p class="use">Long reference content the reader scans before reading.</p>
+      <div class="stage">
+<div class="accordion">
+  <details open><summary>What counts as an official figure</summary><div class="body">A number that appears in the ministry record, with the period it covers.</div></details>
+  <details><summary>Who approves a change</summary><div class="body">A written proposal, approval by Joel Zimmer and Nathan Zimmer, a version bump, and a changelog entry.</div></details>
+</div>
+      </div>
+        <div class="cols">
+          <div>
+            <h3 class="sub">Specification</h3>
+            <dl class="props">
+          <dt>control</dt><dd>native details and summary</dd>
+          <dt>marker</dt><dd>a plus turning to a minus, in the themed accent</dd>
+            </dl>
+          </div>
+          <div>
+            <h3 class="sub">Rules</h3>
+            <ul class="rules">
+          <li>Built on details and summary, so it works with no JavaScript and reads correctly to a screen reader.</li>
+          <li>Never hide something the reader needs in order to act. An accordion is for depth, not for tidiness.</li>
+            </ul>
+          </div>
+        </div>
+      <details class="markup">
+        <summary>Markup</summary>
+        <pre>&lt;div class="accordion"&gt;
+  &lt;details open&gt;&lt;summary&gt;What counts as an official figure&lt;/summary&gt;&lt;div class="body"&gt;A number that appears in the ministry record, with the period it covers.&lt;/div&gt;&lt;/details&gt;
+  &lt;details&gt;&lt;summary&gt;Who approves a change&lt;/summary&gt;&lt;div class="body"&gt;A written proposal, approval by Joel Zimmer and Nathan Zimmer, a version bump, and a changelog entry.&lt;/div&gt;&lt;/details&gt;
+&lt;/div&gt;</pre>
+      </details>
+      </section>
+      <section class="spec screen" id="dialog">
+        <div class="head">
+          <h2>Dialog</h2>
+          <span class="id">dialog</span> · <span class="id">.dialog</span>
+        </div>
+        <p class="use">A decision that has to be made before anything else continues.</p>
+      <div class="stage block">
+<div class="dialog" role="dialog" aria-label="Retire this figure">
+  <h3 class="title">Retire this figure?</h3>
+  <p class="muted">It stays in the archive and stops appearing in new reports.</p>
+  <div class="actions"><button class="btn ghost">Cancel</button><button class="btn">Retire it</button></div>
+</div>
+      </div>
+        <div class="cols">
+          <div>
+            <h3 class="sub">Specification</h3>
+            <dl class="props">
+          <dt>width</dt><dd>480px maximum</dd>
+          <dt>elevation</dt><dd>0 24px 60px rgba(11,26,45,.18)</dd>
+          <dt>actions</dt><dd>right aligned, primary last</dd>
+            </dl>
+          </div>
+          <div>
+            <h3 class="sub">Rules</h3>
+            <ul class="rules">
+          <li>One decision per dialog. A dialog with two questions is a page.</li>
+          <li>Escape closes it, focus is trapped inside it, and focus returns to whatever opened it.</li>
+          <li>Never for information alone. That is an alert.</li>
+            </ul>
+          </div>
+        </div>
+      <details class="markup">
+        <summary>Markup</summary>
+        <pre>&lt;div class="dialog" role="dialog" aria-label="Retire this figure"&gt;
+  &lt;h3 class="title"&gt;Retire this figure?&lt;/h3&gt;
+  &lt;p class="muted"&gt;It stays in the archive and stops appearing in new reports.&lt;/p&gt;
+  &lt;div class="actions"&gt;&lt;button class="btn ghost"&gt;Cancel&lt;/button&gt;&lt;button class="btn"&gt;Retire it&lt;/button&gt;&lt;/div&gt;
+&lt;/div&gt;</pre>
+      </details>
+      </section>
+      <section class="spec screen" id="dropdown-menu">
+        <div class="head">
+          <h2>Menu</h2>
+          <span class="id">dropdown-menu</span> · <span class="id">.menu</span>
+        </div>
+        <p class="use">Actions on the thing the reader is looking at.</p>
+      <div class="stage block">
+<div class="menu" role="menu">
+  <button role="menuitem">Duplicate</button>
+  <button role="menuitem">Download SVG</button>
+  <hr>
+  <button role="menuitem">Retire</button>
+</div>
+      </div>
+        <div class="cols">
+          <div>
+            <h3 class="sub">Specification</h3>
+            <dl class="props">
+          <dt>width</dt><dd>200px minimum</dd>
+          <dt>elevation</dt><dd>0 24px 60px rgba(11,26,45,.18)</dd>
+          <dt>divider</dt><dd>1px the soft hairline</dd>
+            </dl>
+          </div>
+          <div>
+            <h3 class="sub">Rules</h3>
+            <ul class="rules">
+          <li>Actions, not navigation. A menu of links is a nav.</li>
+          <li>A destructive action sits last, after a divider.</li>
+            </ul>
+          </div>
+        </div>
+      <details class="markup">
+        <summary>Markup</summary>
+        <pre>&lt;div class="menu" role="menu"&gt;
+  &lt;button role="menuitem"&gt;Duplicate&lt;/button&gt;
+  &lt;button role="menuitem"&gt;Download SVG&lt;/button&gt;
+  &lt;hr&gt;
+  &lt;button role="menuitem"&gt;Retire&lt;/button&gt;
+&lt;/div&gt;</pre>
+      </details>
+      </section>
+      <section class="spec screen" id="tooltip">
+        <div class="head">
+          <h2>Tooltip</h2>
+          <span class="id">tooltip</span> · <span class="id">.tooltip</span>
+        </div>
+        <p class="use">A short clarification of a control the reader is already looking at.</p>
+      <div class="stage">
+<span class="tooltip">Measured from the artwork, not the file</span>
+      </div>
+        <div class="cols">
+          <div>
+            <h3 class="sub">Specification</h3>
+            <dl class="props">
+          <dt>ground</dt><dd>#0B1A2D on both themes, so it reads as an overlay rather than a surface</dd>
+          <dt>font</dt><dd>body text-caption</dd>
+            </dl>
+          </div>
+          <div>
+            <h3 class="sub">Rules</h3>
+            <ul class="rules">
+          <li>Never the only place information appears. A tooltip cannot be reached by touch or by a screen reader in the same way.</li>
+          <li>One line. If it needs two, it belongs on the page.</li>
+            </ul>
+          </div>
+        </div>
+      <details class="markup">
+        <summary>Markup</summary>
+        <pre>&lt;span class="tooltip"&gt;Measured from the artwork, not the file&lt;/span&gt;</pre>
+      </details>
+      </section>
+    </div>
+  </main>
+
+</div>
+
+<script>
+  (function () {
+    var root = document.documentElement;
+    var button = document.getElementById("themetoggle");
+    button.addEventListener("click", function () {
+      var dark = root.getAttribute("data-theme") === "dark";
+      if (dark) root.removeAttribute("data-theme");
+      else root.setAttribute("data-theme", "dark");
+      try { localStorage.setItem("theword-theme", dark ? "light" : "dark"); } catch (e) {}
+    });
+
+    // Mark the section the reader is in, so the sidebar says where they are.
+    var links = {};
+    Array.prototype.forEach.call(document.querySelectorAll(".sidebar a"), function (a) {
+      links[a.getAttribute("href").slice(1)] = a;
+    });
+    var current = null;
+    var main = document.querySelector(".main");
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        var next = links[entry.target.id];
+        if (!next || next === current) return;
+        if (current) current.classList.remove("active");
+        next.classList.add("active");
+        current = next;
+        // Keep the marker in view when the list is longer than the sidebar.
+        if (next.scrollIntoView) next.scrollIntoView({ block: "nearest" });
+      });
+    }, { root: main, threshold: 0.5 });
+    Array.prototype.forEach.call(document.querySelectorAll("section.spec"), function (s) {
+      observer.observe(s);
+    });
+
+    // With snapping, a key press should move one component, not one line.
+    var screens = Array.prototype.slice.call(document.querySelectorAll(".screen"));
+    main.addEventListener("keydown", function (e) {
+      var step = 0;
+      if (e.key === "ArrowDown" || e.key === "PageDown") step = 1;
+      else if (e.key === "ArrowUp" || e.key === "PageUp") step = -1;
+      else return;
+      if (e.target.closest("input, textarea, select, details[open]")) return;
+      var top = main.scrollTop;
+      var here = 0;
+      screens.forEach(function (el, i) { if (el.offsetTop <= top + 4) here = i; });
+      var next = screens[Math.min(screens.length - 1, Math.max(0, here + step))];
+      if (!next) return;
+      e.preventDefault();
+      main.scrollTo({ top: next.offsetTop, behavior: "smooth" });
+    });
+    main.setAttribute("tabindex", "-1");
+  })();
+</script>
+
+</body>
+</html>

@@ -254,17 +254,113 @@
       }
     ]
   },
-  "version": "6.8",
+  "version": "7.0",
   "messagingVersion": "1.0",
-  "updated": "2026-08-19",
+  "updated": "2026-08-20",
   "authority": "canonical",
   "rule": "Use these assets. Never generate photography or video of people or ministry, and never substitute stock. If the asset you need is not listed, request it and leave the slot empty.",
   "counts": {
-    "total": 208,
+    "total": 221,
     "approved": 202,
     "counterExamples": 0
   },
   "assets": [
+    {
+      "file": "assets/fonts/dm-sans-italic-latin-ext.woff2",
+      "url": "https://brand.theword.world/assets/fonts/dm-sans-italic-latin-ext.woff2",
+      "kind": "font",
+      "group": "fonts",
+      "bytes": 40880,
+      "status": "published, no usage note recorded"
+    },
+    {
+      "file": "assets/fonts/dm-sans-italic-latin.woff2",
+      "url": "https://brand.theword.world/assets/fonts/dm-sans-italic-latin.woff2",
+      "kind": "font",
+      "group": "fonts",
+      "bytes": 76176,
+      "status": "published, no usage note recorded"
+    },
+    {
+      "file": "assets/fonts/dm-sans-normal-latin-ext.woff2",
+      "url": "https://brand.theword.world/assets/fonts/dm-sans-normal-latin-ext.woff2",
+      "kind": "font",
+      "group": "fonts",
+      "bytes": 31312,
+      "status": "published, no usage note recorded"
+    },
+    {
+      "file": "assets/fonts/dm-sans-normal-latin.woff2",
+      "url": "https://brand.theword.world/assets/fonts/dm-sans-normal-latin.woff2",
+      "kind": "font",
+      "group": "fonts",
+      "bytes": 62556,
+      "status": "published, no usage note recorded"
+    },
+    {
+      "file": "assets/fonts/dm-serif-display-italic-latin-ext.woff2",
+      "url": "https://brand.theword.world/assets/fonts/dm-serif-display-italic-latin-ext.woff2",
+      "kind": "font",
+      "group": "fonts",
+      "bytes": 7244,
+      "status": "published, no usage note recorded"
+    },
+    {
+      "file": "assets/fonts/dm-serif-display-italic-latin.woff2",
+      "url": "https://brand.theword.world/assets/fonts/dm-serif-display-italic-latin.woff2",
+      "kind": "font",
+      "group": "fonts",
+      "bytes": 17660,
+      "status": "published, no usage note recorded"
+    },
+    {
+      "file": "assets/fonts/dm-serif-display-normal-latin-ext.woff2",
+      "url": "https://brand.theword.world/assets/fonts/dm-serif-display-normal-latin-ext.woff2",
+      "kind": "font",
+      "group": "fonts",
+      "bytes": 6800,
+      "status": "published, no usage note recorded"
+    },
+    {
+      "file": "assets/fonts/dm-serif-display-normal-latin.woff2",
+      "url": "https://brand.theword.world/assets/fonts/dm-serif-display-normal-latin.woff2",
+      "kind": "font",
+      "group": "fonts",
+      "bytes": 17844,
+      "status": "published, no usage note recorded"
+    },
+    {
+      "file": "assets/fonts/dm-serif-text-italic-latin-ext.woff2",
+      "url": "https://brand.theword.world/assets/fonts/dm-serif-text-italic-latin-ext.woff2",
+      "kind": "font",
+      "group": "fonts",
+      "bytes": 7196,
+      "status": "published, no usage note recorded"
+    },
+    {
+      "file": "assets/fonts/dm-serif-text-italic-latin.woff2",
+      "url": "https://brand.theword.world/assets/fonts/dm-serif-text-italic-latin.woff2",
+      "kind": "font",
+      "group": "fonts",
+      "bytes": 17188,
+      "status": "published, no usage note recorded"
+    },
+    {
+      "file": "assets/fonts/dm-serif-text-normal-latin-ext.woff2",
+      "url": "https://brand.theword.world/assets/fonts/dm-serif-text-normal-latin-ext.woff2",
+      "kind": "font",
+      "group": "fonts",
+      "bytes": 6892,
+      "status": "published, no usage note recorded"
+    },
+    {
+      "file": "assets/fonts/dm-serif-text-normal-latin.woff2",
+      "url": "https://brand.theword.world/assets/fonts/dm-serif-text-normal-latin.woff2",
+      "kind": "font",
+      "group": "fonts",
+      "bytes": 17424,
+      "status": "published, no usage note recorded"
+    },
     {
       "file": "assets/images/bibles-distribution.jpg",
       "url": "https://brand.theword.world/assets/images/bibles-distribution.jpg",
@@ -361,6 +457,14 @@
       "status": "approved",
       "capture": "Ministry's own conference photography, July 2026",
       "note": "Documentary hero still."
+    },
+    {
+      "file": "assets/images/og-card.png",
+      "url": "https://brand.theword.world/assets/images/og-card.png",
+      "kind": "image",
+      "group": "images",
+      "bytes": 13112,
+      "status": "published, no usage note recorded"
     },
     {
       "file": "assets/images/rtmc-city-gathering-poster.jpg",
@@ -982,7 +1086,7 @@
       "url": "https://brand.theword.world/assets/logos/rtmc/rtmc-cobrand-black.svg",
       "kind": "vector",
       "group": "rtmc",
-      "bytes": 67600,
+      "bytes": 67649,
       "status": "approved",
       "grounds": [
         "white",
@@ -1002,7 +1106,7 @@
       "url": "https://brand.theword.world/assets/logos/rtmc/rtmc-cobrand-reversed.svg",
       "kind": "vector",
       "group": "rtmc",
-      "bytes": 67600,
+      "bytes": 67649,
       "status": "approved",
       "grounds": [
         "midnight",
@@ -1023,7 +1127,7 @@
       "url": "https://brand.theword.world/assets/logos/rtmc/rtmc-cobrand.svg",
       "kind": "vector",
       "group": "rtmc",
-      "bytes": 67600,
+      "bytes": 67649,
       "status": "approved",
       "grounds": [],
       "configuration": "cobrand",
@@ -1246,7 +1350,7 @@
       "url": "https://brand.theword.world/assets/logos/school/png/school-cobrand-reversed-1600.png",
       "kind": "image",
       "group": "png",
-      "bytes": 54574,
+      "bytes": 52799,
       "status": "approved",
       "grounds": [],
       "configuration": "cobrand",
@@ -1263,7 +1367,7 @@
       "url": "https://brand.theword.world/assets/logos/school/png/school-cobrand-reversed-3200.png",
       "kind": "image",
       "group": "png",
-      "bytes": 118344,
+      "bytes": 114917,
       "status": "approved",
       "grounds": [],
       "configuration": "cobrand",
@@ -1280,7 +1384,7 @@
       "url": "https://brand.theword.world/assets/logos/school/png/school-cobrand-reversed-400.png",
       "kind": "image",
       "group": "png",
-      "bytes": 11232,
+      "bytes": 10567,
       "status": "approved",
       "grounds": [],
       "configuration": "cobrand",
@@ -1297,7 +1401,7 @@
       "url": "https://brand.theword.world/assets/logos/school/png/school-cobrand-reversed-800.png",
       "kind": "image",
       "group": "png",
-      "bytes": 25262,
+      "bytes": 24088,
       "status": "approved",
       "grounds": [],
       "configuration": "cobrand",
@@ -1908,7 +2012,7 @@
       "url": "https://brand.theword.world/assets/logos/school/school-cobrand-black.svg",
       "kind": "vector",
       "group": "school",
-      "bytes": 101478,
+      "bytes": 101480,
       "status": "approved",
       "grounds": [
         "white",
@@ -1928,7 +2032,7 @@
       "url": "https://brand.theword.world/assets/logos/school/school-cobrand-reversed.svg",
       "kind": "vector",
       "group": "school",
-      "bytes": 101478,
+      "bytes": 101480,
       "status": "approved",
       "grounds": [],
       "configuration": "cobrand",
@@ -1945,7 +2049,7 @@
       "url": "https://brand.theword.world/assets/logos/school/school-cobrand.svg",
       "kind": "vector",
       "group": "school",
-      "bytes": 101478,
+      "bytes": 101480,
       "status": "approved",
       "grounds": [],
       "configuration": "cobrand",

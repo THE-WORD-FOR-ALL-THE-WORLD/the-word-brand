@@ -270,7 +270,16 @@ SLC_INKS = {
     },
     "-reversed": {
         "hex": "#FFFFFF",
-        "roles": {"dark": "#0B1A2D", "light": "#FFFFFF", "text": "#FFFFFF"},
+        "roles": {
+            "dark": "#0B1A2D",
+            "light": "#FFFFFF",
+            "text": "#FFFFFF",
+            # The parent half and the divider reverse together, matching how RTMC's
+            # co-brand behaves on its own dark ground. Only the lion's own structure
+            # stays Midnight, which is what keeps its mane modelled rather than flat.
+            "parent": "#FFFFFF",
+            "rule": "#FFFFFF",
+        },
         "name": "Reversed",
         "grounds": ["word-blue", "photography with a Midnight scrim"],
         "note": (
@@ -443,6 +452,15 @@ def ink_for(ink, role):
     roles = ink["roles"]
     if role and role in roles:
         return roles[role]
+    # A composed lockup tags its parent half "parent-<role>". Fall back to the ink's
+    # "parent" colour before the door's own, so an ink that says nothing about the
+    # parent behaves exactly as it did before this existed.
+    if role and role.startswith("parent"):
+        if "parent" in roles:
+            return roles["parent"]
+        role = role[len("parent-"):] if role.startswith("parent-") else None
+        if role and role in roles:
+            return roles[role]
     return roles.get("word") or roles.get("dark") or ink["hex"]
 
 
@@ -554,15 +572,22 @@ def compose_master(spec, loaded):
     height = max(lh, rh)
     total = lw + gap + rule_w + gap + rw
 
-    def place(master, dx, dy, sc):
+    def place(master, dx, dy, sc, prefix=None):
         out = []
         bx, by = master["box"][0], master["box"][1]
         for sh in master["shapes"]:
             subs = [[((x - bx) * sc + dx, (y - by) * sc + dy) for x, y in sp] for sp in sh.subpaths]
-            out.append(svgkit.Shape(subs, sh.fill, sh.rule, sh.role))
+            role = sh.role
+            if prefix:
+                role = f"{prefix}-{role}" if role else prefix
+            out.append(svgkit.Shape(subs, sh.fill, sh.rule, role))
         return out
 
-    shapes = place(left, 0, (height - lh) / 2, scale)
+    # The parent half is tagged so an ink can colour it separately from the door's
+    # own mark. They do not always want the same colour: the School's reversed ink
+    # keeps its lion's structure in Midnight on purpose, and that same instruction
+    # was painting THE WORD Midnight on Word Blue, at 1.6:1, where it vanished.
+    shapes = place(left, 0, (height - lh) / 2, scale, prefix="parent")
     shapes += place(right, lw + gap + rule_w + gap, (height - rh) / 2, 1.0)
 
     # The divider, drawn as a rectangle so it scales with the artwork.
@@ -697,6 +722,78 @@ def render(master, ink, width, height=None, pad=0.0, square=False):
     return svgkit.rasterize(shapes, width, height, lambda x, y: ((x - x0) * s, (y - y0) * s))
 
 
+def render_social_card(masters):
+    """The 1200x630 card every page hands to a link preview.
+
+    A shared URL that previews as a blank rectangle reads as a dead link, and the
+    portal is shared into exactly the places that matter: a partner's inbox, a
+    volunteer's group chat. Midnight ground, the reversed wordmark, and the
+    Parchment hairline the heroes use. Nothing else: this is the institution
+    speaking, and it stays quiet.
+    """
+    from PIL import Image
+
+    W, H = 1200, 630
+    card = Image.new("RGBA", (W, H), (11, 26, 45, 255))
+
+    mark_w, rule_w, gap = 560, 96, 46
+    mark = render(masters[("the-word", "horizontal")], INKS["-reversed"], mark_w)
+    rule = Image.new("RGBA", (rule_w, 1), (247, 243, 236, 56))
+
+    # Centred as one group, so the mark and its rule sit together rather than the
+    # mark floating above an empty lower half.
+    top = (H - (mark.height + gap + rule.height)) // 2
+    card.alpha_composite(mark, ((W - mark_w) // 2, top))
+    card.alpha_composite(rule, ((W - rule_w) // 2, top + mark.height + gap))
+    return card
+
+
+SOCIAL_CARD = os.path.join(REPO, "assets", "images", "og-card.png")
+SWATCHES = os.path.join(REPO, "assets", "downloads", "the-word-swatches.ase")
+
+
+def palette_for_swatches():
+    """The six colours, read from the Brand Guide rather than restated here."""
+    brand = bs.parse_brand_guide()
+    return [(c["name"], c["hex"]) for c in brand["colors"]]
+
+
+def bs_read_bytes(path):
+    if not os.path.exists(path):
+        return None
+    with open(path, "rb") as fh:
+        return fh.read()
+
+
+def build_ase(colors) -> bytes:
+    """The palette as an Adobe swatch exchange file.
+
+    Illustrator, InDesign, Photoshop, and Affinity all read this, which is the
+    difference between a designer picking the brand red and a designer picking a
+    red. Written by hand because the format is eight fields long and a dependency
+    for eight fields is a dependency to maintain forever.
+
+    Layout: "ASEF", version 1.0, block count, then one colour block each. A block
+    is a type, a byte length, a UTF-16BE name with its terminator, a four-byte
+    colour model, the channel floats, and a colour type.
+    """
+    import struct
+
+    out = [b"ASEF", struct.pack(">HH", 1, 0), struct.pack(">I", len(colors))]
+    for name, hexv in colors:
+        label = name.encode("utf-16-be") + b"\x00\x00"
+        body = (
+            struct.pack(">H", len(name) + 1)
+            + label
+            + b"RGB "
+            + b"".join(struct.pack(">f", int(hexv[i : i + 2], 16) / 255) for i in (1, 3, 5))
+            + struct.pack(">H", 0)  # 0 = global, so an edit updates every use
+        )
+        out.append(struct.pack(">HI", 0x0001, len(body)) + body)
+    return b"".join(out)
+
+
+
 # ── writing ───────────────────────────────────────────────────────────────────
 
 
@@ -737,6 +834,10 @@ def build(check):
         raise SystemExit(f"missing {os.path.relpath(MASTERS, REPO)}: nothing to build from")
 
     w = Writer(check)
+    # Keyed by (brand, slug), not slug alone: THE WORD, RTMC, and the School each
+    # have a "horizontal", a "stacked", or a "cobrand", and a bare-slug key let the
+    # last brand loaded overwrite the earlier ones. That published the School's
+    # measured dimensions on THE WORD's cards for as long as this file has existed.
     masters = {}
     loaded = {}  # by master filename, so a composed lockup can reach its parts
     entries = []
@@ -748,7 +849,7 @@ def build(check):
         else:
             m = read_master(cfg["master"], cfg.get("cap_is_height", False))
             loaded[cfg["master"]] = m
-        masters[cfg["slug"]] = m
+        masters[(brand["key"], cfg["slug"])] = m
         x0, y0, x1, y1 = m["box"]
         aw, ah = x1 - x0, y1 - y0
 
@@ -799,11 +900,15 @@ def build(check):
         )
 
     # Only the parent brand cuts the site icon set, from its glyph.
-    g = masters["glyph"]
+    g = masters[("the-word", "glyph")]
     if check:
         for name, _px, _pad, _plate in FAVICONS:
             if not os.path.exists(os.path.join(FAVICON, name)):
                 w.stale.append(f"assets/logos/the-word/favicon/{name}")
+        if not os.path.exists(SOCIAL_CARD):
+            w.stale.append("assets/images/og-card.png")
+        if bs_read_bytes(SWATCHES) != build_ase(palette_for_swatches()):
+            w.stale.append("assets/downloads/the-word-swatches.ase")
         # Zipping needs no imaging library, so the packs are content-verified in CI
         # rather than merely checked for existence.
         write_packs(w)
@@ -817,6 +922,11 @@ def build(check):
                 ground.alpha_composite(img)
                 img = ground
             w.image(os.path.join(FAVICON, name), img)
+
+        w.image(SOCIAL_CARD, render_social_card(masters))
+        with open(SWATCHES, "wb") as fh:
+            fh.write(build_ase(palette_for_swatches()))
+        print("updated  assets/downloads/the-word-swatches.ase")
 
         write_packs(w)
 
@@ -985,11 +1095,11 @@ def mark_card(brand, cfg, entry, master):
 
 
 def render_page(masters, entries):
-    by_slug = {e["slug"]: e for e in entries}
+    by_slug = {(e["brand"], e["slug"]): e for e in entries}
     sections = []
     for i, brand in enumerate(BRANDS):
         cards = "\n".join(
-            mark_card(brand, cfg, by_slug[cfg["slug"]], masters[cfg["slug"]])
+            mark_card(brand, cfg, by_slug[(brand["key"], cfg["slug"])], masters[(brand["key"], cfg["slug"])])
             for cfg in brand["configs"]
         )
         if i == 0:
@@ -1039,7 +1149,7 @@ def render_page(masters, entries):
         for f in FONTS
     )
 
-    hz = masters["horizontal"]
+    hz = masters[("the-word", "horizontal")]
     hx0, hy0, hx1, hy1 = hz["box"]
     clear_pct = round(THE_WORD_CONFIGS[0]["clear"] * hz["cap"] / (hx1 - hx0) * 100, 2)
 
@@ -1051,25 +1161,24 @@ def render_page(masters, entries):
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
 <title>Assets · THE WORD FOR ALL THE WORLD</title>
 <meta name="description" content="Every approved logo, in every format, with the clear space, minimum size, and colour rules that come with it. Fonts, photography, video, and download packs for THE WORD FOR ALL THE WORLD.">
-<link rel="icon" href="/assets/logos/the-word/favicon/favicon-32.png" sizes="32x32">
+<link rel="icon" href="/assets/logos/the-word/favicon/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/assets/logos/the-word/favicon/favicon-16.png" sizes="16x16" type="image/png">
 <link rel="apple-touch-icon" href="/assets/logos/the-word/favicon/apple-touch-icon-180.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="THE WORD FOR ALL THE WORLD">
+<meta property="og:title" content="Assets">
+<meta property="og:description" content="Every approved logo, in every format, with the clear space, minimum size, and colour rules that come with it. Fonts, photography, video, and download packs.">
+<meta property="og:url" content="https://brand.theword.world/assets">
+<meta property="og:image" content="https://brand.theword.world/assets/images/og-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="THE WORD FOR ALL THE WORLD">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Serif+Text:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/brand.tokens.css">
 <style>
-  :root{{
-    --midnight:#0B1A2D;
-    --word-blue:#023D6F;
-    --parchment:#F7F3EC;
-    --flame:#F85842;
-    --ember:#C13A24;
-    --white:#FFFFFF;
-    --rule:rgba(11,26,45,.18);
-    --rule-light:rgba(247,243,236,.22);
-    --serif-display:'DM Serif Display', Georgia, 'Times New Roman', serif;
-    --serif-text:'DM Serif Text', Georgia, 'Times New Roman', serif;
-    --sans:'DM Sans', -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
-  }}
   *{{margin:0;padding:0;box-sizing:border-box;}}
   @media (prefers-reduced-motion: no-preference){{html{{scroll-behavior:smooth;}}}}
   body{{font-family:var(--sans);font-size:17px;line-height:1.7;color:var(--midnight);background:var(--parchment);-webkit-font-smoothing:antialiased;}}

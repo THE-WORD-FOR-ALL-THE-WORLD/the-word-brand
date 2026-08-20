@@ -1,0 +1,304 @@
+{
+  "version": "7.0",
+  "messagingVersion": "1.0",
+  "updated": "2026-08-20",
+  "authority": "canonical",
+  "note": "One entry per surface the brand has to live on. Specs are stated here because no visual guide states them: a canvas size, a character limit, and a safe area are facts about a platform, not about the brand. The rules are the brand's, and every entry names the audit checks that apply to it.",
+  "channels": [
+    {
+      "id": "web",
+      "name": "Websites and landing pages",
+      "use": "Anything rendered in a browser that is not an application: the portal, a campaign page, a partner microsite.",
+      "setup": [
+        "Link https://brand.theword.world/assets/brand.css and https://brand.theword.world/assets/fonts/fonts.css. That is the whole setup.",
+        "Copy markup from https://brand.theword.world/components rather than rebuilding a component from its description."
+      ],
+      "specs": {
+        "measure": "660px maximum for extended reading, roughly 66 characters",
+        "breakpoints": "600px, 720px, 1080px",
+        "socialCard": "1200x630 PNG, required on every page",
+        "favicon": "32px and 16px PNG, plus a 180px apple-touch-icon"
+      },
+      "rules": [
+        "Three to five priorities on a page. A sixth is a second page.",
+        "Every priority word links somewhere real. No decorative priorities.",
+        "A wide table scrolls inside its own frame. The page body never scrolls sideways.",
+        "The focus ring is never removed."
+      ],
+      "components": [
+        "site-chrome",
+        "hero-video",
+        "card",
+        "button-primary",
+        "button-ghost",
+        "record-document",
+        "data-table"
+      ],
+      "auditChecks": [
+        "D1",
+        "D2",
+        "D3",
+        "D4",
+        "H1",
+        "H2",
+        "H3",
+        "H4"
+      ]
+    },
+    {
+      "id": "app",
+      "name": "Applications",
+      "use": "The initiative applications, and any dashboard or logged-in surface.",
+      "setup": [
+        "Install @theword/brand and @theword/ui. Import the stylesheet once at the root.",
+        "Load the three faces with next/font/google, which self-hosts them at build time.",
+        "Keep theming in CSS custom properties, not a JavaScript theme object, so it works unchanged in server components."
+      ],
+      "specs": {
+        "touchTarget": "44px minimum on every control, whatever its drawn height",
+        "appIcon": "1024x1024 source, the glyph on Midnight, no text",
+        "splash": "Midnight ground, the reversed horizontal lockup, nothing else",
+        "states": "every control needs default, hover, focus, active, disabled, loading, and empty"
+      },
+      "rules": [
+        "Error and warning states use the recorded functional colours. Never Flame, never Ember: Ember means the action, and an error is not an action.",
+        "An error names what is wrong and how to fix it. Colour never carries the message alone.",
+        "A dark surface is Midnight, not a darkened Parchment.",
+        "Loading is a wash placeholder, never a spinner over a blank screen."
+      ],
+      "components": [
+        "form-field",
+        "button-primary",
+        "card",
+        "data-table"
+      ],
+      "auditChecks": [
+        "B1",
+        "B3",
+        "B4",
+        "H1",
+        "H2",
+        "H3",
+        "H4"
+      ]
+    },
+    {
+      "id": "email",
+      "name": "Email and newsletters",
+      "use": "Every newsletter, announcement, and transactional message.",
+      "setup": [
+        "Build from the email-layout and email-button components. Tables and inline styles, not divs and a stylesheet.",
+        "Georgia stands in for the serifs and Arial for DM Sans. The webfont will not load, so the fallback is the design."
+      ],
+      "specs": {
+        "width": "600px",
+        "logo": "PNG at 400px or 800px. Never SVG: most clients strip it.",
+        "subjectLine": "50 characters or fewer, so it survives a phone",
+        "preheader": "90 characters or fewer, and never a repeat of the subject",
+        "images": "PNG only, with alt text that carries the meaning when images are blocked"
+      },
+      "rules": [
+        "Every colour is stated explicitly on every cell. A dark-mode client inverts anything left to a default.",
+        "One call to action per email.",
+        "Every email carries a preheader, a line saying why the person is receiving it, and a working unsubscribe.",
+        "The destination URL appears as text in the footer, for clients that strip links."
+      ],
+      "components": [
+        "email-layout",
+        "email-button",
+        "photo-caption"
+      ],
+      "auditChecks": [
+        "B1",
+        "B3",
+        "F1",
+        "F5",
+        "H1",
+        "H4"
+      ]
+    },
+    {
+      "id": "ads-search",
+      "name": "Search ads",
+      "use": "Google and Microsoft responsive search ads.",
+      "setup": [
+        "Assemble every headline and description from the copy bank. Nothing is written at the keyboard in the ad platform.",
+        "A new string joins the bank by passing the audit once, and is then reusable for good."
+      ],
+      "specs": {
+        "headline": "30 characters, 15 per ad group",
+        "description": "90 characters, 4 per ad group",
+        "displayPath": "15 characters per path segment, two segments",
+        "sitelinkText": "25 characters",
+        "sitelinkDescription": "35 characters per line, two lines",
+        "callout": "25 characters"
+      },
+      "rules": [
+        "Never a statistic, a claim of outcome, or a number that is not in the official ministry record.",
+        "Never a banned word. The hype list exists because ad copy is where it creeps back in.",
+        "Sentence case. Never all caps, never an exclamation mark.",
+        "The believer and the local church are the hero, not the ministry."
+      ],
+      "components": [],
+      "auditChecks": [
+        "G1",
+        "G9",
+        "G10",
+        "F1",
+        "F2",
+        "F4"
+      ]
+    },
+    {
+      "id": "ads-display",
+      "name": "Display and Performance Max",
+      "use": "Google Display, Performance Max asset groups, and any placement that auto-crops.",
+      "specs": {
+        "landscape": "1200x628, ratio 1.91:1",
+        "square": "1200x1200, ratio 1:1",
+        "portrait": "960x1200, ratio 4:5",
+        "logoSquare": "1200x1200, the glyph on Midnight",
+        "logoLandscape": "1200x300, the horizontal lockup on Midnight",
+        "safeArea": "keep type and the mark within the centre 80%: the platform crops the edges without asking"
+      },
+      "rules": [
+        "Documentary photography only. Nothing stock, nothing generated, nothing staged.",
+        "Type over an image sits on the Midnight scrim and is White or Parchment.",
+        "The mark is never smaller than its recorded minimum, whatever the placement.",
+        "Every asset is supplied at every ratio. A missing ratio is filled by the platform, badly."
+      ],
+      "components": [
+        "hero-video",
+        "stat-figure"
+      ],
+      "auditChecks": [
+        "G2",
+        "G4",
+        "G5",
+        "B2",
+        "H4"
+      ]
+    },
+    {
+      "id": "social",
+      "name": "Social, organic",
+      "use": "Instagram, YouTube, Facebook, TikTok, and X, for the parent and for each door.",
+      "specs": {
+        "square": "1080x1080",
+        "portrait": "1080x1350",
+        "story": "1080x1920",
+        "storyTitleSafe": "keep type out of the top 250px and the bottom 350px: the platform's own chrome sits there",
+        "avatar": "the glyph, never the wordmark. A wordmark in a circle is unreadable.",
+        "cover": "1200x630"
+      },
+      "rules": [
+        "The handle is the name, exactly as recorded in the Brand Guide's channels section.",
+        "A caption carries what happened, then event, place, and date.",
+        "Every initiative post carries the endorsement line.",
+        "Nothing is reposted without consent from the people in it."
+      ],
+      "components": [
+        "photo-caption",
+        "endorsement-line",
+        "stat-figure"
+      ],
+      "auditChecks": [
+        "G1",
+        "G2",
+        "G4",
+        "G5",
+        "G6",
+        "G9"
+      ]
+    },
+    {
+      "id": "video",
+      "name": "Video",
+      "use": "Conference recordings, field reports, reels, and every loop on a page.",
+      "specs": {
+        "loop": "6 to 15 seconds, muted, looping, with a still poster frame",
+        "titleSafe": "keep type within the centre 90% for a 16:9 export",
+        "lowerThird": "sits on the scrim bar, never straight on the footage",
+        "subtitles": "DM Sans 500 or heavier, on the scrim bar, on every spoken word",
+        "export": "H.264 MP4, 1080p at minimum, plus a poster JPG at the same frame"
+      },
+      "rules": [
+        "Every loop ships with the still that stands in for it under a reduced-motion preference.",
+        "Nothing animated bounces or springs.",
+        "Every subject is a co-labourer in the gospel, never an object of pity.",
+        "Consent is obtained before capture, not asked for afterwards."
+      ],
+      "components": [
+        "hero-video",
+        "lower-third",
+        "photo-caption"
+      ],
+      "auditChecks": [
+        "G1",
+        "G2",
+        "G3",
+        "G4",
+        "H4"
+      ]
+    },
+    {
+      "id": "print",
+      "name": "Print",
+      "use": "Flyers, banners, programmes, certificates, vehicles, and anything a press or a vendor produces.",
+      "setup": [
+        "Send the vector and the recorded colour values. Never send a PNG to a printer.",
+        "Import the palette from the Adobe swatch file rather than typing hex values into a document."
+      ],
+      "specs": {
+        "colourSpace": "CMYK. The recorded values are an unprofiled starting point and are confirmed on a proof.",
+        "bleed": "3mm on every trimmed edge",
+        "safeMargin": "5mm inside the trim, and never less than the mark's own clear space",
+        "resolution": "300dpi for any raster placed in a print document",
+        "minimumMarkWidth": "40mm for the horizontal lockup, 25mm for the stacked"
+      },
+      "rules": [
+        "A vendor never samples a colour off a screenshot.",
+        "Embroidery and engraving take the one-colour black file, which has no anti-aliasing to misread.",
+        "A corrected colour from a proof comes back into the guide through a changelog entry, never as a note in someone's inbox."
+      ],
+      "components": [
+        "record-document",
+        "endorsement-line"
+      ],
+      "auditChecks": [
+        "B1",
+        "B2",
+        "E1",
+        "E4"
+      ]
+    },
+    {
+      "id": "presentation",
+      "name": "Decks and slides",
+      "use": "Teaching decks, partner presentations, and conference slides.",
+      "specs": {
+        "size": "16:9, 1920x1080",
+        "titleSlide": "Midnight ground, reversed lockup, serif headline",
+        "bodySlide": "Parchment ground, one idea per slide",
+        "figures": "the official-record figure component, with its source line"
+      },
+      "rules": [
+        "One idea per slide. A slide with two ideas is two slides.",
+        "The serif carries headlines only. Bullets are DM Sans.",
+        "A figure on a slide still names the record it came from."
+      ],
+      "components": [
+        "stat-figure",
+        "eyebrow",
+        "headline-serif",
+        "endorsement-line"
+      ],
+      "auditChecks": [
+        "D1",
+        "E3",
+        "C1",
+        "C3"
+      ]
+    }
+  ]
+}

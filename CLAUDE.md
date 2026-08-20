@@ -16,12 +16,39 @@ masters in `assets/logos/_masters/`. The masters are the only logo files edited 
 | To change | Edit |
 | --- | --- |
 | A color, token, law, typeface, Do/Don't rule, sub-brand rule | `brand/index.html` |
+| A spacing, type, radius, elevation, motion, breakpoint, neutral, or print value | `brand/index.html`, in its `<table data-scale="...">` |
 | Mission line, voice, vocabulary, banned words, audiences, proof policy | `brand/messaging/index.html` |
 | An initiative's guide or document | `tools/gen_docs.py`, then rerun it |
 | A logo variant, ink, size, pack, or anything on the Assets page | `tools/build_logos.py`, then rerun it |
 | The logo artwork itself | `assets/logos/_masters/`, then rerun `tools/build_logos.py` |
 | The audit rubric, agent rules, component specs, examples, the loader skill | `ai-source/` |
+| A policy, a process, or a procedure | `ai-source/governance.json` |
+| The CSS a component is drawn with | `ai-source/components.css` |
+| A channel's sizes, limits, or rules | `ai-source/channels.json` |
+| Approved ad, email, or CTA copy | `ai-source/copy-bank.json` |
+| Which surfaces run this brand, and what version they are on | `ai-source/consumers.json` |
 | Assets and their usage rules | `assets/` and `ai-source/asset-notes.json` |
+| A React component | `packages/ui/src/`, and keep its id in `ai-source/components.json` |
+
+A new scale is a new `<table data-scale="name">` in the guide. One parser reads all of
+them, so adding one needs no change to the build.
+
+`assets/brand.css`, `assets/brand.tokens.css`, `packages/brand/`, `packages/ui/package.json`,
+`components/index.html`, and `channels/index.html` are all generated. `packages/ui/src/` is
+hand-written, because React components with props are code.
+
+`tools/fetch_fonts.py`, `tools/sync_figma.py`, and `tools/sync_canva.py` need the network and
+are run by hand, never in CI. The build never touches the network.
+
+## Policies, processes, procedures
+
+They are three different things and they are kept apart at
+[`/governance`](https://brand.theword.world/governance), generated from
+`ai-source/governance.json`. A **policy** is a standing rule about how this system is run. A
+**process** is the order work moves in. A **procedure** is the steps for one job. Edit that one
+file to change any of them; the build fails a policy longer than one line, which is what stops it
+becoming a wall again. The brand's own non-negotiables are not restated there: they are read out
+of the audit's gate table at build time.
 
 ## After any change
 
@@ -32,7 +59,8 @@ python3 tools/brand_lint.py
 ```
 
 All three must pass, and the regenerated files get committed with the change that caused them, never
-separately. The GitHub Action runs all three before deploying, so a broken AI layer never reaches
+separately. `tools/brand_check.py <file-or-url>` runs the mechanical half of the audit against
+anything, inside this repository or outside it. The GitHub Action runs all three before deploying, so a broken AI layer never reaches
 production. `build_logos.py` needs Pillow to write PNGs; its `--check` mode does not, which is why CI
 can verify the logo set without an imaging library.
 

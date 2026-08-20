@@ -5,6 +5,8 @@ import os
 NL = chr(10)
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+SITE = "https://brand.theword.world"
+
 HEAD = """<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,22 +14,25 @@ HEAD = """<!DOCTYPE html>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
 <title>{title} · THE WORD FOR ALL THE WORLD</title>
+<meta name="description" content="{og_desc}">
+<link rel="icon" href="/assets/logos/the-word/favicon/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/assets/logos/the-word/favicon/favicon-16.png" sizes="16x16" type="image/png">
+<link rel="apple-touch-icon" href="/assets/logos/the-word/favicon/apple-touch-icon-180.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="THE WORD FOR ALL THE WORLD">
+<meta property="og:title" content="{og_title}">
+<meta property="og:description" content="{og_desc}">
+<meta property="og:url" content="{og_url}">
+<meta property="og:image" content="https://brand.theword.world/assets/images/og-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="THE WORD FOR ALL THE WORLD">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/brand.tokens.css">
 <style>
-  :root{{
-    --midnight:#0B1A2D;
-    --word-blue:#023D6F;
-    --parchment:#F7F3EC;
-    --flame:#F85842;
-    --ember:#C13A24;
-    --white:#FFFFFF;
-    --rule:rgba(11,26,45,.18);
-    --rule-light:rgba(247,243,236,.22);
-    --serif-display:'DM Serif Display', Georgia, 'Times New Roman', serif;
-    --sans:'DM Sans', -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
-  }}
   *{{margin:0;padding:0;box-sizing:border-box;}}
   @media (prefers-reduced-motion: no-preference){{html{{scroll-behavior:smooth;}}}}
   body{{font-family:var(--sans);font-size:17px;line-height:1.7;color:var(--midnight);background:var(--parchment);-webkit-font-smoothing:antialiased;}}
@@ -366,7 +371,10 @@ for section, cfg in SECTIONS.items():
     lh_a = ' class="active"' if cfg["active"] == "lh" else ""
     for slug, name, stage, mission in INITIATIVES:
         html = HEAD.format(title=f"{name} · {cfg['doc_suffix']}", extra_css=DOC_CSS, navlogo=NAV_PARENT,
-                           band_pad="96px 0 24px", doc_active=doc_a, lh_active=lh_a)
+                           band_pad="96px 0 24px", doc_active=doc_a, lh_active=lh_a,
+                           og_title=f"{name} · {cfg['doc_suffix']}",
+                           og_desc=f"{mission} What {name} is, in the words of the ministry.",
+                           og_url=f"{SITE}/{section}/{slug}")
         html += DOC_PAGE.format(backurl=f"/{section}/", backlabel=cfg["backlabel"],
                                 doctitle=TITLES[slug], metaline=cfg["metaline"],
                                 body=cfg["bodies"][slug], sigrow=sigrow())
@@ -376,7 +384,9 @@ for section, cfg in SECTIONS.items():
         open(path, "w").write(html)
         print(path, len(html))
     html = HEAD.format(title=cfg["index_title"], extra_css=INDEX_CSS, navlogo=NAV_PARENT,
-                       band_pad="150px 0 64px", doc_active=doc_a, lh_active=lh_a)
+                       band_pad="150px 0 64px", doc_active=doc_a, lh_active=lh_a,
+                       og_title=cfg["index_title"], og_desc=cfg["index_sub"],
+                       og_url=f"{SITE}/{section}")
     html += '\n<div class="band">\n  <span class="kicker">One Journey · Three Initiatives</span>\n'
     html += f'  <h1>{cfg["index_h1"]}</h1>\n  <p>{cfg["index_sub"]}</p>\n</div>\n'
     html += '<main>\n  <div class="wrap">\n    <div class="section-label">The Initiatives</div>\n    <div class="cards">\n'
@@ -1064,6 +1074,9 @@ for d in SUBS:
     )
     fields["capture"] = capture
     html = HEAD.format(title=f"{d['name']} · Initiative Brand Guide", extra_css=SUB_CSS,
+                       og_title=f"{d['name']} · Initiative Brand Guide",
+                       og_desc=f"How {d['name']} looks under the parent brand. {d['mission']}",
+                       og_url=f"{SITE}/brand/{d['slug']}",
                        navlogo=NAV_COBRAND.get(d["slug"], NAV_PARENT),
                        band_pad="0", doc_active="", lh_active="")
     html = html.replace("<body>", f"<body class=\"{d['stage'].lower()}\">")

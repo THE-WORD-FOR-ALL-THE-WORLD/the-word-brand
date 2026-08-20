@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<title>Governance · THE WORD FOR ALL THE WORLD</title>
+<meta name="description" content="The policies, processes, and procedures that run this brand system, kept apart: a policy is a standing rule, a process is the order work moves in, a procedure is the steps for one job.">
+<link rel="icon" href="/assets/logos/the-word/favicon/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/assets/logos/the-word/favicon/favicon-16.png" sizes="16x16" type="image/png">
+<link rel="apple-touch-icon" href="/assets/logos/the-word/favicon/apple-touch-icon-180.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="THE WORD FOR ALL THE WORLD">
+<meta property="og:title" content="Governance">
+<meta property="og:description" content="The policies, processes, and procedures that run this brand system, kept apart: a policy is a standing rule, a process is the order work moves in, a procedure is the steps for one job.">
+<meta property="og:url" content="https://brand.theword.world/governance">
+<meta property="og:image" content="https://brand.theword.world/assets/images/og-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="THE WORD FOR ALL THE WORLD">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="/assets/fonts/fonts.css">
+<link rel="stylesheet" href="/assets/brand.css">
+<style>
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 var(--space-5); }
+  /* Policies and procedures are read, so they keep a reading measure. Processes
+     are looked at, so they get the full width. */
+  #panel-policies, #panel-procedures { max-width: 900px; }
+  nav.chrome { border-bottom: 1px solid var(--border); }
+  nav.chrome .bar { max-width: 1240px; margin: 0 auto; padding: var(--space-4) var(--space-5); display: flex; justify-content: space-between; align-items: center; gap: var(--space-4); }
+  nav.chrome .logo img { height: 17px; width: auto; display: block; }
+  nav.chrome .links { display: none; gap: var(--space-4); font-size: 12.5px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; }
+  nav.chrome .links a { color: var(--text-muted); text-decoration: none; }
+  nav.chrome .links a:hover { color: var(--accent-text); }
+  @media (min-width: 1100px) { nav.chrome .links { display: flex; } }
+
+  header.masthead { padding: var(--space-8) 0 var(--space-7); border-bottom: 1px solid var(--border); }
+  header.masthead h1 { margin-top: var(--space-2); max-width: 20ch; }
+
+  /* The three definitions sit at the top, because the whole point of this page
+     is that they are three different things that had been reading as one. */
+  .defs { display: grid; grid-template-columns: 1fr; gap: var(--space-4); margin-top: var(--space-6); }
+  @media (min-width: 760px) { .defs { grid-template-columns: repeat(3, 1fr); } }
+  .defs .card { padding: var(--space-5); }
+  .defs h2 { font-family: var(--sans); font-weight: 700; font-size: var(--text-body-small); margin: 0 0 var(--space-2); }
+  .defs p { margin: 0; font-size: var(--text-body-small); line-height: 1.6; color: var(--text-muted); }
+
+  .tabbar { position: sticky; top: 0; z-index: 10; background: var(--ground); padding-top: var(--space-6); }
+  main { padding-bottom: var(--space-9); }
+  .panel-body { padding-top: var(--space-6); }
+  [hidden] { display: none !important; }
+
+  /* Policies: one line each. Anything needing a paragraph is a procedure. */
+  .policy { display: grid; grid-template-columns: auto 1fr; gap: var(--space-3) var(--space-4); padding: var(--space-4) 0; border-bottom: 1px solid var(--border-soft); align-items: start; }
+  .policy > .badge { margin-top: 2px; }
+  .policy h3 { font-family: var(--sans); font-weight: 700; font-size: var(--text-body-small); margin: 0 0 2px; }
+  .policy p { margin: 0; font-size: var(--text-body-small); line-height: 1.6; }
+  .policy .why { color: var(--text-muted); margin-top: 4px; }
+
+  /* Processes: drawn as a chain, because that is what a process is. A chain needs
+     room to read as one movement, so this panel runs wider than the others and
+     each process gets a whole block of the page rather than a paragraph of it. */
+  .process { padding: var(--space-8) 0; }
+  .process + .process { border-top: 1px solid var(--border-soft); }
+  .process > h3 { font-family: var(--serif-text); font-weight: 400; font-size: var(--text-title-large); line-height: var(--leading-title-large); margin: 0; }
+  .process > .when { font-size: var(--text-body-small); color: var(--text-muted); margin: var(--space-3) 0 var(--space-6); }
+
+  /* A grid, not a flex row with arrow elements between the cards. Six stages
+     across 1072px leaves 89px of content per card, so the grid holds a 190px
+     floor and wraps to a second row instead. The connector is drawn on the card
+     rather than being its own item, so a wrap can never orphan an arrow. */
+  .chain {
+    display: grid;
+    grid-template-columns: repeat(var(--cols, 3), minmax(0, 1fr));
+    gap: var(--space-6) var(--space-5);
+  }
+  @media (max-width: 1000px) {
+    .chain { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .chain .stage:not(:last-child)::after { content: "\2192"; }
+    .chain .stage:nth-child(2n)::after,
+    .chain .stage:last-child::after { content: none; }
+  }
+  .chain .stage {
+    position: relative;
+    border: 1px solid var(--border); border-radius: var(--radius-card);
+    padding: var(--space-5); background: var(--surface);
+    display: flex; flex-direction: column;
+  }
+  .chain .stage:not(:last-child)::after {
+    content: "\2192";
+    position: absolute; top: 50%; right: calc(var(--space-5) * -1);
+    width: var(--space-5); text-align: center;
+    transform: translateY(-50%);
+    color: var(--text-faint); font-size: 16px; line-height: 1;
+    pointer-events: none;
+  }
+  /* A connector belongs between two cards, not at the end of a row pointing into
+     the margin. The column count is known, so the card that closes a row drops
+     it, and each breakpoint restates that for its own column count. */
+  .chain.cols-3 .stage:nth-child(3n)::after,
+  .chain.cols-4 .stage:nth-child(4n)::after { content: none; }
+  .chain .stage .n { font-size: 11px; font-weight: 600; letter-spacing: .12em; color: var(--accent-text); font-variant-numeric: tabular-nums; }
+  .chain .stage h4 { font-family: var(--sans); font-weight: 700; font-size: var(--text-body-small); margin: var(--space-2) 0 var(--space-3); }
+  .chain .stage p { margin: 0; font-size: var(--text-caption); line-height: 1.55; color: var(--text-muted); }
+
+  .process > .ends {
+    margin-top: var(--space-6); padding-top: var(--space-4);
+    border-top: 1px solid var(--border-soft);
+    font-size: var(--text-body-small);
+  }
+  .process > .ends b { color: var(--accent-text); }
+
+  /* Below the width where six stages still read across, the chain stands up.
+     A wrapped horizontal row stops looking like one flow, which is the whole
+     reason for drawing it as a chain in the first place. */
+  /* One column below the width where even two stages read across. The connector
+     turns to point down, which is the same flow read the other way. */
+  @media (max-width: 620px) {
+    .chain { grid-template-columns: minmax(0, 1fr); gap: var(--space-6); }
+    .chain .stage:not(:last-child)::after {
+      content: "\2192";
+      top: auto; right: auto; bottom: calc(var(--space-6) * -1);
+      left: 50%; width: auto;
+      transform: translate(-50%, 0) rotate(90deg);
+    }
+    .chain .stage:last-child::after { content: none; }
+    .chain .stage h4 { margin: 4px 0 var(--space-2); }
+  }
+
+  /* Procedures: steps, folded away until somebody is actually doing the job. */
+  .sop { border: 1px solid var(--border); border-radius: var(--radius-card); margin-bottom: var(--space-3); background: var(--surface); }
+  .sop > summary { cursor: pointer; list-style: none; padding: var(--space-4) var(--space-5); display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--space-3); }
+  .sop > summary::-webkit-details-marker { display: none; }
+  .sop > summary::before { content: "\203A"; color: var(--accent-text); width: 1em; flex: none; }
+  .sop[open] > summary::before { content: "\2304"; }
+  .sop > summary h3 { font-family: var(--sans); font-weight: 700; font-size: var(--text-body-small); margin: 0; }
+  .sop > summary .meta { font-size: var(--text-caption); color: var(--text-muted); }
+  .sop .body { padding: 0 var(--space-5) var(--space-5) calc(1em + var(--space-5) + var(--space-3)); }
+  .sop ol { margin: 0; padding-left: 1.3em; font-size: var(--text-body-small); line-height: 1.65; }
+  .sop ol li { margin-bottom: var(--space-2); }
+  .sop .done { margin-top: var(--space-4); font-size: var(--text-body-small); }
+  .sop .done b { color: var(--accent-text); }
+
+  .gates { margin-top: var(--space-7); }
+  .gates .note { font-size: var(--text-body-small); color: var(--text-muted); max-width: 66ch; margin: var(--space-3) 0 var(--space-5); }
+  .gate { display: grid; grid-template-columns: auto 1fr; gap: var(--space-3) var(--space-4); padding: var(--space-3) 0; border-bottom: 1px solid var(--border-soft); align-items: start; }
+  .gate b { font-family: var(--sans); font-size: var(--text-body-small); }
+  .gate p { margin: 2px 0 0; font-size: var(--text-caption); line-height: 1.55; color: var(--text-muted); }
+
+  footer.chrome { background: var(--midnight); color: var(--ink-reversed-muted); padding: 40px 0; font-size: 12.5px; letter-spacing: .06em; text-transform: uppercase; font-weight: 500; }
+  footer.chrome .wrap { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+  footer.chrome img { height: 16px; width: auto; display: block; opacity: .9; }
+</style>
+</head>
+<body>
+
+<nav class="chrome">
+  <div class="bar">
+    <a class="logo" href="/" aria-label="THE WORD FOR ALL THE WORLD, portal home">
+      <img src="/assets/logos/the-word/the-word-horizontal.svg" alt="THE WORD FOR ALL THE WORLD">
+    </a>
+    <div class="links">
+      <a href="/">Home</a>
+      <a href="/brand/">Brand Guide</a>
+      <a href="/brand/messaging/">Messaging</a>
+      <a href="/documents/">Documents</a>
+      <a href="/letterhead/">Letterhead</a>
+      <a href="/signatures/">Signatures</a>
+      <a href="/assets/">Assets</a>
+    </div>
+  </div>
+</nav>
+
+<header class="masthead">
+  <div class="wrap">
+    <span class="eyebrow">Governance</span>
+    <h1 class="headline headline-small">Three different things, kept <em>apart.</em></h1>
+    <div class="defs">
+      <div class="card"><h2>Policy</h2><p>A standing rule about how this system is run. One line, and ten of them.</p></div>
+      <div class="card"><h2>Process</h2><p>The order work moves in. This hands to that, and that hands to the next.</p></div>
+      <div class="card"><h2>Procedure</h2><p>The steps one person follows to do one job, in order.</p></div>
+    </div>
+  </div>
+</header>
+
+<div class="tabbar">
+  <div class="wrap">
+    <div class="tabs" role="tablist">
+      <button role="tab" id="tab-policies" aria-controls="panel-policies" aria-selected="true">Policies</button>
+      <button role="tab" id="tab-processes" aria-controls="panel-processes" aria-selected="false">Processes</button>
+      <button role="tab" id="tab-procedures" aria-controls="panel-procedures" aria-selected="false">Procedures</button>
+    </div>
+  </div>
+</div>
+
+<main>
+  <div class="wrap">
+    <section class="panel-body" id="panel-policies" role="tabpanel" aria-labelledby="tab-policies">
+      <div class="policy">
+        <span class="badge">GOV1</span>
+        <div>
+          <h3>No silent edits</h3>
+          <p>Every change to a published standard carries a version bump and a changelog entry.</p>
+          <p class="why">An audit has to be checkable against the version it named.</p>
+        </div>
+      </div>
+      <div class="policy">
+        <span class="badge">GOV2</span>
+        <div>
+          <h3>Two approvers</h3>
+          <p>A change to a published standard is approved by Joel Zimmer and Nathan Zimmer.</p>
+          <p class="why">One person cannot quietly move the brand.</p>
+        </div>
+      </div>
+      <div class="policy">
+        <span class="badge">GOV3</span>
+        <div>
+          <h3>The guide is the source</h3>
+          <p>Everything under /ai is generated. A hand edit is overwritten by the next build.</p>
+          <p class="why">Two copies of a fact means one of them is wrong and nobody knows which.</p>
+        </div>
+      </div>
+      <div class="policy">
+        <span class="badge">GOV4</span>
+        <div>
+          <h3>Archive, never delete</h3>
+          <p>A superseded guide moves to the archive and stays reachable.</p>
+          <p class="why">An audit citing v6.8 has to be checkable against v6.8.</p>
+        </div>
+      </div>
+      <div class="policy">
+        <span class="badge">GOV5</span>
+        <div>
+          <h3>One version everywhere</h3>
+          <p>Tokens, components, channels, packages, and pages all carry the same version number.</p>
+          <p class="why">Separate version numbers make it impossible to say what agrees with what.</p>
+        </div>
+      </div>
+      <div class="policy">
+        <span class="badge">GOV6</span>
+        <div>
+          <h3>Every consumer is registered</h3>
+          <p>A surface running this brand is listed with the version it was last synced to.</p>
+          <p class="why">Otherwise nobody can answer which of our things are on the old brand.</p>
+        </div>
+      </div>
+      <div class="policy">
+        <span class="badge">GOV7</span>
+        <div>
+          <h3>Reviewed twice a year</h3>
+          <p>The system is reviewed against the people using it, and the review stays on the record.</p>
+          <p class="why">A changelog only ever looks at itself.</p>
+        </div>
+      </div>
+      <div class="policy">
+        <span class="badge">GOV8</span>
+        <div>
+          <h3>Audit before presenting</h3>
+          <p>Branded work is audited against the current standard, and the report names the version used.</p>
+          <p class="why">Compliance claimed without a version is a claim about nothing.</p>
+        </div>
+      </div>
+      <div class="policy">
+        <span class="badge">GOV9</span>
+        <div>
+          <h3>Nothing ships on a broken build</h3>
+          <p>The three checks pass before anything reaches production.</p>
+          <p class="why">A site that disagrees with its own manifest is lying about being canonical.</p>
+        </div>
+      </div>
+      <div class="policy">
+        <span class="badge">GOV10</span>
+        <div>
+          <h3>Corrections come home</h3>
+          <p>A value corrected in the field returns through a changelog entry, never as a note in an inbox.</p>
+          <p class="why">A press proof that lives in someone's email is a fact the system does not have.</p>
+        </div>
+      </div>
+      <div class="gates">
+        <h2 class="title">The non-negotiables</h2>
+        <p class="note">The rules about what the brand looks and sounds like are not restated here. These are the audit's gates, read from https://brand.theword.world/ai/audit.md at build time. Any gate failure fails the whole audit.</p>
+        <div class="gate">
+          <span class="badge" data-state="accent">G1</span>
+          <div><b>Invented facts</b><p>A statistic, quote, testimony, name, date, or Bible reference appears that did not come from the official ministry record. Bracketed placeholders ([n], [city]) pass. Plausible-looking figures fail.</p></div>
+        </div>
+        <div class="gate">
+          <span class="badge" data-state="accent">G2</span>
+          <div><b>Synthetic or stock imagery</b><p>Any photograph or video frame of people, ministry, or the field that is stock, AI-generated, or staged. Documentary capture only.</p></div>
+        </div>
+        <div class="gate">
+          <span class="badge" data-state="accent">G3</span>
+          <div><b>The prophecy</b><p>The prophecy is paraphrased, excerpted, trimmed, or reworded. It is quoted exactly and in full, or it is absent.</p></div>
+        </div>
+        <div class="gate">
+          <span class="badge" data-state="accent">G4</span>
+          <div><b>Flame carrying text</b><p>Any text set in Flame, or any text sitting directly on Flame. Fire at text size is Ember.</p></div>
+        </div>
+        <div class="gate">
+          <span class="badge" data-state="accent">G5</span>
+          <div><b>Text on footage without a scrim</b><p>Type over photography or video without the Midnight scrim, or in a color other than White or Parchment.</p></div>
+        </div>
+        <div class="gate">
+          <span class="badge" data-state="accent">G6</span>
+          <div><b>Missing endorsement</b><p>An initiative's name appears without "A ministry of THE WORD FOR ALL THE WORLD."</p></div>
+        </div>
+        <div class="gate">
+          <span class="badge" data-state="accent">G7</span>
+          <div><b>Governmental iconography</b><p>Seals, crests, flags, eagles, or any device that imitates a government office. One recorded exception: the School of the Local Church's approved academic seal, on the School's own credentials only (Brand Guide §11, v5.8). The seal anywhere else, or any other seal, fails.</p></div>
+        </div>
+        <div class="gate">
+          <span class="badge" data-state="accent">G8</span>
+          <div><b>Unattributed authority</b><p>A vision statement, field report, testimony, or official record published without the name of the person or office behind it.</p></div>
+        </div>
+        <div class="gate">
+          <span class="badge" data-state="accent">G9</span>
+          <div><b>Banned language</b><p>Any term from the Messaging Guide's hype, corporate-polish, or churchy-insider lists, used straight rather than explained.</p></div>
+        </div>
+        <div class="gate">
+          <span class="badge" data-state="accent">G10</span>
+          <div><b>Wrong hero</b><p>The copy makes THE WORD the hero of the story instead of the believer and the local church.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel-body" id="panel-processes" role="tabpanel" aria-labelledby="tab-processes" hidden>
+      <div class="process">
+        <h3>Changing the brand</h3>
+        <p class="when">Starts when: Someone proposes a change to what the standard says.</p>
+        <div class="chain cols-3" style="--cols:3">
+          <div class="stage">
+            <div class="n">01</div>
+            <h4>Proposal</h4>
+            <p>Anyone<br>A pull request against the guide</p>
+          </div>
+          <div class="stage">
+            <div class="n">02</div>
+            <h4>Review</h4>
+            <p>Brand owners<br>A preview to look at</p>
+          </div>
+          <div class="stage">
+            <div class="n">03</div>
+            <h4>Approval</h4>
+            <p>Joel and Nathan<br>A recorded sign-off</p>
+          </div>
+          <div class="stage">
+            <div class="n">04</div>
+            <h4>Release</h4>
+            <p>Whoever proposed it<br>A version bump and a changelog entry</p>
+          </div>
+          <div class="stage">
+            <div class="n">05</div>
+            <h4>Sync</h4>
+            <p>Whoever released it<br>Canva, Figma, and the packages updated</p>
+          </div>
+          <div class="stage">
+            <div class="n">06</div>
+            <h4>Record</h4>
+            <p>Whoever synced<br>consumers.json showing the new version</p>
+          </div>
+        </div>
+        <p class="ends"><b>Ends when:</b> Every registered surface is on the version the guide states.  &middot;  Procedures: <a class="link" href="#SOP1">SOP1</a> <a class="link" href="#SOP2">SOP2</a> <a class="link" href="#SOP5">SOP5</a> <a class="link" href="#SOP6">SOP6</a></p>
+      </div>
+      <div class="process">
+        <h3>Producing branded work</h3>
+        <p class="when">Starts when: A page, a post, a deck, an ad, an email, or a document is needed.</p>
+        <div class="chain cols-3" style="--cols:3">
+          <div class="stage">
+            <div class="n">01</div>
+            <h4>Brief</h4>
+            <p>Requester<br>Who it is for, and what it must do</p>
+          </div>
+          <div class="stage">
+            <div class="n">02</div>
+            <h4>Draft</h4>
+            <p>Maker<br>The work, built from components and the copy bank</p>
+          </div>
+          <div class="stage">
+            <div class="n">03</div>
+            <h4>Audit</h4>
+            <p>Maker<br>An audit report naming the version</p>
+          </div>
+          <div class="stage">
+            <div class="n">04</div>
+            <h4>Revise</h4>
+            <p>Maker<br>Every failed check fixed</p>
+          </div>
+          <div class="stage">
+            <div class="n">05</div>
+            <h4>Publish</h4>
+            <p>Owner of the surface<br>The work, live</p>
+          </div>
+        </div>
+        <p class="ends"><b>Ends when:</b> The work is live and its audit report is filed with it.  &middot;  Procedures: <a class="link" href="#SOP3">SOP3</a> <a class="link" href="#SOP7">SOP7</a></p>
+      </div>
+      <div class="process">
+        <h3>Bringing a new surface on</h3>
+        <p class="when">Starts when: A new site, app, kit, or account will carry the brand.</p>
+        <div class="chain cols-4" style="--cols:4">
+          <div class="stage">
+            <div class="n">01</div>
+            <h4>Register</h4>
+            <p>Owner<br>A row in consumers.json</p>
+          </div>
+          <div class="stage">
+            <div class="n">02</div>
+            <h4>Build</h4>
+            <p>Owner<br>The surface, built on the published tokens</p>
+          </div>
+          <div class="stage">
+            <div class="n">03</div>
+            <h4>Sync</h4>
+            <p>Owner<br>The current version in place</p>
+          </div>
+          <div class="stage">
+            <div class="n">04</div>
+            <h4>Record</h4>
+            <p>Owner<br>syncedVersion set</p>
+          </div>
+        </div>
+        <p class="ends"><b>Ends when:</b> The linter can see the surface and say what version it is on.  &middot;  Procedures: <a class="link" href="#SOP4">SOP4</a> <a class="link" href="#SOP5">SOP5</a> <a class="link" href="#SOP6">SOP6</a></p>
+      </div>
+      <div class="process">
+        <h3>Correcting a defect</h3>
+        <p class="when">Starts when: Something published is found to be wrong.</p>
+        <div class="chain cols-4" style="--cols:4">
+          <div class="stage">
+            <div class="n">01</div>
+            <h4>Report</h4>
+            <p>Anyone<br>What is wrong and where it shows</p>
+          </div>
+          <div class="stage">
+            <div class="n">02</div>
+            <h4>Reproduce</h4>
+            <p>Maintainer<br>A failing check, where one is possible</p>
+          </div>
+          <div class="stage">
+            <div class="n">03</div>
+            <h4>Fix</h4>
+            <p>Maintainer<br>The correction, and a check that would have caught it</p>
+          </div>
+          <div class="stage">
+            <div class="n">04</div>
+            <h4>Release</h4>
+            <p>Maintainer<br>A version bump and a changelog entry</p>
+          </div>
+        </div>
+        <p class="ends"><b>Ends when:</b> The defect is fixed and cannot return unnoticed.  &middot;  Procedures: <a class="link" href="#SOP1">SOP1</a> <a class="link" href="#SOP2">SOP2</a></p>
+      </div>
+      <div class="process">
+        <h3>Reviewing the system</h3>
+        <p class="when">Starts when: Six months have passed, or a new kind of surface has joined.</p>
+        <div class="chain cols-3" style="--cols:3">
+          <div class="stage">
+            <div class="n">01</div>
+            <h4>Examine</h4>
+            <p>Reviewer<br>What each audience finds and has to invent</p>
+          </div>
+          <div class="stage">
+            <div class="n">02</div>
+            <h4>Report</h4>
+            <p>Reviewer<br>A review, with an acceptance test per recommendation</p>
+          </div>
+          <div class="stage">
+            <div class="n">03</div>
+            <h4>Plan</h4>
+            <p>Brand owners<br>What will be done, and in what order</p>
+          </div>
+          <div class="stage">
+            <div class="n">04</div>
+            <h4>Release</h4>
+            <p>Maintainer<br>The version the review called for</p>
+          </div>
+          <div class="stage">
+            <div class="n">05</div>
+            <h4>Close</h4>
+            <p>Reviewer<br>The review row naming the version it produced</p>
+          </div>
+        </div>
+        <p class="ends"><b>Ends when:</b> The review is on the record with its outcome beside it.  &middot;  Procedures: <a class="link" href="#SOP8">SOP8</a> <a class="link" href="#SOP1">SOP1</a></p>
+      </div>
+    </section>
+
+    <section class="panel-body" id="panel-procedures" role="tabpanel" aria-labelledby="tab-procedures" hidden>
+      <details class="sop" id="SOP1">
+        <summary>
+          <h3>Release a brand change</h3>
+          <span class="meta">Maintainer &middot; The standard is changing. &middot; <code class="code">/brand-release</code></span>
+        </summary>
+        <div class="body">
+          <ol>
+            <li>Edit the source: brand/index.html for a visual rule, brand/messaging/index.html for a verbal one.</li>
+            <li>Bump the version in the title and the kicker.</li>
+            <li>Add a changelog row: version, date, owner, what changed, who approved it.</li>
+            <li>Move the superseded guide into archive/.</li>
+            <li>Run build_logos.py, then build_ai.py, then brand_lint.py.</li>
+            <li>Commit the regenerated files with the change that caused them.</li>
+            <li>Open a pull request and check the preview before merging.</li>
+          </ol>
+          <p class="done"><b>Done when:</b> All three checks pass and the changelog names the new version.</p>
+        </div>
+      </details>
+      <details class="sop" id="SOP2">
+        <summary>
+          <h3>Rebuild the AI layer</h3>
+          <span class="meta">Anyone &middot; Any source file has been edited. &middot; <code class="code">/brand-sync</code></span>
+        </summary>
+        <div class="body">
+          <ol>
+            <li>Run python3 tools/build_logos.py.</li>
+            <li>Run python3 tools/build_ai.py.</li>
+            <li>Run python3 tools/brand_lint.py.</li>
+            <li>Commit every regenerated file alongside the edit.</li>
+          </ol>
+          <p class="done"><b>Done when:</b> Both --check modes report current and the linter reports no errors.</p>
+        </div>
+      </details>
+      <details class="sop" id="SOP3">
+        <summary>
+          <h3>Audit a piece of work</h3>
+          <span class="meta">Whoever made it &middot; Before anything branded is presented. &middot; <code class="code">/brand-audit</code></span>
+        </summary>
+        <div class="body">
+          <ol>
+            <li>Fetch /ai/manifest.json and record the versions it reports.</li>
+            <li>Read tokens, the brand system, and the audit. Read the initiative's guide if it speaks for one.</li>
+            <li>Work the ten gates in order. Any gate failure fails the whole audit.</li>
+            <li>Score every applicable check and mark the rest n/a with a reason.</li>
+            <li>Return the report template exactly, with a verdict.</li>
+          </ol>
+          <p class="done"><b>Done when:</b> The report names a version and gives SHIP, REVISE, or BLOCKED.</p>
+        </div>
+      </details>
+      <details class="sop" id="SOP4">
+        <summary>
+          <h3>Add a page to the portal</h3>
+          <span class="meta">Maintainer &middot; A new guide, document, or section is needed. &middot; <code class="code">/brand-new-page</code></span>
+        </summary>
+        <div class="body">
+          <ol>
+            <li>Copy the chrome from an existing page.</li>
+            <li>Link /assets/brand.tokens.css rather than restating the palette.</li>
+            <li>Add the og tags, the meta description, and the favicon links.</li>
+            <li>Add the page to llms.txt in tools/build_ai.py, and to the homepage card index if it is a front door.</li>
+            <li>Rebuild and lint.</li>
+          </ol>
+          <p class="done"><b>Done when:</b> The linter reports no errors and the page appears in the sitemap.</p>
+        </div>
+      </details>
+      <details class="sop" id="SOP5">
+        <summary>
+          <h3>Set up the Canva brand kit</h3>
+          <span class="meta">Brand owner &middot; The kit is new, or the brand version has moved.</span>
+        </summary>
+        <div class="body">
+          <ol>
+            <li>Run python3 tools/sync_canva.py to print the sheet.</li>
+            <li>Keep one kit and name it with the current version.</li>
+            <li>Set exactly the six colours and the three fonts, and remove anything else.</li>
+            <li>Upload the listed PNG logos.</li>
+            <li>Build the locked brand templates.</li>
+            <li>Set syncedVersion in ai-source/consumers.json.</li>
+          </ol>
+          <p class="done"><b>Done when:</b> The linter no longer warns that Canva is unsynced.</p>
+        </div>
+      </details>
+      <details class="sop" id="SOP6">
+        <summary>
+          <h3>Push tokens into Figma</h3>
+          <span class="meta">Maintainer &middot; A release has changed a token.</span>
+        </summary>
+        <div class="body">
+          <ol>
+            <li>Run python3 tools/sync_figma.py --dry-run and read the payload.</li>
+            <li>Set FIGMA_TOKEN and FIGMA_FILE_KEY.</li>
+            <li>Run python3 tools/sync_figma.py.</li>
+            <li>Set syncedVersion in ai-source/consumers.json.</li>
+          </ol>
+          <p class="done"><b>Done when:</b> The Figma library shows the current values and the linter is quiet.</p>
+        </div>
+      </details>
+      <details class="sop" id="SOP7">
+        <summary>
+          <h3>Check work in another repository</h3>
+          <span class="meta">That repo's maintainer &middot; A site or app outside this repo produces branded output.</span>
+        </summary>
+        <div class="body">
+          <ol>
+            <li>Add the brand-check Action to the repository's pull request workflow.</li>
+            <li>Point it at the built output, not the source.</li>
+            <li>Fix every failure it reports.</li>
+            <li>Run the full audit with a reader before publishing.</li>
+          </ol>
+          <p class="done"><b>Done when:</b> The check passes and a human audit has been run on top of it.</p>
+        </div>
+      </details>
+      <details class="sop" id="SOP8">
+        <summary>
+          <h3>Publish a system review</h3>
+          <span class="meta">Reviewer &middot; A review has been completed.</span>
+        </summary>
+        <div class="body">
+          <ol>
+            <li>Create reviews/&lt;date&gt;-&lt;name&gt;/index.html with a title and a meta description.</li>
+            <li>Name the version examined, what was found, and what it recommends.</li>
+            <li>Give every recommendation an acceptance test.</li>
+            <li>Add its row to the reviews index.</li>
+            <li>Rebuild: the review registers itself in llms.txt and the sitemap.</li>
+          </ol>
+          <p class="done"><b>Done when:</b> The review appears on /reviews and in the machine-readable layer.</p>
+        </div>
+      </details>
+    </section>
+  </div>
+</main>
+
+<footer class="chrome">
+  <div class="wrap">
+    <a href="/" aria-label="THE WORD FOR ALL THE WORLD, portal home"><img src="/assets/logos/the-word/the-word-horizontal-reversed.svg" alt="THE WORD FOR ALL THE WORLD"></a>
+    <span>Every tribe. Every tongue. Every nation. EVERY1.</span>
+    <span>brand.theword.world &middot; v7.0</span>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var tabs = Array.prototype.slice.call(document.querySelectorAll('[role="tab"]'));
+    function show(tab) {
+      tabs.forEach(function (t) {
+        var panel = document.getElementById(t.getAttribute("aria-controls"));
+        var on = t === tab;
+        t.setAttribute("aria-selected", on ? "true" : "false");
+        panel.hidden = !on;
+      });
+      history.replaceState(null, "", "#" + tab.id.replace("tab-", ""));
+    }
+    tabs.forEach(function (t) { t.addEventListener("click", function () { show(t); }); });
+    // Deep links: /governance#procedures opens on that tab.
+    var initial = document.getElementById("tab-" + location.hash.replace("#", ""));
+    if (initial) show(initial);
+  })();
+</script>
+
+</body>
+</html>

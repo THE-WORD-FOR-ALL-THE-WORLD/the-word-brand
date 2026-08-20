@@ -1,0 +1,122 @@
+{
+  "_README": "Hand-authored. Strings that have passed the audit once and are reusable without re-litigating them. Every entry carries the limit it was written against, and the build fails if a string exceeds it, so an over-length headline is caught here rather than in the ad platform. Square brackets mark a fact that comes from the official ministry record at the time of use: they are placeholders, never guesses.",
+  "rules": [
+    "Nothing here states a statistic, an outcome, or a date. Those come from the record at the moment of use.",
+    "A new string joins by passing the audit once. It is then reusable for good.",
+    "A string that no longer reads true is retired through a changelog entry, not quietly edited."
+  ],
+  "sets": [
+    {
+      "id": "search-headlines",
+      "channel": "ads-search",
+      "limit": 30,
+      "field": "headline",
+      "strings": [
+        { "text": "Strengthening the local church", "audience": "The Local Pastor" },
+        { "text": "Revival is here, not coming", "audience": "The Hungry Church Member" },
+        { "text": "Training for the local church", "audience": "The Local Pastor" },
+        { "text": "Walk with Jesus", "audience": "The Lost Online Searcher" },
+        { "text": "Your first love, again", "audience": "The Hungry Church Member" },
+        { "text": "For pastors carrying it alone", "audience": "The Local Pastor" },
+        { "text": "Bring revival to your city", "audience": "The Local Pastor" },
+        { "text": "Know your authority in Christ", "audience": "The Hungry Church Member" },
+        { "text": "A real relationship with Jesus", "audience": "The Lost Online Searcher" },
+        { "text": "Start where you are", "audience": "The Lost Online Searcher" },
+        { "text": "Pass the torch, finish well", "audience": "The Legacy Leader" },
+        { "text": "Eternal impact, real numbers", "audience": "The Kingdom Partner" },
+        { "text": "Fire starts fire", "audience": "The Hungry Church Member" },
+        { "text": "Teaching that stays with you", "audience": "The Local Pastor" },
+        { "text": "Until EVERY1 knows His name", "audience": "The Kingdom Partner" }
+      ]
+    },
+    {
+      "id": "search-descriptions",
+      "channel": "ads-search",
+      "limit": 90,
+      "field": "description",
+      "strings": [
+        { "text": "Training, teaching, and tools for the local church. Start with one conversation.", "audience": "The Local Pastor" },
+        { "text": "Revival is not coming. It is here. Find out what that means for your church.", "audience": "The Hungry Church Member" },
+        { "text": "For the pastor carrying it alone: teaching, training, and people who will stand with you.", "audience": "The Local Pastor" },
+        { "text": "You do not need to clean yourself up first. Come as you are and meet Jesus.", "audience": "The Lost Online Searcher" },
+        { "text": "Your influence can outlast you. See where partnership goes and what it builds.", "audience": "The Kingdom Partner" },
+        { "text": "Know who you are in Christ, and what He has already given you authority to do.", "audience": "The Hungry Church Member" }
+      ]
+    },
+    {
+      "id": "search-extensions",
+      "channel": "ads-search",
+      "limit": 25,
+      "field": "sitelink or callout",
+      "strings": [
+        { "text": "See what's happening" },
+        { "text": "Read a field report" },
+        { "text": "Start the training" },
+        { "text": "Partner with us" },
+        { "text": "Come and see" },
+        { "text": "For pastors" },
+        { "text": "For your church" }
+      ]
+    },
+    {
+      "id": "email-subjects",
+      "channel": "email",
+      "limit": 50,
+      "field": "subject line",
+      "strings": [
+        { "text": "Revival is here, not coming" },
+        { "text": "What happened in [city] last week" },
+        { "text": "For the pastor who is tired" },
+        { "text": "Your first love, again" },
+        { "text": "[n] people, one night, one city" },
+        { "text": "A field report from [country]" },
+        { "text": "The training starts [month]" }
+      ]
+    },
+    {
+      "id": "email-preheaders",
+      "channel": "email",
+      "limit": 90,
+      "field": "preheader",
+      "strings": [
+        { "text": "One story from the field, and one thing you can do about it this week." },
+        { "text": "What we saw, where we saw it, and who it happened to." },
+        { "text": "Not a newsletter about us. A record of what God did." }
+      ]
+    },
+    {
+      "id": "calls-to-action",
+      "channel": "any",
+      "limit": 25,
+      "field": "button label",
+      "strings": [
+        { "text": "Partner With Us" },
+        { "text": "See What's Happening" },
+        { "text": "Read the Field Report" },
+        { "text": "Start the Training" },
+        { "text": "Come and See" },
+        { "text": "Send a Prayer Request" }
+      ]
+    },
+    {
+      "id": "boilerplate",
+      "channel": "any",
+      "limit": 700,
+      "field": "about paragraph",
+      "strings": [
+        {
+          "text": "THE WORD FOR ALL THE WORLD strengthens the local church to fulfill the Great Commission, until EVERY1 knows the name Jesus.",
+          "length": "short"
+        },
+        {
+          "text": "THE WORD FOR ALL THE WORLD strengthens the local church to fulfill the Great Commission, until EVERY1 knows the name Jesus. It works through three initiatives: Revival To My City stirs the local church to return to their first love, the EVERY1 Movement empowers it to do the Great Commission, and the School of the Local Church trains believers to know their authority in Christ.",
+          "length": "medium"
+        },
+        {
+          "text": "THE WORD FOR ALL THE WORLD strengthens the local church to fulfill the Great Commission, until EVERY1 knows the name Jesus. The local church is not a strategy for the plan. It is the plan. Three initiatives carry that work in order. Revival To My City stirs the local church to return to their first love. The EVERY1 Movement empowers the local church to do the Great Commission and walk in God's calling. The School of the Local Church trains believers to know their authority in Christ and build a real relationship with Jesus. Every figure published by this ministry comes from its official record, and every testimony is told by the person it belongs to, with their permission.",
+          "length": "long"
+        }
+      ]
+    }
+  ]
+}
