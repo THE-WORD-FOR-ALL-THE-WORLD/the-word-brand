@@ -59,6 +59,12 @@ def strip_specimens(s: str) -> str:
     s = re.sub(r'<div class="ban">.*?</div>\s*</div>\s*</div>', "", s, flags=re.S)
     s = re.sub(r'<div class="ratio-bar">.*?</div>\s*</div>', "", s, flags=re.S)
     s = re.sub(r'<div class="swatches">.*?</div>\s*</div>\s*</div>', "", s, flags=re.S)
+    # The component gallery renders every component, including the site chrome.
+    # A rendered specimen and a copyable markup block are the subject matter, not
+    # the page's own markup, and reading them as such made L10 report that the
+    # gallery's navigation "differs from the rest of the portal".
+    s = re.sub(r'<div class="stage[^"]*">.*?</div>', "", s, flags=re.S)
+    s = re.sub(r"<pre>.*?</pre>", "", s, flags=re.S)
     return s
 
 
@@ -288,7 +294,7 @@ def check_navigation(files: list):
     """L10: the portal chrome is the same on every page."""
     sets = {}
     for rel in files:
-        s = bs.read(os.path.join(REPO, rel))
+        s = strip_specimens(bs.read(os.path.join(REPO, rel)))
         nav = re.search(r'<div class="links">(.*?)</div>', s, re.S)
         if not nav:
             continue
@@ -373,6 +379,18 @@ CONTRAST_PAIRS = [
     ("parchment", "midnight", 4.5, "reversed body copy"),
     ("error-state", "parchment", 4.5, "form error text"),
     ("warning-state", "parchment", 4.5, "form warning text"),
+    # The dark theme. A card on a dark page sits on a lifted surface, not on the
+    # ground, and every one of these is measured against that surface because that
+    # is where the text actually lands.
+    ("ink-reversed", "surface-on-dark", 4.5, "body text on a dark card"),
+    ("ink-reversed-muted", "surface-on-dark", 4.5, "captions on a dark card"),
+    ("accent-on-dark", "surface-on-dark", 4.5, "links and labels on a dark card"),
+    ("accent-on-dark", "midnight", 4.5, "links and labels on the dark ground"),
+    ("success-on-dark", "surface-on-dark", 4.5, "the success state on a dark card"),
+    ("error-on-dark", "surface-on-dark", 4.5, "form error text on a dark card"),
+    ("warning-on-dark", "surface-on-dark", 4.5, "form warning text on a dark card"),
+    ("error-on-dark", "word-blue", 4.5, "form error text on the School's dark ground"),
+    ("warning-on-dark", "word-blue", 4.5, "form warning text on the School's dark ground"),
 ]
 
 

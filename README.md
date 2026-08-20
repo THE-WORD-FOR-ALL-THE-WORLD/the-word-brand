@@ -38,7 +38,7 @@ Both are generated from the same sources, so they cannot disagree.
 | Initiative brand guides | [`/letterhead`](https://brand.theword.world/letterhead) | How each initiative looks under the parent brand. |
 | Initiative messaging documents | [`/documents`](https://brand.theword.world/documents) | What each initiative is, in the words of the ministry. |
 | Assets | [`/assets`](https://brand.theword.world/assets) | Every logo, in every format, with its clear space, minimum size, and ink rules. Fonts, photography and video policy, download packs, and the rules for a partnership lockup. |
-| Components | [`/components`](https://brand.theword.world/components) | Every component rendered live by the published stylesheet, with its spec, its rules, and markup to copy. |
+| Components | [`/components`](https://brand.theword.world/components) | Forty components rendered live by the published stylesheet, on either ground, with specs, rules, and markup to copy. |
 | Channels | [`/channels`](https://brand.theword.world/channels) | Nine surfaces, each with its sizes, character limits, safe areas, file formats, and pre-approved copy. |
 | Reviews | [`/reviews`](https://brand.theword.world/reviews) | Every system review, in order, with what each found and the version it produced. |
 

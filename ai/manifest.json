@@ -86,8 +86,8 @@
       "name": "brand-system.md",
       "url": "https://brand.theword.world/ai/brand-system.md",
       "description": "The complete brand standard as one document.",
-      "bytes": 54006,
-      "sha256": "833608c56e0dfad708bfeab4d5a26b7a1ec5dbef1b690d4b2e5d3f1d3373075e"
+      "bytes": 55510,
+      "sha256": "33a5672c92b5323c74e102c6d6660e3482cf8818a3a12933c7eba0696db22a9e"
     },
     {
       "name": "SKILL.md",
@@ -100,8 +100,8 @@
       "name": "tokens.json",
       "url": "https://brand.theword.world/ai/tokens.json",
       "description": "Colors, typography, system tokens and states.",
-      "bytes": 9965,
-      "sha256": "d5a2783d52eb477230f9ac6490ebdff10115a7e34cb5a5996e31ac6934f3b5d3"
+      "bytes": 11126,
+      "sha256": "f54fcb517f9143b46faf57c460f125e35c1d06629c83c837495adfc174eb47c7"
     },
     {
       "name": "tokens.dtcg.json",
@@ -135,8 +135,8 @@
       "name": "components.json",
       "url": "https://brand.theword.world/ai/components.json",
       "description": "Component specifications, resolved against current tokens.",
-      "bytes": 19727,
-      "sha256": "6b03eae7d53ab31bbffac55725362da4bd8d8c21d899da829968efe1fd453f10"
+      "bytes": 41041,
+      "sha256": "701ea293a625910b919a5f28ef9b75ca2905d76e237a212ac12d3e66ceee7b2d"
     },
     {
       "name": "channels.json",

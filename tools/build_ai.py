@@ -626,6 +626,10 @@ def token_lookup(tokens: dict) -> dict:
         table[key] = value
     for key, value in tokens["radius"].items():
         table[key] = value
+    for key, value in tokens["elevation"].items():
+        table[f"elevation-{key}"] = value
+    for key, t in tokens["typeScale"].items():
+        table[f"text-{key}"] = t["size"]
     for key, value in tokens["cssVariables"].items():
         table.setdefault(key, value)
     return table
@@ -1100,113 +1104,243 @@ COMPONENTS_PAGE = """<!DOCTYPE html>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
 <title>Components · THE WORD FOR ALL THE WORLD</title>
-<meta name="description" content="Every component in the brand system, rendered live from the published stylesheet, with its specification, its rules, and markup that can be copied.">
+<meta name="description" content="Every component in the brand system, rendered live from the published stylesheet on both grounds, with its specification, its rules, and markup that can be copied.">
 <link rel="icon" href="/assets/logos/the-word/favicon/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="icon" href="/assets/logos/the-word/favicon/favicon-16.png" sizes="16x16" type="image/png">
 <link rel="apple-touch-icon" href="/assets/logos/the-word/favicon/apple-touch-icon-180.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="THE WORD FOR ALL THE WORLD">
 <meta property="og:title" content="Components">
-<meta property="og:description" content="Every component in the brand system, rendered live from the published stylesheet, with its specification, its rules, and markup that can be copied.">
-<meta property="og:url" content="{site}/components">
-<meta property="og:image" content="{site}/assets/images/og-card.png">
+<meta property="og:description" content="Every component in the brand system, rendered live from the published stylesheet on both grounds, with its specification, its rules, and markup that can be copied.">
+<meta property="og:url" content="__SITE__/components">
+<meta property="og:image" content="__SITE__/assets/images/og-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="THE WORD FOR ALL THE WORLD">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="/assets/fonts/fonts.css">
 <link rel="stylesheet" href="/assets/brand.css">
+<script>
+  // Before first paint, so a dark reader never sees a light flash.
+  (function () {
+    try {
+      var saved = localStorage.getItem("theword-theme");
+      var dark = saved ? saved === "dark"
+        : window.matchMedia("(prefers-color-scheme: dark)").matches;
+      if (dark) document.documentElement.setAttribute("data-theme", "dark");
+    } catch (e) {}
+  })();
+</script>
 <style>
-/* This page is the proof. Everything below the chrome is drawn by
-   /assets/brand.css, the same file anyone else links. The only rules here are
-   the gallery's own furniture: the frame around each specimen, and the page
-   scaffolding that holds them apart. */
-.wrap{{max-width:1020px;margin:0 auto;padding:0 32px;}}
-nav.chrome{{position:absolute;top:0;left:0;right:0;z-index:10;}}
-nav.chrome .bar{{max-width:1240px;margin:0 auto;padding:26px 36px;display:flex;justify-content:space-between;align-items:center;gap:20px;}}
-nav.chrome .logo img{{height:20px;width:auto;display:block;}}
-nav.chrome .links{{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:12px 28px;font-size:12.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;}}
-nav.chrome .links a{{color:var(--ink-reversed-muted);text-decoration:none;}}
-nav.chrome .links a:hover{{color:var(--white);}}
-header.masthead{{background:var(--midnight);color:var(--parchment);padding:126px 0 62px;}}
-header.masthead h1{{color:var(--white);margin-top:.3em;}}
-header.masthead .lede{{max-width:34ch;margin-top:var(--space-5);color:var(--parchment);font-family:var(--serif-text);font-style:italic;}}
-main{{padding:var(--space-8) 0 var(--space-9);}}
-.intro{{max-width:66ch;margin-bottom:var(--space-8);}}
-.spec{{border-top:1px solid var(--rule);padding-top:var(--space-7);margin-top:var(--space-7);}}
-.spec:first-of-type{{border-top:0;padding-top:0;margin-top:0;}}
-.spec > .head{{margin-bottom:var(--space-5);}}
-.spec h2{{font-family:var(--serif-display);font-weight:400;font-size:var(--text-display-small);line-height:var(--leading-display-small);margin:.2em 0 0;}}
-.spec .id{{font-family:'SF Mono',Consolas,monospace;font-size:var(--text-caption);color:var(--ink-muted);}}
-.stage{{border:1px solid var(--rule);border-radius:var(--radius-frame);padding:var(--space-6);background:var(--white);overflow:hidden;}}
-/* The dark stage takes the brand's own dark-ground class rather than forcing a
-   colour onto every child: forcing it would repaint the Flame numeral in the
-   official-record figure, which is the one thing Flame is for. */
-.stage.dark{{background:var(--midnight);border-color:var(--rule-light);}}
-.cols{{display:grid;grid-template-columns:1fr;gap:var(--space-5);margin-top:var(--space-5);}}
-@media(min-width:{wide}){{.cols{{grid-template-columns:1fr 1fr;}}}}
-details{{border:1px solid var(--rule);border-radius:var(--radius-card);background:var(--white);}}
-summary{{cursor:pointer;padding:var(--space-3) var(--space-4);font-weight:600;font-size:var(--text-body-small);list-style:none;}}
-summary::-webkit-details-marker{{display:none;}}
-summary::before{{content:"›";display:inline-block;width:1em;transition:transform var(--duration-fast) var(--easing);}}
-details[open] summary::before{{transform:rotate(90deg);}}
-pre{{margin:0;padding:var(--space-4);overflow-x:auto;border-top:1px solid var(--rule);background:var(--wash);font-family:'SF Mono',Consolas,monospace;font-size:13px;line-height:1.6;}}
-dl.props{{margin:0;display:grid;grid-template-columns:auto 1fr;gap:var(--space-2) var(--space-4);font-size:var(--text-body-small);}}
-dl.props dt{{font-weight:600;color:var(--ink-muted);}}
-dl.props dd{{margin:0;}}
-ul.rules{{margin:var(--space-4) 0 0;padding-left:1.1em;font-size:var(--text-body-small);line-height:1.6;}}
-ul.rules li{{margin-bottom:var(--space-2);}}
-footer.chrome{{background:var(--midnight);color:var(--ink-reversed-muted);padding:40px 0;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;font-weight:500;}}
-footer.chrome .wrap{{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}}
-footer.chrome img{{height:16px;width:auto;display:block;opacity:.9;}}
-@media(max-width:640px){{nav.chrome .bar{{padding:20px 24px;}}header.masthead{{padding:104px 0 48px;}}}}
+  /* This page is the proof. Every specimen is drawn by /assets/brand.css, the
+     same file anyone else links. The only rules here are the gallery's own
+     furniture: the shell, the sidebar, and the frame around each specimen. */
+
+  .shell { display: grid; grid-template-columns: 1fr; min-height: 100vh; }
+  @media (min-width: 900px) {
+    .shell { grid-template-columns: 248px minmax(0, 1fr); }
+  }
+
+  /* --- top bar --- */
+  .topbar {
+    position: sticky; top: 0; z-index: 20;
+    display: flex; align-items: center; justify-content: space-between; gap: var(--space-4);
+    padding: var(--space-4) var(--space-5);
+    background: var(--ground);
+    border-bottom: 1px solid var(--border);
+    grid-column: 1 / -1;
+  }
+  .topbar .brand { display: flex; align-items: center; gap: var(--space-4); min-width: 0; }
+  .topbar .brand img { height: 17px; width: auto; display: block; }
+  .topbar .brand .where { font-size: var(--text-caption); color: var(--text-muted); white-space: nowrap; }
+  .topbar .right { display: flex; align-items: center; gap: var(--space-4); }
+  .topbar .links { display: none; gap: var(--space-4); font-size: 12.5px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; }
+  .topbar .links a { color: var(--text-muted); text-decoration: none; }
+  .topbar .links a:hover { color: var(--accent-text); }
+  @media (min-width: 1180px) { .topbar .links { display: flex; } }
+  .topbar a.home { display: flex; text-decoration: none; }
+
+  /* The mark is one drawing in two inks; swap which one is shown. */
+  .mark-dark { display: none; }
+  [data-theme="dark"] .mark-light { display: none; }
+  [data-theme="dark"] .mark-dark { display: block; }
+
+  .themetoggle {
+    appearance: none; cursor: pointer;
+    display: inline-flex; align-items: center; gap: var(--space-2);
+    background: none; border: 1px solid var(--border);
+    border-radius: var(--radius-button);
+    color: var(--text-muted);
+    font-family: var(--sans); font-weight: 600; font-size: var(--text-caption);
+    padding: 7px 12px;
+  }
+  .themetoggle:hover { border-color: var(--accent-text); color: var(--accent-text); }
+  .themetoggle .on-light { display: inline; }
+  .themetoggle .on-dark { display: none; }
+  [data-theme="dark"] .themetoggle .on-light { display: none; }
+  [data-theme="dark"] .themetoggle .on-dark { display: inline; }
+
+  /* --- sidebar --- */
+  .sidebar {
+    border-right: 1px solid var(--border);
+    padding: var(--space-5) 0 var(--space-8);
+  }
+  @media (min-width: 900px) {
+    .sidebar { position: sticky; top: 61px; height: calc(100vh - 61px); overflow-y: auto; }
+  }
+  .sidebar .group { margin-bottom: var(--space-5); }
+  .sidebar .group > h2 {
+    font-family: var(--sans); font-weight: 600; font-size: var(--text-label);
+    letter-spacing: .14em; text-transform: uppercase; color: var(--text-soft);
+    margin: 0 0 var(--space-2); padding: 0 var(--space-5);
+  }
+  .sidebar a {
+    display: block; padding: 5px var(--space-5);
+    font-size: var(--text-body-small); line-height: 1.5;
+    color: var(--text-muted); text-decoration: none;
+    border-left: 2px solid transparent;
+  }
+  .sidebar a:hover { color: var(--text); background: var(--surface-sunken); }
+  .sidebar a.active { color: var(--accent-text); border-left-color: var(--accent-text); font-weight: 600; }
+
+  /* --- main --- */
+  .main { padding: var(--space-7) var(--space-5) var(--space-9); min-width: 0; }
+  .main > .inner { max-width: 900px; }
+  .intro { margin-bottom: var(--space-8); }
+  .intro h1 { margin-top: var(--space-2); }
+
+  .spec { padding-top: var(--space-8); scroll-margin-top: 76px; }
+  .spec + .spec { border-top: 1px solid var(--border); }
+  .spec > .head { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--space-3); }
+  .spec > .head h2 {
+    font-family: var(--serif-display); font-weight: 400;
+    font-size: var(--text-display-small); line-height: var(--leading-display-small); margin: 0;
+  }
+  .spec > .head .id { font-family: 'SF Mono', Consolas, monospace; font-size: var(--text-caption); color: var(--text-soft); }
+  .spec > .use { color: var(--text-muted); max-width: 60ch; margin: var(--space-2) 0 0; }
+
+  .stage {
+    margin-top: var(--space-5);
+    border: 1px solid var(--border); border-radius: var(--radius-frame);
+    background: var(--surface); color: var(--text);
+    padding: var(--space-6);
+    display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-4);
+    overflow-x: auto;
+  }
+  /* A component that only exists on a dark ground keeps one, whatever the page
+     theme is: an official-record numeral has no light-ground form. */
+  .stage.forced-dark { background: var(--midnight); border-color: var(--rule-light); }
+  .stage.block { display: block; }
+
+  .cols { display: grid; grid-template-columns: 1fr; gap: var(--space-5); margin-top: var(--space-5); }
+  @media (min-width: 720px) { .cols { grid-template-columns: 1fr 1fr; } }
+  h3.sub {
+    font-family: var(--sans); font-weight: 600; font-size: var(--text-label);
+    letter-spacing: .14em; text-transform: uppercase; color: var(--text-soft);
+    margin: 0 0 var(--space-3);
+  }
+  dl.props { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: var(--space-2) var(--space-4); font-size: var(--text-body-small); }
+  dl.props dt { font-weight: 600; color: var(--text-muted); }
+  dl.props dd { margin: 0; }
+  ul.rules { margin: 0; padding-left: 1.1em; font-size: var(--text-body-small); line-height: 1.6; }
+  ul.rules li { margin-bottom: var(--space-2); }
+
+  details.markup { margin-top: var(--space-5); border: 1px solid var(--border); border-radius: var(--radius-card); }
+  details.markup > summary {
+    cursor: pointer; list-style: none; padding: var(--space-3) var(--space-4);
+    font-weight: 600; font-size: var(--text-body-small);
+  }
+  details.markup > summary::-webkit-details-marker { display: none; }
+  details.markup > summary::before { content: "›"; display: inline-block; width: 1.2em; }
+  details.markup[open] > summary::before { content: "⌄"; }
+  details.markup pre {
+    margin: 0; padding: var(--space-4); overflow-x: auto;
+    border-top: 1px solid var(--border); background: var(--surface-sunken);
+    font-family: 'SF Mono', Consolas, monospace; font-size: 13px; line-height: 1.6;
+  }
 </style>
 </head>
 <body>
 
-<nav class="chrome">
-  <div class="bar">
-    <a class="logo" href="/" aria-label="THE WORD FOR ALL THE WORLD, home">
-      <img src="/assets/logos/the-word/the-word-horizontal-reversed.svg" alt="THE WORD FOR ALL THE WORLD">
-    </a>
-    <div class="links">
-      <a href="/">Home</a>
-      <a href="/brand/">Brand Guide</a>
-      <a href="/brand/messaging/">Messaging</a>
-      <a href="/documents/">Documents</a>
-      <a href="/letterhead/">Letterhead</a>
-      <a href="/signatures/">Signatures</a>
-      <a href="/assets/">Assets</a>
+<div class="shell">
+
+  <header class="topbar">
+    <div class="brand">
+      <a class="home" href="/" aria-label="THE WORD FOR ALL THE WORLD, portal home">
+        <img class="mark-light" src="/assets/logos/the-word/the-word-horizontal.svg" alt="THE WORD FOR ALL THE WORLD">
+        <img class="mark-dark" src="/assets/logos/the-word/the-word-horizontal-reversed.svg" alt="THE WORD FOR ALL THE WORLD">
+      </a>
+      <span class="where">Components · v__VERSION__</span>
     </div>
-  </div>
-</nav>
-
-<header class="masthead on-midnight">
-  <div class="wrap">
-    <span class="eyebrow">The Component Library</span>
-    <h1 class="headline">Every part, drawn by the <em>published</em> stylesheet.</h1>
-    <p class="lede">Not a picture of the components. The components, rendered by the same file anyone else links.</p>
-  </div>
-</header>
-
-<main>
-  <div class="wrap">
-    <div class="intro prose">
-      <p>Each specimen below is rendered live by <a href="/assets/brand.css"><code>/assets/brand.css</code></a>, so this page cannot show something the stylesheet does not actually do. Copy the markup, link the stylesheet and <a href="/assets/fonts/fonts.css"><code>fonts.css</code></a>, and the result is the specimen.</p>
-      <p>The machine-readable copy is <a href="/ai/components.json"><code>/ai/components.json</code></a>. Ids match there, in the Figma library, and in the Storybook stories of the applications, so a card is a card wherever anyone looks it up.</p>
-      <p class="caption">Brand system v{version} · messaging v{messaging_version} · {count} components · generated {updated}</p>
+    <div class="right">
+      <div class="links">
+        <a href="/">Home</a>
+        <a href="/brand/">Brand Guide</a>
+        <a href="/brand/messaging/">Messaging</a>
+        <a href="/documents/">Documents</a>
+        <a href="/letterhead/">Letterhead</a>
+        <a href="/signatures/">Signatures</a>
+        <a href="/assets/">Assets</a>
+      </div>
+      <button class="themetoggle" id="themetoggle" type="button" aria-live="polite">
+        <span class="on-light">Dark</span><span class="on-dark">Light</span>
+      </button>
     </div>
-{specs}
-  </div>
-</main>
+  </header>
 
-<footer class="chrome">
-  <div class="wrap">
-    <a href="/" aria-label="THE WORD FOR ALL THE WORLD, portal home"><img src="/assets/logos/the-word/the-word-horizontal-reversed.svg" alt="THE WORD FOR ALL THE WORLD"></a>
-    <span>Every tribe. Every tongue. Every nation. EVERY1.</span>
-    <span>brand.theword.world · Internal use</span>
-  </div>
-</footer>
+  <nav class="sidebar" aria-label="Components">
+__SIDEBAR__
+  </nav>
+
+  <main class="main">
+    <div class="inner">
+      <div class="intro">
+        <span class="eyebrow">The Component Library</span>
+        <h1 class="headline headline-small">Every part, drawn by the <em>published</em> stylesheet.</h1>
+        <div class="prose" style="margin-top:var(--space-5)">
+          <p>Not a picture of the components. The components, rendered by <a class="link" href="/assets/brand.css">the same file anyone else links</a>, so this page cannot show something the stylesheet does not do.</p>
+          <p>Switch the ground with the button above. Everything here works on Parchment and on Midnight, because the accent and the three state colours change with the ground: Ember is 3.3:1 on Midnight and fails, so a text accent on a dark ground is Flame.</p>
+          <p class="caption">__COUNT__ components · brand system v__VERSION__ · messaging v__MESSAGING__ · generated __UPDATED__ · <a class="link" href="/ai/components.json">components.json</a></p>
+        </div>
+      </div>
+__SPECS__
+    </div>
+  </main>
+
+</div>
+
+<script>
+  (function () {
+    var root = document.documentElement;
+    var button = document.getElementById("themetoggle");
+    button.addEventListener("click", function () {
+      var dark = root.getAttribute("data-theme") === "dark";
+      if (dark) root.removeAttribute("data-theme");
+      else root.setAttribute("data-theme", "dark");
+      try { localStorage.setItem("theword-theme", dark ? "light" : "dark"); } catch (e) {}
+    });
+
+    // Mark the section the reader is in, so the sidebar says where they are.
+    var links = {};
+    Array.prototype.forEach.call(document.querySelectorAll(".sidebar a"), function (a) {
+      links[a.getAttribute("href").slice(1)] = a;
+    });
+    var current = null;
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        var next = links[entry.target.id];
+        if (!next || next === current) return;
+        if (current) current.classList.remove("active");
+        next.classList.add("active");
+        current = next;
+      });
+    }, { rootMargin: "-76px 0px -70% 0px" });
+    Array.prototype.forEach.call(document.querySelectorAll("section.spec"), function (s) {
+      observer.observe(s);
+    });
+  })();
+</script>
 
 </body>
 </html>
@@ -1218,58 +1352,88 @@ def esc(text: str) -> str:
 
 
 def build_components_page(components: list, brand: dict, messaging: dict, updated: str, tokens: dict) -> str:
-    blocks = []
+    # The sidebar is grouped, in the order the groups first appear, so related
+    # components sit together rather than in the order they were written.
+    order: list = []
+    grouped: dict = {}
     for c in components:
-        ground = "dark on-midnight" if c.get("previewGround") == "dark" else ""
-        stage = (
-            f'    <div class="stage {ground}">\n{c["html"]}\n    </div>'
-            if c.get("html")
-            else '    <div class="stage"><p class="caption">This component is a written specification rather than '
-                 'a single piece of markup. The rules below are what it has to satisfy.</p></div>'
-        )
-        props = "\n".join(
-            f"        <dt>{esc(str(k))}</dt><dd>{esc(str(v)) if not isinstance(v, list) else esc(' · '.join(v))}</dd>"
-            for k, v in c.get("spec", {}).items()
-        )
-        rules = "\n".join(f"        <li>{esc(r)}</li>" for r in c.get("rules", []))
-        markup = (
-            f'      <details>\n        <summary>Markup</summary>\n'
-            f'        <pre>{esc(c["html"])}</pre>\n      </details>'
-            if c.get("html") else ""
-        )
-        cls = f'<code>.{c["cssClass"]}</code>' if c.get("cssClass") and not c["cssClass"].startswith("(") else (
-            esc(c.get("cssClass", "")) or "")
-        blocks.append(f"""    <section class="spec" id="{c['id']}">
-      <div class="head">
-        <span class="id">{c['id']}{' · ' + cls if cls else ''}</span>
-        <h2>{esc(c['name'])}</h2>
-        <p class="muted">{esc(c['use'])}</p>
-      </div>
-{stage}
-      <div class="cols">
-        <div>
-          <dl class="props">
-{props}
-          </dl>
-        </div>
-        <div>
-          <ul class="rules">
-{rules}
-          </ul>
-        </div>
-      </div>
-{markup}
-    </section>""")
+        group = c.get("group", "Other")
+        if group not in grouped:
+            grouped[group] = []
+            order.append(group)
+        grouped[group].append(c)
 
-    return COMPONENTS_PAGE.format(
-        site=SITE,
-        version=brand["version"],
-        messaging_version=messaging["version"],
-        updated=updated,
-        count=len(components),
-        wide=tokens["breakpoint"].get("wide", "1080px"),
-        specs="\n".join(blocks),
-    )
+    sidebar = []
+    for group in order:
+        sidebar.append('    <div class="group">')
+        sidebar.append(f"      <h2>{esc(group)}</h2>")
+        for c in grouped[group]:
+            sidebar.append(f'      <a href="#{c["id"]}">{esc(c["name"])}</a>')
+        sidebar.append("    </div>")
+
+    blocks = []
+    for group in order:
+        for c in grouped[group]:
+            forced = " forced-dark on-midnight" if c.get("previewGround") == "dark" else ""
+            # Multi-line specimens read better stacked than in a row.
+            block = " block" if c.get("html", "").count("\n") > 3 else ""
+            if c.get("html"):
+                stage = f'      <div class="stage{forced}{block}">\n{c["html"]}\n      </div>'
+            else:
+                stage = (
+                    '      <div class="stage block"><p class="caption">This component is a written '
+                    "specification rather than one piece of markup. The rules below are what it has "
+                    "to satisfy.</p></div>"
+                )
+            props = "\n".join(
+                f"          <dt>{esc(str(k))}</dt><dd>"
+                f"{esc(' · '.join(v)) if isinstance(v, list) else esc(str(v))}</dd>"
+                for k, v in c.get("spec", {}).items()
+            )
+            rules = "\n".join(f"          <li>{esc(r)}</li>" for r in c.get("rules", []))
+            markup = (
+                '      <details class="markup">\n        <summary>Markup</summary>\n'
+                f'        <pre>{esc(c["html"])}</pre>\n      </details>'
+                if c.get("html") else ""
+            )
+            cls = c.get("cssClass", "")
+            cls_label = f' · <span class="id">.{esc(cls)}</span>' if cls and not cls.startswith("(") else ""
+            blocks.append(f"""      <section class="spec" id="{c['id']}">
+        <div class="head">
+          <h2>{esc(c['name'])}</h2>
+          <span class="id">{esc(c['id'])}</span>{cls_label}
+        </div>
+        <p class="use">{esc(c['use'])}</p>
+{stage}
+        <div class="cols">
+          <div>
+            <h3 class="sub">Specification</h3>
+            <dl class="props">
+{props}
+            </dl>
+          </div>
+          <div>
+            <h3 class="sub">Rules</h3>
+            <ul class="rules">
+{rules}
+            </ul>
+          </div>
+        </div>
+{markup}
+      </section>""")
+
+    page = COMPONENTS_PAGE
+    for token, value in (
+        ("__SITE__", SITE),
+        ("__VERSION__", brand["version"]),
+        ("__MESSAGING__", messaging["version"]),
+        ("__UPDATED__", updated),
+        ("__COUNT__", str(len(components))),
+        ("__SIDEBAR__", "\n".join(sidebar)),
+        ("__SPECS__", "\n".join(blocks)),
+    ):
+        page = page.replace(token, value)
+    return page
 
 
 def build_channels(brand: dict, messaging: dict, updated: str, tokens: dict, source: dict) -> dict:
@@ -1349,7 +1513,6 @@ def build_copy_bank(brand: dict, messaging: dict, updated: str, source: dict) ->
         "rules": source["rules"],
         "sets": sets,
     }
-
 
 CHANNELS_PAGE = """<!DOCTYPE html>
 <html lang="en">

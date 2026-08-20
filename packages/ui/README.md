@@ -55,6 +55,28 @@ module.exports = { transpilePackages: ["@theword/ui"] }
 - **site-chrome**: per-application navigation, built from Eyebrow, Button, and the logo assets
 - **email-layout**: email markup: tables and inline styles, which React does not build
 - **email-button**: email markup: tables and inline styles, which React does not build
+- **button-quiet**: Available as a class in brand.css. A React wrapper lands when an application needs one.
+- **badge**: Available as a class in brand.css. A React wrapper lands when an application needs one.
+- **alert**: Available as a class in brand.css. A React wrapper lands when an application needs one.
+- **inline-link**: Available as a class in brand.css. A React wrapper lands when an application needs one.
+- **blockquote**: Available as a class in brand.css. A React wrapper lands when an application needs one.
+- **code-block**: Available as a class in brand.css. A React wrapper lands when an application needs one.
+- **separator**: Available as a class in brand.css. A React wrapper lands when an application needs one.
+- **panel**: Available as a class in brand.css. A React wrapper lands when an application needs one.
+- **choice**: Available as a class in brand.css. A React wrapper lands when an application needs one.
+- **switch**: Available as a class in brand.css. A React wrapper lands when an application needs one.
+- **breadcrumb**: Available as a class in brand.css. A React wrapper lands when an application needs one.
+- **tabs**: Available as a class in brand.css. A React wrapper lands when an application needs one.
+- **pagination**: Available as a class in brand.css. A React wrapper lands when an application needs one.
+- **accordion**: Available as a class in brand.css. A React wrapper lands when an application needs one.
+- **dialog**: Available as a class in brand.css. A React wrapper lands when an application needs one.
+- **dropdown-menu**: Available as a class in brand.css. A React wrapper lands when an application needs one.
+- **tooltip**: Available as a class in brand.css. A React wrapper lands when an application needs one.
+- **toast**: Available as a class in brand.css. A React wrapper lands when an application needs one.
+- **progress**: Available as a class in brand.css. A React wrapper lands when an application needs one.
+- **skeleton**: Available as a class in brand.css. A React wrapper lands when an application needs one.
+- **empty-state**: Available as a class in brand.css. A React wrapper lands when an application needs one.
+- **avatar**: Available as a class in brand.css. A React wrapper lands when an application needs one.
 
 ## Naming
 
