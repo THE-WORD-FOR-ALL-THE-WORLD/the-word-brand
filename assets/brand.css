@@ -100,6 +100,11 @@
   --success-state: #5FAD56;
   --error-state: #8C1D13;
   --warning-state: #8A5B12;
+  --success-on-dark: #7FC177;
+  --error-on-dark: #F0968A;
+  --warning-on-dark: #E0B25C;
+  --surface-on-dark: #172537;
+  --accent-on-dark: #F85842;
 }
 
 /* ---------------------------------------------------------------------------

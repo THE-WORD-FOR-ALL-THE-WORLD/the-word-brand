@@ -486,6 +486,31 @@ def check_consumers():
             )
 
 
+def check_stylesheet_vars():
+    """L17: every variable brand.css uses is a variable brand.css defines.
+
+    A var() with no definition does not error. It falls back to whatever the
+    property inherits, so the page still renders and the mistake is invisible
+    until someone looks closely at the wrong ground. That is exactly how the dark
+    theme shipped referencing five colours the stylesheet never defined.
+    """
+    path = os.path.join(REPO, "assets", "brand.css")
+    if not os.path.exists(path):
+        err("L17", "assets/brand.css is missing. Run tools/build_ai.py.")
+        return
+    css = bs.read(path)
+    defined = set(re.findall(r"^\s*--([a-z0-9-]+)\s*:", css, re.M))
+    used = set(re.findall(r"var\(\s*--([a-z0-9-]+)", css))
+    for name in sorted(used - defined):
+        err(
+            "L17",
+            f"assets/brand.css uses --{name} and never defines it. A var() with no "
+            "definition falls back silently, so this renders wrong rather than failing.",
+        )
+    # A variable defined and never used is not an error: the token layer is
+    # published for other people to build with, not only for this stylesheet.
+
+
 def check_social_cards(files: list):
     """L13: every page previews correctly when it is shared.
 
@@ -572,6 +597,7 @@ def main() -> int:
     check_logo_sources(files)
     check_social_cards(files)
     check_consumers()
+    check_stylesheet_vars()
     check_contrast(build_ai.build_tokens(brand, _messaging, overrides.get('manifest', {}).get('updated') or brand['issued'], overrides, bs.parse_scales(os.path.join(REPO, 'brand', 'index.html'))))
     check_navigation(files)
     check_skill_copies()

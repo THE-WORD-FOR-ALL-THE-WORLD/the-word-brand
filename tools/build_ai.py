@@ -202,12 +202,14 @@ def css_var_lines(tokens: dict) -> list:
     group("Motion", list(tokens["motion"].items()))
     group("Breakpoints, for scripts and tooling: CSS media queries cannot read a variable",
           [(f"breakpoint-{k}", v) for k, v in tokens["breakpoint"].items()])
-    state = []
-    for key in ("button-hover", "success-state", "error-state", "warning-state"):
-        if key in tokens["system"]:
-            value = tokens["system"][key]["value"]
-            if value.startswith("#"):
-                state.append((key, value))
+    # Every system token that resolves to a colour, rather than a list somebody has
+    # to remember to extend. The dark-theme tokens were added to the guide and were
+    # silently missing from this file until the component layer referenced them.
+    state = [
+        (key, t["value"])
+        for key, t in tokens["system"].items()
+        if t["value"].startswith("#")
+    ]
     group("States", state)
     while lines and lines[-1] == "":
         lines.pop()
