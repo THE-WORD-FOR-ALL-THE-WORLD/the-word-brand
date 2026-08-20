@@ -305,7 +305,7 @@ nav .links a:hover{color:var(--white);border-bottom:0;}
 <div class="verdict">
   <span class="kick">The verdict</span>
   <div class="prose" style="margin-top:14px">
-    <p style="font-family:var(--serif-text);font-size:22px;line-height:1.45">The architecture is right and the discipline is unusually good. What is missing is not robustness, it is <em>output</em>: the system states the law beautifully and hands you almost nothing to build with.</p>
+    <p style="font-family:var(--serif-text);font-size:22px;line-height:1.45">The architecture is right and the discipline is unusually good. What is missing is not heavier machinery, it is <em>output</em>: the system states the law beautifully and hands you almost nothing to build with.</p>
     <p>Static HTML is the correct choice and should stay. The work ahead is to emit more artifacts from the same source, not to replace the source with a framework. Every gap below is additive: nothing already built needs to be undone.</p>
   </div>
   <dl class="answers">
@@ -371,18 +371,18 @@ nav .links a:hover{color:var(--white);border-bottom:0;}
 <section>
   <div class="sec-head">
     <span class="kick">03 · The question you asked</span>
-    <h2>Is plain HTML acceptable, or do you need something more robust?</h2>
+    <h2>Is plain HTML enough, or does this need heavier machinery?</h2>
     <div class="prose">
       <p>Keep the HTML. This is not a compromise answer, it is the correct one, for three reasons.</p>
     </div>
   </div>
   <ul class="tight">
     <li><b>The durability is the product.</b> This system claims to outlive turnover, redesigns, and time. A static site with Python standard-library generators will build and serve in 2036. A Next.js portal from 2026 will not install its own dependencies by 2030 without a migration nobody has budgeted.</li>
-    <li><b>You already have what "robust" is normally shorthand for.</b> When people say a brand system should be more robust they mean validation, generated derivatives, CI enforcement, versioning, and integrity checks. You have all five. Adding a framework would give you hot reload and a bundle, neither of which is a brand problem.</li>
+    <li><b>You already have what that question is usually reaching for.</b> When people ask a brand system to be sturdier they mean validation, generated derivatives, CI enforcement, versioning, and integrity checks. You have all five. Adding a framework would give you hot reload and a bundle, neither of which is a brand problem.</li>
     <li><b>The failure mode you fear is not solved by React.</b> Inconsistency across surfaces is solved by shipping tokens and components as consumable files and by checking downstream work mechanically. That is a build-target problem, not a runtime problem.</li>
   </ul>
   <div class="prose" style="margin-top:26px">
-    <p>One real gap in the current setup, and it sits directly under the future you described. The GitHub Action verifies pull requests but only deploys on <code>main</code>, so a designer's PR produces a pass or a fail and no way to <em>look</em> at what changed. For "designers open PRs against the standard" to be real, a PR needs a preview URL and a visual diff. That is a short afternoon of work and it is the highest-leverage thing in this report relative to its size.</p>
+    <p>One real gap in the current setup, and it sits directly under the future you described. The GitHub Action verifies pull requests but only deploys on <code>main</code>, so a designer's PR produces a pass or a fail and no way to <em>look</em> at what changed. For "designers open PRs against the standard" to be real, a PR needs a preview URL and a visual diff. That is a short afternoon of work and it is the biggest gain for its size in this report.</p>
   </div>
 </section>
 
@@ -592,7 +592,7 @@ nav .links a:hover{color:var(--white);border-bottom:0;}
     <div class="phase-num"><span class="fig">01</span><span class="lab">Tokens</span></div>
     <div class="phase-body">
       <h3>Finish the token layer, then emit it everywhere.</h3>
-      <div class="prose"><p>The highest-leverage phase in this report. Everything after it is cheap once this exists, and nothing after it is possible without it.</p></div>
+      <div class="prose"><p>The phase that pays for the most. Everything after it is cheap once this exists, and nothing after it is possible without it.</p></div>
       <div class="scroll"><table>
         <thead><tr><th>Task</th><th>Where</th></tr></thead>
         <tbody>

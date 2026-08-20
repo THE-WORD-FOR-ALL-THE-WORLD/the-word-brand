@@ -1,0 +1,59 @@
+{
+  "_README": "Hand-authored. Every surface running this brand, and the version it was last synced to. The linter reads syncedVersion and warns when one trails the current release, so 'which of our things are on the old brand' has an answer that is not a guess. Add a row the day a surface is created, not the day it drifts.",
+  "consumers": [
+    {
+      "id": "portal",
+      "name": "The brand portal",
+      "kind": "website",
+      "location": "https://brand.theword.world",
+      "syncedVersion": "auto",
+      "syncedBy": "the build",
+      "note": "Generated from this repository on every push. Cannot drift, which is why its version is recorded as auto rather than as a number somebody has to remember to update."
+    },
+    {
+      "id": "package-brand",
+      "name": "@theword/brand",
+      "kind": "package",
+      "location": "packages/brand",
+      "syncedVersion": "auto",
+      "syncedBy": "the build",
+      "note": "Version stamped by tools/build_ai.py and checked by L15. Not yet published to a registry: publishing needs an npm account and an organisation scope."
+    },
+    {
+      "id": "package-ui",
+      "name": "@theword/ui",
+      "kind": "package",
+      "location": "packages/ui",
+      "syncedVersion": "auto",
+      "syncedBy": "the build",
+      "note": "Components hand-written, version stamped by the build. L15 fails if a specified component is not exported."
+    },
+    {
+      "id": "canva-kit-primary",
+      "name": "THE WORD Branding Kit",
+      "kind": "canva-brand-kit",
+      "location": "kAFcpv6O7Ts",
+      "syncedVersion": null,
+      "syncedBy": null,
+      "note": "One of two kits found in the Canva account, neither governed by this repository and neither carrying a version. Consolidation is a decision for the brand owners, not for the build: see tools/sync_canva.py for the checklist and which kit to keep."
+    },
+    {
+      "id": "canva-kit-secondary",
+      "name": "THE WORD FOR ALL THE WORLD",
+      "kind": "canva-brand-kit",
+      "location": "kAGkFiuXP_g",
+      "syncedVersion": null,
+      "syncedBy": null,
+      "note": "The second kit. Two kits means two answers to what the brand red is, and the people using Canva are the ones least able to tell which is right."
+    },
+    {
+      "id": "figma-library",
+      "name": "THE WORD brand library",
+      "kind": "figma",
+      "location": null,
+      "syncedVersion": null,
+      "syncedBy": null,
+      "note": "Not created yet. tools/sync_figma.py pushes variables and styles once a file key and a personal access token exist."
+    }
+  ]
+}

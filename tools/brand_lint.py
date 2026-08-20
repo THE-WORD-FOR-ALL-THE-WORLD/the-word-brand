@@ -92,6 +92,7 @@ def check_ai_source_present():
         "components.css",
         "channels.json",
         "copy-bank.json",
+        "consumers.json",
         "asset-notes.json",
         "skill.md",
     ]
@@ -431,6 +432,26 @@ def check_consumers():
                     "L15",
                     f"components.json says {c['id']} is implemented in React as {c['react']}, "
                     "but packages/ui does not export it.",
+                )
+
+    # The registry: every surface running this brand, and what it is running.
+    registry_path = os.path.join(REPO, "ai-source", "consumers.json")
+    if os.path.exists(registry_path):
+        for c in json.loads(bs.read(registry_path))["consumers"]:
+            synced = c.get("syncedVersion")
+            if synced == "auto":
+                continue
+            if synced is None:
+                warn(
+                    "L16",
+                    f"{c['name']} ({c['kind']}) has never been synced. It is running an unknown "
+                    f"version of the brand while the system is at v{declared}.",
+                )
+            elif synced != declared:
+                warn(
+                    "L16",
+                    f"{c['name']} ({c['kind']}) is on v{synced}; the system is at v{declared}. "
+                    "Sync it, then update ai-source/consumers.json.",
                 )
 
     for path in (pkg_path, brand_pkg_path):
