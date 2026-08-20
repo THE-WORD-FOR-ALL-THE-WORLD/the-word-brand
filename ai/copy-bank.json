@@ -1,7 +1,7 @@
 {
-  "version": "6.8",
+  "version": "7.0",
   "messagingVersion": "1.0",
-  "updated": "2026-08-19",
+  "updated": "2026-08-20",
   "authority": "canonical",
   "note": "Strings that have passed the audit once and are reusable without re-litigating them. Square brackets mark a fact that comes from the official ministry record at the time of use. They are placeholders, never guesses.",
   "rules": [

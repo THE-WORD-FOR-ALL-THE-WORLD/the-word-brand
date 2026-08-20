@@ -1,7 +1,7 @@
 {
-  "version": "6.8",
+  "version": "7.0",
   "messagingVersion": "1.0",
-  "updated": "2026-08-19",
+  "updated": "2026-08-20",
   "authority": "canonical",
   "note": "One entry per surface the brand has to live on. Specs are stated here because no visual guide states them: a canvas size, a character limit, and a safe area are facts about a platform, not about the brand. The rules are the brand's, and every entry names the audit checks that apply to it.",
   "channels": [

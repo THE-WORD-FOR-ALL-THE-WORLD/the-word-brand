@@ -38,6 +38,9 @@ Both are generated from the same sources, so they cannot disagree.
 | Initiative brand guides | [`/letterhead`](https://brand.theword.world/letterhead) | How each initiative looks under the parent brand. |
 | Initiative messaging documents | [`/documents`](https://brand.theword.world/documents) | What each initiative is, in the words of the ministry. |
 | Assets | [`/assets`](https://brand.theword.world/assets) | Every logo, in every format, with its clear space, minimum size, and ink rules. Fonts, photography and video policy, download packs, and the rules for a partnership lockup. |
+| Components | [`/components`](https://brand.theword.world/components) | Every component rendered live by the published stylesheet, with its spec, its rules, and markup to copy. |
+| Channels | [`/channels`](https://brand.theword.world/channels) | Nine surfaces, each with its sizes, character limits, safe areas, file formats, and pre-approved copy. |
+| Reviews | [`/reviews`](https://brand.theword.world/reviews) | Every system review, in order, with what each found and the version it produced. |
 
 ### The three initiatives
 
@@ -63,6 +66,11 @@ correct content types so any agent can fetch them.
 | [`/ai/audit.md`](https://brand.theword.world/ai/audit.md) | The rubric every piece of work is checked against, with its report template. |
 | [`/ai/components.json`](https://brand.theword.world/ai/components.json) | Component specs, written against token names and resolved to current values. |
 | [`/ai/assets.json`](https://brand.theword.world/ai/assets.json) | Every approved logo, photograph, and video, with usage rules and known gaps. |
+| [`/ai/channels.json`](https://brand.theword.world/ai/channels.json) | One entry per surface: sizes, safe areas, limits, rules, and the audit checks that apply. |
+| [`/ai/copy-bank.json`](https://brand.theword.world/ai/copy-bank.json) | Pre-approved strings by channel, each within the limit it was written against. |
+| [`/ai/tokens.dtcg.json`](https://brand.theword.world/ai/tokens.dtcg.json) | The same tokens in W3C Design Tokens format, for design tooling. |
+| [`/ai/tokens.ts`](https://brand.theword.world/ai/tokens.ts) · [`/ai/tailwind.preset.js`](https://brand.theword.world/ai/tailwind.preset.js) | The same tokens for applications. |
+| [`/assets/brand.css`](https://brand.theword.world/assets/brand.css) | The tokens and the component layer, as one stylesheet anyone can link. |
 | [`/ai/approved-examples.md`](https://brand.theword.world/ai/approved-examples.md) | Worked output that passes the audit. |
 | [`/ai/anti-patterns.md`](https://brand.theword.world/ai/anti-patterns.md) | What not to do, including every DON'T and every banned word. |
 | [`/llms.txt`](https://brand.theword.world/llms.txt) | Discovery file for tools that look for one. |
@@ -156,7 +164,14 @@ tools/brand_lint.py ─→ proves the pages, the AI layer, and delivery still ag
 │   ├── downloads/          GENERATED. The ZIP packs.
 │   └── images/ videos/     Photography and footage
 ├── ai/                     GENERATED. The machine-readable layer. Never edit by hand.
-├── ai-source/              HAND-AUTHORED. Audit rubric, agent rules, components, examples, skill.
+├── ai-source/              HAND-AUTHORED. Audit rubric, agent rules, components, channels,
+│                           copy bank, consumers, component CSS, examples, skill.
+├── components/             GENERATED. The live component gallery.
+├── channels/               GENERATED. The per-surface specifications.
+├── reviews/                System reviews. A new one is a directory drop.
+├── packages/
+│   ├── brand/              GENERATED. @theword/brand: the tokens, in every shape.
+│   └── ui/                 src/ is HAND-WRITTEN React; its manifest is generated.
 ├── skills/                 GENERATED. The installable loader skill.
 ├── .claude/skills/         Maintenance skills for this repository.
 ├── tools/
@@ -165,7 +180,11 @@ tools/brand_lint.py ─→ proves the pages, the AI layer, and delivery still ag
 │   ├── brandsource.py      Extraction: reads the guides, returns structured data
 │   ├── build_ai.py         Generation: writes ai/, skills/, llms.txt, sitemap.xml, _headers
 │   ├── brand_lint.py       Validation: drift detection across the whole portal
-│   └── gen_docs.py         Generates the initiative guides and documents
+│   ├── brand_check.py      Validation: the mechanical audit, against any file or URL
+│   ├── gen_docs.py         Generates the initiative guides and documents
+│   ├── fetch_fonts.py      One-off: self-hosts the three families from Google Fonts
+│   ├── sync_figma.py       One-off: pushes the tokens into the Figma library
+│   └── sync_canva.py       One-off: prints the Canva brand kit setup sheet
 ├── archive/                Retired versions of guides
 ├── _headers                Cloudflare Pages headers, /ai block generated
 ├── robots.txt              Open to all crawlers
@@ -181,6 +200,25 @@ python3 tools/build_ai.py      # regenerate everything else derived
 python3 tools/brand_lint.py    # prove it all still agrees
 ```
 
+Three more are run by hand, never in CI, because they need the network and the build does not:
+
+```bash
+python3 tools/fetch_fonts.py   # re-download and self-host the three approved families
+python3 tools/sync_figma.py    # push the tokens into the Figma library (--dry-run to preview)
+python3 tools/sync_canva.py    # print the Canva brand kit setup sheet
+```
+
+And one runs anywhere, on anything:
+
+```bash
+python3 tools/brand_check.py page.html https://example.org/campaign
+```
+
+It decides the mechanical half of the audit: unknown colours, fonts outside the three, text in
+or on Flame, banned words, a missing endorsement line, a removed focus ring, images with no alt
+text. It ships as a [composite Action](.github/actions/brand-check/) other repositories can add
+in three lines. **A clean run is not a passed audit**, and it says so every time.
+
 Run all three after any change. Commit the regenerated files together with the change that caused them:
 a commit where the guide says one thing and the manifest says another is a commit where the site is
 lying about being canonical.
@@ -195,7 +233,9 @@ and time:
    AI layer cannot quietly drift away from the visual guides.
 2. **The linter checks the whole portal, not just the build.** Palette drift between pages,
    improvised colors, text on Flame, unapproved fonts, broken asset links, discovery gaps, manifest
-   checksums, navigation consistency, and the two copies of the skill. Eleven checks, listed in
+   checksums, navigation consistency, the two copies of the skill, WCAG contrast for every pair the
+   system puts on screen, social cards on every page, the React library against the component
+   specifications, and every registered consumer's version. Sixteen checks, listed in
    [`/brand-sync`](.claude/skills/brand-sync/SKILL.md).
 3. **CI blocks the deploy.** The GitHub Action runs the build in `--check` mode and the linter
    before deploying. Stale or inconsistent output never reaches `brand.theword.world`.

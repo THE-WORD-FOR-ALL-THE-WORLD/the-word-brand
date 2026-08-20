@@ -1,7 +1,7 @@
 # @theword/brand
 
-Design tokens for THE WORD FOR ALL THE WORLD, brand system v6.8
-(messaging v1.0, updated 2026-08-19).
+Design tokens for THE WORD FOR ALL THE WORLD, brand system v7.0
+(messaging v1.0, updated 2026-08-20).
 
 **Generated. Never edited by hand.** Every value here is read out of the Brand Guide at
 <https://brand.theword.world/brand> by `tools/build_ai.py`. Changing a token means changing the guide and
