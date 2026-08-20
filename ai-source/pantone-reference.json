@@ -1,0 +1,42 @@
+{
+  "_README": "Reference data for matching this palette to Pantone Solid Coated. READ THIS BEFORE TRUSTING A MATCH. Every sRGB value below is a published screen approximation of a Pantone ink, not a measurement of one. A match computed from it is a starting point for a conversation with a printer, never a substitute for a physical Pantone book or a press proof. The set is deliberately small and covers only the regions this palette sits in; add entries as they are confirmed. If a proof shows a better match, correct it here and rerun tools/match_pantone.py, so the derivation stays reproducible rather than becoming a number nobody can explain.",
+  "space": "sRGB approximations of Pantone Solid Coated",
+  "confirmedAgainstBook": false,
+  "colors": {
+    "PANTONE 289 C": "#0C2340",
+    "PANTONE 296 C": "#041E42",
+    "PANTONE 2965 C": "#00263A",
+    "PANTONE 539 C": "#003057",
+    "PANTONE 5395 C": "#01253E",
+    "PANTONE 533 C": "#253746",
+    "PANTONE 534 C": "#1B365D",
+    "PANTONE 432 C": "#333F48",
+    "PANTONE 433 C": "#1D252D",
+    "PANTONE Black 6 C": "#101820",
+    "PANTONE 302 C": "#003A5D",
+    "PANTONE 301 C": "#004B87",
+    "PANTONE 7692 C": "#00558C",
+    "PANTONE 300 C": "#005EB8",
+    "PANTONE 1805 C": "#A6192E",
+    "PANTONE 1795 C": "#D22630",
+    "PANTONE 180 C": "#BE3A34",
+    "PANTONE 179 C": "#E03C31",
+    "PANTONE 484 C": "#9A3324",
+    "PANTONE 1665 C": "#DC4405",
+    "PANTONE Warm Red C": "#F9423A",
+    "PANTONE Red 032 C": "#EF3340",
+    "PANTONE 178 C": "#FF585D",
+    "PANTONE 171 C": "#FF6A39",
+    "PANTONE 7416 C": "#E1523D",
+    "PANTONE 7417 C": "#E04E39",
+    "PANTONE 7527 C": "#D6D2C4",
+    "PANTONE 9003 C": "#F3F0E4",
+    "PANTONE 7499 C": "#F1EBDD",
+    "PANTONE Cool Gray 1 C": "#D9D9D6",
+    "PANTONE Warm Gray 1 C": "#D7D2CB",
+    "PANTONE 7541 C": "#D9E1E2"
+  },
+  "noMatch": {
+    "White": "White is unprinted stock, or opaque white ink where the stock is not white. It carries no Pantone number."
+  }
+}

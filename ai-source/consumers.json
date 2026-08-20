@@ -35,7 +35,7 @@
       "location": "kAFcpv6O7Ts",
       "syncedVersion": null,
       "syncedBy": null,
-      "note": "One of two kits found in the Canva account, neither governed by this repository and neither carrying a version. Consolidation is a decision for the brand owners, not for the build: see tools/sync_canva.py for the checklist and which kit to keep."
+      "note": "The kit to keep. Its colours and fonts still have to be set by hand: Canva's Connect API is read-only for both, so no script can do it. The approved marks are already uploaded and filed (see canva-assets). Run tools/sync_canva.py for the sheet, set the six colours and three families, rename the kit to carry the version, then set syncedVersion here."
     },
     {
       "id": "canva-kit-secondary",
@@ -44,7 +44,7 @@
       "location": "kAGkFiuXP_g",
       "syncedVersion": null,
       "syncedBy": null,
-      "note": "The second kit. Two kits means two answers to what the brand red is, and the people using Canva are the ones least able to tell which is right."
+      "note": "The duplicate. Move anything worth keeping out of it and delete it, so there is one answer to what the brand red is. Deleting a kit is not reversible, which is why no script does it."
     },
     {
       "id": "figma-library",
@@ -54,6 +54,15 @@
       "syncedVersion": null,
       "syncedBy": null,
       "note": "Not created yet. tools/sync_figma.py pushes variables and styles once a file key and a personal access token exist."
+    },
+    {
+      "id": "canva-assets",
+      "name": "THE WORD · Brand v7.0 (Canva folder)",
+      "kind": "canva-folder",
+      "location": "FAHS2xPodRc",
+      "syncedVersion": "7.1",
+      "syncedBy": "tools/sync_canva.py, assets uploaded from the published PNGs",
+      "note": "The five approved marks, uploaded from their public URLs on brand.theword.world so the files in Canva are the published files rather than someone's copy. Horizontal and stacked in both inks, plus the glyph for avatars."
     }
   ]
 }

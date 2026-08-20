@@ -152,7 +152,13 @@ def build_tokens(brand: dict, messaging: dict, updated: str, overrides: dict, sc
                 "screen": r["screen"],
                 "cmyk": r["cmyk, unconfirmed"],
                 "cmykStatus": "unconfirmed, confirm against a press proof",
-                "pantone": r["pantone"],
+                "pantoneNearest": r["pantone, nearest"],
+                "pantoneDistance": r["distance"],
+                "pantoneStatus": (
+                    "nearest colour in a reference set of screen approximations, computed by "
+                    "tools/match_pantone.py. Not a measurement of ink and not a match. Confirm "
+                    "on a press proof."
+                ),
             }
             for r in scales["print"]
         },

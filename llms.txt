@@ -18,7 +18,7 @@
 
 ## Facts at a glance
 
-Brand system version 7.0, messaging guide version 1.0, issued August 2026.
+Brand system version 7.1, messaging guide version 1.0, issued August 2026.
 Palette: Midnight `#0B1A2D`, Word Blue `#023D6F`, Parchment `#F7F3EC`, Flame `#F85842`, Ember `#C13A24`, White `#FFFFFF`.
 Typefaces: DM Serif Display, DM Serif Text, DM Sans.
 Proportion: 60 / 30 / 10, Flame never above a tenth and never carrying text.
