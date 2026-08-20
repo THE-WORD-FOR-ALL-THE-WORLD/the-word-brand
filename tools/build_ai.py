@@ -1161,7 +1161,10 @@ COMPONENTS_PAGE = """<!DOCTYPE html>
     grid-column: 1 / -1;
   }
   .topbar .brand { display: flex; align-items: center; gap: var(--space-4); min-width: 0; }
-  .topbar .brand img { height: 17px; width: auto; display: block; }
+  /* No display here. It belonged to this rule at 0,2,1 and outranked the .mark-*
+     toggles at 0,1,0 and 0,2,0, so both marks rendered in both themes and the
+     toggle did nothing. Display is owned by the variant rules alone. */
+  .topbar .brand img { height: 17px; width: auto; }
   .topbar .brand .where { font-size: var(--text-caption); color: var(--text-muted); white-space: nowrap; }
   .topbar .right { display: flex; align-items: center; gap: var(--space-4); }
   .topbar .links { display: none; gap: var(--space-4); font-size: 12.5px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; }
@@ -1170,10 +1173,12 @@ COMPONENTS_PAGE = """<!DOCTYPE html>
   @media (min-width: 1180px) { .topbar .links { display: flex; } }
   .topbar a.home { display: flex; text-decoration: none; }
 
-  /* The mark is one drawing in two inks; swap which one is shown. */
-  .mark-dark { display: none; }
-  [data-theme="dark"] .mark-light { display: none; }
-  [data-theme="dark"] .mark-dark { display: block; }
+  /* The mark is one drawing in two inks; swap which one is shown. Every rule
+     below is scoped the same way, so exactly one wins per theme. */
+  .topbar .brand .mark-light { display: block; }
+  .topbar .brand .mark-dark { display: none; }
+  [data-theme="dark"] .topbar .brand .mark-light { display: none; }
+  [data-theme="dark"] .topbar .brand .mark-dark { display: block; }
 
   .themetoggle {
     appearance: none; cursor: pointer;
