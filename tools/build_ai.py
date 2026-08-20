@@ -1267,6 +1267,285 @@ def build_components_page(components: list, brand: dict, messaging: dict, update
     )
 
 
+def build_channels(brand: dict, messaging: dict, updated: str, tokens: dict, source: dict) -> dict:
+    out = {
+        "version": brand["version"],
+        "messagingVersion": messaging["version"],
+        "updated": updated,
+        "authority": "canonical",
+        "note": (
+            "One entry per surface the brand has to live on. Specs are stated here because no "
+            "visual guide states them: a canvas size, a character limit, and a safe area are "
+            "facts about a platform, not about the brand. The rules are the brand's, and every "
+            "entry names the audit checks that apply to it."
+        ),
+        "channels": source["channels"],
+    }
+    return out
+
+
+def check_copy_bank(bank: dict, messaging: dict) -> None:
+    """Fail the build on an over-length string or a banned word.
+
+    Both are mechanical, and both are exactly what gets missed: a headline is
+    written in a hurry and rejected by the ad platform, or a banned word creeps
+    back in through ad copy, which is where the hype list came from.
+    """
+    for group in bank["sets"]:
+        limit = group["limit"]
+        for entry in group["strings"]:
+            if len(entry["text"]) > limit:
+                raise bs.SourceError(
+                    f"copy-bank.json: '{entry['text'][:40]}...' in {group['id']} is "
+                    f"{len(entry['text'])} characters and the limit is {limit}."
+                )
+
+    banned = []
+    for group in messaging["bans"]:
+        for word in group["words"]:
+            cleaned = word.strip().strip('"').strip("'").lower()
+            # Skip the emoji-wall entry, which describes a pattern rather than a word.
+            if cleaned and "emoji" not in cleaned:
+                banned.append((cleaned, group["category"]))
+
+    for group in bank["sets"]:
+        for entry in group["strings"]:
+            low = entry["text"].lower()
+            for word, category in banned:
+                if re.search(r"\b" + re.escape(word) + r"\b", low):
+                    raise bs.SourceError(
+                        f"copy-bank.json: '{entry['text'][:50]}' in {group['id']} contains the "
+                        f"banned {category.lower()} term '{word}'. Gate G9."
+                    )
+
+
+def build_copy_bank(brand: dict, messaging: dict, updated: str, source: dict) -> dict:
+    check_copy_bank(source, messaging)
+    sets = []
+    for group in source["sets"]:
+        strings = []
+        for entry in group["strings"]:
+            row = dict(entry)
+            row["characters"] = len(entry["text"])
+            strings.append(row)
+        row_group = dict(group)
+        row_group["strings"] = strings
+        sets.append(row_group)
+    return {
+        "version": brand["version"],
+        "messagingVersion": messaging["version"],
+        "updated": updated,
+        "authority": "canonical",
+        "note": (
+            "Strings that have passed the audit once and are reusable without re-litigating "
+            "them. Square brackets mark a fact that comes from the official ministry record at "
+            "the time of use. They are placeholders, never guesses."
+        ),
+        "rules": source["rules"],
+        "sets": sets,
+    }
+
+
+CHANNELS_PAGE = """<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<title>Channels · THE WORD FOR ALL THE WORLD</title>
+<meta name="description" content="Every surface the brand lives on, with the sizes, character limits, safe areas, and rules that apply to it, and the pre-approved copy to build with.">
+<link rel="icon" href="/assets/logos/the-word/favicon/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/assets/logos/the-word/favicon/favicon-16.png" sizes="16x16" type="image/png">
+<link rel="apple-touch-icon" href="/assets/logos/the-word/favicon/apple-touch-icon-180.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="THE WORD FOR ALL THE WORLD">
+<meta property="og:title" content="Channels">
+<meta property="og:description" content="Every surface the brand lives on, with the sizes, character limits, safe areas, and rules that apply to it, and the pre-approved copy to build with.">
+<meta property="og:url" content="{site}/channels">
+<meta property="og:image" content="{site}/assets/images/og-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="THE WORD FOR ALL THE WORLD">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="/assets/fonts/fonts.css">
+<link rel="stylesheet" href="/assets/brand.css">
+<style>
+.wrap{{max-width:1020px;margin:0 auto;padding:0 32px;}}
+nav.chrome{{position:absolute;top:0;left:0;right:0;z-index:10;}}
+nav.chrome .bar{{max-width:1240px;margin:0 auto;padding:26px 36px;display:flex;justify-content:space-between;align-items:center;gap:20px;}}
+nav.chrome .logo img{{height:20px;width:auto;display:block;}}
+nav.chrome .links{{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:12px 28px;font-size:12.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;}}
+nav.chrome .links a{{color:var(--ink-reversed-muted);text-decoration:none;}}
+nav.chrome .links a:hover{{color:var(--white);}}
+header.masthead{{background:var(--midnight);color:var(--parchment);padding:126px 0 62px;}}
+header.masthead h1{{color:var(--white);margin-top:.3em;}}
+header.masthead .lede{{max-width:34ch;margin-top:var(--space-5);color:var(--parchment);font-family:var(--serif-text);font-style:italic;}}
+main{{padding:var(--space-8) 0 var(--space-9);}}
+.intro{{max-width:66ch;margin-bottom:var(--space-7);}}
+.jump{{display:flex;flex-wrap:wrap;gap:var(--space-2);margin-bottom:var(--space-8);}}
+.jump a{{font-size:var(--text-caption);font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:6px 12px;border:1px solid var(--rule);border-radius:var(--radius-button);color:var(--ink-muted);text-decoration:none;}}
+.jump a:hover{{border-color:var(--ember);color:var(--ember);}}
+.chan{{border-top:1px solid var(--rule);padding-top:var(--space-7);margin-top:var(--space-7);}}
+.chan:first-of-type{{border-top:0;padding-top:0;margin-top:0;}}
+.chan h2{{font-family:var(--serif-display);font-weight:400;font-size:var(--text-display-small);line-height:var(--leading-display-small);margin:.2em 0 0;}}
+.chan .use{{color:var(--ink-muted);max-width:60ch;margin-top:var(--space-2);}}
+.grid{{display:grid;grid-template-columns:1fr;gap:var(--space-5);margin-top:var(--space-5);}}
+@media(min-width:{wide}){{.grid{{grid-template-columns:1fr 1fr;}}}}
+h3.sub{{font-family:var(--sans);font-weight:700;font-size:var(--text-body-small);letter-spacing:.02em;margin:0 0 var(--space-3);}}
+dl.props{{margin:0;display:grid;grid-template-columns:auto 1fr;gap:var(--space-2) var(--space-4);font-size:var(--text-body-small);}}
+dl.props dt{{font-weight:600;color:var(--ink-muted);}}
+dl.props dd{{margin:0;}}
+ul.rules{{margin:0;padding-left:1.1em;font-size:var(--text-body-small);line-height:1.6;}}
+ul.rules li{{margin-bottom:var(--space-2);}}
+ul.setup{{margin:var(--space-4) 0 0;padding-left:1.1em;font-size:var(--text-body-small);line-height:1.6;}}
+.tags{{display:flex;flex-wrap:wrap;gap:6px;margin-top:var(--space-4);}}
+.tags span, .tags a{{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 8px;border-radius:var(--radius-button);border:1px solid var(--rule);color:var(--ink-muted);text-decoration:none;}}
+.tags a:hover{{border-color:var(--ember);color:var(--ember);}}
+.tags .gate{{border-color:var(--ember);color:var(--ember);}}
+.copy{{margin-top:var(--space-5);}}
+.copy table{{width:100%;}}
+.copy td.n{{font-variant-numeric:tabular-nums;color:var(--ink-muted);width:1%;white-space:nowrap;}}
+footer.chrome{{background:var(--midnight);color:var(--ink-reversed-muted);padding:40px 0;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;font-weight:500;}}
+footer.chrome .wrap{{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}}
+footer.chrome img{{height:16px;width:auto;display:block;opacity:.9;}}
+@media(max-width:640px){{nav.chrome .bar{{padding:20px 24px;}}header.masthead{{padding:104px 0 48px;}}}}
+</style>
+</head>
+<body>
+
+<nav class="chrome">
+  <div class="bar">
+    <a class="logo" href="/" aria-label="THE WORD FOR ALL THE WORLD, home">
+      <img src="/assets/logos/the-word/the-word-horizontal-reversed.svg" alt="THE WORD FOR ALL THE WORLD">
+    </a>
+    <div class="links">
+      <a href="/">Home</a>
+      <a href="/brand/">Brand Guide</a>
+      <a href="/brand/messaging/">Messaging</a>
+      <a href="/documents/">Documents</a>
+      <a href="/letterhead/">Letterhead</a>
+      <a href="/signatures/">Signatures</a>
+      <a href="/assets/">Assets</a>
+    </div>
+  </div>
+</nav>
+
+<header class="masthead on-midnight">
+  <div class="wrap">
+    <span class="eyebrow">The Channel Layer</span>
+    <h1 class="headline">What this looks like <em>where you are building it.</em></h1>
+    <p class="lede">The brand does not change per surface. The sizes, the limits, and the file formats do.</p>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <div class="intro prose">
+      <p>A canvas size, a character limit, and a safe area are facts about a platform rather than facts about the brand, which is why no visual guide states them and why they are recorded here instead. The rules under each surface are the brand's, and every entry names the <a href="/ai/audit.md">audit checks</a> that apply to it.</p>
+      <p>The machine-readable copies are <a href="/ai/channels.json"><code>/ai/channels.json</code></a> and <a href="/ai/copy-bank.json"><code>/ai/copy-bank.json</code></a>. Anyone assembling a campaign should work from those rather than from this page.</p>
+      <p class="caption">Brand system v{version} · messaging v{messaging_version} · {count} surfaces · generated {updated}</p>
+    </div>
+    <div class="jump">
+{jump}
+    </div>
+{channels}
+  </div>
+</main>
+
+<footer class="chrome">
+  <div class="wrap">
+    <a href="/" aria-label="THE WORD FOR ALL THE WORLD, portal home"><img src="/assets/logos/the-word/the-word-horizontal-reversed.svg" alt="THE WORD FOR ALL THE WORLD"></a>
+    <span>Every tribe. Every tongue. Every nation. EVERY1.</span>
+    <span>brand.theword.world · Internal use</span>
+  </div>
+</footer>
+
+</body>
+</html>
+"""
+
+
+def build_channels_page(channels: dict, bank: dict, brand: dict, messaging: dict, updated: str, tokens: dict) -> str:
+    by_channel = {}
+    for group in bank["sets"]:
+        by_channel.setdefault(group["channel"], []).append(group)
+
+    jump = "\n".join(
+        f'      <a href="#{c["id"]}">{esc(c["name"])}</a>' for c in channels["channels"]
+    )
+
+    blocks = []
+    for c in channels["channels"]:
+        specs = "\n".join(
+            f"            <dt>{esc(k)}</dt><dd>{esc(str(v))}</dd>" for k, v in c.get("specs", {}).items()
+        )
+        rules = "\n".join(f"            <li>{esc(r)}</li>" for r in c.get("rules", []))
+        setup = (
+            '        <h3 class="sub">Setup</h3>\n        <ul class="setup">\n'
+            + "\n".join(f"          <li>{esc(x)}</li>" for x in c["setup"])
+            + "\n        </ul>"
+            if c.get("setup") else ""
+        )
+        comps = "".join(
+            f'<a href="/components/#{cid}">{esc(cid)}</a>' for cid in c.get("components", [])
+        )
+        gates = "".join(f'<span class="gate">{esc(g)}</span>' for g in c.get("auditChecks", []))
+        tags = (
+            f'      <div class="tags">{comps}{gates}</div>' if (comps or gates) else ""
+        )
+
+        copy = ""
+        groups = by_channel.get(c["id"], []) + (by_channel.get("any", []) if c["id"] == "web" else [])
+        if groups:
+            rows = []
+            for group in groups:
+                rows.append(
+                    f'<tr><th colspan="2">{esc(group["field"])}, {group["limit"]} characters</th></tr>'
+                )
+                for entry in group["strings"]:
+                    rows.append(
+                        f'<tr><td>{esc(entry["text"])}</td><td class="n">{entry["characters"]}</td></tr>'
+                    )
+            copy = (
+                '      <div class="copy">\n        <h3 class="sub">Approved copy</h3>\n'
+                '        <div class="table-scroll"><table>' + "".join(rows) + "</table></div>\n      </div>"
+            )
+
+        blocks.append(f"""    <section class="chan" id="{c['id']}">
+      <span class="eyebrow">{esc(c['id'])}</span>
+      <h2>{esc(c['name'])}</h2>
+      <p class="use">{esc(c['use'])}</p>
+      <div class="grid">
+        <div>
+          <h3 class="sub">Specifications</h3>
+          <dl class="props">
+{specs}
+          </dl>
+{setup}
+        </div>
+        <div>
+          <h3 class="sub">Rules</h3>
+          <ul class="rules">
+{rules}
+          </ul>
+        </div>
+      </div>
+{tags}
+{copy}
+    </section>""")
+
+    return CHANNELS_PAGE.format(
+        site=SITE,
+        version=brand["version"],
+        messaging_version=messaging["version"],
+        updated=updated,
+        count=len(channels["channels"]),
+        wide=tokens["breakpoint"].get("wide", "1080px"),
+        jump=jump,
+        channels="\n".join(blocks),
+    )
+
+
 def build_llms_txt(brand: dict, messaging: dict, tokens: dict, initiatives: list) -> str:
     palette = ", ".join(f"{c['name']} `{c['hex']}`" for c in brand["colors"])
     lines = [
@@ -1304,6 +1583,9 @@ def build_llms_txt(brand: dict, messaging: dict, tokens: dict, initiatives: list
         f"- [Messaging Guide]({SITE}/brand/messaging): Voice, tone, vocabulary, audiences, and proof policy.",
         f"- [Assets]({SITE}/assets): Every approved logo in every format, with its clear space, minimum size, and ink rules. Fonts, download packs, and the photography policy.",
         f"- [Signatures]({SITE}/signatures): The signature masters that sign the record, and the law governing where each may be placed.",
+        f"- [Channels]({SITE}/channels): Every surface the brand lives on, with its sizes, limits, safe areas, rules, and approved copy.",
+        f"- [Channels, machine-readable]({SITE}/ai/channels.json): Every surface the brand lives on, with its sizes, limits, safe areas, and rules.",
+        f"- [Copy bank]({SITE}/ai/copy-bank.json): Pre-approved headlines, subject lines, calls to action, and boilerplate.",
         f"- [Components]({SITE}/components): Every component rendered live from the published stylesheet, with its spec, rules, and copyable markup.",
         f"- [Reviews]({SITE}/reviews): Every system review of this brand, in order, with what each found and the version it produced.",
     ]
@@ -1480,6 +1762,8 @@ DESCRIPTIONS = {
     "tailwind.preset.js": "The same tokens as a Tailwind preset, replacing the default theme.",
     "audit.md": "The brand audit rubric and report template.",
     "components.json": "Component specifications, resolved against current tokens.",
+    "channels.json": "One entry per surface: sizes, safe areas, limits, rules, and the audit checks that apply.",
+    "copy-bank.json": "Pre-approved strings by channel, each within the character limit it was written against.",
     "assets.json": "Approved logos, photography, and video, with usage rules.",
     "approved-examples.md": "Worked output that passes the audit.",
     "anti-patterns.md": "What not to do, including every DON'T and every banned word.",
@@ -1512,6 +1796,8 @@ def build() -> dict:
     )
     files["ai/anti-patterns.md"] = build_anti_patterns(brand, messaging, updated)
     components = build_components(brand, messaging, updated, tokens)
+    channels = build_channels(brand, messaging, updated, tokens, read_source_json("channels.json"))
+    copy_bank = build_copy_bank(brand, messaging, updated, read_source_json("copy-bank.json"))
     files["ai/components.json"] = json.dumps(components, indent=2, ensure_ascii=False) + "\n"
     files["ai/assets.json"] = (
         json.dumps(
@@ -1522,9 +1808,16 @@ def build() -> dict:
         + "\n"
     )
 
+    files["channels/index.html"] = build_channels_page(
+        channels, copy_bank, brand, messaging, updated, tokens
+    )
     files["components/index.html"] = build_components_page(
         components["components"], brand, messaging, updated, tokens
     )
+    files["ai/channels.json"] = json.dumps(
+        resolve_refs(channels, {**token_lookup(tokens), "site": SITE}, []), indent=2, ensure_ascii=False
+    ) + "\n"
+    files["ai/copy-bank.json"] = json.dumps(copy_bank, indent=2, ensure_ascii=False) + "\n"
     files["ai/tokens.dtcg.json"] = (
         json.dumps(build_tokens_dtcg(tokens, brand, updated), indent=2, ensure_ascii=False) + "\n"
     )
@@ -1578,6 +1871,8 @@ def build() -> dict:
         "tokens": f"{SITE}/ai/tokens.json",
         "audit": f"{SITE}/ai/audit.md",
         "components": f"{SITE}/ai/components.json",
+        "channels": f"{SITE}/ai/channels.json",
+        "copyBank": f"{SITE}/ai/copy-bank.json",
         "assets": f"{SITE}/ai/assets.json",
         "approvedExamples": f"{SITE}/ai/approved-examples.md",
         "antiPatterns": f"{SITE}/ai/anti-patterns.md",

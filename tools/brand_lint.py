@@ -90,6 +90,8 @@ def check_ai_source_present():
         "approved-examples.md",
         "components.json",
         "components.css",
+        "channels.json",
+        "copy-bank.json",
         "asset-notes.json",
         "skill.md",
     ]

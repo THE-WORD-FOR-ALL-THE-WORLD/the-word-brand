@@ -77,6 +77,16 @@
   Cache-Control: public, max-age=300, must-revalidate
   Content-Type: application/json; charset=utf-8
   X-Robots-Tag: all
+/ai/channels.json
+  Access-Control-Allow-Origin: *
+  Cache-Control: public, max-age=300, must-revalidate
+  Content-Type: application/json; charset=utf-8
+  X-Robots-Tag: all
+/ai/copy-bank.json
+  Access-Control-Allow-Origin: *
+  Cache-Control: public, max-age=300, must-revalidate
+  Content-Type: application/json; charset=utf-8
+  X-Robots-Tag: all
 /ai/assets.json
   Access-Control-Allow-Origin: *
   Cache-Control: public, max-age=300, must-revalidate

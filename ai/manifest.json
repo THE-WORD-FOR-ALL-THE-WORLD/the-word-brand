@@ -16,6 +16,8 @@
   "tokens": "https://brand.theword.world/ai/tokens.json",
   "audit": "https://brand.theword.world/ai/audit.md",
   "components": "https://brand.theword.world/ai/components.json",
+  "channels": "https://brand.theword.world/ai/channels.json",
+  "copyBank": "https://brand.theword.world/ai/copy-bank.json",
   "assets": "https://brand.theword.world/ai/assets.json",
   "approvedExamples": "https://brand.theword.world/ai/approved-examples.md",
   "antiPatterns": "https://brand.theword.world/ai/anti-patterns.md",
@@ -135,6 +137,20 @@
       "description": "Component specifications, resolved against current tokens.",
       "bytes": 19727,
       "sha256": "61df9b9e7a43b2fdcfb1fd8e695ab4843dfcb95b763622111e021008cc32aaa1"
+    },
+    {
+      "name": "channels.json",
+      "url": "https://brand.theword.world/ai/channels.json",
+      "description": "One entry per surface: sizes, safe areas, limits, rules, and the audit checks that apply.",
+      "bytes": 11504,
+      "sha256": "6211cb3b6cf71f7e357b93623f7ff537db677307df3c57965e95df20ff9fabc9"
+    },
+    {
+      "name": "copy-bank.json",
+      "url": "https://brand.theword.world/ai/copy-bank.json",
+      "description": "Pre-approved strings by channel, each within the character limit it was written against.",
+      "bytes": 8684,
+      "sha256": "f572a44ccec88d8f04dc50ac140da3e262262036ff222dee4707515eb9c5c53c"
     },
     {
       "name": "assets.json",
