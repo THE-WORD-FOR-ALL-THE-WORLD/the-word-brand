@@ -260,11 +260,107 @@
   "authority": "canonical",
   "rule": "Use these assets. Never generate photography or video of people or ministry, and never substitute stock. If the asset you need is not listed, request it and leave the slot empty.",
   "counts": {
-    "total": 208,
+    "total": 221,
     "approved": 202,
     "counterExamples": 0
   },
   "assets": [
+    {
+      "file": "assets/fonts/dm-sans-italic-latin-ext.woff2",
+      "url": "https://brand.theword.world/assets/fonts/dm-sans-italic-latin-ext.woff2",
+      "kind": "font",
+      "group": "fonts",
+      "bytes": 40880,
+      "status": "published, no usage note recorded"
+    },
+    {
+      "file": "assets/fonts/dm-sans-italic-latin.woff2",
+      "url": "https://brand.theword.world/assets/fonts/dm-sans-italic-latin.woff2",
+      "kind": "font",
+      "group": "fonts",
+      "bytes": 76176,
+      "status": "published, no usage note recorded"
+    },
+    {
+      "file": "assets/fonts/dm-sans-normal-latin-ext.woff2",
+      "url": "https://brand.theword.world/assets/fonts/dm-sans-normal-latin-ext.woff2",
+      "kind": "font",
+      "group": "fonts",
+      "bytes": 31312,
+      "status": "published, no usage note recorded"
+    },
+    {
+      "file": "assets/fonts/dm-sans-normal-latin.woff2",
+      "url": "https://brand.theword.world/assets/fonts/dm-sans-normal-latin.woff2",
+      "kind": "font",
+      "group": "fonts",
+      "bytes": 62556,
+      "status": "published, no usage note recorded"
+    },
+    {
+      "file": "assets/fonts/dm-serif-display-italic-latin-ext.woff2",
+      "url": "https://brand.theword.world/assets/fonts/dm-serif-display-italic-latin-ext.woff2",
+      "kind": "font",
+      "group": "fonts",
+      "bytes": 7244,
+      "status": "published, no usage note recorded"
+    },
+    {
+      "file": "assets/fonts/dm-serif-display-italic-latin.woff2",
+      "url": "https://brand.theword.world/assets/fonts/dm-serif-display-italic-latin.woff2",
+      "kind": "font",
+      "group": "fonts",
+      "bytes": 17660,
+      "status": "published, no usage note recorded"
+    },
+    {
+      "file": "assets/fonts/dm-serif-display-normal-latin-ext.woff2",
+      "url": "https://brand.theword.world/assets/fonts/dm-serif-display-normal-latin-ext.woff2",
+      "kind": "font",
+      "group": "fonts",
+      "bytes": 6800,
+      "status": "published, no usage note recorded"
+    },
+    {
+      "file": "assets/fonts/dm-serif-display-normal-latin.woff2",
+      "url": "https://brand.theword.world/assets/fonts/dm-serif-display-normal-latin.woff2",
+      "kind": "font",
+      "group": "fonts",
+      "bytes": 17844,
+      "status": "published, no usage note recorded"
+    },
+    {
+      "file": "assets/fonts/dm-serif-text-italic-latin-ext.woff2",
+      "url": "https://brand.theword.world/assets/fonts/dm-serif-text-italic-latin-ext.woff2",
+      "kind": "font",
+      "group": "fonts",
+      "bytes": 7196,
+      "status": "published, no usage note recorded"
+    },
+    {
+      "file": "assets/fonts/dm-serif-text-italic-latin.woff2",
+      "url": "https://brand.theword.world/assets/fonts/dm-serif-text-italic-latin.woff2",
+      "kind": "font",
+      "group": "fonts",
+      "bytes": 17188,
+      "status": "published, no usage note recorded"
+    },
+    {
+      "file": "assets/fonts/dm-serif-text-normal-latin-ext.woff2",
+      "url": "https://brand.theword.world/assets/fonts/dm-serif-text-normal-latin-ext.woff2",
+      "kind": "font",
+      "group": "fonts",
+      "bytes": 6892,
+      "status": "published, no usage note recorded"
+    },
+    {
+      "file": "assets/fonts/dm-serif-text-normal-latin.woff2",
+      "url": "https://brand.theword.world/assets/fonts/dm-serif-text-normal-latin.woff2",
+      "kind": "font",
+      "group": "fonts",
+      "bytes": 17424,
+      "status": "published, no usage note recorded"
+    },
     {
       "file": "assets/images/bibles-distribution.jpg",
       "url": "https://brand.theword.world/assets/images/bibles-distribution.jpg",
@@ -361,6 +457,14 @@
       "status": "approved",
       "capture": "Ministry's own conference photography, July 2026",
       "note": "Documentary hero still."
+    },
+    {
+      "file": "assets/images/og-card.png",
+      "url": "https://brand.theword.world/assets/images/og-card.png",
+      "kind": "image",
+      "group": "images",
+      "bytes": 13112,
+      "status": "published, no usage note recorded"
     },
     {
       "file": "assets/images/rtmc-city-gathering-poster.jpg",

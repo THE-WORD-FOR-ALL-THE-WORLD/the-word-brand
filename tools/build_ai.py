@@ -722,6 +722,19 @@ AI_INDEX = """<!DOCTYPE html>
 <meta name="robots" content="index, follow, max-snippet:-1">
 <title>AI Layer · THE WORD FOR ALL THE WORLD</title>
 <meta name="description" content="Machine-readable brand system for THE WORD FOR ALL THE WORLD. Start at manifest.json.">
+<link rel="icon" href="/assets/logos/the-word/favicon/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/assets/logos/the-word/favicon/favicon-16.png" sizes="16x16" type="image/png">
+<link rel="apple-touch-icon" href="/assets/logos/the-word/favicon/apple-touch-icon-180.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="THE WORD FOR ALL THE WORLD">
+<meta property="og:title" content="AI Layer">
+<meta property="og:description" content="Machine-readable brand system for THE WORD FOR ALL THE WORLD. Start at manifest.json.">
+<meta property="og:url" content="https://brand.theword.world/ai/">
+<meta property="og:image" content="https://brand.theword.world/assets/images/og-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="THE WORD FOR ALL THE WORLD">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="alternate" type="application/json" href="/ai/manifest.json" title="AI manifest">
 <style>
   :root{{{root}}}

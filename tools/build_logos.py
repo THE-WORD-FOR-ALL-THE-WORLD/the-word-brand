@@ -697,6 +697,35 @@ def render(master, ink, width, height=None, pad=0.0, square=False):
     return svgkit.rasterize(shapes, width, height, lambda x, y: ((x - x0) * s, (y - y0) * s))
 
 
+def render_social_card(masters):
+    """The 1200x630 card every page hands to a link preview.
+
+    A shared URL that previews as a blank rectangle reads as a dead link, and the
+    portal is shared into exactly the places that matter: a partner's inbox, a
+    volunteer's group chat. Midnight ground, the reversed wordmark, and the
+    Parchment hairline the heroes use. Nothing else: this is the institution
+    speaking, and it stays quiet.
+    """
+    from PIL import Image
+
+    W, H = 1200, 630
+    card = Image.new("RGBA", (W, H), (11, 26, 45, 255))
+
+    mark_w, rule_w, gap = 560, 96, 46
+    mark = render(masters[("the-word", "horizontal")], INKS["-reversed"], mark_w)
+    rule = Image.new("RGBA", (rule_w, 1), (247, 243, 236, 56))
+
+    # Centred as one group, so the mark and its rule sit together rather than the
+    # mark floating above an empty lower half.
+    top = (H - (mark.height + gap + rule.height)) // 2
+    card.alpha_composite(mark, ((W - mark_w) // 2, top))
+    card.alpha_composite(rule, ((W - rule_w) // 2, top + mark.height + gap))
+    return card
+
+
+SOCIAL_CARD = os.path.join(REPO, "assets", "images", "og-card.png")
+
+
 # ── writing ───────────────────────────────────────────────────────────────────
 
 
@@ -737,6 +766,10 @@ def build(check):
         raise SystemExit(f"missing {os.path.relpath(MASTERS, REPO)}: nothing to build from")
 
     w = Writer(check)
+    # Keyed by (brand, slug), not slug alone: THE WORD, RTMC, and the School each
+    # have a "horizontal", a "stacked", or a "cobrand", and a bare-slug key let the
+    # last brand loaded overwrite the earlier ones. That published the School's
+    # measured dimensions on THE WORD's cards for as long as this file has existed.
     masters = {}
     loaded = {}  # by master filename, so a composed lockup can reach its parts
     entries = []
@@ -748,7 +781,7 @@ def build(check):
         else:
             m = read_master(cfg["master"], cfg.get("cap_is_height", False))
             loaded[cfg["master"]] = m
-        masters[cfg["slug"]] = m
+        masters[(brand["key"], cfg["slug"])] = m
         x0, y0, x1, y1 = m["box"]
         aw, ah = x1 - x0, y1 - y0
 
@@ -799,11 +832,13 @@ def build(check):
         )
 
     # Only the parent brand cuts the site icon set, from its glyph.
-    g = masters["glyph"]
+    g = masters[("the-word", "glyph")]
     if check:
         for name, _px, _pad, _plate in FAVICONS:
             if not os.path.exists(os.path.join(FAVICON, name)):
                 w.stale.append(f"assets/logos/the-word/favicon/{name}")
+        if not os.path.exists(SOCIAL_CARD):
+            w.stale.append("assets/images/og-card.png")
         # Zipping needs no imaging library, so the packs are content-verified in CI
         # rather than merely checked for existence.
         write_packs(w)
@@ -817,6 +852,8 @@ def build(check):
                 ground.alpha_composite(img)
                 img = ground
             w.image(os.path.join(FAVICON, name), img)
+
+        w.image(SOCIAL_CARD, render_social_card(masters))
 
         write_packs(w)
 
@@ -985,11 +1022,11 @@ def mark_card(brand, cfg, entry, master):
 
 
 def render_page(masters, entries):
-    by_slug = {e["slug"]: e for e in entries}
+    by_slug = {(e["brand"], e["slug"]): e for e in entries}
     sections = []
     for i, brand in enumerate(BRANDS):
         cards = "\n".join(
-            mark_card(brand, cfg, by_slug[cfg["slug"]], masters[cfg["slug"]])
+            mark_card(brand, cfg, by_slug[(brand["key"], cfg["slug"])], masters[(brand["key"], cfg["slug"])])
             for cfg in brand["configs"]
         )
         if i == 0:
@@ -1039,7 +1076,7 @@ def render_page(masters, entries):
         for f in FONTS
     )
 
-    hz = masters["horizontal"]
+    hz = masters[("the-word", "horizontal")]
     hx0, hy0, hx1, hy1 = hz["box"]
     clear_pct = round(THE_WORD_CONFIGS[0]["clear"] * hz["cap"] / (hx1 - hx0) * 100, 2)
 
@@ -1051,8 +1088,19 @@ def render_page(masters, entries):
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
 <title>Assets · THE WORD FOR ALL THE WORLD</title>
 <meta name="description" content="Every approved logo, in every format, with the clear space, minimum size, and colour rules that come with it. Fonts, photography, video, and download packs for THE WORD FOR ALL THE WORLD.">
-<link rel="icon" href="/assets/logos/the-word/favicon/favicon-32.png" sizes="32x32">
+<link rel="icon" href="/assets/logos/the-word/favicon/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/assets/logos/the-word/favicon/favicon-16.png" sizes="16x16" type="image/png">
 <link rel="apple-touch-icon" href="/assets/logos/the-word/favicon/apple-touch-icon-180.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="THE WORD FOR ALL THE WORLD">
+<meta property="og:title" content="Assets">
+<meta property="og:description" content="Every approved logo, in every format, with the clear space, minimum size, and colour rules that come with it. Fonts, photography, video, and download packs.">
+<meta property="og:url" content="https://brand.theword.world/assets">
+<meta property="og:image" content="https://brand.theword.world/assets/images/og-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="THE WORD FOR ALL THE WORLD">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Serif+Text:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&display=swap" rel="stylesheet">
