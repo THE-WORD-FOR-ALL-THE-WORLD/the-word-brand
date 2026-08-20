@@ -270,7 +270,16 @@ SLC_INKS = {
     },
     "-reversed": {
         "hex": "#FFFFFF",
-        "roles": {"dark": "#0B1A2D", "light": "#FFFFFF", "text": "#FFFFFF"},
+        "roles": {
+            "dark": "#0B1A2D",
+            "light": "#FFFFFF",
+            "text": "#FFFFFF",
+            # The parent half and the divider reverse together, matching how RTMC's
+            # co-brand behaves on its own dark ground. Only the lion's own structure
+            # stays Midnight, which is what keeps its mane modelled rather than flat.
+            "parent": "#FFFFFF",
+            "rule": "#FFFFFF",
+        },
         "name": "Reversed",
         "grounds": ["word-blue", "photography with a Midnight scrim"],
         "note": (
@@ -443,6 +452,15 @@ def ink_for(ink, role):
     roles = ink["roles"]
     if role and role in roles:
         return roles[role]
+    # A composed lockup tags its parent half "parent-<role>". Fall back to the ink's
+    # "parent" colour before the door's own, so an ink that says nothing about the
+    # parent behaves exactly as it did before this existed.
+    if role and role.startswith("parent"):
+        if "parent" in roles:
+            return roles["parent"]
+        role = role[len("parent-"):] if role.startswith("parent-") else None
+        if role and role in roles:
+            return roles[role]
     return roles.get("word") or roles.get("dark") or ink["hex"]
 
 
@@ -554,15 +572,22 @@ def compose_master(spec, loaded):
     height = max(lh, rh)
     total = lw + gap + rule_w + gap + rw
 
-    def place(master, dx, dy, sc):
+    def place(master, dx, dy, sc, prefix=None):
         out = []
         bx, by = master["box"][0], master["box"][1]
         for sh in master["shapes"]:
             subs = [[((x - bx) * sc + dx, (y - by) * sc + dy) for x, y in sp] for sp in sh.subpaths]
-            out.append(svgkit.Shape(subs, sh.fill, sh.rule, sh.role))
+            role = sh.role
+            if prefix:
+                role = f"{prefix}-{role}" if role else prefix
+            out.append(svgkit.Shape(subs, sh.fill, sh.rule, role))
         return out
 
-    shapes = place(left, 0, (height - lh) / 2, scale)
+    # The parent half is tagged so an ink can colour it separately from the door's
+    # own mark. They do not always want the same colour: the School's reversed ink
+    # keeps its lion's structure in Midnight on purpose, and that same instruction
+    # was painting THE WORD Midnight on Word Blue, at 1.6:1, where it vanished.
+    shapes = place(left, 0, (height - lh) / 2, scale, prefix="parent")
     shapes += place(right, lw + gap + rule_w + gap, (height - rh) / 2, 1.0)
 
     # The divider, drawn as a rectangle so it scales with the artwork.

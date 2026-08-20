@@ -86,8 +86,8 @@
       "name": "brand-system.md",
       "url": "https://brand.theword.world/ai/brand-system.md",
       "description": "The complete brand standard as one document.",
-      "bytes": 53614,
-      "sha256": "9080a8268e0cb1b9f09b75d2eefee0568379445b1734fae3309fcadb2b0cecc0"
+      "bytes": 54006,
+      "sha256": "833608c56e0dfad708bfeab4d5a26b7a1ec5dbef1b690d4b2e5d3f1d3373075e"
     },
     {
       "name": "SKILL.md",
@@ -157,7 +157,7 @@
       "url": "https://brand.theword.world/ai/assets.json",
       "description": "Approved logos, photography, and video, with usage rules.",
       "bytes": 181025,
-      "sha256": "eff880d487a415ab14aec997e673f3f00649b00bc802d8fc8318efe1db4079e9"
+      "sha256": "1d4243e63262f3da9debfc26921a9d768924ddc05c3ae4a2566b0e38d802e2b1"
     },
     {
       "name": "approved-examples.md",
