@@ -639,6 +639,11 @@ def build_llms_txt(brand: dict, messaging: dict, tokens: dict, initiatives: list
         f"- [Messaging Guide]({SITE}/brand/messaging): Voice, tone, vocabulary, audiences, and proof policy.",
         f"- [Assets]({SITE}/assets): Every approved logo in every format, with its clear space, minimum size, and ink rules. Fonts, download packs, and the photography policy.",
         f"- [Signatures]({SITE}/signatures): The signature masters that sign the record, and the law governing where each may be placed.",
+        f"- [Reviews]({SITE}/reviews): Every system review of this brand, in order, with what each found and the version it produced.",
+    ]
+    for review in bs.scan_reviews():
+        lines.append(f"- [{review['name']}]({review['url']}): {review['summary']}")
+    lines += [
         "",
         "## The three initiatives",
         "",

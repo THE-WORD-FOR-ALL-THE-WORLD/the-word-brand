@@ -554,6 +554,40 @@ def scan_assets() -> list:
     return sorted(out, key=lambda a: a["file"])
 
 
+def scan_reviews() -> list:
+    """Every system review on the record, newest first.
+
+    A review is any directory under reviews/ with an index.html. Its title and
+    summary come from the page itself, so publishing a new review needs no edit
+    here: drop the directory in and it registers itself in llms.txt and the
+    sitemap on the next build.
+    """
+    root = os.path.join(REPO, "reviews")
+    if not os.path.isdir(root):
+        return []
+    out = []
+    for name in sorted(os.listdir(root), reverse=True):
+        index = os.path.join(root, name, "index.html")
+        if not os.path.isfile(index):
+            continue
+        page = read(index)
+        title = require(
+            re.search(r"<title>(.*?)(?:\s*·[^·<]*)?</title>", page, re.S),
+            "the review title",
+            index,
+        ).group(1).strip()
+        desc = re.search(r'<meta name="description" content="([^"]*)"', page)
+        out.append(
+            {
+                "slug": name,
+                "name": strip_tags(title),
+                "url": f"{SITE}/reviews/{name}",
+                "summary": strip_tags(desc.group(1)).strip() if desc else "",
+            }
+        )
+    return out
+
+
 def published_pages() -> list:
     """Every human-facing page in the portal, for the sitemap and llms.txt."""
     pages = []

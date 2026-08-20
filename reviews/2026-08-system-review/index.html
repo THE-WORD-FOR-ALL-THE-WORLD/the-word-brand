@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<title>System Review, August 2026 · THE WORD FOR ALL THE WORLD</title>
+<meta name="description" content="A review of the brand system at v6.8 against what designers, engineers, ad buyers, and volunteers each need from it, with the plan it produced.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Serif+Text:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+<style>
+
+/* ------------------------------------------------------------------
+   Set in THE WORD brand system v6.8. Six colors, three faces, three
+   radii. Flame appears only as display numerals on Midnight, never
+   carrying text. Every value below comes from /ai/tokens.json.
+   Deliberately single-theme: this is the brand's light identity.
+------------------------------------------------------------------ */
+:root{
+  --midnight:#0B1A2D;
+  --word-blue:#023D6F;
+  --parchment:#F7F3EC;
+  --flame:#F85842;
+  --ember:#C13A24;
+  --white:#FFFFFF;
+  --rule:rgba(11,26,45,.18);
+  --rule-light:rgba(247,243,236,.22);
+  --muted:rgba(11,26,45,.8);
+  --muted-dark:rgba(247,243,236,.75);
+  --serif-display:'DM Serif Display',Georgia,'Times New Roman',serif;
+  --serif-text:'DM Serif Text',Georgia,'Times New Roman',serif;
+  --sans:'DM Sans',-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:var(--parchment);
+  color:var(--midnight);
+  font-family:var(--sans);
+  font-size:17px;
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+}
+::selection{background:var(--ember);color:var(--white)}
+a{color:var(--ember);text-decoration:none;border-bottom:1px solid rgba(193,58,36,.35)}
+a:hover{border-bottom-color:var(--ember)}
+a:focus-visible,summary:focus-visible{outline:2px solid var(--ember);outline-offset:3px;border-radius:3px}
+
+.wrap{max-width:1040px;margin:0 auto;padding:0 28px}
+.prose{max-width:66ch}
+.prose p{margin:0 0 1.1em}
+.prose p:last-child{margin-bottom:0}
+
+/* --- kickers and headings --- */
+.kick{
+  font-family:var(--sans);font-weight:600;font-size:12px;
+  letter-spacing:.18em;text-transform:uppercase;color:var(--ember);
+  display:block;
+}
+.kick.on-dark{color:var(--flame)}
+h1{
+  font-family:var(--serif-display);font-weight:400;
+  font-size:clamp(38px,6vw,62px);line-height:1.04;
+  margin:.28em 0 0;text-wrap:balance;letter-spacing:-.005em;
+}
+h2{
+  font-family:var(--serif-display);font-weight:400;
+  font-size:clamp(30px,3.9vw,44px);line-height:1.08;
+  margin:.3em 0 0;text-wrap:balance;
+}
+h3{
+  font-family:var(--serif-text);font-weight:400;
+  font-size:25px;line-height:1.25;margin:0 0 .4em;text-wrap:balance;
+}
+h4{
+  font-family:var(--sans);font-weight:700;font-size:15px;
+  letter-spacing:.01em;margin:0 0 .35em;
+}
+em{font-style:italic}
+
+/* --- masthead --- */
+.masthead{
+  background:var(--midnight);color:var(--parchment);
+  padding:126px 0 62px;
+}
+.masthead h1{color:var(--white)}
+.masthead .lede{
+  font-family:var(--serif-text);font-style:italic;
+  font-size:clamp(21px,2.4vw,27px);line-height:1.42;
+  color:var(--parchment);max-width:30ch;margin:28px 0 0;
+}
+.dateline{
+  display:flex;flex-wrap:wrap;gap:8px 26px;
+  margin-top:38px;padding-top:20px;border-top:1px solid var(--rule-light);
+  font-size:13.5px;color:var(--muted-dark);
+}
+.dateline b{font-weight:600;color:var(--parchment)}
+
+/* --- verdict panel --- */
+.verdict{
+  background:var(--white);border:1px solid var(--rule);border-radius:6px;
+  padding:38px 36px;margin:-34px 0 0;position:relative;
+  box-shadow:0 10px 30px rgba(11,26,45,.1);
+}
+.verdict .prose{max-width:62ch}
+.answers{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+  gap:1px;background:var(--rule);border:1px solid var(--rule);
+  border-radius:4px;overflow:hidden;margin-top:32px;
+}
+.answers div{background:var(--white);padding:20px 22px}
+.answers dt{
+  font-size:12px;font-weight:600;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--muted);margin:0 0 8px;
+}
+.answers dd{margin:0;font-family:var(--serif-text);font-size:20px;line-height:1.3}
+.answers dd small{
+  display:block;font-family:var(--sans);font-size:13.5px;
+  line-height:1.55;color:var(--muted);margin-top:7px;
+}
+
+/* --- sections --- */
+section{padding:74px 0;border-top:1px solid var(--rule)}
+section:first-of-type{border-top:0}
+.sec-head{margin-bottom:34px}
+.sec-head .prose{margin-top:20px}
+
+/* --- lists --- */
+ul.tight{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:14px}
+ul.tight>li{padding-left:22px;position:relative;max-width:68ch}
+ul.tight>li::before{
+  content:"";position:absolute;left:0;top:.72em;
+  width:9px;height:1.5px;background:var(--ember);
+}
+ul.tight>li b{font-weight:700}
+
+/* --- finding blocks --- */
+.finding{
+  background:var(--white);border:1px solid var(--rule);border-radius:4px;
+  padding:32px 32px 30px;margin-top:22px;
+}
+.finding+.finding{margin-top:18px}
+.finding .kick{margin-bottom:12px}
+.finding .prose{max-width:68ch}
+.pull{
+  font-family:var(--serif-text);font-style:italic;font-size:23px;
+  line-height:1.4;border-left:2px solid var(--ember);
+  padding-left:22px;margin:26px 0;max-width:44ch;
+}
+
+/* --- tables --- */
+.scroll{overflow-x:auto;margin-top:26px;border:1px solid var(--rule);border-radius:4px;background:var(--white)}
+table{border-collapse:collapse;width:100%;min-width:640px;font-size:14.5px;line-height:1.55}
+th,td{text-align:left;padding:14px 18px;border-bottom:1px solid var(--rule);vertical-align:top}
+thead th{
+  font-size:11.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--muted);background:var(--parchment);white-space:nowrap;
+}
+tbody tr:last-child td{border-bottom:0}
+td b{font-weight:700}
+td code,p code,li code{
+  font-family:'SF Mono', Consolas, monospace;
+  font-size:.88em;background:rgba(11,26,45,.06);
+  padding:2px 5px;border-radius:3px;white-space:nowrap;
+}
+
+/* --- state chips: weight, not hue. This system has no error or
+       warning color, which is finding 04.3. --- */
+.chip{
+  display:inline-block;font-size:10.5px;font-weight:600;
+  letter-spacing:.12em;text-transform:uppercase;
+  padding:4px 9px;border-radius:3px;white-space:nowrap;
+}
+.chip.structural{background:var(--midnight);color:var(--parchment)}
+.chip.high{border:1.5px solid var(--ember);color:var(--ember)}
+.chip.medium{border:1px solid var(--rule);color:var(--muted)}
+.chip.ok{border:1px solid var(--rule);color:var(--muted);background:var(--parchment)}
+
+/* --- phase bands --- */
+.phase{
+  display:grid;grid-template-columns:110px 1fr;gap:0;
+  border:1px solid var(--rule);border-radius:6px;overflow:hidden;
+  margin-top:26px;background:var(--white);
+}
+.phase-num{
+  background:var(--midnight);color:var(--parchment);
+  padding:26px 18px;display:flex;flex-direction:column;
+  align-items:center;justify-content:flex-start;gap:6px;text-align:center;
+}
+.phase-num .fig{
+  font-family:var(--serif-display);font-size:46px;line-height:1;
+  color:var(--flame);font-variant-numeric:tabular-nums;
+}
+.phase-num .lab{
+  font-size:10px;font-weight:600;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--muted-dark);
+}
+.phase-body{padding:28px 30px 26px}
+.phase-body h3{margin-bottom:.3em}
+.phase-body .prose{max-width:66ch;font-size:16px}
+.phase-body .scroll{border-radius:4px}
+.accept{
+  margin-top:22px;padding:16px 20px;border-radius:4px;
+  background:var(--parchment);border:1px solid var(--rule);
+  font-size:14.5px;line-height:1.6;max-width:70ch;
+}
+.accept b{
+  display:block;font-size:11px;font-weight:600;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--ember);margin-bottom:5px;
+}
+
+/* --- do not band --- */
+.dark-band{background:var(--midnight);color:var(--parchment);padding:70px 0}
+.dark-band h2{color:var(--white)}
+.dark-band a{color:var(--flame);border-bottom-color:rgba(248,88,66,.4)}
+.dark-band ul.tight>li::before{background:var(--flame)}
+.dark-band .prose{color:var(--parchment)}
+
+/* --- three things --- */
+.three{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:18px;margin-top:28px;
+}
+.three article{
+  background:var(--white);border:1px solid var(--rule);border-radius:4px;
+  padding:26px 26px 24px;display:flex;flex-direction:column;gap:10px;
+}
+.three .fig{
+  font-family:var(--serif-display);font-size:34px;line-height:1;
+  color:var(--ember);font-variant-numeric:tabular-nums;
+}
+.three p{margin:0;font-size:15px;line-height:1.6;color:var(--muted)}
+
+footer{
+  background:var(--midnight);color:var(--muted-dark);
+  padding:44px 0;font-size:13.5px;
+}
+footer .wrap{display:flex;flex-wrap:wrap;gap:10px 28px;justify-content:space-between}
+footer b{color:var(--parchment);font-weight:600}
+
+@media (max-width:720px){
+  body{font-size:16.5px}
+  section{padding:54px 0}
+  .verdict{padding:30px 24px}
+  .finding{padding:26px 24px}
+  .phase{grid-template-columns:1fr}
+  .phase-num{flex-direction:row;gap:14px;padding:16px 22px;justify-content:flex-start}
+  .phase-num .fig{font-size:32px}
+  .masthead{padding:56px 0 48px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+
+/* --- shared portal chrome --- */
+nav{position:absolute;top:0;left:0;right:0;z-index:10;}
+nav .bar{max-width:1240px;margin:0 auto;padding:26px 36px;display:flex;justify-content:space-between;align-items:center;gap:20px;}
+nav .logo img{height:20px;width:auto;display:block;}
+nav .links{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:12px 28px;font-size:12.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;}
+nav .links a{color:rgba(247,243,236,.9);text-decoration:none;border-bottom:0;}
+nav .links a:hover{color:var(--white);border-bottom:0;}
+.portal-footer{background:var(--midnight);color:rgba(247,243,236,.75);padding:40px 0;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;font-weight:500;}
+.portal-footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+.portal-footer img{height:16px;width:auto;display:block;opacity:.9;}
+.portal-footer a{border-bottom:0;}
+@media(max-width:640px){nav .bar{padding:20px 24px;}}
+
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="bar">
+    <a class="logo" href="/" aria-label="THE WORD FOR ALL THE WORLD, home">
+      <img src="/assets/logos/the-word/the-word-horizontal-reversed.svg" alt="THE WORD FOR ALL THE WORLD">
+    </a>
+    <div class="links">
+      <a href="/">Home</a>
+      <a href="/brand/">Brand Guide</a>
+      <a href="/brand/messaging/">Messaging</a>
+      <a href="/documents/">Documents</a>
+      <a href="/letterhead/">Letterhead</a>
+      <a href="/signatures/">Signatures</a>
+      <a href="/assets/">Assets</a>
+    </div>
+  </div>
+</nav>
+
+<header class="masthead">
+  <div class="wrap">
+    <span class="kick on-dark">THE WORD FOR ALL THE WORLD · System Review</span>
+    <h1>The standard is finished. The <em>toolkit</em> is not.</h1>
+    <p class="lede">A review of brand.theword.world against what a designer, an engineer, an ad buyer, and a volunteer each need from it.</p>
+    <div class="dateline">
+      <span><b>Reviewed</b> Brand system v6.8 · Messaging v1.0</span>
+      <span><b>Repository</b> the-word-brand, main @ a6dd7aa</span>
+      <span><b>Build state</b> 15 pages · 0 errors · 0 warnings</span>
+      <span><b>Date</b> 20 August 2026</span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+<div class="verdict">
+  <span class="kick">The verdict</span>
+  <div class="prose" style="margin-top:14px">
+    <p style="font-family:var(--serif-text);font-size:22px;line-height:1.45">The architecture is right and the discipline is unusually good. What is missing is not robustness, it is <em>output</em>: the system states the law beautifully and hands you almost nothing to build with.</p>
+    <p>Static HTML is the correct choice and should stay. The work ahead is to emit more artifacts from the same source, not to replace the source with a framework. Every gap below is additive: nothing already built needs to be undone.</p>
+  </div>
+  <dl class="answers">
+    <div><dt>Is HTML enough</dt><dd>Yes<small>Keep it. The durability is the product. Add output targets, not a runtime.</small></dd></div>
+    <div><dt>Figma</dt><dd>Yes, generated<small>One way, repo to Figma. Never a source of truth.</small></dd></div>
+    <div><dt>Canva</dt><dd>Yes, urgently<small>Two ungoverned kits exist today. This is the live drift.</small></dd></div>
+    <div><dt>Storybook</dt><dd>No<small>A generated component gallery instead. Same benefit, no build chain.</small></dd></div>
+  </dl>
+</div>
+
+<!-- 01 -->
+<section>
+  <div class="sec-head">
+    <span class="kick">01 · The baseline</span>
+    <h2>What already works, and must not be traded away.</h2>
+    <div class="prose">
+      <p>Most brand portals are a PDF and a Dropbox link. This one has properties that are rare enough to name, because the recommendations that follow are only safe if these survive them.</p>
+    </div>
+  </div>
+  <ul class="tight">
+    <li><b>One source, generated derivatives.</b> The guide states a fact once and eleven files follow. Nothing can go stale in one place while staying current in another.</li>
+    <li><b>The build fails rather than lies.</b> <code>brandsource.py</code> raises <code>SourceError</code> when a pattern stops matching instead of falling back to a default. That single decision is what makes the canonical claim true.</li>
+    <li><b>CI gates the deploy.</b> Three checks run before publish. A guide that disagrees with its own manifest never reaches production.</li>
+    <li><b>A real audit rubric.</b> Ten hard gates plus thirty-five scored checks, with a fixed report shape and three verdicts. Almost nobody writes this down. It is the most valuable file in the repository.</li>
+    <li><b>Checksums and versions on every machine-readable file.</b> An agent can tell whether its cached copy is current. An audit can name what it was measured against.</li>
+    <li><b>Archive rather than delete.</b> An audit citing v4.5 can still be checked against v4.5.</li>
+    <li><b>Correctness chosen over cache.</b> The <code>_headers</code> comment about the RTMC pack serving a retired mark is the kind of institutional memory that stops a bug recurring in three years.</li>
+  </ul>
+</section>
+
+<!-- 02 -->
+<section>
+  <div class="sec-head">
+    <span class="kick">02 · Diagnosis</span>
+    <h2>Two findings explain every gap in this report.</h2>
+  </div>
+
+  <div class="finding">
+    <span class="kick">Finding one <span class="chip structural" style="margin-left:10px">Structural</span></span>
+    <h3>It is a complete constitution and an incomplete toolkit.</h3>
+    <div class="prose">
+      <p>The system answers <em>what is true</em> and <em>what is forbidden</em> with real authority. It does not yet answer <em>give me the thing</em>. A designer opening it to build a Google Ad gets six laws and six hex values. A developer starting a second website gets a palette and retypes every button by hand. A volunteer opening Canva gets a kit this repository has never heard of.</p>
+      <p>The distance between the standard and the artifact is where drift is born, and right now that whole distance is covered by human judgment and goodwill. Every layer that closes it converts a judgment call into a default.</p>
+    </div>
+    <p class="pull">A rule that has to be remembered is a rule that will be broken. A rule that ships as a file is a rule that holds.</p>
+    <div class="prose">
+      <p>Concretely: <code>tokens.json</code> stops at color and type family. There is no spacing scale, no named type scale, no elevation, no motion, no neutral ramp, no print color space. <code>components.json</code> describes thirteen components in prose and ships CSS for none of them, so the only way to reproduce a card is to read the portal's inline stylesheet. And no file anywhere states what a 1080 by 1350 post, a 600 pixel email, a responsive search ad, or a 300 dpi tri-fold is supposed to be.</p>
+    </div>
+  </div>
+
+  <div class="finding">
+    <span class="kick">Finding two <span class="chip high" style="margin-left:10px">Refactor, not urgent</span></span>
+    <h3>The guide is the database.</h3>
+    <div class="prose">
+      <p><code>brandsource.py</code> recovers structured facts by running twenty-odd regular expressions over <code>brand/index.html</code>: the <code>:root</code> block, the token table rows, the proportion heading, the changelog. It works, it fails loudly, and it has held. But the direction of authority is inverted. The presentation layer owns the data.</p>
+      <p>Three consequences, in increasing order of cost. A designer cannot propose a color change without editing a hundred-kilobyte HTML file. Any visual redesign of the guide is a breaking change to the build. And a fact with no natural visual home has nowhere to live, which is exactly why <code>ai-source/</code> exists as a second parallel truth alongside the first.</p>
+      <p>The fix is to invert it: a structured token source generates the guide's <code>:root</code> and its color and token tables, and the guide keeps owning prose, which genuinely does belong in markup. Do this last, after the value is proven, or skip it if phases one through five land cleanly.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 03 -->
+<section>
+  <div class="sec-head">
+    <span class="kick">03 · The question you asked</span>
+    <h2>Is plain HTML acceptable, or do you need something more robust?</h2>
+    <div class="prose">
+      <p>Keep the HTML. This is not a compromise answer, it is the correct one, for three reasons.</p>
+    </div>
+  </div>
+  <ul class="tight">
+    <li><b>The durability is the product.</b> This system claims to outlive turnover, redesigns, and time. A static site with Python standard-library generators will build and serve in 2036. A Next.js portal from 2026 will not install its own dependencies by 2030 without a migration nobody has budgeted.</li>
+    <li><b>You already have what "robust" is normally shorthand for.</b> When people say a brand system should be more robust they mean validation, generated derivatives, CI enforcement, versioning, and integrity checks. You have all five. Adding a framework would give you hot reload and a bundle, neither of which is a brand problem.</li>
+    <li><b>The failure mode you fear is not solved by React.</b> Inconsistency across surfaces is solved by shipping tokens and components as consumable files and by checking downstream work mechanically. That is a build-target problem, not a runtime problem.</li>
+  </ul>
+  <div class="prose" style="margin-top:26px">
+    <p>One real gap in the current setup, and it sits directly under the future you described. The GitHub Action verifies pull requests but only deploys on <code>main</code>, so a designer's PR produces a pass or a fail and no way to <em>look</em> at what changed. For "designers open PRs against the standard" to be real, a PR needs a preview URL and a visual diff. That is a short afternoon of work and it is the highest-leverage thing in this report relative to its size.</p>
+  </div>
+</section>
+
+<!-- 04 -->
+<section>
+  <div class="sec-head">
+    <span class="kick">04 · Design audit</span>
+    <h2>The visual system, judged as an interface system.</h2>
+    <div class="prose">
+      <p>As a <em>brand</em> language it is strong: six colors, three faces, three radii, a 60 / 30 / 10 proportion, and a genuinely distinctive law that fire never carries text. Tight systems produce consistency, and the restraint here is an asset. Do not loosen it.</p>
+      <p>Judged as the foundation for apps, dashboards, forms, and email, four specific things are missing. Each one has a predictable failure: somebody improvises, and the improvisation is invisible until it is everywhere.</p>
+    </div>
+  </div>
+  <div class="scroll">
+    <table>
+      <thead><tr><th>Gap</th><th>What exists now</th><th>What happens without it</th><th>Severity</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><b>No neutral ramp</b></td>
+          <td>Midnight, Parchment, White, plus two one-off rgba rules</td>
+          <td>Disabled states, dividers, input fills, table stripes, and skeletons each get an improvised <code>rgba()</code>. B1 of your own audit fails on your own future work.</td>
+          <td><span class="chip high">High</span></td>
+        </tr>
+        <tr>
+          <td><b>No error or warning color</b></td>
+          <td>Success only, <code>#5FAD56</code>, forms and dashboards</td>
+          <td>The first developer who needs an error state reaches for Flame. Flame carrying text is gate G4, an automatic audit failure. This violation is close to certain.</td>
+          <td><span class="chip high">High</span></td>
+        </tr>
+        <tr>
+          <td><b>One breakpoint</b></td>
+          <td>720px, single column below</td>
+          <td>Email needs 600. Wide dashboards and tables need roughly 1080. Both get invented per project.</td>
+          <td><span class="chip medium">Medium</span></td>
+        </tr>
+        <tr>
+          <td><b>No dark UI theme</b></td>
+          <td>Midnight as a <em>design</em> ground, which is a different thing</td>
+          <td>An app or an email in dark mode has no token mapping. Gmail's dark-mode inversion will recolor Ember and nobody has decided what it becomes.</td>
+          <td><span class="chip medium">Medium</span></td>
+        </tr>
+        <tr>
+          <td><b>No print color space</b></td>
+          <td>"Never send a PNG to a printer" and the hex values</td>
+          <td>The printer asks for CMYK or Pantone, someone converts on the spot with an unknown profile, and Ember comes back muddy on a banner nobody can reprint.</td>
+          <td><span class="chip high">High</span></td>
+        </tr>
+        <tr>
+          <td><b>Radius and measure live in prose</b></td>
+          <td>"3px buttons · 4px cards · 6px frames" as a sentence</td>
+          <td>Real values that cannot be consumed by a stylesheet, a Figma variable, or a Tailwind config.</td>
+          <td><span class="chip medium">Medium</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="prose" style="margin-top:26px">
+    <p>The right fix for the neutral ramp keeps the system tight: define it as tints and shades <em>of Midnight and Parchment</em> rather than adding grey. Five steps, named, derived. It stays unmistakably yours and it stops being improvised. Same principle for error and warning: derive them so they read as part of this palette rather than borrowed from a UI kit, and record explicitly that neither may be Flame.</p>
+  </div>
+</section>
+
+<!-- 05 -->
+<section>
+  <div class="sec-head">
+    <span class="kick">05 · Coverage</span>
+    <h2>Every channel you named, and what it would find today.</h2>
+    <div class="prose">
+      <p>This is the concrete form of finding one. Read the right column as the list of decisions currently being made by whoever happens to be doing the work.</p>
+    </div>
+  </div>
+  <div class="scroll">
+    <table>
+      <thead><tr><th>Surface</th><th>Covered</th><th>Missing</th><th>State</th></tr></thead>
+      <tbody>
+        <tr><td><b>The brand portal itself</b></td><td>Everything, and beautifully</td><td>Nothing</td><td><span class="chip ok">Complete</span></td></tr>
+        <tr><td><b>Any other website</b></td><td>Six laws, palette, type rules, thirteen component descriptions</td><td>No <code>brand.css</code> to link and no installable token package. No spacing or type scale. No component CSS. Every build, React or otherwise, re-derives the system by eye.</td><td><span class="chip high">Gap</span></td></tr>
+        <tr><td><b>App, web or native</b></td><td>Colors and type</td><td>Dark theme mapping, app icon spec, 44px touch minimum, state tokens beyond hover and focus, elevation, empty and loading states.</td><td><span class="chip high">Gap</span></td></tr>
+        <tr><td><b>Google Ads, search and RSA</b></td><td>Banned words, voice, tone filter</td><td>No headline or description bank written to the 30 and 90 character limits. No sitelink, callout, or structured snippet copy. No display path rules.</td><td><span class="chip high">Gap</span></td></tr>
+        <tr><td><b>Google Ads, display and PMax</b></td><td>Logo files in every format</td><td>No asset set at the required 1.91:1, 1:1, and 4:5 ratios. No safe-area rules for auto-cropped placements. No Performance Max asset checklist.</td><td><span class="chip high">Gap</span></td></tr>
+        <tr><td><b>Email and newsletter</b></td><td>"Use a 400 or 800px PNG, most clients block SVG"</td><td>No 600px table-based template. No email-safe fallback tokens. No dark-mode inversion decision. No preheader, footer, or unsubscribe standard.</td><td><span class="chip high">Gap</span></td></tr>
+        <tr><td><b>Print</b></td><td>Send the vector, never a PNG</td><td>No CMYK or Pantone values. No bleed, margin, or minimum millimetre sizes. No paper stock note. A printer will ask for all of these.</td><td><span class="chip high">Gap</span></td></tr>
+        <tr><td><b>Social, organic</b></td><td>Handles per platform, glyph for avatars</td><td>No canvas sizes, no title-safe zones for stories and reels, no caption or CTA templates.</td><td><span class="chip medium">Partial</span></td></tr>
+        <tr><td><b>Video</b></td><td>Lower third, subtitles, scrim law, 6 to 15 second loops</td><td>No export presets, no title-safe area, no end card or bumper, no grading note.</td><td><span class="chip medium">Partial</span></td></tr>
+        <tr><td><b>Presentations and decks</b></td><td>The word "deck" appears twice in the standard</td><td>No master template. <code>templates/</code> contains one empty <code>.gitkeep</code>.</td><td><span class="chip high">Gap</span></td></tr>
+        <tr><td><b>Merch, signage, vehicles</b></td><td>The one-color <code>-black.svg</code> route for embroidery and engraving, which is genuinely good</td><td>Garment color rules, minimum physical sizes, vehicle and banner specs.</td><td><span class="chip medium">Partial</span></td></tr>
+        <tr><td><b>Social preview cards</b></td><td>Favicon files exist in <code>assets/</code></td><td>No <code>og:image</code> on any page, no favicon spec in the guide, no per-page card. Every share of a brand URL renders blank.</td><td><span class="chip medium">Partial</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- 06 -->
+<section>
+  <div class="sec-head">
+    <span class="kick">06 · Tools</span>
+    <h2>Canva, Figma, Storybook: three different answers.</h2>
+  </div>
+
+  <div class="finding">
+    <span class="kick">Canva <span class="chip structural" style="margin-left:10px">Do this first</span></span>
+    <h3>Yes, and this is your only live drift right now.</h3>
+    <div class="prose">
+      <p>Your Canva account currently holds <em>two</em> brand kits: "THE WORD Branding Kit" and "THE WORD FOR ALL THE WORLD". Neither is governed by this repository, neither carries a version, and nothing anywhere can tell you which one a volunteer used last Tuesday.</p>
+      <p>Canva matters more than Figma here, because Canva is where the people who are not designers actually make things: the flyer for a city gathering, the certificate, the conference recap post. That is where a brand actually breaks, and it is the one surface this system currently cannot see.</p>
+      <p><b>Do:</b> consolidate to one kit. Stamp the version into its name, so <code>THE WORD · v6.8</code> is visible to everyone who opens it. Load exactly the six colors and three families, no extras. Build locked Brand Templates for the five recurring jobs rather than leaving people on a blank canvas. Then register the kit id in the repository with the version it was last synced to, so the linter can say out loud that Canva is running v6.6 while the standard is v6.8. Push what the Connect API supports and print a short manual checklist for the rest.</p>
+    </div>
+  </div>
+
+  <div class="finding">
+    <span class="kick">Figma</span>
+    <h3>Yes, generated one way, never a source.</h3>
+    <div class="prose">
+      <p>This is exactly the loop you described: a designer proposes a change as a pull request against the token source, it is reviewed and merged, and an action pushes the new values into Figma Variables through the REST API. Their library updates. Nobody retypes a hex.</p>
+      <p>The library file carries Variables for color, type, and spacing, Text Styles, Effect Styles, and components whose names match <code>components.json</code> ids exactly, so a Figma layer and an audit finding refer to the same thing. Register the file key alongside the Canva kit with its synced version.</p>
+      <p>The rule that makes it work: Figma is a consumer, never an origin. The moment someone changes a variable in Figma instead of in the repository, you have two standards again, and the one with the nicer interface always wins.</p>
+    </div>
+  </div>
+
+  <div class="finding">
+    <span class="kick">Storybook</span>
+    <h3>Not in this repository. In your product repositories, yes.</h3>
+    <div class="prose">
+      <p>These are two different jobs and the answer differs for each. In the brand repository, Storybook means Node, a component framework, a bundler, and a dependency tree that needs maintaining, all to document HTML snippets. That contradicts the property that makes this system good, and it buys one thing you actually want: a page where every component renders live next to its spec.</p>
+      <p>Generate that page instead. <code>/components/</code>, built by <code>build_ai.py</code> from <code>components.json</code>, rendering each component with its spec, its copyable HTML, its do and don't, and its appearance on both grounds. Zero new dependencies, correct by the same mechanism as everything else here.</p>
+      <p>In a Next.js product repository, Storybook is a reasonable and probably good choice. It documents <em>your React components</em>, which is not what the brand repository publishes. Name each story after the component id in <code>components.json</code>, so a story, a Figma layer, and an audit finding all refer to the same thing by the same name.</p>
+    </div>
+  </div>
+
+  <div class="finding">
+    <span class="kick">Next.js <span class="chip structural" style="margin-left:10px">Changes the plan</span></span>
+    <h3>Building real apps moves one thing forward and adds one rule.</h3>
+    <div class="prose">
+      <p>The plan below was written assuming this repository was the only codebase. If you are building Next.js sites and apps, the architecture holds unchanged, but the package that phase one treats as optional becomes the main delivery mechanism, and it should ship in phase one rather than later.</p>
+      <p><b>What changes.</b> A React application does not consume <code>brand.css</code>, it consumes tokens and builds its own components against them. So publish <code>@theword/brand</code> as an installable package carrying the tokens as CSS custom properties, as typed TypeScript exports, and as a Tailwind preset. Then a brand version bump opens a dependency pull request in every application repository automatically. That is the mechanism that makes "a designer changes the standard and everything updates" reach the apps, rather than stopping at the portal.</p>
+      <p><b>What stays.</b> <code>brand.css</code> is still worth building, because the majority case is not a Next.js app. It is a landing page, a partner microsite, an email, a page someone builds in an afternoon. Both artifacts come from the same token source, so they cannot disagree.</p>
+      <p><b>Two small Next.js specifics.</b> Load the three faces with <code>next/font/google</code> rather than a stylesheet link: it self-hosts at build time, which removes the third-party request and the layout shift, and it matches the self-hosting already recommended in phase zero. And keep theming in CSS custom properties rather than a JavaScript theme object, so it works unchanged in server components.</p>
+    </div>
+  </div>
+
+  <div class="finding">
+    <span class="kick">Reuse <span class="chip structural" style="margin-left:10px">Read this one</span></span>
+    <h3>The gallery is a reference. It is not a distribution channel.</h3>
+    <div class="prose">
+      <p>Worth being explicit, because it is the assumption most likely to cost you a rebuild. You cannot import a card out of the HTML gallery into a Next.js app. What travels between them is the token layer and the specification, not the markup.</p>
+      <p>A React <code>Card</code> in an initiative app looks identical to the <code>Card</code> in the gallery because both read the same variables, spacing, radii, and states from the same source. But the React version is written once, by hand, in a library that every initiative app installs. That library is the thing that travels, and it is worth building precisely because you have more than one app.</p>
+      <p>Three artifacts, three jobs, one source underneath all of them.</p>
+    </div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th>Artifact</th><th>What it is</th><th>Who uses it</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><b><code>@theword/brand</code></b></td>
+            <td>Tokens only. CSS custom properties, typed exports, Tailwind preset. No components.</td>
+            <td>Everything. Every app, every site, and the gallery itself.</td>
+          </tr>
+          <tr>
+            <td><b><code>/components/</code></b></td>
+            <td>The canonical rendering, with copyable HTML and CSS beside each spec.</td>
+            <td>Nobody installs it. Landing pages, emails, partner microsites, and anyone working outside React copy from it.</td>
+          </tr>
+          <tr>
+            <td><b><code>@theword/ui</code></b></td>
+            <td>The React implementation of those same specs. Storybook lives here and documents this.</td>
+            <td>The initiative applications.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="prose" style="margin-top:24px">
+      <p><b>Why not collapse this into one React library.</b> An email cannot consume React, and neither can a static microsite or a partner's own CMS. If the only real components live in React, the brand forks the first time someone builds outside Next.js, and it forks quietly. Tokens sitting underneath both implementations is what prevents that.</p>
+      <p><b>Neither implementation is the source.</b> <code>components.json</code> is. The gallery and the React library are both consumers of it, registered with the version they were built against, exactly like Figma and Canva. One id names each component in the gallery, in its Storybook story, in its Figma layer, and in an audit finding, so a Card is a Card everywhere anyone looks it up.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 07 -->
+<section>
+  <div class="sec-head">
+    <span class="kick">07 · Execution</span>
+    <h2>The plan, in the order it should be done.</h2>
+    <div class="prose">
+      <p>Sequential, because each phase depends on the one before it. Every phase carries an acceptance test, so "done" is a fact rather than an opinion. Each of these can be handed back as a single instruction.</p>
+    </div>
+  </div>
+
+  <div class="phase">
+    <div class="phase-num"><span class="fig">00</span><span class="lab">Fragilities</span></div>
+    <div class="phase-body">
+      <h3>Close the small things first.</h3>
+      <div class="prose"><p>None of these are hard. All of them are promises the repository currently makes and does not keep.</p></div>
+      <div class="scroll"><table>
+        <thead><tr><th>Task</th><th>Where</th></tr></thead>
+        <tbody>
+          <tr><td>Enable Cloudflare Pages preview deploys on pull requests and comment the URL on the PR</td><td><code>.github/workflows/</code></td></tr>
+          <tr><td>Fill or delete <code>templates/</code> and <code>assets/fonts/</code>. Two empty directories promising things</td><td><code>templates/</code>, <code>assets/fonts/</code></td></tr>
+          <tr><td>Self-host DM Serif and DM Sans locally under OFL, keep the Google Fonts link as the documented alternative</td><td><code>assets/fonts/</code></td></tr>
+          <tr><td>Add <code>og:image</code>, <code>og:title</code>, and a favicon spec to every page, and lint for their presence</td><td>all pages, <code>brand_lint.py</code></td></tr>
+          <tr><td>Compute contrast ratios over every declared foreground and background pair and assert WCAG AA in CI</td><td><code>brand_lint.py</code></td></tr>
+        </tbody>
+      </table></div>
+      <div class="accept"><b>Acceptance</b>Opening a pull request produces a preview URL. The portal renders correctly with <code>fonts.googleapis.com</code> blocked. Changing Ember to a value that fails AA fails the build.</div>
+    </div>
+  </div>
+
+  <div class="phase">
+    <div class="phase-num"><span class="fig">01</span><span class="lab">Tokens</span></div>
+    <div class="phase-body">
+      <h3>Finish the token layer, then emit it everywhere.</h3>
+      <div class="prose"><p>The highest-leverage phase in this report. Everything after it is cheap once this exists, and nothing after it is possible without it.</p></div>
+      <div class="scroll"><table>
+        <thead><tr><th>Task</th><th>Where</th></tr></thead>
+        <tbody>
+          <tr><td>New hand-authored source adding: spacing scale, named type scale with line heights, radius as tokens, neutral ramp derived from Midnight and Parchment, error and warning derived in-palette, elevation, motion duration and easing, three breakpoints, opacity, z-index, touch target minimum</td><td><code>ai-source/tokens.json</code></td></tr>
+          <tr><td>Print color: CMYK, Pantone, and RGB for all six, with the conversion profile recorded beside them</td><td>same</td></tr>
+          <tr><td>Email-safe fallbacks per token: literal hex only, Georgia and Arial stacks, and a recorded decision on dark-mode inversion</td><td>same</td></tr>
+          <tr><td>Emit from that one source: <code>ai/tokens.json</code> unchanged for compatibility, <code>ai/tokens.dtcg.json</code> in W3C Design Tokens format, <code>assets/brand.css</code>, <code>ai/tokens.ts</code>, <code>ai/tailwind.preset.js</code>, and an <code>.ase</code> swatch file in the download packs</td><td><code>tools/build_ai.py</code></td></tr>
+          <tr><td>Publish the tokens as an installable package so application repositories get a dependency pull request on every version bump</td><td><code>@theword/brand</code></td></tr>
+          <tr><td>Point the portal's own pages at <code>assets/brand.css</code> instead of inline copies</td><td>all pages</td></tr>
+        </tbody>
+      </table></div>
+      <div class="accept"><b>Acceptance</b>The portal renders from the same CSS file it publishes to everyone else. That is the proof: if it is good enough for you, it is good enough to hand out.</div>
+    </div>
+  </div>
+
+  <div class="phase">
+    <div class="phase-num"><span class="fig">02</span><span class="lab">Components</span></div>
+    <div class="phase-body">
+      <h3>Make the components usable, not just described.</h3>
+      <div class="scroll"><table>
+        <thead><tr><th>Task</th><th>Where</th></tr></thead>
+        <tbody>
+          <tr><td>Give every entry real CSS and real HTML. Roughly half currently have no <code>html</code> field at all</td><td><code>ai-source/components.json</code></td></tr>
+          <tr><td>Add the components the other channels need: email button as a table, ad headline and description, social post frame, certificate, lower third, end card, letterhead block, business card, form field with its error state</td><td>same</td></tr>
+          <tr><td>Generate a live <code>/components/</code> gallery: rendered component, spec, copyable HTML, do and don't, both grounds</td><td><code>tools/build_ai.py</code></td></tr>
+          <tr><td>Publish the React implementation, one component per <code>components.json</code> id, with Storybook in that repository and stories named after those same ids</td><td><code>@theword/ui</code></td></tr>
+        </tbody>
+      </table></div>
+      <div class="accept"><b>Acceptance</b>A developer building a second website links one stylesheet and retypes nothing out of the guide. A developer building an initiative app installs two packages and implements no component twice.</div>
+    </div>
+  </div>
+
+  <div class="phase">
+    <div class="phase-num"><span class="fig">03</span><span class="lab">Channels</span></div>
+    <div class="phase-body">
+      <h3>Add the layer that answers "how do I make a Google Ad".</h3>
+      <div class="prose"><p>This is the phase that turns the portal from a brand guide into the thing you described at the start: somewhere every discipline can go and leave with what it needs.</p></div>
+      <div class="scroll"><table>
+        <thead><tr><th>Task</th><th>Where</th></tr></thead>
+        <tbody>
+          <tr><td>One entry per surface: canvas sizes, safe areas, required assets, character limits, file formats, color space, do and don't, and which audit checks apply</td><td><code>ai-source/channels.json</code></td></tr>
+          <tr><td>Generate the human pages: web, app, email, ads, print, social, video, presentations</td><td><code>/channels/*</code></td></tr>
+          <tr><td>A copy bank of pre-approved strings: RSA headlines at 30 characters, descriptions at 90, subject lines, preheaders, CTAs, boilerplate in three lengths, tagline variants. Each one audited once, then reusable forever</td><td><code>ai-source/copy-bank.json</code></td></tr>
+        </tbody>
+      </table></div>
+      <div class="accept"><b>Acceptance</b>Someone told to build a search campaign can assemble every headline, description, extension, and image from <code>/ai/channels.json</code> and <code>/ai/copy-bank.json</code> without making a single judgment call.</div>
+    </div>
+  </div>
+
+  <div class="phase">
+    <div class="phase-num"><span class="fig">04</span><span class="lab">Consumers</span></div>
+    <div class="phase-body">
+      <h3>Make every downstream surface visible and syncable.</h3>
+      <div class="scroll"><table>
+        <thead><tr><th>Task</th><th>Where</th></tr></thead>
+        <tbody>
+          <tr><td>A registry of every surface running this brand: Canva kit ids, Figma file key, the React component library, each website, each app, the email platform. Each with the version it was last synced to</td><td><code>ai-source/consumers.json</code></td></tr>
+          <tr><td>Push variables and styles into Figma from the token source on release</td><td><code>tools/sync_figma.py</code></td></tr>
+          <tr><td>Consolidate to one Canva kit, stamp the version into its name, push what the API allows, print a checklist for the rest</td><td><code>tools/sync_canva.py</code></td></tr>
+          <tr><td>Warn on any consumer whose synced version trails the current one</td><td><code>tools/brand_lint.py</code></td></tr>
+        </tbody>
+      </table></div>
+      <div class="accept"><b>Acceptance</b>Running the linter names every surface in the organization that is running an old version of the brand, by name and by version.</div>
+    </div>
+  </div>
+
+  <div class="phase">
+    <div class="phase-num"><span class="fig">05</span><span class="lab">Enforcement</span></div>
+    <div class="phase-body">
+      <h3>Make the standard checkable outside this repository.</h3>
+      <div class="prose"><p>Roughly half your audit is mechanically decidable: unknown hexes, non-brand fonts, text on Flame, contrast failures, banned words, a missing endorsement line. The linter already proves these about the portal. It cannot yet be pointed at anyone else's work.</p></div>
+      <div class="scroll"><table>
+        <thead><tr><th>Task</th><th>Where</th></tr></thead>
+        <tbody>
+          <tr><td>A checker that takes a file path or a URL and runs the mechanical half of the audit against it, returning the standard report shape</td><td><code>tools/brand_check.py</code></td></tr>
+          <tr><td>Publish it as a GitHub Action any other repository can add in three lines, alongside the existing loader skill</td><td><code>skills/</code>, action manifest</td></tr>
+        </tbody>
+      </table></div>
+      <div class="accept"><b>Acceptance</b>Another repository's CI fails when someone commits an off-brand hex, and the failure message cites the brand version it was measured against.</div>
+    </div>
+  </div>
+
+  <div class="phase">
+    <div class="phase-num"><span class="fig">06</span><span class="lab">Optional</span></div>
+    <div class="phase-body">
+      <h3>Invert the source, or decide you never needed to.</h3>
+      <div class="prose">
+        <p>Finding two, addressed. The structured token source generates the guide's <code>:root</code> block and its color and token tables, instead of the build regex-parsing them back out of rendered markup. The guides keep owning prose, rules, and do and don'ts, which is what markup is genuinely for.</p>
+        <p>Do this only after phases one through five have proven their value. If they land cleanly and nobody is fighting the HTML, this is a refactor you can honestly skip.</p>
+      </div>
+      <div class="accept"><b>Acceptance</b>Changing a brand color is a one-line diff in a data file, and the guide, the AI layer, the CSS, the Figma library, and the Canva kit all follow from it without a second edit.</div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- 08 -->
+<div class="dark-band">
+  <div class="wrap">
+    <span class="kick on-dark">08 · Guardrails</span>
+    <h2>What not to do, however reasonable it sounds.</h2>
+    <div class="prose" style="margin-top:22px">
+      <p>Each of these will be proposed by someone competent at some point. The reason to write them down now is that the argument for each is genuinely persuasive in the moment.</p>
+    </div>
+    <ul class="tight" style="margin-top:26px">
+      <li><b>Do not port the portal to a JavaScript framework.</b> You would trade a decade of durability for hot reload.</li>
+      <li><b>Do not add Storybook.</b> The generated gallery gives you the benefit without the dependency tree.</li>
+      <li><b>Do not let Figma or Canva become a source.</b> The standard with the nicer editor always wins, and it will not be this one.</li>
+      <li><b>Do not version channel specs separately from the brand.</b> One version number, or you get "brand v7.1, email v2.3" and nobody knows what agrees with what.</li>
+      <li><b>Do not split this into multiple repositories.</b> The single build and the single lint are what make the canonical claim true.</li>
+      <li><b>Do not put Cloudflare Access in front of it.</b> Already recorded in the README, and worth repeating: every crawler and every agent would get a login page instead of the standard.</li>
+      <li><b>Do not let a shared React component library become the source.</b> Same failure as Figma, in a different editor. Tokens and specs come from here; React components are an implementation of them, registered as a consumer with the version they were built against.</li>
+      <li><b>Do not solve the neutral ramp by adding grey.</b> Derive it from Midnight and Parchment, so the system stays tight and unmistakably yours.</li>
+    </ul>
+  </div>
+</div>
+
+<main class="wrap">
+<!-- 09 -->
+<section style="border-top:0">
+  <div class="sec-head">
+    <span class="kick">09 · If you do nothing else</span>
+    <h2>Three things close most of the real drift.</h2>
+  </div>
+  <div class="three">
+    <article>
+      <span class="fig">01</span>
+      <h4>Consolidate Canva</h4>
+      <p>One kit, version in the name, registered in the repository. This is the only drift happening right now rather than hypothetically, and it is a single afternoon.</p>
+    </article>
+    <article>
+      <span class="fig">02</span>
+      <h4>Ship brand.css</h4>
+      <p>Finish the tokens, emit a real stylesheet, and make the portal itself consume it. Every future website, app, and email stops re-deriving the system by eye.</p>
+    </article>
+    <article>
+      <span class="fig">03</span>
+      <h4>Add the channel layer</h4>
+      <p>Channels plus a copy bank. This is what turns a brand guide into somewhere an ad buyer, a printer, and a newsletter editor can each go and leave with the answer.</p>
+    </article>
+  </div>
+  <div class="prose" style="margin-top:34px">
+    <p>Everything else in this report is worth doing and none of it is urgent. The architecture underneath is sound, the discipline is real, and the gap is additive. That is a good position to be in.</p>
+  </div>
+</section>
+</main>
+
+<footer class="portal-footer">
+  <div class="wrap">
+    <a href="/" aria-label="THE WORD FOR ALL THE WORLD, portal home"><img src="/assets/logos/the-word/the-word-horizontal-reversed.svg" alt="THE WORD FOR ALL THE WORLD"></a>
+    <span>Every tribe. Every tongue. Every nation. EVERY1.</span>
+    <span>brand.theword.world · Internal use</span>
+  </div>
+</footer>
+
+</body>
+</html>

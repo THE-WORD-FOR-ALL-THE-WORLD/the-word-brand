@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<title>Reviews · THE WORD FOR ALL THE WORLD</title>
+<meta name="description" content="Every system review of THE WORD brand, in order. Each one names the version it examined, what it found, and the version it produced.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Serif+Text:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --midnight:#0B1A2D;
+    --word-blue:#023D6F;
+    --parchment:#F7F3EC;
+    --flame:#F85842;
+    --ember:#C13A24;
+    --white:#FFFFFF;
+    --rule:rgba(11,26,45,.18);
+    --rule-light:rgba(247,243,236,.22);
+    --serif-display:'DM Serif Display', Georgia, 'Times New Roman', serif;
+    --serif-text:'DM Serif Text', Georgia, 'Times New Roman', serif;
+    --sans:'DM Sans', -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:var(--sans);font-size:17px;line-height:1.7;color:var(--midnight);background:var(--parchment);-webkit-font-smoothing:antialiased;}
+  a:focus-visible{outline:2px solid var(--ember);outline-offset:3px;border-radius:3px;}
+  .wrap{max-width:1020px;margin:0 auto;padding:0 32px;width:100%;}
+
+  nav{position:absolute;top:0;left:0;right:0;z-index:10;}
+  nav .bar{max-width:1240px;margin:0 auto;padding:26px 36px;display:flex;justify-content:space-between;align-items:center;gap:20px;}
+  nav .logo img{height:20px;width:auto;display:block;}
+  nav .links{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:12px 28px;font-size:12.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;}
+  nav .links a{color:rgba(247,243,236,.9);text-decoration:none;}
+  nav .links a:hover{color:var(--white);}
+
+  .masthead{background:var(--midnight);color:var(--parchment);padding:126px 0 62px;}
+  .eyebrow{display:block;font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--flame);}
+  .masthead h1{font-family:var(--serif-display);font-weight:400;font-size:clamp(38px,6vw,60px);line-height:1.05;color:var(--white);margin-top:.3em;text-wrap:balance;}
+  .masthead h1 em{font-style:italic;}
+  .masthead p{font-family:var(--serif-text);font-style:italic;font-size:clamp(20px,2.3vw,26px);line-height:1.42;max-width:32ch;margin-top:26px;color:var(--parchment);}
+  .dateline{display:flex;flex-wrap:wrap;gap:8px 26px;margin-top:36px;padding-top:20px;border-top:1px solid var(--rule-light);font-size:13.5px;color:rgba(247,243,236,.75);}
+  .dateline b{font-weight:600;color:var(--parchment);}
+
+  main{padding:70px 0 90px;}
+  section{padding:0 0 62px;}
+  section+section{border-top:1px solid var(--rule);padding-top:56px;}
+  .section-label{font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--ember);margin-bottom:20px;}
+  h2{font-family:var(--serif-display);font-weight:400;font-size:clamp(28px,3.6vw,40px);line-height:1.1;text-wrap:balance;}
+  .lede{max-width:66ch;margin-top:18px;}
+  .lede p{margin-bottom:1.1em;}
+  .lede p:last-child{margin-bottom:0;}
+  a.inline{color:var(--ember);text-decoration:none;border-bottom:1px solid rgba(193,58,36,.35);}
+  a.inline:hover{border-bottom-color:var(--ember);}
+
+  .scroll{overflow-x:auto;margin-top:30px;border:1px solid var(--rule);border-radius:4px;background:var(--white);}
+  table{border-collapse:collapse;width:100%;min-width:720px;font-size:14.5px;line-height:1.55;}
+  th,td{text-align:left;padding:16px 18px;border-bottom:1px solid var(--rule);vertical-align:top;}
+  thead th{font-size:11.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(11,26,45,.8);background:var(--parchment);white-space:nowrap;}
+  tbody tr:last-child td{border-bottom:0;}
+  td.v{font-variant-numeric:tabular-nums;white-space:nowrap;}
+  td a{color:var(--ember);text-decoration:none;border-bottom:1px solid rgba(193,58,36,.35);font-weight:600;}
+  td a:hover{border-bottom-color:var(--ember);}
+
+  .chip{display:inline-block;font-size:10.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:4px 9px;border-radius:3px;white-space:nowrap;}
+  .chip.revise{border:1.5px solid var(--ember);color:var(--ember);}
+  .chip.ship{border:1px solid var(--rule);color:rgba(11,26,45,.8);background:var(--parchment);}
+
+  ol.steps{margin:26px 0 0;padding:0;list-style:none;counter-reset:s;display:flex;flex-direction:column;gap:16px;}
+  ol.steps li{counter-increment:s;position:relative;padding-left:44px;max-width:68ch;}
+  ol.steps li::before{content:counter(s,decimal-leading-zero);position:absolute;left:0;top:.1em;font-family:var(--serif-display);font-size:19px;color:var(--ember);font-variant-numeric:tabular-nums;}
+  ol.steps b{font-weight:700;}
+
+  .note{font-size:14px;line-height:1.6;color:rgba(11,26,45,.8);margin-top:18px;max-width:68ch;}
+
+  footer{background:var(--midnight);color:rgba(247,243,236,.75);padding:40px 0;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;font-weight:500;}
+  footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+  footer img{height:16px;width:auto;display:block;opacity:.9;}
+
+  @media(max-width:640px){nav .bar{padding:20px 24px;} .masthead{padding:104px 0 48px;}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="bar">
+    <a class="logo" href="/" aria-label="THE WORD FOR ALL THE WORLD, home">
+      <img src="/assets/logos/the-word/the-word-horizontal-reversed.svg" alt="THE WORD FOR ALL THE WORLD">
+    </a>
+    <div class="links">
+      <a href="/">Home</a>
+      <a href="/brand/">Brand Guide</a>
+      <a href="/brand/messaging/">Messaging</a>
+      <a href="/documents/">Documents</a>
+      <a href="/letterhead/">Letterhead</a>
+      <a href="/signatures/">Signatures</a>
+      <a href="/assets/">Assets</a>
+    </div>
+  </div>
+</nav>
+
+<header class="masthead">
+  <div class="wrap">
+    <span class="eyebrow">The Record · System Reviews</span>
+    <h1>How this system got to <em>where it is.</em></h1>
+    <p>Every review of the brand system, in order, with what it found and what it produced.</p>
+    <div class="dateline">
+      <span><b>Reviews on record</b> 1</span>
+      <span><b>Current system</b> v7.0</span>
+      <span><b>Next review due</b> February 2027</span>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+
+    <section>
+      <div class="section-label">Why this exists</div>
+      <h2>A changelog says what changed. A review says whether it is working.</h2>
+      <div class="lede">
+        <p>The <a class="inline" href="/brand/#changelog">Brand Guide changelog</a> records every edit to the standard. It cannot tell you whether the standard is serving the people who have to use it, because it only ever looks at itself.</p>
+        <p>A system review looks from the outside in. It asks what a designer, an engineer, an ad buyer, a printer, and a volunteer each find when they arrive, and it says plainly where they leave empty handed. Each review is kept here permanently, so the next one can be measured against the last rather than starting from a blank page.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-label">The record</div>
+      <h2>Reviews, most recent first.</h2>
+      <div class="scroll">
+        <table>
+          <thead>
+            <tr><th>Review</th><th>Date</th><th>Examined</th><th>Verdict</th><th>What it produced</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><a href="/reviews/2026-08-system-review/">The Toolkit Gap</a></td>
+              <td class="v">2026-08-20</td>
+              <td class="v">v6.8</td>
+              <td><span class="chip revise">Revise</span></td>
+              <td>Found the system complete as a constitution and incomplete as a toolkit: tokens stopped at color and type, components shipped no CSS, and no channel stated what an email, an ad, or a print piece should be. Produced v7.0, which adds the token layer, a component library, the channel layer, a consumer registry, and an external checker.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="note">A review stays on the record after the work it asked for is done. The point is the progression, not the outstanding list.</p>
+    </section>
+
+    <section>
+      <div class="section-label">How a review works</div>
+      <h2>Five steps, so the next one is comparable to this one.</h2>
+      <ol class="steps">
+        <li><b>Name the version under examination.</b> A review of v6.8 stays a review of v6.8 forever, and the guide it examined stays reachable in <a class="inline" href="/brand/#changelog">the archive</a>.</li>
+        <li><b>Arrive as each audience in turn.</b> A designer, an engineer, an ad buyer, a printer, a volunteer, and an AI agent. Record what each one finds and what each one has to invent.</li>
+        <li><b>Separate what is missing from what is wrong.</b> Additive gaps and structural faults get different fixes and different urgency. Say which is which.</li>
+        <li><b>Give every recommendation an acceptance test.</b> A recommendation nobody can prove complete is a recommendation that stays open forever.</li>
+        <li><b>Record the version it produced.</b> The review closes when the version it called for is published, and the row above says so.</li>
+      </ol>
+      <p class="note">Reviews are expected roughly twice a year, and whenever a new kind of surface joins the system: a new initiative, a new channel, a new platform the brand has to live on.</p>
+    </section>
+
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a href="/" aria-label="THE WORD FOR ALL THE WORLD, portal home"><img src="/assets/logos/the-word/the-word-horizontal-reversed.svg" alt="THE WORD FOR ALL THE WORLD"></a>
+    <span>Every tribe. Every tongue. Every nation. EVERY1.</span>
+    <span>brand.theword.world · Internal use</span>
+  </div>
+</footer>
+
+</body>
+</html>

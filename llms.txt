@@ -32,6 +32,8 @@ Public mission line: Strengthening the local church to fulfill the Great Commiss
 - [Messaging Guide](https://brand.theword.world/brand/messaging): Voice, tone, vocabulary, audiences, and proof policy.
 - [Assets](https://brand.theword.world/assets): Every approved logo in every format, with its clear space, minimum size, and ink rules. Fonts, download packs, and the photography policy.
 - [Signatures](https://brand.theword.world/signatures): The signature masters that sign the record, and the law governing where each may be placed.
+- [Reviews](https://brand.theword.world/reviews): Every system review of this brand, in order, with what each found and the version it produced.
+- [System Review, August 2026](https://brand.theword.world/reviews/2026-08-system-review): A review of the brand system at v6.8 against what designers, engineers, ad buyers, and volunteers each need from it, with the plan it produced.
 
 ## The three initiatives
 
