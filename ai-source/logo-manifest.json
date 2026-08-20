@@ -760,6 +760,321 @@
       ]
     },
     {
+      "brand": "every1",
+      "slug": "horizontal",
+      "name": "Horizontal lockup",
+      "primary": true,
+      "use": "The default mark. Site navigation, app headers, banners, shirts, and anywhere the name is introduced. EVERY1 beside MOVEMENT, which is what makes it a movement rather than a word.",
+      "aspect": 11.0908,
+      "capHeight": 29.39,
+      "clearSpace": "0.5x the cap height of EVERY1 on all four sides",
+      "clearSpaceReference": "the cap height of EVERY1",
+      "clearSpaceRatio": 0.5,
+      "minimumWidth": {
+        "screen": "200px",
+        "print": "45mm"
+      },
+      "files": [
+        {
+          "file": "assets/logos/every1/every1-horizontal.svg",
+          "format": "svg",
+          "ink": "Two-tone, Midnight and Flame"
+        },
+        {
+          "file": "assets/logos/every1/png/every1-horizontal-400.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and Flame",
+          "width": 400
+        },
+        {
+          "file": "assets/logos/every1/png/every1-horizontal-800.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and Flame",
+          "width": 800
+        },
+        {
+          "file": "assets/logos/every1/png/every1-horizontal-1600.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and Flame",
+          "width": 1600
+        },
+        {
+          "file": "assets/logos/every1/png/every1-horizontal-3200.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and Flame",
+          "width": 3200
+        },
+        {
+          "file": "assets/logos/every1/every1-horizontal-reversed.svg",
+          "format": "svg",
+          "ink": "Reversed, white and Flame"
+        },
+        {
+          "file": "assets/logos/every1/png/every1-horizontal-reversed-400.png",
+          "format": "png",
+          "ink": "Reversed, white and Flame",
+          "width": 400
+        },
+        {
+          "file": "assets/logos/every1/png/every1-horizontal-reversed-800.png",
+          "format": "png",
+          "ink": "Reversed, white and Flame",
+          "width": 800
+        },
+        {
+          "file": "assets/logos/every1/png/every1-horizontal-reversed-1600.png",
+          "format": "png",
+          "ink": "Reversed, white and Flame",
+          "width": 1600
+        },
+        {
+          "file": "assets/logos/every1/png/every1-horizontal-reversed-3200.png",
+          "format": "png",
+          "ink": "Reversed, white and Flame",
+          "width": 3200
+        },
+        {
+          "file": "assets/logos/every1/every1-horizontal-black.svg",
+          "format": "svg",
+          "ink": "One colour, black"
+        },
+        {
+          "file": "assets/logos/every1/png/every1-horizontal-black-400.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 400
+        },
+        {
+          "file": "assets/logos/every1/png/every1-horizontal-black-800.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 800
+        },
+        {
+          "file": "assets/logos/every1/png/every1-horizontal-black-1600.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 1600
+        },
+        {
+          "file": "assets/logos/every1/png/every1-horizontal-black-3200.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 3200
+        }
+      ]
+    },
+    {
+      "brand": "every1",
+      "slug": "e1",
+      "name": "The E1 icon",
+      "primary": false,
+      "use": "Two characters and no words. The avatar, the app icon, the lanyard, the sticker, and anything too small to read a lockup in. This is the form the door is recognised by at size.",
+      "aspect": 1.4559,
+      "capHeight": 209.21,
+      "clearSpace": "0.35x the cap height of EVERY1 on all four sides",
+      "clearSpaceReference": "the cap height of EVERY1",
+      "clearSpaceRatio": 0.35,
+      "minimumWidth": {
+        "screen": "32px",
+        "print": "10mm"
+      },
+      "files": [
+        {
+          "file": "assets/logos/every1/every1-e1.svg",
+          "format": "svg",
+          "ink": "Two-tone, Midnight and Flame"
+        },
+        {
+          "file": "assets/logos/every1/png/every1-e1-400.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and Flame",
+          "width": 400
+        },
+        {
+          "file": "assets/logos/every1/png/every1-e1-800.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and Flame",
+          "width": 800
+        },
+        {
+          "file": "assets/logos/every1/png/every1-e1-1600.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and Flame",
+          "width": 1600
+        },
+        {
+          "file": "assets/logos/every1/png/every1-e1-3200.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and Flame",
+          "width": 3200
+        },
+        {
+          "file": "assets/logos/every1/every1-e1-reversed.svg",
+          "format": "svg",
+          "ink": "Reversed, white and Flame"
+        },
+        {
+          "file": "assets/logos/every1/png/every1-e1-reversed-400.png",
+          "format": "png",
+          "ink": "Reversed, white and Flame",
+          "width": 400
+        },
+        {
+          "file": "assets/logos/every1/png/every1-e1-reversed-800.png",
+          "format": "png",
+          "ink": "Reversed, white and Flame",
+          "width": 800
+        },
+        {
+          "file": "assets/logos/every1/png/every1-e1-reversed-1600.png",
+          "format": "png",
+          "ink": "Reversed, white and Flame",
+          "width": 1600
+        },
+        {
+          "file": "assets/logos/every1/png/every1-e1-reversed-3200.png",
+          "format": "png",
+          "ink": "Reversed, white and Flame",
+          "width": 3200
+        },
+        {
+          "file": "assets/logos/every1/every1-e1-black.svg",
+          "format": "svg",
+          "ink": "One colour, black"
+        },
+        {
+          "file": "assets/logos/every1/png/every1-e1-black-400.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 400
+        },
+        {
+          "file": "assets/logos/every1/png/every1-e1-black-800.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 800
+        },
+        {
+          "file": "assets/logos/every1/png/every1-e1-black-1600.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 1600
+        },
+        {
+          "file": "assets/logos/every1/png/every1-e1-black-3200.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 3200
+        }
+      ]
+    },
+    {
+      "brand": "every1",
+      "slug": "numeral",
+      "name": "The 1",
+      "primary": false,
+      "use": "The numeral alone. Used as a mark at small size, and used as the shape photography is masked into, which is this door's signature move. Never redrawn, never outlined, never filled with anything but an image or Flame.",
+      "aspect": 0.6432,
+      "capHeight": 339.93,
+      "clearSpace": "0.35x its own height on all four sides",
+      "clearSpaceReference": "its own height",
+      "clearSpaceRatio": 0.35,
+      "minimumWidth": {
+        "screen": "24px",
+        "print": "8mm"
+      },
+      "files": [
+        {
+          "file": "assets/logos/every1/every1-numeral.svg",
+          "format": "svg",
+          "ink": "Two-tone, Midnight and Flame"
+        },
+        {
+          "file": "assets/logos/every1/png/every1-numeral-400.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and Flame",
+          "width": 400
+        },
+        {
+          "file": "assets/logos/every1/png/every1-numeral-800.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and Flame",
+          "width": 800
+        },
+        {
+          "file": "assets/logos/every1/png/every1-numeral-1600.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and Flame",
+          "width": 1600
+        },
+        {
+          "file": "assets/logos/every1/png/every1-numeral-3200.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and Flame",
+          "width": 3200
+        },
+        {
+          "file": "assets/logos/every1/every1-numeral-reversed.svg",
+          "format": "svg",
+          "ink": "Reversed, white and Flame"
+        },
+        {
+          "file": "assets/logos/every1/png/every1-numeral-reversed-400.png",
+          "format": "png",
+          "ink": "Reversed, white and Flame",
+          "width": 400
+        },
+        {
+          "file": "assets/logos/every1/png/every1-numeral-reversed-800.png",
+          "format": "png",
+          "ink": "Reversed, white and Flame",
+          "width": 800
+        },
+        {
+          "file": "assets/logos/every1/png/every1-numeral-reversed-1600.png",
+          "format": "png",
+          "ink": "Reversed, white and Flame",
+          "width": 1600
+        },
+        {
+          "file": "assets/logos/every1/png/every1-numeral-reversed-3200.png",
+          "format": "png",
+          "ink": "Reversed, white and Flame",
+          "width": 3200
+        },
+        {
+          "file": "assets/logos/every1/every1-numeral-black.svg",
+          "format": "svg",
+          "ink": "One colour, black"
+        },
+        {
+          "file": "assets/logos/every1/png/every1-numeral-black-400.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 400
+        },
+        {
+          "file": "assets/logos/every1/png/every1-numeral-black-800.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 800
+        },
+        {
+          "file": "assets/logos/every1/png/every1-numeral-black-1600.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 1600
+        },
+        {
+          "file": "assets/logos/every1/png/every1-numeral-black-3200.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 3200
+        }
+      ]
+    },
+    {
       "brand": "slc",
       "slug": "horizontal",
       "name": "Horizontal lockup",

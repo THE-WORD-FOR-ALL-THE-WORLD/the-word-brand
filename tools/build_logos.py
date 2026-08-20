@@ -368,6 +368,82 @@ SLC_CONFIGS = [
     },
 ]
 
+# EVERY1 is two-tone like RTMC, with one difference that matters: the numeral does
+# NOT collapse on a dark ground. RTMC's brackets go white on Midnight because Word
+# Blue would disappear there; Flame on Midnight is 5.4:1 and holds, and the 1 is the
+# thing this door is recognised by. It stays Flame in both colour inks.
+EVERY1_INKS = {
+    "": {
+        "hex": "#0B1A2D",
+        "roles": {"word": "#0B1A2D", "accent": "#F85842"},
+        "name": "Two-tone, Midnight and Flame",
+        "grounds": ["parchment", "white"],
+        "note": "For light grounds. The word is Midnight and the 1 is Flame.",
+    },
+    "-reversed": {
+        "hex": "#FFFFFF",
+        "roles": {"word": "#FFFFFF", "accent": "#F85842"},
+        "name": "Reversed, white and Flame",
+        "grounds": ["midnight", "photography with a Midnight scrim"],
+        "note": (
+            "For Midnight, which is this door's own ground and where most of its work "
+            "lives. Only the word flips. The 1 stays Flame, because it is the mark."
+        ),
+    },
+    "-black": {
+        "hex": "#000000",
+        "roles": {"word": "#000000", "accent": "#000000"},
+        "name": "One colour, black",
+        "grounds": ["white", "parchment"],
+        "note": "Embroidery, engraving, newsprint, and any vendor who asks for pure black.",
+    },
+}
+
+EVERY1_CONFIGS = [
+    {
+        "slug": "horizontal",
+        "master": "every1-horizontal",
+        "name": "Horizontal lockup",
+        "primary": True,
+        "clear": 0.5,
+        "min_px": 200,
+        "min_mm": 45,
+        "use": (
+            "The default mark. Site navigation, app headers, banners, shirts, and anywhere "
+            "the name is introduced. EVERY1 beside MOVEMENT, which is what makes it a "
+            "movement rather than a word."
+        ),
+    },
+    {
+        "slug": "e1",
+        "master": "every1-e1",
+        "name": "The E1 icon",
+        "primary": False,
+        "clear": 0.35,
+        "min_px": 32,
+        "min_mm": 10,
+        "use": (
+            "Two characters and no words. The avatar, the app icon, the lanyard, the "
+            "sticker, and anything too small to read a lockup in. This is the form the "
+            "door is recognised by at size."
+        ),
+    },
+    {
+        "slug": "numeral",
+        "master": "every1-numeral",
+        "cap_is_height": True,
+        "name": "The 1",
+        "primary": False,
+        "clear": 0.35,
+        "min_px": 24,
+        "min_mm": 8,
+        "use": (
+            "The numeral alone. Used as a mark at small size, and used as the shape "
+            "photography is masked into, which is this door's signature move. Never "
+            "redrawn, never outlined, never filled with anything but an image or Flame."
+        ),
+    },
+]
 # One entry per brand that publishes marks. `dir` is the folder under assets/logos/
 # and `stem` prefixes every filename, so a mark is identifiable from its name alone.
 # Only the parent brand cuts the site icon set, which is what `favicons` gates.
@@ -399,6 +475,25 @@ BRANDS = [
             "and one-colour collapse to a single ink."
         ),
         "favicons": False,
+    },
+    {
+        "key": "every1",
+        "name": "EVERY1 Movement",
+        "dir": "every1",
+        "stem": "every1",
+        "cap_ref": "the cap height of EVERY1",
+        "dark_ground": "midnight",
+        "configs": EVERY1_CONFIGS,
+        "inks": EVERY1_INKS,
+        "favicons": False,
+        "intro": (
+            "EVERY1 is the BURN door, and the only one that stands on its own. It carries no "
+            "parent lockup: this is the recorded exception, and it exists because EVERY1 is a "
+            "movement, an app, and an activation platform that people join before they have "
+            "heard of the house behind it. The mark is the word and the numeral, and the "
+            "numeral does the work. It is the avatar, it is the icon, and it is the shape "
+            "photography is cut into."
+        ),
     },
     {
         "key": "slc",
