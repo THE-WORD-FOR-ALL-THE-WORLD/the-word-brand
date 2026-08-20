@@ -297,6 +297,9 @@ SLC_CONFIGS = [
         "master": "school-horizontal",
         "name": "Horizontal lockup",
         "primary": True,
+        # The source inks this lockup's lion Word Blue on light grounds, matching its
+        # name rather than anchoring darker as the stacked lockup and the lion do.
+        "ink_roles": {"": {"dark": "#023D6F"}},
         "clear": 0.5,
         "min_px": 190,
         "min_mm": 42,
@@ -397,9 +400,10 @@ BRANDS = [
         "favicons": False,
         "intro": (
             "The School is the TRAIN door, and its mark is the crowned Lion of Judah. The lion "
-            "is Midnight over White and never changes; the name beside it is Word Blue, and flips "
-            "to white on a dark ground. Because the lion's interior is left open rather than "
-            "painted, one drawing reads on Parchment, on Word Blue, and on Midnight alike."
+            "is Midnight over White and the name beside it is Word Blue, flipping to white on a "
+            "dark ground. The horizontal lockup is the one exception: on light grounds its lion "
+            "takes Word Blue too. Because the lion's interior is left open rather than painted, "
+            "one drawing reads on Parchment, on Word Blue, and on Midnight alike."
         ),
     },
 ]
@@ -425,8 +429,18 @@ _FILL_ATTR_RE = re.compile(r'\s(?:fill|color)="[^"]*"')
 
 
 def ink_for(ink, role):
-    """Colour for one path under one ink. An untagged path is the wordmark."""
-    return ink["roles"].get(role or "word", ink["hex"])
+    """
+    Colour for one path under one ink.
+
+    An untagged element falls back to "word", then to "dark", then to the ink's own
+    hex. The middle step matters for a mark like the School's, whose roles are dark,
+    light, and text: without it an untagged group wrapper would pick up the ink's
+    nominal colour and put Word Blue inside a mark that has none.
+    """
+    roles = ink["roles"]
+    if role and role in roles:
+        return roles[role]
+    return roles.get("word") or roles.get("dark") or ink["hex"]
 
 
 def cap_height(shapes, box):
@@ -568,6 +582,23 @@ def compose_master(spec, loaded):
     }
 
 
+
+def effective_ink(cfg, suffix, ink):
+    """
+    The ink in force for one configuration, after any per-configuration override.
+
+    Most marks take their brand's ink unchanged. The School's horizontal lockup is
+    the exception: its source inks the lion Word Blue on light grounds where every
+    other School form inks it Midnight, and the published files follow the source.
+    """
+    over = cfg.get("ink_roles", {}).get(suffix)
+    if not over:
+        return ink
+    merged = dict(ink)
+    merged["roles"] = {**ink["roles"], **over}
+    return merged
+
+
 def make_svg(brand, master, cfg, ink_suffix, ink):
     """
     Emit one published SVG: the master's own path data, re-inked and tight-cropped.
@@ -590,18 +621,9 @@ def make_svg(brand, master, cfg, ink_suffix, ink):
     # Every fill becomes the ink for that path's role. Groups carry the default so
     # per-path currentColor still resolves for single-tone masters.
     body = _FILL_ATTR_RE.sub("", body)
-    def repaint_group(m):
-        # A self-closing <g/> must stay self-closing. Injecting an attribute into it
-        # would turn it into an opening tag and unbalance everything after it.
-        attrs = m.group(1)
-        if attrs.rstrip().endswith("/"):
-            return m.group(0)
-        # A group may name the part it holds, which is how a mark whose text and
-        # artwork are inked differently keeps them apart.
-        role = re.search(r'data-role="([^"]*)"', attrs)
-        return f'<g{attrs} fill="{ink_for(ink, role.group(1) if role else None)}">'
-
-    body = _G_OPEN_RE.sub(repaint_group, body)
+    # Groups are left unpainted. Every path below gets an explicit fill, so a fill on
+    # the wrapper is dead weight, and an untagged wrapper picking up a colour the mark
+    # does not otherwise contain makes the artwork look like it has colours it lacks.
 
     def repaint(m):
         attrs = m.group(1)
@@ -609,6 +631,10 @@ def make_svg(brand, master, cfg, ink_suffix, ink):
         return f'<path fill="{ink_for(ink, role.group(1) if role else None)}"{attrs}>'
 
     body = re.sub(r"<path\b([^>]*)>", repaint, body)
+
+    unpainted = [m.group(0) for m in re.finditer(r"<path\b[^>]*>", body) if "fill=" not in m.group(0)]
+    if unpainted:
+        raise SystemExit(f"{cfg['slug']}: {len(unpainted)} path(s) with no fill; a group fill was load-bearing")
 
     label = f'{brand["name"]}, {cfg["name"].lower()}'
     origin = (
@@ -724,7 +750,8 @@ def build(check):
         aw, ah = x1 - x0, y1 - y0
 
         files = []
-        for suffix, ink in brand["inks"].items():
+        for suffix, brand_ink in brand["inks"].items():
+            ink = effective_ink(cfg, suffix, brand_ink)
             stem = f"{brand['stem']}-{cfg['slug']}{suffix}"
             w.text(os.path.join(out_dir(brand), f"{stem}.svg"), make_svg(brand, m, cfg, suffix, ink))
             files.append({"file": rel(brand, f"{stem}.svg"), "format": "svg", "ink": ink["name"]})
