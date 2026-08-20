@@ -22,6 +22,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Serif+Text:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/brand.tokens.css">
 <style>
 
 /* ------------------------------------------------------------------
@@ -30,21 +31,6 @@
    carrying text. Every value below comes from /ai/tokens.json.
    Deliberately single-theme: this is the brand's light identity.
 ------------------------------------------------------------------ */
-:root{
-  --midnight:#0B1A2D;
-  --word-blue:#023D6F;
-  --parchment:#F7F3EC;
-  --flame:#F85842;
-  --ember:#C13A24;
-  --white:#FFFFFF;
-  --rule:rgba(11,26,45,.18);
-  --rule-light:rgba(247,243,236,.22);
-  --muted:rgba(11,26,45,.8);
-  --muted-dark:rgba(247,243,236,.75);
-  --serif-display:'DM Serif Display',Georgia,'Times New Roman',serif;
-  --serif-text:'DM Serif Text',Georgia,'Times New Roman',serif;
-  --sans:'DM Sans',-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;
-}
 
 *{box-sizing:border-box}
 body{
@@ -107,7 +93,7 @@ em{font-style:italic}
 .dateline{
   display:flex;flex-wrap:wrap;gap:8px 26px;
   margin-top:38px;padding-top:20px;border-top:1px solid var(--rule-light);
-  font-size:13.5px;color:var(--muted-dark);
+  font-size:13.5px;color:var(--ink-reversed-muted);
 }
 .dateline b{font-weight:600;color:var(--parchment)}
 
@@ -126,12 +112,12 @@ em{font-style:italic}
 .answers div{background:var(--white);padding:20px 22px}
 .answers dt{
   font-size:12px;font-weight:600;letter-spacing:.14em;
-  text-transform:uppercase;color:var(--muted);margin:0 0 8px;
+  text-transform:uppercase;color:var(--ink-muted);margin:0 0 8px;
 }
 .answers dd{margin:0;font-family:var(--serif-text);font-size:20px;line-height:1.3}
 .answers dd small{
   display:block;font-family:var(--sans);font-size:13.5px;
-  line-height:1.55;color:var(--muted);margin-top:7px;
+  line-height:1.55;color:var(--ink-muted);margin-top:7px;
 }
 
 /* --- sections --- */
@@ -169,7 +155,7 @@ table{border-collapse:collapse;width:100%;min-width:640px;font-size:14.5px;line-
 th,td{text-align:left;padding:14px 18px;border-bottom:1px solid var(--rule);vertical-align:top}
 thead th{
   font-size:11.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
-  color:var(--muted);background:var(--parchment);white-space:nowrap;
+  color:var(--ink-muted);background:var(--parchment);white-space:nowrap;
 }
 tbody tr:last-child td{border-bottom:0}
 td b{font-weight:700}
@@ -188,8 +174,8 @@ td code,p code,li code{
 }
 .chip.structural{background:var(--midnight);color:var(--parchment)}
 .chip.high{border:1.5px solid var(--ember);color:var(--ember)}
-.chip.medium{border:1px solid var(--rule);color:var(--muted)}
-.chip.ok{border:1px solid var(--rule);color:var(--muted);background:var(--parchment)}
+.chip.medium{border:1px solid var(--rule);color:var(--ink-muted)}
+.chip.ok{border:1px solid var(--rule);color:var(--ink-muted);background:var(--parchment)}
 
 /* --- phase bands --- */
 .phase{
@@ -208,7 +194,7 @@ td code,p code,li code{
 }
 .phase-num .lab{
   font-size:10px;font-weight:600;letter-spacing:.16em;
-  text-transform:uppercase;color:var(--muted-dark);
+  text-transform:uppercase;color:var(--ink-reversed-muted);
 }
 .phase-body{padding:28px 30px 26px}
 .phase-body h3{margin-bottom:.3em}
@@ -244,10 +230,10 @@ td code,p code,li code{
   font-family:var(--serif-display);font-size:34px;line-height:1;
   color:var(--ember);font-variant-numeric:tabular-nums;
 }
-.three p{margin:0;font-size:15px;line-height:1.6;color:var(--muted)}
+.three p{margin:0;font-size:15px;line-height:1.6;color:var(--ink-muted)}
 
 footer{
-  background:var(--midnight);color:var(--muted-dark);
+  background:var(--midnight);color:var(--ink-reversed-muted);
   padding:44px 0;font-size:13.5px;
 }
 footer .wrap{display:flex;flex-wrap:wrap;gap:10px 28px;justify-content:space-between}

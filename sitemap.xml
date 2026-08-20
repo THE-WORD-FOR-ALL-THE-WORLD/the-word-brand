@@ -20,6 +20,9 @@
   <url><loc>https://brand.theword.world/ai/brand-system.md</loc><priority>0.6</priority></url>
   <url><loc>https://brand.theword.world/ai/SKILL.md</loc><priority>0.6</priority></url>
   <url><loc>https://brand.theword.world/ai/tokens.json</loc><priority>0.6</priority></url>
+  <url><loc>https://brand.theword.world/ai/tokens.dtcg.json</loc><priority>0.6</priority></url>
+  <url><loc>https://brand.theword.world/ai/tokens.ts</loc><priority>0.6</priority></url>
+  <url><loc>https://brand.theword.world/ai/tailwind.preset.js</loc><priority>0.6</priority></url>
   <url><loc>https://brand.theword.world/ai/audit.md</loc><priority>0.6</priority></url>
   <url><loc>https://brand.theword.world/ai/components.json</loc><priority>0.6</priority></url>
   <url><loc>https://brand.theword.world/ai/assets.json</loc><priority>0.6</priority></url>

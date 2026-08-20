@@ -84,8 +84,8 @@
       "name": "brand-system.md",
       "url": "https://brand.theword.world/ai/brand-system.md",
       "description": "The complete brand standard as one document.",
-      "bytes": 51188,
-      "sha256": "edc56382796ef53318c5c43373a255b40c0c78f93d180a7c7fee945cf952bf9e"
+      "bytes": 51821,
+      "sha256": "91453cee77b9368d0594be7cfc0a9a573faa5ba5203c3170386acf69d0c87dcb"
     },
     {
       "name": "SKILL.md",
@@ -98,8 +98,29 @@
       "name": "tokens.json",
       "url": "https://brand.theword.world/ai/tokens.json",
       "description": "Colors, typography, system tokens and states.",
-      "bytes": 4010,
-      "sha256": "665339d3b47698f77d70c969a8706d8cbfb894178096aa5fe19d6a45ed6e1a8b"
+      "bytes": 9965,
+      "sha256": "1388a3dffa0031f7f95e916fcf38847c874bd259df72cc215654bcec3c4d1eb9"
+    },
+    {
+      "name": "tokens.dtcg.json",
+      "url": "https://brand.theword.world/ai/tokens.dtcg.json",
+      "description": "The same tokens in W3C Design Tokens format, for design tooling.",
+      "bytes": 7921,
+      "sha256": "d1b1280df546b64cfe72b2ce808a7f60c321da16e89f96a08d74b228e180608e"
+    },
+    {
+      "name": "tokens.ts",
+      "url": "https://brand.theword.world/ai/tokens.ts",
+      "description": "The same tokens as typed TypeScript exports, for applications.",
+      "bytes": 3118,
+      "sha256": "440f66f47483557169fdbe5cda9f75e40d3666361aff28824c5a9bf936f337f8"
+    },
+    {
+      "name": "tailwind.preset.js",
+      "url": "https://brand.theword.world/ai/tailwind.preset.js",
+      "description": "The same tokens as a Tailwind preset, replacing the default theme.",
+      "bytes": 3502,
+      "sha256": "57b47067e82273df62e4d0238a532879f119a70fd8f60df1478f657a6c88fde7"
     },
     {
       "name": "audit.md",

@@ -724,6 +724,49 @@ def render_social_card(masters):
 
 
 SOCIAL_CARD = os.path.join(REPO, "assets", "images", "og-card.png")
+SWATCHES = os.path.join(REPO, "assets", "downloads", "the-word-swatches.ase")
+
+
+def palette_for_swatches():
+    """The six colours, read from the Brand Guide rather than restated here."""
+    brand = bs.parse_brand_guide()
+    return [(c["name"], c["hex"]) for c in brand["colors"]]
+
+
+def bs_read_bytes(path):
+    if not os.path.exists(path):
+        return None
+    with open(path, "rb") as fh:
+        return fh.read()
+
+
+def build_ase(colors) -> bytes:
+    """The palette as an Adobe swatch exchange file.
+
+    Illustrator, InDesign, Photoshop, and Affinity all read this, which is the
+    difference between a designer picking the brand red and a designer picking a
+    red. Written by hand because the format is eight fields long and a dependency
+    for eight fields is a dependency to maintain forever.
+
+    Layout: "ASEF", version 1.0, block count, then one colour block each. A block
+    is a type, a byte length, a UTF-16BE name with its terminator, a four-byte
+    colour model, the channel floats, and a colour type.
+    """
+    import struct
+
+    out = [b"ASEF", struct.pack(">HH", 1, 0), struct.pack(">I", len(colors))]
+    for name, hexv in colors:
+        label = name.encode("utf-16-be") + b"\x00\x00"
+        body = (
+            struct.pack(">H", len(name) + 1)
+            + label
+            + b"RGB "
+            + b"".join(struct.pack(">f", int(hexv[i : i + 2], 16) / 255) for i in (1, 3, 5))
+            + struct.pack(">H", 0)  # 0 = global, so an edit updates every use
+        )
+        out.append(struct.pack(">HI", 0x0001, len(body)) + body)
+    return b"".join(out)
+
 
 
 # ── writing ───────────────────────────────────────────────────────────────────
@@ -839,6 +882,8 @@ def build(check):
                 w.stale.append(f"assets/logos/the-word/favicon/{name}")
         if not os.path.exists(SOCIAL_CARD):
             w.stale.append("assets/images/og-card.png")
+        if bs_read_bytes(SWATCHES) != build_ase(palette_for_swatches()):
+            w.stale.append("assets/downloads/the-word-swatches.ase")
         # Zipping needs no imaging library, so the packs are content-verified in CI
         # rather than merely checked for existence.
         write_packs(w)
@@ -854,6 +899,9 @@ def build(check):
             w.image(os.path.join(FAVICON, name), img)
 
         w.image(SOCIAL_CARD, render_social_card(masters))
+        with open(SWATCHES, "wb") as fh:
+            fh.write(build_ase(palette_for_swatches()))
+        print("updated  assets/downloads/the-word-swatches.ase")
 
         write_packs(w)
 
@@ -1104,20 +1152,8 @@ def render_page(masters, entries):
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Serif+Text:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/brand.tokens.css">
 <style>
-  :root{{
-    --midnight:#0B1A2D;
-    --word-blue:#023D6F;
-    --parchment:#F7F3EC;
-    --flame:#F85842;
-    --ember:#C13A24;
-    --white:#FFFFFF;
-    --rule:rgba(11,26,45,.18);
-    --rule-light:rgba(247,243,236,.22);
-    --serif-display:'DM Serif Display', Georgia, 'Times New Roman', serif;
-    --serif-text:'DM Serif Text', Georgia, 'Times New Roman', serif;
-    --sans:'DM Sans', -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
-  }}
   *{{margin:0;padding:0;box-sizing:border-box;}}
   @media (prefers-reduced-motion: no-preference){{html{{scroll-behavior:smooth;}}}}
   body{{font-family:var(--sans);font-size:17px;line-height:1.7;color:var(--midnight);background:var(--parchment);-webkit-font-smoothing:antialiased;}}

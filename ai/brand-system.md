@@ -122,6 +122,10 @@ These are the named values to build with. Every one is a design token: a decisio
 | Button hover | #A62F1B | Ember deepened ~10%. State-only. Never a palette color. |
 | Focus ring | 2px Ember (Flame on dark), 3px offset | Visible on every interactive element. Never removed. |
 | Success state | #5FAD56 | Forms and dashboards only. Never in brand layouts. |
+| Error state | #8C1D13 | Forms and dashboards only. Never Flame and never Ember: Ember means "this is the action", and an error is not an action. |
+| Warning state | #8A5B12 | Forms and dashboards only. Never Flame, which is a celebration colour and reads as one. |
+| Disabled control | 38% Midnight text on 5% Midnight fill | Low contrast is the message. The only place the muted floor may be crossed. |
+| Touch target | 44px minimum | Every control on every surface, however small it is drawn. |
 | Photo/video scrim | Midnight gradient, ~70% at text | Required under any text on imagery (§07). |
 | Corner radius | 3px buttons · 4px cards · 6px frames | Three steps, no others. |
 | Muted text | 80% Midnight (light grounds) · 75% Parchment (dark) | Captions and metadata. Nothing lighter. It fails contrast. |
@@ -142,6 +146,8 @@ Stacks as the site renders them:
 - Sans: `'DM Sans', -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif`
 
 Three faces, and no others. All three come from Google Fonts, so every volunteer, partner, and field team can install them free. Where they cannot load, the fallbacks are Georgia for the serifs and the system sans for DM Sans. Proxima Nova is retired and is not used again.
+
+The serif has Regular and Italic and no bold cut. Where a headline needs more weight, it goes up a step rather than getting heavier.
 
 ## 7. Logo
 

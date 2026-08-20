@@ -22,6 +22,7 @@ import sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 import brandsource as bs  # noqa: E402
+import build_ai  # noqa: E402
 
 REPO = bs.REPO
 SKIP_DIRS = {".git", ".github", ".wrangler", "node_modules", "archive"}
@@ -88,6 +89,7 @@ def check_ai_source_present():
         "anti-patterns.md",
         "approved-examples.md",
         "components.json",
+        "components.css",
         "asset-notes.json",
         "skill.md",
     ]
@@ -106,6 +108,15 @@ def check_palette_drift(brand: dict, files: list):
         s = bs.read(os.path.join(REPO, rel))
         root = re.search(r":root\{(.*?)\}", s, re.S)
         if not root:
+            # A page with no :root of its own has to be reading the generated one.
+            # Before brand.tokens.css existed this check simply skipped such a page,
+            # which meant a page could drop its tokens and silently go unchecked.
+            if "/assets/brand.tokens.css" not in s and "/assets/brand.css" not in s:
+                err(
+                    "L3",
+                    f"{rel} declares no brand tokens and links neither brand.tokens.css nor "
+                    "brand.css, so nothing ties it to the Brand Guide.",
+                )
             continue
         for m in re.finditer(r"--([a-z0-9-]+)\s*:\s*(#[0-9A-Fa-f]{3,8})\s*;", root.group(1)):
             name, value = m.group(1), m.group(2).upper()
@@ -307,6 +318,89 @@ def check_skill_copies():
         err("L11", "ai/SKILL.md and skills/the-word-brand/SKILL.md have drifted apart. Run tools/build_ai.py.")
 
 
+def _rgb(value: str, ground: tuple) -> tuple:
+    """A hex or rgba() token as solid RGB, composited over its stated ground."""
+    value = value.strip()
+    m = re.fullmatch(r"#([0-9A-Fa-f]{6})", value)
+    if m:
+        h = m.group(1)
+        return tuple(int(h[i : i + 2], 16) for i in (0, 2, 4))
+    m = re.fullmatch(r"rgba?\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*(?:,\s*([\d.]+)\s*)?\)", value)
+    if not m:
+        raise ValueError(f"cannot read the colour {value!r}")
+    r, g, b = (int(m.group(i)) for i in (1, 2, 3))
+    a = float(m.group(4)) if m.group(4) else 1.0
+    return tuple(round(c * a + gc * (1 - a)) for c, gc in zip((r, g, b), ground))
+
+
+def _luminance(rgb: tuple) -> float:
+    def channel(c):
+        c = c / 255
+        return c / 12.92 if c <= 0.03928 else ((c + 0.055) / 1.055) ** 2.4
+
+    r, g, b = (channel(c) for c in rgb)
+    return 0.2126 * r + 0.7152 * g + 0.0722 * b
+
+
+def contrast(fg: str, bg: str) -> float:
+    ground = _rgb(bg, (255, 255, 255))
+    a, b = _luminance(_rgb(fg, ground)), _luminance(ground)
+    hi, lo = max(a, b), min(a, b)
+    return (hi + 0.05) / (lo + 0.05)
+
+
+# Every pair the system actually puts on screen, with the ratio it has to clear.
+# 4.5 is WCAG AA for body text, 3.0 for large text and for a non-text boundary.
+# A pair listed here is a pair somebody will build, so a palette edit that breaks
+# one of them fails the build rather than shipping and being found by a reader.
+CONTRAST_PAIRS = [
+    ("ink", "parchment", 4.5, "body text on the light ground"),
+    ("ink", "white", 4.5, "body text on a card"),
+    ("ink-muted", "parchment", 4.5, "captions and metadata on the light ground"),
+    ("ink-muted", "white", 4.5, "captions on a card"),
+    ("ink-soft", "parchment", 3.0, "placeholder and inactive labels"),
+    ("ink-reversed", "midnight", 4.5, "body text on Midnight"),
+    ("ink-reversed-muted", "midnight", 4.5, "captions on Midnight"),
+    ("ink-reversed-soft", "midnight", 3.0, "placeholders on Midnight"),
+    ("ember", "parchment", 4.5, "links and labels on the light ground"),
+    ("ember", "white", 4.5, "links on a card"),
+    ("white", "ember", 4.5, "the primary button label"),
+    ("white", "button-hover", 4.5, "the primary button label, hovered"),
+    ("flame", "midnight", 3.0, "the official-record numeral, which is large text"),
+    ("parchment", "midnight", 4.5, "reversed body copy"),
+    ("error-state", "parchment", 4.5, "form error text"),
+    ("warning-state", "parchment", 4.5, "form warning text"),
+]
+
+
+def check_contrast(tokens: dict):
+    """L14: every pair the guide puts on screen still passes WCAG AA.
+
+    The audit asks a human to check this by eye (H1). Half of it is arithmetic, and
+    arithmetic belongs in the build. Ember was chosen over Flame for text because
+    Flame is 3.3:1 and fails; nothing should be able to quietly undo that.
+    """
+    lookup = {k: c["hex"] for k, c in tokens["color"].items()}
+    lookup.update({k: v["value"] for k, v in tokens["neutral"].items()})
+    lookup.update({k: t["value"] for k, t in tokens["system"].items() if t["value"].startswith("#")})
+
+    for fg, bg, minimum, why in CONTRAST_PAIRS:
+        if fg not in lookup or bg not in lookup:
+            err("L14", f"the contrast pair {fg} on {bg} names a token that no longer exists.")
+            continue
+        try:
+            ratio = contrast(lookup[fg], lookup[bg])
+        except ValueError as exc:
+            err("L14", f"{fg} on {bg}: {exc}")
+            continue
+        if ratio + 0.005 < minimum:
+            err(
+                "L14",
+                f"{fg} on {bg} is {ratio:.2f}:1 and needs {minimum}:1 ({why}). "
+                "Change the value in the Brand Guide, or change what it is used for.",
+            )
+
+
 def check_social_cards(files: list):
     """L13: every page previews correctly when it is shared.
 
@@ -392,6 +486,7 @@ def main() -> int:
     check_asset_links(files)
     check_logo_sources(files)
     check_social_cards(files)
+    check_contrast(build_ai.build_tokens(brand, _messaging, overrides.get('manifest', {}).get('updated') or brand['issued'], overrides, bs.parse_scales(os.path.join(REPO, 'brand', 'index.html'))))
     check_navigation(files)
     check_skill_copies()
     if os.path.isdir(ai_dir):

@@ -1,0 +1,316 @@
+{
+  "$description": "THE WORD FOR ALL THE WORLD, brand system v6.8, updated 2026-08-19. Canonical source: https://brand.theword.world/ai/manifest.json",
+  "color": {
+    "midnight": {
+      "$value": "#0B1A2D",
+      "$type": "color",
+      "$description": "Primary ground. Heroes, bands, footers."
+    },
+    "word-blue": {
+      "$value": "#023D6F",
+      "$type": "color",
+      "$description": "Structural secondary. Logo continuity."
+    },
+    "parchment": {
+      "$value": "#F7F3EC",
+      "$type": "color",
+      "$description": "Light ground. Official paper, never gray."
+    },
+    "flame": {
+      "$value": "#F85842",
+      "$type": "color",
+      "$description": "Non-text accent: BURN moments, display numerals, highlights. Never carries text. ≤10%."
+    },
+    "ember": {
+      "$value": "#C13A24",
+      "$type": "color",
+      "$description": "Fire at text size: primary buttons, links, labels, hovers."
+    },
+    "white": {
+      "$value": "#FFFFFF",
+      "$type": "color",
+      "$description": "Cards, reversed text, button labels."
+    }
+  },
+  "neutral": {
+    "ink": {
+      "$value": "#0B1A2D",
+      "$type": "color",
+      "$description": "light ground. Body text and headings on Parchment or White."
+    },
+    "ink-muted": {
+      "$value": "rgba(11,26,45,.80)",
+      "$type": "color",
+      "$description": "light ground. Captions, metadata, datelines. Nothing lighter carries text."
+    },
+    "ink-soft": {
+      "$value": "rgba(11,26,45,.60)",
+      "$type": "color",
+      "$description": "light ground. Placeholder text and inactive labels. Never body copy."
+    },
+    "ink-faint": {
+      "$value": "rgba(11,26,45,.38)",
+      "$type": "color",
+      "$description": "light ground. Disabled controls only, where low contrast is the message."
+    },
+    "rule": {
+      "$value": "rgba(11,26,45,.18)",
+      "$type": "color",
+      "$description": "light ground. The hairline. Card borders, table rules, dividers."
+    },
+    "rule-soft": {
+      "$value": "rgba(11,26,45,.10)",
+      "$type": "color",
+      "$description": "light ground. Secondary dividers and row separators inside a table."
+    },
+    "wash": {
+      "$value": "rgba(11,26,45,.05)",
+      "$type": "color",
+      "$description": "light ground. Input fills, code backgrounds, loading placeholders."
+    },
+    "ink-reversed": {
+      "$value": "#F7F3EC",
+      "$type": "color",
+      "$description": "dark ground. Body text and headings on Midnight."
+    },
+    "ink-reversed-muted": {
+      "$value": "rgba(247,243,236,.75)",
+      "$type": "color",
+      "$description": "dark ground. Captions and metadata on Midnight."
+    },
+    "ink-reversed-soft": {
+      "$value": "rgba(247,243,236,.55)",
+      "$type": "color",
+      "$description": "dark ground. Placeholder and inactive labels on Midnight."
+    },
+    "rule-light": {
+      "$value": "rgba(247,243,236,.22)",
+      "$type": "color",
+      "$description": "dark ground. The hairline on Midnight."
+    },
+    "wash-light": {
+      "$value": "rgba(247,243,236,.08)",
+      "$type": "color",
+      "$description": "dark ground. Input fills and raised panels on Midnight."
+    }
+  },
+  "spacing": {
+    "space-1": {
+      "$value": "4px",
+      "$type": "dimension"
+    },
+    "space-2": {
+      "$value": "8px",
+      "$type": "dimension"
+    },
+    "space-3": {
+      "$value": "12px",
+      "$type": "dimension"
+    },
+    "space-4": {
+      "$value": "16px",
+      "$type": "dimension"
+    },
+    "space-5": {
+      "$value": "24px",
+      "$type": "dimension"
+    },
+    "space-6": {
+      "$value": "32px",
+      "$type": "dimension"
+    },
+    "space-7": {
+      "$value": "48px",
+      "$type": "dimension"
+    },
+    "space-8": {
+      "$value": "64px",
+      "$type": "dimension"
+    },
+    "space-9": {
+      "$value": "96px",
+      "$type": "dimension"
+    },
+    "space-10": {
+      "$value": "128px",
+      "$type": "dimension"
+    }
+  },
+  "radius": {
+    "radius-button": {
+      "$value": "3px",
+      "$type": "dimension"
+    },
+    "radius-card": {
+      "$value": "4px",
+      "$type": "dimension"
+    },
+    "radius-frame": {
+      "$value": "6px",
+      "$type": "dimension"
+    }
+  },
+  "fontFamily": {
+    "serifDisplay": {
+      "$value": "'DM Serif Display', Georgia, 'Times New Roman', serif",
+      "$type": "fontFamily"
+    },
+    "serifText": {
+      "$value": "'DM Serif Text', Georgia, 'Times New Roman', serif",
+      "$type": "fontFamily"
+    },
+    "sans": {
+      "$value": "'DM Sans', -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif",
+      "$type": "fontFamily"
+    }
+  },
+  "fontSize": {
+    "label": {
+      "$value": "12px",
+      "$type": "dimension",
+      "$description": "DM Sans 600, uppercase, letterspaced .18em. Eyebrows and kickers."
+    },
+    "caption": {
+      "$value": "13px",
+      "$type": "dimension",
+      "$description": "DM Sans. Photo captions, metadata, datelines."
+    },
+    "body-small": {
+      "$value": "15px",
+      "$type": "dimension",
+      "$description": "DM Sans. Card copy, table cells, secondary text."
+    },
+    "body": {
+      "$value": "17px",
+      "$type": "dimension",
+      "$description": "DM Sans. Every extended reading passage."
+    },
+    "body-large": {
+      "$value": "19px",
+      "$type": "dimension",
+      "$description": "DM Sans. Ledes and standfirsts."
+    },
+    "title-small": {
+      "$value": "22px",
+      "$type": "dimension",
+      "$description": "DM Serif Text. The lowest the serif goes."
+    },
+    "title": {
+      "$value": "28px",
+      "$type": "dimension",
+      "$description": "DM Serif Text. Document headings, pull quotes."
+    },
+    "title-large": {
+      "$value": "34px",
+      "$type": "dimension",
+      "$description": "DM Serif Text. The prophecy, record openings."
+    },
+    "display-small": {
+      "$value": "40px",
+      "$type": "dimension",
+      "$description": "DM Serif Display. Section headlines."
+    },
+    "display": {
+      "$value": "52px",
+      "$type": "dimension",
+      "$description": "DM Serif Display. Page headlines."
+    },
+    "display-large": {
+      "$value": "72px",
+      "$type": "dimension",
+      "$description": "DM Serif Display. Hero headlines only."
+    }
+  },
+  "lineHeight": {
+    "label": {
+      "$value": "1.4",
+      "$type": "number"
+    },
+    "caption": {
+      "$value": "1.6",
+      "$type": "number"
+    },
+    "body-small": {
+      "$value": "1.65",
+      "$type": "number"
+    },
+    "body": {
+      "$value": "1.7",
+      "$type": "number"
+    },
+    "body-large": {
+      "$value": "1.65",
+      "$type": "number"
+    },
+    "title-small": {
+      "$value": "1.35",
+      "$type": "number"
+    },
+    "title": {
+      "$value": "1.25",
+      "$type": "number"
+    },
+    "title-large": {
+      "$value": "1.18",
+      "$type": "number"
+    },
+    "display-small": {
+      "$value": "1.12",
+      "$type": "number"
+    },
+    "display": {
+      "$value": "1.08",
+      "$type": "number"
+    },
+    "display-large": {
+      "$value": "1.04",
+      "$type": "number"
+    }
+  },
+  "duration": {
+    "duration-fast": {
+      "$value": "120ms",
+      "$type": "duration"
+    },
+    "duration-base": {
+      "$value": "150ms",
+      "$type": "duration"
+    },
+    "duration-slow": {
+      "$value": "300ms",
+      "$type": "duration"
+    }
+  },
+  "shadow": {
+    "flat": {
+      "$value": "none",
+      "$type": "shadow"
+    },
+    "raised": {
+      "$value": "0 2px 6px rgba(11,26,45,.06)",
+      "$type": "shadow"
+    },
+    "lifted": {
+      "$value": "0 10px 30px rgba(11,26,45,.10)",
+      "$type": "shadow"
+    },
+    "overlay": {
+      "$value": "0 24px 60px rgba(11,26,45,.18)",
+      "$type": "shadow"
+    }
+  },
+  "breakpoint": {
+    "email": {
+      "$value": "600px",
+      "$type": "dimension"
+    },
+    "page": {
+      "$value": "720px",
+      "$type": "dimension"
+    },
+    "wide": {
+      "$value": "1080px",
+      "$type": "dimension"
+    }
+  }
+}
