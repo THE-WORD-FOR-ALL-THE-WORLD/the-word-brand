@@ -368,6 +368,155 @@ SLC_CONFIGS = [
     },
 ]
 
+# EVERY1 is two-tone like RTMC, with one difference that matters: the numeral does
+# NOT collapse on a dark ground. RTMC's brackets go white on Midnight because Word
+# Blue would disappear there; Flame on Midnight is 5.4:1 and holds, and the 1 is the
+# thing this door is recognised by. It stays Flame in both colour inks.
+EVERY1_INKS = {
+    "": {
+        "hex": "#0B1A2D",
+        "roles": {"word": "#0B1A2D", "accent": "#F85842"},
+        "name": "Two-tone, Midnight and Flame",
+        "grounds": ["parchment", "white"],
+        "note": "For light grounds. The word is Midnight and the 1 is Flame.",
+    },
+    "-reversed": {
+        "hex": "#FFFFFF",
+        "roles": {"word": "#FFFFFF", "accent": "#F85842"},
+        "name": "Reversed, white and Flame",
+        "grounds": ["midnight", "photography with a Midnight scrim"],
+        "note": (
+            "For Midnight, which is this door's own ground and where most of its work "
+            "lives. Only the word flips. The 1 stays Flame, because it is the mark."
+        ),
+    },
+    "-black": {
+        "hex": "#000000",
+        "roles": {"word": "#000000", "accent": "#000000"},
+        "name": "One colour, black",
+        "grounds": ["white", "parchment"],
+        "note": "Embroidery, engraving, newsprint, and any vendor who asks for pure black.",
+    },
+}
+
+EVERY1_CONFIGS = [
+    {
+        "slug": "horizontal",
+        "master": "every1-horizontal",
+        "name": "Horizontal lockup",
+        "primary": True,
+        "clear": 0.5,
+        "min_px": 200,
+        "min_mm": 45,
+        "use": (
+            "The default mark. Site navigation, app headers, banners, shirts, and anywhere "
+            "the name is introduced. EVERY1 beside MOVEMENT, which is what makes it a "
+            "movement rather than a word."
+        ),
+    },
+    {
+        "slug": "bare",
+        "master": "every1-bare",
+        "name": "Bare wordmark",
+        "primary": False,
+        "clear": 0.5,
+        "min_px": 140,
+        "min_mm": 32,
+        "use": (
+            "The name alone, without MOVEMENT. For a surface that already says what this "
+            "is: a shirt front, a banner, an app header, the second time the name appears "
+            "on a page."
+        ),
+    },
+    {
+        "slug": "vision",
+        "master": "every1-vision",
+        "name": "Vision lockup",
+        "primary": False,
+        "clear": 0.5,
+        "min_px": 260,
+        "min_mm": 58,
+        "use": (
+            "The whole promise in one mark: the verse above, the name, and what it leads "
+            "to below. Banners, stage backdrops, and the back of a shirt. Never small."
+        ),
+    },
+    {
+        "slug": "promise",
+        "master": "every1-promise",
+        "name": "Promise lockup",
+        "primary": False,
+        "clear": 0.5,
+        "min_px": 200,
+        "min_mm": 45,
+        "use": "The name and the promise without the verse, for where the vision lockup is too tall.",
+    },
+    {
+        "slug": "usa",
+        "master": "every1-usa",
+        "name": "Country lockup, USA",
+        "primary": False,
+        "clear": 0.5,
+        "min_px": 180,
+        "min_mm": 40,
+        "use": "The USA country lockup. One per country, and each one is drawn, not generated.",
+        # USA is the recorded exception: its bar is brand colours, not its flag, because
+        # the flag is close enough that a true red and blue would read as a mistake.
+        # On Midnight the third segment cannot stay Midnight, which is what the supplied
+        # reversed artwork does at 1.0:1, so it takes Word Blue there.
+        "ink_roles": {
+            "": {"flag-a": "#F85842", "flag-b": "#FFFFFF", "flag-c": "#0B1A2D"},
+            "-reversed": {"flag-a": "#F85842", "flag-b": "#FFFFFF", "flag-c": "#023D6F"},
+            "-black": {"flag-a": "#000000", "flag-b": "#000000", "flag-c": "#000000"},
+        },
+    },
+    {
+        "slug": "uganda",
+        "master": "every1-uganda",
+        "name": "Country lockup, Uganda",
+        "primary": False,
+        "clear": 0.5,
+        "min_px": 180,
+        "min_mm": 40,
+        "use": "The Uganda country lockup. One per country, and each one is drawn, not generated.",
+        # Uganda's flag, and the black segment goes white on a dark ground rather than
+        # disappearing into it, which is what the supplied reversed artwork does at 1.2:1.
+        "ink_roles": {
+            "": {"flag-a": "#000000", "flag-b": "#FFDE59", "flag-c": "#FF3131"},
+            "-reversed": {"flag-a": "#FFFFFF", "flag-b": "#FFDE59", "flag-c": "#FF3131"},
+            "-black": {"flag-a": "#000000", "flag-b": "#000000", "flag-c": "#000000"},
+        },
+    },
+    {
+        "slug": "e1",
+        "master": "every1-e1",
+        "name": "The E1 icon",
+        "primary": False,
+        "clear": 0.35,
+        "min_px": 32,
+        "min_mm": 10,
+        "use": (
+            "Two characters and no words. The avatar, the app icon, the lanyard, the "
+            "sticker, and anything too small to read a lockup in. This is the form the "
+            "door is recognised by at size."
+        ),
+    },
+    {
+        "slug": "numeral",
+        "master": "every1-numeral",
+        "cap_is_height": True,
+        "name": "The 1",
+        "primary": False,
+        "clear": 0.35,
+        "min_px": 24,
+        "min_mm": 8,
+        "use": (
+            "The numeral alone. Used as a mark at small size, and used as the shape "
+            "photography is masked into, which is this door's signature move. Never "
+            "redrawn, never outlined, never filled with anything but an image or Flame."
+        ),
+    },
+]
 # One entry per brand that publishes marks. `dir` is the folder under assets/logos/
 # and `stem` prefixes every filename, so a mark is identifiable from its name alone.
 # Only the parent brand cuts the site icon set, which is what `favicons` gates.
@@ -399,6 +548,25 @@ BRANDS = [
             "and one-colour collapse to a single ink."
         ),
         "favicons": False,
+    },
+    {
+        "key": "every1",
+        "name": "EVERY1 Movement",
+        "dir": "every1",
+        "stem": "every1",
+        "cap_ref": "the cap height of EVERY1",
+        "dark_ground": "midnight",
+        "configs": EVERY1_CONFIGS,
+        "inks": EVERY1_INKS,
+        "favicons": False,
+        "intro": (
+            "EVERY1 is the BURN door, and the only one that stands on its own. It carries no "
+            "parent lockup: this is the recorded exception, and it exists because EVERY1 is a "
+            "movement, an app, and an activation platform that people join before they have "
+            "heard of the house behind it. The mark is the word and the numeral, and the "
+            "numeral does the work. It is the avatar, it is the icon, and it is the shape "
+            "photography is cut into."
+        ),
     },
     {
         "key": "slc",
@@ -436,7 +604,10 @@ _TITLE_RE = re.compile(r"<title\b[^>]*>.*?</title>\s*", re.S)
 _DESC_RE = re.compile(r"<desc\b[^>]*>.*?</desc>\s*", re.S)
 _COMMENT_RE = re.compile(r"<!--.*?-->\s*", re.S)
 _G_OPEN_RE = re.compile(r"<g\b([^>]*)>")
-_FILL_ATTR_RE = re.compile(r'\s(?:fill|color)="[^"]*"')
+# Everything except an explicit none. A path that says it is not filled has to keep
+# saying so all the way through, or the repaint below hands it a colour and a stroke
+# guide becomes a solid block.
+_FILL_ATTR_RE = re.compile(r'\s(?:fill|color)="(?!\s*(?:none|transparent)\s*")[^"]*"')
 
 
 
@@ -655,6 +826,11 @@ def make_svg(brand, master, cfg, ink_suffix, ink):
 
     def repaint(m):
         attrs = m.group(1)
+        # A path that was explicitly unfilled stays unfilled. Repainting it turns a
+        # stroke guide into a solid block, which is how a Midnight rectangle ended up
+        # covering the yellow segment of the Uganda flag bar.
+        if re.search(r'fill="\s*(?:none|transparent)\s*"', attrs, re.I):
+            return m.group(0)
         role = re.search(r'data-role="([^"]*)"', attrs)
         return f'<path fill="{ink_for(ink, role.group(1) if role else None)}"{attrs}>'
 

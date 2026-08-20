@@ -209,7 +209,7 @@
         <img class="mark-light" src="/assets/logos/the-word/the-word-horizontal.svg" alt="THE WORD FOR ALL THE WORLD">
         <img class="mark-dark" src="/assets/logos/the-word/the-word-horizontal-reversed.svg" alt="THE WORD FOR ALL THE WORLD">
       </a>
-      <span class="where">Components · v7.1</span>
+      <span class="where">Components · v7.2</span>
     </div>
     <div class="right">
       <div class="links">
@@ -261,6 +261,7 @@
       <h2>Media</h2>
       <a href="#hero-video">Full-bleed video hero</a>
       <a href="#lower-third">Video lower third</a>
+      <a href="#numeral-mask">The 1 as a mask</a>
     </div>
     <div class="group">
       <h2>Navigation</h2>
@@ -314,7 +315,7 @@
         <div class="prose" style="margin-top:var(--space-5)">
           <p>Not a picture of the components. The components, rendered by <a class="link" href="/assets/brand.css">the same file anyone else links</a>, so this page cannot show something the stylesheet does not do.</p>
           <p>Switch the ground with the button above. Everything here works on Parchment and on Midnight, because the accent and the three state colours change with the ground: Ember is 3.3:1 on Midnight and fails, so a text accent on a dark ground is Flame.</p>
-          <p class="caption">40 components · brand system v7.1 · messaging v1.0 · generated 2026-08-20 · <a class="link" href="/ai/components.json">components.json</a></p>
+          <p class="caption">41 components · brand system v7.2 · messaging v1.0 · generated 2026-08-20 · <a class="link" href="/ai/components.json">components.json</a></p>
         </div>
       </div>
       <section class="spec screen" id="button-primary">
@@ -885,7 +886,7 @@
             <h3 class="sub">Rules</h3>
             <ul class="rules">
           <li>Required on every initiative surface. Law III.</li>
-          <li>One recorded exception: the future EVERY1 app, on the YouVersion model.</li>
+          <li>One recorded exception: EVERY1, which stands on its own across the movement, the app, and the activation platform, on the YouVersion model. Every other initiative carries the line.</li>
           <li>Vanity domains redirect into the initiative's page. They never become separate homes.</li>
             </ul>
           </div>
@@ -965,6 +966,45 @@
   &lt;div class="name"&gt;Nathan Zimmer&lt;/div&gt;
   &lt;div class="role"&gt;Founder, THE WORD FOR ALL THE WORLD&lt;/div&gt;
 &lt;/div&gt;</pre>
+      </details>
+      </section>
+      <section class="spec screen" id="numeral-mask">
+        <div class="head">
+          <h2>The 1 as a mask</h2>
+          <span class="id">numeral-mask</span> · <span class="id">.mask-1</span>
+        </div>
+        <p class="use">EVERY1's signature move: a photograph cut into the numeral rather than placed beside it.</p>
+      <div class="stage">
+<figure class="mask-1" style="width:220px">
+  <img src="/assets/images/every1-one-to-one.jpg" alt="One believer greeting another at the front of the tent.">
+</figure>
+      </div>
+        <div class="cols">
+          <div>
+            <h3 class="sub">Specification</h3>
+            <dl class="props">
+          <dt>shape</dt><dd>the published every1-numeral.svg, never a redrawing of it</dd>
+          <dt>ratio</dt><dd>taken from the logo manifest at build time, so it follows the artwork</dd>
+          <dt>fit</dt><dd>the image covers the shape; it is never letterboxed inside it</dd>
+          <dt>fallback</dt><dd>where masking is unsupported the photograph shows uncropped rather than vanishing</dd>
+            </dl>
+          </div>
+          <div>
+            <h3 class="sub">Rules</h3>
+            <ul class="rules">
+          <li>The mask is a shape, not a mark. It takes no ink and is never recoloured.</li>
+          <li>Everything true of photography is still true through the mask: documentary capture, consent obtained before the shutter, and a caption wherever it is published.</li>
+          <li>Never mask type, a logo, or another mark into it. It holds a photograph.</li>
+          <li>Never outline it, never add a shadow to it, and never rotate it.</li>
+          <li>One per view. It is the loudest thing this door does.</li>
+            </ul>
+          </div>
+        </div>
+      <details class="markup">
+        <summary>Markup</summary>
+        <pre>&lt;figure class="mask-1" style="width:220px"&gt;
+  &lt;img src="/assets/images/every1-one-to-one.jpg" alt="One believer greeting another at the front of the tent."&gt;
+&lt;/figure&gt;</pre>
       </details>
       </section>
       <section class="spec screen" id="site-chrome">

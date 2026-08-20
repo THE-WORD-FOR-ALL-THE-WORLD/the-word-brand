@@ -1,6 +1,6 @@
 {
   "name": "@theword/brand",
-  "version": "7.1.0",
+  "version": "7.2.0",
   "description": "Design tokens for THE WORD FOR ALL THE WORLD. Generated from the published brand system; never edited by hand.",
   "homepage": "https://brand.theword.world/",
   "repository": {
@@ -37,7 +37,7 @@
     "theword"
   ],
   "brand": {
-    "version": "7.1",
+    "version": "7.2",
     "updated": "2026-08-20",
     "manifest": "https://brand.theword.world/ai/manifest.json"
   }

@@ -236,6 +236,21 @@ def build_brand_css(tokens: dict, brand: dict, messaging: dict, updated: str, co
         " */\n\n"
     )
     root = ":root {\n" + "\n".join(css_var_lines(tokens)) + "\n}\n"
+    # The numeral's aspect comes from the artwork, via the logo manifest, so the mask
+    # cannot drift out of proportion with the shape it is cutting.
+    logos = json.loads(bs.read(os.path.join(REPO, "ai-source", "logo-manifest.json")))
+    numeral = next(
+        (c for c in logos["configurations"] if c.get("brand") == "every1" and c["slug"] == "numeral"),
+        None,
+    )
+    if numeral is None:
+        raise bs.SourceError(
+            "components.css needs EVERY1's numeral aspect, but the logo manifest has no "
+            "every1/numeral configuration. Run tools/build_logos.py."
+        )
+    component_css = component_css.replace("__EVERY1_NUMERAL_ASPECT__", str(numeral["aspect"]))
+    if "__" in component_css and "__EVERY1" in component_css:
+        raise bs.SourceError("components.css still has an unfilled placeholder.")
     return head + root + "\n" + component_css.rstrip() + "\n"
 
 

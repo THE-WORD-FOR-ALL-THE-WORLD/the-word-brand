@@ -284,6 +284,17 @@ class Shape:
 def load(path):
     """Read an SVG into (shapes, viewBox). Handles nested <g>, transforms, currentColor."""
     src = open(path, encoding="utf-8").read()
+    # <defs> and <clipPath> hold definitions, not artwork. Their paths are never
+    # drawn, but the tag scanner below would happily read them as shapes, which
+    # inflates the measured box and therefore the clear space and minimum size
+    # derived from it. No approved master carries either, because promotion strips
+    # them; a raw export from Canva carries both.
+    for block in (r"<defs\b.*?</defs>", r"<clipPath\b.*?</clipPath>"):
+        while True:
+            stripped = re.sub(block, "", src, flags=re.S)
+            if stripped == src:
+                break
+            src = stripped
     vb = _VIEWBOX_RE.search(src)
     viewbox = [float(v) for v in re.split(r"[\s,]+", vb.group(1).strip())] if vb else None
 

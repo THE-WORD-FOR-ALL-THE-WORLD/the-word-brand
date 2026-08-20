@@ -1,5 +1,5 @@
 {
-  "version": "7.1",
+  "version": "7.2",
   "messagingVersion": "1.0",
   "updated": "2026-08-20",
   "authority": "canonical",
@@ -311,7 +311,7 @@
       },
       "rules": [
         "Required on every initiative surface. Law III.",
-        "One recorded exception: the future EVERY1 app, on the YouVersion model.",
+        "One recorded exception: EVERY1, which stands on its own across the movement, the app, and the activation platform, on the YouVersion model. Every other initiative carries the line.",
         "Vanity domains redirect into the initiative's page. They never become separate homes."
       ],
       "html": "<div class=\"endorse\">A ministry of THE WORD FOR ALL THE WORLD</div>",
@@ -904,6 +904,30 @@
       "tokenRefs": {
         "ground": "@midnight"
       }
+    },
+    {
+      "id": "numeral-mask",
+      "name": "The 1 as a mask",
+      "use": "EVERY1's signature move: a photograph cut into the numeral rather than placed beside it.",
+      "group": "Media",
+      "spec": {
+        "shape": "the published every1-numeral.svg, never a redrawing of it",
+        "ratio": "taken from the logo manifest at build time, so it follows the artwork",
+        "fit": "the image covers the shape; it is never letterboxed inside it",
+        "fallback": "where masking is unsupported the photograph shows uncropped rather than vanishing"
+      },
+      "rules": [
+        "The mask is a shape, not a mark. It takes no ink and is never recoloured.",
+        "Everything true of photography is still true through the mask: documentary capture, consent obtained before the shutter, and a caption wherever it is published.",
+        "Never mask type, a logo, or another mark into it. It holds a photograph.",
+        "Never outline it, never add a shadow to it, and never rotate it.",
+        "One per view. It is the loudest thing this door does."
+      ],
+      "html": "<figure class=\"mask-1\" style=\"width:220px\">\n  <img src=\"/assets/images/every1-one-to-one.jpg\" alt=\"One believer greeting another at the front of the tent.\">\n</figure>",
+      "cssClass": "mask-1",
+      "previewGround": "light",
+      "reactNote": "Available as a class in brand.css. A React wrapper lands when an application needs one.",
+      "tokenRefs": {}
     }
   ]
 }

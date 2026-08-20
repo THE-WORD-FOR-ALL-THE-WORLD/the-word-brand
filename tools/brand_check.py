@@ -39,7 +39,10 @@ GENERIC_FONTS = {
     "ui-monospace", "menlo", "courier new", "cursive", "initial", "unset", "revert",
 }
 
-INITIATIVES = ["Revival To My City", "EVERY1", "School of the Local Church"]
+# EVERY1 is absent on purpose. It is the recorded exception to Law III and carries no
+# endorsement line, so flagging its absence would fail a surface for being correct.
+INITIATIVES = ["Revival To My City", "School of the Local Church"]
+EXEMPT_FROM_G6 = ["EVERY1"]
 ENDORSEMENT = "A ministry of THE WORD FOR ALL THE WORLD"
 
 
