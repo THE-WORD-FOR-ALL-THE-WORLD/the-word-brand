@@ -272,11 +272,11 @@ SLC_INKS = {
         "hex": "#FFFFFF",
         "roles": {"dark": "#0B1A2D", "light": "#FFFFFF", "text": "#FFFFFF"},
         "name": "Reversed",
-        "grounds": ["word-blue", "midnight", "photography with a Midnight scrim"],
+        "grounds": ["word-blue", "photography with a Midnight scrim"],
         "note": (
-            "For Word Blue, which is this door's own ground, and for Midnight and scrimmed "
-            "footage. The lion does not change: it is the same Midnight and White on every "
-            "ground. Only the name flips to white."
+            "For Word Blue, which is this door's own ground, and for scrimmed footage. Not for "
+            "a plain Midnight ground: the lion's structure is drawn in Midnight, so a Midnight "
+            "ground swallows it and the mane loses its modelling. Only the name flips to white."
         ),
     },
     "-black": {
@@ -369,6 +369,7 @@ BRANDS = [
         "dir": "the-word",
         "stem": "the-word",
         "cap_ref": "the cap height of THE WORD",
+        "dark_ground": "midnight",
         "configs": THE_WORD_CONFIGS,
         "inks": INKS,
         "favicons": True,
@@ -379,6 +380,7 @@ BRANDS = [
         "dir": "rtmc",
         "stem": "rtmc",
         "cap_ref": "the cap height of EVIVAL",
+        "dark_ground": "midnight",
         "configs": RTMC_CONFIGS,
         "inks": RTMC_INKS,
         "intro": (
@@ -395,6 +397,7 @@ BRANDS = [
         "dir": "school",
         "stem": "school",
         "cap_ref": "the cap height of School",
+        "dark_ground": "word-blue",
         "configs": SLC_CONFIGS,
         "inks": SLC_INKS,
         "favicons": False,
@@ -948,6 +951,9 @@ def mark_card(brand, cfg, entry, master):
         f'<a href="{base}/png/{stem}-reversed-{p}.png?v={VER}" download>{p}px</a>' for p in widths
     )
     tag = "The default mark" if cfg["primary"] else "Alternate"
+    dark = brand.get("dark_ground", "midnight")
+    ground_class = "on-word-blue" if dark == "word-blue" else ""
+    ground_name = "Word Blue" if dark == "word-blue" else "Midnight"
 
     return f"""
         <div class="card" id="{brand['key']}-{slug}">
@@ -960,7 +966,7 @@ def mark_card(brand, cfg, entry, master):
 
           <div class="two">
             <div class="stage light"><img src="{svg}" alt="{cfg['name']}, Midnight ink on Parchment" loading="lazy"></div>
-            <div class="stage dark"><img src="{base}/{stem}-reversed.svg" alt="{cfg['name']}, reversed on Midnight" loading="lazy"></div>
+            <div class="stage dark {ground_class}"><img src="{base}/{stem}-reversed.svg" alt="{cfg['name']}, reversed on {ground_name}" loading="lazy"></div>
           </div>
 
           <dl class="specs">
@@ -1122,6 +1128,7 @@ def render_page(masters, entries):
   .stage{{border:1px solid var(--rule);border-radius:3px;padding:30px 26px;display:flex;align-items:center;justify-content:center;min-height:120px;}}
   .stage.light{{background:var(--parchment);}}
   .stage.dark{{background:var(--midnight);border-color:transparent;}}
+  .stage.dark.on-word-blue{{background:var(--word-blue);}}
   .stage img{{width:100%;max-width:330px;height:auto;display:block;}}
   #the-word-glyph .stage img{{max-width:104px;}}
 
