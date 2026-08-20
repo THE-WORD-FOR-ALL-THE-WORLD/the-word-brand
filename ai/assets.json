@@ -388,8 +388,8 @@
   "authority": "canonical",
   "rule": "Use these assets. Never generate photography or video of people or ministry, and never substitute stock. If the asset you need is not listed, request it and leave the slot empty.",
   "counts": {
-    "total": 343,
-    "approved": 320,
+    "total": 339,
+    "approved": 316,
     "counterExamples": 0
   },
   "assets": [
@@ -523,7 +523,7 @@
       "url": "https://brand.theword.world/assets/images/every1-app-sign-in.png",
       "kind": "image",
       "group": "images",
-      "bytes": 1063582,
+      "bytes": 873895,
       "status": "published, no usage note recorded"
     },
     {
@@ -694,19 +694,6 @@
       "note": "Still fallback for tent-congregation.mp4."
     },
     {
-      "file": "assets/logos/every1/every1-app-icon.svg",
-      "url": "https://brand.theword.world/assets/logos/every1/every1-app-icon.svg",
-      "kind": "vector",
-      "group": "every1",
-      "bytes": 625,
-      "status": "approved",
-      "grounds": [
-        "its own Midnight plate"
-      ],
-      "note": "The 1 on a Midnight plate, square, at 60% of the plate so the safe area survives the rounded corners every OS applies. App icons, home-screen icons, and profile pictures. Never place the plate inside another coloured shape and never re-cut the plate in another colour.",
-      "name": "EVERY1, app icon"
-    },
-    {
       "file": "assets/logos/every1/every1-bare-black.svg",
       "url": "https://brand.theword.world/assets/logos/every1/every1-bare-black.svg",
       "kind": "vector",
@@ -813,21 +800,6 @@
       },
       "note": "Two characters and no words. The avatar, the app icon, the lanyard, the sticker, and anything too small to read a lockup in. This is the form the door is recognised by at size.  Vector master, scale freely.",
       "name": "The E1 icon, two-tone, midnight and flame"
-    },
-    {
-      "file": "assets/logos/every1/every1-glyph.svg",
-      "url": "https://brand.theword.world/assets/logos/every1/every1-glyph.svg",
-      "kind": "vector",
-      "group": "every1",
-      "bytes": 488,
-      "status": "approved",
-      "grounds": [
-        "midnight",
-        "white",
-        "parchment"
-      ],
-      "note": "The 1 alone, Flame, transparent. This is the door's avatar and the shape the planned app carries with the parent invisible. Stickers, watermarks, profile marks, and any square too small for the wordmark. Clear space: 0.25x its own height on all four sides. Minimum 24px. Never on Flame, and never set beside the wordmark as a second 1.",
-      "name": "EVERY1, the 1 glyph"
     },
     {
       "file": "assets/logos/every1/every1-horizontal-black.svg",
@@ -1146,34 +1118,6 @@
       ],
       "note": "The wordmark with the vision above and below it: EVERY TRIBE, EVERY TONGUE, EVERY NATION / WILL KNOW THE NAME JESUS. Both lines are tracked to the exact width of the wordmark, and that alignment is the lockup. Use where the movement is being introduced rather than referred to. Set in DM Sans at weight 900 and converted to outlines, so it is artwork rather than live text: it needs no font installed, never reflows, and recolours by changing one fill value. The 1 is the same drawing in every EVERY1 form. Never re-set it in another face, never stretch it, and never redraw the numeral by hand.",
       "name": "EVERY1, vision lockup"
-    },
-    {
-      "file": "assets/logos/every1/every1-wordmark-reversed.svg",
-      "url": "https://brand.theword.world/assets/logos/every1/every1-wordmark-reversed.svg",
-      "kind": "vector",
-      "group": "every1",
-      "bytes": 1623,
-      "status": "approved",
-      "grounds": [
-        "midnight",
-        "photography with a Midnight scrim"
-      ],
-      "note": "For Midnight grounds and for footage carrying a scrim, which is where this door lives. EVERY reverses to white; the 1 stays Flame. Set in DM Sans at weight 900 and converted to outlines, so it is artwork rather than live text: it needs no font installed, never reflows, and recolours by changing one fill value. The 1 is the same drawing in every EVERY1 form. Never re-set it in another face, never stretch it, and never redraw the numeral by hand.",
-      "name": "EVERY1, wordmark, reversed"
-    },
-    {
-      "file": "assets/logos/every1/every1-wordmark.svg",
-      "url": "https://brand.theword.world/assets/logos/every1/every1-wordmark.svg",
-      "kind": "vector",
-      "group": "every1",
-      "bytes": 1603,
-      "status": "approved",
-      "grounds": [
-        "white",
-        "parchment"
-      ],
-      "note": "The default mark wherever the name is introduced on a light ground. The 1 stands at 1.25x the cap height of EVERY and is the only Flame on the mark. Set in DM Sans at weight 900 and converted to outlines, so it is artwork rather than live text: it needs no font installed, never reflows, and recolours by changing one fill value. The 1 is the same drawing in every EVERY1 form. Never re-set it in another face, never stretch it, and never redraw the numeral by hand.",
-      "name": "EVERY1, wordmark"
     },
     {
       "file": "assets/logos/every1/png/every1-bare-1600.png",
@@ -6287,7 +6231,12 @@
       "note": "Muted looping hero footage."
     }
   ],
-  "notesWithoutFiles": [],
+  "notesWithoutFiles": [
+    "assets/logos/every1/every1-app-icon.svg",
+    "assets/logos/every1/every1-glyph.svg",
+    "assets/logos/every1/every1-wordmark-reversed.svg",
+    "assets/logos/every1/every1-wordmark.svg"
+  ],
   "gaps": [
     "THE WORD's logo masters are a vector reconstruction, not an original drawing: the letterforms and the microphone are an autotrace, so their curves are dense polygons. Invisible on screen and in normal print. Before any large-format use, a banner, a vehicle wrap, or a building sign, those marks should be redrawn as true curves and approved. Revival To My City is not affected: its master is real font outlines with true Bezier curves.",
     "EVERY1 has no endorsed lockup. The approved forms carry the mark alone, so every EVERY1 surface must set the line A ministry of THE WORD FOR ALL THE WORLD itself, per Brand Guide §11. A lockup that carries the line as artwork is requested, not improvised.",

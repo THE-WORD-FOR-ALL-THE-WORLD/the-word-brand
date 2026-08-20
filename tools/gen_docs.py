@@ -94,7 +94,28 @@ def nav_cobrand(slug, name, mark):
             '    </a>')
 
 
+# EVERY1 is the recorded exception. Its nav carries its own mark and links to its
+# own page, because a parent wordmark in the corner is exactly the lockup this door
+# does not have. The text links beside it still reach the rest of the portal.
+NAV_EVERY1 = """    <a class="logo" href="/brand/every1/" aria-label="EVERY1 Movement">
+      <img src="/assets/logos/every1/every1-horizontal-reversed.svg" alt="EVERY1 Movement">
+    </a>"""
+
+FOOT_EVERY1 = """
+<footer>
+  <div class="wrap">
+    <a href="/brand/every1/" aria-label="EVERY1 Movement"><img src="/assets/logos/every1/every1-horizontal-reversed.svg" alt="EVERY1 Movement"></a>
+    <span>Every tribe. Every tongue. Every nation.</span>
+    <span>brand.theword.world · Internal use</span>
+  </div>
+</footer>
+
+</body>
+</html>
+"""
+
 NAV_COBRAND = {
+    "every1": NAV_EVERY1,
     "revival-to-my-city": nav_cobrand("revival-to-my-city", "Revival To My City",
                                       "/assets/logos/rtmc/rtmc-cobrand.svg"),
     "school-of-the-local-church": nav_cobrand("school-of-the-local-church", "School of the Local Church",
@@ -297,7 +318,7 @@ e1_msg += sec(6, "The First Three Steps",
 e1_msg += sec(7, "The Words It Carries",
     keywords(["EVERY1 in the church for EVERY1 outside the church", "You are the minister", "Fire starts fire", "A lifestyle, not an event"]))
 e1_msg += sec(8, "On the Record",
-    p("A future EVERY1 app is planned on the YouVersion model and will not visibly promote the parent ministry. This exception stands on record in the Brand Guide. Until the app ships, EVERY1 follows the Brand Messaging Guide in full."))
+    p("EVERY1 is the one door that stands on its own. On the YouVersion model, it carries no endorsement line and no parent lockup, across the movement, the app, and the activation platform alike. That exception stands on record in the Brand Guide. Everything else in the Brand Messaging Guide applies to it in full."))
 e1_msg += sec_authority(9, "Brand Messaging Guide")
 
 slc_msg = FOUNDATION
@@ -623,7 +644,7 @@ SUBS = [
             "<strong>Midnight ground, full bleed.</strong> This is the only door that runs dark by default. Footage fills the frame wherever the layout allows.",
             "<strong>Flame to the full tenth.</strong> The parent's ceiling, used fully. It still never carries text: Ember does that job.",
             "<strong>Most footage, least chrome.</strong> Motion carries this door. Where a still would do for CLEAN or TRAIN, EVERY1 uses the clip.",
-            "<strong>One recorded exception.</strong> The future EVERY1 app follows the YouVersion model and will not visibly promote the parent. Until it ships, EVERY1 follows this guide in full.",
+            "<strong>This door is the recorded exception.</strong> EVERY1 carries no endorsement line and no parent lockup, on the YouVersion model: the movement, the app, and the activation platform are joined by people who have not yet heard of the house behind them. Law III stands for every other door. Nothing else about this guide is waived.",
         ],
         shots=[("every1-one-to-one","One believer greeting another at the front of the tent, person to person.","31 Jul 2026"),
                ("every1-ministry-in-the-tent","Serving the seated rows individually rather than from the platform.","30 Jul 2026")],
@@ -711,16 +732,21 @@ MARKS = {
   "EVERY and carrying the only Flame on the mark. The 1 is the same drawing in every form, which is "
   "what lets it leave the wordmark and still be the movement. Every form is vector, so it scales "
   "without limit and recolours by changing one fill value.",
-  "Do not re-set it in another face, do not stretch it, and do not redraw the numeral by hand. The "
-  "approved forms carry no endorsement line, so the surface sets that line itself.",
+  "Do not re-set it in another face, do not stretch it, and do not redraw the numeral by hand. No "
+  "form carries an endorsement line and none should be added: this door stands on its own, which is "
+  "the recorded exception and the reason the mark reads the way it does.",
   "Set in DM Sans at weight 900, converted to outlines.",
   None, [
-   ("every1-wordmark",          False, "Wordmark",            "The default wherever the name is introduced on a light ground."),
-   ("every1-wordmark-reversed", True,  "Wordmark, reversed",  "Midnight grounds and footage carrying a scrim, which is where this door lives."),
-   ("every1-vision",            False, "Vision lockup",       "The wordmark with the vision above and below, both lines tracked to its exact width."),
-   ("every1-vision-reversed",   True,  "Vision lockup, reversed", "The same lockup for Midnight and for scrimmed footage."),
-   ("every1-glyph",             True,  "The 1 glyph",         "The avatar. Stickers, watermarks, profile marks, and the planned app, with the parent invisible."),
-   ("every1-app-icon",          False, "App icon",            "The glyph on its own Midnight plate, with the safe area the rounded corners need."),
+   ("every1-horizontal",        False, "Horizontal lockup",   "The default. The name with MOVEMENT beside it, which is what makes it a movement rather than a word."),
+   ("every1-horizontal-reversed", True, "Horizontal, reversed", "Midnight grounds and scrimmed footage, which is where most of this door's work lives."),
+   ("every1-bare",              False, "Bare wordmark",       "The name alone, for a surface that already says what this is: a shirt front, an app header, the second mention on a page."),
+   ("every1-vision",            False, "Vision lockup",       "The whole promise in one mark: the verse above, the name, and what it leads to below. Banners and backdrops. Never small."),
+   ("every1-promise-reversed",  True,  "Promise lockup",      "The name and the promise without the verse, for where the vision lockup is too tall."),
+   ("every1-e1",                False, "The E1 icon",         "Two characters and no words. The avatar, the app icon, the lanyard, the sticker."),
+   ("every1-numeral-reversed",  True,  "The 1",               "The numeral alone. A mark at small size, and the shape photography is masked into."),
+   ("every1-usa",               False, "Country lockup",      "One per country. USA's bar is brand colours; every other country carries its own flag."),
+   ("every1-uganda-reversed",   True,  "Country lockup, reversed", "Uganda, with the black segment lifted to white so the flag survives a dark ground."),
+   ("every1-horizontal-black",  False, "One colour",          "Embroidery, engraving, and newsprint. The numeral collapses into the word."),
   ]),
 }
 
@@ -797,7 +823,7 @@ EXTRAS = {
         <li><strong>The 1 is the glyph.</strong> The mark leads with the numeral, and the numeral is published on its own: an app icon, a profile badge, a sticker, a shape simple enough to survive at sixty pixels with no endorsement line in frame.</li>
         <li><strong>Share cards ride along.</strong> Every official EVERY1 surface ships with a version a member can post themselves: square and vertical, footage behind the scrim, one line of Parchment type.</li>
         <li><strong>The loosest rules in the house.</strong> Official surfaces follow this guide. What a member does with the badge on their own feed is not audited; it is the movement working.</li>
-        <li><strong>The app icon comes first.</strong> The planned app follows the YouVersion model, so the glyph carries the whole identity with the parent invisible. It was drawn before the app was built, not after, and it is published here already.</li>
+        <li><strong>The icon comes first.</strong> The app and the activation platform follow the YouVersion model, so the E1 icon carries the whole identity on its own. It was drawn before the app was built, not after, and it is published here already.</li>
       </ul>
     </div>
 
@@ -842,7 +868,7 @@ CHANNELS = {
             ("YouTube", "@every1movement", False),
             ("Facebook", "every1movement", False),
             ("X", "@every1movement", False),
-            ("App", "planned · YouVersion model", True),
+            ("App", "EVERY1 Movement · stands alone", True),
         ],
     ),
     "school-of-the-local-church": dict(
@@ -881,8 +907,12 @@ def channels_block(name: str, slug: str) -> str:
         '          <table>\n'
         f"{rows}"
         '          </table>\n'
-        '          <div class="cffoot">A ministry of THE WORD FOR ALL THE WORLD</div>\n'
-        '        </div>\n'
+        + (
+            '          <div class="cffoot">Every tribe. Every tongue. Every nation.</div>\n'
+            if slug == "every1"
+            else '          <div class="cffoot">A ministry of THE WORD FOR ALL THE WORLD</div>\n'
+        )
+        + '        </div>\n'
         '      </div>\n'
         '      <p class="prov">These handles are the recorded standard, not a claim that every account\n'
         '      exists. Registration status is pending confirmation against the account record. A handle\n'
@@ -934,10 +964,10 @@ MARK_DOOR_HERO = """<div class="door">
   <div class="inner">
     <div class="panel">
       <div class="stageword">{stage}</div>
-      <h1 class="markline"><img src="/assets/logos/every1/every1-wordmark-reversed.svg" alt="{name}"></h1>
+      <h1 class="markline"><img src="/assets/logos/every1/every1-bare-reversed.svg" alt="{name}"></h1>
       <p class="mission">{mission}</p>
       <div class="tickrule"><span class="ln"></span><span class="tk"></span><span class="ln"></span></div>
-      <div class="endorse">A ministry of THE WORD FOR ALL THE WORLD</div>
+      <div class="endorse">Every tribe. Every tongue. Every nation.</div>
     </div>
   </div>
 </div>
@@ -987,7 +1017,7 @@ SUB_PAGE = """
         <tr><th>Register</th><td>{register}</td></tr>
         <tr><th>Avatar</th><td>{avatar}</td></tr>
         <tr><th>Handle</th><td>{handle}</td></tr>
-        <tr><th>Endorsement</th><td>Every surface carries the line <em>A ministry of THE WORD FOR ALL THE WORLD.</em> It is not optional.</td></tr>
+        {endorserow}
       </table>
     </div>
 
@@ -1073,6 +1103,16 @@ for d in SUBS:
         if d["slug"] == "revival-to-my-city" else ""
     )
     fields["capture"] = capture
+    # EVERY1 is the recorded exception and carries no endorsement. Every other door
+    # states the line here, because for them it is not optional.
+    fields["endorserow"] = (
+        '<tr><th>Endorsement</th><td>None. This door stands on its own, which is the one '
+        'recorded exception to Law III. Do not add the parent line or lock the parent mark '
+        'to it.</td></tr>'
+        if d["slug"] == "every1"
+        else "<tr><th>Endorsement</th><td>Every surface carries the line "
+             "<em>A ministry of THE WORD FOR ALL THE WORLD.</em> It is not optional.</td></tr>"
+    )
     html = HEAD.format(title=f"{d['name']} · Initiative Brand Guide", extra_css=SUB_CSS,
                        og_title=f"{d['name']} · Initiative Brand Guide",
                        og_desc=f"How {d['name']} looks under the parent brand. {d['mission']}",
@@ -1084,7 +1124,7 @@ for d in SUBS:
         html = html.replace("/assets/logos/the-word/the-word-horizontal-reversed.svg",
                             "/assets/logos/the-word/the-word-horizontal.svg", 1)
     html += SUB_PAGE.format(shots=shots, rules=rules, **fields)
-    html += FOOT
+    html += FOOT_EVERY1 if d["slug"] == "every1" else FOOT
     outdir = os.path.join(REPO, "brand", d["slug"])
     os.makedirs(outdir, exist_ok=True)
     path = os.path.join(outdir, "index.html")

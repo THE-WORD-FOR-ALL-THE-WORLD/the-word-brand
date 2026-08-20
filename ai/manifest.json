@@ -86,8 +86,8 @@
       "name": "brand-system.md",
       "url": "https://brand.theword.world/ai/brand-system.md",
       "description": "The complete brand standard as one document.",
-      "bytes": 57169,
-      "sha256": "69a7778dbef0275e198da2ba172ad9d2adbb907a33d5701691317ea76f59cb0b"
+      "bytes": 57173,
+      "sha256": "888e4fd613115b595f8f1149e35336a1f9cccf2b19440666e24fb797ce582f70"
     },
     {
       "name": "SKILL.md",
@@ -128,15 +128,15 @@
       "name": "audit.md",
       "url": "https://brand.theword.world/ai/audit.md",
       "description": "The brand audit rubric and report template.",
-      "bytes": 7710,
-      "sha256": "63bf6febfd6c289f3db9e067ca8abfd1ae1176c9ddc2c7738a25008a56a6720e"
+      "bytes": 8001,
+      "sha256": "25b8eb0350be797f57dfa23492f247fdeb740f09d42e858b20ae8ad200d304d9"
     },
     {
       "name": "components.json",
       "url": "https://brand.theword.world/ai/components.json",
       "description": "Component specifications, resolved against current tokens.",
-      "bytes": 41041,
-      "sha256": "f88848f7249825883f0868c252ad893a894ce6927ea01fcb7208b6ef0f768c3a"
+      "bytes": 41150,
+      "sha256": "a3e943363c208f4ab213171fc409acc84304b6ba13904b9f38d38ddfaad6248e"
     },
     {
       "name": "channels.json",
@@ -149,8 +149,8 @@
       "name": "governance.json",
       "url": "https://brand.theword.world/ai/governance.json",
       "description": "Policies, processes, and procedures: how this system is run, changed, and used.",
-      "bytes": 15393,
-      "sha256": "d8d99e5ced7fe40e0058ca2bdc10530c7fa61957918e2d606b9559b10a071194"
+      "bytes": 15684,
+      "sha256": "1879901572c403573f18c3d1e3cefc459a2b876818155793f0d48cc754e05d40"
     },
     {
       "name": "copy-bank.json",
@@ -163,8 +163,8 @@
       "name": "assets.json",
       "url": "https://brand.theword.world/ai/assets.json",
       "description": "Approved logos, photography, and video, with usage rules.",
-      "bytes": 280937,
-      "sha256": "5d2e16674dab40d84baa1f54aa4246a2b1169542e21c4f8ead4fce6b661a288f"
+      "bytes": 278077,
+      "sha256": "d6dfd9c595a87a71e0cca3fd0186fa133119436eac77771392be98e476ed1a8e"
     },
     {
       "name": "approved-examples.md",

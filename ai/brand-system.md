@@ -284,7 +284,7 @@ Each door's channel facts are recorded in its own brand guide and collected here
 | YouTube | @every1movement |
 | Facebook | every1movement |
 | X | @every1movement |
-| App | planned · YouVersion model |
+| App | EVERY1 Movement · stands alone |
 
 ### School of the Local Church (Institution · TRAIN)
 
