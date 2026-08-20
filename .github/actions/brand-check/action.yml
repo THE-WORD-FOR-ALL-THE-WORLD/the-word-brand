@@ -26,7 +26,7 @@ runs:
       run: |
         mkdir -p "${RUNNER_TEMP}/brand"
         curl -fsSL -o "${RUNNER_TEMP}/brand/brand_check.py" \
-          https://raw.githubusercontent.com/nathan-zimmer/the-word-brand/main/tools/brand_check.py
+          https://raw.githubusercontent.com/THE-WORD-FOR-ALL-THE-WORLD/the-word-brand/main/tools/brand_check.py
 
     - name: Check
       shell: bash

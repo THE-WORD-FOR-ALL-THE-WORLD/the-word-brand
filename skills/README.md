@@ -20,7 +20,7 @@ overwrites it, and `tools/brand_lint.py` fails on the mismatch in the meantime.
 
 ```bash
 mkdir -p .claude/skills
-curl -sL https://raw.githubusercontent.com/nathan-zimmer/the-word-brand/main/skills/the-word-brand/SKILL.md \
+curl -sL https://raw.githubusercontent.com/THE-WORD-FOR-ALL-THE-WORLD/the-word-brand/main/skills/the-word-brand/SKILL.md \
   -o .claude/skills/the-word-brand/SKILL.md
 ```
 

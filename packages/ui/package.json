@@ -5,7 +5,7 @@
   "homepage": "https://brand.theword.world/components",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nathan-zimmer/the-word-brand.git",
+    "url": "git+https://github.com/THE-WORD-FOR-ALL-THE-WORLD/the-word-brand.git",
     "directory": "packages/ui"
   },
   "license": "SEE LICENSE IN README.md",

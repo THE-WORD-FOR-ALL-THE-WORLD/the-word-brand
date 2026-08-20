@@ -79,7 +79,7 @@
   "governance": "This system changes one way: a proposed edit in writing, approval by Joel Zimmer and Nathan Zimmer, a version bump, and a changelog entry. No silent edits.",
   "usage": "Free to read, quote, and follow for work produced for or about THE WORD FOR ALL THE WORLD. Not a license to use the wordmark, photography, or video for any other purpose.",
   "contact": "brand@theword.world",
-  "sourceRepository": "https://github.com/nathan-zimmer/the-word-brand",
+  "sourceRepository": "https://github.com/THE-WORD-FOR-ALL-THE-WORLD/the-word-brand",
   "generatedBy": "tools/build_ai.py",
   "files": [
     {

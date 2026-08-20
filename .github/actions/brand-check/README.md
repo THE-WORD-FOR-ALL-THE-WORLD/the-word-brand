@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: nathan-zimmer/the-word-brand/.github/actions/brand-check@main
+      - uses: THE-WORD-FOR-ALL-THE-WORLD/the-word-brand/.github/actions/brand-check@main
         with:
           targets: "dist/**/*.html src/**/*.css"
 ```

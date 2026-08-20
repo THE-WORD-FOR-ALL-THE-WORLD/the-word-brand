@@ -37,6 +37,11 @@ AI_SOURCE = os.path.join(REPO, "ai-source")
 
 MANIFEST_SCHEMA_VERSION = "1.0"
 
+# The repository this is published from. Stated once: it reaches the manifest that
+# agents read, both package manifests, and the raw URL the brand-check Action
+# fetches itself from, so a wrong value here is a 404 in four places.
+REPO_URL = "https://github.com/THE-WORD-FOR-ALL-THE-WORLD/the-word-brand"
+
 
 # ---------------------------------------------------------------- utilities
 
@@ -271,7 +276,7 @@ def build_package_json(brand: dict, updated: str) -> str:
             "brand system; never edited by hand."
         ),
         "homepage": f"{SITE}/",
-        "repository": {"type": "git", "url": "git+https://github.com/nathan-zimmer/the-word-brand.git"},
+        "repository": {"type": "git", "url": f"git+{REPO_URL}.git"},
         "license": "SEE LICENSE IN README.md",
         "sideEffects": ["*.css"],
         "exports": {
@@ -397,7 +402,7 @@ def build_ui_package_json(brand: dict, updated: str) -> str:
         "homepage": f"{SITE}/components",
         "repository": {
             "type": "git",
-            "url": "git+https://github.com/nathan-zimmer/the-word-brand.git",
+            "url": f"git+{REPO_URL}.git",
             "directory": "packages/ui",
         },
         "license": "SEE LICENSE IN README.md",
@@ -1904,7 +1909,7 @@ def build() -> dict:
         "governance": manifest_overrides.get("governance", ""),
         "usage": manifest_overrides.get("usage", ""),
         "contact": manifest_overrides.get("contact", ""),
-        "sourceRepository": "https://github.com/nathan-zimmer/the-word-brand",
+        "sourceRepository": REPO_URL,
         "generatedBy": "tools/build_ai.py",
         "files": [
             {
