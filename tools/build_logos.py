@@ -415,6 +415,79 @@ EVERY1_CONFIGS = [
         ),
     },
     {
+        "slug": "bare",
+        "master": "every1-bare",
+        "name": "Bare wordmark",
+        "primary": False,
+        "clear": 0.5,
+        "min_px": 140,
+        "min_mm": 32,
+        "use": (
+            "The name alone, without MOVEMENT. For a surface that already says what this "
+            "is: a shirt front, a banner, an app header, the second time the name appears "
+            "on a page."
+        ),
+    },
+    {
+        "slug": "vision",
+        "master": "every1-vision",
+        "name": "Vision lockup",
+        "primary": False,
+        "clear": 0.5,
+        "min_px": 260,
+        "min_mm": 58,
+        "use": (
+            "The whole promise in one mark: the verse above, the name, and what it leads "
+            "to below. Banners, stage backdrops, and the back of a shirt. Never small."
+        ),
+    },
+    {
+        "slug": "promise",
+        "master": "every1-promise",
+        "name": "Promise lockup",
+        "primary": False,
+        "clear": 0.5,
+        "min_px": 200,
+        "min_mm": 45,
+        "use": "The name and the promise without the verse, for where the vision lockup is too tall.",
+    },
+    {
+        "slug": "usa",
+        "master": "every1-usa",
+        "name": "Country lockup, USA",
+        "primary": False,
+        "clear": 0.5,
+        "min_px": 180,
+        "min_mm": 40,
+        "use": "The USA country lockup. One per country, and each one is drawn, not generated.",
+        # USA is the recorded exception: its bar is brand colours, not its flag, because
+        # the flag is close enough that a true red and blue would read as a mistake.
+        # On Midnight the third segment cannot stay Midnight, which is what the supplied
+        # reversed artwork does at 1.0:1, so it takes Word Blue there.
+        "ink_roles": {
+            "": {"flag-a": "#F85842", "flag-b": "#FFFFFF", "flag-c": "#0B1A2D"},
+            "-reversed": {"flag-a": "#F85842", "flag-b": "#FFFFFF", "flag-c": "#023D6F"},
+            "-black": {"flag-a": "#000000", "flag-b": "#000000", "flag-c": "#000000"},
+        },
+    },
+    {
+        "slug": "uganda",
+        "master": "every1-uganda",
+        "name": "Country lockup, Uganda",
+        "primary": False,
+        "clear": 0.5,
+        "min_px": 180,
+        "min_mm": 40,
+        "use": "The Uganda country lockup. One per country, and each one is drawn, not generated.",
+        # Uganda's flag, and the black segment goes white on a dark ground rather than
+        # disappearing into it, which is what the supplied reversed artwork does at 1.2:1.
+        "ink_roles": {
+            "": {"flag-a": "#000000", "flag-b": "#FFDE59", "flag-c": "#FF3131"},
+            "-reversed": {"flag-a": "#FFFFFF", "flag-b": "#FFDE59", "flag-c": "#FF3131"},
+            "-black": {"flag-a": "#000000", "flag-b": "#000000", "flag-c": "#000000"},
+        },
+    },
+    {
         "slug": "e1",
         "master": "every1-e1",
         "name": "The E1 icon",
@@ -531,7 +604,10 @@ _TITLE_RE = re.compile(r"<title\b[^>]*>.*?</title>\s*", re.S)
 _DESC_RE = re.compile(r"<desc\b[^>]*>.*?</desc>\s*", re.S)
 _COMMENT_RE = re.compile(r"<!--.*?-->\s*", re.S)
 _G_OPEN_RE = re.compile(r"<g\b([^>]*)>")
-_FILL_ATTR_RE = re.compile(r'\s(?:fill|color)="[^"]*"')
+# Everything except an explicit none. A path that says it is not filled has to keep
+# saying so all the way through, or the repaint below hands it a colour and a stroke
+# guide becomes a solid block.
+_FILL_ATTR_RE = re.compile(r'\s(?:fill|color)="(?!\s*(?:none|transparent)\s*")[^"]*"')
 
 
 
@@ -750,6 +826,11 @@ def make_svg(brand, master, cfg, ink_suffix, ink):
 
     def repaint(m):
         attrs = m.group(1)
+        # A path that was explicitly unfilled stays unfilled. Repainting it turns a
+        # stroke guide into a solid block, which is how a Midnight rectangle ended up
+        # covering the yellow segment of the Uganda flag bar.
+        if re.search(r'fill="\s*(?:none|transparent)\s*"', attrs, re.I):
+            return m.group(0)
         role = re.search(r'data-role="([^"]*)"', attrs)
         return f'<path fill="{ink_for(ink, role.group(1) if role else None)}"{attrs}>'
 

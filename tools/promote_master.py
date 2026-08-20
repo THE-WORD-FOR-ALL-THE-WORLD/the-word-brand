@@ -38,7 +38,7 @@ WORD_FILLS = {"#0b1a2d", "#ffffff", "#000000"}
 ACCENT_FILLS = {"#f85842"}
 
 
-def promote(src_path: str, slug: str, title: str, note: str) -> str:
+def promote(src_path: str, slug: str, title: str, note: str, extra: dict, find_bar: bool) -> str:
     src = open(src_path, encoding="utf-8").read()
 
     for block in (r"<defs\b.*?</defs>", r"<clipPath\b.*?</clipPath>"):
@@ -50,12 +50,41 @@ def promote(src_path: str, slug: str, title: str, note: str) -> str:
     src = re.sub(r'\s*clip-path="[^"]*"', "", src)
     src = re.sub(r"\s*(?:zoomAndPan|version|xmlns:xlink)=\"[^\"]*\"", "", src)
 
+    # The country bar is three rectangles in the bottom band. They cannot be told
+    # apart from the mark by colour, because USA's bar is Flame and White and the
+    # numeral is Flame too. Geometry separates them: a flag segment is a wide, short
+    # axis-aligned rectangle sitting below the type. Found this way, the same rule
+    # works for a country nobody has drawn yet.
+    bar_index = {}
+    if find_bar:
+        shapes_pre, _ = svgkit.load(src_path)
+        ax0, ay0, ax1, ay1 = svgkit.bbox(shapes_pre)
+        band = ay1 - (ay1 - ay0) * 0.22
+        bars = []
+        for i, sh in enumerate(shapes_pre):
+            pts = [p for sp in sh.subpaths for p in sp]
+            bx0 = min(p[0] for p in pts); bx1 = max(p[0] for p in pts)
+            by0 = min(p[1] for p in pts); by1 = max(p[1] for p in pts)
+            if by0 < band:
+                continue
+            w_, h_ = bx1 - bx0, by1 - by0
+            if h_ <= 0 or w_ / h_ < 3:
+                continue
+            if len(sh.subpaths) != 1 or len(sh.subpaths[0]) > 6:
+                continue
+            bars.append((bx0, i))
+        bars.sort()
+        for n, (_, i) in enumerate(bars):
+            bar_index[i] = f"flag-{chr(ord('a') + n)}"
+        if bar_index:
+            print(f"  flag bar: {len(bar_index)} segments -> {', '.join(bar_index.values())}")
+
     # A Canva export paints the <g>, not the <path>. The build reads data-role off the
     # path itself, so the fill has to be resolved down the tree and written onto each
     # path, or every mark comes out one colour with its accent silently lost.
     tag_re = re.compile(r"<(\w+)([^>]*?)(/?)>|</(\w+)>")
     stack = ["#000000"]
-    out, pos = [], 0
+    out, pos, path_n = [], 0, 0
     for m in tag_re.finditer(src):
         out.append(src[pos:m.start()])
         pos = m.end()
@@ -79,13 +108,34 @@ def promote(src_path: str, slug: str, title: str, note: str) -> str:
             out.append(f"<g{attrs}{selfclose}>")
             continue
         if tag == "path":
+            # A stroke-only path is not artwork and the loader skips it, so it must
+            # not advance the counter either, or every index after it points at the
+            # wrong shape. This is how the Uganda bar came out mistagged.
+            literal = re.search(r'fill="([^"]*)"', attrs)
+            if literal and literal.group(1).strip().lower() in ("none", "transparent"):
+                # Dropped, not kept. It draws nothing, the loader ignores it, and any
+                # step downstream that repaints every path would turn it into a solid
+                # block. A Canva export leaves several of these behind.
+                continue
             attrs = re.sub(r'\s*fill(?:-opacity)?="[^"]*"', "", attrs)
-            if fill in ACCENT_FILLS:
+            role_here = bar_index.get(path_n)
+            path_n += 1
+            if role_here:
+                out.append(f'<path fill="{fill}" data-role="{role_here}"{attrs}{selfclose}>')
+            elif fill in extra:
+                # A colour the brand does not own, most often a national flag bar.
+                # It is tagged so the ink decides it, rather than left as a literal
+                # nobody can reach: a one-colour ink has to be able to flatten it.
+                out.append(f'<path fill="{fill}" data-role="{extra[fill]}"{attrs}{selfclose}>')
+            elif fill in ACCENT_FILLS:
                 out.append(f'<path fill="{fill}" data-role="accent"{attrs}{selfclose}>')
             elif fill in WORD_FILLS:
                 out.append(f'<path fill="currentColor"{attrs}{selfclose}>')
             else:
-                raise SystemExit(f"{src_path}: path fill {fill} is neither the word nor the accent")
+                raise SystemExit(
+                    f"{src_path}: path fill {fill} is neither the word, the accent, nor mapped "
+                    f"with --map. Map it to a role or correct the artwork."
+                )
             continue
         out.append(m.group(0))
     out.append(src[pos:])
@@ -120,12 +170,26 @@ def main() -> int:
     ap.add_argument("slug", help="master filename without .svg")
     ap.add_argument("title", help="human title for the <title> element")
     ap.add_argument("--note", default="Supplied from Canva as outlined type.", help="provenance line")
+    ap.add_argument(
+        "--map", action="append", default=[],
+        help="give a non-brand fill a role, e.g. --map '#ffde59=flag-b'. Repeatable.",
+    )
+    ap.add_argument(
+        "--flag-bar", action="store_true",
+        help="find the country bar by geometry and tag its segments flag-a, flag-b, flag-c",
+    )
     args = ap.parse_args()
+    extra = {}
+    for pair in args.map:
+        colour, _, role = pair.partition("=")
+        if not role:
+            raise SystemExit(f"--map needs colour=role, got {pair!r}")
+        extra[colour.strip().lower()] = role.strip()
 
     src_path = os.path.join(LOGOS, args.source)
     if not os.path.exists(src_path):
         raise SystemExit(f"no such file: {src_path}")
-    out = promote(src_path, args.slug, args.title, args.note)
+    out = promote(src_path, args.slug, args.title, args.note, extra, args.flag_bar)
     dest = os.path.join(MASTERS, f"{args.slug}.svg")
     with open(dest, "w", encoding="utf-8") as fh:
         fh.write(out)

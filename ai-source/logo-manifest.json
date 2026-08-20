@@ -866,6 +866,531 @@
     },
     {
       "brand": "every1",
+      "slug": "bare",
+      "name": "Bare wordmark",
+      "primary": false,
+      "use": "The name alone, without MOVEMENT. For a surface that already says what this is: a shirt front, a banner, an app header, the second time the name appears on a page.",
+      "aspect": 5.4255,
+      "capHeight": 62.52,
+      "clearSpace": "0.5x the cap height of EVERY1 on all four sides",
+      "clearSpaceReference": "the cap height of EVERY1",
+      "clearSpaceRatio": 0.5,
+      "minimumWidth": {
+        "screen": "140px",
+        "print": "32mm"
+      },
+      "files": [
+        {
+          "file": "assets/logos/every1/every1-bare.svg",
+          "format": "svg",
+          "ink": "Two-tone, Midnight and Flame"
+        },
+        {
+          "file": "assets/logos/every1/png/every1-bare-400.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and Flame",
+          "width": 400
+        },
+        {
+          "file": "assets/logos/every1/png/every1-bare-800.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and Flame",
+          "width": 800
+        },
+        {
+          "file": "assets/logos/every1/png/every1-bare-1600.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and Flame",
+          "width": 1600
+        },
+        {
+          "file": "assets/logos/every1/png/every1-bare-3200.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and Flame",
+          "width": 3200
+        },
+        {
+          "file": "assets/logos/every1/every1-bare-reversed.svg",
+          "format": "svg",
+          "ink": "Reversed, white and Flame"
+        },
+        {
+          "file": "assets/logos/every1/png/every1-bare-reversed-400.png",
+          "format": "png",
+          "ink": "Reversed, white and Flame",
+          "width": 400
+        },
+        {
+          "file": "assets/logos/every1/png/every1-bare-reversed-800.png",
+          "format": "png",
+          "ink": "Reversed, white and Flame",
+          "width": 800
+        },
+        {
+          "file": "assets/logos/every1/png/every1-bare-reversed-1600.png",
+          "format": "png",
+          "ink": "Reversed, white and Flame",
+          "width": 1600
+        },
+        {
+          "file": "assets/logos/every1/png/every1-bare-reversed-3200.png",
+          "format": "png",
+          "ink": "Reversed, white and Flame",
+          "width": 3200
+        },
+        {
+          "file": "assets/logos/every1/every1-bare-black.svg",
+          "format": "svg",
+          "ink": "One colour, black"
+        },
+        {
+          "file": "assets/logos/every1/png/every1-bare-black-400.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 400
+        },
+        {
+          "file": "assets/logos/every1/png/every1-bare-black-800.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 800
+        },
+        {
+          "file": "assets/logos/every1/png/every1-bare-black-1600.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 1600
+        },
+        {
+          "file": "assets/logos/every1/png/every1-bare-black-3200.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 3200
+        }
+      ]
+    },
+    {
+      "brand": "every1",
+      "slug": "vision",
+      "name": "Vision lockup",
+      "primary": false,
+      "use": "The whole promise in one mark: the verse above, the name, and what it leads to below. Banners, stage backdrops, and the back of a shirt. Never small.",
+      "aspect": 3.3317,
+      "capHeight": 102.61,
+      "clearSpace": "0.5x the cap height of EVERY1 on all four sides",
+      "clearSpaceReference": "the cap height of EVERY1",
+      "clearSpaceRatio": 0.5,
+      "minimumWidth": {
+        "screen": "260px",
+        "print": "58mm"
+      },
+      "files": [
+        {
+          "file": "assets/logos/every1/every1-vision.svg",
+          "format": "svg",
+          "ink": "Two-tone, Midnight and Flame"
+        },
+        {
+          "file": "assets/logos/every1/png/every1-vision-400.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and Flame",
+          "width": 400
+        },
+        {
+          "file": "assets/logos/every1/png/every1-vision-800.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and Flame",
+          "width": 800
+        },
+        {
+          "file": "assets/logos/every1/png/every1-vision-1600.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and Flame",
+          "width": 1600
+        },
+        {
+          "file": "assets/logos/every1/png/every1-vision-3200.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and Flame",
+          "width": 3200
+        },
+        {
+          "file": "assets/logos/every1/every1-vision-reversed.svg",
+          "format": "svg",
+          "ink": "Reversed, white and Flame"
+        },
+        {
+          "file": "assets/logos/every1/png/every1-vision-reversed-400.png",
+          "format": "png",
+          "ink": "Reversed, white and Flame",
+          "width": 400
+        },
+        {
+          "file": "assets/logos/every1/png/every1-vision-reversed-800.png",
+          "format": "png",
+          "ink": "Reversed, white and Flame",
+          "width": 800
+        },
+        {
+          "file": "assets/logos/every1/png/every1-vision-reversed-1600.png",
+          "format": "png",
+          "ink": "Reversed, white and Flame",
+          "width": 1600
+        },
+        {
+          "file": "assets/logos/every1/png/every1-vision-reversed-3200.png",
+          "format": "png",
+          "ink": "Reversed, white and Flame",
+          "width": 3200
+        },
+        {
+          "file": "assets/logos/every1/every1-vision-black.svg",
+          "format": "svg",
+          "ink": "One colour, black"
+        },
+        {
+          "file": "assets/logos/every1/png/every1-vision-black-400.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 400
+        },
+        {
+          "file": "assets/logos/every1/png/every1-vision-black-800.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 800
+        },
+        {
+          "file": "assets/logos/every1/png/every1-vision-black-1600.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 1600
+        },
+        {
+          "file": "assets/logos/every1/png/every1-vision-black-3200.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 3200
+        }
+      ]
+    },
+    {
+      "brand": "every1",
+      "slug": "promise",
+      "name": "Promise lockup",
+      "primary": false,
+      "use": "The name and the promise without the verse, for where the vision lockup is too tall.",
+      "aspect": 4.0798,
+      "capHeight": 83.89,
+      "clearSpace": "0.5x the cap height of EVERY1 on all four sides",
+      "clearSpaceReference": "the cap height of EVERY1",
+      "clearSpaceRatio": 0.5,
+      "minimumWidth": {
+        "screen": "200px",
+        "print": "45mm"
+      },
+      "files": [
+        {
+          "file": "assets/logos/every1/every1-promise.svg",
+          "format": "svg",
+          "ink": "Two-tone, Midnight and Flame"
+        },
+        {
+          "file": "assets/logos/every1/png/every1-promise-400.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and Flame",
+          "width": 400
+        },
+        {
+          "file": "assets/logos/every1/png/every1-promise-800.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and Flame",
+          "width": 800
+        },
+        {
+          "file": "assets/logos/every1/png/every1-promise-1600.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and Flame",
+          "width": 1600
+        },
+        {
+          "file": "assets/logos/every1/png/every1-promise-3200.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and Flame",
+          "width": 3200
+        },
+        {
+          "file": "assets/logos/every1/every1-promise-reversed.svg",
+          "format": "svg",
+          "ink": "Reversed, white and Flame"
+        },
+        {
+          "file": "assets/logos/every1/png/every1-promise-reversed-400.png",
+          "format": "png",
+          "ink": "Reversed, white and Flame",
+          "width": 400
+        },
+        {
+          "file": "assets/logos/every1/png/every1-promise-reversed-800.png",
+          "format": "png",
+          "ink": "Reversed, white and Flame",
+          "width": 800
+        },
+        {
+          "file": "assets/logos/every1/png/every1-promise-reversed-1600.png",
+          "format": "png",
+          "ink": "Reversed, white and Flame",
+          "width": 1600
+        },
+        {
+          "file": "assets/logos/every1/png/every1-promise-reversed-3200.png",
+          "format": "png",
+          "ink": "Reversed, white and Flame",
+          "width": 3200
+        },
+        {
+          "file": "assets/logos/every1/every1-promise-black.svg",
+          "format": "svg",
+          "ink": "One colour, black"
+        },
+        {
+          "file": "assets/logos/every1/png/every1-promise-black-400.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 400
+        },
+        {
+          "file": "assets/logos/every1/png/every1-promise-black-800.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 800
+        },
+        {
+          "file": "assets/logos/every1/png/every1-promise-black-1600.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 1600
+        },
+        {
+          "file": "assets/logos/every1/png/every1-promise-black-3200.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 3200
+        }
+      ]
+    },
+    {
+      "brand": "every1",
+      "slug": "usa",
+      "name": "Country lockup, USA",
+      "primary": false,
+      "use": "The USA country lockup. One per country, and each one is drawn, not generated.",
+      "aspect": 2.6143,
+      "capHeight": 62.52,
+      "clearSpace": "0.5x the cap height of EVERY1 on all four sides",
+      "clearSpaceReference": "the cap height of EVERY1",
+      "clearSpaceRatio": 0.5,
+      "minimumWidth": {
+        "screen": "180px",
+        "print": "40mm"
+      },
+      "files": [
+        {
+          "file": "assets/logos/every1/every1-usa.svg",
+          "format": "svg",
+          "ink": "Two-tone, Midnight and Flame"
+        },
+        {
+          "file": "assets/logos/every1/png/every1-usa-400.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and Flame",
+          "width": 400
+        },
+        {
+          "file": "assets/logos/every1/png/every1-usa-800.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and Flame",
+          "width": 800
+        },
+        {
+          "file": "assets/logos/every1/png/every1-usa-1600.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and Flame",
+          "width": 1600
+        },
+        {
+          "file": "assets/logos/every1/png/every1-usa-3200.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and Flame",
+          "width": 3200
+        },
+        {
+          "file": "assets/logos/every1/every1-usa-reversed.svg",
+          "format": "svg",
+          "ink": "Reversed, white and Flame"
+        },
+        {
+          "file": "assets/logos/every1/png/every1-usa-reversed-400.png",
+          "format": "png",
+          "ink": "Reversed, white and Flame",
+          "width": 400
+        },
+        {
+          "file": "assets/logos/every1/png/every1-usa-reversed-800.png",
+          "format": "png",
+          "ink": "Reversed, white and Flame",
+          "width": 800
+        },
+        {
+          "file": "assets/logos/every1/png/every1-usa-reversed-1600.png",
+          "format": "png",
+          "ink": "Reversed, white and Flame",
+          "width": 1600
+        },
+        {
+          "file": "assets/logos/every1/png/every1-usa-reversed-3200.png",
+          "format": "png",
+          "ink": "Reversed, white and Flame",
+          "width": 3200
+        },
+        {
+          "file": "assets/logos/every1/every1-usa-black.svg",
+          "format": "svg",
+          "ink": "One colour, black"
+        },
+        {
+          "file": "assets/logos/every1/png/every1-usa-black-400.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 400
+        },
+        {
+          "file": "assets/logos/every1/png/every1-usa-black-800.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 800
+        },
+        {
+          "file": "assets/logos/every1/png/every1-usa-black-1600.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 1600
+        },
+        {
+          "file": "assets/logos/every1/png/every1-usa-black-3200.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 3200
+        }
+      ]
+    },
+    {
+      "brand": "every1",
+      "slug": "uganda",
+      "name": "Country lockup, Uganda",
+      "primary": false,
+      "use": "The Uganda country lockup. One per country, and each one is drawn, not generated.",
+      "aspect": 2.6143,
+      "capHeight": 62.52,
+      "clearSpace": "0.5x the cap height of EVERY1 on all four sides",
+      "clearSpaceReference": "the cap height of EVERY1",
+      "clearSpaceRatio": 0.5,
+      "minimumWidth": {
+        "screen": "180px",
+        "print": "40mm"
+      },
+      "files": [
+        {
+          "file": "assets/logos/every1/every1-uganda.svg",
+          "format": "svg",
+          "ink": "Two-tone, Midnight and Flame"
+        },
+        {
+          "file": "assets/logos/every1/png/every1-uganda-400.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and Flame",
+          "width": 400
+        },
+        {
+          "file": "assets/logos/every1/png/every1-uganda-800.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and Flame",
+          "width": 800
+        },
+        {
+          "file": "assets/logos/every1/png/every1-uganda-1600.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and Flame",
+          "width": 1600
+        },
+        {
+          "file": "assets/logos/every1/png/every1-uganda-3200.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and Flame",
+          "width": 3200
+        },
+        {
+          "file": "assets/logos/every1/every1-uganda-reversed.svg",
+          "format": "svg",
+          "ink": "Reversed, white and Flame"
+        },
+        {
+          "file": "assets/logos/every1/png/every1-uganda-reversed-400.png",
+          "format": "png",
+          "ink": "Reversed, white and Flame",
+          "width": 400
+        },
+        {
+          "file": "assets/logos/every1/png/every1-uganda-reversed-800.png",
+          "format": "png",
+          "ink": "Reversed, white and Flame",
+          "width": 800
+        },
+        {
+          "file": "assets/logos/every1/png/every1-uganda-reversed-1600.png",
+          "format": "png",
+          "ink": "Reversed, white and Flame",
+          "width": 1600
+        },
+        {
+          "file": "assets/logos/every1/png/every1-uganda-reversed-3200.png",
+          "format": "png",
+          "ink": "Reversed, white and Flame",
+          "width": 3200
+        },
+        {
+          "file": "assets/logos/every1/every1-uganda-black.svg",
+          "format": "svg",
+          "ink": "One colour, black"
+        },
+        {
+          "file": "assets/logos/every1/png/every1-uganda-black-400.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 400
+        },
+        {
+          "file": "assets/logos/every1/png/every1-uganda-black-800.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 800
+        },
+        {
+          "file": "assets/logos/every1/png/every1-uganda-black-1600.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 1600
+        },
+        {
+          "file": "assets/logos/every1/png/every1-uganda-black-3200.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 3200
+        }
+      ]
+    },
+    {
+      "brand": "every1",
       "slug": "e1",
       "name": "The E1 icon",
       "primary": false,

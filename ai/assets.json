@@ -174,6 +174,86 @@
       },
       {
         "brand": "every1",
+        "slug": "bare",
+        "name": "Bare wordmark",
+        "primary": false,
+        "use": "The name alone, without MOVEMENT. For a surface that already says what this is: a shirt front, a banner, an app header, the second time the name appears on a page.",
+        "aspect": 5.4255,
+        "capHeight": 62.52,
+        "clearSpace": "0.5x the cap height of EVERY1 on all four sides",
+        "clearSpaceReference": "the cap height of EVERY1",
+        "clearSpaceRatio": 0.5,
+        "minimumWidth": {
+          "screen": "140px",
+          "print": "32mm"
+        }
+      },
+      {
+        "brand": "every1",
+        "slug": "vision",
+        "name": "Vision lockup",
+        "primary": false,
+        "use": "The whole promise in one mark: the verse above, the name, and what it leads to below. Banners, stage backdrops, and the back of a shirt. Never small.",
+        "aspect": 3.3317,
+        "capHeight": 102.61,
+        "clearSpace": "0.5x the cap height of EVERY1 on all four sides",
+        "clearSpaceReference": "the cap height of EVERY1",
+        "clearSpaceRatio": 0.5,
+        "minimumWidth": {
+          "screen": "260px",
+          "print": "58mm"
+        }
+      },
+      {
+        "brand": "every1",
+        "slug": "promise",
+        "name": "Promise lockup",
+        "primary": false,
+        "use": "The name and the promise without the verse, for where the vision lockup is too tall.",
+        "aspect": 4.0798,
+        "capHeight": 83.89,
+        "clearSpace": "0.5x the cap height of EVERY1 on all four sides",
+        "clearSpaceReference": "the cap height of EVERY1",
+        "clearSpaceRatio": 0.5,
+        "minimumWidth": {
+          "screen": "200px",
+          "print": "45mm"
+        }
+      },
+      {
+        "brand": "every1",
+        "slug": "usa",
+        "name": "Country lockup, USA",
+        "primary": false,
+        "use": "The USA country lockup. One per country, and each one is drawn, not generated.",
+        "aspect": 2.6143,
+        "capHeight": 62.52,
+        "clearSpace": "0.5x the cap height of EVERY1 on all four sides",
+        "clearSpaceReference": "the cap height of EVERY1",
+        "clearSpaceRatio": 0.5,
+        "minimumWidth": {
+          "screen": "180px",
+          "print": "40mm"
+        }
+      },
+      {
+        "brand": "every1",
+        "slug": "uganda",
+        "name": "Country lockup, Uganda",
+        "primary": false,
+        "use": "The Uganda country lockup. One per country, and each one is drawn, not generated.",
+        "aspect": 2.6143,
+        "capHeight": 62.52,
+        "clearSpace": "0.5x the cap height of EVERY1 on all four sides",
+        "clearSpaceReference": "the cap height of EVERY1",
+        "clearSpaceRatio": 0.5,
+        "minimumWidth": {
+          "screen": "180px",
+          "print": "40mm"
+        }
+      },
+      {
+        "brand": "every1",
         "slug": "e1",
         "name": "The E1 icon",
         "primary": false,
@@ -308,8 +388,8 @@
   "authority": "canonical",
   "rule": "Use these assets. Never generate photography or video of people or ministry, and never substitute stock. If the asset you need is not listed, request it and leave the slot empty.",
   "counts": {
-    "total": 266,
-    "approved": 247,
+    "total": 343,
+    "approved": 320,
     "counterExamples": 0
   },
   "assets": [
@@ -439,6 +519,14 @@
       "note": "Still fallback for crowd-evening.mp4. Every loop ships with its poster."
     },
     {
+      "file": "assets/images/every1-app-sign-in.png",
+      "url": "https://brand.theword.world/assets/images/every1-app-sign-in.png",
+      "kind": "image",
+      "group": "images",
+      "bytes": 1063582,
+      "status": "published, no usage note recorded"
+    },
+    {
       "file": "assets/images/every1-community-gathering-poster.jpg",
       "url": "https://brand.theword.world/assets/images/every1-community-gathering-poster.jpg",
       "kind": "image",
@@ -446,6 +534,22 @@
       "bytes": 99620,
       "status": "approved",
       "note": "Still fallback for every1-community-gathering.mp4."
+    },
+    {
+      "file": "assets/images/every1-country-lockups.png",
+      "url": "https://brand.theword.world/assets/images/every1-country-lockups.png",
+      "kind": "image",
+      "group": "images",
+      "bytes": 1009258,
+      "status": "published, no usage note recorded"
+    },
+    {
+      "file": "assets/images/every1-kit-flat-lay.png",
+      "url": "https://brand.theword.world/assets/images/every1-kit-flat-lay.png",
+      "kind": "image",
+      "group": "images",
+      "bytes": 2538621,
+      "status": "published, no usage note recorded"
     },
     {
       "file": "assets/images/every1-ministry-in-the-tent.jpg",
@@ -466,6 +570,14 @@
       "status": "approved",
       "capture": "SLC Conference · Sanga, Mbarara, Uganda · 31 Jul 2026",
       "note": "One believer greeting another at the front of the tent. The person-to-person image of the BURN door."
+    },
+    {
+      "file": "assets/images/every1-social-profile.png",
+      "url": "https://brand.theword.world/assets/images/every1-social-profile.png",
+      "kind": "image",
+      "group": "images",
+      "bytes": 2211569,
+      "status": "published, no usage note recorded"
     },
     {
       "file": "assets/images/hero-congregation.jpg",
@@ -593,6 +705,60 @@
       ],
       "note": "The 1 on a Midnight plate, square, at 60% of the plate so the safe area survives the rounded corners every OS applies. App icons, home-screen icons, and profile pictures. Never place the plate inside another coloured shape and never re-cut the plate in another colour.",
       "name": "EVERY1, app icon"
+    },
+    {
+      "file": "assets/logos/every1/every1-bare-black.svg",
+      "url": "https://brand.theword.world/assets/logos/every1/every1-bare-black.svg",
+      "kind": "vector",
+      "group": "every1",
+      "bytes": 2633,
+      "status": "approved",
+      "grounds": [
+        "white",
+        "parchment"
+      ],
+      "configuration": "bare",
+      "clearSpace": "0.5x the cap height of EVERY1 on all four sides",
+      "minimumWidth": {
+        "screen": "140px",
+        "print": "32mm"
+      },
+      "note": "The name alone, without MOVEMENT. For a surface that already says what this is: a shirt front, a banner, an app header, the second time the name appears on a page. For single-colour reproduction only: embroidery, engraving, newsprint, stamps, and any vendor who asks for pure black. On screen use the Midnight ink instead. Vector master, scale freely.",
+      "name": "Bare wordmark, one colour, black"
+    },
+    {
+      "file": "assets/logos/every1/every1-bare-reversed.svg",
+      "url": "https://brand.theword.world/assets/logos/every1/every1-bare-reversed.svg",
+      "kind": "vector",
+      "group": "every1",
+      "bytes": 2633,
+      "status": "approved",
+      "grounds": [],
+      "configuration": "bare",
+      "clearSpace": "0.5x the cap height of EVERY1 on all four sides",
+      "minimumWidth": {
+        "screen": "140px",
+        "print": "32mm"
+      },
+      "note": "The name alone, without MOVEMENT. For a surface that already says what this is: a shirt front, a banner, an app header, the second time the name appears on a page.  Vector master, scale freely.",
+      "name": "Bare wordmark, reversed, white and flame"
+    },
+    {
+      "file": "assets/logos/every1/every1-bare.svg",
+      "url": "https://brand.theword.world/assets/logos/every1/every1-bare.svg",
+      "kind": "vector",
+      "group": "every1",
+      "bytes": 2633,
+      "status": "approved",
+      "grounds": [],
+      "configuration": "bare",
+      "clearSpace": "0.5x the cap height of EVERY1 on all four sides",
+      "minimumWidth": {
+        "screen": "140px",
+        "print": "32mm"
+      },
+      "note": "The name alone, without MOVEMENT. For a surface that already says what this is: a shirt front, a banner, an app header, the second time the name appears on a page.  Vector master, scale freely.",
+      "name": "Bare wordmark, two-tone, midnight and flame"
     },
     {
       "file": "assets/logos/every1/every1-e1-black.svg",
@@ -772,11 +938,193 @@
       "name": "The 1, two-tone, midnight and flame"
     },
     {
+      "file": "assets/logos/every1/every1-promise-black.svg",
+      "url": "https://brand.theword.world/assets/logos/every1/every1-promise-black.svg",
+      "kind": "vector",
+      "group": "every1",
+      "bytes": 14727,
+      "status": "approved",
+      "grounds": [
+        "white",
+        "parchment"
+      ],
+      "configuration": "promise",
+      "clearSpace": "0.5x the cap height of EVERY1 on all four sides",
+      "minimumWidth": {
+        "screen": "200px",
+        "print": "45mm"
+      },
+      "note": "The name and the promise without the verse, for where the vision lockup is too tall. For single-colour reproduction only: embroidery, engraving, newsprint, stamps, and any vendor who asks for pure black. On screen use the Midnight ink instead. Vector master, scale freely.",
+      "name": "Promise lockup, one colour, black"
+    },
+    {
+      "file": "assets/logos/every1/every1-promise-reversed.svg",
+      "url": "https://brand.theword.world/assets/logos/every1/every1-promise-reversed.svg",
+      "kind": "vector",
+      "group": "every1",
+      "bytes": 14727,
+      "status": "approved",
+      "grounds": [],
+      "configuration": "promise",
+      "clearSpace": "0.5x the cap height of EVERY1 on all four sides",
+      "minimumWidth": {
+        "screen": "200px",
+        "print": "45mm"
+      },
+      "note": "The name and the promise without the verse, for where the vision lockup is too tall.  Vector master, scale freely.",
+      "name": "Promise lockup, reversed, white and flame"
+    },
+    {
+      "file": "assets/logos/every1/every1-promise.svg",
+      "url": "https://brand.theword.world/assets/logos/every1/every1-promise.svg",
+      "kind": "vector",
+      "group": "every1",
+      "bytes": 14727,
+      "status": "approved",
+      "grounds": [],
+      "configuration": "promise",
+      "clearSpace": "0.5x the cap height of EVERY1 on all four sides",
+      "minimumWidth": {
+        "screen": "200px",
+        "print": "45mm"
+      },
+      "note": "The name and the promise without the verse, for where the vision lockup is too tall.  Vector master, scale freely.",
+      "name": "Promise lockup, two-tone, midnight and flame"
+    },
+    {
+      "file": "assets/logos/every1/every1-uganda-black.svg",
+      "url": "https://brand.theword.world/assets/logos/every1/every1-uganda-black.svg",
+      "kind": "vector",
+      "group": "every1",
+      "bytes": 9455,
+      "status": "approved",
+      "grounds": [
+        "white",
+        "parchment"
+      ],
+      "configuration": "uganda",
+      "clearSpace": "0.5x the cap height of EVERY1 on all four sides",
+      "minimumWidth": {
+        "screen": "180px",
+        "print": "40mm"
+      },
+      "note": "The Uganda country lockup. One per country, and each one is drawn, not generated. For single-colour reproduction only: embroidery, engraving, newsprint, stamps, and any vendor who asks for pure black. On screen use the Midnight ink instead. Vector master, scale freely.",
+      "name": "Country lockup, Uganda, one colour, black"
+    },
+    {
+      "file": "assets/logos/every1/every1-uganda-reversed.svg",
+      "url": "https://brand.theword.world/assets/logos/every1/every1-uganda-reversed.svg",
+      "kind": "vector",
+      "group": "every1",
+      "bytes": 9455,
+      "status": "approved",
+      "grounds": [],
+      "configuration": "uganda",
+      "clearSpace": "0.5x the cap height of EVERY1 on all four sides",
+      "minimumWidth": {
+        "screen": "180px",
+        "print": "40mm"
+      },
+      "note": "The Uganda country lockup. One per country, and each one is drawn, not generated.  Vector master, scale freely.",
+      "name": "Country lockup, Uganda, reversed, white and flame"
+    },
+    {
+      "file": "assets/logos/every1/every1-uganda.svg",
+      "url": "https://brand.theword.world/assets/logos/every1/every1-uganda.svg",
+      "kind": "vector",
+      "group": "every1",
+      "bytes": 9455,
+      "status": "approved",
+      "grounds": [],
+      "configuration": "uganda",
+      "clearSpace": "0.5x the cap height of EVERY1 on all four sides",
+      "minimumWidth": {
+        "screen": "180px",
+        "print": "40mm"
+      },
+      "note": "The Uganda country lockup. One per country, and each one is drawn, not generated.  Vector master, scale freely.",
+      "name": "Country lockup, Uganda, two-tone, midnight and flame"
+    },
+    {
+      "file": "assets/logos/every1/every1-usa-black.svg",
+      "url": "https://brand.theword.world/assets/logos/every1/every1-usa-black.svg",
+      "kind": "vector",
+      "group": "every1",
+      "bytes": 8481,
+      "status": "approved",
+      "grounds": [
+        "white",
+        "parchment"
+      ],
+      "configuration": "usa",
+      "clearSpace": "0.5x the cap height of EVERY1 on all four sides",
+      "minimumWidth": {
+        "screen": "180px",
+        "print": "40mm"
+      },
+      "note": "The USA country lockup. One per country, and each one is drawn, not generated. For single-colour reproduction only: embroidery, engraving, newsprint, stamps, and any vendor who asks for pure black. On screen use the Midnight ink instead. Vector master, scale freely.",
+      "name": "Country lockup, USA, one colour, black"
+    },
+    {
+      "file": "assets/logos/every1/every1-usa-reversed.svg",
+      "url": "https://brand.theword.world/assets/logos/every1/every1-usa-reversed.svg",
+      "kind": "vector",
+      "group": "every1",
+      "bytes": 8481,
+      "status": "approved",
+      "grounds": [],
+      "configuration": "usa",
+      "clearSpace": "0.5x the cap height of EVERY1 on all four sides",
+      "minimumWidth": {
+        "screen": "180px",
+        "print": "40mm"
+      },
+      "note": "The USA country lockup. One per country, and each one is drawn, not generated.  Vector master, scale freely.",
+      "name": "Country lockup, USA, reversed, white and flame"
+    },
+    {
+      "file": "assets/logos/every1/every1-usa.svg",
+      "url": "https://brand.theword.world/assets/logos/every1/every1-usa.svg",
+      "kind": "vector",
+      "group": "every1",
+      "bytes": 8481,
+      "status": "approved",
+      "grounds": [],
+      "configuration": "usa",
+      "clearSpace": "0.5x the cap height of EVERY1 on all four sides",
+      "minimumWidth": {
+        "screen": "180px",
+        "print": "40mm"
+      },
+      "note": "The USA country lockup. One per country, and each one is drawn, not generated.  Vector master, scale freely.",
+      "name": "Country lockup, USA, two-tone, midnight and flame"
+    },
+    {
+      "file": "assets/logos/every1/every1-vision-black.svg",
+      "url": "https://brand.theword.world/assets/logos/every1/every1-vision-black.svg",
+      "kind": "vector",
+      "group": "every1",
+      "bytes": 31355,
+      "status": "approved",
+      "grounds": [
+        "white",
+        "parchment"
+      ],
+      "configuration": "vision",
+      "clearSpace": "0.5x the cap height of EVERY1 on all four sides",
+      "minimumWidth": {
+        "screen": "260px",
+        "print": "58mm"
+      },
+      "note": "The whole promise in one mark: the verse above, the name, and what it leads to below. Banners, stage backdrops, and the back of a shirt. Never small. For single-colour reproduction only: embroidery, engraving, newsprint, stamps, and any vendor who asks for pure black. On screen use the Midnight ink instead. Vector master, scale freely.",
+      "name": "Vision lockup, one colour, black"
+    },
+    {
       "file": "assets/logos/every1/every1-vision-reversed.svg",
       "url": "https://brand.theword.world/assets/logos/every1/every1-vision-reversed.svg",
       "kind": "vector",
       "group": "every1",
-      "bytes": 17127,
+      "bytes": 31355,
       "status": "approved",
       "grounds": [
         "midnight",
@@ -790,7 +1138,7 @@
       "url": "https://brand.theword.world/assets/logos/every1/every1-vision.svg",
       "kind": "vector",
       "group": "every1",
-      "bytes": 17107,
+      "bytes": 31355,
       "status": "approved",
       "grounds": [
         "white",
@@ -826,6 +1174,222 @@
       ],
       "note": "The default mark wherever the name is introduced on a light ground. The 1 stands at 1.25x the cap height of EVERY and is the only Flame on the mark. Set in DM Sans at weight 900 and converted to outlines, so it is artwork rather than live text: it needs no font installed, never reflows, and recolours by changing one fill value. The 1 is the same drawing in every EVERY1 form. Never re-set it in another face, never stretch it, and never redraw the numeral by hand.",
       "name": "EVERY1, wordmark"
+    },
+    {
+      "file": "assets/logos/every1/png/every1-bare-1600.png",
+      "url": "https://brand.theword.world/assets/logos/every1/png/every1-bare-1600.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 15054,
+      "status": "approved",
+      "grounds": [],
+      "configuration": "bare",
+      "clearSpace": "0.5x the cap height of EVERY1 on all four sides",
+      "minimumWidth": {
+        "screen": "140px",
+        "print": "32mm"
+      },
+      "note": "The name alone, without MOVEMENT. For a surface that already says what this is: a shirt front, a banner, an app header, the second time the name appears on a page.  Raster at 1600px wide, never scale up.",
+      "name": "Bare wordmark, two-tone, midnight and flame"
+    },
+    {
+      "file": "assets/logos/every1/png/every1-bare-3200.png",
+      "url": "https://brand.theword.world/assets/logos/every1/png/every1-bare-3200.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 36977,
+      "status": "approved",
+      "grounds": [],
+      "configuration": "bare",
+      "clearSpace": "0.5x the cap height of EVERY1 on all four sides",
+      "minimumWidth": {
+        "screen": "140px",
+        "print": "32mm"
+      },
+      "note": "The name alone, without MOVEMENT. For a surface that already says what this is: a shirt front, a banner, an app header, the second time the name appears on a page.  Raster at 3200px wide, never scale up.",
+      "name": "Bare wordmark, two-tone, midnight and flame"
+    },
+    {
+      "file": "assets/logos/every1/png/every1-bare-400.png",
+      "url": "https://brand.theword.world/assets/logos/every1/png/every1-bare-400.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 3318,
+      "status": "approved",
+      "grounds": [],
+      "configuration": "bare",
+      "clearSpace": "0.5x the cap height of EVERY1 on all four sides",
+      "minimumWidth": {
+        "screen": "140px",
+        "print": "32mm"
+      },
+      "note": "The name alone, without MOVEMENT. For a surface that already says what this is: a shirt front, a banner, an app header, the second time the name appears on a page.  Raster at 400px wide, never scale up.",
+      "name": "Bare wordmark, two-tone, midnight and flame"
+    },
+    {
+      "file": "assets/logos/every1/png/every1-bare-800.png",
+      "url": "https://brand.theword.world/assets/logos/every1/png/every1-bare-800.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 6625,
+      "status": "approved",
+      "grounds": [],
+      "configuration": "bare",
+      "clearSpace": "0.5x the cap height of EVERY1 on all four sides",
+      "minimumWidth": {
+        "screen": "140px",
+        "print": "32mm"
+      },
+      "note": "The name alone, without MOVEMENT. For a surface that already says what this is: a shirt front, a banner, an app header, the second time the name appears on a page.  Raster at 800px wide, never scale up.",
+      "name": "Bare wordmark, two-tone, midnight and flame"
+    },
+    {
+      "file": "assets/logos/every1/png/every1-bare-black-1600.png",
+      "url": "https://brand.theword.world/assets/logos/every1/png/every1-bare-black-1600.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 10917,
+      "status": "approved",
+      "grounds": [
+        "white",
+        "parchment"
+      ],
+      "configuration": "bare",
+      "clearSpace": "0.5x the cap height of EVERY1 on all four sides",
+      "minimumWidth": {
+        "screen": "140px",
+        "print": "32mm"
+      },
+      "note": "The name alone, without MOVEMENT. For a surface that already says what this is: a shirt front, a banner, an app header, the second time the name appears on a page. For single-colour reproduction only: embroidery, engraving, newsprint, stamps, and any vendor who asks for pure black. On screen use the Midnight ink instead. Raster at 1600px wide, never scale up.",
+      "name": "Bare wordmark, one colour, black"
+    },
+    {
+      "file": "assets/logos/every1/png/every1-bare-black-3200.png",
+      "url": "https://brand.theword.world/assets/logos/every1/png/every1-bare-black-3200.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 26216,
+      "status": "approved",
+      "grounds": [
+        "white",
+        "parchment"
+      ],
+      "configuration": "bare",
+      "clearSpace": "0.5x the cap height of EVERY1 on all four sides",
+      "minimumWidth": {
+        "screen": "140px",
+        "print": "32mm"
+      },
+      "note": "The name alone, without MOVEMENT. For a surface that already says what this is: a shirt front, a banner, an app header, the second time the name appears on a page. For single-colour reproduction only: embroidery, engraving, newsprint, stamps, and any vendor who asks for pure black. On screen use the Midnight ink instead. Raster at 3200px wide, never scale up.",
+      "name": "Bare wordmark, one colour, black"
+    },
+    {
+      "file": "assets/logos/every1/png/every1-bare-black-400.png",
+      "url": "https://brand.theword.world/assets/logos/every1/png/every1-bare-black-400.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 2308,
+      "status": "approved",
+      "grounds": [
+        "white",
+        "parchment"
+      ],
+      "configuration": "bare",
+      "clearSpace": "0.5x the cap height of EVERY1 on all four sides",
+      "minimumWidth": {
+        "screen": "140px",
+        "print": "32mm"
+      },
+      "note": "The name alone, without MOVEMENT. For a surface that already says what this is: a shirt front, a banner, an app header, the second time the name appears on a page. For single-colour reproduction only: embroidery, engraving, newsprint, stamps, and any vendor who asks for pure black. On screen use the Midnight ink instead. Raster at 400px wide, never scale up.",
+      "name": "Bare wordmark, one colour, black"
+    },
+    {
+      "file": "assets/logos/every1/png/every1-bare-black-800.png",
+      "url": "https://brand.theword.world/assets/logos/every1/png/every1-bare-black-800.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 4744,
+      "status": "approved",
+      "grounds": [
+        "white",
+        "parchment"
+      ],
+      "configuration": "bare",
+      "clearSpace": "0.5x the cap height of EVERY1 on all four sides",
+      "minimumWidth": {
+        "screen": "140px",
+        "print": "32mm"
+      },
+      "note": "The name alone, without MOVEMENT. For a surface that already says what this is: a shirt front, a banner, an app header, the second time the name appears on a page. For single-colour reproduction only: embroidery, engraving, newsprint, stamps, and any vendor who asks for pure black. On screen use the Midnight ink instead. Raster at 800px wide, never scale up.",
+      "name": "Bare wordmark, one colour, black"
+    },
+    {
+      "file": "assets/logos/every1/png/every1-bare-reversed-1600.png",
+      "url": "https://brand.theword.world/assets/logos/every1/png/every1-bare-reversed-1600.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 13393,
+      "status": "approved",
+      "grounds": [],
+      "configuration": "bare",
+      "clearSpace": "0.5x the cap height of EVERY1 on all four sides",
+      "minimumWidth": {
+        "screen": "140px",
+        "print": "32mm"
+      },
+      "note": "The name alone, without MOVEMENT. For a surface that already says what this is: a shirt front, a banner, an app header, the second time the name appears on a page.  Raster at 1600px wide, never scale up.",
+      "name": "Bare wordmark, reversed, white and flame"
+    },
+    {
+      "file": "assets/logos/every1/png/every1-bare-reversed-3200.png",
+      "url": "https://brand.theword.world/assets/logos/every1/png/every1-bare-reversed-3200.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 33378,
+      "status": "approved",
+      "grounds": [],
+      "configuration": "bare",
+      "clearSpace": "0.5x the cap height of EVERY1 on all four sides",
+      "minimumWidth": {
+        "screen": "140px",
+        "print": "32mm"
+      },
+      "note": "The name alone, without MOVEMENT. For a surface that already says what this is: a shirt front, a banner, an app header, the second time the name appears on a page.  Raster at 3200px wide, never scale up.",
+      "name": "Bare wordmark, reversed, white and flame"
+    },
+    {
+      "file": "assets/logos/every1/png/every1-bare-reversed-400.png",
+      "url": "https://brand.theword.world/assets/logos/every1/png/every1-bare-reversed-400.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 3057,
+      "status": "approved",
+      "grounds": [],
+      "configuration": "bare",
+      "clearSpace": "0.5x the cap height of EVERY1 on all four sides",
+      "minimumWidth": {
+        "screen": "140px",
+        "print": "32mm"
+      },
+      "note": "The name alone, without MOVEMENT. For a surface that already says what this is: a shirt front, a banner, an app header, the second time the name appears on a page.  Raster at 400px wide, never scale up.",
+      "name": "Bare wordmark, reversed, white and flame"
+    },
+    {
+      "file": "assets/logos/every1/png/every1-bare-reversed-800.png",
+      "url": "https://brand.theword.world/assets/logos/every1/png/every1-bare-reversed-800.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 6051,
+      "status": "approved",
+      "grounds": [],
+      "configuration": "bare",
+      "clearSpace": "0.5x the cap height of EVERY1 on all four sides",
+      "minimumWidth": {
+        "screen": "140px",
+        "print": "32mm"
+      },
+      "note": "The name alone, without MOVEMENT. For a surface that already says what this is: a shirt front, a banner, an app header, the second time the name appears on a page.  Raster at 800px wide, never scale up.",
+      "name": "Bare wordmark, reversed, white and flame"
     },
     {
       "file": "assets/logos/every1/png/every1-e1-1600.png",
@@ -1474,6 +2038,870 @@
       },
       "note": "The numeral alone. Used as a mark at small size, and used as the shape photography is masked into, which is this door's signature move. Never redrawn, never outlined, never filled with anything but an image or Flame.  Raster at 800px wide, never scale up.",
       "name": "The 1, reversed, white and flame"
+    },
+    {
+      "file": "assets/logos/every1/png/every1-promise-1600.png",
+      "url": "https://brand.theword.world/assets/logos/every1/png/every1-promise-1600.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 30175,
+      "status": "approved",
+      "grounds": [],
+      "configuration": "promise",
+      "clearSpace": "0.5x the cap height of EVERY1 on all four sides",
+      "minimumWidth": {
+        "screen": "200px",
+        "print": "45mm"
+      },
+      "note": "The name and the promise without the verse, for where the vision lockup is too tall.  Raster at 1600px wide, never scale up.",
+      "name": "Promise lockup, two-tone, midnight and flame"
+    },
+    {
+      "file": "assets/logos/every1/png/every1-promise-3200.png",
+      "url": "https://brand.theword.world/assets/logos/every1/png/every1-promise-3200.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 68037,
+      "status": "approved",
+      "grounds": [],
+      "configuration": "promise",
+      "clearSpace": "0.5x the cap height of EVERY1 on all four sides",
+      "minimumWidth": {
+        "screen": "200px",
+        "print": "45mm"
+      },
+      "note": "The name and the promise without the verse, for where the vision lockup is too tall.  Raster at 3200px wide, never scale up.",
+      "name": "Promise lockup, two-tone, midnight and flame"
+    },
+    {
+      "file": "assets/logos/every1/png/every1-promise-400.png",
+      "url": "https://brand.theword.world/assets/logos/every1/png/every1-promise-400.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 6921,
+      "status": "approved",
+      "grounds": [],
+      "configuration": "promise",
+      "clearSpace": "0.5x the cap height of EVERY1 on all four sides",
+      "minimumWidth": {
+        "screen": "200px",
+        "print": "45mm"
+      },
+      "note": "The name and the promise without the verse, for where the vision lockup is too tall.  Raster at 400px wide, never scale up.",
+      "name": "Promise lockup, two-tone, midnight and flame"
+    },
+    {
+      "file": "assets/logos/every1/png/every1-promise-800.png",
+      "url": "https://brand.theword.world/assets/logos/every1/png/every1-promise-800.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 13743,
+      "status": "approved",
+      "grounds": [],
+      "configuration": "promise",
+      "clearSpace": "0.5x the cap height of EVERY1 on all four sides",
+      "minimumWidth": {
+        "screen": "200px",
+        "print": "45mm"
+      },
+      "note": "The name and the promise without the verse, for where the vision lockup is too tall.  Raster at 800px wide, never scale up.",
+      "name": "Promise lockup, two-tone, midnight and flame"
+    },
+    {
+      "file": "assets/logos/every1/png/every1-promise-black-1600.png",
+      "url": "https://brand.theword.world/assets/logos/every1/png/every1-promise-black-1600.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 21160,
+      "status": "approved",
+      "grounds": [
+        "white",
+        "parchment"
+      ],
+      "configuration": "promise",
+      "clearSpace": "0.5x the cap height of EVERY1 on all four sides",
+      "minimumWidth": {
+        "screen": "200px",
+        "print": "45mm"
+      },
+      "note": "The name and the promise without the verse, for where the vision lockup is too tall. For single-colour reproduction only: embroidery, engraving, newsprint, stamps, and any vendor who asks for pure black. On screen use the Midnight ink instead. Raster at 1600px wide, never scale up.",
+      "name": "Promise lockup, one colour, black"
+    },
+    {
+      "file": "assets/logos/every1/png/every1-promise-black-3200.png",
+      "url": "https://brand.theword.world/assets/logos/every1/png/every1-promise-black-3200.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 47655,
+      "status": "approved",
+      "grounds": [
+        "white",
+        "parchment"
+      ],
+      "configuration": "promise",
+      "clearSpace": "0.5x the cap height of EVERY1 on all four sides",
+      "minimumWidth": {
+        "screen": "200px",
+        "print": "45mm"
+      },
+      "note": "The name and the promise without the verse, for where the vision lockup is too tall. For single-colour reproduction only: embroidery, engraving, newsprint, stamps, and any vendor who asks for pure black. On screen use the Midnight ink instead. Raster at 3200px wide, never scale up.",
+      "name": "Promise lockup, one colour, black"
+    },
+    {
+      "file": "assets/logos/every1/png/every1-promise-black-400.png",
+      "url": "https://brand.theword.world/assets/logos/every1/png/every1-promise-black-400.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 4565,
+      "status": "approved",
+      "grounds": [
+        "white",
+        "parchment"
+      ],
+      "configuration": "promise",
+      "clearSpace": "0.5x the cap height of EVERY1 on all four sides",
+      "minimumWidth": {
+        "screen": "200px",
+        "print": "45mm"
+      },
+      "note": "The name and the promise without the verse, for where the vision lockup is too tall. For single-colour reproduction only: embroidery, engraving, newsprint, stamps, and any vendor who asks for pure black. On screen use the Midnight ink instead. Raster at 400px wide, never scale up.",
+      "name": "Promise lockup, one colour, black"
+    },
+    {
+      "file": "assets/logos/every1/png/every1-promise-black-800.png",
+      "url": "https://brand.theword.world/assets/logos/every1/png/every1-promise-black-800.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 9455,
+      "status": "approved",
+      "grounds": [
+        "white",
+        "parchment"
+      ],
+      "configuration": "promise",
+      "clearSpace": "0.5x the cap height of EVERY1 on all four sides",
+      "minimumWidth": {
+        "screen": "200px",
+        "print": "45mm"
+      },
+      "note": "The name and the promise without the verse, for where the vision lockup is too tall. For single-colour reproduction only: embroidery, engraving, newsprint, stamps, and any vendor who asks for pure black. On screen use the Midnight ink instead. Raster at 800px wide, never scale up.",
+      "name": "Promise lockup, one colour, black"
+    },
+    {
+      "file": "assets/logos/every1/png/every1-promise-reversed-1600.png",
+      "url": "https://brand.theword.world/assets/logos/every1/png/every1-promise-reversed-1600.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 26420,
+      "status": "approved",
+      "grounds": [],
+      "configuration": "promise",
+      "clearSpace": "0.5x the cap height of EVERY1 on all four sides",
+      "minimumWidth": {
+        "screen": "200px",
+        "print": "45mm"
+      },
+      "note": "The name and the promise without the verse, for where the vision lockup is too tall.  Raster at 1600px wide, never scale up.",
+      "name": "Promise lockup, reversed, white and flame"
+    },
+    {
+      "file": "assets/logos/every1/png/every1-promise-reversed-3200.png",
+      "url": "https://brand.theword.world/assets/logos/every1/png/every1-promise-reversed-3200.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 60551,
+      "status": "approved",
+      "grounds": [],
+      "configuration": "promise",
+      "clearSpace": "0.5x the cap height of EVERY1 on all four sides",
+      "minimumWidth": {
+        "screen": "200px",
+        "print": "45mm"
+      },
+      "note": "The name and the promise without the verse, for where the vision lockup is too tall.  Raster at 3200px wide, never scale up.",
+      "name": "Promise lockup, reversed, white and flame"
+    },
+    {
+      "file": "assets/logos/every1/png/every1-promise-reversed-400.png",
+      "url": "https://brand.theword.world/assets/logos/every1/png/every1-promise-reversed-400.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 6000,
+      "status": "approved",
+      "grounds": [],
+      "configuration": "promise",
+      "clearSpace": "0.5x the cap height of EVERY1 on all four sides",
+      "minimumWidth": {
+        "screen": "200px",
+        "print": "45mm"
+      },
+      "note": "The name and the promise without the verse, for where the vision lockup is too tall.  Raster at 400px wide, never scale up.",
+      "name": "Promise lockup, reversed, white and flame"
+    },
+    {
+      "file": "assets/logos/every1/png/every1-promise-reversed-800.png",
+      "url": "https://brand.theword.world/assets/logos/every1/png/every1-promise-reversed-800.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 12065,
+      "status": "approved",
+      "grounds": [],
+      "configuration": "promise",
+      "clearSpace": "0.5x the cap height of EVERY1 on all four sides",
+      "minimumWidth": {
+        "screen": "200px",
+        "print": "45mm"
+      },
+      "note": "The name and the promise without the verse, for where the vision lockup is too tall.  Raster at 800px wide, never scale up.",
+      "name": "Promise lockup, reversed, white and flame"
+    },
+    {
+      "file": "assets/logos/every1/png/every1-uganda-1600.png",
+      "url": "https://brand.theword.world/assets/logos/every1/png/every1-uganda-1600.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 29876,
+      "status": "approved",
+      "grounds": [],
+      "configuration": "uganda",
+      "clearSpace": "0.5x the cap height of EVERY1 on all four sides",
+      "minimumWidth": {
+        "screen": "180px",
+        "print": "40mm"
+      },
+      "note": "The Uganda country lockup. One per country, and each one is drawn, not generated.  Raster at 1600px wide, never scale up.",
+      "name": "Country lockup, Uganda, two-tone, midnight and flame"
+    },
+    {
+      "file": "assets/logos/every1/png/every1-uganda-3200.png",
+      "url": "https://brand.theword.world/assets/logos/every1/png/every1-uganda-3200.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 72330,
+      "status": "approved",
+      "grounds": [],
+      "configuration": "uganda",
+      "clearSpace": "0.5x the cap height of EVERY1 on all four sides",
+      "minimumWidth": {
+        "screen": "180px",
+        "print": "40mm"
+      },
+      "note": "The Uganda country lockup. One per country, and each one is drawn, not generated.  Raster at 3200px wide, never scale up.",
+      "name": "Country lockup, Uganda, two-tone, midnight and flame"
+    },
+    {
+      "file": "assets/logos/every1/png/every1-uganda-400.png",
+      "url": "https://brand.theword.world/assets/logos/every1/png/every1-uganda-400.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 7029,
+      "status": "approved",
+      "grounds": [],
+      "configuration": "uganda",
+      "clearSpace": "0.5x the cap height of EVERY1 on all four sides",
+      "minimumWidth": {
+        "screen": "180px",
+        "print": "40mm"
+      },
+      "note": "The Uganda country lockup. One per country, and each one is drawn, not generated.  Raster at 400px wide, never scale up.",
+      "name": "Country lockup, Uganda, two-tone, midnight and flame"
+    },
+    {
+      "file": "assets/logos/every1/png/every1-uganda-800.png",
+      "url": "https://brand.theword.world/assets/logos/every1/png/every1-uganda-800.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 13938,
+      "status": "approved",
+      "grounds": [],
+      "configuration": "uganda",
+      "clearSpace": "0.5x the cap height of EVERY1 on all four sides",
+      "minimumWidth": {
+        "screen": "180px",
+        "print": "40mm"
+      },
+      "note": "The Uganda country lockup. One per country, and each one is drawn, not generated.  Raster at 800px wide, never scale up.",
+      "name": "Country lockup, Uganda, two-tone, midnight and flame"
+    },
+    {
+      "file": "assets/logos/every1/png/every1-uganda-black-1600.png",
+      "url": "https://brand.theword.world/assets/logos/every1/png/every1-uganda-black-1600.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 21772,
+      "status": "approved",
+      "grounds": [
+        "white",
+        "parchment"
+      ],
+      "configuration": "uganda",
+      "clearSpace": "0.5x the cap height of EVERY1 on all four sides",
+      "minimumWidth": {
+        "screen": "180px",
+        "print": "40mm"
+      },
+      "note": "The Uganda country lockup. One per country, and each one is drawn, not generated. For single-colour reproduction only: embroidery, engraving, newsprint, stamps, and any vendor who asks for pure black. On screen use the Midnight ink instead. Raster at 1600px wide, never scale up.",
+      "name": "Country lockup, Uganda, one colour, black"
+    },
+    {
+      "file": "assets/logos/every1/png/every1-uganda-black-3200.png",
+      "url": "https://brand.theword.world/assets/logos/every1/png/every1-uganda-black-3200.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 52787,
+      "status": "approved",
+      "grounds": [
+        "white",
+        "parchment"
+      ],
+      "configuration": "uganda",
+      "clearSpace": "0.5x the cap height of EVERY1 on all four sides",
+      "minimumWidth": {
+        "screen": "180px",
+        "print": "40mm"
+      },
+      "note": "The Uganda country lockup. One per country, and each one is drawn, not generated. For single-colour reproduction only: embroidery, engraving, newsprint, stamps, and any vendor who asks for pure black. On screen use the Midnight ink instead. Raster at 3200px wide, never scale up.",
+      "name": "Country lockup, Uganda, one colour, black"
+    },
+    {
+      "file": "assets/logos/every1/png/every1-uganda-black-400.png",
+      "url": "https://brand.theword.world/assets/logos/every1/png/every1-uganda-black-400.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 4673,
+      "status": "approved",
+      "grounds": [
+        "white",
+        "parchment"
+      ],
+      "configuration": "uganda",
+      "clearSpace": "0.5x the cap height of EVERY1 on all four sides",
+      "minimumWidth": {
+        "screen": "180px",
+        "print": "40mm"
+      },
+      "note": "The Uganda country lockup. One per country, and each one is drawn, not generated. For single-colour reproduction only: embroidery, engraving, newsprint, stamps, and any vendor who asks for pure black. On screen use the Midnight ink instead. Raster at 400px wide, never scale up.",
+      "name": "Country lockup, Uganda, one colour, black"
+    },
+    {
+      "file": "assets/logos/every1/png/every1-uganda-black-800.png",
+      "url": "https://brand.theword.world/assets/logos/every1/png/every1-uganda-black-800.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 9707,
+      "status": "approved",
+      "grounds": [
+        "white",
+        "parchment"
+      ],
+      "configuration": "uganda",
+      "clearSpace": "0.5x the cap height of EVERY1 on all four sides",
+      "minimumWidth": {
+        "screen": "180px",
+        "print": "40mm"
+      },
+      "note": "The Uganda country lockup. One per country, and each one is drawn, not generated. For single-colour reproduction only: embroidery, engraving, newsprint, stamps, and any vendor who asks for pure black. On screen use the Midnight ink instead. Raster at 800px wide, never scale up.",
+      "name": "Country lockup, Uganda, one colour, black"
+    },
+    {
+      "file": "assets/logos/every1/png/every1-uganda-reversed-1600.png",
+      "url": "https://brand.theword.world/assets/logos/every1/png/every1-uganda-reversed-1600.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 26753,
+      "status": "approved",
+      "grounds": [],
+      "configuration": "uganda",
+      "clearSpace": "0.5x the cap height of EVERY1 on all four sides",
+      "minimumWidth": {
+        "screen": "180px",
+        "print": "40mm"
+      },
+      "note": "The Uganda country lockup. One per country, and each one is drawn, not generated.  Raster at 1600px wide, never scale up.",
+      "name": "Country lockup, Uganda, reversed, white and flame"
+    },
+    {
+      "file": "assets/logos/every1/png/every1-uganda-reversed-3200.png",
+      "url": "https://brand.theword.world/assets/logos/every1/png/every1-uganda-reversed-3200.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 65170,
+      "status": "approved",
+      "grounds": [],
+      "configuration": "uganda",
+      "clearSpace": "0.5x the cap height of EVERY1 on all four sides",
+      "minimumWidth": {
+        "screen": "180px",
+        "print": "40mm"
+      },
+      "note": "The Uganda country lockup. One per country, and each one is drawn, not generated.  Raster at 3200px wide, never scale up.",
+      "name": "Country lockup, Uganda, reversed, white and flame"
+    },
+    {
+      "file": "assets/logos/every1/png/every1-uganda-reversed-400.png",
+      "url": "https://brand.theword.world/assets/logos/every1/png/every1-uganda-reversed-400.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 6125,
+      "status": "approved",
+      "grounds": [],
+      "configuration": "uganda",
+      "clearSpace": "0.5x the cap height of EVERY1 on all four sides",
+      "minimumWidth": {
+        "screen": "180px",
+        "print": "40mm"
+      },
+      "note": "The Uganda country lockup. One per country, and each one is drawn, not generated.  Raster at 400px wide, never scale up.",
+      "name": "Country lockup, Uganda, reversed, white and flame"
+    },
+    {
+      "file": "assets/logos/every1/png/every1-uganda-reversed-800.png",
+      "url": "https://brand.theword.world/assets/logos/every1/png/every1-uganda-reversed-800.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 12376,
+      "status": "approved",
+      "grounds": [],
+      "configuration": "uganda",
+      "clearSpace": "0.5x the cap height of EVERY1 on all four sides",
+      "minimumWidth": {
+        "screen": "180px",
+        "print": "40mm"
+      },
+      "note": "The Uganda country lockup. One per country, and each one is drawn, not generated.  Raster at 800px wide, never scale up.",
+      "name": "Country lockup, Uganda, reversed, white and flame"
+    },
+    {
+      "file": "assets/logos/every1/png/every1-usa-1600.png",
+      "url": "https://brand.theword.world/assets/logos/every1/png/every1-usa-1600.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 28005,
+      "status": "approved",
+      "grounds": [],
+      "configuration": "usa",
+      "clearSpace": "0.5x the cap height of EVERY1 on all four sides",
+      "minimumWidth": {
+        "screen": "180px",
+        "print": "40mm"
+      },
+      "note": "The USA country lockup. One per country, and each one is drawn, not generated.  Raster at 1600px wide, never scale up.",
+      "name": "Country lockup, USA, two-tone, midnight and flame"
+    },
+    {
+      "file": "assets/logos/every1/png/every1-usa-3200.png",
+      "url": "https://brand.theword.world/assets/logos/every1/png/every1-usa-3200.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 68387,
+      "status": "approved",
+      "grounds": [],
+      "configuration": "usa",
+      "clearSpace": "0.5x the cap height of EVERY1 on all four sides",
+      "minimumWidth": {
+        "screen": "180px",
+        "print": "40mm"
+      },
+      "note": "The USA country lockup. One per country, and each one is drawn, not generated.  Raster at 3200px wide, never scale up.",
+      "name": "Country lockup, USA, two-tone, midnight and flame"
+    },
+    {
+      "file": "assets/logos/every1/png/every1-usa-400.png",
+      "url": "https://brand.theword.world/assets/logos/every1/png/every1-usa-400.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 6478,
+      "status": "approved",
+      "grounds": [],
+      "configuration": "usa",
+      "clearSpace": "0.5x the cap height of EVERY1 on all four sides",
+      "minimumWidth": {
+        "screen": "180px",
+        "print": "40mm"
+      },
+      "note": "The USA country lockup. One per country, and each one is drawn, not generated.  Raster at 400px wide, never scale up.",
+      "name": "Country lockup, USA, two-tone, midnight and flame"
+    },
+    {
+      "file": "assets/logos/every1/png/every1-usa-800.png",
+      "url": "https://brand.theword.world/assets/logos/every1/png/every1-usa-800.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 12785,
+      "status": "approved",
+      "grounds": [],
+      "configuration": "usa",
+      "clearSpace": "0.5x the cap height of EVERY1 on all four sides",
+      "minimumWidth": {
+        "screen": "180px",
+        "print": "40mm"
+      },
+      "note": "The USA country lockup. One per country, and each one is drawn, not generated.  Raster at 800px wide, never scale up.",
+      "name": "Country lockup, USA, two-tone, midnight and flame"
+    },
+    {
+      "file": "assets/logos/every1/png/every1-usa-black-1600.png",
+      "url": "https://brand.theword.world/assets/logos/every1/png/every1-usa-black-1600.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 20406,
+      "status": "approved",
+      "grounds": [
+        "white",
+        "parchment"
+      ],
+      "configuration": "usa",
+      "clearSpace": "0.5x the cap height of EVERY1 on all four sides",
+      "minimumWidth": {
+        "screen": "180px",
+        "print": "40mm"
+      },
+      "note": "The USA country lockup. One per country, and each one is drawn, not generated. For single-colour reproduction only: embroidery, engraving, newsprint, stamps, and any vendor who asks for pure black. On screen use the Midnight ink instead. Raster at 1600px wide, never scale up.",
+      "name": "Country lockup, USA, one colour, black"
+    },
+    {
+      "file": "assets/logos/every1/png/every1-usa-black-3200.png",
+      "url": "https://brand.theword.world/assets/logos/every1/png/every1-usa-black-3200.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 49773,
+      "status": "approved",
+      "grounds": [
+        "white",
+        "parchment"
+      ],
+      "configuration": "usa",
+      "clearSpace": "0.5x the cap height of EVERY1 on all four sides",
+      "minimumWidth": {
+        "screen": "180px",
+        "print": "40mm"
+      },
+      "note": "The USA country lockup. One per country, and each one is drawn, not generated. For single-colour reproduction only: embroidery, engraving, newsprint, stamps, and any vendor who asks for pure black. On screen use the Midnight ink instead. Raster at 3200px wide, never scale up.",
+      "name": "Country lockup, USA, one colour, black"
+    },
+    {
+      "file": "assets/logos/every1/png/every1-usa-black-400.png",
+      "url": "https://brand.theword.world/assets/logos/every1/png/every1-usa-black-400.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 4328,
+      "status": "approved",
+      "grounds": [
+        "white",
+        "parchment"
+      ],
+      "configuration": "usa",
+      "clearSpace": "0.5x the cap height of EVERY1 on all four sides",
+      "minimumWidth": {
+        "screen": "180px",
+        "print": "40mm"
+      },
+      "note": "The USA country lockup. One per country, and each one is drawn, not generated. For single-colour reproduction only: embroidery, engraving, newsprint, stamps, and any vendor who asks for pure black. On screen use the Midnight ink instead. Raster at 400px wide, never scale up.",
+      "name": "Country lockup, USA, one colour, black"
+    },
+    {
+      "file": "assets/logos/every1/png/every1-usa-black-800.png",
+      "url": "https://brand.theword.world/assets/logos/every1/png/every1-usa-black-800.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 8892,
+      "status": "approved",
+      "grounds": [
+        "white",
+        "parchment"
+      ],
+      "configuration": "usa",
+      "clearSpace": "0.5x the cap height of EVERY1 on all four sides",
+      "minimumWidth": {
+        "screen": "180px",
+        "print": "40mm"
+      },
+      "note": "The USA country lockup. One per country, and each one is drawn, not generated. For single-colour reproduction only: embroidery, engraving, newsprint, stamps, and any vendor who asks for pure black. On screen use the Midnight ink instead. Raster at 800px wide, never scale up.",
+      "name": "Country lockup, USA, one colour, black"
+    },
+    {
+      "file": "assets/logos/every1/png/every1-usa-reversed-1600.png",
+      "url": "https://brand.theword.world/assets/logos/every1/png/every1-usa-reversed-1600.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 25147,
+      "status": "approved",
+      "grounds": [],
+      "configuration": "usa",
+      "clearSpace": "0.5x the cap height of EVERY1 on all four sides",
+      "minimumWidth": {
+        "screen": "180px",
+        "print": "40mm"
+      },
+      "note": "The USA country lockup. One per country, and each one is drawn, not generated.  Raster at 1600px wide, never scale up.",
+      "name": "Country lockup, USA, reversed, white and flame"
+    },
+    {
+      "file": "assets/logos/every1/png/every1-usa-reversed-3200.png",
+      "url": "https://brand.theword.world/assets/logos/every1/png/every1-usa-reversed-3200.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 61886,
+      "status": "approved",
+      "grounds": [],
+      "configuration": "usa",
+      "clearSpace": "0.5x the cap height of EVERY1 on all four sides",
+      "minimumWidth": {
+        "screen": "180px",
+        "print": "40mm"
+      },
+      "note": "The USA country lockup. One per country, and each one is drawn, not generated.  Raster at 3200px wide, never scale up.",
+      "name": "Country lockup, USA, reversed, white and flame"
+    },
+    {
+      "file": "assets/logos/every1/png/every1-usa-reversed-400.png",
+      "url": "https://brand.theword.world/assets/logos/every1/png/every1-usa-reversed-400.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 5733,
+      "status": "approved",
+      "grounds": [],
+      "configuration": "usa",
+      "clearSpace": "0.5x the cap height of EVERY1 on all four sides",
+      "minimumWidth": {
+        "screen": "180px",
+        "print": "40mm"
+      },
+      "note": "The USA country lockup. One per country, and each one is drawn, not generated.  Raster at 400px wide, never scale up.",
+      "name": "Country lockup, USA, reversed, white and flame"
+    },
+    {
+      "file": "assets/logos/every1/png/every1-usa-reversed-800.png",
+      "url": "https://brand.theword.world/assets/logos/every1/png/every1-usa-reversed-800.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 11436,
+      "status": "approved",
+      "grounds": [],
+      "configuration": "usa",
+      "clearSpace": "0.5x the cap height of EVERY1 on all four sides",
+      "minimumWidth": {
+        "screen": "180px",
+        "print": "40mm"
+      },
+      "note": "The USA country lockup. One per country, and each one is drawn, not generated.  Raster at 800px wide, never scale up.",
+      "name": "Country lockup, USA, reversed, white and flame"
+    },
+    {
+      "file": "assets/logos/every1/png/every1-vision-1600.png",
+      "url": "https://brand.theword.world/assets/logos/every1/png/every1-vision-1600.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 41335,
+      "status": "approved",
+      "grounds": [],
+      "configuration": "vision",
+      "clearSpace": "0.5x the cap height of EVERY1 on all four sides",
+      "minimumWidth": {
+        "screen": "260px",
+        "print": "58mm"
+      },
+      "note": "The whole promise in one mark: the verse above, the name, and what it leads to below. Banners, stage backdrops, and the back of a shirt. Never small.  Raster at 1600px wide, never scale up.",
+      "name": "Vision lockup, two-tone, midnight and flame"
+    },
+    {
+      "file": "assets/logos/every1/png/every1-vision-3200.png",
+      "url": "https://brand.theword.world/assets/logos/every1/png/every1-vision-3200.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 93248,
+      "status": "approved",
+      "grounds": [],
+      "configuration": "vision",
+      "clearSpace": "0.5x the cap height of EVERY1 on all four sides",
+      "minimumWidth": {
+        "screen": "260px",
+        "print": "58mm"
+      },
+      "note": "The whole promise in one mark: the verse above, the name, and what it leads to below. Banners, stage backdrops, and the back of a shirt. Never small.  Raster at 3200px wide, never scale up.",
+      "name": "Vision lockup, two-tone, midnight and flame"
+    },
+    {
+      "file": "assets/logos/every1/png/every1-vision-400.png",
+      "url": "https://brand.theword.world/assets/logos/every1/png/every1-vision-400.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 10010,
+      "status": "approved",
+      "grounds": [],
+      "configuration": "vision",
+      "clearSpace": "0.5x the cap height of EVERY1 on all four sides",
+      "minimumWidth": {
+        "screen": "260px",
+        "print": "58mm"
+      },
+      "note": "The whole promise in one mark: the verse above, the name, and what it leads to below. Banners, stage backdrops, and the back of a shirt. Never small.  Raster at 400px wide, never scale up.",
+      "name": "Vision lockup, two-tone, midnight and flame"
+    },
+    {
+      "file": "assets/logos/every1/png/every1-vision-800.png",
+      "url": "https://brand.theword.world/assets/logos/every1/png/every1-vision-800.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 18735,
+      "status": "approved",
+      "grounds": [],
+      "configuration": "vision",
+      "clearSpace": "0.5x the cap height of EVERY1 on all four sides",
+      "minimumWidth": {
+        "screen": "260px",
+        "print": "58mm"
+      },
+      "note": "The whole promise in one mark: the verse above, the name, and what it leads to below. Banners, stage backdrops, and the back of a shirt. Never small.  Raster at 800px wide, never scale up.",
+      "name": "Vision lockup, two-tone, midnight and flame"
+    },
+    {
+      "file": "assets/logos/every1/png/every1-vision-black-1600.png",
+      "url": "https://brand.theword.world/assets/logos/every1/png/every1-vision-black-1600.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 29127,
+      "status": "approved",
+      "grounds": [
+        "white",
+        "parchment"
+      ],
+      "configuration": "vision",
+      "clearSpace": "0.5x the cap height of EVERY1 on all four sides",
+      "minimumWidth": {
+        "screen": "260px",
+        "print": "58mm"
+      },
+      "note": "The whole promise in one mark: the verse above, the name, and what it leads to below. Banners, stage backdrops, and the back of a shirt. Never small. For single-colour reproduction only: embroidery, engraving, newsprint, stamps, and any vendor who asks for pure black. On screen use the Midnight ink instead. Raster at 1600px wide, never scale up.",
+      "name": "Vision lockup, one colour, black"
+    },
+    {
+      "file": "assets/logos/every1/png/every1-vision-black-3200.png",
+      "url": "https://brand.theword.world/assets/logos/every1/png/every1-vision-black-3200.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 66318,
+      "status": "approved",
+      "grounds": [
+        "white",
+        "parchment"
+      ],
+      "configuration": "vision",
+      "clearSpace": "0.5x the cap height of EVERY1 on all four sides",
+      "minimumWidth": {
+        "screen": "260px",
+        "print": "58mm"
+      },
+      "note": "The whole promise in one mark: the verse above, the name, and what it leads to below. Banners, stage backdrops, and the back of a shirt. Never small. For single-colour reproduction only: embroidery, engraving, newsprint, stamps, and any vendor who asks for pure black. On screen use the Midnight ink instead. Raster at 3200px wide, never scale up.",
+      "name": "Vision lockup, one colour, black"
+    },
+    {
+      "file": "assets/logos/every1/png/every1-vision-black-400.png",
+      "url": "https://brand.theword.world/assets/logos/every1/png/every1-vision-black-400.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 6394,
+      "status": "approved",
+      "grounds": [
+        "white",
+        "parchment"
+      ],
+      "configuration": "vision",
+      "clearSpace": "0.5x the cap height of EVERY1 on all four sides",
+      "minimumWidth": {
+        "screen": "260px",
+        "print": "58mm"
+      },
+      "note": "The whole promise in one mark: the verse above, the name, and what it leads to below. Banners, stage backdrops, and the back of a shirt. Never small. For single-colour reproduction only: embroidery, engraving, newsprint, stamps, and any vendor who asks for pure black. On screen use the Midnight ink instead. Raster at 400px wide, never scale up.",
+      "name": "Vision lockup, one colour, black"
+    },
+    {
+      "file": "assets/logos/every1/png/every1-vision-black-800.png",
+      "url": "https://brand.theword.world/assets/logos/every1/png/every1-vision-black-800.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 12866,
+      "status": "approved",
+      "grounds": [
+        "white",
+        "parchment"
+      ],
+      "configuration": "vision",
+      "clearSpace": "0.5x the cap height of EVERY1 on all four sides",
+      "minimumWidth": {
+        "screen": "260px",
+        "print": "58mm"
+      },
+      "note": "The whole promise in one mark: the verse above, the name, and what it leads to below. Banners, stage backdrops, and the back of a shirt. Never small. For single-colour reproduction only: embroidery, engraving, newsprint, stamps, and any vendor who asks for pure black. On screen use the Midnight ink instead. Raster at 800px wide, never scale up.",
+      "name": "Vision lockup, one colour, black"
+    },
+    {
+      "file": "assets/logos/every1/png/every1-vision-reversed-1600.png",
+      "url": "https://brand.theword.world/assets/logos/every1/png/every1-vision-reversed-1600.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 36546,
+      "status": "approved",
+      "grounds": [],
+      "configuration": "vision",
+      "clearSpace": "0.5x the cap height of EVERY1 on all four sides",
+      "minimumWidth": {
+        "screen": "260px",
+        "print": "58mm"
+      },
+      "note": "The whole promise in one mark: the verse above, the name, and what it leads to below. Banners, stage backdrops, and the back of a shirt. Never small.  Raster at 1600px wide, never scale up.",
+      "name": "Vision lockup, reversed, white and flame"
+    },
+    {
+      "file": "assets/logos/every1/png/every1-vision-reversed-3200.png",
+      "url": "https://brand.theword.world/assets/logos/every1/png/every1-vision-reversed-3200.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 83256,
+      "status": "approved",
+      "grounds": [],
+      "configuration": "vision",
+      "clearSpace": "0.5x the cap height of EVERY1 on all four sides",
+      "minimumWidth": {
+        "screen": "260px",
+        "print": "58mm"
+      },
+      "note": "The whole promise in one mark: the verse above, the name, and what it leads to below. Banners, stage backdrops, and the back of a shirt. Never small.  Raster at 3200px wide, never scale up.",
+      "name": "Vision lockup, reversed, white and flame"
+    },
+    {
+      "file": "assets/logos/every1/png/every1-vision-reversed-400.png",
+      "url": "https://brand.theword.world/assets/logos/every1/png/every1-vision-reversed-400.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 8376,
+      "status": "approved",
+      "grounds": [],
+      "configuration": "vision",
+      "clearSpace": "0.5x the cap height of EVERY1 on all four sides",
+      "minimumWidth": {
+        "screen": "260px",
+        "print": "58mm"
+      },
+      "note": "The whole promise in one mark: the verse above, the name, and what it leads to below. Banners, stage backdrops, and the back of a shirt. Never small.  Raster at 400px wide, never scale up.",
+      "name": "Vision lockup, reversed, white and flame"
+    },
+    {
+      "file": "assets/logos/every1/png/every1-vision-reversed-800.png",
+      "url": "https://brand.theword.world/assets/logos/every1/png/every1-vision-reversed-800.png",
+      "kind": "image",
+      "group": "png",
+      "bytes": 16350,
+      "status": "approved",
+      "grounds": [],
+      "configuration": "vision",
+      "clearSpace": "0.5x the cap height of EVERY1 on all four sides",
+      "minimumWidth": {
+        "screen": "260px",
+        "print": "58mm"
+      },
+      "note": "The whole promise in one mark: the verse above, the name, and what it leads to below. Banners, stage backdrops, and the back of a shirt. Never small.  Raster at 800px wide, never scale up.",
+      "name": "Vision lockup, reversed, white and flame"
     },
     {
       "file": "assets/logos/rtmc/png/rtmc-cobrand-1600.png",
