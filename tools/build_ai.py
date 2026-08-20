@@ -1138,14 +1138,22 @@ COMPONENTS_PAGE = """<!DOCTYPE html>
      same file anyone else links. The only rules here are the gallery's own
      furniture: the shell, the sidebar, and the frame around each specimen. */
 
-  .shell { display: grid; grid-template-columns: 1fr; min-height: 100vh; }
+  /* The frame does not scroll. The main pane does, and it snaps, so a reader
+     moves component by component rather than down one continuous wall. */
+  html, body { height: 100%; overflow: hidden; }
+  .shell {
+    height: 100dvh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto minmax(0, 1fr);
+  }
   @media (min-width: 900px) {
     .shell { grid-template-columns: 248px minmax(0, 1fr); }
   }
 
   /* --- top bar --- */
   .topbar {
-    position: sticky; top: 0; z-index: 20;
+    z-index: 20;
     display: flex; align-items: center; justify-content: space-between; gap: var(--space-4);
     padding: var(--space-4) var(--space-5);
     background: var(--ground);
@@ -1186,10 +1194,10 @@ COMPONENTS_PAGE = """<!DOCTYPE html>
   .sidebar {
     border-right: 1px solid var(--border);
     padding: var(--space-5) 0 var(--space-8);
+    overflow-y: auto;
+    display: none;
   }
-  @media (min-width: 900px) {
-    .sidebar { position: sticky; top: 61px; height: calc(100vh - 61px); overflow-y: auto; }
-  }
+  @media (min-width: 900px) { .sidebar { display: block; } }
   .sidebar .group { margin-bottom: var(--space-5); }
   .sidebar .group > h2 {
     font-family: var(--sans); font-weight: 600; font-size: var(--text-label);
@@ -1206,13 +1214,38 @@ COMPONENTS_PAGE = """<!DOCTYPE html>
   .sidebar a.active { color: var(--accent-text); border-left-color: var(--accent-text); font-weight: 600; }
 
   /* --- main --- */
-  .main { padding: var(--space-7) var(--space-5) var(--space-9); min-width: 0; }
-  .main > .inner { max-width: 900px; }
-  .intro { margin-bottom: var(--space-8); }
-  .intro h1 { margin-top: var(--space-2); }
+  .main {
+    min-width: 0;
+    overflow-y: auto;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+    overscroll-behavior: contain;
+  }
+  .main > .inner { max-width: 900px; margin: 0 auto; padding: 0 var(--space-5); }
 
-  .spec { padding-top: var(--space-8); scroll-margin-top: 76px; }
-  .spec + .spec { border-top: 1px solid var(--border); }
+  /* Every screen is one component, and scroll-snap-stop keeps a fast flick from
+     skipping three of them. A screen that outgrows the viewport scrolls inside
+     itself rather than breaking the snap. */
+  .screen {
+    min-height: 100%;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: var(--space-7) 0;
+  }
+  .screen + .screen { border-top: 1px solid var(--border); }
+
+  .intro h1 { margin-top: var(--space-2); }
+  .spec { scroll-margin-top: 0; }
+
+  /* A short window, a phone in landscape, or a reader who has asked for less
+     motion: let the page scroll normally rather than fighting them. */
+  @media (max-height: 620px), (prefers-reduced-motion: reduce) {
+    .main { scroll-snap-type: none; scroll-behavior: auto; }
+    .screen { min-height: 0; justify-content: flex-start; }
+  }
   .spec > .head { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--space-3); }
   .spec > .head h2 {
     font-family: var(--serif-display); font-weight: 400;
@@ -1296,7 +1329,7 @@ __SIDEBAR__
 
   <main class="main">
     <div class="inner">
-      <div class="intro">
+      <div class="intro screen">
         <span class="eyebrow">The Component Library</span>
         <h1 class="headline headline-small">Every part, drawn by the <em>published</em> stylesheet.</h1>
         <div class="prose" style="margin-top:var(--space-5)">
@@ -1328,6 +1361,7 @@ __SPECS__
       links[a.getAttribute("href").slice(1)] = a;
     });
     var current = null;
+    var main = document.querySelector(".main");
     var observer = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (!entry.isIntersecting) return;
@@ -1336,11 +1370,31 @@ __SPECS__
         if (current) current.classList.remove("active");
         next.classList.add("active");
         current = next;
+        // Keep the marker in view when the list is longer than the sidebar.
+        if (next.scrollIntoView) next.scrollIntoView({ block: "nearest" });
       });
-    }, { rootMargin: "-76px 0px -70% 0px" });
+    }, { root: main, threshold: 0.5 });
     Array.prototype.forEach.call(document.querySelectorAll("section.spec"), function (s) {
       observer.observe(s);
     });
+
+    // With snapping, a key press should move one component, not one line.
+    var screens = Array.prototype.slice.call(document.querySelectorAll(".screen"));
+    main.addEventListener("keydown", function (e) {
+      var step = 0;
+      if (e.key === "ArrowDown" || e.key === "PageDown") step = 1;
+      else if (e.key === "ArrowUp" || e.key === "PageUp") step = -1;
+      else return;
+      if (e.target.closest("input, textarea, select, details[open]")) return;
+      var top = main.scrollTop;
+      var here = 0;
+      screens.forEach(function (el, i) { if (el.offsetTop <= top + 4) here = i; });
+      var next = screens[Math.min(screens.length - 1, Math.max(0, here + step))];
+      if (!next) return;
+      e.preventDefault();
+      main.scrollTo({ top: next.offsetTop, behavior: "smooth" });
+    });
+    main.setAttribute("tabindex", "-1");
   })();
 </script>
 
@@ -1400,7 +1454,7 @@ def build_components_page(components: list, brand: dict, messaging: dict, update
             )
             cls = c.get("cssClass", "")
             cls_label = f' · <span class="id">.{esc(cls)}</span>' if cls and not cls.startswith("(") else ""
-            blocks.append(f"""      <section class="spec" id="{c['id']}">
+            blocks.append(f"""      <section class="spec screen" id="{c['id']}">
         <div class="head">
           <h2>{esc(c['name'])}</h2>
           <span class="id">{esc(c['id'])}</span>{cls_label}
@@ -1716,6 +1770,348 @@ def build_channels_page(channels: dict, bank: dict, brand: dict, messaging: dict
     )
 
 
+def build_governance(brand: dict, messaging: dict, updated: str, source: dict, audit_md: str) -> dict:
+    """Policies, processes, and procedures, kept apart on purpose.
+
+    A POLICY is a standing rule about how the system is run.
+    A PROCESS is the order work moves in, one stage handing to the next.
+    A PROCEDURE is the steps one person follows to do one job.
+
+    They were previously scattered across the README, CLAUDE.md, the skills, and
+    the manifest, which is how three different kinds of thing end up reading as
+    one wall. Nothing here restates a brand rule: the non-negotiables are read out
+    of the audit's own gate table, so they cannot drift from it.
+    """
+    limits = source["limits"]
+    for policy in source["policies"]:
+        if len(policy["rule"]) > limits["policy"]:
+            raise bs.SourceError(
+                f"governance.json: policy {policy['id']} is {len(policy['rule'])} characters and the "
+                f"limit is {limits['policy']}. A policy is one line. Split it or cut it."
+            )
+    for proc in source["procedures"]:
+        for step in proc["steps"]:
+            if len(step) > limits["step"]:
+                raise bs.SourceError(
+                    f"governance.json: a step in {proc['id']} is {len(step)} characters and the limit "
+                    f"is {limits['step']}. A step is one instruction."
+                )
+    for process in source["processes"]:
+        for stage in process["stages"]:
+            if len(stage["name"]) > limits["stage"]:
+                raise bs.SourceError(
+                    f"governance.json: a stage name in {process['id']} is too long. A stage is a noun."
+                )
+
+    known = {p["id"] for p in source["procedures"]}
+    for process in source["processes"]:
+        for ref in process.get("procedures", []):
+            if ref not in known:
+                raise bs.SourceError(
+                    f"governance.json: process {process['id']} points at procedure {ref}, which does not exist."
+                )
+
+    # The non-negotiables come from the audit's gate table rather than being
+    # written out again here. One source, so they cannot disagree.
+    gates = []
+    for m in re.finditer(r"^\| (G\d+) \| \*\*(.+?)\*\* \| (.+?) \|$", audit_md, re.M):
+        gates.append({"id": m.group(1), "title": m.group(2), "failsWhen": m.group(3).strip()})
+    if len(gates) < 8:
+        raise bs.SourceError(
+            "governance.json: fewer than eight gates were read out of audit.md. "
+            "Has the gate table's shape changed?"
+        )
+
+    return {
+        "version": brand["version"],
+        "messagingVersion": messaging["version"],
+        "updated": updated,
+        "authority": "canonical",
+        "definitions": {
+            "policy": "A standing rule about how this system is run.",
+            "process": "The order work moves in, one stage handing to the next.",
+            "procedure": "The steps one person follows to do one job.",
+        },
+        "policies": source["policies"],
+        "nonNegotiables": {
+            "note": (
+                "The rules about what the brand looks and sounds like are not restated here. "
+                f"These are the audit's gates, read from {SITE}/ai/audit.md at build time. "
+                "Any gate failure fails the whole audit."
+            ),
+            "source": f"{SITE}/ai/audit.md",
+            "gates": gates,
+        },
+        "processes": source["processes"],
+        "procedures": source["procedures"],
+    }
+
+GOVERNANCE_PAGE = """<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<title>Governance · THE WORD FOR ALL THE WORLD</title>
+<meta name="description" content="The policies, processes, and procedures that run this brand system, kept apart: a policy is a standing rule, a process is the order work moves in, a procedure is the steps for one job.">
+<link rel="icon" href="/assets/logos/the-word/favicon/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/assets/logos/the-word/favicon/favicon-16.png" sizes="16x16" type="image/png">
+<link rel="apple-touch-icon" href="/assets/logos/the-word/favicon/apple-touch-icon-180.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="THE WORD FOR ALL THE WORLD">
+<meta property="og:title" content="Governance">
+<meta property="og:description" content="The policies, processes, and procedures that run this brand system, kept apart: a policy is a standing rule, a process is the order work moves in, a procedure is the steps for one job.">
+<meta property="og:url" content="__SITE__/governance">
+<meta property="og:image" content="__SITE__/assets/images/og-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="THE WORD FOR ALL THE WORLD">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="/assets/fonts/fonts.css">
+<link rel="stylesheet" href="/assets/brand.css">
+<style>
+  .wrap { max-width: 940px; margin: 0 auto; padding: 0 var(--space-5); }
+  nav.chrome { border-bottom: 1px solid var(--border); }
+  nav.chrome .bar { max-width: 1240px; margin: 0 auto; padding: var(--space-4) var(--space-5); display: flex; justify-content: space-between; align-items: center; gap: var(--space-4); }
+  nav.chrome .logo img { height: 17px; width: auto; display: block; }
+  nav.chrome .links { display: none; gap: var(--space-4); font-size: 12.5px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; }
+  nav.chrome .links a { color: var(--text-muted); text-decoration: none; }
+  nav.chrome .links a:hover { color: var(--accent-text); }
+  @media (min-width: 1100px) { nav.chrome .links { display: flex; } }
+
+  header.masthead { padding: var(--space-8) 0 var(--space-7); border-bottom: 1px solid var(--border); }
+  header.masthead h1 { margin-top: var(--space-2); }
+
+  /* The three definitions sit at the top, because the whole point of this page
+     is that they are three different things that had been reading as one. */
+  .defs { display: grid; grid-template-columns: 1fr; gap: var(--space-4); margin-top: var(--space-6); }
+  @media (min-width: 760px) { .defs { grid-template-columns: repeat(3, 1fr); } }
+  .defs .card { padding: var(--space-5); }
+  .defs h2 { font-family: var(--sans); font-weight: 700; font-size: var(--text-body-small); margin: 0 0 var(--space-2); }
+  .defs p { margin: 0; font-size: var(--text-body-small); line-height: 1.6; color: var(--text-muted); }
+
+  .tabbar { position: sticky; top: 0; z-index: 10; background: var(--ground); padding-top: var(--space-6); }
+  main { padding-bottom: var(--space-9); }
+  .panel-body { padding-top: var(--space-6); }
+  [hidden] { display: none !important; }
+
+  /* Policies: one line each. Anything needing a paragraph is a procedure. */
+  .policy { display: grid; grid-template-columns: auto 1fr; gap: var(--space-3) var(--space-4); padding: var(--space-4) 0; border-bottom: 1px solid var(--border-soft); align-items: start; }
+  .policy > .badge { margin-top: 2px; }
+  .policy h3 { font-family: var(--sans); font-weight: 700; font-size: var(--text-body-small); margin: 0 0 2px; }
+  .policy p { margin: 0; font-size: var(--text-body-small); line-height: 1.6; }
+  .policy .why { color: var(--text-muted); margin-top: 4px; }
+
+  /* Processes: drawn as a chain, because that is what a process is. */
+  .process { margin-bottom: var(--space-7); }
+  .process > h3 { font-family: var(--serif-text); font-weight: 400; font-size: var(--text-title); margin: 0; }
+  .process > .when { font-size: var(--text-body-small); color: var(--text-muted); margin: var(--space-2) 0 var(--space-4); }
+  .chain { display: flex; flex-wrap: wrap; align-items: stretch; gap: var(--space-3); }
+  .chain .stage { flex: 1 1 150px; border: 1px solid var(--border); border-radius: var(--radius-card); padding: var(--space-4); background: var(--surface); }
+  .chain .stage .n { font-size: 11px; font-weight: 600; letter-spacing: .12em; color: var(--accent-text); font-variant-numeric: tabular-nums; }
+  .chain .stage h4 { font-family: var(--sans); font-weight: 700; font-size: var(--text-body-small); margin: 4px 0 var(--space-2); }
+  .chain .stage p { margin: 0; font-size: var(--text-caption); line-height: 1.5; color: var(--text-muted); }
+  .chain .arrow { align-self: center; color: var(--text-faint); flex: 0 0 auto; }
+  .process > .ends { margin-top: var(--space-4); font-size: var(--text-body-small); }
+  .process > .ends b { color: var(--accent-text); }
+
+  /* Procedures: steps, folded away until somebody is actually doing the job. */
+  .sop { border: 1px solid var(--border); border-radius: var(--radius-card); margin-bottom: var(--space-3); background: var(--surface); }
+  .sop > summary { cursor: pointer; list-style: none; padding: var(--space-4) var(--space-5); display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--space-3); }
+  .sop > summary::-webkit-details-marker { display: none; }
+  .sop > summary::before { content: "\203A"; color: var(--accent-text); width: 1em; flex: none; }
+  .sop[open] > summary::before { content: "\2304"; }
+  .sop > summary h3 { font-family: var(--sans); font-weight: 700; font-size: var(--text-body-small); margin: 0; }
+  .sop > summary .meta { font-size: var(--text-caption); color: var(--text-muted); }
+  .sop .body { padding: 0 var(--space-5) var(--space-5) calc(1em + var(--space-5) + var(--space-3)); }
+  .sop ol { margin: 0; padding-left: 1.3em; font-size: var(--text-body-small); line-height: 1.65; }
+  .sop ol li { margin-bottom: var(--space-2); }
+  .sop .done { margin-top: var(--space-4); font-size: var(--text-body-small); }
+  .sop .done b { color: var(--accent-text); }
+
+  .gates { margin-top: var(--space-7); }
+  .gates .note { font-size: var(--text-body-small); color: var(--text-muted); max-width: 66ch; margin: var(--space-3) 0 var(--space-5); }
+  .gate { display: grid; grid-template-columns: auto 1fr; gap: var(--space-3) var(--space-4); padding: var(--space-3) 0; border-bottom: 1px solid var(--border-soft); align-items: start; }
+  .gate b { font-family: var(--sans); font-size: var(--text-body-small); }
+  .gate p { margin: 2px 0 0; font-size: var(--text-caption); line-height: 1.55; color: var(--text-muted); }
+
+  footer.chrome { background: var(--midnight); color: var(--ink-reversed-muted); padding: 40px 0; font-size: 12.5px; letter-spacing: .06em; text-transform: uppercase; font-weight: 500; }
+  footer.chrome .wrap { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+  footer.chrome img { height: 16px; width: auto; display: block; opacity: .9; }
+</style>
+</head>
+<body>
+
+<nav class="chrome">
+  <div class="bar">
+    <a class="logo" href="/" aria-label="THE WORD FOR ALL THE WORLD, portal home">
+      <img src="/assets/logos/the-word/the-word-horizontal.svg" alt="THE WORD FOR ALL THE WORLD">
+    </a>
+    <div class="links">
+      <a href="/">Home</a>
+      <a href="/brand/">Brand Guide</a>
+      <a href="/brand/messaging/">Messaging</a>
+      <a href="/documents/">Documents</a>
+      <a href="/letterhead/">Letterhead</a>
+      <a href="/signatures/">Signatures</a>
+      <a href="/assets/">Assets</a>
+    </div>
+  </div>
+</nav>
+
+<header class="masthead">
+  <div class="wrap">
+    <span class="eyebrow">Governance</span>
+    <h1 class="headline headline-small">Three different things, kept <em>apart.</em></h1>
+    <div class="defs">
+      <div class="card"><h2>Policy</h2><p>A standing rule about how this system is run. One line, and ten of them.</p></div>
+      <div class="card"><h2>Process</h2><p>The order work moves in. This hands to that, and that hands to the next.</p></div>
+      <div class="card"><h2>Procedure</h2><p>The steps one person follows to do one job, in order.</p></div>
+    </div>
+  </div>
+</header>
+
+<div class="tabbar">
+  <div class="wrap">
+    <div class="tabs" role="tablist">
+      <button role="tab" id="tab-policies" aria-controls="panel-policies" aria-selected="true">Policies</button>
+      <button role="tab" id="tab-processes" aria-controls="panel-processes" aria-selected="false">Processes</button>
+      <button role="tab" id="tab-procedures" aria-controls="panel-procedures" aria-selected="false">Procedures</button>
+    </div>
+  </div>
+</div>
+
+<main>
+  <div class="wrap">
+    <section class="panel-body" id="panel-policies" role="tabpanel" aria-labelledby="tab-policies">
+__POLICIES__
+      <div class="gates">
+        <h2 class="title">The non-negotiables</h2>
+        <p class="note">__GATENOTE__</p>
+__GATES__
+      </div>
+    </section>
+
+    <section class="panel-body" id="panel-processes" role="tabpanel" aria-labelledby="tab-processes" hidden>
+__PROCESSES__
+    </section>
+
+    <section class="panel-body" id="panel-procedures" role="tabpanel" aria-labelledby="tab-procedures" hidden>
+__PROCEDURES__
+    </section>
+  </div>
+</main>
+
+<footer class="chrome">
+  <div class="wrap">
+    <a href="/" aria-label="THE WORD FOR ALL THE WORLD, portal home"><img src="/assets/logos/the-word/the-word-horizontal-reversed.svg" alt="THE WORD FOR ALL THE WORLD"></a>
+    <span>Every tribe. Every tongue. Every nation. EVERY1.</span>
+    <span>brand.theword.world &middot; v__VERSION__</span>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var tabs = Array.prototype.slice.call(document.querySelectorAll('[role="tab"]'));
+    function show(tab) {
+      tabs.forEach(function (t) {
+        var panel = document.getElementById(t.getAttribute("aria-controls"));
+        var on = t === tab;
+        t.setAttribute("aria-selected", on ? "true" : "false");
+        panel.hidden = !on;
+      });
+      history.replaceState(null, "", "#" + tab.id.replace("tab-", ""));
+    }
+    tabs.forEach(function (t) { t.addEventListener("click", function () { show(t); }); });
+    // Deep links: /governance#procedures opens on that tab.
+    var initial = document.getElementById("tab-" + location.hash.replace("#", ""));
+    if (initial) show(initial);
+  })();
+</script>
+
+</body>
+</html>
+"""
+
+
+def build_governance_page(gov: dict, brand: dict) -> str:
+    policies = "\n".join(
+        '      <div class="policy">\n'
+        '        <span class="badge">' + esc(p["id"]) + "</span>\n"
+        "        <div>\n"
+        "          <h3>" + esc(p["title"]) + "</h3>\n"
+        "          <p>" + esc(p["rule"]) + "</p>\n"
+        '          <p class="why">' + esc(p["why"]) + "</p>\n"
+        "        </div>\n"
+        "      </div>"
+        for p in gov["policies"]
+    )
+
+    gates = "\n".join(
+        '        <div class="gate">\n'
+        '          <span class="badge" data-state="accent">' + esc(g["id"]) + "</span>\n"
+        "          <div><b>" + esc(g["title"]) + "</b><p>"
+        + esc(re.sub(r"[`*]", "", g["failsWhen"])) + "</p></div>\n"
+        "        </div>"
+        for g in gov["nonNegotiables"]["gates"]
+    )
+
+    processes = []
+    for pr in gov["processes"]:
+        stages = []
+        for i, st in enumerate(pr["stages"]):
+            if i:
+                stages.append('          <span class="arrow" aria-hidden="true">&rarr;</span>')
+            stages.append(
+                '          <div class="stage">\n'
+                '            <div class="n">' + f"{i + 1:02d}" + "</div>\n"
+                "            <h4>" + esc(st["name"]) + "</h4>\n"
+                "            <p>" + esc(st["who"]) + "<br>" + esc(st["produces"]) + "</p>\n"
+                "          </div>"
+            )
+        links = "".join(
+            ' <a class="link" href="#' + esc(ref) + '">' + esc(ref) + "</a>"
+            for ref in pr.get("procedures", [])
+        )
+        processes.append(
+            '      <div class="process">\n'
+            "        <h3>" + esc(pr["name"]) + "</h3>\n"
+            '        <p class="when">Starts when: ' + esc(pr["starts"]) + "</p>\n"
+            '        <div class="chain">\n' + "\n".join(stages) + "\n        </div>\n"
+            '        <p class="ends"><b>Ends when:</b> ' + esc(pr["ends"])
+            + ("  &middot;  Procedures:" + links if links else "") + "</p>\n"
+            "      </div>"
+        )
+
+    procedures = []
+    for sop in gov["procedures"]:
+        steps = "\n".join("            <li>" + esc(x) + "</li>" for x in sop["steps"])
+        skill = ' &middot; <code class="code">' + esc(sop["skill"]) + "</code>" if sop.get("skill") else ""
+        procedures.append(
+            '      <details class="sop" id="' + esc(sop["id"]) + '">\n'
+            "        <summary>\n"
+            "          <h3>" + esc(sop["name"]) + "</h3>\n"
+            '          <span class="meta">' + esc(sop["who"]) + " &middot; " + esc(sop["when"]) + skill + "</span>\n"
+            "        </summary>\n"
+            '        <div class="body">\n          <ol>\n' + steps + "\n          </ol>\n"
+            '          <p class="done"><b>Done when:</b> ' + esc(sop["done"]) + "</p>\n"
+            "        </div>\n"
+            "      </details>"
+        )
+
+    page = GOVERNANCE_PAGE
+    for token, value in (
+        ("__SITE__", SITE),
+        ("__VERSION__", brand["version"]),
+        ("__POLICIES__", policies),
+        ("__GATENOTE__", esc(gov["nonNegotiables"]["note"])),
+        ("__GATES__", gates),
+        ("__PROCESSES__", "\n".join(processes)),
+        ("__PROCEDURES__", "\n".join(procedures)),
+    ):
+        page = page.replace(token, value)
+    return page
+
 def build_llms_txt(brand: dict, messaging: dict, tokens: dict, initiatives: list) -> str:
     palette = ", ".join(f"{c['name']} `{c['hex']}`" for c in brand["colors"])
     lines = [
@@ -1753,6 +2149,7 @@ def build_llms_txt(brand: dict, messaging: dict, tokens: dict, initiatives: list
         f"- [Messaging Guide]({SITE}/brand/messaging): Voice, tone, vocabulary, audiences, and proof policy.",
         f"- [Assets]({SITE}/assets): Every approved logo in every format, with its clear space, minimum size, and ink rules. Fonts, download packs, and the photography policy.",
         f"- [Signatures]({SITE}/signatures): The signature masters that sign the record, and the law governing where each may be placed.",
+        f"- [Governance]({SITE}/governance): The policies, processes, and procedures that run this system, kept apart.",
         f"- [Channels]({SITE}/channels): Every surface the brand lives on, with its sizes, limits, safe areas, rules, and approved copy.",
         f"- [Channels, machine-readable]({SITE}/ai/channels.json): Every surface the brand lives on, with its sizes, limits, safe areas, and rules.",
         f"- [Copy bank]({SITE}/ai/copy-bank.json): Pre-approved headlines, subject lines, calls to action, and boilerplate.",
@@ -1933,6 +2330,7 @@ DESCRIPTIONS = {
     "audit.md": "The brand audit rubric and report template.",
     "components.json": "Component specifications, resolved against current tokens.",
     "channels.json": "One entry per surface: sizes, safe areas, limits, rules, and the audit checks that apply.",
+    "governance.json": "Policies, processes, and procedures: how this system is run, changed, and used.",
     "copy-bank.json": "Pre-approved strings by channel, each within the character limit it was written against.",
     "assets.json": "Approved logos, photography, and video, with usage rules.",
     "approved-examples.md": "Worked output that passes the audit.",
@@ -1978,6 +2376,11 @@ def build() -> dict:
         + "\n"
     )
 
+    governance = build_governance(
+        brand, messaging, updated, read_source_json("governance.json"), files["ai/audit.md"]
+    )
+    files["ai/governance.json"] = json.dumps(governance, indent=2, ensure_ascii=False) + "\n"
+    files["governance/index.html"] = build_governance_page(governance, brand)
     files["channels/index.html"] = build_channels_page(
         channels, copy_bank, brand, messaging, updated, tokens
     )
@@ -2042,6 +2445,7 @@ def build() -> dict:
         "audit": f"{SITE}/ai/audit.md",
         "components": f"{SITE}/ai/components.json",
         "channels": f"{SITE}/ai/channels.json",
+        "governance": f"{SITE}/ai/governance.json",
         "copyBank": f"{SITE}/ai/copy-bank.json",
         "assets": f"{SITE}/ai/assets.json",
         "approvedExamples": f"{SITE}/ai/approved-examples.md",

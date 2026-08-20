@@ -99,6 +99,7 @@ def check_ai_source_present():
         "channels.json",
         "copy-bank.json",
         "consumers.json",
+        "governance.json",
         "asset-notes.json",
         "skill.md",
     ]

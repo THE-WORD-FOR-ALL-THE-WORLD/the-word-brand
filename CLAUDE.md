@@ -22,6 +22,7 @@ masters in `assets/logos/_masters/`. The masters are the only logo files edited 
 | A logo variant, ink, size, pack, or anything on the Assets page | `tools/build_logos.py`, then rerun it |
 | The logo artwork itself | `assets/logos/_masters/`, then rerun `tools/build_logos.py` |
 | The audit rubric, agent rules, component specs, examples, the loader skill | `ai-source/` |
+| A policy, a process, or a procedure | `ai-source/governance.json` |
 | The CSS a component is drawn with | `ai-source/components.css` |
 | A channel's sizes, limits, or rules | `ai-source/channels.json` |
 | Approved ad, email, or CTA copy | `ai-source/copy-bank.json` |
@@ -38,6 +39,16 @@ hand-written, because React components with props are code.
 
 `tools/fetch_fonts.py`, `tools/sync_figma.py`, and `tools/sync_canva.py` need the network and
 are run by hand, never in CI. The build never touches the network.
+
+## Policies, processes, procedures
+
+They are three different things and they are kept apart at
+[`/governance`](https://brand.theword.world/governance), generated from
+`ai-source/governance.json`. A **policy** is a standing rule about how this system is run. A
+**process** is the order work moves in. A **procedure** is the steps for one job. Edit that one
+file to change any of them; the build fails a policy longer than one line, which is what stops it
+becoming a wall again. The brand's own non-negotiables are not restated there: they are read out
+of the audit's gate table at build time.
 
 ## After any change
 

@@ -32,6 +32,7 @@ Public mission line: Strengthening the local church to fulfill the Great Commiss
 - [Messaging Guide](https://brand.theword.world/brand/messaging): Voice, tone, vocabulary, audiences, and proof policy.
 - [Assets](https://brand.theword.world/assets): Every approved logo in every format, with its clear space, minimum size, and ink rules. Fonts, download packs, and the photography policy.
 - [Signatures](https://brand.theword.world/signatures): The signature masters that sign the record, and the law governing where each may be placed.
+- [Governance](https://brand.theword.world/governance): The policies, processes, and procedures that run this system, kept apart.
 - [Channels](https://brand.theword.world/channels): Every surface the brand lives on, with its sizes, limits, safe areas, rules, and approved copy.
 - [Channels, machine-readable](https://brand.theword.world/ai/channels.json): Every surface the brand lives on, with its sizes, limits, safe areas, and rules.
 - [Copy bank](https://brand.theword.world/ai/copy-bank.json): Pre-approved headlines, subject lines, calls to action, and boilerplate.

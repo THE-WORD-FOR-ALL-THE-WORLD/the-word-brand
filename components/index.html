@@ -37,14 +37,22 @@
      same file anyone else links. The only rules here are the gallery's own
      furniture: the shell, the sidebar, and the frame around each specimen. */
 
-  .shell { display: grid; grid-template-columns: 1fr; min-height: 100vh; }
+  /* The frame does not scroll. The main pane does, and it snaps, so a reader
+     moves component by component rather than down one continuous wall. */
+  html, body { height: 100%; overflow: hidden; }
+  .shell {
+    height: 100dvh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto minmax(0, 1fr);
+  }
   @media (min-width: 900px) {
     .shell { grid-template-columns: 248px minmax(0, 1fr); }
   }
 
   /* --- top bar --- */
   .topbar {
-    position: sticky; top: 0; z-index: 20;
+    z-index: 20;
     display: flex; align-items: center; justify-content: space-between; gap: var(--space-4);
     padding: var(--space-4) var(--space-5);
     background: var(--ground);
@@ -85,10 +93,10 @@
   .sidebar {
     border-right: 1px solid var(--border);
     padding: var(--space-5) 0 var(--space-8);
+    overflow-y: auto;
+    display: none;
   }
-  @media (min-width: 900px) {
-    .sidebar { position: sticky; top: 61px; height: calc(100vh - 61px); overflow-y: auto; }
-  }
+  @media (min-width: 900px) { .sidebar { display: block; } }
   .sidebar .group { margin-bottom: var(--space-5); }
   .sidebar .group > h2 {
     font-family: var(--sans); font-weight: 600; font-size: var(--text-label);
@@ -105,13 +113,38 @@
   .sidebar a.active { color: var(--accent-text); border-left-color: var(--accent-text); font-weight: 600; }
 
   /* --- main --- */
-  .main { padding: var(--space-7) var(--space-5) var(--space-9); min-width: 0; }
-  .main > .inner { max-width: 900px; }
-  .intro { margin-bottom: var(--space-8); }
-  .intro h1 { margin-top: var(--space-2); }
+  .main {
+    min-width: 0;
+    overflow-y: auto;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+    overscroll-behavior: contain;
+  }
+  .main > .inner { max-width: 900px; margin: 0 auto; padding: 0 var(--space-5); }
 
-  .spec { padding-top: var(--space-8); scroll-margin-top: 76px; }
-  .spec + .spec { border-top: 1px solid var(--border); }
+  /* Every screen is one component, and scroll-snap-stop keeps a fast flick from
+     skipping three of them. A screen that outgrows the viewport scrolls inside
+     itself rather than breaking the snap. */
+  .screen {
+    min-height: 100%;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: var(--space-7) 0;
+  }
+  .screen + .screen { border-top: 1px solid var(--border); }
+
+  .intro h1 { margin-top: var(--space-2); }
+  .spec { scroll-margin-top: 0; }
+
+  /* A short window, a phone in landscape, or a reader who has asked for less
+     motion: let the page scroll normally rather than fighting them. */
+  @media (max-height: 620px), (prefers-reduced-motion: reduce) {
+    .main { scroll-snap-type: none; scroll-behavior: auto; }
+    .screen { min-height: 0; justify-content: flex-start; }
+  }
   .spec > .head { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--space-3); }
   .spec > .head h2 {
     font-family: var(--serif-display); font-weight: 400;
@@ -270,7 +303,7 @@
 
   <main class="main">
     <div class="inner">
-      <div class="intro">
+      <div class="intro screen">
         <span class="eyebrow">The Component Library</span>
         <h1 class="headline headline-small">Every part, drawn by the <em>published</em> stylesheet.</h1>
         <div class="prose" style="margin-top:var(--space-5)">
@@ -279,7 +312,7 @@
           <p class="caption">40 components · brand system v7.0 · messaging v1.0 · generated 2026-08-20 · <a class="link" href="/ai/components.json">components.json</a></p>
         </div>
       </div>
-      <section class="spec" id="button-primary">
+      <section class="spec screen" id="button-primary">
         <div class="head">
           <h2>Primary button</h2>
           <span class="id">button-primary</span> · <span class="id">.btn</span>
@@ -315,7 +348,7 @@
         <pre>&lt;a class="btn" href="/partner"&gt;Partner With Us&lt;/a&gt;</pre>
       </details>
       </section>
-      <section class="spec" id="button-ghost">
+      <section class="spec screen" id="button-ghost">
         <div class="head">
           <h2>Ghost button</h2>
           <span class="id">button-ghost</span> · <span class="id">.btn ghost</span>
@@ -348,7 +381,7 @@
         <pre>&lt;a class="btn ghost" href="/happening"&gt;See What's Happening&lt;/a&gt;</pre>
       </details>
       </section>
-      <section class="spec" id="button-quiet">
+      <section class="spec screen" id="button-quiet">
         <div class="head">
           <h2>Quiet button</h2>
           <span class="id">button-quiet</span> · <span class="id">.btn quiet</span>
@@ -379,7 +412,7 @@
         <pre>&lt;button class="btn quiet"&gt;Copy link&lt;/button&gt;</pre>
       </details>
       </section>
-      <section class="spec" id="eyebrow">
+      <section class="spec screen" id="eyebrow">
         <div class="head">
           <h2>Eyebrow / kicker</h2>
           <span class="id">eyebrow</span> · <span class="id">.eyebrow</span>
@@ -411,7 +444,7 @@
         <pre>&lt;span class="eyebrow"&gt;03 — Color System&lt;/span&gt;</pre>
       </details>
       </section>
-      <section class="spec" id="headline-serif">
+      <section class="spec screen" id="headline-serif">
         <div class="head">
           <h2>Serif headline</h2>
           <span class="id">headline-serif</span> · <span class="id">.headline</span>
@@ -444,7 +477,7 @@
         <pre>&lt;h2&gt;No one told them it is &lt;em&gt;already here.&lt;/em&gt;&lt;/h2&gt;</pre>
       </details>
       </section>
-      <section class="spec" id="body">
+      <section class="spec screen" id="body">
         <div class="head">
           <h2>Body copy</h2>
           <span class="id">body</span> · <span class="id">.prose</span>
@@ -484,7 +517,7 @@
 &lt;/div&gt;</pre>
       </details>
       </section>
-      <section class="spec" id="photo-caption">
+      <section class="spec screen" id="photo-caption">
         <div class="head">
           <h2>Photo caption</h2>
           <span class="id">photo-caption</span> · <span class="id">.caption</span>
@@ -516,7 +549,7 @@
         <pre>&lt;p class="caption"&gt;The Word opened — attendees follow the teaching with Bibles and notes.&lt;br&gt;&lt;small&gt;SLC Conference · [City], Uganda · 30 Jul 2026&lt;/small&gt;&lt;/p&gt;</pre>
       </details>
       </section>
-      <section class="spec" id="inline-link">
+      <section class="spec screen" id="inline-link">
         <div class="head">
           <h2>Inline link</h2>
           <span class="id">inline-link</span> · <span class="id">.link</span>
@@ -546,7 +579,7 @@
         <pre>&lt;p&gt;Read the &lt;a class="link" href="/brand/"&gt;Brand Guide&lt;/a&gt; before building anything.&lt;/p&gt;</pre>
       </details>
       </section>
-      <section class="spec" id="blockquote">
+      <section class="spec screen" id="blockquote">
         <div class="head">
           <h2>Pull quote</h2>
           <span class="id">blockquote</span> · <span class="id">.quote</span>
@@ -578,7 +611,7 @@
         <pre>&lt;blockquote class="quote"&gt;The local church is not a strategy for the plan. It is the plan.&lt;cite&gt;Nathan Zimmer&lt;/cite&gt;&lt;/blockquote&gt;</pre>
       </details>
       </section>
-      <section class="spec" id="code-block">
+      <section class="spec screen" id="code-block">
         <div class="head">
           <h2>Code</h2>
           <span class="id">code-block</span> · <span class="id">.code</span>
@@ -610,7 +643,7 @@
 &lt;pre class="code"&gt;&lt;code&gt;&amp;lt;link rel="stylesheet" href="/assets/brand.css"&amp;gt;&lt;/code&gt;&lt;/pre&gt;</pre>
       </details>
       </section>
-      <section class="spec" id="card">
+      <section class="spec screen" id="card">
         <div class="head">
           <h2>Card</h2>
           <span class="id">card</span> · <span class="id">.card</span>
@@ -652,7 +685,7 @@
 &lt;/a&gt;</pre>
       </details>
       </section>
-      <section class="spec" id="separator">
+      <section class="spec screen" id="separator">
         <div class="head">
           <h2>Separator</h2>
           <span class="id">separator</span> · <span class="id">.separator</span>
@@ -681,7 +714,7 @@
         <pre>&lt;hr class="separator"&gt;</pre>
       </details>
       </section>
-      <section class="spec" id="panel">
+      <section class="spec screen" id="panel">
         <div class="head">
           <h2>Panel</h2>
           <span class="id">panel</span> · <span class="id">.panel</span>
@@ -717,7 +750,7 @@
 &lt;/div&gt;</pre>
       </details>
       </section>
-      <section class="spec" id="record-document">
+      <section class="spec screen" id="record-document">
         <div class="head">
           <h2>Record document</h2>
           <span class="id">record-document</span> · <span class="id">.record</span>
@@ -752,7 +785,7 @@
         <pre>&lt;div class="record"&gt;&lt;span class="qk"&gt;The Word · A Prophecy&lt;/span&gt;&lt;div class="verse"&gt;…&lt;/div&gt;&lt;div class="dateline"&gt;Received December 2019&lt;/div&gt;&lt;/div&gt;</pre>
       </details>
       </section>
-      <section class="spec" id="testimony">
+      <section class="spec screen" id="testimony">
         <div class="head">
           <h2>Testimony</h2>
           <span class="id">testimony</span> · <span class="id">.testimony</span>
@@ -794,7 +827,7 @@
 &lt;/div&gt;</pre>
       </details>
       </section>
-      <section class="spec" id="stat-figure">
+      <section class="spec screen" id="stat-figure">
         <div class="head">
           <h2>Official-record figure</h2>
           <span class="id">stat-figure</span> · <span class="id">.stat</span>
@@ -825,7 +858,7 @@
         <pre>&lt;div class="stat"&gt;&lt;div class="fig"&gt;1,057&lt;/div&gt;&lt;div class="lab"&gt;Salvations&lt;/div&gt;&lt;/div&gt;</pre>
       </details>
       </section>
-      <section class="spec" id="endorsement-line">
+      <section class="spec screen" id="endorsement-line">
         <div class="head">
           <h2>Sub-brand endorsement</h2>
           <span class="id">endorsement-line</span> · <span class="id">.endorse</span>
@@ -857,7 +890,7 @@
         <pre>&lt;div class="endorse"&gt;A ministry of THE WORD FOR ALL THE WORLD&lt;/div&gt;</pre>
       </details>
       </section>
-      <section class="spec" id="hero-video">
+      <section class="spec screen" id="hero-video">
         <div class="head">
           <h2>Full-bleed video hero</h2>
           <span class="id">hero-video</span> · <span class="id">.footage</span>
@@ -891,7 +924,7 @@
         <pre>&lt;video autoplay muted loop playsinline poster="/assets/images/crowd-evening-poster.jpg"&gt;&lt;source src="/assets/videos/crowd-evening.mp4" type="video/mp4"&gt;&lt;/video&gt;&lt;div class="scrim"&gt;&lt;/div&gt;</pre>
       </details>
       </section>
-      <section class="spec" id="lower-third">
+      <section class="spec screen" id="lower-third">
         <div class="head">
           <h2>Video lower third</h2>
           <span class="id">lower-third</span> · <span class="id">.lower-third</span>
@@ -929,7 +962,7 @@
 &lt;/div&gt;</pre>
       </details>
       </section>
-      <section class="spec" id="site-chrome">
+      <section class="spec screen" id="site-chrome">
         <div class="head">
           <h2>Portal navigation and footer</h2>
           <span class="id">site-chrome</span> · <span class="id">.sitenav</span>
@@ -966,7 +999,7 @@
 &lt;/nav&gt;</pre>
       </details>
       </section>
-      <section class="spec" id="breadcrumb">
+      <section class="spec screen" id="breadcrumb">
         <div class="head">
           <h2>Breadcrumb</h2>
           <span class="id">breadcrumb</span> · <span class="id">.breadcrumb</span>
@@ -1004,7 +1037,7 @@
 &lt;/ol&gt;&lt;/nav&gt;</pre>
       </details>
       </section>
-      <section class="spec" id="tabs">
+      <section class="spec screen" id="tabs">
         <div class="head">
           <h2>Tabs</h2>
           <span class="id">tabs</span> · <span class="id">.tabs</span>
@@ -1043,7 +1076,7 @@
 &lt;/div&gt;</pre>
       </details>
       </section>
-      <section class="spec" id="pagination">
+      <section class="spec screen" id="pagination">
         <div class="head">
           <h2>Pagination</h2>
           <span class="id">pagination</span> · <span class="id">.pagination</span>
@@ -1085,7 +1118,7 @@
 &lt;/nav&gt;</pre>
       </details>
       </section>
-      <section class="spec" id="form-field">
+      <section class="spec screen" id="form-field">
         <div class="head">
           <h2>Form field</h2>
           <span class="id">form-field</span> · <span class="id">.field</span>
@@ -1128,7 +1161,7 @@
 &lt;/div&gt;</pre>
       </details>
       </section>
-      <section class="spec" id="choice">
+      <section class="spec screen" id="choice">
         <div class="head">
           <h2>Checkbox and radio</h2>
           <span class="id">choice</span> · <span class="id">.choice</span>
@@ -1163,7 +1196,7 @@
 &lt;label class="choice"&gt;&lt;input type="radio" name="d"&gt; Only when something happens&lt;/label&gt;</pre>
       </details>
       </section>
-      <section class="spec" id="switch">
+      <section class="spec screen" id="switch">
         <div class="head">
           <h2>Switch</h2>
           <span class="id">switch</span> · <span class="id">.switch</span>
@@ -1194,7 +1227,7 @@
         <pre>&lt;label class="switch"&gt;&lt;input type="checkbox" checked&gt;&lt;span class="track"&gt;&lt;/span&gt; Show unverified figures&lt;/label&gt;</pre>
       </details>
       </section>
-      <section class="spec" id="data-table">
+      <section class="spec screen" id="data-table">
         <div class="head">
           <h2>Data table</h2>
           <span class="id">data-table</span> · <span class="id">.table-scroll</span>
@@ -1236,7 +1269,7 @@
 &lt;/div&gt;</pre>
       </details>
       </section>
-      <section class="spec" id="badge">
+      <section class="spec screen" id="badge">
         <div class="head">
           <h2>Badge</h2>
           <span class="id">badge</span> · <span class="id">.badge</span>
@@ -1278,7 +1311,7 @@
 &lt;span class="badge" data-state="error"&gt;Blocked&lt;/span&gt;</pre>
       </details>
       </section>
-      <section class="spec" id="avatar">
+      <section class="spec screen" id="avatar">
         <div class="head">
           <h2>Avatar</h2>
           <span class="id">avatar</span> · <span class="id">.avatar</span>
@@ -1310,7 +1343,7 @@
         <pre>&lt;span class="avatar"&gt;&lt;img src="/assets/logos/the-word/the-word-glyph-reversed.svg" alt="" aria-hidden="true"&gt;&lt;/span&gt;</pre>
       </details>
       </section>
-      <section class="spec" id="email-layout">
+      <section class="spec screen" id="email-layout">
         <div class="head">
           <h2>Email layout</h2>
           <span class="id">email-layout</span>
@@ -1362,7 +1395,7 @@
 &lt;/table&gt;</pre>
       </details>
       </section>
-      <section class="spec" id="email-button">
+      <section class="spec screen" id="email-button">
         <div class="head">
           <h2>Email button</h2>
           <span class="id">email-button</span>
@@ -1404,7 +1437,7 @@
 &lt;/tr&gt;&lt;/table&gt;</pre>
       </details>
       </section>
-      <section class="spec" id="alert">
+      <section class="spec screen" id="alert">
         <div class="head">
           <h2>Alert</h2>
           <span class="id">alert</span> · <span class="id">.alert</span>
@@ -1450,7 +1483,7 @@
 &lt;/div&gt;</pre>
       </details>
       </section>
-      <section class="spec" id="toast">
+      <section class="spec screen" id="toast">
         <div class="head">
           <h2>Toast</h2>
           <span class="id">toast</span> · <span class="id">.toast</span>
@@ -1482,7 +1515,7 @@
         <pre>&lt;div class="toast" role="status"&gt;&lt;div&gt;&lt;strong&gt;Published&lt;/strong&gt;&lt;br&gt;&lt;span class="muted"&gt;Brand system v7.0 is live.&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;</pre>
       </details>
       </section>
-      <section class="spec" id="progress">
+      <section class="spec screen" id="progress">
         <div class="head">
           <h2>Progress</h2>
           <span class="id">progress</span> · <span class="id">.progress</span>
@@ -1515,7 +1548,7 @@
 &lt;p class="caption"&gt;64% of the logo set rebuilt&lt;/p&gt;</pre>
       </details>
       </section>
-      <section class="spec" id="skeleton">
+      <section class="spec screen" id="skeleton">
         <div class="head">
           <h2>Skeleton</h2>
           <span class="id">skeleton</span> · <span class="id">.skeleton</span>
@@ -1549,7 +1582,7 @@
 &lt;span class="skeleton" style="width:88%;height:14px"&gt;&lt;/span&gt;</pre>
       </details>
       </section>
-      <section class="spec" id="empty-state">
+      <section class="spec screen" id="empty-state">
         <div class="head">
           <h2>Empty state</h2>
           <span class="id">empty-state</span> · <span class="id">.empty</span>
@@ -1587,7 +1620,7 @@
 &lt;/div&gt;</pre>
       </details>
       </section>
-      <section class="spec" id="accordion">
+      <section class="spec screen" id="accordion">
         <div class="head">
           <h2>Accordion</h2>
           <span class="id">accordion</span> · <span class="id">.accordion</span>
@@ -1623,7 +1656,7 @@
 &lt;/div&gt;</pre>
       </details>
       </section>
-      <section class="spec" id="dialog">
+      <section class="spec screen" id="dialog">
         <div class="head">
           <h2>Dialog</h2>
           <span class="id">dialog</span> · <span class="id">.dialog</span>
@@ -1663,7 +1696,7 @@
 &lt;/div&gt;</pre>
       </details>
       </section>
-      <section class="spec" id="dropdown-menu">
+      <section class="spec screen" id="dropdown-menu">
         <div class="head">
           <h2>Menu</h2>
           <span class="id">dropdown-menu</span> · <span class="id">.menu</span>
@@ -1704,7 +1737,7 @@
 &lt;/div&gt;</pre>
       </details>
       </section>
-      <section class="spec" id="tooltip">
+      <section class="spec screen" id="tooltip">
         <div class="head">
           <h2>Tooltip</h2>
           <span class="id">tooltip</span> · <span class="id">.tooltip</span>
@@ -1756,6 +1789,7 @@
       links[a.getAttribute("href").slice(1)] = a;
     });
     var current = null;
+    var main = document.querySelector(".main");
     var observer = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (!entry.isIntersecting) return;
@@ -1764,11 +1798,31 @@
         if (current) current.classList.remove("active");
         next.classList.add("active");
         current = next;
+        // Keep the marker in view when the list is longer than the sidebar.
+        if (next.scrollIntoView) next.scrollIntoView({ block: "nearest" });
       });
-    }, { rootMargin: "-76px 0px -70% 0px" });
+    }, { root: main, threshold: 0.5 });
     Array.prototype.forEach.call(document.querySelectorAll("section.spec"), function (s) {
       observer.observe(s);
     });
+
+    // With snapping, a key press should move one component, not one line.
+    var screens = Array.prototype.slice.call(document.querySelectorAll(".screen"));
+    main.addEventListener("keydown", function (e) {
+      var step = 0;
+      if (e.key === "ArrowDown" || e.key === "PageDown") step = 1;
+      else if (e.key === "ArrowUp" || e.key === "PageUp") step = -1;
+      else return;
+      if (e.target.closest("input, textarea, select, details[open]")) return;
+      var top = main.scrollTop;
+      var here = 0;
+      screens.forEach(function (el, i) { if (el.offsetTop <= top + 4) here = i; });
+      var next = screens[Math.min(screens.length - 1, Math.max(0, here + step))];
+      if (!next) return;
+      e.preventDefault();
+      main.scrollTo({ top: next.offsetTop, behavior: "smooth" });
+    });
+    main.setAttribute("tabindex", "-1");
   })();
 </script>
 

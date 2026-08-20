@@ -17,6 +17,7 @@
   "audit": "https://brand.theword.world/ai/audit.md",
   "components": "https://brand.theword.world/ai/components.json",
   "channels": "https://brand.theword.world/ai/channels.json",
+  "governance": "This system changes one way: a proposed edit in writing, approval by Joel Zimmer and Nathan Zimmer, a version bump, and a changelog entry. No silent edits.",
   "copyBank": "https://brand.theword.world/ai/copy-bank.json",
   "assets": "https://brand.theword.world/ai/assets.json",
   "approvedExamples": "https://brand.theword.world/ai/approved-examples.md",
@@ -76,7 +77,6 @@
       "mission": "Training the local church to know their authority in Christ and build a real relationship with Jesus."
     }
   ],
-  "governance": "This system changes one way: a proposed edit in writing, approval by Joel Zimmer and Nathan Zimmer, a version bump, and a changelog entry. No silent edits.",
   "usage": "Free to read, quote, and follow for work produced for or about THE WORD FOR ALL THE WORLD. Not a license to use the wordmark, photography, or video for any other purpose.",
   "contact": "brand@theword.world",
   "sourceRepository": "https://github.com/THE-WORD-FOR-ALL-THE-WORLD/the-word-brand",
@@ -86,8 +86,8 @@
       "name": "brand-system.md",
       "url": "https://brand.theword.world/ai/brand-system.md",
       "description": "The complete brand standard as one document.",
-      "bytes": 55510,
-      "sha256": "33a5672c92b5323c74e102c6d6660e3482cf8818a3a12933c7eba0696db22a9e"
+      "bytes": 55975,
+      "sha256": "28d5d1fa25f5623f4b3191ad27fd43f64c6e1438325872db314880e0797565bd"
     },
     {
       "name": "SKILL.md",
@@ -144,6 +144,13 @@
       "description": "One entry per surface: sizes, safe areas, limits, rules, and the audit checks that apply.",
       "bytes": 11504,
       "sha256": "74f059472af7c5d72ddd8e810cddd8fcc1c22d6dc55f51a3241682a32067a1c9"
+    },
+    {
+      "name": "governance.json",
+      "url": "https://brand.theword.world/ai/governance.json",
+      "description": "Policies, processes, and procedures: how this system is run, changed, and used.",
+      "bytes": 15393,
+      "sha256": "22e100bb9e2163f95e466e404b47d14ac7ebf3bbfd0178035e41daf82c701985"
     },
     {
       "name": "copy-bank.json",

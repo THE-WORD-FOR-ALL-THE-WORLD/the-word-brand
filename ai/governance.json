@@ -1,0 +1,436 @@
+{
+  "version": "7.0",
+  "messagingVersion": "1.0",
+  "updated": "2026-08-20",
+  "authority": "canonical",
+  "definitions": {
+    "policy": "A standing rule about how this system is run.",
+    "process": "The order work moves in, one stage handing to the next.",
+    "procedure": "The steps one person follows to do one job."
+  },
+  "policies": [
+    {
+      "id": "GOV1",
+      "title": "No silent edits",
+      "rule": "Every change to a published standard carries a version bump and a changelog entry.",
+      "why": "An audit has to be checkable against the version it named."
+    },
+    {
+      "id": "GOV2",
+      "title": "Two approvers",
+      "rule": "A change to a published standard is approved by Joel Zimmer and Nathan Zimmer.",
+      "why": "One person cannot quietly move the brand."
+    },
+    {
+      "id": "GOV3",
+      "title": "The guide is the source",
+      "rule": "Everything under /ai is generated. A hand edit is overwritten by the next build.",
+      "why": "Two copies of a fact means one of them is wrong and nobody knows which."
+    },
+    {
+      "id": "GOV4",
+      "title": "Archive, never delete",
+      "rule": "A superseded guide moves to the archive and stays reachable.",
+      "why": "An audit citing v6.8 has to be checkable against v6.8."
+    },
+    {
+      "id": "GOV5",
+      "title": "One version everywhere",
+      "rule": "Tokens, components, channels, packages, and pages all carry the same version number.",
+      "why": "Separate version numbers make it impossible to say what agrees with what."
+    },
+    {
+      "id": "GOV6",
+      "title": "Every consumer is registered",
+      "rule": "A surface running this brand is listed with the version it was last synced to.",
+      "why": "Otherwise nobody can answer which of our things are on the old brand."
+    },
+    {
+      "id": "GOV7",
+      "title": "Reviewed twice a year",
+      "rule": "The system is reviewed against the people using it, and the review stays on the record.",
+      "why": "A changelog only ever looks at itself."
+    },
+    {
+      "id": "GOV8",
+      "title": "Audit before presenting",
+      "rule": "Branded work is audited against the current standard, and the report names the version used.",
+      "why": "Compliance claimed without a version is a claim about nothing."
+    },
+    {
+      "id": "GOV9",
+      "title": "Nothing ships on a broken build",
+      "rule": "The three checks pass before anything reaches production.",
+      "why": "A site that disagrees with its own manifest is lying about being canonical."
+    },
+    {
+      "id": "GOV10",
+      "title": "Corrections come home",
+      "rule": "A value corrected in the field returns through a changelog entry, never as a note in an inbox.",
+      "why": "A press proof that lives in someone's email is a fact the system does not have."
+    }
+  ],
+  "nonNegotiables": {
+    "note": "The rules about what the brand looks and sounds like are not restated here. These are the audit's gates, read from https://brand.theword.world/ai/audit.md at build time. Any gate failure fails the whole audit.",
+    "source": "https://brand.theword.world/ai/audit.md",
+    "gates": [
+      {
+        "id": "G1",
+        "title": "Invented facts",
+        "failsWhen": "A statistic, quote, testimony, name, date, or Bible reference appears that did not come from the official ministry record. Bracketed placeholders (`[n]`, `[city]`) pass. Plausible-looking figures fail."
+      },
+      {
+        "id": "G2",
+        "title": "Synthetic or stock imagery",
+        "failsWhen": "Any photograph or video frame of people, ministry, or the field that is stock, AI-generated, or staged. Documentary capture only."
+      },
+      {
+        "id": "G3",
+        "title": "The prophecy",
+        "failsWhen": "The prophecy is paraphrased, excerpted, trimmed, or reworded. It is quoted exactly and in full, or it is absent."
+      },
+      {
+        "id": "G4",
+        "title": "Flame carrying text",
+        "failsWhen": "Any text set in Flame, or any text sitting directly on Flame. Fire at text size is Ember."
+      },
+      {
+        "id": "G5",
+        "title": "Text on footage without a scrim",
+        "failsWhen": "Type over photography or video without the Midnight scrim, or in a color other than White or Parchment."
+      },
+      {
+        "id": "G6",
+        "title": "Missing endorsement",
+        "failsWhen": "An initiative's name appears without \"A ministry of THE WORD FOR ALL THE WORLD.\""
+      },
+      {
+        "id": "G7",
+        "title": "Governmental iconography",
+        "failsWhen": "Seals, crests, flags, eagles, or any device that imitates a government office. One recorded exception: the School of the Local Church's approved academic seal, on the School's own credentials only (Brand Guide §11, v5.8). The seal anywhere else, or any other seal, fails."
+      },
+      {
+        "id": "G8",
+        "title": "Unattributed authority",
+        "failsWhen": "A vision statement, field report, testimony, or official record published without the name of the person or office behind it."
+      },
+      {
+        "id": "G9",
+        "title": "Banned language",
+        "failsWhen": "Any term from the Messaging Guide's hype, corporate-polish, or churchy-insider lists, used straight rather than explained."
+      },
+      {
+        "id": "G10",
+        "title": "Wrong hero",
+        "failsWhen": "The copy makes THE WORD the hero of the story instead of the believer and the local church."
+      }
+    ]
+  },
+  "processes": [
+    {
+      "id": "PROC1",
+      "name": "Changing the brand",
+      "starts": "Someone proposes a change to what the standard says.",
+      "stages": [
+        {
+          "name": "Proposal",
+          "who": "Anyone",
+          "produces": "A pull request against the guide"
+        },
+        {
+          "name": "Review",
+          "who": "Brand owners",
+          "produces": "A preview to look at"
+        },
+        {
+          "name": "Approval",
+          "who": "Joel and Nathan",
+          "produces": "A recorded sign-off"
+        },
+        {
+          "name": "Release",
+          "who": "Whoever proposed it",
+          "produces": "A version bump and a changelog entry"
+        },
+        {
+          "name": "Sync",
+          "who": "Whoever released it",
+          "produces": "Canva, Figma, and the packages updated"
+        },
+        {
+          "name": "Record",
+          "who": "Whoever synced",
+          "produces": "consumers.json showing the new version"
+        }
+      ],
+      "ends": "Every registered surface is on the version the guide states.",
+      "procedures": [
+        "SOP1",
+        "SOP2",
+        "SOP5",
+        "SOP6"
+      ]
+    },
+    {
+      "id": "PROC2",
+      "name": "Producing branded work",
+      "starts": "A page, a post, a deck, an ad, an email, or a document is needed.",
+      "stages": [
+        {
+          "name": "Brief",
+          "who": "Requester",
+          "produces": "Who it is for, and what it must do"
+        },
+        {
+          "name": "Draft",
+          "who": "Maker",
+          "produces": "The work, built from components and the copy bank"
+        },
+        {
+          "name": "Audit",
+          "who": "Maker",
+          "produces": "An audit report naming the version"
+        },
+        {
+          "name": "Revise",
+          "who": "Maker",
+          "produces": "Every failed check fixed"
+        },
+        {
+          "name": "Publish",
+          "who": "Owner of the surface",
+          "produces": "The work, live"
+        }
+      ],
+      "ends": "The work is live and its audit report is filed with it.",
+      "procedures": [
+        "SOP3",
+        "SOP7"
+      ]
+    },
+    {
+      "id": "PROC3",
+      "name": "Bringing a new surface on",
+      "starts": "A new site, app, kit, or account will carry the brand.",
+      "stages": [
+        {
+          "name": "Register",
+          "who": "Owner",
+          "produces": "A row in consumers.json"
+        },
+        {
+          "name": "Build",
+          "who": "Owner",
+          "produces": "The surface, built on the published tokens"
+        },
+        {
+          "name": "Sync",
+          "who": "Owner",
+          "produces": "The current version in place"
+        },
+        {
+          "name": "Record",
+          "who": "Owner",
+          "produces": "syncedVersion set"
+        }
+      ],
+      "ends": "The linter can see the surface and say what version it is on.",
+      "procedures": [
+        "SOP4",
+        "SOP5",
+        "SOP6"
+      ]
+    },
+    {
+      "id": "PROC4",
+      "name": "Correcting a defect",
+      "starts": "Something published is found to be wrong.",
+      "stages": [
+        {
+          "name": "Report",
+          "who": "Anyone",
+          "produces": "What is wrong and where it shows"
+        },
+        {
+          "name": "Reproduce",
+          "who": "Maintainer",
+          "produces": "A failing check, where one is possible"
+        },
+        {
+          "name": "Fix",
+          "who": "Maintainer",
+          "produces": "The correction, and a check that would have caught it"
+        },
+        {
+          "name": "Release",
+          "who": "Maintainer",
+          "produces": "A version bump and a changelog entry"
+        }
+      ],
+      "ends": "The defect is fixed and cannot return unnoticed.",
+      "procedures": [
+        "SOP1",
+        "SOP2"
+      ]
+    },
+    {
+      "id": "PROC5",
+      "name": "Reviewing the system",
+      "starts": "Six months have passed, or a new kind of surface has joined.",
+      "stages": [
+        {
+          "name": "Examine",
+          "who": "Reviewer",
+          "produces": "What each audience finds and has to invent"
+        },
+        {
+          "name": "Report",
+          "who": "Reviewer",
+          "produces": "A review, with an acceptance test per recommendation"
+        },
+        {
+          "name": "Plan",
+          "who": "Brand owners",
+          "produces": "What will be done, and in what order"
+        },
+        {
+          "name": "Release",
+          "who": "Maintainer",
+          "produces": "The version the review called for"
+        },
+        {
+          "name": "Close",
+          "who": "Reviewer",
+          "produces": "The review row naming the version it produced"
+        }
+      ],
+      "ends": "The review is on the record with its outcome beside it.",
+      "procedures": [
+        "SOP8",
+        "SOP1"
+      ]
+    }
+  ],
+  "procedures": [
+    {
+      "id": "SOP1",
+      "name": "Release a brand change",
+      "when": "The standard is changing.",
+      "who": "Maintainer",
+      "steps": [
+        "Edit the source: brand/index.html for a visual rule, brand/messaging/index.html for a verbal one.",
+        "Bump the version in the title and the kicker.",
+        "Add a changelog row: version, date, owner, what changed, who approved it.",
+        "Move the superseded guide into archive/.",
+        "Run build_logos.py, then build_ai.py, then brand_lint.py.",
+        "Commit the regenerated files with the change that caused them.",
+        "Open a pull request and check the preview before merging."
+      ],
+      "done": "All three checks pass and the changelog names the new version.",
+      "skill": "/brand-release"
+    },
+    {
+      "id": "SOP2",
+      "name": "Rebuild the AI layer",
+      "when": "Any source file has been edited.",
+      "who": "Anyone",
+      "steps": [
+        "Run python3 tools/build_logos.py.",
+        "Run python3 tools/build_ai.py.",
+        "Run python3 tools/brand_lint.py.",
+        "Commit every regenerated file alongside the edit."
+      ],
+      "done": "Both --check modes report current and the linter reports no errors.",
+      "skill": "/brand-sync"
+    },
+    {
+      "id": "SOP3",
+      "name": "Audit a piece of work",
+      "when": "Before anything branded is presented.",
+      "who": "Whoever made it",
+      "steps": [
+        "Fetch /ai/manifest.json and record the versions it reports.",
+        "Read tokens, the brand system, and the audit. Read the initiative's guide if it speaks for one.",
+        "Work the ten gates in order. Any gate failure fails the whole audit.",
+        "Score every applicable check and mark the rest n/a with a reason.",
+        "Return the report template exactly, with a verdict."
+      ],
+      "done": "The report names a version and gives SHIP, REVISE, or BLOCKED.",
+      "skill": "/brand-audit"
+    },
+    {
+      "id": "SOP4",
+      "name": "Add a page to the portal",
+      "when": "A new guide, document, or section is needed.",
+      "who": "Maintainer",
+      "steps": [
+        "Copy the chrome from an existing page.",
+        "Link /assets/brand.tokens.css rather than restating the palette.",
+        "Add the og tags, the meta description, and the favicon links.",
+        "Add the page to llms.txt in tools/build_ai.py, and to the homepage card index if it is a front door.",
+        "Rebuild and lint."
+      ],
+      "done": "The linter reports no errors and the page appears in the sitemap.",
+      "skill": "/brand-new-page"
+    },
+    {
+      "id": "SOP5",
+      "name": "Set up the Canva brand kit",
+      "when": "The kit is new, or the brand version has moved.",
+      "who": "Brand owner",
+      "steps": [
+        "Run python3 tools/sync_canva.py to print the sheet.",
+        "Keep one kit and name it with the current version.",
+        "Set exactly the six colours and the three fonts, and remove anything else.",
+        "Upload the listed PNG logos.",
+        "Build the locked brand templates.",
+        "Set syncedVersion in ai-source/consumers.json."
+      ],
+      "done": "The linter no longer warns that Canva is unsynced.",
+      "skill": null
+    },
+    {
+      "id": "SOP6",
+      "name": "Push tokens into Figma",
+      "when": "A release has changed a token.",
+      "who": "Maintainer",
+      "steps": [
+        "Run python3 tools/sync_figma.py --dry-run and read the payload.",
+        "Set FIGMA_TOKEN and FIGMA_FILE_KEY.",
+        "Run python3 tools/sync_figma.py.",
+        "Set syncedVersion in ai-source/consumers.json."
+      ],
+      "done": "The Figma library shows the current values and the linter is quiet.",
+      "skill": null
+    },
+    {
+      "id": "SOP7",
+      "name": "Check work in another repository",
+      "when": "A site or app outside this repo produces branded output.",
+      "who": "That repo's maintainer",
+      "steps": [
+        "Add the brand-check Action to the repository's pull request workflow.",
+        "Point it at the built output, not the source.",
+        "Fix every failure it reports.",
+        "Run the full audit with a reader before publishing."
+      ],
+      "done": "The check passes and a human audit has been run on top of it.",
+      "skill": null
+    },
+    {
+      "id": "SOP8",
+      "name": "Publish a system review",
+      "when": "A review has been completed.",
+      "who": "Reviewer",
+      "steps": [
+        "Create reviews/<date>-<name>/index.html with a title and a meta description.",
+        "Name the version examined, what was found, and what it recommends.",
+        "Give every recommendation an acceptance test.",
+        "Add its row to the reviews index.",
+        "Rebuild: the review registers itself in llms.txt and the sitemap."
+      ],
+      "done": "The review appears on /reviews and in the machine-readable layer.",
+      "skill": null
+    }
+  ]
+}

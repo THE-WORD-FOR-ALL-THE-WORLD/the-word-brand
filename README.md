@@ -21,6 +21,7 @@ Both are generated from the same sources, so they cannot disagree.
 | A person who needs the brand | [Brand Guide](https://brand.theword.world/brand) and [Messaging Guide](https://brand.theword.world/brand/messaging) |
 | An AI agent, or pointing one at this | [`/ai/manifest.json`](https://brand.theword.world/ai/manifest.json) |
 | Setting up a tool or another repository | [Give it to an AI](#give-it-to-an-ai) below |
+| Understanding how this is run | [Governance](https://brand.theword.world/governance) |
 | Changing the brand | [`/brand-release`](.claude/skills/brand-release/SKILL.md) |
 | Checking work against the brand | [`/brand-audit`](.claude/skills/brand-audit/SKILL.md) |
 | Maintaining this repository | [How it is built](#how-it-is-built) below |
@@ -41,6 +42,7 @@ Both are generated from the same sources, so they cannot disagree.
 | Components | [`/components`](https://brand.theword.world/components) | Forty components rendered live by the published stylesheet, on either ground, with specs, rules, and markup to copy. |
 | Channels | [`/channels`](https://brand.theword.world/channels) | Nine surfaces, each with its sizes, character limits, safe areas, file formats, and pre-approved copy. |
 | Reviews | [`/reviews`](https://brand.theword.world/reviews) | Every system review, in order, with what each found and the version it produced. |
+| Governance | [`/governance`](https://brand.theword.world/governance) | The policies, processes, and procedures that run this system, kept apart. |
 
 ### The three initiatives
 
