@@ -679,7 +679,7 @@ MARKS = {
  "school-of-the-local-church": ("school", "A crowned lion, and a ground that does half the drawing.",
   "The mark is the Lion of Judah wearing a crown, beside <b>School</b> in the house serif over "
   "<b>OF THE LOCAL CHURCH</b> letterspaced in DM Sans. It is two tones and no more: the lion&rsquo;s "
-  "is Midnight over White, and the name beside it is Word Blue. That is the whole trick. The interior is not painted "
+  "is Midnight over White, and the name beside it is Word Blue. The horizontal lockup is the one exception: on light grounds its lion takes Word Blue too, so that mark reads as a single colour. The interior is not painted "
   "on, it is left open, so the ground shows through it. One drawing "
   "therefore reads on Parchment, on Word Blue, and on Midnight alike, with only the name flipping to "
   "white on the dark ones. Nothing is redrawn per ground.",
