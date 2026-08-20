@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<title>Components · THE WORD FOR ALL THE WORLD</title>
+<meta name="description" content="Every component in the brand system, rendered live from the published stylesheet, with its specification, its rules, and markup that can be copied.">
+<link rel="icon" href="/assets/logos/the-word/favicon/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/assets/logos/the-word/favicon/favicon-16.png" sizes="16x16" type="image/png">
+<link rel="apple-touch-icon" href="/assets/logos/the-word/favicon/apple-touch-icon-180.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="THE WORD FOR ALL THE WORLD">
+<meta property="og:title" content="Components">
+<meta property="og:description" content="Every component in the brand system, rendered live from the published stylesheet, with its specification, its rules, and markup that can be copied.">
+<meta property="og:url" content="https://brand.theword.world/components">
+<meta property="og:image" content="https://brand.theword.world/assets/images/og-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="THE WORD FOR ALL THE WORLD">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="/assets/fonts/fonts.css">
+<link rel="stylesheet" href="/assets/brand.css">
+<style>
+/* This page is the proof. Everything below the chrome is drawn by
+   /assets/brand.css, the same file anyone else links. The only rules here are
+   the gallery's own furniture: the frame around each specimen, and the page
+   scaffolding that holds them apart. */
+.wrap{max-width:1020px;margin:0 auto;padding:0 32px;}
+nav.chrome{position:absolute;top:0;left:0;right:0;z-index:10;}
+nav.chrome .bar{max-width:1240px;margin:0 auto;padding:26px 36px;display:flex;justify-content:space-between;align-items:center;gap:20px;}
+nav.chrome .logo img{height:20px;width:auto;display:block;}
+nav.chrome .links{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:12px 28px;font-size:12.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;}
+nav.chrome .links a{color:var(--ink-reversed-muted);text-decoration:none;}
+nav.chrome .links a:hover{color:var(--white);}
+header.masthead{background:var(--midnight);color:var(--parchment);padding:126px 0 62px;}
+header.masthead h1{color:var(--white);margin-top:.3em;}
+header.masthead .lede{max-width:34ch;margin-top:var(--space-5);color:var(--parchment);font-family:var(--serif-text);font-style:italic;}
+main{padding:var(--space-8) 0 var(--space-9);}
+.intro{max-width:66ch;margin-bottom:var(--space-8);}
+.spec{border-top:1px solid var(--rule);padding-top:var(--space-7);margin-top:var(--space-7);}
+.spec:first-of-type{border-top:0;padding-top:0;margin-top:0;}
+.spec > .head{margin-bottom:var(--space-5);}
+.spec h2{font-family:var(--serif-display);font-weight:400;font-size:var(--text-display-small);line-height:var(--leading-display-small);margin:.2em 0 0;}
+.spec .id{font-family:'SF Mono',Consolas,monospace;font-size:var(--text-caption);color:var(--ink-muted);}
+.stage{border:1px solid var(--rule);border-radius:var(--radius-frame);padding:var(--space-6);background:var(--white);overflow:hidden;}
+/* The dark stage takes the brand's own dark-ground class rather than forcing a
+   colour onto every child: forcing it would repaint the Flame numeral in the
+   official-record figure, which is the one thing Flame is for. */
+.stage.dark{background:var(--midnight);border-color:var(--rule-light);}
+.cols{display:grid;grid-template-columns:1fr;gap:var(--space-5);margin-top:var(--space-5);}
+@media(min-width:1080px){.cols{grid-template-columns:1fr 1fr;}}
+details{border:1px solid var(--rule);border-radius:var(--radius-card);background:var(--white);}
+summary{cursor:pointer;padding:var(--space-3) var(--space-4);font-weight:600;font-size:var(--text-body-small);list-style:none;}
+summary::-webkit-details-marker{display:none;}
+summary::before{content:"›";display:inline-block;width:1em;transition:transform var(--duration-fast) var(--easing);}
+details[open] summary::before{transform:rotate(90deg);}
+pre{margin:0;padding:var(--space-4);overflow-x:auto;border-top:1px solid var(--rule);background:var(--wash);font-family:'SF Mono',Consolas,monospace;font-size:13px;line-height:1.6;}
+dl.props{margin:0;display:grid;grid-template-columns:auto 1fr;gap:var(--space-2) var(--space-4);font-size:var(--text-body-small);}
+dl.props dt{font-weight:600;color:var(--ink-muted);}
+dl.props dd{margin:0;}
+ul.rules{margin:var(--space-4) 0 0;padding-left:1.1em;font-size:var(--text-body-small);line-height:1.6;}
+ul.rules li{margin-bottom:var(--space-2);}
+footer.chrome{background:var(--midnight);color:var(--ink-reversed-muted);padding:40px 0;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;font-weight:500;}
+footer.chrome .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+footer.chrome img{height:16px;width:auto;display:block;opacity:.9;}
+@media(max-width:640px){nav.chrome .bar{padding:20px 24px;}header.masthead{padding:104px 0 48px;}}
+</style>
+</head>
+<body>
+
+<nav class="chrome">
+  <div class="bar">
+    <a class="logo" href="/" aria-label="THE WORD FOR ALL THE WORLD, home">
+      <img src="/assets/logos/the-word/the-word-horizontal-reversed.svg" alt="THE WORD FOR ALL THE WORLD">
+    </a>
+    <div class="links">
+      <a href="/">Home</a>
+      <a href="/brand/">Brand Guide</a>
+      <a href="/brand/messaging/">Messaging</a>
+      <a href="/documents/">Documents</a>
+      <a href="/letterhead/">Letterhead</a>
+      <a href="/signatures/">Signatures</a>
+      <a href="/assets/">Assets</a>
+    </div>
+  </div>
+</nav>
+
+<header class="masthead on-midnight">
+  <div class="wrap">
+    <span class="eyebrow">The Component Library</span>
+    <h1 class="headline">Every part, drawn by the <em>published</em> stylesheet.</h1>
+    <p class="lede">Not a picture of the components. The components, rendered by the same file anyone else links.</p>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <div class="intro prose">
+      <p>Each specimen below is rendered live by <a href="/assets/brand.css"><code>/assets/brand.css</code></a>, so this page cannot show something the stylesheet does not actually do. Copy the markup, link the stylesheet and <a href="/assets/fonts/fonts.css"><code>fonts.css</code></a>, and the result is the specimen.</p>
+      <p>The machine-readable copy is <a href="/ai/components.json"><code>/ai/components.json</code></a>. Ids match there, in the Figma library, and in the Storybook stories of the applications, so a card is a card wherever anyone looks it up.</p>
+      <p class="caption">Brand system v6.8 · messaging v1.0 · 18 components · generated 2026-08-19</p>
+    </div>
+    <section class="spec" id="button-primary">
+      <div class="head">
+        <span class="id">button-primary · <code>.btn</code></span>
+        <h2>Primary button</h2>
+        <p class="muted">The main call to action. One per view.</p>
+      </div>
+    <div class="stage ">
+<a class="btn" href="/partner">Partner With Us</a>
+    </div>
+      <div class="cols">
+        <div>
+          <dl class="props">
+        <dt>background</dt><dd>#C13A24</dd>
+        <dt>color</dt><dd>#FFFFFF</dd>
+        <dt>hover</dt><dd>#A62F1B</dd>
+        <dt>font</dt><dd>DM Sans 700, 14.5px, letter-spacing .04em</dd>
+        <dt>padding</dt><dd>14px 28px</dd>
+        <dt>radius</dt><dd>3px</dd>
+        <dt>contrast</dt><dd>5.4:1, passes WCAG AA</dd>
+          </dl>
+        </div>
+        <div>
+          <ul class="rules">
+        <li>Never Flame fill. Flame on a button is 3.3:1 and fails AA.</li>
+        <li>The label is sentence case or title case, never all caps, never a command shouted.</li>
+        <li>The focus ring is 2px Ember, 3px offset, and Flame when the button sits on Midnight.</li>
+          </ul>
+        </div>
+      </div>
+      <details>
+        <summary>Markup</summary>
+        <pre>&lt;a class="btn" href="/partner"&gt;Partner With Us&lt;/a&gt;</pre>
+      </details>
+    </section>
+    <section class="spec" id="button-ghost">
+      <div class="head">
+        <span class="id">button-ghost · <code>.btn ghost</code></span>
+        <h2>Ghost button</h2>
+        <p class="muted">The secondary action beside a primary button, on Midnight or over footage.</p>
+      </div>
+    <div class="stage dark on-midnight">
+<a class="btn ghost" href="/happening">See What's Happening</a>
+    </div>
+      <div class="cols">
+        <div>
+          <dl class="props">
+        <dt>background</dt><dd>transparent</dd>
+        <dt>color</dt><dd>#F7F3EC</dd>
+        <dt>border</dt><dd>1.5px solid rgba(247,243,236,.5)</dd>
+        <dt>hover</dt><dd>rgba(247,243,236,.1) fill</dd>
+        <dt>radius</dt><dd>3px</dd>
+          </dl>
+        </div>
+        <div>
+          <ul class="rules">
+        <li>Only on dark grounds. On Parchment, the secondary action is a text link in Ember.</li>
+        <li>Never two ghost buttons in a row. One primary, one ghost, then stop.</li>
+          </ul>
+        </div>
+      </div>
+      <details>
+        <summary>Markup</summary>
+        <pre>&lt;a class="btn ghost" href="/happening"&gt;See What's Happening&lt;/a&gt;</pre>
+      </details>
+    </section>
+    <section class="spec" id="eyebrow">
+      <div class="head">
+        <span class="id">eyebrow · <code>.eyebrow</code></span>
+        <h2>Eyebrow / kicker</h2>
+        <p class="muted">Opens a section or a record. Names what the reader is about to read.</p>
+      </div>
+    <div class="stage ">
+<span class="eyebrow">03 — Color System</span>
+    </div>
+      <div class="cols">
+        <div>
+          <dl class="props">
+        <dt>font</dt><dd>DM Sans 600, 12px</dd>
+        <dt>letterSpacing</dt><dd>.18em</dd>
+        <dt>transform</dt><dd>uppercase</dd>
+        <dt>color</dt><dd>#C13A24 on light grounds, #F85842 on Midnight</dd>
+          </dl>
+        </div>
+        <div>
+          <ul class="rules">
+        <li>Every record opens with one. Law II.</li>
+        <li>All caps belongs here, to labels, and to the wordmark. Never to the serif.</li>
+          </ul>
+        </div>
+      </div>
+      <details>
+        <summary>Markup</summary>
+        <pre>&lt;span class="eyebrow"&gt;03 — Color System&lt;/span&gt;</pre>
+      </details>
+    </section>
+    <section class="spec" id="headline-serif">
+      <div class="head">
+        <span class="id">headline-serif · <code>.headline</code></span>
+        <h2>Serif headline</h2>
+        <p class="muted">Section and page headlines where the institution speaks.</p>
+      </div>
+    <div class="stage ">
+<h2>No one told them it is <em>already here.</em></h2>
+    </div>
+      <div class="cols">
+        <div>
+          <dl class="props">
+        <dt>font</dt><dd>DM Serif Display Regular, clamp(34px, 4.8vw, 52px)</dd>
+        <dt>lineHeight</dt><dd>1.08</dd>
+        <dt>case</dt><dd>sentence case</dd>
+        <dt>emphasis</dt><dd>at most one italic word</dd>
+          </dl>
+        </div>
+        <div>
+          <ul class="rules">
+        <li>No bold cut exists. For more weight, go bigger.</li>
+        <li>Never all caps.</li>
+        <li>Below 36px, use DM Serif Text. Below 22px, use DM Sans.</li>
+          </ul>
+        </div>
+      </div>
+      <details>
+        <summary>Markup</summary>
+        <pre>&lt;h2&gt;No one told them it is &lt;em&gt;already here.&lt;/em&gt;&lt;/h2&gt;</pre>
+      </details>
+    </section>
+    <section class="spec" id="body">
+      <div class="head">
+        <span class="id">body · <code>.prose</code></span>
+        <h2>Body copy</h2>
+        <p class="muted">Every extended reading passage.</p>
+      </div>
+    <div class="stage ">
+<div class="prose">
+  <p>The local church is the plan. Not a strategy for it, the plan itself.</p>
+  <p class="muted">Every tribe. Every tongue. Every nation.</p>
+</div>
+    </div>
+      <div class="cols">
+        <div>
+          <dl class="props">
+        <dt>font</dt><dd>DM Sans 400, 17px</dd>
+        <dt>lineHeight</dt><dd>1.7</dd>
+        <dt>color</dt><dd>#0B1A2D on light grounds, #F7F3EC on Midnight</dd>
+        <dt>measure</dt><dd>max-width 660px</dd>
+        <dt>muted</dt><dd>80% Midnight (light grounds) · 75% Parchment (dark)</dd>
+          </dl>
+        </div>
+        <div>
+          <ul class="rules">
+        <li>Always DM Sans. The serif never carries extended reading.</li>
+        <li>Never Flame body text on a light ground.</li>
+        <li>Short sentences, one idea each.</li>
+          </ul>
+        </div>
+      </div>
+      <details>
+        <summary>Markup</summary>
+        <pre>&lt;div class="prose"&gt;
+  &lt;p&gt;The local church is the plan. Not a strategy for it, the plan itself.&lt;/p&gt;
+  &lt;p class="muted"&gt;Every tribe. Every tongue. Every nation.&lt;/p&gt;
+&lt;/div&gt;</pre>
+      </details>
+    </section>
+    <section class="spec" id="card">
+      <div class="head">
+        <span class="id">card · <code>.card</code></span>
+        <h2>Card</h2>
+        <p class="muted">A repeated unit in a grid: a guide, an initiative, a document.</p>
+      </div>
+    <div class="stage ">
+<a class="card" href="/brand/">
+  <span class="eyebrow">01</span>
+  <h3 class="title">Brand Guide</h3>
+  <p class="muted">Identity, voice, colour, typography, and the laws of the brand.</p>
+</a>
+    </div>
+      <div class="cols">
+        <div>
+          <dl class="props">
+        <dt>background</dt><dd>#FFFFFF</dd>
+        <dt>border</dt><dd>1px solid rgba(11,26,45,.18)</dd>
+        <dt>radius</dt><dd>4px</dd>
+        <dt>padding</dt><dd>30px 28px</dd>
+        <dt>hoverBorder</dt><dd>#C13A24</dd>
+        <dt>hoverShadow</dt><dd>0 10px 30px rgba(11,26,45,.1)</dd>
+          </dl>
+        </div>
+        <div>
+          <ul class="rules">
+        <li>Cards sit on Parchment, never on Midnight, unless the whole band is dark and the card inverts.</li>
+        <li>Card text is Midnight. Watch for light-on-light inherited from a dark parent.</li>
+          </ul>
+        </div>
+      </div>
+      <details>
+        <summary>Markup</summary>
+        <pre>&lt;a class="card" href="/brand/"&gt;
+  &lt;span class="eyebrow"&gt;01&lt;/span&gt;
+  &lt;h3 class="title"&gt;Brand Guide&lt;/h3&gt;
+  &lt;p class="muted"&gt;Identity, voice, colour, typography, and the laws of the brand.&lt;/p&gt;
+&lt;/a&gt;</pre>
+      </details>
+    </section>
+    <section class="spec" id="record-document">
+      <div class="head">
+        <span class="id">record-document · <code>.record</code></span>
+        <h2>Record document</h2>
+        <p class="muted">The canonical treatment for the prophecy, vision statements, official impact summaries, field reports, and initiative documents. Law II and Law IV in their purest form.</p>
+      </div>
+    <div class="stage ">
+<div class="record"><span class="qk">The Word · A Prophecy</span><div class="verse">…</div><div class="dateline">Received December 2019</div></div>
+    </div>
+      <div class="cols">
+        <div>
+          <dl class="props">
+        <dt>ground</dt><dd>#F7F3EC</dd>
+        <dt>rules</dt><dd>hairline, 1px rgba(11,26,45,.18)</dd>
+        <dt>kicker</dt><dd>letterspaced DM Sans 600 uppercase</dd>
+        <dt>quote</dt><dd>DM Serif Text italic, 22 to 34px</dd>
+        <dt>dateline</dt><dd>what, where, when</dd>
+        <dt>signature</dt><dd>scanned ink</dd>
+          </dl>
+        </div>
+        <div>
+          <ul class="rules">
+        <li>Never decorated. No color blocks, no illustration, no icons.</li>
+        <li>Closes with a dateline and, where authority is claimed, real signatures.</li>
+        <li>A script font standing in for ink is a violation.</li>
+          </ul>
+        </div>
+      </div>
+      <details>
+        <summary>Markup</summary>
+        <pre>&lt;div class="record"&gt;&lt;span class="qk"&gt;The Word · A Prophecy&lt;/span&gt;&lt;div class="verse"&gt;…&lt;/div&gt;&lt;div class="dateline"&gt;Received December 2019&lt;/div&gt;&lt;/div&gt;</pre>
+      </details>
+    </section>
+    <section class="spec" id="hero-video">
+      <div class="head">
+        <span class="id">hero-video · <code>.footage</code></span>
+        <h2>Full-bleed video hero</h2>
+        <p class="muted">Page and priority-panel heroes.</p>
+      </div>
+    <div class="stage dark on-midnight">
+<video autoplay muted loop playsinline poster="/assets/images/crowd-evening-poster.jpg"><source src="/assets/videos/crowd-evening.mp4" type="video/mp4"></video><div class="scrim"></div>
+    </div>
+      <div class="cols">
+        <div>
+          <dl class="props">
+        <dt>video</dt><dd>muted, looping, playsinline, 6 to 15 seconds of real field footage</dd>
+        <dt>poster</dt><dd>required still frame</dd>
+        <dt>scrim</dt><dd>Midnight gradient, ~70% at text</dd>
+        <dt>textColor</dt><dd>#FFFFFF or #F7F3EC</dd>
+          </dl>
+        </div>
+        <div>
+          <ul class="rules">
+        <li>Never text over footage without the scrim.</li>
+        <li>Never Flame or Ember text over footage.</li>
+        <li>The still fallback is honored under prefers-reduced-motion and on slow connections.</li>
+        <li>Nothing stock. Documentary footage from our own conferences, crusades, and streets.</li>
+          </ul>
+        </div>
+      </div>
+      <details>
+        <summary>Markup</summary>
+        <pre>&lt;video autoplay muted loop playsinline poster="/assets/images/crowd-evening-poster.jpg"&gt;&lt;source src="/assets/videos/crowd-evening.mp4" type="video/mp4"&gt;&lt;/video&gt;&lt;div class="scrim"&gt;&lt;/div&gt;</pre>
+      </details>
+    </section>
+    <section class="spec" id="photo-caption">
+      <div class="head">
+        <span class="id">photo-caption · <code>.caption</code></span>
+        <h2>Photo caption</h2>
+        <p class="muted">Every published photograph. A photo without its record does not publish.</p>
+      </div>
+    <div class="stage ">
+<p class="caption">The Word opened — attendees follow the teaching with Bibles and notes.<br><small>SLC Conference · [City], Uganda · 30 Jul 2026</small></p>
+    </div>
+      <div class="cols">
+        <div>
+          <dl class="props">
+        <dt>font</dt><dd>DM Sans, 13px</dd>
+        <dt>color</dt><dd>80% Midnight (light grounds) · 75% Parchment (dark)</dd>
+        <dt>structure</dt><dd>what happened, then event · place · date</dd>
+          </dl>
+        </div>
+        <div>
+          <ul class="rules">
+        <li>Names where known and permitted.</li>
+        <li>Bracketed fields mark anything not yet verified against the ministry record.</li>
+        <li>Written at capture, never from memory.</li>
+          </ul>
+        </div>
+      </div>
+      <details>
+        <summary>Markup</summary>
+        <pre>&lt;p class="caption"&gt;The Word opened — attendees follow the teaching with Bibles and notes.&lt;br&gt;&lt;small&gt;SLC Conference · [City], Uganda · 30 Jul 2026&lt;/small&gt;&lt;/p&gt;</pre>
+      </details>
+    </section>
+    <section class="spec" id="testimony">
+      <div class="head">
+        <span class="id">testimony · <code>.testimony</code></span>
+        <h2>Testimony</h2>
+        <p class="muted">The record of what God did. Four slots, always in order.</p>
+      </div>
+    <div class="stage ">
+<div class="testimony">
+  <p><b>Before</b> I had been in the city three years and knew no one.</p>
+  <p><b>Encounter</b> At the tent on the second night, someone prayed with me.</p>
+  <p><b>Transformation</b> I stopped drinking. My brother noticed first.</p>
+  <p><b>Outcome</b> I lead a small group now. Come and see for yourself.</p>
+  <p class="caption">[Name] · [City] · Shared with permission</p>
+</div>
+    </div>
+      <div class="cols">
+        <div>
+          <dl class="props">
+        <dt>slots</dt><dd>Before: life as it was, in the person's own words · Encounter: the moment Jesus intervened, where and when · Transformation: what changed, specific, verifiable, honest · Outcome: life now, and the invitation to respond</dd>
+        <dt>attribution</dt><dd>Name · City · Shared with permission</dd>
+          </dl>
+        </div>
+        <div>
+          <ul class="rules">
+        <li>Real, consented, and named. Never fabricated, never composited, never anonymous.</li>
+        <li>Closes with an invitation to respond.</li>
+          </ul>
+        </div>
+      </div>
+      <details>
+        <summary>Markup</summary>
+        <pre>&lt;div class="testimony"&gt;
+  &lt;p&gt;&lt;b&gt;Before&lt;/b&gt; I had been in the city three years and knew no one.&lt;/p&gt;
+  &lt;p&gt;&lt;b&gt;Encounter&lt;/b&gt; At the tent on the second night, someone prayed with me.&lt;/p&gt;
+  &lt;p&gt;&lt;b&gt;Transformation&lt;/b&gt; I stopped drinking. My brother noticed first.&lt;/p&gt;
+  &lt;p&gt;&lt;b&gt;Outcome&lt;/b&gt; I lead a small group now. Come and see for yourself.&lt;/p&gt;
+  &lt;p class="caption"&gt;[Name] · [City] · Shared with permission&lt;/p&gt;
+&lt;/div&gt;</pre>
+      </details>
+    </section>
+    <section class="spec" id="lower-third">
+      <div class="head">
+        <span class="id">lower-third · <code>.lower-third</code></span>
+        <h2>Video lower third</h2>
+        <p class="muted">Naming a speaker on screen.</p>
+      </div>
+    <div class="stage dark on-midnight">
+<div class="lower-third">
+  <div class="name">Nathan Zimmer</div>
+  <div class="role">Founder, THE WORD FOR ALL THE WORLD</div>
+</div>
+    </div>
+      <div class="cols">
+        <div>
+          <dl class="props">
+        <dt>font</dt><dd>DM Sans, letterspaced caps</dd>
+        <dt>ground</dt><dd>the Midnight scrim bar</dd>
+        <dt>accent</dt><dd>optional Flame tick</dd>
+        <dt>content</dt><dd>name, then role</dd>
+          </dl>
+        </div>
+        <div>
+          <ul class="rules">
+        <li>Nothing animated, nothing bouncing.</li>
+        <li>Sits on the scrim, never straight on the footage.</li>
+          </ul>
+        </div>
+      </div>
+      <details>
+        <summary>Markup</summary>
+        <pre>&lt;div class="lower-third"&gt;
+  &lt;div class="name"&gt;Nathan Zimmer&lt;/div&gt;
+  &lt;div class="role"&gt;Founder, THE WORD FOR ALL THE WORLD&lt;/div&gt;
+&lt;/div&gt;</pre>
+      </details>
+    </section>
+    <section class="spec" id="stat-figure">
+      <div class="head">
+        <span class="id">stat-figure · <code>.stat</code></span>
+        <h2>Official-record figure</h2>
+        <p class="muted">Impact reports and per-conference reports.</p>
+      </div>
+    <div class="stage dark on-midnight">
+<div class="stat"><div class="fig">1,057</div><div class="lab">Salvations</div></div>
+    </div>
+      <div class="cols">
+        <div>
+          <dl class="props">
+        <dt>numeral</dt><dd>DM Serif Display, #F85842, on #0B1A2D</dd>
+        <dt>label</dt><dd>DM Sans 600 uppercase, letterspaced, #F7F3EC</dd>
+          </dl>
+        </div>
+        <div>
+          <ul class="rules">
+        <li>This is Flame's job: display numerals and small uppercase labels on Midnight.</li>
+        <li>Numbers come from the official ministry record only, never estimates, never memory.</li>
+        <li>The figure carries a source line naming the record and its period.</li>
+          </ul>
+        </div>
+      </div>
+      <details>
+        <summary>Markup</summary>
+        <pre>&lt;div class="stat"&gt;&lt;div class="fig"&gt;1,057&lt;/div&gt;&lt;div class="lab"&gt;Salvations&lt;/div&gt;&lt;/div&gt;</pre>
+      </details>
+    </section>
+    <section class="spec" id="endorsement-line">
+      <div class="head">
+        <span class="id">endorsement-line · <code>.endorse</code></span>
+        <h2>Sub-brand endorsement</h2>
+        <p class="muted">Wherever an initiative's name appears.</p>
+      </div>
+    <div class="stage ">
+<div class="endorse">A ministry of THE WORD FOR ALL THE WORLD</div>
+    </div>
+      <div class="cols">
+        <div>
+          <dl class="props">
+        <dt>text</dt><dd>A ministry of THE WORD FOR ALL THE WORLD</dd>
+        <dt>font</dt><dd>DM Sans 600, small, letterspaced</dd>
+        <dt>placement</dt><dd>directly beneath the initiative name or in the same lockup</dd>
+          </dl>
+        </div>
+        <div>
+          <ul class="rules">
+        <li>Required on every initiative surface. Law III.</li>
+        <li>One recorded exception: the future EVERY1 app, on the YouVersion model.</li>
+        <li>Vanity domains redirect into the initiative's page. They never become separate homes.</li>
+          </ul>
+        </div>
+      </div>
+      <details>
+        <summary>Markup</summary>
+        <pre>&lt;div class="endorse"&gt;A ministry of THE WORD FOR ALL THE WORLD&lt;/div&gt;</pre>
+      </details>
+    </section>
+    <section class="spec" id="site-chrome">
+      <div class="head">
+        <span class="id">site-chrome · <code>.sitenav</code></span>
+        <h2>Portal navigation and footer</h2>
+        <p class="muted">Shared chrome on every page of the brand portal.</p>
+      </div>
+    <div class="stage dark on-midnight">
+<nav class="sitenav">
+  <a class="logo" href="/"><img src="/assets/logos/the-word/the-word-horizontal-reversed.svg" alt="THE WORD FOR ALL THE WORLD"></a>
+  <div class="links"><a href="/brand/">Brand Guide</a><a href="/assets/">Assets</a></div>
+</nav>
+    </div>
+      <div class="cols">
+        <div>
+          <dl class="props">
+        <dt>nav</dt><dd>wordmark left, uppercase DM Sans 600 links right, over the hero, .active on the current page</dd>
+        <dt>footer</dt><dd>#0B1A2D ground, wordmark · tagline · domain</dd>
+        <dt>tagline</dt><dd>Every tribe. Every tongue. Every nation. EVERY1.</dd>
+          </dl>
+        </div>
+        <div>
+          <ul class="rules">
+        <li>A new page copies the chrome from an existing page and adds its own link to every other page.</li>
+        <li>The nav sits over a full-bleed video hero with the scrim in place.</li>
+          </ul>
+        </div>
+      </div>
+      <details>
+        <summary>Markup</summary>
+        <pre>&lt;nav class="sitenav"&gt;
+  &lt;a class="logo" href="/"&gt;&lt;img src="/assets/logos/the-word/the-word-horizontal-reversed.svg" alt="THE WORD FOR ALL THE WORLD"&gt;&lt;/a&gt;
+  &lt;div class="links"&gt;&lt;a href="/brand/"&gt;Brand Guide&lt;/a&gt;&lt;a href="/assets/"&gt;Assets&lt;/a&gt;&lt;/div&gt;
+&lt;/nav&gt;</pre>
+      </details>
+    </section>
+    <section class="spec" id="form-field">
+      <div class="head">
+        <span class="id">form-field · <code>.field</code></span>
+        <h2>Form field</h2>
+        <p class="muted">Every input on every surface: a partner form, a sign-up, a dashboard.</p>
+      </div>
+    <div class="stage ">
+<div class="field" data-state="error">
+  <label for="email">Email</label>
+  <input id="email" type="email" value="nathan@" aria-describedby="email-error">
+  <p class="error" id="email-error">Add everything after the @, for example theword.world.</p>
+</div>
+    </div>
+      <div class="cols">
+        <div>
+          <dl class="props">
+        <dt>label</dt><dd>DM Sans 600, 15px</dd>
+        <dt>input</dt><dd>17px DM Sans on rgba(11,26,45,.05), 1px rgba(11,26,45,.18) border, 4px radius, 44px minimum height</dd>
+        <dt>placeholder</dt><dd>rgba(11,26,45,.60), never rgba(11,26,45,.38): a placeholder still has to be read</dd>
+        <dt>error</dt><dd>#8C1D13 text and border. Never Flame, never Ember.</dd>
+        <dt>hint</dt><dd>13px rgba(11,26,45,.80), below the input, always present rather than appearing on failure</dd>
+          </dl>
+        </div>
+        <div>
+          <ul class="rules">
+        <li>The touch target is 44px whatever the visual height.</li>
+        <li>An error names what is wrong and how to fix it. 'Invalid' is not an error message.</li>
+        <li>Never signal an error with colour alone: the message text carries it.</li>
+        <li>Ember is reserved for the action. An error is not an action.</li>
+          </ul>
+        </div>
+      </div>
+      <details>
+        <summary>Markup</summary>
+        <pre>&lt;div class="field" data-state="error"&gt;
+  &lt;label for="email"&gt;Email&lt;/label&gt;
+  &lt;input id="email" type="email" value="nathan@" aria-describedby="email-error"&gt;
+  &lt;p class="error" id="email-error"&gt;Add everything after the @, for example theword.world.&lt;/p&gt;
+&lt;/div&gt;</pre>
+      </details>
+    </section>
+    <section class="spec" id="data-table">
+      <div class="head">
+        <span class="id">data-table · <code>.table-scroll</code></span>
+        <h2>Data table</h2>
+        <p class="muted">Official figures, schedules, and any grid of records.</p>
+      </div>
+    <div class="stage ">
+<div class="table-scroll">
+  <table>
+    <thead><tr><th>Conference</th><th>City</th><th>Salvations</th></tr></thead>
+    <tbody><tr><td>SLC</td><td>[City]</td><td>[n]</td></tr></tbody>
+  </table>
+</div>
+    </div>
+      <div class="cols">
+        <div>
+          <dl class="props">
+        <dt>header</dt><dd>DM Sans 600 uppercase 12px, letterspaced .14em, rgba(11,26,45,.80) on #F7F3EC</dd>
+        <dt>cell</dt><dd>15px DM Sans, rgba(11,26,45,.10) bottom border</dd>
+        <dt>numerals</dt><dd>tabular-nums wherever digits line up</dd>
+        <dt>scroll</dt><dd>the table scrolls inside its own container, never the page</dd>
+          </dl>
+        </div>
+        <div>
+          <ul class="rules">
+        <li>A wide table scrolls in its own frame. The page body never scrolls sideways.</li>
+        <li>Figures come from the official ministry record and carry a source line.</li>
+          </ul>
+        </div>
+      </div>
+      <details>
+        <summary>Markup</summary>
+        <pre>&lt;div class="table-scroll"&gt;
+  &lt;table&gt;
+    &lt;thead&gt;&lt;tr&gt;&lt;th&gt;Conference&lt;/th&gt;&lt;th&gt;City&lt;/th&gt;&lt;th&gt;Salvations&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+    &lt;tbody&gt;&lt;tr&gt;&lt;td&gt;SLC&lt;/td&gt;&lt;td&gt;[City]&lt;/td&gt;&lt;td&gt;[n]&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;
+  &lt;/table&gt;
+&lt;/div&gt;</pre>
+      </details>
+    </section>
+    <section class="spec" id="email-layout">
+      <div class="head">
+        <span class="id">email-layout · (email: inline styles only)</span>
+        <h2>Email layout</h2>
+        <p class="muted">Every newsletter and transactional email.</p>
+      </div>
+    <div class="stage ">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#F7F3EC;margin:0;padding:24px 0;">
+  <tr><td align="center">
+    <table role="presentation" width="600" cellpadding="0" cellspacing="0" style="width:600px;max-width:100%;background:#FFFFFF;">
+      <tr><td style="padding:32px;font-family:Arial,sans-serif;font-size:17px;line-height:1.7;color:#0B1A2D;">
+        Body copy goes here.
+      </td></tr>
+    </table>
+  </td></tr>
+</table>
+    </div>
+      <div class="cols">
+        <div>
+          <dl class="props">
+        <dt>width</dt><dd>600px, the recorded email breakpoint</dd>
+        <dt>structure</dt><dd>nested tables, not divs. Outlook renders the table and ignores the div.</dd>
+        <dt>css</dt><dd>inline styles on every element. No stylesheet, no custom properties, no var().</dd>
+        <dt>fonts</dt><dd>Georgia for the serif and Arial for the sans. The webfont will not load and the fallback is the design.</dd>
+        <dt>ground</dt><dd>#F7F3EC body, #FFFFFF content table, #0B1A2D footer</dd>
+        <dt>images</dt><dd>PNG only, with alt text that carries the meaning when images are blocked</dd>
+          </dl>
+        </div>
+        <div>
+          <ul class="rules">
+        <li>No SVG. Most clients strip it.</li>
+        <li>A dark-mode client may invert the ground: state colours explicitly on every cell and never rely on a default.</li>
+        <li>Every email carries a preheader, a reason the person is receiving it, and a working unsubscribe.</li>
+        <li>The logo is a PNG at 400px or 800px, never the vector.</li>
+          </ul>
+        </div>
+      </div>
+      <details>
+        <summary>Markup</summary>
+        <pre>&lt;table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#F7F3EC;margin:0;padding:24px 0;"&gt;
+  &lt;tr&gt;&lt;td align="center"&gt;
+    &lt;table role="presentation" width="600" cellpadding="0" cellspacing="0" style="width:600px;max-width:100%;background:#FFFFFF;"&gt;
+      &lt;tr&gt;&lt;td style="padding:32px;font-family:Arial,sans-serif;font-size:17px;line-height:1.7;color:#0B1A2D;"&gt;
+        Body copy goes here.
+      &lt;/td&gt;&lt;/tr&gt;
+    &lt;/table&gt;
+  &lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;</pre>
+      </details>
+    </section>
+    <section class="spec" id="email-button">
+      <div class="head">
+        <span class="id">email-button · (email: inline styles only)</span>
+        <h2>Email button</h2>
+        <p class="muted">The single call to action in an email.</p>
+      </div>
+    <div class="stage ">
+<table role="presentation" cellpadding="0" cellspacing="0"><tr>
+  <td bgcolor="#C13A24" style="border-radius:3px;">
+    <a href="https://theword.world/partner" style="display:inline-block;padding:14px 28px;font-family:Arial,sans-serif;font-size:15px;font-weight:bold;color:#FFFFFF;text-decoration:none;">Partner With Us</a>
+  </td>
+</tr></table>
+    </div>
+      <div class="cols">
+        <div>
+          <dl class="props">
+        <dt>build</dt><dd>a table cell with a background, not a styled anchor: Outlook drops padding on an anchor</dd>
+        <dt>background</dt><dd>#C13A24</dd>
+        <dt>color</dt><dd>#FFFFFF</dd>
+        <dt>padding</dt><dd>14px 28px</dd>
+        <dt>radius</dt><dd>3px</dd>
+          </dl>
+        </div>
+        <div>
+          <ul class="rules">
+        <li>One per email.</li>
+        <li>Never Flame fill: it fails contrast at 3.3:1 in an email exactly as it does on the web.</li>
+        <li>The link text says what happens, and the URL is visible in the footer for clients that strip links.</li>
+          </ul>
+        </div>
+      </div>
+      <details>
+        <summary>Markup</summary>
+        <pre>&lt;table role="presentation" cellpadding="0" cellspacing="0"&gt;&lt;tr&gt;
+  &lt;td bgcolor="#C13A24" style="border-radius:3px;"&gt;
+    &lt;a href="https://theword.world/partner" style="display:inline-block;padding:14px 28px;font-family:Arial,sans-serif;font-size:15px;font-weight:bold;color:#FFFFFF;text-decoration:none;"&gt;Partner With Us&lt;/a&gt;
+  &lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;</pre>
+      </details>
+    </section>
+  </div>
+</main>
+
+<footer class="chrome">
+  <div class="wrap">
+    <a href="/" aria-label="THE WORD FOR ALL THE WORLD, portal home"><img src="/assets/logos/the-word/the-word-horizontal-reversed.svg" alt="THE WORD FOR ALL THE WORLD"></a>
+    <span>Every tribe. Every tongue. Every nation. EVERY1.</span>
+    <span>brand.theword.world · Internal use</span>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,6 +1,5 @@
 {
   "_README": "Hand-authored component specifications. Write values as token references (@midnight, @ember, @button-hover) and never as raw hex: the build resolves them against the current Brand Guide, so a palette change updates every component here automatically. The build never overwrites this file.",
-
   "components": [
     {
       "id": "button-primary",
@@ -20,7 +19,11 @@
         "The label is sentence case or title case, never all caps, never a command shouted.",
         "The focus ring is 2px Ember, 3px offset, and Flame when the button sits on Midnight."
       ],
-      "html": "<a class=\"btn\" href=\"/partner\">Partner With Us</a>"
+      "html": "<a class=\"btn\" href=\"/partner\">Partner With Us</a>",
+      "cssClass": "btn",
+      "previewGround": "light",
+      "tokenRefs": {},
+      "react": "Button"
     },
     {
       "id": "button-ghost",
@@ -37,7 +40,11 @@
         "Only on dark grounds. On Parchment, the secondary action is a text link in Ember.",
         "Never two ghost buttons in a row. One primary, one ghost, then stop."
       ],
-      "html": "<a class=\"btn ghost\" href=\"/happening\">See What's Happening</a>"
+      "html": "<a class=\"btn ghost\" href=\"/happening\">See What's Happening</a>",
+      "cssClass": "btn ghost",
+      "previewGround": "dark",
+      "tokenRefs": {},
+      "react": "Button"
     },
     {
       "id": "eyebrow",
@@ -53,7 +60,11 @@
         "Every record opens with one. Law II.",
         "All caps belongs here, to labels, and to the wordmark. Never to the serif."
       ],
-      "html": "<span class=\"eyebrow\">03 — Color System</span>"
+      "html": "<span class=\"eyebrow\">03 — Color System</span>",
+      "cssClass": "eyebrow",
+      "previewGround": "light",
+      "tokenRefs": {},
+      "react": "Eyebrow"
     },
     {
       "id": "headline-serif",
@@ -70,7 +81,11 @@
         "Never all caps.",
         "Below 36px, use DM Serif Text. Below 22px, use DM Sans."
       ],
-      "html": "<h2>No one told them it is <em>already here.</em></h2>"
+      "html": "<h2>No one told them it is <em>already here.</em></h2>",
+      "cssClass": "headline",
+      "previewGround": "light",
+      "tokenRefs": {},
+      "react": "Headline"
     },
     {
       "id": "body",
@@ -87,7 +102,12 @@
         "Always DM Sans. The serif never carries extended reading.",
         "Never Flame body text on a light ground.",
         "Short sentences, one idea each."
-      ]
+      ],
+      "html": "<div class=\"prose\">\n  <p>The local church is the plan. Not a strategy for it, the plan itself.</p>\n  <p class=\"muted\">Every tribe. Every tongue. Every nation.</p>\n</div>",
+      "cssClass": "prose",
+      "previewGround": "light",
+      "tokenRefs": {},
+      "reactNote": "a typographic rule, not a component"
     },
     {
       "id": "card",
@@ -104,7 +124,12 @@
       "rules": [
         "Cards sit on Parchment, never on Midnight, unless the whole band is dark and the card inverts.",
         "Card text is Midnight. Watch for light-on-light inherited from a dark parent."
-      ]
+      ],
+      "html": "<a class=\"card\" href=\"/brand/\">\n  <span class=\"eyebrow\">01</span>\n  <h3 class=\"title\">Brand Guide</h3>\n  <p class=\"muted\">Identity, voice, colour, typography, and the laws of the brand.</p>\n</a>",
+      "cssClass": "card",
+      "previewGround": "light",
+      "tokenRefs": {},
+      "react": "Card"
     },
     {
       "id": "record-document",
@@ -123,7 +148,11 @@
         "Closes with a dateline and, where authority is claimed, real signatures.",
         "A script font standing in for ink is a violation."
       ],
-      "html": "<div class=\"record\"><span class=\"qk\">The Word · A Prophecy</span><div class=\"verse\">…</div><div class=\"dateline\">Received December 2019</div></div>"
+      "html": "<div class=\"record\"><span class=\"qk\">The Word · A Prophecy</span><div class=\"verse\">…</div><div class=\"dateline\">Received December 2019</div></div>",
+      "cssClass": "record",
+      "previewGround": "light",
+      "tokenRefs": {},
+      "react": "Record"
     },
     {
       "id": "hero-video",
@@ -141,7 +170,11 @@
         "The still fallback is honored under prefers-reduced-motion and on slow connections.",
         "Nothing stock. Documentary footage from our own conferences, crusades, and streets."
       ],
-      "html": "<video autoplay muted loop playsinline poster=\"/assets/images/crowd-evening-poster.jpg\"><source src=\"/assets/videos/crowd-evening.mp4\" type=\"video/mp4\"></video><div class=\"scrim\"></div>"
+      "html": "<video autoplay muted loop playsinline poster=\"/assets/images/crowd-evening-poster.jpg\"><source src=\"/assets/videos/crowd-evening.mp4\" type=\"video/mp4\"></video><div class=\"scrim\"></div>",
+      "cssClass": "footage",
+      "previewGround": "dark",
+      "tokenRefs": {},
+      "react": "Footage"
     },
     {
       "id": "photo-caption",
@@ -157,7 +190,11 @@
         "Bracketed fields mark anything not yet verified against the ministry record.",
         "Written at capture, never from memory."
       ],
-      "html": "<p class=\"caption\">The Word opened — attendees follow the teaching with Bibles and notes.<br><small>SLC Conference · [City], Uganda · 30 Jul 2026</small></p>"
+      "html": "<p class=\"caption\">The Word opened — attendees follow the teaching with Bibles and notes.<br><small>SLC Conference · [City], Uganda · 30 Jul 2026</small></p>",
+      "cssClass": "caption",
+      "previewGround": "light",
+      "tokenRefs": {},
+      "react": "Caption"
     },
     {
       "id": "testimony",
@@ -175,7 +212,12 @@
       "rules": [
         "Real, consented, and named. Never fabricated, never composited, never anonymous.",
         "Closes with an invitation to respond."
-      ]
+      ],
+      "html": "<div class=\"testimony\">\n  <p><b>Before</b> I had been in the city three years and knew no one.</p>\n  <p><b>Encounter</b> At the tent on the second night, someone prayed with me.</p>\n  <p><b>Transformation</b> I stopped drinking. My brother noticed first.</p>\n  <p><b>Outcome</b> I lead a small group now. Come and see for yourself.</p>\n  <p class=\"caption\">[Name] · [City] · Shared with permission</p>\n</div>",
+      "cssClass": "testimony",
+      "previewGround": "light",
+      "tokenRefs": {},
+      "reactNote": "a four-slot writing structure, not a component"
     },
     {
       "id": "lower-third",
@@ -190,7 +232,12 @@
       "rules": [
         "Nothing animated, nothing bouncing.",
         "Sits on the scrim, never straight on the footage."
-      ]
+      ],
+      "html": "<div class=\"lower-third\">\n  <div class=\"name\">Nathan Zimmer</div>\n  <div class=\"role\">Founder, THE WORD FOR ALL THE WORLD</div>\n</div>",
+      "cssClass": "lower-third",
+      "previewGround": "dark",
+      "tokenRefs": {},
+      "react": "LowerThird"
     },
     {
       "id": "stat-figure",
@@ -205,7 +252,11 @@
         "Numbers come from the official ministry record only, never estimates, never memory.",
         "The figure carries a source line naming the record and its period."
       ],
-      "html": "<div class=\"stat\"><div class=\"fig\">1,057</div><div class=\"lab\">Salvations</div></div>"
+      "html": "<div class=\"stat\"><div class=\"fig\">1,057</div><div class=\"lab\">Salvations</div></div>",
+      "cssClass": "stat",
+      "previewGround": "dark",
+      "tokenRefs": {},
+      "react": "Stat"
     },
     {
       "id": "endorsement-line",
@@ -221,7 +272,11 @@
         "One recorded exception: the future EVERY1 app, on the YouVersion model.",
         "Vanity domains redirect into the initiative's page. They never become separate homes."
       ],
-      "html": "<div class=\"endorse\">A ministry of THE WORD FOR ALL THE WORLD</div>"
+      "html": "<div class=\"endorse\">A ministry of THE WORD FOR ALL THE WORLD</div>",
+      "cssClass": "endorse",
+      "previewGround": "light",
+      "tokenRefs": {},
+      "react": "Endorsement"
     },
     {
       "id": "site-chrome",
@@ -235,7 +290,114 @@
       "rules": [
         "A new page copies the chrome from an existing page and adds its own link to every other page.",
         "The nav sits over a full-bleed video hero with the scrim in place."
-      ]
+      ],
+      "html": "<nav class=\"sitenav\">\n  <a class=\"logo\" href=\"/\"><img src=\"/assets/logos/the-word/the-word-horizontal-reversed.svg\" alt=\"THE WORD FOR ALL THE WORLD\"></a>\n  <div class=\"links\"><a href=\"/brand/\">Brand Guide</a><a href=\"/assets/\">Assets</a></div>\n</nav>",
+      "cssClass": "sitenav",
+      "previewGround": "dark",
+      "tokenRefs": {},
+      "reactNote": "per-application navigation, built from Eyebrow, Button, and the logo assets"
+    },
+    {
+      "id": "form-field",
+      "name": "Form field",
+      "use": "Every input on every surface: a partner form, a sign-up, a dashboard.",
+      "spec": {
+        "label": "DM Sans 600, 15px",
+        "input": "17px DM Sans on @wash, 1px @rule border, 4px radius, 44px minimum height",
+        "placeholder": "@ink-soft, never @ink-faint: a placeholder still has to be read",
+        "error": "@error-state text and border. Never Flame, never Ember.",
+        "hint": "13px @ink-muted, below the input, always present rather than appearing on failure"
+      },
+      "rules": [
+        "The touch target is 44px whatever the visual height.",
+        "An error names what is wrong and how to fix it. 'Invalid' is not an error message.",
+        "Never signal an error with colour alone: the message text carries it.",
+        "Ember is reserved for the action. An error is not an action."
+      ],
+      "html": "<div class=\"field\" data-state=\"error\">\n  <label for=\"email\">Email</label>\n  <input id=\"email\" type=\"email\" value=\"nathan@\" aria-describedby=\"email-error\">\n  <p class=\"error\" id=\"email-error\">Add everything after the @, for example theword.world.</p>\n</div>",
+      "tokenRefs": {
+        "input": "@wash on @rule",
+        "error": "@error-state"
+      },
+      "cssClass": "field",
+      "previewGround": "light",
+      "react": "Field"
+    },
+    {
+      "id": "data-table",
+      "name": "Data table",
+      "use": "Official figures, schedules, and any grid of records.",
+      "spec": {
+        "header": "DM Sans 600 uppercase 12px, letterspaced .14em, @ink-muted on @parchment",
+        "cell": "15px DM Sans, @rule-soft bottom border",
+        "numerals": "tabular-nums wherever digits line up",
+        "scroll": "the table scrolls inside its own container, never the page"
+      },
+      "rules": [
+        "A wide table scrolls in its own frame. The page body never scrolls sideways.",
+        "Figures come from the official ministry record and carry a source line."
+      ],
+      "html": "<div class=\"table-scroll\">\n  <table>\n    <thead><tr><th>Conference</th><th>City</th><th>Salvations</th></tr></thead>\n    <tbody><tr><td>SLC</td><td>[City]</td><td>[n]</td></tr></tbody>\n  </table>\n</div>",
+      "tokenRefs": {
+        "header": "@ink-muted on @parchment",
+        "cell": "1px @rule-soft"
+      },
+      "cssClass": "table-scroll",
+      "previewGround": "light",
+      "react": "TableScroll"
+    },
+    {
+      "id": "email-layout",
+      "name": "Email layout",
+      "use": "Every newsletter and transactional email.",
+      "spec": {
+        "width": "600px, the recorded email breakpoint",
+        "structure": "nested tables, not divs. Outlook renders the table and ignores the div.",
+        "css": "inline styles on every element. No stylesheet, no custom properties, no var().",
+        "fonts": "Georgia for the serif and Arial for the sans. The webfont will not load and the fallback is the design.",
+        "ground": "@parchment body, @white content table, @midnight footer",
+        "images": "PNG only, with alt text that carries the meaning when images are blocked"
+      },
+      "rules": [
+        "No SVG. Most clients strip it.",
+        "A dark-mode client may invert the ground: state colours explicitly on every cell and never rely on a default.",
+        "Every email carries a preheader, a reason the person is receiving it, and a working unsubscribe.",
+        "The logo is a PNG at 400px or 800px, never the vector."
+      ],
+      "html": "<table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" style=\"background:#F7F3EC;margin:0;padding:24px 0;\">\n  <tr><td align=\"center\">\n    <table role=\"presentation\" width=\"600\" cellpadding=\"0\" cellspacing=\"0\" style=\"width:600px;max-width:100%;background:#FFFFFF;\">\n      <tr><td style=\"padding:32px;font-family:Arial,sans-serif;font-size:17px;line-height:1.7;color:#0B1A2D;\">\n        Body copy goes here.\n      </td></tr>\n    </table>\n  </td></tr>\n</table>",
+      "tokenRefs": {
+        "ground": "@parchment",
+        "content": "@white",
+        "text": "@midnight"
+      },
+      "cssClass": "(email: inline styles only)",
+      "previewGround": "light",
+      "reactNote": "email markup: tables and inline styles, which React does not build"
+    },
+    {
+      "id": "email-button",
+      "name": "Email button",
+      "use": "The single call to action in an email.",
+      "spec": {
+        "build": "a table cell with a background, not a styled anchor: Outlook drops padding on an anchor",
+        "background": "@ember",
+        "color": "@white",
+        "padding": "14px 28px",
+        "radius": "3px"
+      },
+      "rules": [
+        "One per email.",
+        "Never Flame fill: it fails contrast at 3.3:1 in an email exactly as it does on the web.",
+        "The link text says what happens, and the URL is visible in the footer for clients that strip links."
+      ],
+      "html": "<table role=\"presentation\" cellpadding=\"0\" cellspacing=\"0\"><tr>\n  <td bgcolor=\"#C13A24\" style=\"border-radius:3px;\">\n    <a href=\"https://theword.world/partner\" style=\"display:inline-block;padding:14px 28px;font-family:Arial,sans-serif;font-size:15px;font-weight:bold;color:#FFFFFF;text-decoration:none;\">Partner With Us</a>\n  </td>\n</tr></table>",
+      "tokenRefs": {
+        "background": "@ember",
+        "color": "@white"
+      },
+      "cssClass": "(email: inline styles only)",
+      "previewGround": "light",
+      "reactNote": "email markup: tables and inline styles, which React does not build"
     }
   ]
 }

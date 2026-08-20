@@ -401,6 +401,50 @@ def check_contrast(tokens: dict):
             )
 
 
+def check_consumers():
+    """L15: the React library still implements what the specifications say.
+
+    The library is hand-written and the specifications are published, so nothing
+    but a check keeps them in step. This catches the two ways they come apart: a
+    component specified with a React name that nothing exports, and a package
+    still stamped with an older brand version than the one being released.
+    """
+    spec_path = os.path.join(REPO, "ai", "components.json")
+    index_path = os.path.join(REPO, "packages", "ui", "src", "index.ts")
+    pkg_path = os.path.join(REPO, "packages", "ui", "package.json")
+    brand_pkg_path = os.path.join(REPO, "packages", "brand", "package.json")
+    if not os.path.exists(spec_path):
+        return
+    components = json.loads(bs.read(spec_path))
+    declared = components["version"]
+
+    if not os.path.exists(index_path):
+        err("L15", "packages/ui/src/index.ts is missing. The React library has no entry point.")
+    else:
+        exported = set(re.findall(r"export \{([^}]*)\}", bs.read(index_path)))
+        names = {n.strip() for group in exported for n in group.split(",") if n.strip()}
+        for c in components["components"]:
+            if c.get("react") and c["react"] not in names:
+                err(
+                    "L15",
+                    f"components.json says {c['id']} is implemented in React as {c['react']}, "
+                    "but packages/ui does not export it.",
+                )
+
+    for path in (pkg_path, brand_pkg_path):
+        if not os.path.exists(path):
+            err("L15", f"{os.path.relpath(path, REPO)} is missing. Run tools/build_ai.py.")
+            continue
+        pkg = json.loads(bs.read(path))
+        stamped = pkg.get("brand", {}).get("version")
+        if stamped != declared:
+            err(
+                "L15",
+                f"{pkg['name']} is stamped with brand v{stamped} but the system is v{declared}. "
+                "Run tools/build_ai.py.",
+            )
+
+
 def check_social_cards(files: list):
     """L13: every page previews correctly when it is shared.
 
@@ -486,6 +530,7 @@ def main() -> int:
     check_asset_links(files)
     check_logo_sources(files)
     check_social_cards(files)
+    check_consumers()
     check_contrast(build_ai.build_tokens(brand, _messaging, overrides.get('manifest', {}).get('updated') or brand['issued'], overrides, bs.parse_scales(os.path.join(REPO, 'brand', 'index.html'))))
     check_navigation(files)
     check_skill_copies()

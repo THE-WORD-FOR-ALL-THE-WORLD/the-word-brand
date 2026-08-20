@@ -133,8 +133,8 @@
       "name": "components.json",
       "url": "https://brand.theword.world/ai/components.json",
       "description": "Component specifications, resolved against current tokens.",
-      "bytes": 11048,
-      "sha256": "97803e3b1f055c799e4d1f483c078ddd38fdc1f43c678b500249c1a311a98507"
+      "bytes": 19727,
+      "sha256": "61df9b9e7a43b2fdcfb1fd8e695ab4843dfcb95b763622111e021008cc32aaa1"
     },
     {
       "name": "assets.json",

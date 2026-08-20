@@ -1,0 +1,38 @@
+{
+  "name": "@theword/ui",
+  "version": "6.8.0",
+  "description": "React components for THE WORD FOR ALL THE WORLD, implementing the published component specifications. A consumer of the brand system, never a source.",
+  "homepage": "https://brand.theword.world/components",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nathan-zimmer/the-word-brand.git",
+    "directory": "packages/ui"
+  },
+  "license": "SEE LICENSE IN README.md",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
+    }
+  },
+  "files": [
+    "src",
+    "README.md"
+  ],
+  "peerDependencies": {
+    "react": ">=18",
+    "@theword/brand": "^6.8.0"
+  },
+  "keywords": [
+    "react",
+    "design-system",
+    "brand",
+    "theword"
+  ],
+  "brand": {
+    "version": "6.8",
+    "updated": "2026-08-19",
+    "specifications": "https://brand.theword.world/ai/components.json",
+    "manifest": "https://brand.theword.world/ai/manifest.json"
+  }
+}

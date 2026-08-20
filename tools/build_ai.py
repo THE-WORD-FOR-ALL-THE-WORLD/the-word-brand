@@ -375,6 +375,108 @@ use the wordmark, photography, or video for any other purpose. Contact brand@the
 """
 
 
+UI_PACKAGE_NAME = "@theword/ui"
+
+
+def build_ui_package_json(brand: dict, updated: str) -> str:
+    """The React library's manifest, stamped with the brand version it implements.
+
+    The components themselves are hand-written, because React components with
+    props are code and generating them from a spec would be a fiction. What is
+    generated is this stamp, so `npm ls` answers "which brand is this app on".
+    """
+    version = brand["version"]
+    semver = version if version.count(".") == 2 else f"{version}.0"
+    pkg = {
+        "name": UI_PACKAGE_NAME,
+        "version": semver,
+        "description": (
+            "React components for THE WORD FOR ALL THE WORLD, implementing the published "
+            "component specifications. A consumer of the brand system, never a source."
+        ),
+        "homepage": f"{SITE}/components",
+        "repository": {
+            "type": "git",
+            "url": "git+https://github.com/nathan-zimmer/the-word-brand.git",
+            "directory": "packages/ui",
+        },
+        "license": "SEE LICENSE IN README.md",
+        "exports": {".": {"types": "./src/index.ts", "default": "./src/index.ts"}},
+        "files": ["src", "README.md"],
+        "peerDependencies": {"react": ">=18", "@theword/brand": f"^{semver}"},
+        "keywords": ["react", "design-system", "brand", "theword"],
+        "brand": {
+            "version": version,
+            "updated": updated,
+            "specifications": f"{SITE}/ai/components.json",
+            "manifest": f"{SITE}/ai/manifest.json",
+        },
+    }
+    return json.dumps(pkg, indent=2, ensure_ascii=False) + "\n"
+
+
+def build_ui_readme(components: list, brand: dict, updated: str) -> str:
+    implemented = [c for c in components if c.get("react")]
+    not_implemented = [c for c in components if c.get("reactNote")]
+    rows = "\n".join(
+        f"| `{c['react']}` | `{c['id']}` | {c['use']} |" for c in implemented
+    )
+    skipped = "\n".join(f"- **{c['id']}**: {c['reactNote']}" for c in not_implemented)
+    return f"""# {UI_PACKAGE_NAME}
+
+React components for THE WORD FOR ALL THE WORLD, implementing brand system v{brand['version']}
+(updated {updated}).
+
+**This package is a consumer, never a source.** The specifications live at
+<{SITE}/ai/components.json> and are rendered at <{SITE}/components>. When this package
+disagrees with them, they are right and this is a bug. A component whose look is decided
+here rather than there has taken the brand with it, which is the one thing this structure
+exists to prevent.
+
+## Install
+
+```bash
+npm install {UI_PACKAGE_NAME} {PACKAGE_NAME} react
+```
+
+The components carry no styles of their own. They render the class names that
+`{PACKAGE_NAME}` defines, so import the stylesheet once at the root:
+
+```ts
+// app/layout.tsx
+import "{PACKAGE_NAME}/css"
+```
+
+Next.js needs to transpile the source, which ships as TypeScript:
+
+```js
+// next.config.js
+module.exports = {{ transpilePackages: ["{UI_PACKAGE_NAME}"] }}
+```
+
+## What is here
+
+| Component | Specification | Use |
+| --- | --- | --- |
+{rows}
+
+## What is deliberately not here
+
+{skipped}
+
+## Naming
+
+Component names match the ids in `components.json`, the Figma layer names, and the
+Storybook stories. A Card is a Card wherever anyone looks it up, which is what makes an
+audit finding, a design file, and a pull request able to refer to the same thing.
+
+## Licence
+
+Free to use for work produced for or about THE WORD FOR ALL THE WORLD. Not a licence to
+use the wordmark, photography, or video for any other purpose. Contact brand@theword.world.
+"""
+
+
 def build_tokens_dtcg(tokens: dict, brand: dict, updated: str) -> dict:
     """The W3C Design Tokens format, which is what design tooling reads."""
 
@@ -513,6 +615,12 @@ def token_lookup(tokens: dict) -> dict:
         table[key] = c["hex"]
     for key, t in tokens["system"].items():
         table[key] = t["value"]
+    for key, n in tokens["neutral"].items():
+        table[key] = n["value"]
+    for key, value in tokens["spacing"].items():
+        table[key] = value
+    for key, value in tokens["radius"].items():
+        table[key] = value
     for key, value in tokens["cssVariables"].items():
         table.setdefault(key, value)
     return table
@@ -980,6 +1088,185 @@ def build_components(brand: dict, messaging: dict, updated: str, tokens: dict) -
     }
 
 
+COMPONENTS_PAGE = """<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<title>Components · THE WORD FOR ALL THE WORLD</title>
+<meta name="description" content="Every component in the brand system, rendered live from the published stylesheet, with its specification, its rules, and markup that can be copied.">
+<link rel="icon" href="/assets/logos/the-word/favicon/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/assets/logos/the-word/favicon/favicon-16.png" sizes="16x16" type="image/png">
+<link rel="apple-touch-icon" href="/assets/logos/the-word/favicon/apple-touch-icon-180.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="THE WORD FOR ALL THE WORLD">
+<meta property="og:title" content="Components">
+<meta property="og:description" content="Every component in the brand system, rendered live from the published stylesheet, with its specification, its rules, and markup that can be copied.">
+<meta property="og:url" content="{site}/components">
+<meta property="og:image" content="{site}/assets/images/og-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="THE WORD FOR ALL THE WORLD">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="/assets/fonts/fonts.css">
+<link rel="stylesheet" href="/assets/brand.css">
+<style>
+/* This page is the proof. Everything below the chrome is drawn by
+   /assets/brand.css, the same file anyone else links. The only rules here are
+   the gallery's own furniture: the frame around each specimen, and the page
+   scaffolding that holds them apart. */
+.wrap{{max-width:1020px;margin:0 auto;padding:0 32px;}}
+nav.chrome{{position:absolute;top:0;left:0;right:0;z-index:10;}}
+nav.chrome .bar{{max-width:1240px;margin:0 auto;padding:26px 36px;display:flex;justify-content:space-between;align-items:center;gap:20px;}}
+nav.chrome .logo img{{height:20px;width:auto;display:block;}}
+nav.chrome .links{{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:12px 28px;font-size:12.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;}}
+nav.chrome .links a{{color:var(--ink-reversed-muted);text-decoration:none;}}
+nav.chrome .links a:hover{{color:var(--white);}}
+header.masthead{{background:var(--midnight);color:var(--parchment);padding:126px 0 62px;}}
+header.masthead h1{{color:var(--white);margin-top:.3em;}}
+header.masthead .lede{{max-width:34ch;margin-top:var(--space-5);color:var(--parchment);font-family:var(--serif-text);font-style:italic;}}
+main{{padding:var(--space-8) 0 var(--space-9);}}
+.intro{{max-width:66ch;margin-bottom:var(--space-8);}}
+.spec{{border-top:1px solid var(--rule);padding-top:var(--space-7);margin-top:var(--space-7);}}
+.spec:first-of-type{{border-top:0;padding-top:0;margin-top:0;}}
+.spec > .head{{margin-bottom:var(--space-5);}}
+.spec h2{{font-family:var(--serif-display);font-weight:400;font-size:var(--text-display-small);line-height:var(--leading-display-small);margin:.2em 0 0;}}
+.spec .id{{font-family:'SF Mono',Consolas,monospace;font-size:var(--text-caption);color:var(--ink-muted);}}
+.stage{{border:1px solid var(--rule);border-radius:var(--radius-frame);padding:var(--space-6);background:var(--white);overflow:hidden;}}
+/* The dark stage takes the brand's own dark-ground class rather than forcing a
+   colour onto every child: forcing it would repaint the Flame numeral in the
+   official-record figure, which is the one thing Flame is for. */
+.stage.dark{{background:var(--midnight);border-color:var(--rule-light);}}
+.cols{{display:grid;grid-template-columns:1fr;gap:var(--space-5);margin-top:var(--space-5);}}
+@media(min-width:{wide}){{.cols{{grid-template-columns:1fr 1fr;}}}}
+details{{border:1px solid var(--rule);border-radius:var(--radius-card);background:var(--white);}}
+summary{{cursor:pointer;padding:var(--space-3) var(--space-4);font-weight:600;font-size:var(--text-body-small);list-style:none;}}
+summary::-webkit-details-marker{{display:none;}}
+summary::before{{content:"›";display:inline-block;width:1em;transition:transform var(--duration-fast) var(--easing);}}
+details[open] summary::before{{transform:rotate(90deg);}}
+pre{{margin:0;padding:var(--space-4);overflow-x:auto;border-top:1px solid var(--rule);background:var(--wash);font-family:'SF Mono',Consolas,monospace;font-size:13px;line-height:1.6;}}
+dl.props{{margin:0;display:grid;grid-template-columns:auto 1fr;gap:var(--space-2) var(--space-4);font-size:var(--text-body-small);}}
+dl.props dt{{font-weight:600;color:var(--ink-muted);}}
+dl.props dd{{margin:0;}}
+ul.rules{{margin:var(--space-4) 0 0;padding-left:1.1em;font-size:var(--text-body-small);line-height:1.6;}}
+ul.rules li{{margin-bottom:var(--space-2);}}
+footer.chrome{{background:var(--midnight);color:var(--ink-reversed-muted);padding:40px 0;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;font-weight:500;}}
+footer.chrome .wrap{{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}}
+footer.chrome img{{height:16px;width:auto;display:block;opacity:.9;}}
+@media(max-width:640px){{nav.chrome .bar{{padding:20px 24px;}}header.masthead{{padding:104px 0 48px;}}}}
+</style>
+</head>
+<body>
+
+<nav class="chrome">
+  <div class="bar">
+    <a class="logo" href="/" aria-label="THE WORD FOR ALL THE WORLD, home">
+      <img src="/assets/logos/the-word/the-word-horizontal-reversed.svg" alt="THE WORD FOR ALL THE WORLD">
+    </a>
+    <div class="links">
+      <a href="/">Home</a>
+      <a href="/brand/">Brand Guide</a>
+      <a href="/brand/messaging/">Messaging</a>
+      <a href="/documents/">Documents</a>
+      <a href="/letterhead/">Letterhead</a>
+      <a href="/signatures/">Signatures</a>
+      <a href="/assets/">Assets</a>
+    </div>
+  </div>
+</nav>
+
+<header class="masthead on-midnight">
+  <div class="wrap">
+    <span class="eyebrow">The Component Library</span>
+    <h1 class="headline">Every part, drawn by the <em>published</em> stylesheet.</h1>
+    <p class="lede">Not a picture of the components. The components, rendered by the same file anyone else links.</p>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <div class="intro prose">
+      <p>Each specimen below is rendered live by <a href="/assets/brand.css"><code>/assets/brand.css</code></a>, so this page cannot show something the stylesheet does not actually do. Copy the markup, link the stylesheet and <a href="/assets/fonts/fonts.css"><code>fonts.css</code></a>, and the result is the specimen.</p>
+      <p>The machine-readable copy is <a href="/ai/components.json"><code>/ai/components.json</code></a>. Ids match there, in the Figma library, and in the Storybook stories of the applications, so a card is a card wherever anyone looks it up.</p>
+      <p class="caption">Brand system v{version} · messaging v{messaging_version} · {count} components · generated {updated}</p>
+    </div>
+{specs}
+  </div>
+</main>
+
+<footer class="chrome">
+  <div class="wrap">
+    <a href="/" aria-label="THE WORD FOR ALL THE WORLD, portal home"><img src="/assets/logos/the-word/the-word-horizontal-reversed.svg" alt="THE WORD FOR ALL THE WORLD"></a>
+    <span>Every tribe. Every tongue. Every nation. EVERY1.</span>
+    <span>brand.theword.world · Internal use</span>
+  </div>
+</footer>
+
+</body>
+</html>
+"""
+
+
+def esc(text: str) -> str:
+    return text.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+
+
+def build_components_page(components: list, brand: dict, messaging: dict, updated: str, tokens: dict) -> str:
+    blocks = []
+    for c in components:
+        ground = "dark on-midnight" if c.get("previewGround") == "dark" else ""
+        stage = (
+            f'    <div class="stage {ground}">\n{c["html"]}\n    </div>'
+            if c.get("html")
+            else '    <div class="stage"><p class="caption">This component is a written specification rather than '
+                 'a single piece of markup. The rules below are what it has to satisfy.</p></div>'
+        )
+        props = "\n".join(
+            f"        <dt>{esc(str(k))}</dt><dd>{esc(str(v)) if not isinstance(v, list) else esc(' · '.join(v))}</dd>"
+            for k, v in c.get("spec", {}).items()
+        )
+        rules = "\n".join(f"        <li>{esc(r)}</li>" for r in c.get("rules", []))
+        markup = (
+            f'      <details>\n        <summary>Markup</summary>\n'
+            f'        <pre>{esc(c["html"])}</pre>\n      </details>'
+            if c.get("html") else ""
+        )
+        cls = f'<code>.{c["cssClass"]}</code>' if c.get("cssClass") and not c["cssClass"].startswith("(") else (
+            esc(c.get("cssClass", "")) or "")
+        blocks.append(f"""    <section class="spec" id="{c['id']}">
+      <div class="head">
+        <span class="id">{c['id']}{' · ' + cls if cls else ''}</span>
+        <h2>{esc(c['name'])}</h2>
+        <p class="muted">{esc(c['use'])}</p>
+      </div>
+{stage}
+      <div class="cols">
+        <div>
+          <dl class="props">
+{props}
+          </dl>
+        </div>
+        <div>
+          <ul class="rules">
+{rules}
+          </ul>
+        </div>
+      </div>
+{markup}
+    </section>""")
+
+    return COMPONENTS_PAGE.format(
+        site=SITE,
+        version=brand["version"],
+        messaging_version=messaging["version"],
+        updated=updated,
+        count=len(components),
+        wide=tokens["breakpoint"].get("wide", "1080px"),
+        specs="\n".join(blocks),
+    )
+
+
 def build_llms_txt(brand: dict, messaging: dict, tokens: dict, initiatives: list) -> str:
     palette = ", ".join(f"{c['name']} `{c['hex']}`" for c in brand["colors"])
     lines = [
@@ -1017,6 +1304,7 @@ def build_llms_txt(brand: dict, messaging: dict, tokens: dict, initiatives: list
         f"- [Messaging Guide]({SITE}/brand/messaging): Voice, tone, vocabulary, audiences, and proof policy.",
         f"- [Assets]({SITE}/assets): Every approved logo in every format, with its clear space, minimum size, and ink rules. Fonts, download packs, and the photography policy.",
         f"- [Signatures]({SITE}/signatures): The signature masters that sign the record, and the law governing where each may be placed.",
+        f"- [Components]({SITE}/components): Every component rendered live from the published stylesheet, with its spec, rules, and copyable markup.",
         f"- [Reviews]({SITE}/reviews): Every system review of this brand, in order, with what each found and the version it produced.",
     ]
     for review in bs.scan_reviews():
@@ -1223,9 +1511,8 @@ def build() -> dict:
         + read_source("approved-examples.md").split("\n", 1)[1].lstrip("\n")
     )
     files["ai/anti-patterns.md"] = build_anti_patterns(brand, messaging, updated)
-    files["ai/components.json"] = (
-        json.dumps(build_components(brand, messaging, updated, tokens), indent=2, ensure_ascii=False) + "\n"
-    )
+    components = build_components(brand, messaging, updated, tokens)
+    files["ai/components.json"] = json.dumps(components, indent=2, ensure_ascii=False) + "\n"
     files["ai/assets.json"] = (
         json.dumps(
             build_assets(brand, messaging, updated, read_source_json("asset-notes.json")),
@@ -1235,6 +1522,9 @@ def build() -> dict:
         + "\n"
     )
 
+    files["components/index.html"] = build_components_page(
+        components["components"], brand, messaging, updated, tokens
+    )
     files["ai/tokens.dtcg.json"] = (
         json.dumps(build_tokens_dtcg(tokens, brand, updated), indent=2, ensure_ascii=False) + "\n"
     )
@@ -1247,6 +1537,8 @@ def build() -> dict:
 
     # The installable package. Same bytes as the published files, so an application
     # that pins a version and a page that links the stylesheet cannot disagree.
+    files["packages/ui/package.json"] = build_ui_package_json(brand, updated)
+    files["packages/ui/README.md"] = build_ui_readme(components["components"], brand, updated)
     files["packages/brand/package.json"] = build_package_json(brand, updated)
     files["packages/brand/README.md"] = build_package_readme(brand, messaging, updated)
     files["packages/brand/brand.css"] = files["assets/brand.css"]
