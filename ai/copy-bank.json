@@ -1,5 +1,5 @@
 {
-  "version": "7.4",
+  "version": "7.5",
   "messagingVersion": "1.0",
   "updated": "2026-08-20",
   "authority": "canonical",
@@ -90,6 +90,41 @@
           "text": "Until EVERY1 knows His name",
           "audience": "The Kingdom Partner",
           "characters": 27
+        },
+        {
+          "text": "You are the minister",
+          "audience": "The Sent Believer",
+          "characters": 20
+        },
+        {
+          "text": "Share Jesus with one person",
+          "audience": "The Sent Believer",
+          "characters": 27
+        },
+        {
+          "text": "A lifestyle, not an event",
+          "audience": "The Sent Believer",
+          "characters": 25
+        },
+        {
+          "text": "Every believer qualifies",
+          "audience": "The Sent Believer",
+          "characters": 24
+        },
+        {
+          "text": "Start where you already are",
+          "audience": "The Sent Believer",
+          "characters": 27
+        },
+        {
+          "text": "Carry EVERY1 at your event",
+          "audience": "The Partner Organisation",
+          "characters": 26
+        },
+        {
+          "text": "EVERY1 marks and standards",
+          "audience": "The Partner Organisation",
+          "characters": 26
         }
       ]
     },
@@ -128,6 +163,21 @@
           "text": "Know who you are in Christ, and what He has already given you authority to do.",
           "audience": "The Hungry Church Member",
           "characters": 78
+        },
+        {
+          "text": "Ordinary believers sharing Jesus where they live, work, and study.",
+          "audience": "The Sent Believer",
+          "characters": 66
+        },
+        {
+          "text": "No title, no training, no waiting. You are the minister. Start with one person.",
+          "audience": "The Sent Believer",
+          "characters": 79
+        },
+        {
+          "text": "Marks, colours, and words for organisations carrying EVERY1 at a conference.",
+          "audience": "The Partner Organisation",
+          "characters": 76
         }
       ]
     },
@@ -164,6 +214,26 @@
         {
           "text": "For your church",
           "characters": 15
+        },
+        {
+          "text": "Join the movement",
+          "audience": "The Sent Believer",
+          "characters": 17
+        },
+        {
+          "text": "The first three steps",
+          "audience": "The Sent Believer",
+          "characters": 21
+        },
+        {
+          "text": "Download the marks",
+          "audience": "The Partner Organisation",
+          "characters": 18
+        },
+        {
+          "text": "Read the standard",
+          "audience": "The Partner Organisation",
+          "characters": 17
         }
       ]
     },
@@ -200,6 +270,21 @@
         {
           "text": "The training starts [month]",
           "characters": 27
+        },
+        {
+          "text": "You are the minister",
+          "audience": "The Sent Believer",
+          "characters": 20
+        },
+        {
+          "text": "One person this week",
+          "audience": "The Sent Believer",
+          "characters": 20
+        },
+        {
+          "text": "Carrying EVERY1 at your conference",
+          "audience": "The Partner Organisation",
+          "characters": 34
         }
       ]
     },
@@ -220,6 +305,16 @@
         {
           "text": "Not a newsletter about us. A record of what God did.",
           "characters": 52
+        },
+        {
+          "text": "A lifestyle, not an event. Three steps, and the first is a conversation.",
+          "audience": "The Sent Believer",
+          "characters": 72
+        },
+        {
+          "text": "Everything needed to carry the mark right, including a checker you run yourself.",
+          "audience": "The Partner Organisation",
+          "characters": 80
         }
       ]
     },
@@ -252,6 +347,21 @@
         {
           "text": "Send a Prayer Request",
           "characters": 21
+        },
+        {
+          "text": "Share Jesus this week",
+          "audience": "The Sent Believer",
+          "characters": 21
+        },
+        {
+          "text": "Join the movement",
+          "audience": "The Sent Believer",
+          "characters": 17
+        },
+        {
+          "text": "Download the marks",
+          "audience": "The Partner Organisation",
+          "characters": 18
         }
       ]
     },
@@ -272,9 +382,14 @@
           "characters": 379
         },
         {
-          "text": "THE WORD FOR ALL THE WORLD strengthens the local church to fulfill the Great Commission, until EVERY1 knows the name Jesus. The local church is not a strategy for the plan. It is the plan. Three initiatives carry that work in order. Revival To My City stirs the local church to return to their first love. The EVERY1 Movement empowers the local church to do the Great Commission and walk in God's calling. The School of the Local Church trains believers to know their authority in Christ and build a real relationship with Jesus. Every figure published by this ministry comes from its official record, and every testimony is told by the person it belongs to, with their permission.",
+          "text": "THE WORD FOR ALL THE WORLD strengthens the local church to fulfill the Great Commission, until EVERY1 knows the name Jesus. The local church is not a strategy for the plan. It is the plan. Three initiatives carry that work in order. Revival To My City stirs the local church to return to their first love. The EVERY1 Movement empowers the local church to walk in unity to do the Great Commission and walk in God's calling. The School of the Local Church trains believers to know their authority in Christ and build a real relationship with Jesus. Every figure published by this ministry comes from its official record, and every testimony is told by the person it belongs to, with their permission.",
           "length": "long",
-          "characters": 681
+          "characters": 698
+        },
+        {
+          "text": "The EVERY1 Movement is a movement of ordinary believers who share Jesus where they already live, work, and study. It is a lifestyle, not an event: you are the minister, sent by God everywhere you go. Every believer qualifies, and the first step is simply to share Jesus with one person this week.",
+          "audience": "The Sent Believer",
+          "characters": 296
         }
       ]
     }

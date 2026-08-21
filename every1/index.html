@@ -75,6 +75,49 @@
   .never ol{margin:0;padding-left:1.2em;font-size:var(--text-body-small);line-height:1.7;}
   .never li{margin-bottom:var(--space-2);}
 
+  .screens{display:grid;grid-template-columns:1fr;gap:var(--space-4);margin-top:var(--space-6);}
+  @media(min-width:760px){.screens{grid-template-columns:repeat(2,1fr);}}
+  .screen{border:1px solid var(--border);border-radius:var(--radius-card);background:var(--surface);padding:var(--space-5);}
+  .screen h3{margin:0 0 var(--space-2);}
+  .screen .purpose{margin:0 0 var(--space-3);font-size:var(--text-body-small);color:var(--ink-muted);}
+  .screen dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:var(--space-2) var(--space-4);font-size:var(--text-body-small);line-height:1.6;}
+  .screen dt{font-weight:600;white-space:nowrap;}
+  .screen dd{margin:0;}
+
+  .approach{margin-top:var(--space-6);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:var(--radius-card);background:var(--surface);padding:var(--space-5) var(--space-6);}
+  .approach p{margin:0;font-size:var(--text-body-small);line-height:1.7;}
+
+  .vision{margin-top:var(--space-6);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:var(--radius-card);background:var(--surface);padding:var(--space-6);}
+  .vision .vlabel{display:block;font-size:var(--text-eyebrow);letter-spacing:var(--tracking-eyebrow);text-transform:uppercase;color:var(--ink-muted);margin-bottom:var(--space-3);}
+  .vision .vlines{font-family:var(--serif-display);font-size:var(--text-h3);line-height:1.22;margin:0 0 var(--space-3);}
+  .vision .vnote{font-size:var(--text-body-small);color:var(--ink-muted);margin:0;}
+
+  .says{display:grid;grid-template-columns:1fr;gap:var(--space-4);margin-top:var(--space-6);}
+  @media(min-width:760px){.says{grid-template-columns:repeat(3,1fr);}}
+  .says .say{border:1px solid var(--border);border-radius:var(--radius-card);background:var(--surface);padding:var(--space-5);}
+  .says .say b{display:block;font-size:var(--text-eyebrow);letter-spacing:var(--tracking-eyebrow);text-transform:uppercase;color:var(--ink-muted);margin-bottom:var(--space-2);}
+  .says .say p{margin:0;font-size:var(--text-body-small);line-height:1.6;}
+
+  .saylists{display:grid;grid-template-columns:1fr;gap:var(--space-6);margin-top:var(--space-6);}
+  @media(min-width:760px){.saylists{grid-template-columns:repeat(3,1fr);}}
+  .saylists h3{margin:0 0 var(--space-3);}
+  .saylists ul{margin:0;padding-left:1.2em;font-size:var(--text-body-small);line-height:1.7;}
+  .saylists li{margin-bottom:var(--space-2);}
+
+  .phrases{display:flex;flex-wrap:wrap;gap:var(--space-3);margin-top:var(--space-5);}
+  .phrases span{border:1px solid var(--border);border-radius:100px;padding:var(--space-2) var(--space-4);font-size:var(--text-body-small);background:var(--surface);}
+
+  .voice{margin-top:var(--space-6);}
+  .voice ul{margin:var(--space-3) 0 0;padding-left:1.2em;font-size:var(--text-body-small);line-height:1.7;}
+  .voice li{margin-bottom:var(--space-2);}
+
+  .boiler{margin-top:var(--space-6);border:1px solid var(--border);border-radius:var(--radius-card);background:var(--surface);padding:var(--space-5) var(--space-6);}
+  .boiler b{display:block;font-size:var(--text-eyebrow);letter-spacing:var(--tracking-eyebrow);text-transform:uppercase;color:var(--ink-muted);margin-bottom:var(--space-3);}
+  .boiler p{margin:0;font-size:var(--text-body-small);line-height:1.7;}
+
+  .standing{margin-top:var(--space-6);border:1px solid var(--border);border-left:3px solid var(--state-error);border-radius:var(--radius-card);background:var(--surface);padding:var(--space-5) var(--space-6);}
+  .standing p{margin:0;font-size:var(--text-body-small);line-height:1.7;}
+
   .masksplit{display:grid;grid-template-columns:1fr;gap:var(--space-6);align-items:start;margin-top:var(--space-6);}
   @media(min-width:820px){.masksplit{grid-template-columns:210px 1fr;gap:var(--space-7);}}
 
@@ -92,12 +135,13 @@
 <header class="top on-midnight">
   <div class="wrap">
     <img class="mark" src="/assets/logos/every1-horizontal-reversed.svg" alt="EVERY1 Movement">
-    <h1>How to use this <em>mark.</em></h1>
+    <h1>How to carry this <em>mark.</em></h1>
     <p class="lede">For our team, and for any organisation carrying EVERY1 at a conference,
-    an activation, or on a shirt. Everything you need is on this page, and everything you
-    need to download is linked from it.</p>
+    an activation, or on a shirt. The marks and the words are both on this page, and everything
+    you need to download is linked from it.</p>
     <div class="acts">
       <a class="btn" href="/assets/downloads/every1-logos.zip">Download every mark</a>
+      <a class="btn ghost" href="#say">Read the words</a>
       <a class="btn ghost" href="#marks">See the marks</a>
     </div>
   </div>
@@ -113,6 +157,93 @@
         <div class="card"><div class="n">01</div><h3>Pick the file for the ground</h3><p>Dark background, use the reversed file. Light background, use the default. One colour only, use the black file. Never recolour a mark yourself.</p></div>
         <div class="card"><div class="n">02</div><h3>Give it room, and size</h3><p>Every mark below states the clear space it needs and the smallest it may be set. Both are measured from the artwork, not guessed.</p></div>
         <div class="card"><div class="n">03</div><h3>Check it before it prints</h3><p>Read the never list. If you are unsure, send it to us before it goes to a printer or a platform. We would rather answer than correct.</p></div>
+      </div>
+    </section>
+
+    <section id="say">
+      <span class="eyebrow">The words</span>
+      <h2>What EVERY1 says.</h2>
+      <p class="intro">The marks are half of it. These are the words that go with them, and they
+      are approved: quote them as they stand, in a program, from a stage, or on a page. If you need
+      something they do not cover, ask rather than writing your own.</p>
+
+      <div class="vision">
+        <span class="vlabel">The vision</span>
+        <p class="vlines">EVERY TRIBE, EVERY TONGUE, EVERY NATION<br>WILL KNOW THE NAME JESUS</p>
+        <p class="vlines" style="font-family:var(--sans);font-size:var(--text-body);margin-bottom:var(--space-3)">Every tribe, every tongue, every nation, and EVERY1 will know the name Jesus. <span style="color:var(--ink-muted)">Hebrews 8:11</span></p>
+        <p class="vnote">The two lines are set into the vision lockup with the EVERY1 wordmark between them, so the mark is a word in the sentence rather than a logo placed inside it: read top to bottom, the lockup says the vision in full. The sentence itself is stated in the Brand Messaging Guide and read from there, never retyped here. Quote it exactly, and where the lockup is used do not re-set these words in live type beside it: the lockup already says them.</p>
+      </div>
+
+      <div class="says">
+        <div class="say"><b>Mission</b><p>Empowering the local church to walk in unity to do the great commission &amp; walk in God's calling. <span style="color:var(--ink-muted)">Acts 2:17</span></p></div>
+        <div class="say"><b>The promise</b><p>EVERY1 in the church going to EVERY1 outside of the church.</p></div>
+        <div class="say"><b>In plain words</b><p>The EVERY1 Movement sends the church out.</p></div>
+      </div>
+
+      <div class="saylists">
+        <div>
+          <h3>What it is</h3>
+          <ul>
+            <li>A movement of ordinary believers who share Jesus where they already live, work, and study. You are the minister, sent by God everywhere you go.</li>
+            <li>It is a lifestyle, not an event. Membership is simple: you have shared Jesus with at least one person recently. That is the movement.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Who may join</h3>
+          <ul>
+            <li>Every believer. There is no maturity requirement. When you are born again, you qualify.</li>
+            <li>The movement carries special fire for the young and the newly saved: their fire kindles faster and hotter.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>The first three steps</h3>
+          <ul>
+            <li>Join the weekly prayer meeting, praying for the lost.</li>
+            <li>Share Jesus with one person this week.</li>
+            <li>Take the free personal evangelism course, offered through the School of the Local Church.</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3 style="margin-top:var(--space-7)">The words it carries</h3>
+      <div class="phrases">
+        <span>EVERY1 in the church for EVERY1 outside the church</span>
+        <span>You are the minister</span>
+        <span>Fire starts fire</span>
+        <span>A lifestyle, not an event</span>
+      </div>
+
+      <div class="voice">
+        <h3>How to write as EVERY1</h3>
+        <p class="intro">Plain, direct, and close to the field. Shorter sentences than the parent uses. Second person, because the reader is the one being sent.</p>
+        <ul>
+          <li>Say what happened. A report of one real conversation is stronger than any adjective about it.</li>
+          <li>Write to the person being sent, not about them. "You are the minister," never "believers are ministers."</li>
+          <li>Keep the ask to one action. A page with three asks gets none of them done.</li>
+          <li>Never make sharing Jesus sound like a technique or a funnel. It is a conversation with a person.</li>
+          <li>Never imply a maturity requirement, an age requirement, or a qualification. The movement's whole claim is that there is none.</li>
+          <li>Numbers come from the record or they are not used. No estimates presented as counts.</li>
+        </ul>
+      </div>
+
+      <div class="voice">
+        <h3>Words this brand does not use</h3>
+        <p class="intro">These are banned across everything THE WORD publishes, EVERY1 included.
+        Theological words are never banned: these are words that manufacture a feeling or sell.</p>
+        <div class="bw">
+        <p class="intro"><b>Hype.</b> insane, epic, unreal, next-level, game-changer, God showed up and showed out, you won't believe, walls of 🔥 emojis, ALL-CAPS excitement</p>
+        <p class="intro"><b>Corporate Polish.</b> leverage, synergy, solutions, optimize, engage stakeholders, excited to announce, comprehensive, robust</p>
+        <p class="intro"><b>Churchy Insider Talk.</b> traveling mercies, hedge of protection, love on, do life together, press in, contend for breakthrough, a God thing, fresh anointing (unexplained), blessed to announce</p>
+        </div>
+      </div>
+
+      <div class="boiler">
+        <b>Boilerplate, use as written</b>
+        <p>The EVERY1 Movement is a movement of ordinary believers who share Jesus where they already live, work, and study. It is a lifestyle, not an event: you are the minister, sent by God everywhere you go. Every believer qualifies, and the first step is simply to share Jesus with one person this week.</p>
+      </div>
+
+      <div class="standing">
+        <p>EVERY1 carries no endorsement line and no parent lockup. It is the one door that stands on its own, on the YouVersion model, across the movement, the app, and the activation platform alike. Do not add A ministry of THE WORD FOR ALL THE WORLD to EVERY1 material, and do not place the parent mark beside it.</p>
       </div>
     </section>
 
@@ -318,6 +449,125 @@
       </div>
     </section>
 
+    <section id="app">
+      <span class="eyebrow">In the app</span>
+      <h2>The movement on a phone.</h2>
+      <p class="intro">EVERY1 is a movement, an app, and an activation platform, so the app is a
+      first-class surface of this brand rather than a place the brand gets applied. These are its
+      screens and what each one is for. They are specified rather than pictured on purpose.</p>
+
+      <div class="approach">
+        <p>A picture of a screen is correct the day it is exported and silently wrong after the next token change, and no build can tell. These specs are published from the same tokens the app is built from, so they move when the brand moves. Flat mockups may be made from these, and they are illustrative and dated: the spec is what is authoritative.</p>
+      </div>
+
+      <h3 style="margin-top:var(--space-7)">Rules that hold across every screen</h3>
+      <div class="never" style="border-left-color:var(--accent)">
+        <ol>
+          <li>One mask per view. The 1 holding a photograph is this door's signature move, and on a poster it appears once. A scrolling list would put six on screen and turn the signature into wallpaper, so a list uses plain images and only a full-width feature uses the mask.</li>
+          <li>The numeral is the app icon, on Midnight, with no text. It is the form this door is recognised by at size.</li>
+          <li>Flame is the accent and never carries text. Buttons, links, and labels use Ember, which holds contrast at text size.</li>
+          <li>Every control needs default, hover, focus, active, disabled, loading, and empty. A screen without its empty state is not specified.</li>
+          <li>A dark surface is Midnight, never a darkened Parchment.</li>
+          <li>Loading is a wash placeholder in the shape of the content, never a spinner over a blank screen.</li>
+          <li>Errors name what is wrong and how to fix it, in the functional colours. Never Flame, never Ember: Ember means the action, and an error is not an action.</li>
+          <li>Touch targets are 44px minimum, whatever the control is drawn at.</li>
+          <li>No endorsement line and no parent lockup anywhere in the app, including the splash and the about screen. This door stands on its own.</li>
+        </ol>
+      </div>
+
+      <h3 style="margin-top:var(--space-7)">The screens</h3>
+      <div class="screens">
+        <div class="screen">
+          <h3>Splash</h3>
+          <p class="purpose">The first frame, held only as long as the app takes to load.</p>
+          <dl>
+            <dt>Action</dt><dd>None. It is never tappable and never carries a message.</dd>
+            <dt>Marks</dt><dd>The reversed horizontal lockup, centred, and nothing else.</dd>
+            <dt>Ground</dt><dd>Midnight.</dd>
+            <dt>Empty</dt><dd>Not applicable.</dd>
+            <dt>Error</dt><dd>If loading fails, replace with the sign-in screen carrying a retry, never a blank Midnight field.</dd>
+          </dl>
+        </div>
+        <div class="screen">
+          <h3>Sign in</h3>
+          <p class="purpose">Get a believer into the movement in as few steps as the platform allows.</p>
+          <dl>
+            <dt>Action</dt><dd>Sign in. One primary button in Ember.</dd>
+            <dt>Marks</dt><dd>The reversed horizontal lockup above the form.</dd>
+            <dt>Ground</dt><dd>Midnight, or a photograph under a Midnight scrim with white type only.</dd>
+            <dt>Empty</dt><dd>Not applicable.</dd>
+            <dt>Error</dt><dd>Name the field that is wrong and what to do. Never colour alone, and never a generic failure.</dd>
+          </dl>
+        </div>
+        <div class="screen">
+          <h3>Today</h3>
+          <p class="purpose">Answer one question: have you shared Jesus with someone recently?</p>
+          <dl>
+            <dt>Action</dt><dd>Share Jesus with one person. Everything else on this screen is secondary.</dd>
+            <dt>Marks</dt><dd>The E1 icon in the header. No lockup: the surface already says what this is.</dd>
+            <dt>Ground</dt><dd>Parchment, with Midnight bands for emphasis.</dd>
+            <dt>Empty</dt><dd>For a believer who has logged nothing yet, the screen says what the movement is and gives the first step. It never scolds and never implies they are behind.</dd>
+            <dt>Error</dt><dd>Show the last known state with a quiet retry. Never replace the screen with an error.</dd>
+          </dl>
+        </div>
+        <div class="screen">
+          <h3>Share Jesus</h3>
+          <p class="purpose">Record one real conversation, briefly, while it is fresh.</p>
+          <dl>
+            <dt>Action</dt><dd>Log the conversation.</dd>
+            <dt>Marks</dt><dd>None. The screen is the action, not a place to put a logo.</dd>
+            <dt>Ground</dt><dd>Parchment.</dd>
+            <dt>Empty</dt><dd>First use explains that a name is optional and nothing is published. Membership is one conversation, not a streak.</dd>
+            <dt>Error</dt><dd>A failed save keeps everything the person typed. Losing their words here is worse than a visible error.</dd>
+          </dl>
+        </div>
+        <div class="screen">
+          <h3>Prayer meeting</h3>
+          <p class="purpose">Join the weekly meeting, praying for the lost.</p>
+          <dl>
+            <dt>Action</dt><dd>Join the meeting.</dd>
+            <dt>Marks</dt><dd>The E1 icon in the header.</dd>
+            <dt>Ground</dt><dd>Midnight for the live state, Parchment otherwise.</dd>
+            <dt>Empty</dt><dd>Between meetings, say when the next one is in the reader's own time zone. Never an empty list.</dd>
+            <dt>Error</dt><dd>If the meeting cannot be joined, give the time and a way to be reminded.</dd>
+          </dl>
+        </div>
+        <div class="screen">
+          <h3>Course</h3>
+          <p class="purpose">The free personal evangelism course, offered through the School of the Local Church.</p>
+          <dl>
+            <dt>Action</dt><dd>Continue the course.</dd>
+            <dt>Marks</dt><dd>The E1 icon. The School is named in words, and its mark may appear on the course screen only, because the course is genuinely the School's.</dd>
+            <dt>Ground</dt><dd>Parchment.</dd>
+            <dt>Empty</dt><dd>Before starting, one paragraph on what the course is and that it costs nothing.</dd>
+            <dt>Error</dt><dd>A failed lesson load offers the lesson offline or a retry, and keeps progress.</dd>
+          </dl>
+        </div>
+        <div class="screen">
+          <h3>Invite</h3>
+          <p class="purpose">Fire starts fire. Hand the movement to someone else.</p>
+          <dl>
+            <dt>Action</dt><dd>Invite one person.</dd>
+            <dt>Marks</dt><dd>The numeral, once, as a mask holding a photograph. This is the one screen that carries the signature move.</dd>
+            <dt>Ground</dt><dd>Midnight.</dd>
+            <dt>Empty</dt><dd>Not applicable.</dd>
+            <dt>Error</dt><dd>If sharing fails, offer the link as copyable text.</dd>
+          </dl>
+        </div>
+        <div class="screen">
+          <h3>Profile</h3>
+          <p class="purpose">What this believer has carried, kept private by default.</p>
+          <dl>
+            <dt>Action</dt><dd>None primary. This screen reports, it does not ask.</dd>
+            <dt>Marks</dt><dd>The E1 icon in the header.</dd>
+            <dt>Ground</dt><dd>Parchment.</dd>
+            <dt>Empty</dt><dd>A new profile shows the first three steps rather than an empty record.</dd>
+            <dt>Error</dt><dd>Show what loaded and mark what did not. Never a blank profile.</dd>
+          </dl>
+        </div>
+      </div>
+    </section>
+
     <section id="countries">
       <span class="eyebrow">Country lockups</span>
       <h2>One per country, drawn not generated.</h2>
@@ -339,6 +589,8 @@
       <p class="intro">Anyone can check a page or a file against this standard without asking us.
       The checker reads the published rules, so it is always checking against what is current.</p>
       <pre class="code" style="margin-top:var(--space-5);padding:var(--space-4);overflow-x:auto;border:1px solid var(--border);border-radius:var(--radius-card)">python3 brand_check.py poster.html</pre>
+      <p class="intro"><a class="link" href="/brand_check.py" download>Download brand_check.py</a>.
+      It needs Python 3 and nothing else: no install, no account, no network.</p>
       <p class="intro">It decides the mechanical half: colours outside the palette, a face that is not
       one of the three, text in Flame, a removed focus ring, an image with no alternative text. It
       does not decide whether a photograph is real or whether the words are true. A clean run is not
@@ -361,8 +613,8 @@
 <footer class="foot">
   <div class="wrap">
     <img src="/assets/logos/every1-horizontal-reversed.svg" alt="EVERY1 Movement">
-    <span>Every tribe. Every tongue. Every nation.</span>
-    <span>Brand v7.4 · <a href="mailto:brand@theword.world">brand@theword.world</a></span>
+    <span>Every tribe, every tongue, every nation, and EVERY1 will know the name Jesus.</span>
+    <span>Brand v7.5 · <a href="mailto:brand@theword.world">brand@theword.world</a></span>
   </div>
 </footer>
 

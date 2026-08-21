@@ -1,10 +1,38 @@
 #!/usr/bin/env python3
 """Generate the initiative messaging documents (/documents)."""
+import json
 import os
 import re
 
 NL = chr(10)
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+
+def every1_words() -> dict:
+    """EVERY1's public words, read from the one file that states them.
+
+    They used to live here as literals, which meant the document said them and
+    brand.every1movement.com did not: a partner got the marks and none of the
+    language. Both generators now read this, so the words a partner repeats and
+    the words on record cannot drift. Missing or malformed is fatal, because a
+    document that silently drops its purpose is worse than a build that stops.
+    """
+    path = os.path.join(REPO, "ai-source", "every1-messaging.json")
+    try:
+        with open(path, encoding="utf-8") as fh:
+            data = json.load(fh)
+    except FileNotFoundError:
+        raise SystemExit(f"gen_docs: {path} is missing. EVERY1's words are stated there.")
+    except json.JSONDecodeError as exc:
+        raise SystemExit(f"gen_docs: {path} is not valid JSON: {exc}")
+    for key in ("mission", "promise", "plain", "whatItIs", "whoMayJoin",
+                "firstSteps", "phrases", "vision", "standing"):
+        if not data.get(key):
+            raise SystemExit(f"gen_docs: {path} has no '{key}'.")
+    return data
+
+
+E1 = every1_words()
 
 SITE = "https://brand.theword.world"
 
@@ -257,9 +285,24 @@ FOUNDATION = (
     '      <p class="whereas"><b>The foundation.</b> In December 2019 this ministry received the prophecy that stands as its founding document. The word came before the work. THE WORD FOR ALL THE WORLD exists to strengthen the local church to fulfill the Great Commission, until EVERY1 knows the name Jesus. The ministry orders its work as one journey in three parts, CLEAN, BURN, and TRAIN, held always in that order: a heart is cleaned, then it burns, then it is trained to keep burning.</p>\n'
 )
 
-def sec_name_standing(n, name_html):
+def sec_name_standing(n, name_html, standalone=False):
+    """Section 1 for an initiative, which is where its endorsement is stated.
+
+    Law III has one recorded exception, and stating the endorsement rule
+    unconditionally here contradicted it: EVERY1's own document told a reader to
+    add the line in Section 1 and not to add it in Section 8. The caller says
+    which rule applies, so the two sections cannot disagree again, and a future
+    door that stands on its own gets the right sentence by passing one argument.
+    """
+    endorsement = (
+        "It carries no endorsement line and no parent lockup: this door is the recorded "
+        "exception to Law III, and it stands on its own wherever its name appears."
+        if standalone else
+        "Wherever its name appears, it carries the endorsement line: "
+        "<em>A ministry of THE WORD FOR ALL THE WORLD.</em>"
+    )
     return sec(n, "Name and Standing",
-        p(f"The initiative is named {name_html}. It is a named front door of THE WORD FOR ALL THE WORLD. It is not a separate organization, not a separate home, and not a denomination. Wherever its name appears, it carries the endorsement line: <em>A ministry of THE WORD FOR ALL THE WORLD.</em>"))
+        p(f"The initiative is named {name_html}. It is a named front door of THE WORD FOR ALL THE WORLD. It is not a separate organization, not a separate home, and not a denomination. {endorsement}"))
 
 def sec_authority(n, extends):
     return sec(n, "Authority and Amendment",
@@ -300,24 +343,20 @@ rtmc_msg += sec_authority(9, "Brand Messaging Guide")
 e1_msg = FOUNDATION
 e1_msg += '      <p class="whereas">The Great Commission will not be fulfilled by pulpits alone. Every believer is the minister, sent by God everywhere they go.</p>\n'
 e1_msg += MSG_LEAD
-e1_msg += sec_name_standing(1, "the <strong>EVERY1 Movement</strong>, always styled EVERY1")
+e1_msg += sec_name_standing(1, "the <strong>EVERY1 Movement</strong>, always styled EVERY1", standalone=True)
 e1_msg += sec(2, "Place in the Journey",
-    p("The EVERY1 Movement is the second movement of the journey. Its word is <strong>BURN</strong>. A cleaned heart catches fire, and fire starts fire."))
+    p(E1["place"].replace(E1["word"], f"<strong>{E1['word']}</strong>", 1)))
 e1_msg += sec(3, "Purpose",
-    p("To empower the local church to do the Great Commission and walk in God's calling. In one line: EVERY1 in the church going to EVERY1 outside of the church.")
-    + plain("The EVERY1 Movement sends the church out."))
+    p(f"{E1['mission']} In one line: {E1['promise']}")
+    + plain(E1["plain"]))
 e1_msg += sec(4, "What It Is",
-    p("A movement of ordinary believers who share Jesus where they already live, work, and study. You are the minister, sent by God everywhere you go.")
-    + p("It is a lifestyle, not an event. Membership is simple: you have shared Jesus with at least one person recently. That is the movement."))
+    "".join(p(t) for t in E1["whatItIs"]))
 e1_msg += sec(5, "Who May Join",
-    p("Every believer. There is no maturity requirement. When you are born again, you qualify.")
-    + p("The movement carries special fire for the young and the newly saved: their fire kindles faster and hotter."))
+    "".join(p(t) for t in E1["whoMayJoin"]))
 e1_msg += sec(6, "The First Three Steps",
-    ul(["Join the weekly prayer meeting, praying for the lost.",
-        "Share Jesus with one person this week.",
-        "Take the free personal evangelism course, offered through the School of the Local Church."]))
+    ul(E1["firstSteps"]))
 e1_msg += sec(7, "The Words It Carries",
-    keywords(["EVERY1 in the church for EVERY1 outside the church", "You are the minister", "Fire starts fire", "A lifestyle, not an event"]))
+    keywords(E1["phrases"]))
 e1_msg += sec(8, "On the Record",
     p("EVERY1 is the one door that stands on its own. On the YouVersion model, it carries no endorsement line and no parent lockup, across the movement, the app, and the activation platform alike. That exception stands on record in the Brand Guide. Everything else in the Brand Messaging Guide applies to it in full."))
 e1_msg += sec_authority(9, "Brand Messaging Guide")
@@ -365,7 +404,7 @@ INDEX_CSS = """
 
 INITIATIVES = [
     ("revival-to-my-city", "Revival To My City", "Clean", "Stirring the local church to return to their first love."),
-    ("every1", "EVERY1 Movement", "Burn", "Empowering the local church to do the Great Commission and walk in God's calling."),
+    ("every1", "EVERY1 Movement", "Burn", "Empowering the local church to walk in unity to do the great commission & walk in God's calling."),
     ("school-of-the-local-church", "School of the Local Church", "Train", "Training the local church to know their authority in Christ and build a real relationship with Jesus."),
 ]
 
@@ -656,7 +695,7 @@ SUBS = [
     dict(
         slug="every1", stage="BURN", name="EVERY1 Movement",
         title="The EVERY1 <em>Movement</em>",
-        mission="Empowering the local church to do the Great Commission and walk in God's calling.",
+        mission="Empowering the local church to walk in unity to do the great commission & walk in God's calling.",
         video="every1-community-gathering",
         ground="Midnight, full bleed wherever it can be.",
         typerule="Parchment on Midnight. Ember for links and buttons.",

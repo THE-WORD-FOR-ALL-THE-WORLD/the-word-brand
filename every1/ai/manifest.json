@@ -1,5 +1,5 @@
 {
-  "version": "7.4",
+  "version": "7.5",
   "updated": "2026-08-20",
   "authority": "canonical",
   "name": "EVERY1 Movement",
@@ -887,6 +887,212 @@
     "Never set the mark below its published minimum width.",
     "Never rebuild a lockup by typesetting it. Use the published file."
   ],
+  "words": {
+    "vision": {
+      "lines": [
+        "EVERY TRIBE, EVERY TONGUE, EVERY NATION",
+        "WILL KNOW THE NAME JESUS"
+      ],
+      "note": "The two lines are set into the vision lockup with the EVERY1 wordmark between them, so the mark is a word in the sentence rather than a logo placed inside it: read top to bottom, the lockup says the vision in full. The sentence itself is stated in the Brand Messaging Guide and read from there, never retyped here. Quote it exactly, and where the lockup is used do not re-set these words in live type beside it: the lockup already says them.",
+      "text": "Every tribe, every tongue, every nation, and EVERY1 will know the name Jesus.",
+      "reference": "Hebrews 8:11"
+    },
+    "mission": "Empowering the local church to walk in unity to do the great commission & walk in God's calling.",
+    "missionReference": "Acts 2:17",
+    "promise": "EVERY1 in the church going to EVERY1 outside of the church.",
+    "plain": "The EVERY1 Movement sends the church out.",
+    "whatItIs": [
+      "A movement of ordinary believers who share Jesus where they already live, work, and study. You are the minister, sent by God everywhere you go.",
+      "It is a lifestyle, not an event. Membership is simple: you have shared Jesus with at least one person recently. That is the movement."
+    ],
+    "whoMayJoin": [
+      "Every believer. There is no maturity requirement. When you are born again, you qualify.",
+      "The movement carries special fire for the young and the newly saved: their fire kindles faster and hotter."
+    ],
+    "firstSteps": [
+      "Join the weekly prayer meeting, praying for the lost.",
+      "Share Jesus with one person this week.",
+      "Take the free personal evangelism course, offered through the School of the Local Church."
+    ],
+    "phrases": [
+      "EVERY1 in the church for EVERY1 outside the church",
+      "You are the minister",
+      "Fire starts fire",
+      "A lifestyle, not an event"
+    ],
+    "voice": {
+      "register": "Plain, direct, and close to the field. Shorter sentences than the parent uses. Second person, because the reader is the one being sent.",
+      "rules": [
+        "Say what happened. A report of one real conversation is stronger than any adjective about it.",
+        "Write to the person being sent, not about them. \"You are the minister,\" never \"believers are ministers.\"",
+        "Keep the ask to one action. A page with three asks gets none of them done.",
+        "Never make sharing Jesus sound like a technique or a funnel. It is a conversation with a person.",
+        "Never imply a maturity requirement, an age requirement, or a qualification. The movement's whole claim is that there is none.",
+        "Numbers come from the record or they are not used. No estimates presented as counts."
+      ]
+    },
+    "boilerplate": "The EVERY1 Movement is a movement of ordinary believers who share Jesus where they already live, work, and study. It is a lifestyle, not an event: you are the minister, sent by God everywhere you go. Every believer qualifies, and the first step is simply to share Jesus with one person this week.",
+    "audiences": [
+      {
+        "audience": "The Sent Believer",
+        "qualifier": "Any age, newly saved or long saved",
+        "wants": "to matter in the Great Commission without leaving their job, their school, or their city.",
+        "pain": "the belief that evangelism belongs to pastors and missionaries, and that they are unqualified.",
+        "needsToHear": "\"You are the minister. You do not need a title or a stage. Share Jesus with one person this week.\"",
+        "firstStep": "share Jesus with one person · join the weekly prayer meeting."
+      },
+      {
+        "audience": "The Partner Organisation",
+        "qualifier": "Churches, ministries, and conferences carrying the mark",
+        "wants": "to run an activation under EVERY1 without getting the brand or the message wrong.",
+        "pain": "no clear standard to follow, and no way to check their work before it prints.",
+        "needsToHear": "\"Everything you need is published: the marks, the words, and a checker you can run yourself. Ask before it prints, not after.\"",
+        "firstStep": "read brand.every1movement.com · run brand_check.py · write to brand@theword.world."
+      }
+    ],
+    "bannedWords": [
+      {
+        "category": "Hype",
+        "words": [
+          "insane",
+          "epic",
+          "unreal",
+          "next-level",
+          "game-changer",
+          "\"God showed up and showed out\"",
+          "\"you won't believe\"",
+          "walls of 🔥 emojis",
+          "ALL-CAPS excitement"
+        ],
+        "why": "Hype manufactures a feeling. We report what God actually did. The record is more powerful than the adjective."
+      },
+      {
+        "category": "Corporate Polish",
+        "words": [
+          "leverage",
+          "synergy",
+          "solutions",
+          "optimize",
+          "engage stakeholders",
+          "\"excited to announce\"",
+          "comprehensive",
+          "robust"
+        ],
+        "why": "We are a ministry, not a vendor. Corporate language makes the guide the hero and the mission a product."
+      },
+      {
+        "category": "Churchy Insider Talk",
+        "words": [
+          "traveling mercies",
+          "hedge of protection",
+          "\"love on\"",
+          "\"do life together\"",
+          "\"press in\"",
+          "\"contend for breakthrough\"",
+          "\"a God thing\"",
+          "\"fresh anointing\" (unexplained)",
+          "\"blessed to announce\""
+        ],
+        "why": "Insider language tells a new believer this isn't for them. Everything we say is for them."
+      }
+    ]
+  },
+  "app": {
+    "_README": "The EVERY1 app and activation platform, specified rather than mocked up. A picture of a screen is correct the day it is exported and silently wrong after the next token change, and no build can tell. These specs are published from the same tokens the app is built from, so they move when the brand moves. Flat mockups may be made from these, and they are illustrative and dated: the spec is what is authoritative. Screens are named here before they are drawn, because naming them is most of the design decision.",
+    "rules": [
+      "One mask per view. The 1 holding a photograph is this door's signature move, and on a poster it appears once. A scrolling list would put six on screen and turn the signature into wallpaper, so a list uses plain images and only a full-width feature uses the mask.",
+      "The numeral is the app icon, on Midnight, with no text. It is the form this door is recognised by at size.",
+      "Flame is the accent and never carries text. Buttons, links, and labels use Ember, which holds contrast at text size.",
+      "Every control needs default, hover, focus, active, disabled, loading, and empty. A screen without its empty state is not specified.",
+      "A dark surface is Midnight, never a darkened Parchment.",
+      "Loading is a wash placeholder in the shape of the content, never a spinner over a blank screen.",
+      "Errors name what is wrong and how to fix it, in the functional colours. Never Flame, never Ember: Ember means the action, and an error is not an action.",
+      "Touch targets are 44px minimum, whatever the control is drawn at.",
+      "No endorsement line and no parent lockup anywhere in the app, including the splash and the about screen. This door stands on its own."
+    ],
+    "screens": [
+      {
+        "id": "splash",
+        "name": "Splash",
+        "purpose": "The first frame, held only as long as the app takes to load.",
+        "action": "None. It is never tappable and never carries a message.",
+        "marks": "The reversed horizontal lockup, centred, and nothing else.",
+        "ground": "Midnight.",
+        "empty": "Not applicable.",
+        "error": "If loading fails, replace with the sign-in screen carrying a retry, never a blank Midnight field."
+      },
+      {
+        "id": "sign-in",
+        "name": "Sign in",
+        "purpose": "Get a believer into the movement in as few steps as the platform allows.",
+        "action": "Sign in. One primary button in Ember.",
+        "marks": "The reversed horizontal lockup above the form.",
+        "ground": "Midnight, or a photograph under a Midnight scrim with white type only.",
+        "empty": "Not applicable.",
+        "error": "Name the field that is wrong and what to do. Never colour alone, and never a generic failure."
+      },
+      {
+        "id": "home",
+        "name": "Today",
+        "purpose": "Answer one question: have you shared Jesus with someone recently?",
+        "action": "Share Jesus with one person. Everything else on this screen is secondary.",
+        "marks": "The E1 icon in the header. No lockup: the surface already says what this is.",
+        "ground": "Parchment, with Midnight bands for emphasis.",
+        "empty": "For a believer who has logged nothing yet, the screen says what the movement is and gives the first step. It never scolds and never implies they are behind.",
+        "error": "Show the last known state with a quiet retry. Never replace the screen with an error."
+      },
+      {
+        "id": "share",
+        "name": "Share Jesus",
+        "purpose": "Record one real conversation, briefly, while it is fresh.",
+        "action": "Log the conversation.",
+        "marks": "None. The screen is the action, not a place to put a logo.",
+        "ground": "Parchment.",
+        "empty": "First use explains that a name is optional and nothing is published. Membership is one conversation, not a streak.",
+        "error": "A failed save keeps everything the person typed. Losing their words here is worse than a visible error."
+      },
+      {
+        "id": "prayer",
+        "name": "Prayer meeting",
+        "purpose": "Join the weekly meeting, praying for the lost.",
+        "action": "Join the meeting.",
+        "marks": "The E1 icon in the header.",
+        "ground": "Midnight for the live state, Parchment otherwise.",
+        "empty": "Between meetings, say when the next one is in the reader's own time zone. Never an empty list.",
+        "error": "If the meeting cannot be joined, give the time and a way to be reminded."
+      },
+      {
+        "id": "course",
+        "name": "Course",
+        "purpose": "The free personal evangelism course, offered through the School of the Local Church.",
+        "action": "Continue the course.",
+        "marks": "The E1 icon. The School is named in words, and its mark may appear on the course screen only, because the course is genuinely the School's.",
+        "ground": "Parchment.",
+        "empty": "Before starting, one paragraph on what the course is and that it costs nothing.",
+        "error": "A failed lesson load offers the lesson offline or a retry, and keeps progress."
+      },
+      {
+        "id": "invite",
+        "name": "Invite",
+        "purpose": "Fire starts fire. Hand the movement to someone else.",
+        "action": "Invite one person.",
+        "marks": "The numeral, once, as a mask holding a photograph. This is the one screen that carries the signature move.",
+        "ground": "Midnight.",
+        "empty": "Not applicable.",
+        "error": "If sharing fails, offer the link as copyable text."
+      },
+      {
+        "id": "profile",
+        "name": "Profile",
+        "purpose": "What this believer has carried, kept private by default.",
+        "action": "None primary. This screen reports, it does not ask.",
+        "marks": "The E1 icon in the header.",
+        "ground": "Parchment.",
+        "empty": "A new profile shows the first three steps rather than an empty record.",
+        "error": "Show what loaded and mark what did not. Never a blank profile."
+      }
+    ]
+  },
   "contact": "brand@theword.world",
   "parentSystem": "https://brand.theword.world/ai/manifest.json",
   "generatedBy": "tools/build_ai.py"

@@ -1,0 +1,98 @@
+{
+  "_README": "The EVERY1 app and activation platform, specified rather than mocked up. A picture of a screen is correct the day it is exported and silently wrong after the next token change, and no build can tell. These specs are published from the same tokens the app is built from, so they move when the brand moves. Flat mockups may be made from these, and they are illustrative and dated: the spec is what is authoritative. Screens are named here before they are drawn, because naming them is most of the design decision.",
+
+  "rules": [
+    "One mask per view. The 1 holding a photograph is this door's signature move, and on a poster it appears once. A scrolling list would put six on screen and turn the signature into wallpaper, so a list uses plain images and only a full-width feature uses the mask.",
+    "The numeral is the app icon, on Midnight, with no text. It is the form this door is recognised by at size.",
+    "Flame is the accent and never carries text. Buttons, links, and labels use Ember, which holds contrast at text size.",
+    "Every control needs default, hover, focus, active, disabled, loading, and empty. A screen without its empty state is not specified.",
+    "A dark surface is Midnight, never a darkened Parchment.",
+    "Loading is a wash placeholder in the shape of the content, never a spinner over a blank screen.",
+    "Errors name what is wrong and how to fix it, in the functional colours. Never Flame, never Ember: Ember means the action, and an error is not an action.",
+    "Touch targets are 44px minimum, whatever the control is drawn at.",
+    "No endorsement line and no parent lockup anywhere in the app, including the splash and the about screen. This door stands on its own."
+  ],
+
+  "screens": [
+    {
+      "id": "splash",
+      "name": "Splash",
+      "purpose": "The first frame, held only as long as the app takes to load.",
+      "action": "None. It is never tappable and never carries a message.",
+      "marks": "The reversed horizontal lockup, centred, and nothing else.",
+      "ground": "Midnight.",
+      "empty": "Not applicable.",
+      "error": "If loading fails, replace with the sign-in screen carrying a retry, never a blank Midnight field."
+    },
+    {
+      "id": "sign-in",
+      "name": "Sign in",
+      "purpose": "Get a believer into the movement in as few steps as the platform allows.",
+      "action": "Sign in. One primary button in Ember.",
+      "marks": "The reversed horizontal lockup above the form.",
+      "ground": "Midnight, or a photograph under a Midnight scrim with white type only.",
+      "empty": "Not applicable.",
+      "error": "Name the field that is wrong and what to do. Never colour alone, and never a generic failure."
+    },
+    {
+      "id": "home",
+      "name": "Today",
+      "purpose": "Answer one question: have you shared Jesus with someone recently?",
+      "action": "Share Jesus with one person. Everything else on this screen is secondary.",
+      "marks": "The E1 icon in the header. No lockup: the surface already says what this is.",
+      "ground": "Parchment, with Midnight bands for emphasis.",
+      "empty": "For a believer who has logged nothing yet, the screen says what the movement is and gives the first step. It never scolds and never implies they are behind.",
+      "error": "Show the last known state with a quiet retry. Never replace the screen with an error."
+    },
+    {
+      "id": "share",
+      "name": "Share Jesus",
+      "purpose": "Record one real conversation, briefly, while it is fresh.",
+      "action": "Log the conversation.",
+      "marks": "None. The screen is the action, not a place to put a logo.",
+      "ground": "Parchment.",
+      "empty": "First use explains that a name is optional and nothing is published. Membership is one conversation, not a streak.",
+      "error": "A failed save keeps everything the person typed. Losing their words here is worse than a visible error."
+    },
+    {
+      "id": "prayer",
+      "name": "Prayer meeting",
+      "purpose": "Join the weekly meeting, praying for the lost.",
+      "action": "Join the meeting.",
+      "marks": "The E1 icon in the header.",
+      "ground": "Midnight for the live state, Parchment otherwise.",
+      "empty": "Between meetings, say when the next one is in the reader's own time zone. Never an empty list.",
+      "error": "If the meeting cannot be joined, give the time and a way to be reminded."
+    },
+    {
+      "id": "course",
+      "name": "Course",
+      "purpose": "The free personal evangelism course, offered through the School of the Local Church.",
+      "action": "Continue the course.",
+      "marks": "The E1 icon. The School is named in words, and its mark may appear on the course screen only, because the course is genuinely the School's.",
+      "ground": "Parchment.",
+      "empty": "Before starting, one paragraph on what the course is and that it costs nothing.",
+      "error": "A failed lesson load offers the lesson offline or a retry, and keeps progress."
+    },
+    {
+      "id": "invite",
+      "name": "Invite",
+      "purpose": "Fire starts fire. Hand the movement to someone else.",
+      "action": "Invite one person.",
+      "marks": "The numeral, once, as a mask holding a photograph. This is the one screen that carries the signature move.",
+      "ground": "Midnight.",
+      "empty": "Not applicable.",
+      "error": "If sharing fails, offer the link as copyable text."
+    },
+    {
+      "id": "profile",
+      "name": "Profile",
+      "purpose": "What this believer has carried, kept private by default.",
+      "action": "None primary. This screen reports, it does not ask.",
+      "marks": "The E1 icon in the header.",
+      "ground": "Parchment.",
+      "empty": "A new profile shows the first three steps rather than an empty record.",
+      "error": "Show what loaded and mark what did not. Never a blank profile."
+    }
+  ]
+}
