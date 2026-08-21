@@ -104,10 +104,14 @@ GLYPH_SIZES = [512, 1024, 2048]
 # (file, pixels, pad as a fraction of the glyph, plate the Midnight ground behind it).
 # Browser favicons stay tight and transparent so they read at 16px. Home-screen icons
 # get a Midnight plate and a real safe area, because the OS rounds their corners.
+# Every size carries the Midnight plate. The microphone is knocked out of the disc
+# rather than drawn as a shape, so a bare favicon has a Midnight disc and a
+# transparent microphone: on dark browser chrome both vanish and the icon is gone.
+# The plate is what the microphone reads against, at every size.
 FAVICONS = [
-    ("favicon-16.png", 16, 0.02, False),
-    ("favicon-32.png", 32, 0.02, False),
-    ("favicon-48.png", 48, 0.02, False),
+    ("favicon-16.png", 16, 0.10, True),
+    ("favicon-32.png", 32, 0.12, True),
+    ("favicon-48.png", 48, 0.12, True),
     ("apple-touch-icon-180.png", 180, 0.16, True),
     ("icon-192.png", 192, 0.16, True),
     ("icon-512.png", 512, 0.16, True),

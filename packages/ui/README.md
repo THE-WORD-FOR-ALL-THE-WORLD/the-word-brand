@@ -1,6 +1,6 @@
 # @theword/ui
 
-React components for THE WORD FOR ALL THE WORLD, implementing brand system v7.2
+React components for THE WORD FOR ALL THE WORLD, implementing brand system v7.3
 (updated 2026-08-20).
 
 **This package is a consumer, never a source.** The specifications live at
