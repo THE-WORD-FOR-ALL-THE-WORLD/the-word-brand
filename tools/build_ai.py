@@ -1559,8 +1559,21 @@ def check_copy_bank(bank: dict, messaging: dict) -> None:
             if cleaned and "emoji" not in cleaned:
                 banned.append((cleaned, group["category"]))
 
+    # An audience is what makes a string reusable: it says who it was written for.
+    # Nothing checked the name, so a typo or an audience nobody had defined read as
+    # valid and the string looked approved for a reader who does not exist.
+    known = {a["audience"] for a in messaging["audiences"]}
+    known |= {a["audience"] for a in read_source_json("every1-messaging.json")["audiences"]}
+
     for group in bank["sets"]:
         for entry in group["strings"]:
+            audience = entry.get("audience")
+            if audience and audience not in known:
+                raise bs.SourceError(
+                    f"copy-bank.json: '{entry['text'][:50]}' in {group['id']} is written for "
+                    f"'{audience}', which is not an audience in the Brand Messaging Guide or in "
+                    "ai-source/every1-messaging.json."
+                )
             low = entry["text"].lower()
             for word, category in banned:
                 if re.search(r"\b" + re.escape(word) + r"\b", low):
@@ -2331,6 +2344,49 @@ EVERY1_SITE = """<!DOCTYPE html>
   .never ol{margin:0;padding-left:1.2em;font-size:var(--text-body-small);line-height:1.7;}
   .never li{margin-bottom:var(--space-2);}
 
+  .screens{display:grid;grid-template-columns:1fr;gap:var(--space-4);margin-top:var(--space-6);}
+  @media(min-width:760px){.screens{grid-template-columns:repeat(2,1fr);}}
+  .screen{border:1px solid var(--border);border-radius:var(--radius-card);background:var(--surface);padding:var(--space-5);}
+  .screen h3{margin:0 0 var(--space-2);}
+  .screen .purpose{margin:0 0 var(--space-3);font-size:var(--text-body-small);color:var(--ink-muted);}
+  .screen dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:var(--space-2) var(--space-4);font-size:var(--text-body-small);line-height:1.6;}
+  .screen dt{font-weight:600;white-space:nowrap;}
+  .screen dd{margin:0;}
+
+  .approach{margin-top:var(--space-6);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:var(--radius-card);background:var(--surface);padding:var(--space-5) var(--space-6);}
+  .approach p{margin:0;font-size:var(--text-body-small);line-height:1.7;}
+
+  .vision{margin-top:var(--space-6);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:var(--radius-card);background:var(--surface);padding:var(--space-6);}
+  .vision .vlabel{display:block;font-size:var(--text-eyebrow);letter-spacing:var(--tracking-eyebrow);text-transform:uppercase;color:var(--ink-muted);margin-bottom:var(--space-3);}
+  .vision .vlines{font-family:var(--serif-display);font-size:var(--text-h3);line-height:1.22;margin:0 0 var(--space-3);}
+  .vision .vnote{font-size:var(--text-body-small);color:var(--ink-muted);margin:0;}
+
+  .says{display:grid;grid-template-columns:1fr;gap:var(--space-4);margin-top:var(--space-6);}
+  @media(min-width:760px){.says{grid-template-columns:repeat(3,1fr);}}
+  .says .say{border:1px solid var(--border);border-radius:var(--radius-card);background:var(--surface);padding:var(--space-5);}
+  .says .say b{display:block;font-size:var(--text-eyebrow);letter-spacing:var(--tracking-eyebrow);text-transform:uppercase;color:var(--ink-muted);margin-bottom:var(--space-2);}
+  .says .say p{margin:0;font-size:var(--text-body-small);line-height:1.6;}
+
+  .saylists{display:grid;grid-template-columns:1fr;gap:var(--space-6);margin-top:var(--space-6);}
+  @media(min-width:760px){.saylists{grid-template-columns:repeat(3,1fr);}}
+  .saylists h3{margin:0 0 var(--space-3);}
+  .saylists ul{margin:0;padding-left:1.2em;font-size:var(--text-body-small);line-height:1.7;}
+  .saylists li{margin-bottom:var(--space-2);}
+
+  .phrases{display:flex;flex-wrap:wrap;gap:var(--space-3);margin-top:var(--space-5);}
+  .phrases span{border:1px solid var(--border);border-radius:100px;padding:var(--space-2) var(--space-4);font-size:var(--text-body-small);background:var(--surface);}
+
+  .voice{margin-top:var(--space-6);}
+  .voice ul{margin:var(--space-3) 0 0;padding-left:1.2em;font-size:var(--text-body-small);line-height:1.7;}
+  .voice li{margin-bottom:var(--space-2);}
+
+  .boiler{margin-top:var(--space-6);border:1px solid var(--border);border-radius:var(--radius-card);background:var(--surface);padding:var(--space-5) var(--space-6);}
+  .boiler b{display:block;font-size:var(--text-eyebrow);letter-spacing:var(--tracking-eyebrow);text-transform:uppercase;color:var(--ink-muted);margin-bottom:var(--space-3);}
+  .boiler p{margin:0;font-size:var(--text-body-small);line-height:1.7;}
+
+  .standing{margin-top:var(--space-6);border:1px solid var(--border);border-left:3px solid var(--state-error);border-radius:var(--radius-card);background:var(--surface);padding:var(--space-5) var(--space-6);}
+  .standing p{margin:0;font-size:var(--text-body-small);line-height:1.7;}
+
   .masksplit{display:grid;grid-template-columns:1fr;gap:var(--space-6);align-items:start;margin-top:var(--space-6);}
   @media(min-width:820px){.masksplit{grid-template-columns:210px 1fr;gap:var(--space-7);}}
 
@@ -2348,12 +2404,13 @@ EVERY1_SITE = """<!DOCTYPE html>
 <header class="top on-midnight">
   <div class="wrap">
     <img class="mark" src="/assets/logos/every1-horizontal-reversed.svg" alt="EVERY1 Movement">
-    <h1>How to use this <em>mark.</em></h1>
+    <h1>How to carry this <em>mark.</em></h1>
     <p class="lede">For our team, and for any organisation carrying EVERY1 at a conference,
-    an activation, or on a shirt. Everything you need is on this page, and everything you
-    need to download is linked from it.</p>
+    an activation, or on a shirt. The marks and the words are both on this page, and everything
+    you need to download is linked from it.</p>
     <div class="acts">
       <a class="btn" href="/assets/downloads/every1-logos.zip">Download every mark</a>
+      <a class="btn ghost" href="#say">Read the words</a>
       <a class="btn ghost" href="#marks">See the marks</a>
     </div>
   </div>
@@ -2369,6 +2426,78 @@ EVERY1_SITE = """<!DOCTYPE html>
         <div class="card"><div class="n">01</div><h3>Pick the file for the ground</h3><p>Dark background, use the reversed file. Light background, use the default. One colour only, use the black file. Never recolour a mark yourself.</p></div>
         <div class="card"><div class="n">02</div><h3>Give it room, and size</h3><p>Every mark below states the clear space it needs and the smallest it may be set. Both are measured from the artwork, not guessed.</p></div>
         <div class="card"><div class="n">03</div><h3>Check it before it prints</h3><p>Read the never list. If you are unsure, send it to us before it goes to a printer or a platform. We would rather answer than correct.</p></div>
+      </div>
+    </section>
+
+    <section id="say">
+      <span class="eyebrow">The words</span>
+      <h2>What EVERY1 says.</h2>
+      <p class="intro">The marks are half of it. These are the words that go with them, and they
+      are approved: quote them as they stand, in a program, from a stage, or on a page. If you need
+      something they do not cover, ask rather than writing your own.</p>
+
+      <div class="vision">
+        <span class="vlabel">The vision</span>
+        <p class="vlines">__VISION_LINES__</p>
+        <p class="vnote">__VISION_NOTE__</p>
+      </div>
+
+      <div class="says">
+        <div class="say"><b>Mission</b><p>__MISSION__</p></div>
+        <div class="say"><b>The promise</b><p>__PROMISE__</p></div>
+        <div class="say"><b>In plain words</b><p>__PLAIN__</p></div>
+      </div>
+
+      <div class="saylists">
+        <div>
+          <h3>What it is</h3>
+          <ul>
+__WHATITIS__
+          </ul>
+        </div>
+        <div>
+          <h3>Who may join</h3>
+          <ul>
+__WHOMAYJOIN__
+          </ul>
+        </div>
+        <div>
+          <h3>The first three steps</h3>
+          <ul>
+__FIRSTSTEPS__
+          </ul>
+        </div>
+      </div>
+
+      <h3 style="margin-top:var(--space-7)">The words it carries</h3>
+      <div class="phrases">
+__PHRASES__
+      </div>
+
+      <div class="voice">
+        <h3>How to write as EVERY1</h3>
+        <p class="intro">__VOICE_REGISTER__</p>
+        <ul>
+__VOICE_RULES__
+        </ul>
+      </div>
+
+      <div class="voice">
+        <h3>Words this brand does not use</h3>
+        <p class="intro">These are banned across everything THE WORD publishes, EVERY1 included.
+        Theological words are never banned: these are words that manufacture a feeling or sell.</p>
+        <div class="bw">
+__BANNED__
+        </div>
+      </div>
+
+      <div class="boiler">
+        <b>Boilerplate, use as written</b>
+        <p>__BOILER__</p>
+      </div>
+
+      <div class="standing">
+        <p>__STANDING__</p>
       </div>
     </section>
 
@@ -2432,6 +2561,30 @@ __NEVER__
       </div>
     </section>
 
+    <section id="app">
+      <span class="eyebrow">In the app</span>
+      <h2>The movement on a phone.</h2>
+      <p class="intro">EVERY1 is a movement, an app, and an activation platform, so the app is a
+      first-class surface of this brand rather than a place the brand gets applied. These are its
+      screens and what each one is for. They are specified rather than pictured on purpose.</p>
+
+      <div class="approach">
+        <p>__APP_WHY__</p>
+      </div>
+
+      <h3 style="margin-top:var(--space-7)">Rules that hold across every screen</h3>
+      <div class="never" style="border-left-color:var(--accent)">
+        <ol>
+__APP_RULES__
+        </ol>
+      </div>
+
+      <h3 style="margin-top:var(--space-7)">The screens</h3>
+      <div class="screens">
+__APP_SCREENS__
+      </div>
+    </section>
+
     <section id="countries">
       <span class="eyebrow">Country lockups</span>
       <h2>One per country, drawn not generated.</h2>
@@ -2453,6 +2606,8 @@ __NEVER__
       <p class="intro">Anyone can check a page or a file against this standard without asking us.
       The checker reads the published rules, so it is always checking against what is current.</p>
       <pre class="code" style="margin-top:var(--space-5);padding:var(--space-4);overflow-x:auto;border:1px solid var(--border);border-radius:var(--radius-card)">python3 brand_check.py poster.html</pre>
+      <p class="intro"><a class="link" href="/brand_check.py" download>Download brand_check.py</a>.
+      It needs Python 3 and nothing else: no install, no account, no network.</p>
       <p class="intro">It decides the mechanical half: colours outside the palette, a face that is not
       one of the three, text in Flame, a removed focus ring, an image with no alternative text. It
       does not decide whether a photograph is real or whether the words are true. A clean run is not
@@ -2475,7 +2630,7 @@ __NEVER__
 <footer class="foot">
   <div class="wrap">
     <img src="/assets/logos/every1-horizontal-reversed.svg" alt="EVERY1 Movement">
-    <span>Every tribe. Every tongue. Every nation.</span>
+    <span>__VISION_SENTENCE__</span>
     <span>Brand v__VERSION__ · <a href="mailto:brand@theword.world">brand@theword.world</a></span>
   </div>
 </footer>
@@ -2510,7 +2665,7 @@ def every1_marks(logos: dict) -> list:
     return [by_slug[s] for s in order]
 
 
-def build_every1_site(brand: dict, tokens: dict, logos: dict, template: str) -> str:
+def build_every1_site(brand: dict, tokens: dict, logos: dict, template: str, words: dict, messaging: dict, app: dict) -> str:
     marks = []
     for c in every1_marks(logos):
         reversed_svg = next(
@@ -2578,6 +2733,9 @@ def build_every1_site(brand: dict, tokens: dict, logos: dict, template: str) -> 
 
     never = "".join(f"          <li>{esc(n)}</li>\n" for n in logos["never"])
 
+    def items(seq, indent="            "):
+        return "\n".join(f"{indent}<li>{esc(t)}</li>" for t in seq)
+
     page = template
     for token, value in (
         ("__MARKS__", "\n".join(marks)),
@@ -2585,14 +2743,55 @@ def build_every1_site(brand: dict, tokens: dict, logos: dict, template: str) -> 
         ("__FACES__", "\n".join(faces)),
         ("__NEVER__", never.rstrip()),
         ("__VERSION__", brand["version"]),
+        ("__VISION_LINES__", "<br>".join(esc(l) for l in words["vision"]["lines"])),
+        ("__VISION_NOTE__", esc(words["vision"]["note"])),
+        ("__MISSION__", esc(words["mission"])),
+        ("__PROMISE__", esc(words["promise"])),
+        ("__PLAIN__", esc(words["plain"])),
+        ("__WHATITIS__", items(words["whatItIs"])),
+        ("__WHOMAYJOIN__", items(words["whoMayJoin"])),
+        ("__FIRSTSTEPS__", items(words["firstSteps"])),
+        ("__PHRASES__", "\n".join(
+            f"        <span>{esc(t)}</span>" for t in words["phrases"])),
+        ("__VOICE_REGISTER__", esc(words["voice"]["register"])),
+        ("__VOICE_RULES__", items(words["voice"]["rules"], "          ")),
+        ("__BOILER__", esc(words["boilerplate"])),
+        ("__STANDING__", esc(words["standing"])),
+        ("__VISION_SENTENCE__", esc(words["vision"]["sentence"])),
+        ("__APP_WHY__", esc(app["_README"].split(". ", 1)[1].split(" Screens are named")[0])),
+        ("__APP_RULES__", "\n".join(
+            f"          <li>{esc(r)}</li>" for r in app["rules"])),
+        ("__APP_SCREENS__", "\n".join(
+            '        <div class="screen">\n'
+            f'          <h3>{esc(sc["name"])}</h3>\n'
+            f'          <p class="purpose">{esc(sc["purpose"])}</p>\n'
+            "          <dl>\n"
+            f'            <dt>Action</dt><dd>{esc(sc["action"])}</dd>\n'
+            f'            <dt>Marks</dt><dd>{esc(sc["marks"])}</dd>\n'
+            f'            <dt>Ground</dt><dd>{esc(sc["ground"])}</dd>\n'
+            f'            <dt>Empty</dt><dd>{esc(sc["empty"])}</dd>\n'
+            f'            <dt>Error</dt><dd>{esc(sc["error"])}</dd>\n'
+            "          </dl>\n"
+            "        </div>"
+            for sc in app["screens"])),
+        ("__BANNED__", "\n".join(
+            f'        <p class="intro"><b>{esc(g["category"])}.</b> '
+            + esc(", ".join(w.replace(chr(34), "") for w in g["words"])) + "</p>"
+            for g in messaging["bans"])),
     ):
         page = page.replace(token, value)
-    if "__" in page and any(t in page for t in ("__MARKS__", "__SWATCHES__", "__FACES__", "__NEVER__", "__VERSION__")):
-        raise bs.SourceError("the EVERY1 site template has an unfilled placeholder.")
+    # A missed placeholder used to be caught only if it was one of five known names,
+    # so a new one added to the template would have shipped as literal text on the
+    # page. Anything left in the __NAME__ shape is a build failure now.
+    leftover = sorted(set(re.findall(r"__[A-Z0-9_]+__", page)))
+    if leftover:
+        raise bs.SourceError(
+            "the EVERY1 site template has unfilled placeholders: " + ", ".join(leftover))
     return page
 
 
-def build_every1_ai(brand: dict, messaging: dict, updated: str, tokens: dict, logos: dict) -> dict:
+def build_every1_ai(brand: dict, messaging: dict, updated: str, tokens: dict, logos: dict,
+                    words: dict, app: dict) -> dict:
     """EVERY1's own machine-readable layer, scoped to what a partner needs.
 
     Same shape as the parent's so a tool that can read one can read the other, and
@@ -2643,6 +2842,23 @@ def build_every1_ai(brand: dict, messaging: dict, updated: str, tokens: dict, lo
         "color": tokens["color"],
         "typography": tokens["typography"],
         "never": logos["never"],
+        # An agent writing a caption or an ad for this door used to get the marks and
+        # no language, so it wrote its own. The words ship with the artwork now.
+        "words": {
+            "vision": words["vision"],
+            "mission": words["mission"],
+            "promise": words["promise"],
+            "plain": words["plain"],
+            "whatItIs": words["whatItIs"],
+            "whoMayJoin": words["whoMayJoin"],
+            "firstSteps": words["firstSteps"],
+            "phrases": words["phrases"],
+            "voice": words["voice"],
+            "boilerplate": words["boilerplate"],
+            "audiences": words["audiences"],
+            "bannedWords": messaging["bans"],
+        },
+        "app": app,
         "contact": "brand@theword.world",
         "parentSystem": f"{SITE}/ai/manifest.json",
         "generatedBy": "tools/build_ai.py",
@@ -2986,11 +3202,14 @@ def build() -> dict:
     # stylesheet, the faces and the marks, because that directory is the whole of
     # what its Pages project serves.
     logos = read_source_json("logo-manifest.json")
+    every1_words = read_source_json("every1-messaging.json")
+    every1_app = read_source_json("every1-app.json")
     files[f"{EVERY1_DIR}/index.html"] = build_every1_site(
-        brand, tokens, logos, EVERY1_SITE
+        brand, tokens, logos, EVERY1_SITE, every1_words, messaging, every1_app
     )
     files[f"{EVERY1_DIR}/ai/manifest.json"] = (
-        json.dumps(build_every1_ai(brand, messaging, updated, tokens, logos), indent=2, ensure_ascii=False) + "\n"
+        json.dumps(build_every1_ai(brand, messaging, updated, tokens, logos,
+                                   every1_words, every1_app), indent=2, ensure_ascii=False) + "\n"
     )
     files[f"{EVERY1_DIR}/assets/brand.css"] = files["assets/brand.css"]
     files[f"{EVERY1_DIR}/assets/fonts/fonts.css"] = bs.read(

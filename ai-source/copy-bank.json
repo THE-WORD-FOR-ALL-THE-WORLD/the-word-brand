@@ -12,21 +12,94 @@
       "limit": 30,
       "field": "headline",
       "strings": [
-        { "text": "Strengthening the local church", "audience": "The Local Pastor" },
-        { "text": "Revival is here, not coming", "audience": "The Hungry Church Member" },
-        { "text": "Training for the local church", "audience": "The Local Pastor" },
-        { "text": "Walk with Jesus", "audience": "The Lost Online Searcher" },
-        { "text": "Your first love, again", "audience": "The Hungry Church Member" },
-        { "text": "For pastors carrying it alone", "audience": "The Local Pastor" },
-        { "text": "Bring revival to your city", "audience": "The Local Pastor" },
-        { "text": "Know your authority in Christ", "audience": "The Hungry Church Member" },
-        { "text": "A real relationship with Jesus", "audience": "The Lost Online Searcher" },
-        { "text": "Start where you are", "audience": "The Lost Online Searcher" },
-        { "text": "Pass the torch, finish well", "audience": "The Legacy Leader" },
-        { "text": "Eternal impact, real numbers", "audience": "The Kingdom Partner" },
-        { "text": "Fire starts fire", "audience": "The Hungry Church Member" },
-        { "text": "Teaching that stays with you", "audience": "The Local Pastor" },
-        { "text": "Until EVERY1 knows His name", "audience": "The Kingdom Partner" }
+        {
+          "text": "Strengthening the local church",
+          "audience": "The Local Pastor"
+        },
+        {
+          "text": "Revival is here, not coming",
+          "audience": "The Hungry Church Member"
+        },
+        {
+          "text": "Training for the local church",
+          "audience": "The Local Pastor"
+        },
+        {
+          "text": "Walk with Jesus",
+          "audience": "The Lost Online Searcher"
+        },
+        {
+          "text": "Your first love, again",
+          "audience": "The Hungry Church Member"
+        },
+        {
+          "text": "For pastors carrying it alone",
+          "audience": "The Local Pastor"
+        },
+        {
+          "text": "Bring revival to your city",
+          "audience": "The Local Pastor"
+        },
+        {
+          "text": "Know your authority in Christ",
+          "audience": "The Hungry Church Member"
+        },
+        {
+          "text": "A real relationship with Jesus",
+          "audience": "The Lost Online Searcher"
+        },
+        {
+          "text": "Start where you are",
+          "audience": "The Lost Online Searcher"
+        },
+        {
+          "text": "Pass the torch, finish well",
+          "audience": "The Legacy Leader"
+        },
+        {
+          "text": "Eternal impact, real numbers",
+          "audience": "The Kingdom Partner"
+        },
+        {
+          "text": "Fire starts fire",
+          "audience": "The Hungry Church Member"
+        },
+        {
+          "text": "Teaching that stays with you",
+          "audience": "The Local Pastor"
+        },
+        {
+          "text": "Until EVERY1 knows His name",
+          "audience": "The Kingdom Partner"
+        },
+        {
+          "text": "You are the minister",
+          "audience": "The Sent Believer"
+        },
+        {
+          "text": "Share Jesus with one person",
+          "audience": "The Sent Believer"
+        },
+        {
+          "text": "A lifestyle, not an event",
+          "audience": "The Sent Believer"
+        },
+        {
+          "text": "Every believer qualifies",
+          "audience": "The Sent Believer"
+        },
+        {
+          "text": "Start where you already are",
+          "audience": "The Sent Believer"
+        },
+        {
+          "text": "Carry EVERY1 at your event",
+          "audience": "The Partner Organisation"
+        },
+        {
+          "text": "EVERY1 marks and standards",
+          "audience": "The Partner Organisation"
+        }
       ]
     },
     {
@@ -35,12 +108,42 @@
       "limit": 90,
       "field": "description",
       "strings": [
-        { "text": "Training, teaching, and tools for the local church. Start with one conversation.", "audience": "The Local Pastor" },
-        { "text": "Revival is not coming. It is here. Find out what that means for your church.", "audience": "The Hungry Church Member" },
-        { "text": "For the pastor carrying it alone: teaching, training, and people who will stand with you.", "audience": "The Local Pastor" },
-        { "text": "You do not need to clean yourself up first. Come as you are and meet Jesus.", "audience": "The Lost Online Searcher" },
-        { "text": "Your influence can outlast you. See where partnership goes and what it builds.", "audience": "The Kingdom Partner" },
-        { "text": "Know who you are in Christ, and what He has already given you authority to do.", "audience": "The Hungry Church Member" }
+        {
+          "text": "Training, teaching, and tools for the local church. Start with one conversation.",
+          "audience": "The Local Pastor"
+        },
+        {
+          "text": "Revival is not coming. It is here. Find out what that means for your church.",
+          "audience": "The Hungry Church Member"
+        },
+        {
+          "text": "For the pastor carrying it alone: teaching, training, and people who will stand with you.",
+          "audience": "The Local Pastor"
+        },
+        {
+          "text": "You do not need to clean yourself up first. Come as you are and meet Jesus.",
+          "audience": "The Lost Online Searcher"
+        },
+        {
+          "text": "Your influence can outlast you. See where partnership goes and what it builds.",
+          "audience": "The Kingdom Partner"
+        },
+        {
+          "text": "Know who you are in Christ, and what He has already given you authority to do.",
+          "audience": "The Hungry Church Member"
+        },
+        {
+          "text": "Ordinary believers sharing Jesus where they live, work, and study.",
+          "audience": "The Sent Believer"
+        },
+        {
+          "text": "No title, no training, no waiting. You are the minister. Start with one person.",
+          "audience": "The Sent Believer"
+        },
+        {
+          "text": "Marks, colours, and words for organisations carrying EVERY1 at a conference.",
+          "audience": "The Partner Organisation"
+        }
       ]
     },
     {
@@ -49,13 +152,43 @@
       "limit": 25,
       "field": "sitelink or callout",
       "strings": [
-        { "text": "See what's happening" },
-        { "text": "Read a field report" },
-        { "text": "Start the training" },
-        { "text": "Partner with us" },
-        { "text": "Come and see" },
-        { "text": "For pastors" },
-        { "text": "For your church" }
+        {
+          "text": "See what's happening"
+        },
+        {
+          "text": "Read a field report"
+        },
+        {
+          "text": "Start the training"
+        },
+        {
+          "text": "Partner with us"
+        },
+        {
+          "text": "Come and see"
+        },
+        {
+          "text": "For pastors"
+        },
+        {
+          "text": "For your church"
+        },
+        {
+          "text": "Join the movement",
+          "audience": "The Sent Believer"
+        },
+        {
+          "text": "The first three steps",
+          "audience": "The Sent Believer"
+        },
+        {
+          "text": "Download the marks",
+          "audience": "The Partner Organisation"
+        },
+        {
+          "text": "Read the standard",
+          "audience": "The Partner Organisation"
+        }
       ]
     },
     {
@@ -64,13 +197,39 @@
       "limit": 50,
       "field": "subject line",
       "strings": [
-        { "text": "Revival is here, not coming" },
-        { "text": "What happened in [city] last week" },
-        { "text": "For the pastor who is tired" },
-        { "text": "Your first love, again" },
-        { "text": "[n] people, one night, one city" },
-        { "text": "A field report from [country]" },
-        { "text": "The training starts [month]" }
+        {
+          "text": "Revival is here, not coming"
+        },
+        {
+          "text": "What happened in [city] last week"
+        },
+        {
+          "text": "For the pastor who is tired"
+        },
+        {
+          "text": "Your first love, again"
+        },
+        {
+          "text": "[n] people, one night, one city"
+        },
+        {
+          "text": "A field report from [country]"
+        },
+        {
+          "text": "The training starts [month]"
+        },
+        {
+          "text": "You are the minister",
+          "audience": "The Sent Believer"
+        },
+        {
+          "text": "One person this week",
+          "audience": "The Sent Believer"
+        },
+        {
+          "text": "Carrying EVERY1 at your conference",
+          "audience": "The Partner Organisation"
+        }
       ]
     },
     {
@@ -79,9 +238,23 @@
       "limit": 90,
       "field": "preheader",
       "strings": [
-        { "text": "One story from the field, and one thing you can do about it this week." },
-        { "text": "What we saw, where we saw it, and who it happened to." },
-        { "text": "Not a newsletter about us. A record of what God did." }
+        {
+          "text": "One story from the field, and one thing you can do about it this week."
+        },
+        {
+          "text": "What we saw, where we saw it, and who it happened to."
+        },
+        {
+          "text": "Not a newsletter about us. A record of what God did."
+        },
+        {
+          "text": "A lifestyle, not an event. Three steps, and the first is a conversation.",
+          "audience": "The Sent Believer"
+        },
+        {
+          "text": "Everything needed to carry the mark right, including a checker you run yourself.",
+          "audience": "The Partner Organisation"
+        }
       ]
     },
     {
@@ -90,12 +263,36 @@
       "limit": 25,
       "field": "button label",
       "strings": [
-        { "text": "Partner With Us" },
-        { "text": "See What's Happening" },
-        { "text": "Read the Field Report" },
-        { "text": "Start the Training" },
-        { "text": "Come and See" },
-        { "text": "Send a Prayer Request" }
+        {
+          "text": "Partner With Us"
+        },
+        {
+          "text": "See What's Happening"
+        },
+        {
+          "text": "Read the Field Report"
+        },
+        {
+          "text": "Start the Training"
+        },
+        {
+          "text": "Come and See"
+        },
+        {
+          "text": "Send a Prayer Request"
+        },
+        {
+          "text": "Share Jesus this week",
+          "audience": "The Sent Believer"
+        },
+        {
+          "text": "Join the movement",
+          "audience": "The Sent Believer"
+        },
+        {
+          "text": "Download the marks",
+          "audience": "The Partner Organisation"
+        }
       ]
     },
     {
@@ -115,6 +312,10 @@
         {
           "text": "THE WORD FOR ALL THE WORLD strengthens the local church to fulfill the Great Commission, until EVERY1 knows the name Jesus. The local church is not a strategy for the plan. It is the plan. Three initiatives carry that work in order. Revival To My City stirs the local church to return to their first love. The EVERY1 Movement empowers the local church to do the Great Commission and walk in God's calling. The School of the Local Church trains believers to know their authority in Christ and build a real relationship with Jesus. Every figure published by this ministry comes from its official record, and every testimony is told by the person it belongs to, with their permission.",
           "length": "long"
+        },
+        {
+          "text": "The EVERY1 Movement is a movement of ordinary believers who share Jesus where they already live, work, and study. It is a lifestyle, not an event: you are the minister, sent by God everywhere you go. Every believer qualifies, and the first step is simply to share Jesus with one person this week.",
+          "audience": "The Sent Believer"
         }
       ]
     }
