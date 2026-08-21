@@ -67,7 +67,7 @@
       "name": "EVERY1 Movement",
       "role": "initiative, BURN",
       "register": "DM Sans led, bolder, closer to the field",
-      "mission": "Empowering the local church to do the Great Commission and walk in God's calling."
+      "mission": "Empowering the local church to walk in unity to do the great commission & walk in God's calling."
     },
     {
       "id": "school-of-the-local-church",
@@ -86,8 +86,8 @@
       "name": "brand-system.md",
       "url": "https://brand.theword.world/ai/brand-system.md",
       "description": "The complete brand standard as one document.",
-      "bytes": 64703,
-      "sha256": "ea60780103cfc425cd26d5abdb52d36e5b9db0465455a4ac47484ff68a813bb2"
+      "bytes": 65431,
+      "sha256": "269e3b4d56cf71afd08c8753626c5c4c407341b2cdfa8491ce821e48664e43ef"
     },
     {
       "name": "SKILL.md",
@@ -156,8 +156,8 @@
       "name": "copy-bank.json",
       "url": "https://brand.theword.world/ai/copy-bank.json",
       "description": "Pre-approved strings by channel, each within the character limit it was written against.",
-      "bytes": 12387,
-      "sha256": "58a792333efc35d917bf8a7d2f17a388abf8eaab995a0ddf09c8e9bca8ea440e"
+      "bytes": 12404,
+      "sha256": "ded0b207740f286d29f87c7672f0461bd90a2e5be18a2315f7109da0b24a878d"
     },
     {
       "name": "assets.json",

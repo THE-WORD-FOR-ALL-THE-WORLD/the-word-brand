@@ -368,6 +368,22 @@ def parse_messaging_guide(path: str = MESSAGING_GUIDE) -> dict:
     companion = re.search(r"Brand Guide v([\d.]+)", s)
     out["companionTo"] = companion.group(1) if companion else ""
 
+    # The vision is a published fact like the mission line, and it was being restated
+    # by hand wherever it was needed: the EVERY1 site carried a shortened form that
+    # dropped "and EVERY1" and lost the reason the wordmark sits inside the sentence.
+    # Read once, here, so a change to the guide reaches every surface that says it.
+    vision_card = require(
+        re.search(
+            r'<div class="lab">Vision</div>\s*<div class="txt">(.*?)</div>\s*'
+            r'(?:<span class="vref">(.*?)</span>)?',
+            s, re.S),
+        "the vision", path,
+    )
+    out["vision"] = {
+        "text": strip_tags(vision_card.group(1)),
+        "reference": strip_tags(vision_card.group(2) or ""),
+    }
+
     out["missionLine"] = strip_tags(
         require(
             re.search(r'<div class="sk">The Public Mission Line[^<]*</div>\s*<div class="big">(.*?)</div>', s, re.S),

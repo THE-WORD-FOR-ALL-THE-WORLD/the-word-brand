@@ -404,7 +404,7 @@ INDEX_CSS = """
 
 INITIATIVES = [
     ("revival-to-my-city", "Revival To My City", "Clean", "Stirring the local church to return to their first love."),
-    ("every1", "EVERY1 Movement", "Burn", "Empowering the local church to do the Great Commission and walk in God's calling."),
+    ("every1", "EVERY1 Movement", "Burn", "Empowering the local church to walk in unity to do the great commission & walk in God's calling."),
     ("school-of-the-local-church", "School of the Local Church", "Train", "Training the local church to know their authority in Christ and build a real relationship with Jesus."),
 ]
 
@@ -695,7 +695,7 @@ SUBS = [
     dict(
         slug="every1", stage="BURN", name="EVERY1 Movement",
         title="The EVERY1 <em>Movement</em>",
-        mission="Empowering the local church to do the Great Commission and walk in God's calling.",
+        mission="Empowering the local church to walk in unity to do the great commission & walk in God's calling.",
         video="every1-community-gathering",
         ground="Midnight, full bleed wherever it can be.",
         typerule="Parchment on Midnight. Ember for links and buttons.",

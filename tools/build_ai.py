@@ -2439,11 +2439,12 @@ EVERY1_SITE = """<!DOCTYPE html>
       <div class="vision">
         <span class="vlabel">The vision</span>
         <p class="vlines">__VISION_LINES__</p>
+        <p class="vlines" style="font-family:var(--sans);font-size:var(--text-body);margin-bottom:var(--space-3)">__VISION_SENTENCE_2__ <span style="color:var(--ink-muted)">__VISION_REF__</span></p>
         <p class="vnote">__VISION_NOTE__</p>
       </div>
 
       <div class="says">
-        <div class="say"><b>Mission</b><p>__MISSION__</p></div>
+        <div class="say"><b>Mission</b><p>__MISSION__ <span style="color:var(--ink-muted)">__MISSION_REF__</span></p></div>
         <div class="say"><b>The promise</b><p>__PROMISE__</p></div>
         <div class="say"><b>In plain words</b><p>__PLAIN__</p></div>
       </div>
@@ -2746,6 +2747,7 @@ def build_every1_site(brand: dict, tokens: dict, logos: dict, template: str, wor
         ("__VISION_LINES__", "<br>".join(esc(l) for l in words["vision"]["lines"])),
         ("__VISION_NOTE__", esc(words["vision"]["note"])),
         ("__MISSION__", esc(words["mission"])),
+        ("__MISSION_REF__", esc(words.get("missionReference", ""))),
         ("__PROMISE__", esc(words["promise"])),
         ("__PLAIN__", esc(words["plain"])),
         ("__WHATITIS__", items(words["whatItIs"])),
@@ -2757,7 +2759,9 @@ def build_every1_site(brand: dict, tokens: dict, logos: dict, template: str, wor
         ("__VOICE_RULES__", items(words["voice"]["rules"], "          ")),
         ("__BOILER__", esc(words["boilerplate"])),
         ("__STANDING__", esc(words["standing"])),
-        ("__VISION_SENTENCE__", esc(words["vision"]["sentence"])),
+        ("__VISION_SENTENCE__", esc(messaging["vision"]["text"])),
+        ("__VISION_SENTENCE_2__", esc(messaging["vision"]["text"])),
+        ("__VISION_REF__", esc(messaging["vision"]["reference"])),
         ("__APP_WHY__", esc(app["_README"].split(". ", 1)[1].split(" Screens are named")[0])),
         ("__APP_RULES__", "\n".join(
             f"          <li>{esc(r)}</li>" for r in app["rules"])),
@@ -2845,8 +2849,9 @@ def build_every1_ai(brand: dict, messaging: dict, updated: str, tokens: dict, lo
         # An agent writing a caption or an ad for this door used to get the marks and
         # no language, so it wrote its own. The words ship with the artwork now.
         "words": {
-            "vision": words["vision"],
+            "vision": {**words["vision"], **messaging["vision"]},
             "mission": words["mission"],
+            "missionReference": words.get("missionReference", ""),
             "promise": words["promise"],
             "plain": words["plain"],
             "whatItIs": words["whatItIs"],

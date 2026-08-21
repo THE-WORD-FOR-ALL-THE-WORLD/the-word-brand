@@ -1,43 +1,37 @@
 {
   "_README": "EVERY1's public words, stated once. Both generators read this file: tools/gen_docs.py renders the messaging document at /documents/every1, and tools/build_ai.py renders the messaging section of brand.every1movement.com and the EVERY1 machine layer. Before this file existed the words lived only inside gen_docs.py, so the public site carried the marks and none of the language, and a partner organisation running a conference wrote its own. Everything here is approved and quotable by anyone carrying the mark. Anything that is not for a partner to repeat does not belong in this file.",
-
   "vision": {
-    "lines": ["EVERY TRIBE, EVERY TONGUE, EVERY NATION", "WILL KNOW THE NAME JESUS"],
-    "sentence": "Every tribe, every tongue, every nation will know the name Jesus.",
-    "note": "This is the text set into the vision lockup, and it is a brand fact rather than a caption. Quote it exactly. Where the lockup is used, do not re-set these words in live type beside it: the lockup already says them."
+    "lines": [
+      "EVERY TRIBE, EVERY TONGUE, EVERY NATION",
+      "WILL KNOW THE NAME JESUS"
+    ],
+    "note": "The two lines are set into the vision lockup with the EVERY1 wordmark between them, so the mark is a word in the sentence rather than a logo placed inside it: read top to bottom, the lockup says the vision in full. The sentence itself is stated in the Brand Messaging Guide and read from there, never retyped here. Quote it exactly, and where the lockup is used do not re-set these words in live type beside it: the lockup already says them."
   },
-
-  "mission": "To empower the local church to do the Great Commission and walk in God's calling.",
+  "mission": "Empowering the local church to walk in unity to do the great commission & walk in God's calling.",
   "promise": "EVERY1 in the church going to EVERY1 outside of the church.",
   "plain": "The EVERY1 Movement sends the church out.",
   "word": "BURN",
   "place": "The EVERY1 Movement is the second movement of the journey. Its word is BURN. A cleaned heart catches fire, and fire starts fire.",
-
   "whatItIs": [
     "A movement of ordinary believers who share Jesus where they already live, work, and study. You are the minister, sent by God everywhere you go.",
     "It is a lifestyle, not an event. Membership is simple: you have shared Jesus with at least one person recently. That is the movement."
   ],
-
   "whoMayJoin": [
     "Every believer. There is no maturity requirement. When you are born again, you qualify.",
     "The movement carries special fire for the young and the newly saved: their fire kindles faster and hotter."
   ],
-
   "firstSteps": [
     "Join the weekly prayer meeting, praying for the lost.",
     "Share Jesus with one person this week.",
     "Take the free personal evangelism course, offered through the School of the Local Church."
   ],
-
   "phrases": [
     "EVERY1 in the church for EVERY1 outside the church",
     "You are the minister",
     "Fire starts fire",
     "A lifestyle, not an event"
   ],
-
   "standing": "EVERY1 carries no endorsement line and no parent lockup. It is the one door that stands on its own, on the YouVersion model, across the movement, the app, and the activation platform alike. Do not add A ministry of THE WORD FOR ALL THE WORLD to EVERY1 material, and do not place the parent mark beside it.",
-
   "voice": {
     "register": "Plain, direct, and close to the field. Shorter sentences than the parent uses. Second person, because the reader is the one being sent.",
     "rules": [
@@ -49,9 +43,7 @@
       "Numbers come from the record or they are not used. No estimates presented as counts."
     ]
   },
-
   "boilerplate": "The EVERY1 Movement is a movement of ordinary believers who share Jesus where they already live, work, and study. It is a lifestyle, not an event: you are the minister, sent by God everywhere you go. Every believer qualifies, and the first step is simply to share Jesus with one person this week.",
-
   "audiences": [
     {
       "audience": "The Sent Believer",
@@ -69,5 +61,6 @@
       "needsToHear": "\"Everything you need is published: the marks, the words, and a checker you can run yourself. Ask before it prints, not after.\"",
       "firstStep": "read brand.every1movement.com · run brand_check.py · write to brand@theword.world."
     }
-  ]
+  ],
+  "missionReference": "Acts 2:17"
 }

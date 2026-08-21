@@ -893,10 +893,12 @@
         "EVERY TRIBE, EVERY TONGUE, EVERY NATION",
         "WILL KNOW THE NAME JESUS"
       ],
-      "sentence": "Every tribe, every tongue, every nation will know the name Jesus.",
-      "note": "This is the text set into the vision lockup, and it is a brand fact rather than a caption. Quote it exactly. Where the lockup is used, do not re-set these words in live type beside it: the lockup already says them."
+      "note": "The two lines are set into the vision lockup with the EVERY1 wordmark between them, so the mark is a word in the sentence rather than a logo placed inside it: read top to bottom, the lockup says the vision in full. The sentence itself is stated in the Brand Messaging Guide and read from there, never retyped here. Quote it exactly, and where the lockup is used do not re-set these words in live type beside it: the lockup already says them.",
+      "text": "Every tribe, every tongue, every nation, and EVERY1 will know the name Jesus.",
+      "reference": "Hebrews 8:11"
     },
-    "mission": "To empower the local church to do the Great Commission and walk in God's calling.",
+    "mission": "Empowering the local church to walk in unity to do the great commission & walk in God's calling.",
+    "missionReference": "Acts 2:17",
     "promise": "EVERY1 in the church going to EVERY1 outside of the church.",
     "plain": "The EVERY1 Movement sends the church out.",
     "whatItIs": [
