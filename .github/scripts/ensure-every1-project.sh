@@ -74,4 +74,33 @@ else
   report /tmp/cf-domain.json "Attached ${DOMAIN}."
 fi
 
+# Attaching the domain to the project is only half of it. Cloudflare writes the DNS record
+# itself only when the zone sits in the same account as the Pages project; otherwise the
+# domain stays pending until a CNAME points at it, and the site 404s at its own name with
+# every step of this workflow green. Say so, with the exact record, rather than leaving it
+# to be rediscovered.
+curl -sS -o /tmp/cf-status.json "${API}/${PROJECT}/domains" -H "${AUTH}"
+DOMAIN="${DOMAIN}" PROJECT="${PROJECT}" python3 - <<'PY'
+import json, os
+name, project = os.environ["DOMAIN"], os.environ["PROJECT"]
+try:
+    rows = json.load(open("/tmp/cf-status.json")).get("result") or []
+except Exception:
+    raise SystemExit
+row = next((r for r in rows if r.get("name") == name), None)
+if row is None:
+    raise SystemExit
+status = row.get("status", "unknown")
+print(f"Domain status: {status}")
+if status != "active":
+    print("")
+    print(f"  {name} is attached but not serving yet. If this does not clear on its own,")
+    print("  the zone is in a different Cloudflare account than this Pages project, and the")
+    print("  record has to be added by hand in whichever account holds the zone:")
+    print("")
+    print(f"      CNAME   brand   {project}.pages.dev   (proxied)")
+    print("")
+    print("  This deploy token is Pages-scoped, so it cannot write DNS.")
+PY
+
 exit 0

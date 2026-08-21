@@ -285,6 +285,17 @@ cannot be reached never stops the portal from deploying.
 The token needs **Account → Cloudflare Pages → Edit**. With a narrower token the portal
 still deploys and the step reports what it could not do.
 
+**One DNS record is not automatic.** Cloudflare writes the record itself only when the zone
+sits in the same account as the Pages project. `every1movement.com` does not, and the deploy
+token is Pages-scoped with no DNS permission, so the record is added once, by hand, in
+whichever account holds the zone:
+
+    CNAME   brand   every1-brand.pages.dev   (proxied)
+
+Until it exists the site is live at `every1-brand.pages.dev` and 404s at its own name. The
+script reports the domain's status on every run and prints that record when it is not yet
+serving, so this never has to be diagnosed twice.
+
 Preview builds do not create anything. The EVERY1 preview step is tolerated on failure, so
 a pull request opened before the first `main` deploy still gets a portal preview.
 
