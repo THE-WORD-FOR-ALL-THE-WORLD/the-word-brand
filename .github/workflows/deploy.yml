@@ -114,6 +114,16 @@ jobs:
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           command: pages deploy . --project-name=the-word-brand --branch=main
 
+      # The second Pages project and its custom domain are created here rather than by
+      # hand, with the token this workflow already holds. The script checks first and
+      # does nothing when they exist, so it is safe on every push, and it exits clean on
+      # failure so a missing second site never stops the portal deploying.
+      - name: Ensure the EVERY1 project and domain exist
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: bash .github/scripts/ensure-every1-project.sh
+
       # EVERY1 is served from its own domain and its own Pages project, out of the
       # every1/ directory of this same build. One source, two sites, so they cannot
       # disagree about what the brand is.

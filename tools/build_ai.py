@@ -1829,6 +1829,18 @@ def build_governance(brand: dict, messaging: dict, updated: str, source: dict, a
                     f"governance.json: a stage name in {process['id']} is too long. A stage is a noun."
                 )
 
+    for dec in source.get("decisions", []):
+        if len(dec["decision"]) > limits.get("decision", 200):
+            raise bs.SourceError(
+                f"governance.json: decision {dec['id']} is {len(dec['decision'])} characters and "
+                f"the limit is {limits.get('decision', 200)}. State the call, not the argument."
+            )
+        if not dec.get("revisitWhen") or not dec.get("thenWhat"):
+            raise bs.SourceError(
+                f"governance.json: decision {dec['id']} has no revisitWhen and thenWhat. A decision "
+                "without the condition that would reverse it is a rule pretending to be a decision."
+            )
+
     known = {p["id"] for p in source["procedures"]}
     for process in source["processes"]:
         for ref in process.get("procedures", []):
@@ -1857,6 +1869,11 @@ def build_governance(brand: dict, messaging: dict, updated: str, source: dict, a
             "policy": "A standing rule about how this system is run.",
             "process": "The order work moves in, one stage handing to the next.",
             "procedure": "The steps one person follows to do one job.",
+            "decision": (
+                "A call that was made once, with the reason and the condition that would "
+                "reverse it. Recorded so nobody re-argues it from memory, and so nobody is "
+                "stuck with it forever."
+            ),
         },
         "policies": source["policies"],
         "nonNegotiables": {
@@ -1870,6 +1887,7 @@ def build_governance(brand: dict, messaging: dict, updated: str, source: dict, a
         },
         "processes": source["processes"],
         "procedures": source["procedures"],
+        "decisions": source.get("decisions", []),
     }
 
 GOVERNANCE_PAGE = """<!DOCTYPE html>
@@ -1914,7 +1932,8 @@ GOVERNANCE_PAGE = """<!DOCTYPE html>
   /* The three definitions sit at the top, because the whole point of this page
      is that they are three different things that had been reading as one. */
   .defs { display: grid; grid-template-columns: 1fr; gap: var(--space-4); margin-top: var(--space-6); }
-  @media (min-width: 760px) { .defs { grid-template-columns: repeat(3, 1fr); } }
+  @media (min-width: 760px) { .defs { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1000px) { .defs { grid-template-columns: repeat(4, 1fr); } }
   .defs .card { padding: var(--space-5); }
   .defs h2 { font-family: var(--sans); font-weight: 700; font-size: var(--text-body-small); margin: 0 0 var(--space-2); }
   .defs p { margin: 0; font-size: var(--text-body-small); line-height: 1.6; color: var(--text-muted); }
@@ -2015,6 +2034,14 @@ GOVERNANCE_PAGE = """<!DOCTYPE html>
   .sop .done { margin-top: var(--space-4); font-size: var(--text-body-small); }
   .sop .done b { color: var(--accent-text); }
 
+  .dec { padding: var(--space-6) 0; }
+  .dec + .dec { border-top: 1px solid var(--border-soft); }
+  .dec h3 { font-family: var(--serif-text); font-weight: 400; font-size: var(--text-title); margin: var(--space-2) 0 0; }
+  .dec p { margin: var(--space-3) 0 0; font-size: var(--text-body-small); line-height: 1.65; max-width: 68ch; }
+  .dec p.why { color: var(--text-muted); }
+  .dec .revisit { margin-top: var(--space-4); padding-top: var(--space-3); border-top: 1px solid var(--border-soft); font-size: var(--text-body-small); }
+  .dec .revisit b { color: var(--accent-text); }
+
   .gates { margin-top: var(--space-7); }
   .gates .note { font-size: var(--text-body-small); color: var(--text-muted); max-width: 66ch; margin: var(--space-3) 0 var(--space-5); }
   .gate { display: grid; grid-template-columns: auto 1fr; gap: var(--space-3) var(--space-4); padding: var(--space-3) 0; border-bottom: 1px solid var(--border-soft); align-items: start; }
@@ -2053,6 +2080,7 @@ GOVERNANCE_PAGE = """<!DOCTYPE html>
       <div class="card"><h2>Policy</h2><p>A standing rule about how this system is run. One line, and ten of them.</p></div>
       <div class="card"><h2>Process</h2><p>The order work moves in. This hands to that, and that hands to the next.</p></div>
       <div class="card"><h2>Procedure</h2><p>The steps one person follows to do one job, in order.</p></div>
+      <div class="card"><h2>Decision</h2><p>A call made once, with what would reverse it. So it is neither re-argued nor permanent.</p></div>
     </div>
   </div>
 </header>
@@ -2063,6 +2091,7 @@ GOVERNANCE_PAGE = """<!DOCTYPE html>
       <button role="tab" id="tab-policies" aria-controls="panel-policies" aria-selected="true">Policies</button>
       <button role="tab" id="tab-processes" aria-controls="panel-processes" aria-selected="false">Processes</button>
       <button role="tab" id="tab-procedures" aria-controls="panel-procedures" aria-selected="false">Procedures</button>
+      <button role="tab" id="tab-decisions" aria-controls="panel-decisions" aria-selected="false">Decisions</button>
     </div>
   </div>
 </div>
@@ -2084,6 +2113,10 @@ __PROCESSES__
 
     <section class="panel-body" id="panel-procedures" role="tabpanel" aria-labelledby="tab-procedures" hidden>
 __PROCEDURES__
+    </section>
+
+    <section class="panel-body" id="panel-decisions" role="tabpanel" aria-labelledby="tab-decisions" hidden>
+__DECISIONS__
     </section>
   </div>
 </main>
@@ -2151,6 +2184,20 @@ def build_governance_page(gov: dict, brand: dict) -> str:
         """
         return len(pr["stages"]) if len(pr["stages"]) <= 4 else 3
 
+    decisions = []
+    for dec in gov.get("decisions", []):
+        decisions.append(
+            '      <div class="dec">\n'
+            '        <span class="badge" data-state="accent">' + esc(dec["id"]) + "</span>\n"
+            "        <h3>" + esc(dec["title"]) + "</h3>\n"
+            "        <p>" + esc(dec["decision"]) + "</p>\n"
+            '        <p class="why">' + esc(dec["why"]) + "</p>\n"
+            + ('        <p class="why">' + esc(dec["alsoWhy"]) + "</p>\n" if dec.get("alsoWhy") else "")
+            + '        <p class="revisit"><b>Revisit when:</b> ' + esc(dec["revisitWhen"])
+            + " <b>Then:</b> " + esc(dec["thenWhat"]) + "</p>\n"
+            "      </div>"
+        )
+
     processes = []
     for pr in gov["processes"]:
         stages = []
@@ -2202,6 +2249,7 @@ def build_governance_page(gov: dict, brand: dict) -> str:
         ("__GATES__", gates),
         ("__PROCESSES__", "\n".join(processes)),
         ("__PROCEDURES__", "\n".join(procedures)),
+        ("__DECISIONS__", "\n".join(decisions)),
     ):
         page = page.replace(token, value)
     return page
