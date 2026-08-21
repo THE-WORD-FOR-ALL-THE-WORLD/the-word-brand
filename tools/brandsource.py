@@ -420,14 +420,62 @@ def parse_messaging_guide(path: str = MESSAGING_GUIDE) -> dict:
     out["phrases"] = phrases
 
     # --- banned language
+    # Two kinds. A word we never use is matched literally. A pattern names a word
+    # that is ordinary English on its own and only turns into hype or jargon in
+    # certain company, so it is written with a class in braces and expanded here
+    # into the concrete phrases a checker can actually look for. Expanding at
+    # build time keeps the guide readable and the check exact: "epic night" is a
+    # finding, a bare "epic" is not.
+    classes = {}
+    cls_table = re.search(r"<table data-wordclasses.*?</table>", s, re.S)
+    if cls_table:
+        for m in re.finditer(r"<tr><td>\{([a-z]+)\}</td><td>(.*?)</td></tr>", cls_table.group(0), re.S):
+            classes[m.group(1)] = [
+                w.strip() for w in strip_tags(m.group(2)).split("·") if w.strip()
+            ]
+
+    def expand(pattern: str) -> list:
+        out_forms = [pattern]
+        for name, members in classes.items():
+            token = "{%s}" % name
+            if not any(token in f for f in out_forms):
+                continue
+            out_forms = [f.replace(token, m) for f in out_forms for m in members]
+        left = [f for f in out_forms if "{" in f]
+        if left:
+            raise SystemExit(
+                f"{path}: banned-language pattern uses an undefined class: {left[0]}"
+            )
+        return out_forms
+
     bans = []
     for m in re.finditer(
-        r'<div data-ban="([^"]+)">.*?<p data-words>(.*?)</p>\s*<p data-why[^>]*>(.*?)</p>',
+        r'<div data-ban="([^"]+)">(.*?)<p data-why[^>]*>(.*?)</p>',
         s,
         re.S,
     ):
-        words = [w.strip() for w in strip_tags(m.group(2)).split("·") if w.strip()]
-        bans.append({"category": strip_tags(m.group(1)), "words": words, "why": strip_tags(m.group(3))})
+        body = m.group(2)
+        wm = require(
+            re.search(r"<p data-words>(.*?)</p>", body, re.S),
+            f"the banned words for {strip_tags(m.group(1))}",
+            path,
+        )
+        words = [w.strip() for w in strip_tags(wm.group(1)).split("·") if w.strip()]
+        patterns, contextual = [], []
+        pm = re.search(r"<p data-patterns>(.*?)</p>", body, re.S)
+        if pm:
+            patterns = [w.strip() for w in strip_tags(pm.group(1)).split("·") if w.strip()]
+            for pat in patterns:
+                contextual.extend(expand(pat))
+        bans.append(
+            {
+                "category": strip_tags(m.group(1)),
+                "words": words,
+                "patterns": patterns,
+                "contextual": contextual,
+                "why": strip_tags(m.group(3)),
+            }
+        )
     require_count(bans, 4, "banned-language categories", path)
     out["bans"] = bans
 
@@ -450,6 +498,29 @@ def parse_messaging_guide(path: str = MESSAGING_GUIDE) -> dict:
         audiences.append({"audience": m.group(1), "posture": m.group(2)})
     require_count(audiences, 7, "audience profiles", path)
     out["audiences"] = audiences
+
+    # --- ideal client profiles. Experimental: four fields are the ministry's own
+    # words, carried from v1.0, and the rest are deliberately unfilled.
+    profiles = []
+    for m in re.finditer(
+        r'<div data-profile="([^"]+)" data-maps-to="([^"]+)">(.*?)\n  </div>', s, re.S
+    ):
+        b = m.group(3)
+        def grab(label):
+            r = re.search(r"<strong>%s</strong>(.*?)</p>" % label, b, re.S)
+            return strip_tags(r.group(1)) if r else ""
+        who = re.search(r'<p class="who">(.*?)</p>', b, re.S)
+        profiles.append({
+            "profile": m.group(1),
+            "mapsTo": m.group(2),
+            "who": strip_tags(who.group(1)) if who else "",
+            "wants": grab("They want"),
+            "pain": grab("Their pain:"),
+            "needsToHear": grab("They need to hear:"),
+            "firstStep": grab("First step:"),
+        })
+    require_count(profiles, 5, "ideal client profiles", path)
+    out["profiles"] = profiles
 
     # --- message architecture
     architecture = []

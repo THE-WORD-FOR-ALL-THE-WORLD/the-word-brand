@@ -127,6 +127,8 @@ def strip_specimens(text: str) -> str:
     # the ban lists carry data-words, and a before-and-after quotes the wrong
     # version in .off in order to correct it in .on.
     text = re.sub(r"<p data-words>.*?</p>", "", text, flags=re.S)
+    text = re.sub(r"<p data-patterns>.*?</p>", "", text, flags=re.S)
+    text = re.sub(r"<table data-wordclasses.*?</table>", "", text, flags=re.S)
     text = re.sub(r'<p class="off">.*?</p>', "", text, flags=re.S)
     # An explicit marker, for a rule that has to quote the wrong wording in
     # order to forbid it. Preferred over guessing from the surrounding markup:

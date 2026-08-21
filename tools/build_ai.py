@@ -938,6 +938,22 @@ def build_brand_system(brand: dict, messaging: dict, tokens: dict, updated: str,
     )
     md += "\n"
 
+    # 14b. Ideal client profiles
+    md += "### Ideal client profiles\n\n"
+    md += (
+        "Experimental, not yet ratified. The four fields below are the ministry's own words. "
+        "The rest of each profile is deliberately unfilled: where they already are, what triggers "
+        "the search, the real objection, who else they are listening to, and what tells us it "
+        "worked. Do not invent those. Use these to aim a piece of writing, not to cite as "
+        "settled.\n\n"
+    )
+    for pr in messaging["profiles"]:
+        md += f"**{pr['profile']}** ({pr['who']})\n\n"
+        md += f"- **They want:** {pr['wants']}\n"
+        md += f"- **Their pain:** {pr['pain']}\n"
+        md += f"- **Needs to hear:** {pr['needsToHear']}\n"
+        md += f"- **First step:** {pr['firstStep']}\n\n"
+
     # 15. Agent rules, hand-authored
     md += "## 15. " + read_source("agent-rules.md").split("\n", 1)[0].lstrip("# ").strip() + "\n\n"
     body = read_source("agent-rules.md").split("\n", 1)[1].lstrip("\n")
@@ -995,6 +1011,14 @@ def build_anti_patterns(brand: dict, messaging: dict, updated: str) -> str:
         md += f"### {ban['category']}\n\n"
         for word in ban["words"]:
             md += f"- {word}\n"
+        if ban.get("patterns"):
+            md += (
+                f"\n**Wrong only in context.** These words are ordinary English on their own. "
+                f"Written as {', '.join(ban['patterns'][:3])} and so on, they are hype or jargon. "
+                f"Every form is listed so a checker can match it exactly.\n\n"
+            )
+            for phrase in ban["contextual"]:
+                md += f"- {phrase}\n"
         md += f"\n{ban['why']}\n\n"
 
     if messaging["rewrites"]:

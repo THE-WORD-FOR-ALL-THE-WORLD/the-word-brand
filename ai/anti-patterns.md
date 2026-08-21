@@ -121,9 +121,6 @@ Generated from the Messaging Guide.
 
 ### Hype
 
-- insane
-- epic
-- unreal
 - next-level
 - next level
 - game-changer
@@ -136,20 +133,104 @@ Generated from the Messaging Guide.
 - "you do not want to miss this"
 - "come expecting"
 
+**Wrong only in context.** These words are ordinary English on their own. Written as epic {event}, insane {event}, unreal {event} and so on, they are hype or jargon. Every form is listed so a checker can match it exactly.
+
+- epic night
+- epic service
+- epic weekend
+- epic gathering
+- epic meeting
+- epic conference
+- epic moment
+- epic experience
+- epic season
+- epic event
+- insane night
+- insane service
+- insane weekend
+- insane gathering
+- insane meeting
+- insane conference
+- insane moment
+- insane experience
+- insane season
+- insane event
+- unreal night
+- unreal service
+- unreal weekend
+- unreal gathering
+- unreal meeting
+- unreal conference
+- unreal moment
+- unreal experience
+- unreal season
+- unreal event
+- was epic
+- was insane
+- was unreal
+- so epic
+- so insane
+- absolutely insane
+- pretty epic
+
 Manufactured intensity. Excitement must arise from substance, or it is not excitement, it is volume.
 
 ### Corporate polish
 
-- leverage
 - synergy
-- solutions
-- optimize
 - engage stakeholders
 - "excited to announce"
-- comprehensive
-- robust
-- relevant
 - lean in
+
+**Wrong only in context.** These words are ordinary English on their own. Written as {be} relevant, comprehensive {thing}, robust {thing} and so on, they are hype or jargon. Every form is listed so a checker can match it exactly.
+
+- be relevant
+- being relevant
+- stay relevant
+- staying relevant
+- remain relevant
+- remaining relevant
+- more relevant
+- most relevant
+- sound relevant
+- look relevant
+- comprehensive strategy
+- comprehensive solution
+- comprehensive solutions
+- comprehensive framework
+- comprehensive platform
+- comprehensive approach
+- comprehensive plan
+- comprehensive program
+- comprehensive process
+- comprehensive system
+- comprehensive discipleship
+- comprehensive ministry
+- comprehensive training
+- robust strategy
+- robust solution
+- robust solutions
+- robust framework
+- robust platform
+- robust approach
+- robust plan
+- robust program
+- robust process
+- robust system
+- robust discipleship
+- robust ministry
+- robust training
+- leverage the
+- leverage our
+- leverage your
+- leverage this
+- optimize the
+- optimize our
+- optimize your
+- optimize for
+- discipleship solutions
+- ministry solutions
+- church solutions
 
 Borrowed authority. It makes a ministry sound like a vendor and says nothing a person can act on.
 
@@ -181,7 +262,15 @@ Language that only works if you are already inside. It excludes the person we ar
 - make an impact
 - transform the world
 - God-sized dream
-- journey
+
+**Wrong only in context.** These words are ordinary English on their own. Written as spiritual journey, faith journey, your journey and so on, they are hype or jargon. Every form is listed so a checker can match it exactly.
+
+- spiritual journey
+- faith journey
+- your journey
+- this journey
+- journey together
+- the journey of faith
 
 Words that describe nothing. If the sentence survives with the phrase deleted, delete it.
 

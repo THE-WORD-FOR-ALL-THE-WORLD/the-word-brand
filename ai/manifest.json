@@ -86,8 +86,8 @@
       "name": "brand-system.md",
       "url": "https://brand.theword.world/ai/brand-system.md",
       "description": "The complete brand standard as one document.",
-      "bytes": 69948,
-      "sha256": "d00226e1f60a6ffb2a9544937b633261888d7a809299f13566c61eee37e3e07c"
+      "bytes": 73051,
+      "sha256": "65b9f315a4491d933387629178a19d72dc1a8e58046d69f3d0de8c08168ce35b"
     },
     {
       "name": "SKILL.md",
@@ -177,8 +177,8 @@
       "name": "anti-patterns.md",
       "url": "https://brand.theword.world/ai/anti-patterns.md",
       "description": "What not to do, including every DON'T and every banned word.",
-      "bytes": 12799,
-      "sha256": "4849b286403e504a61a7ead0681629bd7f091df1f1c19372c20f32c69a09b915"
+      "bytes": 14986,
+      "sha256": "a73f3d607412376638e62745dbf4e6a197f318361182c8a6335c36ea3a280b5d"
     }
   ],
   "extraResources": []

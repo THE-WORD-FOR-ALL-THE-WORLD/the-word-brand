@@ -344,11 +344,11 @@ Use these exactly as written.
 
 ### Language we never use
 
-**Hype.** insane, epic, unreal, next-level, next level, game-changer, game-changing, "God showed up and showed out", "you won't believe", walls of flame emojis, ALL-CAPS excitement, "something big is coming", "you do not want to miss this", "come expecting"
+**Hype.** next-level, next level, game-changer, game-changing, "God showed up and showed out", "you won't believe", walls of flame emojis, ALL-CAPS excitement, "something big is coming", "you do not want to miss this", "come expecting"
 
 Manufactured intensity. Excitement must arise from substance, or it is not excitement, it is volume.
 
-**Corporate polish.** leverage, synergy, solutions, optimize, engage stakeholders, "excited to announce", comprehensive, robust, relevant, lean in
+**Corporate polish.** synergy, engage stakeholders, "excited to announce", lean in
 
 Borrowed authority. It makes a ministry sound like a vendor and says nothing a person can act on.
 
@@ -356,7 +356,7 @@ Borrowed authority. It makes a ministry sound like a vendor and says nothing a p
 
 Language that only works if you are already inside. It excludes the person we are trying to reach.
 
-**Generic ministry filler.** life-changing, powerful experience, step into your destiny, your best life, new season, shift the atmosphere, unlock your potential, make an impact, transform the world, God-sized dream, journey
+**Generic ministry filler.** life-changing, powerful experience, step into your destiny, your best life, new season, shift the atmosphere, unlock your potential, make an impact, transform the world, God-sized dream
 
 Words that describe nothing. If the sentence survives with the phrase deleted, delete it.
 
@@ -406,6 +406,45 @@ This is the master-brand audience priority. Know which audience a piece is for b
 | 5 | The ordinary believer | Teacher and equipper. |
 | 6 | The spiritually hungry but passive believer | Teacher and equipper, calling them out of the pew. |
 | 7 | Those who do not yet know Jesus | Personal, loving and fatherly invitation. |
+
+### Ideal client profiles
+
+Experimental, not yet ratified. The four fields below are the ministry's own words. The rest of each profile is deliberately unfilled: where they already are, what triggers the search, the real objection, who else they are listening to, and what tells us it worked. Do not invent those. Use these to aim a piece of writing, not to cite as settled.
+
+**The Local Pastor** (US and international · audience 3, pastors and church leaders)
+
+- **They want:** to multiply disciples and lead revival without burning out.
+- **Their pain:** exhaustion, plateaued growth, no discipleship pathway.
+- **Needs to hear:** “We come to serve your church, not build ours. When we leave, your people stay, on fire and equipped.”
+- **First step:** host a Revival To My City, or train leaders through the School.
+
+**The Hungry Church Member** (The pew, awake or asleep · audience 6, the spiritually hungry but passive believer)
+
+- **They want:** to grow spiritually and live on mission.
+- **Their pain:** dry faith, and the conviction that there must be more.
+- **Needs to hear:** “There is more, and it isn’t a program. It’s a real relationship with Jesus, and it starts with turning back to your first love.”
+- **First step:** join the EVERY1 Movement, or start the School.
+
+**The Lost Online Searcher** (18 to 30, digital-first · audience 7, those who do not yet know jesus)
+
+- **They want:** truth, healing, identity, purpose.
+- **Their pain:** anxiety, loneliness, distrust of religion, hunger for what is real.
+- **Needs to hear:** “What you’re looking for has a name. You can have a real relationship with Jesus, starting today.”
+- **First step:** watch a testimony, request prayer, then begin the intro course.
+
+**The Legacy Leader** (66 and over, finishing well · audience 4, evangelists and ministers)
+
+- **They want:** to pass the torch and leave their people stronger.
+- **Their pain:** feeling forgotten, and the fear that the work dies with them.
+- **Needs to hear:** “Your fire isn’t finished. The next generation needs what you carry.”
+- **First step:** mentor through the School, cover the movement in prayer, give.
+
+**The Kingdom Partner** (Businesses and ministries · audience 1, ministry partners and donors)
+
+- **They want:** eternal fruit from their influence and resources.
+- **Their pain:** unsure whom to trust, and tired of shallow ministry.
+- **Needs to hear:** “Fund what heaven is doing. Every number we report comes from the official record. You will always know exactly what your partnership did.”
+- **First step:** sponsor a Revival To My City, or scholarship School students.
 
 ## 15. How an agent uses this system
 
@@ -518,6 +557,6 @@ replace it.
 
 | Version | Date | Change |
 | --- | --- | --- |
-| 2.0 | 2026-08-21 | The Messaging Standard replaces the Messaging Guide. The identity core is unchanged and was confirmed word for word against the source. New: theological language, the verbal system, metaphor architecture, capitalization and Scripture standards, channel and leadership voice, partnership communication, provenance classifications for reporting, sub-brand scripts, and the publication audit. Four levels of authority are introduced, so a locked conviction and an experimental profile are no longer published as though they carried the same weight. The voice filter no longer asks whether one named leader would say a thing: THE WORD has its own voice and both leaders have theirs. Audiences are restated as the master-brand priority order. All Is Well is recorded as a podcast rather than an initiative. Em dashes are prohibited outright, which the Doc had permitted. Corrected: the first-love citation was Revelation 3 and is Revelation 2:4. The ten-year target is removed and lives in the vision tool. The page is set as a document rather than a designed page, because a standard this long has to be readable from top to bottom. Companion version corrected from Brand Guide v5.0 to v7.5, which it had trailed by seven releases. |
+| 2.0 | 2026-08-21 | The Messaging Standard replaces the Messaging Guide. The identity core is unchanged and was confirmed word for word against the source. New: theological language, the verbal system, metaphor architecture, capitalization and Scripture standards, channel and leadership voice, partnership communication, provenance classifications for reporting, sub-brand scripts, and the publication audit. Four levels of authority are introduced, so a locked conviction and an experimental profile are no longer published as though they carried the same weight. The voice filter no longer asks whether one named leader would say a thing: THE WORD has its own voice and both leaders have theirs. Audiences are restated as the master-brand priority order. All Is Well is recorded as a podcast rather than an initiative. Em dashes are prohibited outright, which the Doc had permitted. Corrected: the first-love citation was Revelation 3 and is Revelation 2:4. The ten-year target is removed and lives in the vision tool. The page is set as a document rather than a designed page, because a standard this long has to be readable from top to bottom, and it carries a standing table of contents that marks where the reader is. Ideal client profiles are added as Section 09, carried forward from v1.0's five personas and marked experimental: the four fields they already had are the ministry's own words, and the fields they still need are named rather than invented. Banned language is split in two. A word we never use is matched literally; a word that is ordinary English until it keeps bad company is written as a pattern, and the build expands it, so epic night is a finding and epic poem is not. Companion version corrected from Brand Guide v5.0 to v7.5, which it had trailed by seven releases. |
 | 1.0 | 2026-08-15 | First published messaging guide. The foundation, the prophecy, the origin story, what we are and are not, the message architecture, five audience profiles, voice and vocabulary, and the proof policy. |
 
