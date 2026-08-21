@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<title>EVERY1 Movement · Brand</title>
+<meta name="description" content="How to use the EVERY1 Movement mark: which file, on which ground, how much room it needs, and what never to do. For teams and partner organisations using the mark at conferences and activations.">
+<link rel="icon" href="/assets/logos/every1-e1-reversed.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="EVERY1 Movement">
+<meta property="og:title" content="EVERY1 Movement · Brand">
+<meta property="og:description" content="How to use the EVERY1 Movement mark: which file, on which ground, how much room it needs, and what never to do.">
+<meta property="og:url" content="https://brand.every1movement.com/">
+<meta property="og:image" content="https://brand.every1movement.com/assets/images/every1-og-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="EVERY1 Movement">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="/assets/fonts/fonts.css">
+<link rel="stylesheet" href="/assets/brand.css">
+<style>
+  /* This page is drawn by the published stylesheet. The rules here are its own
+     furniture only: the shell, the hero, and the specimen frames. */
+  .wrap{max-width:1060px;margin:0 auto;padding:0 var(--space-5);}
+  body{background:var(--ground);}
+
+  header.top{background:var(--midnight);color:var(--parchment);padding:var(--space-7) 0 var(--space-8);}
+  header.top .mark{height:34px;width:auto;display:block;}
+  header.top h1{font-family:var(--serif-display);font-weight:400;font-size:clamp(30px,4.2vw,46px);line-height:1.08;color:var(--white);margin:var(--space-6) 0 0;max-width:22ch;text-wrap:balance;}
+  header.top p.lede{max-width:56ch;margin-top:var(--space-4);color:var(--parchment);}
+  header.top .acts{display:flex;flex-wrap:wrap;gap:var(--space-3);margin-top:var(--space-6);}
+
+  main{padding:var(--space-8) 0 var(--space-9);}
+  section+section{margin-top:var(--space-8);padding-top:var(--space-8);border-top:1px solid var(--border);}
+  section>h2{font-family:var(--serif-display);font-weight:400;font-size:clamp(26px,3.4vw,38px);line-height:1.1;margin:var(--space-2) 0 0;text-wrap:balance;}
+  section>p.intro{max-width:64ch;margin-top:var(--space-4);color:var(--text-muted);}
+
+  .steps{display:grid;grid-template-columns:1fr;gap:var(--space-4);margin-top:var(--space-6);}
+  @media(min-width:760px){.steps{grid-template-columns:repeat(3,1fr);}}
+  .steps .card{display:flex;flex-direction:column;gap:var(--space-2);}
+  .steps .n{font-family:var(--serif-display);font-size:30px;line-height:1;color:var(--accent-text);font-variant-numeric:tabular-nums;}
+  .steps h3{font-family:var(--sans);font-weight:700;font-size:var(--text-body-small);margin:0;}
+  .steps p{margin:0;font-size:var(--text-body-small);line-height:1.6;color:var(--text-muted);}
+
+  .marks{display:grid;grid-template-columns:1fr;gap:var(--space-5);margin-top:var(--space-6);}
+  @media(min-width:820px){.marks{grid-template-columns:1fr 1fr;}}
+  .mark{border:1px solid var(--border);border-radius:var(--radius-frame);background:var(--surface);overflow:hidden;display:flex;flex-direction:column;}
+  .mark .stage{padding:var(--space-6);display:flex;align-items:center;justify-content:center;min-height:150px;background:var(--parchment);}
+  .mark .stage.dark{background:var(--midnight);}
+  .mark .stage img{max-width:100%;max-height:110px;height:auto;display:block;}
+  .mark .body{padding:var(--space-5);display:flex;flex-direction:column;gap:var(--space-3);flex:1;}
+  .mark h3{font-family:var(--sans);font-weight:700;font-size:var(--text-body-small);margin:0;}
+  .mark p.use{margin:0;font-size:var(--text-body-small);line-height:1.6;color:var(--text-muted);}
+  .mark dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:4px var(--space-4);font-size:var(--text-caption);}
+  .mark dt{color:var(--text-soft);}
+  .mark dd{margin:0;color:var(--text-muted);}
+  .mark .files{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:var(--space-3);}
+  .mark .files a{font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:5px 9px;border:1px solid var(--border);border-radius:var(--radius-button);color:var(--text-muted);text-decoration:none;}
+  .mark .files a:hover{border-color:var(--accent-text);color:var(--accent-text);}
+
+  .swatches{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:var(--space-4);margin-top:var(--space-6);}
+  .swatch .chip{height:76px;border-radius:var(--radius-card);border:1px solid var(--border);}
+  .swatch b{display:block;margin-top:var(--space-3);font-size:var(--text-body-small);}
+  .swatch code{font-size:var(--text-caption);color:var(--text-muted);}
+  .swatch span{display:block;margin-top:4px;font-size:var(--text-caption);line-height:1.5;color:var(--text-muted);}
+
+  .faces{display:grid;grid-template-columns:1fr;gap:var(--space-4);margin-top:var(--space-6);}
+  @media(min-width:760px){.faces{grid-template-columns:repeat(3,1fr);}}
+  .face .spec{font-size:30px;line-height:1.1;}
+  .face b{display:block;margin-top:var(--space-3);font-size:var(--text-body-small);}
+  .face span{display:block;margin-top:4px;font-size:var(--text-caption);line-height:1.5;color:var(--text-muted);}
+
+  .never{margin-top:var(--space-6);border:1px solid var(--border);border-left:3px solid var(--state-error);border-radius:var(--radius-card);background:var(--surface);padding:var(--space-5) var(--space-6);}
+  .never ol{margin:0;padding-left:1.2em;font-size:var(--text-body-small);line-height:1.7;}
+  .never li{margin-bottom:var(--space-2);}
+
+  .masksplit{display:grid;grid-template-columns:1fr;gap:var(--space-6);align-items:start;margin-top:var(--space-6);}
+  @media(min-width:820px){.masksplit{grid-template-columns:210px 1fr;gap:var(--space-7);}}
+
+  .countries{margin-top:var(--space-6);}
+  .countries img{width:100%;height:auto;display:block;border:1px solid var(--border);border-radius:var(--radius-card);}
+
+  footer.foot{background:var(--midnight);color:var(--ink-reversed-muted);padding:var(--space-7) 0;margin-top:var(--space-9);}
+  footer.foot .wrap{display:flex;flex-wrap:wrap;gap:var(--space-4);justify-content:space-between;align-items:center;}
+  footer.foot img{height:20px;width:auto;display:block;}
+  footer.foot a{color:var(--accent-on-dark);}
+</style>
+</head>
+<body>
+
+<header class="top on-midnight">
+  <div class="wrap">
+    <img class="mark" src="/assets/logos/every1-horizontal-reversed.svg" alt="EVERY1 Movement">
+    <h1>How to use this <em>mark.</em></h1>
+    <p class="lede">For our team, and for any organisation carrying EVERY1 at a conference,
+    an activation, or on a shirt. Everything you need is on this page, and everything you
+    need to download is linked from it.</p>
+    <div class="acts">
+      <a class="btn" href="/assets/downloads/every1-logos.zip">Download every mark</a>
+      <a class="btn ghost" href="#marks">See the marks</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+
+    <section id="start">
+      <span class="eyebrow">Start here</span>
+      <h2>Three things, and you are right.</h2>
+      <div class="steps">
+        <div class="card"><div class="n">01</div><h3>Pick the file for the ground</h3><p>Dark background, use the reversed file. Light background, use the default. One colour only, use the black file. Never recolour a mark yourself.</p></div>
+        <div class="card"><div class="n">02</div><h3>Give it room, and size</h3><p>Every mark below states the clear space it needs and the smallest it may be set. Both are measured from the artwork, not guessed.</p></div>
+        <div class="card"><div class="n">03</div><h3>Check it before it prints</h3><p>Read the never list. If you are unsure, send it to us before it goes to a printer or a platform. We would rather answer than correct.</p></div>
+      </div>
+    </section>
+
+    <section id="marks">
+      <span class="eyebrow">The marks</span>
+      <h2>Every published form.</h2>
+      <p class="intro">These are the files. They are generated from the approved artwork, so what
+      you download here is what the mark is. Do not rebuild one by typesetting it.</p>
+      <div class="marks">
+        <div class="mark">
+          <div class="stage dark"><img src="/assets/logos/every1-horizontal-reversed.svg" alt="Horizontal lockup"></div>
+          <div class="body">
+            <h3>Horizontal lockup</h3>
+            <p class="use">The default mark. Site navigation, app headers, banners, shirts, and anywhere the name is introduced. EVERY1 beside MOVEMENT, which is what makes it a movement rather than a word.</p>
+            <dl>
+              <dt>Clear space</dt><dd>0.5x the cap height of EVERY1 on all four sides</dd>
+              <dt>Smallest</dt><dd>200px on screen · 45mm in print</dd>
+            </dl>
+            <div class="files"><a href="/assets/logos/every1-horizontal.svg" download>SVG default</a><a href="/assets/logos/every1-horizontal-reversed.svg" download>SVG reversed</a><a href="/assets/logos/every1-horizontal-black.svg" download>SVG black</a><a href="/assets/logos/every1-horizontal-1600.png" download>PNG 1600 default</a><a href="/assets/logos/every1-horizontal-reversed-1600.png" download>PNG 1600 reversed</a></div>
+          </div>
+        </div>
+        <div class="mark">
+          <div class="stage dark"><img src="/assets/logos/every1-bare-reversed.svg" alt="Bare wordmark"></div>
+          <div class="body">
+            <h3>Bare wordmark</h3>
+            <p class="use">The name alone, without MOVEMENT. For a surface that already says what this is: a shirt front, a banner, an app header, the second time the name appears on a page.</p>
+            <dl>
+              <dt>Clear space</dt><dd>0.5x the cap height of EVERY1 on all four sides</dd>
+              <dt>Smallest</dt><dd>140px on screen · 32mm in print</dd>
+            </dl>
+            <div class="files"><a href="/assets/logos/every1-bare.svg" download>SVG default</a><a href="/assets/logos/every1-bare-reversed.svg" download>SVG reversed</a><a href="/assets/logos/every1-bare-black.svg" download>SVG black</a><a href="/assets/logos/every1-bare-1600.png" download>PNG 1600 default</a><a href="/assets/logos/every1-bare-reversed-1600.png" download>PNG 1600 reversed</a></div>
+          </div>
+        </div>
+        <div class="mark">
+          <div class="stage dark"><img src="/assets/logos/every1-e1-reversed.svg" alt="The E1 icon"></div>
+          <div class="body">
+            <h3>The E1 icon</h3>
+            <p class="use">Two characters and no words. The avatar, the app icon, the lanyard, the sticker, and anything too small to read a lockup in. This is the form the door is recognised by at size.</p>
+            <dl>
+              <dt>Clear space</dt><dd>0.35x the cap height of EVERY1 on all four sides</dd>
+              <dt>Smallest</dt><dd>32px on screen · 10mm in print</dd>
+            </dl>
+            <div class="files"><a href="/assets/logos/every1-e1.svg" download>SVG default</a><a href="/assets/logos/every1-e1-reversed.svg" download>SVG reversed</a><a href="/assets/logos/every1-e1-black.svg" download>SVG black</a><a href="/assets/logos/every1-e1-1600.png" download>PNG 1600 default</a><a href="/assets/logos/every1-e1-reversed-1600.png" download>PNG 1600 reversed</a></div>
+          </div>
+        </div>
+        <div class="mark">
+          <div class="stage dark"><img src="/assets/logos/every1-numeral-reversed.svg" alt="The 1"></div>
+          <div class="body">
+            <h3>The 1</h3>
+            <p class="use">The numeral alone. Used as a mark at small size, and used as the shape photography is masked into, which is this door's signature move. Never redrawn, never outlined, never filled with anything but an image or Flame.</p>
+            <dl>
+              <dt>Clear space</dt><dd>0.35x its own height on all four sides</dd>
+              <dt>Smallest</dt><dd>24px on screen · 8mm in print</dd>
+            </dl>
+            <div class="files"><a href="/assets/logos/every1-numeral.svg" download>SVG default</a><a href="/assets/logos/every1-numeral-reversed.svg" download>SVG reversed</a><a href="/assets/logos/every1-numeral-black.svg" download>SVG black</a><a href="/assets/logos/every1-numeral-1600.png" download>PNG 1600 default</a><a href="/assets/logos/every1-numeral-reversed-1600.png" download>PNG 1600 reversed</a></div>
+          </div>
+        </div>
+        <div class="mark">
+          <div class="stage dark"><img src="/assets/logos/every1-vision-reversed.svg" alt="Vision lockup"></div>
+          <div class="body">
+            <h3>Vision lockup</h3>
+            <p class="use">The whole promise in one mark: the verse above, the name, and what it leads to below. Banners, stage backdrops, and the back of a shirt. Never small.</p>
+            <dl>
+              <dt>Clear space</dt><dd>0.5x the cap height of EVERY1 on all four sides</dd>
+              <dt>Smallest</dt><dd>260px on screen · 58mm in print</dd>
+            </dl>
+            <div class="files"><a href="/assets/logos/every1-vision.svg" download>SVG default</a><a href="/assets/logos/every1-vision-reversed.svg" download>SVG reversed</a><a href="/assets/logos/every1-vision-black.svg" download>SVG black</a><a href="/assets/logos/every1-vision-1600.png" download>PNG 1600 default</a><a href="/assets/logos/every1-vision-reversed-1600.png" download>PNG 1600 reversed</a></div>
+          </div>
+        </div>
+        <div class="mark">
+          <div class="stage dark"><img src="/assets/logos/every1-promise-reversed.svg" alt="Promise lockup"></div>
+          <div class="body">
+            <h3>Promise lockup</h3>
+            <p class="use">The name and the promise without the verse, for where the vision lockup is too tall.</p>
+            <dl>
+              <dt>Clear space</dt><dd>0.5x the cap height of EVERY1 on all four sides</dd>
+              <dt>Smallest</dt><dd>200px on screen · 45mm in print</dd>
+            </dl>
+            <div class="files"><a href="/assets/logos/every1-promise.svg" download>SVG default</a><a href="/assets/logos/every1-promise-reversed.svg" download>SVG reversed</a><a href="/assets/logos/every1-promise-black.svg" download>SVG black</a><a href="/assets/logos/every1-promise-1600.png" download>PNG 1600 default</a><a href="/assets/logos/every1-promise-reversed-1600.png" download>PNG 1600 reversed</a></div>
+          </div>
+        </div>
+        <div class="mark">
+          <div class="stage dark"><img src="/assets/logos/every1-usa-reversed.svg" alt="Country lockup, USA"></div>
+          <div class="body">
+            <h3>Country lockup, USA</h3>
+            <p class="use">The USA country lockup. One per country, and each one is drawn, not generated.</p>
+            <dl>
+              <dt>Clear space</dt><dd>0.5x the cap height of EVERY1 on all four sides</dd>
+              <dt>Smallest</dt><dd>180px on screen · 40mm in print</dd>
+            </dl>
+            <div class="files"><a href="/assets/logos/every1-usa.svg" download>SVG default</a><a href="/assets/logos/every1-usa-reversed.svg" download>SVG reversed</a><a href="/assets/logos/every1-usa-black.svg" download>SVG black</a><a href="/assets/logos/every1-usa-1600.png" download>PNG 1600 default</a><a href="/assets/logos/every1-usa-reversed-1600.png" download>PNG 1600 reversed</a></div>
+          </div>
+        </div>
+        <div class="mark">
+          <div class="stage dark"><img src="/assets/logos/every1-uganda-reversed.svg" alt="Country lockup, Uganda"></div>
+          <div class="body">
+            <h3>Country lockup, Uganda</h3>
+            <p class="use">The Uganda country lockup. One per country, and each one is drawn, not generated.</p>
+            <dl>
+              <dt>Clear space</dt><dd>0.5x the cap height of EVERY1 on all four sides</dd>
+              <dt>Smallest</dt><dd>180px on screen · 40mm in print</dd>
+            </dl>
+            <div class="files"><a href="/assets/logos/every1-uganda.svg" download>SVG default</a><a href="/assets/logos/every1-uganda-reversed.svg" download>SVG reversed</a><a href="/assets/logos/every1-uganda-black.svg" download>SVG black</a><a href="/assets/logos/every1-uganda-1600.png" download>PNG 1600 default</a><a href="/assets/logos/every1-uganda-reversed-1600.png" download>PNG 1600 reversed</a></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="colour">
+      <span class="eyebrow">Colour</span>
+      <h2>Six, and no others.</h2>
+      <p class="intro">Flame is the accent and the numeral. It is never used for text and never
+      as a ground under text: at text size it does not carry enough contrast. Where you need
+      fire at text size, use Ember.</p>
+      <div class="swatches">
+        <div class="swatch">
+          <div class="chip" style="background:#0B1A2D"></div>
+          <b>Midnight</b><code>#0B1A2D</code>
+          <span>Primary ground. Heroes, bands, footers.</span>
+        </div>
+        <div class="swatch">
+          <div class="chip" style="background:#023D6F"></div>
+          <b>Word Blue</b><code>#023D6F</code>
+          <span>Structural secondary. Logo continuity.</span>
+        </div>
+        <div class="swatch">
+          <div class="chip" style="background:#F7F3EC" style="border-color:var(--border)"></div>
+          <b>Parchment</b><code>#F7F3EC</code>
+          <span>Light ground. Official paper, never gray.</span>
+        </div>
+        <div class="swatch">
+          <div class="chip" style="background:#F85842"></div>
+          <b>Flame</b><code>#F85842</code>
+          <span>Non-text accent: BURN moments, display numerals, highlights. Never carries text. ≤10%.</span>
+        </div>
+        <div class="swatch">
+          <div class="chip" style="background:#C13A24"></div>
+          <b>Ember</b><code>#C13A24</code>
+          <span>Fire at text size: primary buttons, links, labels, hovers.</span>
+        </div>
+        <div class="swatch">
+          <div class="chip" style="background:#FFFFFF" style="border-color:var(--border)"></div>
+          <b>White</b><code>#FFFFFF</code>
+          <span>Cards, reversed text, button labels.</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="type">
+      <span class="eyebrow">Type</span>
+      <h2>Three faces, free to everyone.</h2>
+      <p class="intro">All three are on Google Fonts under the Open Font License, so any team or
+      partner can install them at no cost. Do not substitute a different face.</p>
+      <div class="faces">
+        <div class="face">
+          <div class="spec" style="font-family:var(--serif-display)">Aa</div>
+          <b>DM Serif Display</b>
+          <span>Large headlines, 36px and up. Fine, engraved hairlines. Regular + Italic only. No bold exists.</span>
+        </div>
+        <div class="face">
+          <div class="spec" style="font-family:var(--serif-text)">Aa</div>
+          <b>DM Serif Text</b>
+          <span>Serif moments from 22–36px: pull quotes, the prophecy, document headings. Regular + Italic only.</span>
+        </div>
+        <div class="face">
+          <div class="spec" style="font-family:var(--sans)">Aa</div>
+          <b>DM Sans</b>
+          <span>Everything functional: body, nav, labels, buttons, sub-brand materials. Weights 400–700 with true italics.</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="never">
+      <span class="eyebrow">Never</span>
+      <h2>The short list.</h2>
+      <p class="intro">Everything else is judgement. These are not.</p>
+      <div class="never">
+        <ol>
+          <li>Never place any logo on Flame (#F85842).</li>
+          <li>Never redraw, restretch, rotate, or recolour the mark outside the three published inks.</li>
+          <li>Never add effects: no shadow, glow, bevel, outline, or gradient.</li>
+          <li>Never set the mark below its published minimum width.</li>
+          <li>Never rebuild a lockup by typesetting it. Use the published file.</li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="mask">
+      <span class="eyebrow">The 1 as a mask</span>
+      <h2>Photography cut into the numeral.</h2>
+      <div class="masksplit">
+        <figure class="mask-1" style="margin:0"><img src="/assets/images/every1-mask-example.jpg" alt="A photograph masked into the shape of the numeral."></figure>
+        <div>
+          <p class="intro" style="margin-top:0">This is the one move that belongs to EVERY1 and to
+          nothing else. A photograph is cut into the shape of the 1 rather than set beside it.</p>
+          <ol class="rules" style="margin-top:var(--space-4);padding-left:1.2em;font-size:var(--text-body-small);line-height:1.7">
+            <li>Use the published <code class="code">every1-numeral.svg</code> as the shape. Never redraw it and never use a font character.</li>
+            <li>It holds a photograph. Never type, never a logo, never another mark.</li>
+            <li>No outline, no shadow, no rotation. One per view.</li>
+            <li>The photograph still needs everything a photograph needs: real capture, consent from the people in it, and a caption where it is published.</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section id="countries">
+      <span class="eyebrow">Country lockups</span>
+      <h2>One per country, drawn not generated.</h2>
+      <p class="intro">Each country lockup carries its own flag in the bar beneath the name. USA is
+      the single exception and carries brand colours, because its flag is close enough that a true
+      red and blue reads as a mistake.</p>
+      <div class="countries">
+        <img src="/assets/images/every1-country-lockups.png" alt="Six country lockups: USA, Nigeria, Uganda, Brazil, India and the Philippines.">
+      </div>
+      <p class="intro" style="margin-top:var(--space-5)"><b>Need a country that is not published yet?</b>
+      Country names are drawn as outlines, so no build can compose one. Write to
+      <a class="link" href="mailto:brand@theword.world">brand@theword.world</a> with the country and
+      what it is for, and it is drawn, published here, and yours to download.</p>
+    </section>
+
+    <section id="check">
+      <span class="eyebrow">Check your work</span>
+      <h2>Before it ships.</h2>
+      <p class="intro">Anyone can check a page or a file against this standard without asking us.
+      The checker reads the published rules, so it is always checking against what is current.</p>
+      <pre class="code" style="margin-top:var(--space-5);padding:var(--space-4);overflow-x:auto;border:1px solid var(--border);border-radius:var(--radius-card)">python3 brand_check.py poster.html</pre>
+      <p class="intro">It decides the mechanical half: colours outside the palette, a face that is not
+      one of the three, text in Flame, a removed focus ring, an image with no alternative text. It
+      does not decide whether a photograph is real or whether the words are true. A clean run is not
+      a finished check.</p>
+    </section>
+
+    <section id="ask">
+      <span class="eyebrow">Ask</span>
+      <h2>When in doubt, ask first.</h2>
+      <p class="intro">A question costs a minute. A reprint costs a conference.
+      <a class="link" href="mailto:brand@theword.world">brand@theword.world</a></p>
+      <p class="intro"><b>For machines.</b> Everything on this page is published as data at
+      <a class="link" href="/ai/manifest.json">/ai/manifest.json</a>, with a checksum on every file,
+      so an AI tool can read the current standard rather than remembering an old one.</p>
+    </section>
+
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <img src="/assets/logos/every1-horizontal-reversed.svg" alt="EVERY1 Movement">
+    <span>Every tribe. Every tongue. Every nation.</span>
+    <span>Brand v7.4 · <a href="mailto:brand@theword.world">brand@theword.world</a></span>
+  </div>
+</footer>
+
+</body>
+</html>

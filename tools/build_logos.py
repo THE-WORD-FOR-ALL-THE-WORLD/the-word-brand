@@ -104,10 +104,14 @@ GLYPH_SIZES = [512, 1024, 2048]
 # (file, pixels, pad as a fraction of the glyph, plate the Midnight ground behind it).
 # Browser favicons stay tight and transparent so they read at 16px. Home-screen icons
 # get a Midnight plate and a real safe area, because the OS rounds their corners.
+# Every size carries the Midnight plate. The microphone is knocked out of the disc
+# rather than drawn as a shape, so a bare favicon has a Midnight disc and a
+# transparent microphone: on dark browser chrome both vanish and the icon is gone.
+# The plate is what the microphone reads against, at every size.
 FAVICONS = [
-    ("favicon-16.png", 16, 0.02, False),
-    ("favicon-32.png", 32, 0.02, False),
-    ("favicon-48.png", 48, 0.02, False),
+    ("favicon-16.png", 16, 0.10, True),
+    ("favicon-32.png", 32, 0.12, True),
+    ("favicon-48.png", 48, 0.12, True),
     ("apple-touch-icon-180.png", 180, 0.16, True),
     ("icon-192.png", 192, 0.16, True),
     ("icon-512.png", 512, 0.16, True),
@@ -925,6 +929,22 @@ def render_social_card(masters):
 
 
 SOCIAL_CARD = os.path.join(REPO, "assets", "images", "og-card.png")
+EVERY1_CARD = os.path.join(REPO, "assets", "images", "every1-og-card.png")
+
+
+def render_every1_card(masters):
+    """EVERY1's own link preview. Its own mark, no parent, on its own ground."""
+    from PIL import Image
+
+    W, H = 1200, 630
+    card = Image.new("RGBA", (W, H), (11, 26, 45, 255))
+    mark_w, rule_w, gap = 620, 96, 46
+    mark = render(masters[("every1", "horizontal")], EVERY1_INKS["-reversed"], mark_w)
+    rule = Image.new("RGBA", (rule_w, 1), (247, 243, 236, 56))
+    top = (H - (mark.height + gap + rule.height)) // 2
+    card.alpha_composite(mark, ((W - mark_w) // 2, top))
+    card.alpha_composite(rule, ((W - rule_w) // 2, top + mark.height + gap))
+    return card
 SWATCHES = os.path.join(REPO, "assets", "downloads", "the-word-swatches.ase")
 
 
@@ -1083,6 +1103,8 @@ def build(check):
                 w.stale.append(f"assets/logos/the-word/favicon/{name}")
         if not os.path.exists(SOCIAL_CARD):
             w.stale.append("assets/images/og-card.png")
+        if not os.path.exists(EVERY1_CARD):
+            w.stale.append("assets/images/every1-og-card.png")
         if bs_read_bytes(SWATCHES) != build_ase(palette_for_swatches()):
             w.stale.append("assets/downloads/the-word-swatches.ase")
         # Zipping needs no imaging library, so the packs are content-verified in CI
@@ -1100,6 +1122,7 @@ def build(check):
             w.image(os.path.join(FAVICON, name), img)
 
         w.image(SOCIAL_CARD, render_social_card(masters))
+        w.image(EVERY1_CARD, render_every1_card(masters))
         with open(SWATCHES, "wb") as fh:
             fh.write(build_ase(palette_for_swatches()))
         print("updated  assets/downloads/the-word-swatches.ase")

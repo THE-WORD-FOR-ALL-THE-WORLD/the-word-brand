@@ -11,6 +11,15 @@
       "note": "Generated from this repository on every push. Cannot drift, which is why its version is recorded as auto rather than as a number somebody has to remember to update."
     },
     {
+      "id": "every1-site",
+      "name": "EVERY1 brand site",
+      "kind": "website",
+      "location": "https://brand.every1movement.com",
+      "syncedVersion": "auto",
+      "syncedBy": "the build",
+      "note": "Published from every1/ in this repository by the same build as the portal, so the two cannot disagree, and served from its own domain and its own Pages project so EVERY1 stands alone. It carries its own copies of the stylesheet, the faces and its marks: a partner organisation is never sent to the parent's domain, and the site does not go dark if that domain does."
+    },
+    {
       "id": "package-brand",
       "name": "@theword/brand",
       "kind": "package",

@@ -643,7 +643,10 @@ def published_pages() -> list:
             d
             for d in dirs
             if not d.startswith("_")
-            and d not in {".git", ".github", ".wrangler", "tools", "ai", "ai-source", ".claude", "skills", "archive"}
+            # every1/ is a second site with its own root, discovery files and domain.
+            # It is published from this build but it is not a page of this portal.
+            and d not in {".git", ".github", ".wrangler", "tools", "ai", "ai-source",
+                          ".claude", "skills", "archive", "every1", "packages", "_working"}
         ]
         if "index.html" in files:
             rel = os.path.relpath(root, REPO).replace(os.sep, "/")

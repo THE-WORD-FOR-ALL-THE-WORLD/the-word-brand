@@ -382,13 +382,13 @@
       }
     ]
   },
-  "version": "7.2",
+  "version": "7.4",
   "messagingVersion": "1.0",
   "updated": "2026-08-20",
   "authority": "canonical",
   "rule": "Use these assets. Never generate photography or video of people or ministry, and never substitute stock. If the asset you need is not listed, request it and leave the slot empty.",
   "counts": {
-    "total": 339,
+    "total": 340,
     "approved": 320,
     "counterExamples": 0
   },
@@ -566,6 +566,14 @@
       "status": "approved",
       "capture": "SLC Conference · Sanga, Mbarara, Uganda · 30 Jul 2026",
       "note": "Serving the seated rows individually rather than from the platform. Documentary capture for the BURN door."
+    },
+    {
+      "file": "assets/images/every1-og-card.png",
+      "url": "https://brand.theword.world/assets/images/every1-og-card.png",
+      "kind": "image",
+      "group": "images",
+      "bytes": 10577,
+      "status": "published, no usage note recorded"
     },
     {
       "file": "assets/images/every1-one-to-one.jpg",
@@ -4474,7 +4482,7 @@
       "url": "https://brand.theword.world/assets/logos/the-word/favicon/favicon-16.png",
       "kind": "image",
       "group": "favicon",
-      "bytes": 513,
+      "bytes": 485,
       "status": "published, no usage note recorded"
     },
     {
@@ -4482,7 +4490,7 @@
       "url": "https://brand.theword.world/assets/logos/the-word/favicon/favicon-32.png",
       "kind": "image",
       "group": "favicon",
-      "bytes": 974,
+      "bytes": 895,
       "status": "published, no usage note recorded"
     },
     {
@@ -4490,7 +4498,7 @@
       "url": "https://brand.theword.world/assets/logos/the-word/favicon/favicon-48.png",
       "kind": "image",
       "group": "favicon",
-      "bytes": 1372,
+      "bytes": 1289,
       "status": "published, no usage note recorded"
     },
     {
