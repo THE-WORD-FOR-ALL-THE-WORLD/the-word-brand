@@ -283,6 +283,13 @@ def check(name: str, text: str, std: dict) -> list:
             ("fail", "M4", "'make Jesus Lord' is prohibited. He is Lord. Use 'confess Jesus as Lord'.")
         )
 
+    # M6: His name is capitalised. Always, in every context.
+    for m in re.finditer(r"\b(jesus|christ)\b", prose):
+        findings.append(
+            ("fail", "M6", f"'{m.group(1)}' is lowercase. His name is always capitalised.")
+        )
+        break
+
     # M5: the Holy Spirit is a Person, never an it. §13.
     if re.search(r"\bHoly Spirit[^.?!]{0,40}\bit\b", prose):
         findings.append(

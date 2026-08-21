@@ -503,9 +503,12 @@ def parse_messaging_guide(path: str = MESSAGING_GUIDE) -> dict:
     # words, carried from v1.0, and the rest are deliberately unfilled.
     profiles = []
     for m in re.finditer(
-        r'<div data-profile="([^"]+)" data-maps-to="([^"]+)">(.*?)\n  </div>', s, re.S
+        r'<div class="icp" data-profile="([^"]+)" data-maps-to="([^"]+)" data-photo="([^"]*)">'
+        r"(.*?)\n  </div>",
+        s,
+        re.S,
     ):
-        b = m.group(3)
+        b = m.group(4)
         def grab(label):
             r = re.search(r"<strong>%s</strong>(.*?)</p>" % label, b, re.S)
             return strip_tags(r.group(1)) if r else ""
@@ -513,6 +516,7 @@ def parse_messaging_guide(path: str = MESSAGING_GUIDE) -> dict:
         profiles.append({
             "profile": m.group(1),
             "mapsTo": m.group(2),
+            "photo": m.group(3),
             "who": strip_tags(who.group(1)) if who else "",
             "wants": grab("They want"),
             "pain": grab("Their pain:"),

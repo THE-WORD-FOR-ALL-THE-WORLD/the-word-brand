@@ -411,35 +411,35 @@ This is the master-brand audience priority. Know which audience a piece is for b
 
 Experimental, not yet ratified. The four fields below are the ministry's own words. The rest of each profile is deliberately unfilled: where they already are, what triggers the search, the real objection, who else they are listening to, and what tells us it worked. Do not invent those. Use these to aim a piece of writing, not to cite as settled.
 
-**The Local Pastor** (US and international · audience 3, pastors and church leaders)
+**The Local Pastor** (US and international · audience 3, Pastors and church leaders)
 
 - **They want:** to multiply disciples and lead revival without burning out.
 - **Their pain:** exhaustion, plateaued growth, no discipleship pathway.
 - **Needs to hear:** “We come to serve your church, not build ours. When we leave, your people stay, on fire and equipped.”
 - **First step:** host a Revival To My City, or train leaders through the School.
 
-**The Hungry Church Member** (The pew, awake or asleep · audience 6, the spiritually hungry but passive believer)
+**The Hungry Church Member** (The pew, awake or asleep · audience 6, The spiritually hungry but passive believer)
 
 - **They want:** to grow spiritually and live on mission.
 - **Their pain:** dry faith, and the conviction that there must be more.
 - **Needs to hear:** “There is more, and it isn’t a program. It’s a real relationship with Jesus, and it starts with turning back to your first love.”
 - **First step:** join the EVERY1 Movement, or start the School.
 
-**The Lost Online Searcher** (18 to 30, digital-first · audience 7, those who do not yet know jesus)
+**The Lost Online Searcher** (18 to 30, digital-first · audience 7, Those who do not yet know Jesus)
 
 - **They want:** truth, healing, identity, purpose.
 - **Their pain:** anxiety, loneliness, distrust of religion, hunger for what is real.
 - **Needs to hear:** “What you’re looking for has a name. You can have a real relationship with Jesus, starting today.”
 - **First step:** watch a testimony, request prayer, then begin the intro course.
 
-**The Legacy Leader** (66 and over, finishing well · audience 4, evangelists and ministers)
+**The Legacy Leader** (66 and over, finishing well · audience 4, Evangelists and ministers)
 
 - **They want:** to pass the torch and leave their people stronger.
 - **Their pain:** feeling forgotten, and the fear that the work dies with them.
 - **Needs to hear:** “Your fire isn’t finished. The next generation needs what you carry.”
 - **First step:** mentor through the School, cover the movement in prayer, give.
 
-**The Kingdom Partner** (Businesses and ministries · audience 1, ministry partners and donors)
+**The Kingdom Partner** (Businesses and ministries · audience 1, Ministry partners and donors)
 
 - **They want:** eternal fruit from their influence and resources.
 - **Their pain:** unsure whom to trust, and tired of shallow ministry.

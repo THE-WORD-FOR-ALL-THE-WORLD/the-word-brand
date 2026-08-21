@@ -140,6 +140,23 @@
   [data-vision-ref]{color:var(--soft);font-size:14px;}
   .who{font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--soft);margin-bottom:10px;}
 
+  /* Ideal client profiles are cards. They are the one place in this document
+     where the reader compares entries side by side rather than reading through,
+     so they get a border and a face. Radius is the published card value. */
+  .icps{display:grid;gap:16px;margin:24px 0 10px;}
+  .icp{border:1px solid var(--rule);border-radius:4px;padding:22px 24px 20px;}
+  .icp .head{display:flex;align-items:center;gap:15px;margin-bottom:15px;}
+  .icp .avatar{flex:0 0 58px;width:58px;height:58px;border-radius:50%;overflow:hidden;
+    background:var(--parchment);border:1px solid var(--rule);display:flex;
+    align-items:center;justify-content:center;font-family:var(--serif-display);
+    font-size:19px;line-height:1;color:var(--word-blue);letter-spacing:.02em;}
+  .icp .avatar img{width:100%;height:100%;object-fit:cover;display:block;}
+  .icp .ident{min-width:0;}
+  .icp h3{margin:0 0 3px;font-size:17px;}
+  .icp .who{margin:0;font-size:11.5px;letter-spacing:.07em;}
+  .icp p{margin-bottom:9px;font-size:15.5px;}
+  .icp p:last-child{margin-bottom:0;}
+
   /* the authority tier, stated in words rather than drawn */
   .tier{
     display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.14em;
@@ -590,46 +607,75 @@
   <span class="tier" data-t="EXPERIMENTAL">Experimental</span>
   <p class="lede">Section 08 sets who we speak to, and in what order. This sets who they actually are.</p>
   <p>Each profile maps to one audience in that priority order. The four filled fields are carried forward from Messaging Guide v1.0 and are the ministry&rsquo;s own words. The fields listed at the end of this section are not filled in for any profile yet, and nothing has been invented to fill them: an unknown stays a labelled unknown until somebody knows the answer. That is why this section is marked experimental rather than standard. Use it to aim a piece of writing. Do not cite it as settled.</p>
-  <div data-profile="The Local Pastor" data-maps-to="Pastors and church leaders">
-    <h3>The Local Pastor</h3>
-    <p class="who">US and international &middot; audience 3, pastors and church leaders</p>
+  <p>Each card carries a round photo slot. It shows initials until a picture is set on <code>data-photo</code>. A profile is a composite rather than a person, so the picture can never be a stock headshot or a generated face, and it must not be a real member of a congregation presented as a type. Use a photograph this ministry owns and has permission for, or leave the initials.</p>
+  <div class="icps">
+  <div class="icp" data-profile="The Local Pastor" data-maps-to="Pastors and church leaders" data-photo="">
+    <div class="head">
+      <div class="avatar" aria-hidden="true">LP</div>
+      <div class="ident">
+        <h3>The Local Pastor</h3>
+        <p class="who">US and international &middot; audience 3, Pastors and church leaders</p>
+      </div>
+    </div>
     <p><strong>They want</strong> to multiply disciples and lead revival without burning out.</p>
     <p><strong>Their pain:</strong> exhaustion, plateaued growth, no discipleship pathway.</p>
     <p><strong>They need to hear:</strong> &ldquo;We come to serve your church, not build ours. When we leave, your people stay, on fire and equipped.&rdquo;</p>
     <p><strong>First step:</strong> host a Revival To My City, or train leaders through the School.</p>
   </div>
-  <div data-profile="The Hungry Church Member" data-maps-to="The spiritually hungry but passive believer">
-    <h3>The Hungry Church Member</h3>
-    <p class="who">The pew, awake or asleep &middot; audience 6, the spiritually hungry but passive believer</p>
+  <div class="icp" data-profile="The Hungry Church Member" data-maps-to="The spiritually hungry but passive believer" data-photo="">
+    <div class="head">
+      <div class="avatar" aria-hidden="true">HM</div>
+      <div class="ident">
+        <h3>The Hungry Church Member</h3>
+        <p class="who">The pew, awake or asleep &middot; audience 6, The spiritually hungry but passive believer</p>
+      </div>
+    </div>
     <p><strong>They want</strong> to grow spiritually and live on mission.</p>
     <p><strong>Their pain:</strong> dry faith, and the conviction that there must be more.</p>
     <p><strong>They need to hear:</strong> &ldquo;There is more, and it isn&rsquo;t a program. It&rsquo;s a real relationship with Jesus, and it starts with turning back to your first love.&rdquo;</p>
     <p><strong>First step:</strong> join the EVERY1 Movement, or start the School.</p>
   </div>
-  <div data-profile="The Lost Online Searcher" data-maps-to="Those who do not yet know Jesus">
-    <h3>The Lost Online Searcher</h3>
-    <p class="who">18 to 30, digital-first &middot; audience 7, those who do not yet know jesus</p>
+  <div class="icp" data-profile="The Lost Online Searcher" data-maps-to="Those who do not yet know Jesus" data-photo="">
+    <div class="head">
+      <div class="avatar" aria-hidden="true">LS</div>
+      <div class="ident">
+        <h3>The Lost Online Searcher</h3>
+        <p class="who">18 to 30, digital-first &middot; audience 7, Those who do not yet know Jesus</p>
+      </div>
+    </div>
     <p><strong>They want</strong> truth, healing, identity, purpose.</p>
     <p><strong>Their pain:</strong> anxiety, loneliness, distrust of religion, hunger for what is real.</p>
     <p><strong>They need to hear:</strong> &ldquo;What you&rsquo;re looking for has a name. You can have a real relationship with Jesus, starting today.&rdquo;</p>
     <p><strong>First step:</strong> watch a testimony, request prayer, then begin the intro course.</p>
   </div>
-  <div data-profile="The Legacy Leader" data-maps-to="Evangelists and ministers">
-    <h3>The Legacy Leader</h3>
-    <p class="who">66 and over, finishing well &middot; audience 4, evangelists and ministers</p>
+  <div class="icp" data-profile="The Legacy Leader" data-maps-to="Evangelists and ministers" data-photo="">
+    <div class="head">
+      <div class="avatar" aria-hidden="true">LL</div>
+      <div class="ident">
+        <h3>The Legacy Leader</h3>
+        <p class="who">66 and over, finishing well &middot; audience 4, Evangelists and ministers</p>
+      </div>
+    </div>
     <p><strong>They want</strong> to pass the torch and leave their people stronger.</p>
     <p><strong>Their pain:</strong> feeling forgotten, and the fear that the work dies with them.</p>
     <p><strong>They need to hear:</strong> &ldquo;Your fire isn&rsquo;t finished. The next generation needs what you carry.&rdquo;</p>
     <p><strong>First step:</strong> mentor through the School, cover the movement in prayer, give.</p>
   </div>
-  <div data-profile="The Kingdom Partner" data-maps-to="Ministry partners and donors">
-    <h3>The Kingdom Partner</h3>
-    <p class="who">Businesses and ministries &middot; audience 1, ministry partners and donors</p>
+  <div class="icp" data-profile="The Kingdom Partner" data-maps-to="Ministry partners and donors" data-photo="">
+    <div class="head">
+      <div class="avatar" aria-hidden="true">KP</div>
+      <div class="ident">
+        <h3>The Kingdom Partner</h3>
+        <p class="who">Businesses and ministries &middot; audience 1, Ministry partners and donors</p>
+      </div>
+    </div>
     <p><strong>They want</strong> eternal fruit from their influence and resources.</p>
     <p><strong>Their pain:</strong> unsure whom to trust, and tired of shallow ministry.</p>
     <p><strong>They need to hear:</strong> &ldquo;Fund what heaven is doing. Every number we report comes from the official record. You will always know exactly what your partnership did.&rdquo;</p>
     <p><strong>First step:</strong> sponsor a Revival To My City, or scholarship School students.</p>
   </div>
+  </div>
+
   <h3>What every profile still needs</h3>
   <p>None of the following is known for any profile above. Each one changes how a piece is written, so each is worth answering rather than guessing.</p>
   <ul>
@@ -1515,6 +1561,22 @@
     });
   }, { rootMargin: "-12% 0px -78% 0px" });
   document.querySelectorAll("section[data-sec]").forEach(function (el) { obs.observe(el); });
+})();
+
+/* A profile card shows its initials until a picture is named on data-photo.
+   The path is recorded in one place and the avatar follows it. With no script
+   the initials stand, which is a fine fallback for a decorative avatar. */
+(function () {
+  document.querySelectorAll(".icp[data-photo]").forEach(function (card) {
+    var src = card.getAttribute("data-photo");
+    if (!src) return;
+    var slot = card.querySelector(".avatar");
+    if (!slot) return;
+    var img = new Image();
+    img.src = src;
+    img.alt = "";
+    img.onload = function () { slot.textContent = ""; slot.appendChild(img); };
+  });
 })();
 </script>
 
