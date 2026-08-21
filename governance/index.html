@@ -287,6 +287,46 @@
           <p class="why">A press proof that lives in someone's email is a fact the system does not have.</p>
         </div>
       </div>
+      <div class="policy">
+        <span class="badge">GOV11</span>
+        <div>
+          <h3>Locked language stays locked</h3>
+          <p>No team member, contractor or AI system redefines a locked conviction or standard term without leadership approval.</p>
+          <p class="why">A standard that anyone can quietly reword is not a standard.</p>
+        </div>
+      </div>
+      <div class="policy">
+        <span class="badge">GOV12</span>
+        <div>
+          <h3>Nothing invented</h3>
+          <p>No contractor or AI system invents doctrine, quotations, testimonies, statistics, partner needs, biography or outcomes.</p>
+          <p class="why">Law II: the record or nothing. A ministry is believed because it can be checked.</p>
+        </div>
+      </div>
+      <div class="policy">
+        <span class="badge">GOV13</span>
+        <div>
+          <h3>Unknown stays labelled</h3>
+          <p>Information that is not known stays a labelled placeholder or is escalated. An empty field is never filled with an assumption.</p>
+          <p class="why">A guessed number outlives the guess and becomes a fact nobody can trace.</p>
+        </div>
+      </div>
+      <div class="policy">
+        <span class="badge">GOV14</span>
+        <div>
+          <h3>Preaching is punctuation only</h3>
+          <p>Preaching and preaching-derived writing are edited for punctuation unless the speaker asks for style or content editing.</p>
+          <p class="why">The preacher's cadence, force and theology are the content, not a first draft.</p>
+        </div>
+      </div>
+      <div class="policy">
+        <span class="badge">GOV15</span>
+        <div>
+          <h3>A human approves</h3>
+          <p>An AI audit may identify violations. Final approval of any published asset stays with the designated human owner.</p>
+          <p class="why">The audit is a tool. Responsibility does not transfer to it.</p>
+        </div>
+      </div>
       <div class="gates">
         <h2 class="title">The non-negotiables</h2>
         <p class="note">The rules about what the brand looks and sounds like are not restated here. These are the audit's gates, read from https://brand.theword.world/ai/audit.md at build time. Any gate failure fails the whole audit.</p>
@@ -618,6 +658,23 @@
             <li>Rebuild: the review registers itself in llms.txt and the sitemap.</li>
           </ol>
           <p class="done"><b>Done when:</b> The review appears on /reviews and in the machine-readable layer.</p>
+        </div>
+      </details>
+      <details class="sop" id="SOP9">
+        <summary>
+          <h3>Propose a change to locked language</h3>
+          <span class="meta">Anyone &middot; A locked conviction, term or standard needs to change.</span>
+        </summary>
+        <div class="body">
+          <ol>
+            <li>Name the exact section and the current wording.</li>
+            <li>Write the requested wording in full, not a description of it.</li>
+            <li>State the reason, and what changes if it is refused.</li>
+            <li>List the channels and generated files the change reaches.</li>
+            <li>Name the owner and the approver, and propose an effective date.</li>
+            <li>Open it as a pull request so the diff is the proposal.</li>
+          </ol>
+          <p class="done"><b>Done when:</b> Joel and Nathan have approved, the changelog row is written, and the build passes.</p>
         </div>
       </details>
     </section>

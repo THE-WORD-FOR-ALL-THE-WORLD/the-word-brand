@@ -958,16 +958,21 @@
           "epic",
           "unreal",
           "next-level",
+          "next level",
           "game-changer",
+          "game-changing",
           "\"God showed up and showed out\"",
           "\"you won't believe\"",
-          "walls of 🔥 emojis",
-          "ALL-CAPS excitement"
+          "walls of flame emojis",
+          "ALL-CAPS excitement",
+          "\"something big is coming\"",
+          "\"you do not want to miss this\"",
+          "\"come expecting\""
         ],
-        "why": "Hype manufactures a feeling. We report what God actually did. The record is more powerful than the adjective."
+        "why": "Manufactured intensity. Excitement must arise from substance, or it is not excitement, it is volume."
       },
       {
-        "category": "Corporate Polish",
+        "category": "Corporate polish",
         "words": [
           "leverage",
           "synergy",
@@ -976,12 +981,14 @@
           "engage stakeholders",
           "\"excited to announce\"",
           "comprehensive",
-          "robust"
+          "robust",
+          "relevant",
+          "lean in"
         ],
-        "why": "We are a ministry, not a vendor. Corporate language makes the guide the hero and the mission a product."
+        "why": "Borrowed authority. It makes a ministry sound like a vendor and says nothing a person can act on."
       },
       {
-        "category": "Churchy Insider Talk",
+        "category": "Churchy insider talk",
         "words": [
           "traveling mercies",
           "hedge of protection",
@@ -991,9 +998,28 @@
           "\"contend for breakthrough\"",
           "\"a God thing\"",
           "\"fresh anointing\" (unexplained)",
-          "\"blessed to announce\""
+          "\"blessed to announce\"",
+          "\"get plugged in\"",
+          "authentic community"
         ],
-        "why": "Insider language tells a new believer this isn't for them. Everything we say is for them."
+        "why": "Language that only works if you are already inside. It excludes the person we are trying to reach."
+      },
+      {
+        "category": "Generic ministry filler",
+        "words": [
+          "life-changing",
+          "powerful experience",
+          "step into your destiny",
+          "your best life",
+          "new season",
+          "shift the atmosphere",
+          "unlock your potential",
+          "make an impact",
+          "transform the world",
+          "God-sized dream",
+          "journey"
+        ],
+        "why": "Words that describe nothing. If the sentence survives with the phrase deleted, delete it."
       }
     ]
   },

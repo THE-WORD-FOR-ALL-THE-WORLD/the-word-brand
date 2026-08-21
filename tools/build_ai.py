@@ -926,17 +926,17 @@ def build_brand_system(brand: dict, messaging: dict, tokens: dict, updated: str,
     md += "\n"
 
     # 14. Audiences
-    md += "## 14. The five people we speak to\n\n"
+    md += "## 14. Who we speak to, in priority order\n\n"
     md += (
-        "Every piece is aimed at one of these five. Know which one before writing a word. The "
-        "\"needs to hear\" line is the heart of the message: say it in your own words, but say that.\n\n"
+        "This is the master-brand audience priority. Know which audience a piece is for before "
+        "writing a word, and when a piece has to choose, it chooses the audience nearer the top. "
+        "The posture is how we stand toward them: it governs tone before any wording is chosen.\n\n"
     )
-    for person in messaging["audiences"]:
-        md += f"### {person['audience']} ({person['qualifier']})\n\n"
-        md += f"- **They want:** {person['wants']}\n"
-        md += f"- **Their pain:** {person['pain']}\n"
-        md += f"- **Needs to hear:** {person['needsToHear']}\n"
-        md += f"- **First step:** {person['firstStep']}\n\n"
+    md += md_table(
+        ["#", "Audience", "Our posture"],
+        [[str(i), p["audience"], p["posture"]] for i, p in enumerate(messaging["audiences"], 1)],
+    )
+    md += "\n"
 
     # 15. Agent rules, hand-authored
     md += "## 15. " + read_source("agent-rules.md").split("\n", 1)[0].lstrip("# ").strip() + "\n\n"

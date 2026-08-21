@@ -123,6 +123,22 @@ def strip_specimens(text: str) -> str:
     text = re.sub(r'<div class="swatches">.*?</div>\s*</div>\s*</div>', "", text, flags=re.S)
     # The banned-word lists themselves, which necessarily contain banned words.
     text = re.sub(r'<div class="bw">.*?</div>', "", text, flags=re.S)
+    # Messaging Standard v2.0 sets the same specimens in plain document markup:
+    # the ban lists carry data-words, and a before-and-after quotes the wrong
+    # version in .off in order to correct it in .on.
+    text = re.sub(r"<p data-words>.*?</p>", "", text, flags=re.S)
+    text = re.sub(r'<p class="off">.*?</p>', "", text, flags=re.S)
+    # An explicit marker, for a rule that has to quote the wrong wording in
+    # order to forbid it. Preferred over guessing from the surrounding markup:
+    # the author says "this is a specimen" and the check believes them.
+    text = re.sub(r"<span data-specimen>.*?</span>", "", text, flags=re.S)
+    # Tables and lists that exist to name language we do not use. The heading
+    # above them says so, which is what makes them findable.
+    text = re.sub(
+        r"<h[34][^>]*>[^<]*(?:avoid|do not use|prohibited|not used)[^<]*</h[34]>\s*"
+        r"(?:<p[^>]*>.*?</p>\s*)?(?:<table.*?</table>|<ul>.*?</ul>)",
+        "", text, flags=re.S | re.I,
+    )
     # A "never this / always this" rewrite table, which quotes the wrong version in
     # order to correct it. Any table whose first header cell says "never".
     text = re.sub(
@@ -235,6 +251,41 @@ def check(name: str, text: str, std: dict) -> list:
                      f"'{initiative}' appears and the parent is never named. Add '{ENDORSEMENT}'.")
                 )
                 break
+
+    # --- the verbal system, Messaging Standard v2.0 §16
+    # These are rules the guide used to state in prose and nobody could run.
+    # They are mechanical, so the check runs them rather than trusting a reader.
+
+    # M1: em dashes are not used. §16.8, and the house style of this repository.
+    # The prophecy is quoted exactly and is the one recorded exception.
+    if "\u2014" in prose and "as tensions grow between man and foe" not in low:
+        n = prose.count("\u2014")
+        findings.append(
+            ("fail", "M1", f"{n} em dash{'es' if n > 1 else ''}. Use a colon, a comma, or a period.")
+        )
+
+    # M2: EVERY1 always carries the numeral. §16.9.
+    for wrong in ("Every1", "EveryOne", "Every One", "EVERYONE", "Every-1"):
+        if re.search(rf"\b{re.escape(wrong)}\b", prose):
+            findings.append(("fail", "M2", f"'{wrong}' is written EVERY1, always with the numeral."))
+            break
+
+    # M3: Spirit-led and Spirit-filled are hyphenated. §16.9.
+    for m in re.finditer(r"\bSpirit[  ](led|filled)\b", prose):
+        findings.append(("fail", "M3", f"'Spirit {m.group(1)}' is hyphenated: Spirit-{m.group(1)}."))
+        break
+
+    # M4: He is Lord; a person acknowledges it. §16.4 and §13.
+    if re.search(r"\bmakes?\s+(?:Jesus|Him)\s+Lord\b", prose, re.I):
+        findings.append(
+            ("fail", "M4", "'make Jesus Lord' is prohibited. He is Lord. Use 'confess Jesus as Lord'.")
+        )
+
+    # M5: the Holy Spirit is a Person, never an it. §13.
+    if re.search(r"\bHoly Spirit[^.?!]{0,40}\bit\b", prose):
+        findings.append(
+            ("warn", "M5", "The Holy Spirit may be referred to as 'it' here. He is a Person.")
+        )
 
     return findings
 

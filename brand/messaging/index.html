@@ -4,204 +4,171 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
-<title>THE WORD · Brand Messaging Guide v1.0</title>
-<meta name="description" content="How THE WORD FOR ALL THE WORLD speaks. The foundation, identity, values, message architecture, the five audiences, voice and vocabulary, and the proof policy.">
+<title>THE WORD · Brand Messaging Guide v2.0</title>
+<meta name="description" content="The Messaging Standard for THE WORD FOR ALL THE WORLD. Identity, message architecture, voice, audiences, theological language, the verbal system, channel and leadership voice, and the publication audit.">
 <link rel="icon" href="/assets/logos/the-word/favicon/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="icon" href="/assets/logos/the-word/favicon/favicon-16.png" sizes="16x16" type="image/png">
 <link rel="apple-touch-icon" href="/assets/logos/the-word/favicon/apple-touch-icon-180.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="THE WORD FOR ALL THE WORLD">
 <meta property="og:title" content="Messaging Guide">
-<meta property="og:description" content="How THE WORD FOR ALL THE WORLD speaks. The foundation, identity, values, message architecture, the five audiences, voice and vocabulary, and the proof policy.">
+<meta property="og:description" content="The Messaging Standard for THE WORD FOR ALL THE WORLD. How this ministry speaks, to whom, and in what words.">
 <meta property="og:url" content="https://brand.theword.world/brand/messaging">
 <meta property="og:image" content="https://brand.theword.world/assets/images/og-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="THE WORD FOR ALL THE WORLD">
-<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://brand.theword.world/brand/messaging">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Serif+Text:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400;1,9..40,700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/brand.tokens.css">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Serif+Text:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&display=swap" rel="stylesheet">
 <style>
-  *{margin:0;padding:0;box-sizing:border-box;}
-  @media (prefers-reduced-motion: no-preference){html{scroll-behavior:smooth;}}
-  a:focus-visible,button:focus-visible{outline:2px solid var(--ember);outline-offset:3px;border-radius:3px;}
-  .dark a:focus-visible{outline-color:var(--flame);}
-  body{font-family:var(--sans);font-size:17px;line-height:1.7;color:var(--midnight);background:var(--parchment);-webkit-font-smoothing:antialiased;}
-  .wrap{max-width:1020px;margin:0 auto;padding:0 32px;}
-  section{padding:100px 0;}
-  .slidehead{display:flex;justify-content:space-between;align-items:baseline;gap:16px;margin-bottom:18px;}
-  .eyebrow{font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--ember);}
-  .slideno{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(11,26,45,.72);}
-  .dark .eyebrow{color:var(--flame);}
-  .dark .slideno{color:rgba(247,243,236,.68);}
-  h1,h2{font-family:var(--serif-display);font-weight:400;line-height:1.08;}
-  h2{font-size:clamp(34px,4.8vw,52px);margin-bottom:22px;}
-  h2 em{font-style:italic;}
-  h3{font-size:14px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin:52px 0 16px;}
-  p{max-width:660px;margin-bottom:14px;}
-  p.lede{font-size:19px;}
-  .dark{background:var(--midnight);color:var(--parchment);}
-  .dark p{color:rgba(247,243,236,.92);}
-  .caption{font-size:13px;color:rgba(11,26,45,.8);max-width:660px;}
-  .dark .caption{color:rgba(247,243,236,.75);}
-
-  /* site nav · unified chrome */
-  .sitenav{position:absolute;top:0;left:0;right:0;z-index:10;}
-  .sitenav .bar{max-width:1240px;margin:0 auto;padding:26px 36px;display:flex;justify-content:space-between;align-items:center;gap:20px;}
-  .sitenav .logo img{height:20px;width:auto;display:block;}
-  .sitenav .links{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:12px 28px;font-size:12.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;}
-  .sitenav .links a{color:rgba(247,243,236,.9);text-decoration:none;}
-  .sitenav .links a:hover{color:var(--white);}
-  .sitenav .links a.active{color:var(--white);border-bottom:1px solid rgba(255,255,255,.6);padding-bottom:2px;}
-
-  /* cover · full-bleed video hero, unified chrome */
-  .cover{position:relative;min-height:92vh;display:flex;align-items:center;justify-content:center;text-align:center;background:var(--midnight) url('/assets/images/tent-congregation-poster.jpg') center/cover no-repeat;color:var(--parchment);overflow:hidden;}
-  .cover video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
-  .cover .scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,26,45,.78) 0%,rgba(11,26,45,.55) 40%,rgba(11,26,45,.82) 100%);}
-  .cover .inner{position:relative;z-index:2;padding:140px 32px 100px;max-width:900px;}
-  .cover .kicker{font-size:13px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--white);margin-bottom:28px;display:block;}
-  .cover h1{font-size:clamp(44px,7vw,76px);}
-  .cover h1 em{font-style:italic;}
-  .cover .lede{margin:28px auto 0;max-width:620px;color:rgba(247,243,236,.85);}
-  .cover .rule{border-top:1px solid var(--rule-light);width:72px;margin:38px auto 0;}
-  .cover .meta{margin-top:38px;display:flex;flex-wrap:wrap;justify-content:center;gap:24px 48px;font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-weight:500;color:rgba(247,243,236,.75);}
-  .cover .meta strong{display:block;color:var(--parchment);font-weight:600;letter-spacing:.1em;margin-bottom:4px;}
-  .cover .down{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);z-index:2;color:rgba(247,243,236,.75);font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;text-decoration:none;}
-  .cover .down:hover{color:var(--white);}
-  @media(max-width:640px){.sitenav .bar{padding:20px 24px;}.cover .inner{padding:120px 24px 90px;}}
-  @media (prefers-reduced-motion: reduce){.cover video{display:none;}}
-
-  /* toc */
-  .toc{padding:48px 0;border-bottom:1px solid var(--rule);}
-  .toc ol{list-style:none;counter-reset:toc;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:8px 40px;}
-  .toc li{counter-increment:toc;font-size:14.5px;font-weight:500;}
-  .toc li::before{content:counter(toc,decimal-leading-zero)" · ";font-weight:700;color:var(--ember);letter-spacing:.06em;}
-  .toc a{color:var(--midnight);text-decoration:none;}
-  .toc a:hover{color:var(--ember);}
-
-  /* statement + pillars (foundation) */
-  .statement{background:rgba(247,243,236,.05);border-top:3px solid var(--flame);padding:44px 40px;margin:32px 0;}
-  .statement .sk{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--flame);margin-bottom:16px;}
-  .statement .big{font-family:var(--serif-text);font-size:clamp(22px,3vw,30px);line-height:1.35;color:var(--parchment);}
-  .pmv{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin:28px 0 8px;}
-  .pmv .card{background:rgba(247,243,236,.05);border:1px solid var(--rule-light);border-radius:4px;padding:28px 24px;}
-  .pmv .lab{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--flame);margin-bottom:12px;}
-  .pmv .txt{font-size:15.5px;line-height:1.6;color:rgba(247,243,236,.94);}
-  .pmv .vref{display:block;margin-top:10px;font-size:11.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(247,243,236,.6);}
-
-  /* initiative cards (matches /documents/) */
-  .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px;}
-  .icard{display:flex;flex-direction:column;justify-content:space-between;background:var(--white);border:1px solid var(--rule);border-radius:4px;padding:30px 28px;text-decoration:none;color:var(--midnight);transition:border-color .15s ease, box-shadow .15s ease;min-height:210px;}
-  .icard:hover{border-color:var(--ember);box-shadow:0 10px 30px rgba(11,26,45,.1);}
-  .icard .stage{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--white);background:var(--word-blue);border-radius:2px;padding:4px 10px;margin-bottom:16px;align-self:flex-start;}
-  .icard h3{font-family:var(--serif-display);font-weight:400;font-size:25px;line-height:1.2;margin:0 0 10px;text-transform:none;letter-spacing:0;}
-  .icard p{font-size:14.5px;line-height:1.6;color:rgba(11,26,45,.8);}
-  .icard .go{margin-top:20px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--word-blue);}
-  .icard:hover .go{color:var(--ember);}
-
-  /* ============ the messaging document · register & marginalia ============ */
-  .docwrap{padding:72px 0 96px;}
-  .toolbar{max-width:880px;margin:0 auto 22px;padding:0 24px;display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;}
-  .toolbar .tlabel{font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--ember);}
-  .printbtn{font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--white);background:var(--word-blue);border:none;border-radius:3px;padding:11px 22px;cursor:pointer;}
-  .printbtn:hover{background:var(--midnight);}
-  .paper{max-width:880px;margin:0 auto;background:var(--white);border:1px solid var(--rule);box-shadow:0 18px 50px rgba(11,26,45,.14);padding:clamp(36px,6vw,72px) clamp(28px,6vw,76px) clamp(44px,6vw,72px);}
-
-  /* masthead · asymmetric */
-  .masthead .mrow{display:flex;justify-content:space-between;align-items:flex-start;gap:24px;padding-bottom:20px;border-bottom:1px solid var(--rule);}
-  .masthead .mrow img{height:15px;width:auto;margin-top:5px;}
-  .masthead .mmeta{text-align:right;font-size:11.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);line-height:1.9;}
-  .masthead .doctitle{font-family:var(--serif-display);font-weight:400;font-size:clamp(34px,5vw,48px);line-height:1.1;margin:34px 0 14px;}
-  .masthead .doctitle em{font-style:italic;}
-  .masthead .standfirst{font-size:17px;line-height:1.65;color:var(--ink-soft);max-width:56ch;margin:0 0 10px;}
-
-  /* section register · margin numerals */
-  .dsec{display:grid;grid-template-columns:96px minmax(0,1fr);column-gap:36px;padding-top:30px;margin-top:44px;}
-  .dsec:first-of-type{margin-top:0;padding-top:30px;}
-  .dnum{font-family:var(--serif-display);font-size:34px;line-height:1;color:var(--ember);}
-  .dnum small{display:block;margin-top:10px;font-family:var(--sans);font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);}
-  .dtitle{font-family:var(--serif-display);font-weight:400;font-size:26px;line-height:1.15;margin:0 0 16px;}
-  .dcontent{font-size:16px;line-height:1.75;}
-  .dcontent p{max-width:62ch;margin-bottom:12px;}
-  .dcontent ul{margin:6px 0 12px 20px;max-width:60ch;}
-  .dcontent li{margin-bottom:8px;}
-
-  /* distinct treatments */
-  .missionline{font-family:var(--serif-text);font-size:21px;line-height:1.5;border-left:3px solid var(--flame);padding:6px 0 6px 20px;margin:16px 0 18px;max-width:34ch;}
-  .plain{font-size:14px;line-height:1.7;color:rgba(11,26,45,.85);background:var(--parchment);border-left:3px solid var(--word-blue);padding:14px 18px;margin:14px 0 12px;max-width:62ch;}
-  .record{background:var(--parchment);border-left:3px solid var(--word-blue);padding:30px 34px;margin:18px 0;max-width:640px;}
-  .record .qk{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--word-blue);display:block;margin-bottom:16px;}
-  .record .verse{font-family:var(--serif-text);font-style:italic;font-size:19px;line-height:1.65;}
-  .record .dateline{margin-top:18px;font-size:11.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);}
-  .telling{font-family:var(--serif-text);font-size:18px;line-height:1.7;max-width:58ch;margin:14px 0;}
-  .flag{background:rgba(193,58,36,.08);border:1px dashed var(--ember);border-radius:3px;padding:2px 6px;color:var(--ember);font-weight:600;}
-  .dcontent table{width:100%;border-collapse:collapse;font-size:14.5px;margin:14px 0 12px;}
-  .dcontent th{text-align:left;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:8px 14px 8px 0;border-bottom:1px solid var(--midnight);}
-  .dcontent td{padding:10px 14px 10px 0;border-bottom:1px solid var(--rule);vertical-align:top;}
-  .bp{display:grid;grid-template-columns:130px minmax(0,1fr);column-gap:22px;padding:14px 0;}
-  .bp:first-of-type{margin-top:16px;}
-  .bp .bl{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--word-blue);padding-top:4px;}
-  .bp .bt{font-size:15px;line-height:1.7;max-width:58ch;}
-  .roster{margin-top:16px;}
-  .person{display:grid;grid-template-columns:170px minmax(0,1fr);column-gap:22px;padding:16px 0;}
-  .person .pn{font-weight:700;font-size:15px;line-height:1.4;}
-  .person .pn span{display:block;font-weight:600;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);margin-top:4px;}
-  .person .pd{font-size:14.5px;line-height:1.65;}
-  .person .pd p{margin-bottom:5px;max-width:none;}
-  .person .say{font-family:var(--serif-text);font-style:italic;font-size:15.5px;}
-  .banreg{margin-top:16px;}
-  .ban{display:grid;grid-template-columns:170px minmax(0,1fr);column-gap:22px;padding:16px 0;}
-  .ban .bh{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ember);padding-top:2px;}
-  .ban .bw{font-size:14.5px;margin-bottom:6px;}
-  .ban .why{font-size:13.5px;color:rgba(11,26,45,.8);}
-  .slots{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:0 22px;margin:14px 0 12px;}
-  .slot{padding-top:10px;}
-  .slot .s1{font-family:var(--serif-text);font-size:17px;margin-bottom:4px;}
-  .slot .s2{font-size:13px;line-height:1.55;color:rgba(11,26,45,.78);}
-
-  /* adoption · divider, signature, name */
-  .adoption{margin-top:64px;}
-  .adoption .frule{border:none;border-top:2px solid var(--midnight);margin:0 0 30px;}
-  .adoption .signature{height:58px;width:auto;display:block;}
-  .adoption .ad{margin-top:12px;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);}
-
-  table.pt{width:100%;border-collapse:collapse;}
-  table.pt > thead.runhead{display:none;}
-  table.pt > tbody > tr > td.ptcell{padding:0;border:none;}
-
-  footer{background:var(--midnight);color:rgba(247,243,236,.75);padding:40px 0;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;font-weight:500;}
-  footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
-  footer img{height:16px;width:auto;display:block;opacity:.9;}
-
-  @media(max-width:700px){
-    .dsec{grid-template-columns:1fr;row-gap:6px;}
-    .dnum{font-size:24px;display:flex;align-items:baseline;gap:10px;}
-    .dnum small{margin-top:0;}
-    .person,.ban,.bp{grid-template-columns:1fr;row-gap:6px;}
-    .masthead .mrow{flex-direction:column;}
-    .masthead .mmeta{text-align:left;}
+  /* ------------------------------------------------------------------
+     The Messaging Standard is set as a document, not as a designed page.
+     One column, one type size, hairline rules, no cards and no colour
+     panels. A reader should be able to start at the top and read to the
+     bottom. Everything a machine needs is carried on data- attributes,
+     so the markup can stay plain without the build losing its hooks.
+     ------------------------------------------------------------------ */
+  :root{
+    --midnight:#0B1A2D;
+    --word-blue:#023D6F;
+    --parchment:#F7F3EC;
+    --flame:#F85842;
+    --ember:#C13A24;
+    --white:#FFFFFF;
+    --soft:rgba(11,26,45,.68);
+    --rule:rgba(11,26,45,.16);
+    --hair:rgba(11,26,45,.09);
+    --serif-display:'DM Serif Display', Georgia, 'Times New Roman', serif;
+    --serif-text:'DM Serif Text', Georgia, 'Times New Roman', serif;
+    --sans:'DM Sans', -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
+    --mono:'SF Mono', SFMono-Regular, Consolas, 'Liberation Mono', monospace;
   }
-  @media(max-width:640px){section{padding:72px 0;}}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:var(--sans);
+    font-size:17px;
+    line-height:1.75;
+    color:var(--midnight);
+    background:var(--white);
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--word-blue);}
+  a:hover{color:var(--ember);}
+  a:focus-visible{outline:2px solid var(--ember);outline-offset:3px;border-radius:3px;}
+  .sitenav a:focus-visible,footer a:focus-visible{outline-color:var(--flame);}
 
+  /* the page is one measure, everywhere */
+  .doc{max-width:760px;margin:0 auto;padding:0 28px;}
+
+  /* site nav, the same chrome every page carries */
+  .sitenav{background:var(--midnight);}
+  .sitenav .bar{max-width:1240px;margin:0 auto;padding:22px 36px;display:flex;justify-content:space-between;align-items:center;gap:20px;}
+  .sitenav .logo img{height:19px;width:auto;display:block;}
+  .sitenav .links{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:10px 26px;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;}
+  .sitenav .links a{color:rgba(247,243,236,.82);text-decoration:none;}
+  .sitenav .links a:hover,.sitenav .links a.active{color:var(--white);}
+
+  /* title block: a document head, not a hero */
+  .masthead{border-bottom:1px solid var(--rule);padding:64px 0 34px;margin-bottom:8px;}
+  .masthead .over{font-size:11.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--ember);margin-bottom:16px;}
+  .masthead h1{font-family:var(--serif-display);font-weight:400;font-size:clamp(32px,5.2vw,46px);line-height:1.14;letter-spacing:-.01em;color:var(--midnight);}
+  .masthead .sub{margin-top:16px;font-size:17.5px;color:var(--soft);max-width:60ch;}
+  .facts{margin-top:26px;display:grid;gap:2px 30px;grid-template-columns:1fr;font-size:14px;}
+  @media(min-width:620px){.facts{grid-template-columns:1fr 1fr;}}
+  .facts div{display:flex;gap:9px;padding:3px 0;}
+  .facts dt,.facts b{font-weight:600;color:var(--midnight);min-width:104px;}
+  .facts span{color:var(--soft);}
+
+  /* contents */
+  .contents{padding:34px 0 10px;border-bottom:1px solid var(--rule);margin-bottom:44px;}
+  .contents h2{font-size:11.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--ember);margin-bottom:16px;}
+  .contents ol{list-style:none;counter-reset:toc;column-gap:34px;}
+  @media(min-width:620px){.contents ol{columns:2;}}
+  .contents li{counter-increment:toc;break-inside:avoid;margin-bottom:5px;font-size:15px;}
+  .contents li::before{content:counter(toc) ".";color:rgba(11,26,45,.42);font-variant-numeric:tabular-nums;margin-right:9px;font-size:13.5px;}
+  .contents a{text-decoration:none;color:var(--midnight);}
+  .contents a:hover{color:var(--ember);text-decoration:underline;}
+
+  /* sections */
+  section[data-sec]{padding:6px 0 46px;}
+  section[data-sec] > h2{
+    font-family:var(--serif-display);font-weight:400;
+    font-size:clamp(25px,3.4vw,31px);line-height:1.2;color:var(--midnight);
+    padding-top:30px;border-top:1px solid var(--rule);margin-bottom:6px;
+  }
+  section[data-sec] > h2 .n{
+    display:block;font-family:var(--sans);font-size:11.5px;font-weight:700;
+    letter-spacing:.2em;text-transform:uppercase;color:var(--ember);margin-bottom:11px;
+  }
+  h3{font-family:var(--sans);font-size:16px;font-weight:700;color:var(--midnight);margin:30px 0 8px;letter-spacing:-.005em;}
+  h4{font-family:var(--sans);font-size:13.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--word-blue);margin:24px 0 7px;}
+  p{margin-bottom:15px;}
+  p:last-child{margin-bottom:0;}
+  ul,ol{margin:0 0 15px 22px;}
+  li{margin-bottom:6px;}
+  li > ul,li > ol{margin-top:6px;margin-bottom:6px;}
+  strong{font-weight:600;color:var(--midnight);}
+  em{font-style:italic;}
+  .lede{font-size:18px;color:var(--soft);margin-bottom:20px;}
+
+  /* the authority tier, stated in words rather than drawn */
+  .tier{
+    display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--soft);border:1px solid var(--rule);
+    border-radius:2px;padding:2px 7px;margin-bottom:14px;
+  }
+  .tier[data-t="LOCKED"]{color:var(--ember);border-color:rgba(193,58,36,.34);}
+  .tier[data-t="EXPERIMENTAL"]{color:var(--word-blue);border-color:rgba(2,61,111,.3);}
+
+  /* plain tables */
+  table{width:100%;border-collapse:collapse;margin:12px 0 18px;font-size:15.5px;}
+  th,td{text-align:left;vertical-align:top;padding:9px 14px 9px 0;border-bottom:1px solid var(--hair);}
+  th{font-size:11.5px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:var(--soft);border-bottom-color:var(--rule);padding-bottom:7px;}
+  td:first-child{font-weight:600;color:var(--midnight);padding-right:22px;}
+  .wide td:first-child{white-space:nowrap;}
+  .tblnote{font-size:14px;color:var(--soft);margin-top:-6px;margin-bottom:18px;}
+
+  /* a quoted record: the prophecy, and nothing else */
+  blockquote{
+    border-left:2px solid var(--rule);padding:4px 0 4px 22px;margin:18px 0 14px;
+    font-family:var(--serif-text);font-size:19px;line-height:1.62;color:var(--midnight);
+  }
+  blockquote .dateline{
+    display:block;margin-top:12px;font-family:var(--sans);font-size:12px;
+    font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--soft);
+  }
+
+  /* an example pair, set as text rather than as two panels */
+  .ex{margin:0 0 22px;padding-left:18px;border-left:1px solid var(--hair);}
+  .ex .lbl{font-size:11.5px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:var(--soft);display:block;margin-bottom:3px;}
+  .ex .off{color:var(--soft);}
+  .ex .why{font-size:15px;color:var(--soft);margin:8px 0;}
+  .ex .on{color:var(--midnight);}
+  .ex p{margin-bottom:11px;}
+
+  code{font-family:var(--mono);font-size:.87em;background:rgba(2,61,111,.06);border-radius:3px;padding:1px 5px;}
+
+  .note{font-size:15px;color:var(--soft);border-top:1px solid var(--hair);padding-top:14px;margin-top:20px;}
+
+  footer{background:var(--midnight);color:rgba(247,243,236,.72);padding:38px 0;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;font-weight:500;margin-top:56px;}
+  footer .doc{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;max-width:1240px;}
+  footer img{height:16px;width:auto;display:block;opacity:.9;}
+  footer a{color:inherit;}
+
+  @media(max-width:640px){
+    .sitenav .bar{padding:18px 22px;}
+    .masthead{padding:44px 0 28px;}
+    body{font-size:16.5px;}
+  }
   @media print{
-    .sitenav,.cover,.toc,.pres,.toolbar,footer{display:none !important;}
-    body{background:var(--white);}
-    .docwrap{padding:0;}
-    .paper{max-width:none;margin:0;border:none;box-shadow:none;padding:0;}
-    table.pt > thead.runhead{display:table-header-group;}
-    .runhead td{padding:0;border:none;}
-    .runhead .rh{display:flex;justify-content:space-between;font-size:8.5pt;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(11,26,45,.6);border-bottom:0.5pt solid rgba(11,26,45,.3);padding-bottom:5pt;margin-bottom:22pt;}
-    .masthead .mrow{display:none;}
-    .masthead .doctitle{margin-top:10px;}
-    .dcontent{font-size:10.5pt;line-height:1.6;}
-    .dsec{grid-template-columns:72px minmax(0,1fr);margin-top:30px;padding-top:0;}
-    .dnum,.dtitle{break-after:avoid;}
-    .record,.plain,.bp,.person,.ban,.slot,.missionline,.telling{break-inside:avoid;}
-    .adoption{break-inside:avoid;margin-top:40px;}
-    .dcontent tr{break-inside:avoid;}
-    a{color:inherit;text-decoration:none;}
-    @page{margin:0.95in 0.6in 0.7in;}
+    .sitenav,.contents,footer{display:none;}
+    body{font-size:11pt;}
+    .doc{max-width:none;}
+    section[data-sec]{page-break-inside:auto;}
+    section[data-sec] > h2{page-break-after:avoid;}
   }
 </style>
 </head>
@@ -225,429 +192,1164 @@
   </div>
 </nav>
 
-<!-- COVER -->
-<header class="cover">
-  <video autoplay muted loop playsinline poster="/assets/images/tent-congregation-poster.jpg">
-    <source src="/assets/videos/tent-congregation.mp4" type="video/mp4">
-  </video>
-  <div class="scrim"></div>
-  <div class="inner">
-    <span class="kicker">Messaging Guide · Version 1.0</span>
-    <h1>How we speak.<br>Everywhere. To <em>everyone.</em></h1>
-    <p class="lede">The Brand Messaging Guide: the single source for what this ministry says, to whom, and in what words. Where wording conflicts anywhere else, this document rules.</p>
-    <div class="rule"></div>
-    <div class="meta">
-      <div><strong>Version</strong>1.0 · August 2026</div>
-      <div><strong>Companion To</strong>Brand Guide v5.0</div>
-      <div><strong>Status</strong>Single Source of Truth: Words</div>
-      <div><strong>Approved By</strong>Joel Zimmer · Nathan Zimmer</div>
-    </div>
+<div class="doc">
+
+<header class="masthead">
+  <div class="over">Messaging Guide · Version 2.0</div>
+  <h1>THE WORD Messaging Standard</h1>
+  <p class="sub">How THE WORD FOR ALL THE WORLD speaks: across institutional communication, partnerships, initiatives, preaching support, reports, websites, social media and AI-assisted content. It exists to answer one practical question. Does this sound like THE WORD?</p>
+  <div class="facts">
+    <div><b>Version</b><span>2.0 · 21 August 2026</span></div>
+    <div><b>Companion to</b><span>Brand Guide v7.5</span></div>
+    <div><b>Status</b><span>Single source of truth: words</span></div>
+    <div><b>Approved by</b><span>Joel Zimmer · Nathan Zimmer</span></div>
   </div>
-  <a class="down" href="#toc">Contents ↓</a>
 </header>
 
-<!-- TOC -->
-<nav class="toc" id="toc">
-  <div class="wrap">
-    <ol>
-      <li><a href="#use">How to use this guide</a></li>
-      <li><a href="#foundation">The foundation</a></li>
-      <li><a href="#initiatives">The three initiatives</a></li>
-      <li><a href="#prophecy">The prophecy</a></li>
-      <li><a href="#origin">How it began</a></li>
-      <li><a href="#identity">What we are, and are not</a></li>
-      <li><a href="#values">Values, uniques &amp; guarantee</a></li>
-      <li><a href="#architecture">The message architecture</a></li>
-      <li><a href="#journey">The journey: Clean · Burn · Train</a></li>
-      <li><a href="#audiences">The five people we speak to</a></li>
-      <li><a href="#voice">Voice &amp; vocabulary</a></li>
-      <li><a href="#proof">Proof &amp; testimony policy</a></li>
-      <li><a href="#roadmap">Roadmap notes</a></li>
-      <li><a href="#governance">Governance &amp; changelog</a></li>
-    </ol>
-  </div>
+<nav class="contents">
+  <h2>Contents</h2>
+  <ol>
+    <li><a href="#how">How to use this standard</a></li>
+    <li><a href="#identity">Identity core</a></li>
+    <li><a href="#prophecy">The prophecy</a></li>
+    <li><a href="#origin">How it began</a></li>
+    <li><a href="#arewhat">What we are, what we are not</a></li>
+    <li><a href="#architecture">Brand and message architecture</a></li>
+    <li><a href="#voice">Voice DNA</a></li>
+    <li><a href="#audiences">Audience and relational posture</a></li>
+    <li><a href="#church">Speaking about the Church</a></li>
+    <li><a href="#lost">Speaking about those who do not yet know Jesus</a></li>
+    <li><a href="#partnership">Partnership language</a></li>
+    <li><a href="#emotional">Emotional movement</a></li>
+    <li><a href="#theology">Theological language</a></li>
+    <li><a href="#evidence">Evidence and reporting</a></li>
+    <li><a href="#global">Global language standard</a></li>
+    <li><a href="#verbal">The verbal system</a></li>
+    <li><a href="#channels">Channel, leadership and calls to action</a></li>
+    <li><a href="#scripts">Sub-brand message scripts</a></li>
+    <li><a href="#leaders">Leadership voice profiles</a></li>
+    <li><a href="#examples">Before and after</a></li>
+    <li><a href="#audit">The publication audit</a></li>
+    <li><a href="#governance">Governance and changelog</a></li>
+  </ol>
 </nav>
 
-<!-- 01 HOW TO USE -->
-<section id="use" class="pres">
-  <div class="wrap">
-    <div class="slidehead"><span class="eyebrow">01 · How To Use This Guide</span><span class="slideno">The Word · Messaging Guide</span></div>
-    <h2>One guide. Every voice.</h2>
-    <p class="lede">This document is written for everyone who speaks or writes for THE WORD FOR ALL THE WORLD: leadership, team members, volunteers, and outside writers, designers, and agencies. It assumes no tribal knowledge. If you have never worked with us before, this guide is enough.</p>
+<section data-sec id="how" data-tier="STANDARD">
+  <h2><span class="n">Section 01</span>How to use this standard</h2>
+  <p class="lede">This is the one messaging document. Where wording anywhere else conflicts with it, this document rules.</p>
+
+  <h3>Four levels of authority</h3>
+  <p>Not every line here carries the same weight. Each section is marked with the level that governs it, and the level decides what it takes to change it.</p>
+  <table class="wide">
+    <tr><th>Level</th><th>What it covers, and how it changes</th></tr>
+    <tr><td>Locked</td><td>Doctrine, purpose, mission, vision and foundational convictions. Changes only through formal leadership approval, recorded in the changelog with two signers.</td></tr>
+    <tr><td>Standard</td><td>Default voice, terminology and communication practice. Depart only for a clear audience or ministry reason, and say what the reason was.</td></tr>
+    <tr><td>Flexible</td><td>Illustrations, expressions, calls to action and channel-specific execution. Change freely inside the laws above.</td></tr>
+    <tr><td>Experimental</td><td>Campaign language or profiles being tested, not yet part of the permanent standard. Usable now, not yet binding.</td></tr>
+  </table>
+  <p>A locked item cannot be quietly redefined by a team member, a contractor or an AI system. The rules that enforce that live at <a href="/governance">/governance</a>, with the rest of this ministry's policies, processes and procedures.</p>
+
+  <h3>Founder-source authority</h3>
+  <p>The founder's vision writings are primary interpretive material for this standard. Their theology, images and recurring phrases govern later summaries and campaign language. Editorial work may clarify grammar, correct references, distinguish internal language from public language and organise the material. It must never replace the heart or the theological intent of the source.</p>
+
+  <h3>Before you write anything</h3>
+  <p>Identify the speaking brand, the audience, the relationship, the channel, the desired action and the theological guardrails that apply. Use this standard as governing context, not as inspiration. Then check the finished piece against <a href="#audit">the publication audit</a> before it goes anywhere.</p>
+</section>
+
+<section data-sec id="identity" data-tier="LOCKED">
+  <h2><span class="n">Section 02</span>Identity core</h2>
+  <span class="tier" data-t="LOCKED">Locked</span>
+
+  <h3>Purpose</h3>
+  <div data-pillar="Purpose">To build a real relationship with Jesus. To please God, walk with Jesus, and minister to Him.</div>
+
+  <h3>The public mission line</h3>
+  <p class="tblnote">Use this everywhere. It is the one sentence that carries the whole assignment.</p>
+  <div data-field="mission-line">Strengthening the local church to fulfill the Great Commission, until EVERY1 knows the name Jesus.</div>
+
+  <h3>Mission</h3>
+  <div data-pillar="Mission">To strengthen the local church to do the Great Commission. Fire starts fire. We burn for Jesus in locations across the world, and they catch it, because they're dry enough.</div>
+
+  <h3>Vision</h3>
+  <div data-pillar="Vision">Every tribe, every tongue, every nation, and EVERY1 will know the name Jesus.<span data-vision-ref>Hebrews 8:11</span></div>
+
+  <h3>Core values</h3>
+  <h4>Burn for Jesus</h4>
+  <p>We burn with the passion of our relationship with Jesus and with His mission, the Great Commission.</p>
+  <p><em>If ye love me, keep my commandments. And I will pray the Father, and he shall give you another Comforter, that he may abide with you for ever.</em> John 14:15&ndash;16 KJV</p>
+
+  <h4>Spirit-led</h4>
+  <p>Our spirit has the final say. We never violate it, and we always fear the Lord.</p>
+  <p><em>Do not let unwholesome [foul, profane, worthless, vulgar] words ever come out of your mouth, but only such speech as is good for building up others, according to the need and the occasion, so that it will be a blessing to those who hear [you speak].</em> Ephesians 4:29 AMP</p>
+  <p>Lived out, this is two things. First, a culture of strengthening: we create and foster a culture of strengthening one another through Spirit-led words, prayer and conversation. We understand the power of our words and steward them intentionally to build, edify and impart life. Second, our spirit has the final say: our interactions are not driven by emotion but by the leading of the Holy Spirit. It is the anointing that breaks the yoke, and we walk in that anointing by remaining Spirit-led in thought, speech and conduct.</p>
+
+  <h4>Selfless love</h4>
+  <p>Not concerned about credit, fame or name recognition. It looks like servant leadership: promoting and developing others first.</p>
+  <p><em>and in your godliness, brotherly affection, and in your brotherly affection, [develop Christian] love [that is, learn to unselfishly seek the best for others and to do things for their benefit].</em> 2 Peter 1:7 AMP</p>
+
+  <h4>Full of faith</h4>
+  <p>We challenge giants with the Word of God. We charge forward into the plan of God for our life and take the kingdom by the force of faith.</p>
+
+  <h3>The three uniques</h3>
+  <ul>
+    <li>The Holy Spirit is our PR man.</li>
+    <li>We communicate frequently.</li>
+    <li>Partnership is our strength.</li>
+  </ul>
+
+  <h3>The guarantee</h3>
+  <p>The Holy Spirit runs our services.</p>
+</section>
+
+<section data-sec id="prophecy" data-tier="LOCKED">
+  <h2><span class="n">Section 03</span>The prophecy</h2>
+  <span class="tier" data-t="LOCKED">Locked</span>
+  <p>Received before the ministry had a name for what it would become. It is quoted exactly, in full, or not at all. Never paraphrased, never excerpted for effect. Set in the record register per Brand Guide §08.</p>
+  <blockquote data-field="prophecy">As tensions grow between man and foe, the light of THE WORD is needed. No peace they'll find, they'll react in kind, until THE WORD is heeded. But great peace have they that love God's Law, and in that Word their reflections saw, and went forth knowing the enemy is defeated.<span class="dateline" data-field="prophecy-dateline">Received December 2019</span></blockquote>
+  <p class="note">The prophecy precedes the first trip to Uganda. The word came first, then the door opened. When telling the full story, keep that order.</p>
+</section>
+
+<section data-sec id="origin" data-tier="LOCKED">
+  <h2><span class="n">Section 04</span>How it began</h2>
+  <span class="tier" data-t="LOCKED">Locked</span>
+  <p>This is the canonical telling of the origin story. Tell it this way: in interviews, on the About page, from the stage. Bracketed fields are pending verification against the ministry record. Per Law II, nothing unverified enters a founding document. Verify, unbracket, done.</p>
+  <p>In [2024], Joel Zimmer traveled to Uganda alongside [Inspiring Better Business]. As he stepped off the plane, a man named [David Kamanzi] met him with one question: "Will you help me train my people?" That question was the first seed of the School of the Local Church.</p>
+  <p>Later that year, the Lord spoke: go back to Uganda, and this time, hold a pastors conference. The conference was held. The fire caught. We have been going back ever since.</p>
+  <p>Uganda is for Jesus. So is the rest of the world.</p>
+</section>
+
+<section data-sec id="arewhat" data-tier="LOCKED">
+  <h2><span class="n">Section 05</span>What we are, what we are not</h2>
+  <span class="tier" data-t="LOCKED">Locked</span>
+  <p>The name THE WORD FOR ALL THE WORLD invites assumptions. Messaging corrects them plainly, without being defensive: one clear sentence, then move on.</p>
+  <h3>We are</h3>
+  <ul>
+    <li><strong>A Spirit-led ministry</strong> that strengthens local churches to do the Great Commission.</li>
+    <li><strong>A servant of the local church.</strong> We come to serve their house, not build ours.</li>
+    <li><strong>Evangelists and trainers.</strong> We preach, we stir, we equip, and we leave the church stronger than we found it.</li>
+  </ul>
+  <h3>We are not</h3>
+  <ul>
+    <li><strong>Not a Bible translation ministry.</strong> THE WORD is the Word preached, not the Word translated.</li>
+    <li><strong>Not a denomination.</strong> We plant fire, not flags.</li>
+    <li><strong>Not a replacement for the local church.</strong> If there is no local church to partner with in an area, we hold off. Our goal is never to create spiritual orphans.</li>
+  </ul>
+</section>
+
+<section data-sec id="architecture" data-tier="LOCKED">
+  <h2><span class="n">Section 06</span>Brand and message architecture</h2>
+  <span class="tier" data-t="LOCKED">Locked</span>
+
+  <h3>THE WORD</h3>
+  <p>The institutional and apostolic master brand. It carries the whole process, establishes vision, strengthens relationships, convenes leaders, reports fruit and speaks with permanence.</p>
+
+  <h3>The message hierarchy</h3>
+  <p>Every communication moves down this hierarchy only as far as it needs to. Never lead with the organisation when Jesus, the person's need or the assignment gives a clearer starting point. Never stop at inspiration when the message calls for a response.</p>
+  <table class="wide">
+    <tr><th>Level</th><th>What it is</th></tr>
+    <tr><td>Jesus</td><td>The centre and the final destination.</td></tr>
+    <tr><td>Purpose</td><td>Build a real relationship with Jesus.</td></tr>
+    <tr><td>Mission</td><td>Strengthen the local church to do the Great Commission.</td></tr>
+    <tr><td>Vision</td><td>Every tribe, every tongue, every nation and EVERY1 will know the name Jesus.</td></tr>
+    <tr><td>Process</td><td>CLEAN, BURN, TRAIN.</td></tr>
+    <tr><td>Initiative</td><td>Revival To My City, the EVERY1 Movement, or the School of the Local Church.</td></tr>
+    <tr><td>Current message</td><td>The one truth being communicated now.</td></tr>
+    <tr><td>Response</td><td>The one action the audience should take now.</td></tr>
+  </table>
+
+  <h3>The governing process</h3>
+  <p><strong>CLEAN, BURN, TRAIN.</strong> This is our Spirit-led process, and it brings a disciple from a place of lethargy into a place of leadership. Each phase addresses a necessary part of the global Church's problem.</p>
+  <p>The process is both sequential and diagnostic. It describes a person's movement toward mature leadership, and at the same time it identifies the present condition of the heart and the ministry response that condition requires.</p>
+
+  <h3>The three initiative missions</h3>
+  <table class="wide">
+    <tr><td>Revival To My City</td><td>Stirring the local church to return to their first love. (Revelation 2:4)</td></tr>
+    <tr><td>EVERY1 Movement</td><td>Empowering the local church to walk in unity to do the Great Commission and walk in God's calling. (Acts 2:17)</td></tr>
+    <tr><td>School of the Local Church</td><td>Training the local church to know their authority in Christ and build a real relationship with Jesus. (Matthew 16:18)</td></tr>
+  </table>
+
+  <h3>CLEAN</h3>
+  <p><strong>Purpose.</strong> Stirring the local church to return to her first love. (Revelation 2:4)</p>
+  <p><strong>Theological foundation.</strong> CLEAN is built on the revelation of Mark 4: the sower sows THE WORD, but how that Word affects a person's heart depends upon the condition of the soil. CLEAN prepares the heart so the Word can take root and produce.</p>
+  <h4>Soil diagnostics and ministry response</h4>
+  <table class="wide">
+    <tr><th>Soil</th><th>Condition, and the response it requires</th></tr>
+    <tr><td>Pathway</td><td>Those who are not born again and need to receive Christ Jesus as Lord and Savior. The solution is salvation: the stony heart is removed, a heart of flesh is received, and the Word can be planted.</td></tr>
+    <tr><td>Stony</td><td>Believers whose hearts contain offense, bitterness, unforgiveness, unbelief or traditions that prevent the Word from taking root. The solution is teaching that establishes the truth and produces stability.</td></tr>
+    <tr><td>Thorny</td><td>Those who love the Word but nurture competing cares, the deceitfulness of riches, the lust of other things or idols of attention. The solution is the fire of the Holy Spirit and the fear of the Lord, burning away what chokes the Word.</td></tr>
+    <tr><td>Good</td><td>Believers actively applying the Word. The thirtyfold, sixtyfold and hundredfold harvest reveals increasing fruitfulness, and the degree of increase is related to the degree of surrender.</td></tr>
+  </table>
+  <p><strong>CLEAN messaging law.</strong> CLEAN does not shame people for the condition of their soil. It identifies what prevents the Word from producing, declares the appropriate truth, and calls the heart back to Jesus. Its emotional movement is hunger, repentance, freedom and readiness.</p>
+  <h4>Revival To My City</h4>
+  <p>Revival To My City is the principal in-person expression of CLEAN and the entry point into the full process. It invites people through worship and revival meetings, then expands their understanding of revival from a meeting they attend into a mandate they carry.</p>
+  <p>Public language must never suggest deception or a bait and switch. Internally the intent may be described as flipping the concept of revival on its head. Externally, say clearly that the gathering moves from encounter to mobilisation.</p>
+  <p><strong>Common phrases.</strong> "Lighting hearts and seats on fire for Jesus." "You can have a real relationship with Jesus."</p>
+
+  <h3>BURN</h3>
+  <p><strong>Purpose.</strong> Empowering the local church to walk in unity, do the Great Commission and walk in God's calling. (Acts 2:17)</p>
+  <p><strong>Theological foundation.</strong> BURN is built on the holy desire of the Spirit within us. When we yield our lives to the Spirit of God, a burning comes that cannot be silenced. We inspire men and women to burn for Jesus and impact the nations.</p>
+  <p><strong>Unity and the common command.</strong> Burning gets people on the same page. Jesus sent the seventy with the same mission and gave direction concerning what to do, where to go and how to do it. Today Jesus still desires His Church to be directed, governed and trained to burn for Him everywhere she goes. Unity brings power. We unite cities behind the common cause of GO YE.</p>
+  <h4>Core areas to occupy</h4>
+  <table class="wide">
+    <tr><td>Government</td><td>Created to protect and enforce the God-given rights of people. We call believers in government to lead with righteousness, courage, competence and service.</td></tr>
+    <tr><td>Business</td><td>Entrusted with economic resources and productive capacity that can fund the Gospel, serve people and advance the Kingdom of Heaven.</td></tr>
+    <tr><td>Influence</td><td>Media and other influential voices shape policy, beliefs and the ideas of the public. Believers use influence to serve truth and the advance of the Gospel.</td></tr>
+    <tr><td>Family</td><td>The nucleus of society, government, church, business and life. Strong families enable the Gospel to be proclaimed and carried generationally.</td></tr>
+    <tr><td>Ministry</td><td>The last-mile conversion of earthly resources into heavenly inheritance: using the resources of this world to produce eternal fruit.</td></tr>
+    <tr><td>Medicine</td><td>Uses the Elohim systems present within creation to produce healing and health. We expect God's created order and the revealed healing power of El Shaddai to work toward healthy people around the world.</td></tr>
+  </table>
+  <p><strong>Sphere-language guardrail.</strong> These are Kingdom-purpose statements. They are not endorsements of a political party, an economic ideology or a personality. We communicate the believer's assignment within each sphere without allowing partisan controversy to replace the Gospel.</p>
+
+  <h4>The EVERY1 Movement</h4>
+  <p>The EVERY1 Movement is the global soul-winning expression of BURN. It unites everyday believers, churches and ministries around one common mission: EVERY1 in the Church for EVERY1 outside the Church. Its horizon is every tribe, every tongue, every nation and every one-on-one interaction for Jesus.</p>
+  <p><strong>The mandate.</strong> The Great Commission is for EVERY1, not only pastors, evangelists, the most holy or the already polished. EVERY1 calls people to accept Christ, accept His commission, build commissioned habits and train others. Salvation immediately opens into mission: what Jesus has done in us is carried to the person in front of us.</p>
+  <p><strong>Certainty by knowing.</strong> EVERY1 does not organise its message around uncertainty. It brings certainty through knowing: knowing Jesus, knowing the pure and simple Gospel, and knowing His command to GO. A believer does not need to understand every method before obeying what Jesus has made clear. The Body then helps each person grow in truth, maturity and effectiveness as each part does its own special work. (Ephesians 4:12&ndash;13, 16)</p>
+  <p>This does not celebrate doctrinal error or careless ministry. It refuses to make polished expertise a prerequisite for simple Gospel obedience. Action on the Word produces hunger, hunger leads people deeper into Christ, and the Church equips them toward maturity.</p>
+  <p><strong>The operating revelation.</strong> Ephesians 4:12&ndash;13, 16 provides the governing picture: Christ equips the Body, every part does its own special work, and the whole Body grows together in love. EVERY1 joins fire to position. Fire supplies power. Position supplies direction. Unity supplies multiplication. Systems supply sustainability. The Gospel and the Great Commission remain the controlling mission.</p>
+  <p>Taking position is not platform-seeking or self-appointment. It is accepting and stewarding the assignment God has given a believer within government, business, influence, family, ministry, medicine, or an intersection of those spheres. No sphere is the whole mission. Each part strengthens the others, and together they sustain the mission of reaching people with the Gospel.</p>
+  <p><strong>The main thing.</strong> "We function in keeping the main thing the main thing." We function to promote the Great Commission and the winning of souls through the mandate of Jesus. Every sphere, system, ministry relationship and movement activity must serve that purpose. The spheres do not replace evangelism. They position the whole Body to carry, protect, resource, communicate, follow up and multiply the work of the Great Commission.</p>
+  <p>EVERY1 is designed for interworking among churches and ministries. Agreement around the essential Gospel and the Great Commission allows us to work together in soul winning without requiring uniformity on every secondary doctrine. In plain internal language: if we agree on the big stuff, you are welcome to take part.</p>
+  <p><strong>Open, but not muted.</strong> This openness is not spiritual neutrality. EVERY1 is openly Spirit-led and continuationist. We expect the present ministry, gifts, leading and power of the Holy Spirit. Prayer for healing, deliverance, supernatural ministry and bold dependence upon the Spirit are part of the movement's normal environment, not optional language hidden to make cooperation easier.</p>
+  <p>We will not yield our passion for Jesus or the fire of the Holy Spirit for institutional acceptance, broader participation or greater comfort. We do not reduce unity to the least controversial message everyone can tolerate. A person, church or ministry does not have to mirror every expression or secondary conviction of THE WORD to cooperate. They must, however, understand the environment they are entering and respect Spirit-led ministry rather than oppose, suppress or continually contest it. We are not exclusive, but we will not shy away from the Holy Spirit.</p>
+  <p>Movement-level communication stays focused on the pure and simple Gospel, Spirit-led ministry, prayer, testimony, action, follow-up and mobilisation. It does not become a forum for arguing secondary doctrine, promoting a personality, recruiting people away from their local church, or advancing one participating ministry over another. Unity is not doctrinal carelessness: questions that affect the integrity of the Gospel, the work of the Holy Spirit, ethical conduct, safety or accountability must be addressed. Deeper doctrinal formation and pastoral care remain rooted in the local church.</p>
+  <p><strong>The global horizon.</strong> EVERY1 is as personal as a conversation with a coworker and as large as a nation. Individual obedience replicates through communication, community and example until the knowledge of the Lord reaches from the least to the greatest. (Hebrews 8:11) <em>For the earth will be filled with the knowledge of the glory of the Lord, as the waters cover the sea.</em> Habakkuk 2:14 NKJV</p>
+  <p>The movement participates in the worldwide Gospel witness that precedes the Second Coming of Christ, and looks toward the final outpouring of God, the fullest expression of what most people mean when they speak of revival. <em>And this gospel of the kingdom will be preached in all the world as a witness to all the nations, and then the end will come.</em> Matthew 24:14 NKJV</p>
+  <p><strong>The system that sustains revival.</strong> Revival produces fire. EVERY1 provides Spirit-led structure that helps the Church sustain, direct and multiply that fire through specific acts of Gospel obedience. The system does not control the Holy Spirit. It channels the power and passion He places in believers into visible avenues of soul winning, follow-up, testimony, unity and continued action. EVERY1 moves people from spectatorship into participation: instead of seeing what God is doing somewhere else and wishing it would happen in their city, believers receive a clear pathway to act where they are.</p>
+  <p><strong>Methodology.</strong> Accept Christ, accept the Commission, instill commissioned habits, train others.</p>
+  <p><strong>Core participation loop.</strong> Accept the mission, do the mission, track what happened, see it on the feed, get inspired, repeat. Growth is pictured as multiplying fire: match, kindling, twigs, sticks, logs, wet logs, trees, forests, mountain ranges, the world.</p>
+  <p><strong>Movement and app.</strong> The movement is larger than the app. EVERY1 is the people, the mandate, the culture and the worldwide action. The app is the supporting system that helps the movement track, communicate, inspire and equip at scale. In plain English: this is an app that makes preaching the Gospel fun and cool. It is built for the everyday believer and the wider Church, not as a promotional app for THE WORD. Ownership may be stated transparently, but the experience serves the mission rather than continually drawing attention back to the founding ministry.</p>
+  <p><strong>EVERY1 messaging law.</strong> EVERY1 sounds high-energy, active, certain, global and inspiring. Lead with the mandate, the person in front of us, and the opportunity to act now. Use verbs: accept, GO, preach, reach, pray, do, track, connect, celebrate, repeat, train. Do not make confusion, reluctance or lack of permission the controlling emotional idea. EVERY1 supplies a clear mission and a path for action. Deeper formation belongs primarily to TRAIN.</p>
+  <p><strong>Common phrases.</strong> "Every tribe, every tongue, every nation and every one-on-one interaction will be for Jesus." "EVERY1 will know the name Jesus." "EVERY1 in the Church for EVERY1 outside the Church."</p>
+
+  <h3>TRAIN</h3>
+  <p><strong>Purpose.</strong> Training the local church to know their authority in Christ and build a real relationship with Jesus. (Matthew 16:18)</p>
+  <p><strong>Theological foundation.</strong> TRAIN exists to sustain the fire. A person can burn out like a shooting star, or rise and burn like the morning star: slow at first, but brighter every day. The path of the righteous shines brighter and brighter. There are systems that help people build a real relationship with Jesus, and those systems can be taught. Spirit-led training does not replace relationship. It gives believers a pattern through which truth can be learned, practiced, embodied and multiplied.</p>
+  <p><strong>Pattern of discipleship.</strong> Paul's ministry reveals a pattern of teaching, formation and church establishment. He fed people according to their maturity and expected growth over time. THE WORD likewise provides an ordered discipleship pathway rather than disconnected information.</p>
+  <h4>Core discipleship training</h4>
+  <table class="wide">
+    <tr><td>Relationship to Christ</td><td>Righteousness is a gift and the foundation upon which every other biblical principle is built. Believers must know who they are in Christ before they can interpret Scripture or approach God with confidence.</td></tr>
+    <tr><td>Enemy to Christ</td><td>Trains believers to recognise attacks against faith and the renewed mind, cast down vain imaginations, govern their thinking, renew their minds and bring their words under the authority of truth.</td></tr>
+    <tr><td>Fellowship with Christ</td><td>Develops the believer's personal fellowship with Jesus through the Word, prayer, worship, repentance, obedience and practical responsiveness to His voice.</td></tr>
+    <tr><td>Responsibility for Christ</td><td>Establishes stewardship of Christ's message, Spirit, power and mission. Having learned to govern oneself under Christ, the believer takes what they have received and gives it to others.</td></tr>
+    <tr><td>Reward in Christ</td><td>Teaches believers to live in the blessing by faith rather than striving, receiving God's provision as stewardship for assignment, generosity and eternal fruit.</td></tr>
+  </table>
+  <p><strong>TRAIN messaging law.</strong> Training is not dead structure. It is Spirit-given order that protects, strengthens and multiplies fire. We do not merely inspire people to burn. We give them roots, patterns, language, practice and responsibility.</p>
+  <h4>The School of the Local Church</h4>
+  <p>The School of the Local Church is the principal expression of TRAIN. It raises pastors and local leaders to know who they are in Christ Jesus and to establish strong local churches in cities around the world. Its three-day pastors conferences combine teaching in the morning and afternoon with outdoor Gospel demonstration at night. Written resources, including Bibles and ministry books in local languages, extend the training beyond the event.</p>
+
+  <h3>Integrated initiative flow</h3>
+  <table class="wide">
+    <tr><td>Revival To My City</td><td>Accomplishes CLEAN, BURN and TRAIN in person, moving people from encounter to mobilisation and promised training.</td></tr>
+    <tr><td>EVERY1 Movement</td><td>Sustains BURN through identity, unity, challenges, participation, testimonies and sphere-based action.</td></tr>
+    <tr><td>School of the Local Church</td><td>Sustains TRAIN through ordered discipleship, leadership formation, local-church strengthening and Gospel demonstration.</td></tr>
+  </table>
+  <p><strong>Process summary.</strong> CLEAN prepares the soil. BURN ignites holy desire and unites believers around the mission. TRAIN gives the fire roots, order and a pathway to leadership and multiplication.</p>
+
+  <h3>All Is Well</h3>
+  <p>All Is Well is a podcast: a supporting media expression of THE WORD, carrying Joel Zimmer's preaching cadence and pastoral warmth. It is not a fourth phase of the process, it is not an initiative, and it does not carry a mark of its own. It provides refreshment by the Spirit of God: where the ground is dry it brings the rains of the Spirit and creates a hunger that only God can fill. Treat it as a channel, and see <a href="#channels">Section 17</a> for its voice.</p>
+</section>
+
+<section data-sec id="voice" data-tier="STANDARD">
+  <h2><span class="n">Section 07</span>Voice DNA</h2>
+  <p><strong>Voice attributes.</strong> Passionate. Personal. Apostolic. Practical. Authoritative.</p>
+  <p><strong>Governing voice statement.</strong> We sound full of faith, burning for Jesus, driven by love, and Spirit-led in our conversations.</p>
+
+  <h3>The filter</h3>
+  <p>Before anything is published, it has to pass this:</p>
+  <div data-field="filter">Does this point people to Jesus Himself? Is every claim in it something we can show? Is it clear to a new believer? Does it ask for one thing? If the answer is unsure anywhere, simplify and centre Jesus.</div>
+  <p class="note">The filter is deliberately not "would Joel say this" or "would Nathan say this." THE WORD has its own voice, and it is not a blend of its leaders. When a named leader is speaking, <a href="#leaders">Section 19</a> governs instead.</p>
+
+  <h3>Standing rules</h3>
+  <div data-field="standing-rules">Short sentences. One idea each. Say Jesus by name, not "faith," not "spirituality." Never invent a statistic, a quote, or a testimony; the record or nothing (Law II). Never manufacture a catchphrase: if a line has to be explained to be catchy, kill it. Invitation before information: every piece ends with something the reader can do.</div>
+
+  <h3>Voice laws</h3>
+  <table class="wide">
+    <tr><td>Presence before platform</td><td>We speak as people who have ministered to Jesus before speaking for Him.</td></tr>
+    <tr><td>Declare, do not argue</td><td>We speak with confidence, without defensiveness, desperation or needless persuasion.</td></tr>
+    <tr><td>Faith is the atmosphere</td><td>Our confidence comes from God's Word, and our urgency comes from love for people.</td></tr>
+    <tr><td>Say it plainly</td><td>We do not conceal our beliefs to appear acceptable.</td></tr>
+    <tr><td>One message</td><td>Every communication has one primary assignment.</td></tr>
+    <tr><td>Conviction without condemnation</td><td>We expose lies in order to replace them with truth, not to define people by failure.</td></tr>
+    <tr><td>Authority without self-importance</td><td>We speak with certainty about Jesus and humility about ourselves.</td></tr>
+    <tr><td>Excitement from substance</td><td>We do not manufacture emotional intensity through exaggeration.</td></tr>
+    <tr><td>Numbers are stewardship</td><td>Results belong on the record, but they do not prove our worth or our anointing.</td></tr>
+    <tr><td>Produce movement</td><td>People should know what is true, why it matters, and what obedient action to take.</td></tr>
+  </table>
+
+  <h3>We do not sound</h3>
+  <p>Religious or stale. Clichéd. Manipulative. Polished but empty. Politically partisan. Hype-driven. Full of ourselves.</p>
+</section>
+
+<section data-sec id="audiences" data-tier="STANDARD">
+  <h2><span class="n">Section 08</span>Audience and relational posture</h2>
+  <p class="lede">This is the master-brand audience priority, in order. When a piece has to choose, it chooses the audience nearer the top.</p>
+
+  <div data-audience="Ministry partners and donors" data-posture="Fellow laborers in a shared assignment.">
+    <h3>1. Ministry partners and donors</h3>
+    <p><strong>Posture:</strong> fellow laborers in a shared assignment. Partners are not a means to an end. They are part of the mission. Everything in <a href="#partnership">Section 11</a> governs how we speak to them.</p>
+  </div>
+
+  <div data-audience="Institutions, governments and public leaders" data-posture="Apostolic leader and credible institutional partner.">
+    <h3>2. Institutions, governments and public leaders</h3>
+    <p><strong>Posture:</strong> apostolic leader and credible institutional partner. Speak with permanence and verifiable record. This is the audience for which the reporting standard in <a href="#evidence">Section 14</a> exists.</p>
+  </div>
+
+  <div data-audience="Pastors and church leaders" data-posture="Trusted ministry partner.">
+    <h3>3. Pastors and church leaders</h3>
+    <p><strong>Posture:</strong> trusted ministry partner. We come to serve their house, not build ours. When we leave, their people stay, on fire and equipped.</p>
+  </div>
+
+  <div data-audience="Evangelists and ministers" data-posture="Apostolic leader and fellow laborer.">
+    <h3>4. Evangelists and ministers</h3>
+    <p><strong>Posture:</strong> apostolic leader and fellow laborer. Speak to shared assignment and shared fire, without competing for the same platform.</p>
+  </div>
+
+  <div data-audience="The ordinary believer" data-posture="Teacher and equipper.">
+    <h3>5. The ordinary believer</h3>
+    <p><strong>Posture:</strong> teacher and equipper. For EVERY1 participants specifically, the posture shifts: a movement they actively belong to through shared mission, not an audience being addressed.</p>
+  </div>
+
+  <div data-audience="The spiritually hungry but passive believer" data-posture="Teacher and equipper, calling them out of the pew.">
+    <h3>6. The spiritually hungry but passive believer</h3>
+    <p><strong>Posture:</strong> teacher and equipper, calling them out of the pew. They know there must be more but have become dry, distracted or stuck. Speak to the hunger, never to the failure.</p>
+  </div>
+
+  <div data-audience="Those who do not yet know Jesus" data-posture="Personal, loving and fatherly invitation.">
+    <h3>7. Those who do not yet know Jesus</h3>
+    <p><strong>Posture:</strong> personal, loving and fatherly invitation. <a href="#lost">Section 10</a> governs the language.</p>
+  </div>
+
+  <h3>Fatherly language</h3>
+  <p>Fatherly language is present primarily in Joel's personal voice, and in discipleship or pastoral communication. It supports the institutional voice. It does not define it.</p>
+</section>
+
+<section data-sec id="church" data-tier="LOCKED">
+  <h2><span class="n">Section 09</span>Speaking about the Church</h2>
+  <span class="tier" data-t="LOCKED">Locked</span>
+  <p><strong>The honor law.</strong> We awaken the Church without dishonoring her. We are part of the Church, Jesus loves His Church, and our assignment is to strengthen her, not to present ourselves as superior to her.</p>
+  <h3>Approved diagnostic language</h3>
+  <ul>
+    <li>We are reaching congregations and people in the pews who are asleep at the wheel.</li>
+    <li>Many are sleeping: complacent, and bogged down by weeds in their hearts that stop the Word of God from becoming productive.</li>
+    <li>Our Spirit-led process brings a disciple from lethargy into leadership.</li>
+    <li>Stirring the local church to return to her first love.</li>
+    <li>When they leave, their hearts burn for the Lord and they cannot sit still without doing something for Jesus.</li>
+  </ul>
+  <h3>Capitalization</h3>
+  <p>Capitalize <strong>Church</strong> when referring to the worldwide Body or Bride of Christ: "Jesus is building His Church." Use lowercase for a local congregation, a church building, or generic usage: "We partner with the local church."</p>
+</section>
+
+<section data-sec id="lost" data-tier="LOCKED">
+  <h2><span class="n">Section 10</span>Speaking about those who do not yet know Jesus</h2>
+  <span class="tier" data-t="LOCKED">Locked</span>
+  <h3>Preferred public language</h3>
+  <ul>
+    <li>Those who do not yet know Jesus</li>
+    <li>Those without a real relationship with Jesus</li>
+    <li>EVERY1 without a real relationship with Jesus</li>
+    <li>EVERY1 outside the Church, when paired with EVERY1 in the Church</li>
+  </ul>
+  <h3>Context-specific language</h3>
+  <table class="wide">
+    <tr><td>The lost</td><td>Appropriate in preaching, prayer, internal ministry language and biblical teaching. Never as a dismissive label.</td></tr>
+    <tr><td>The unreached</td><td>Reserve for people or communities without meaningful access to the Gospel.</td></tr>
+    <tr><td>The unsaved</td><td>Reserve primarily for doctrinal teaching or internal discussion.</td></tr>
+  </table>
+  <h3>Language to avoid as a default</h3>
+  <table class="wide">
+    <tr><td>People far from God</td><td>Vague, and it can imply that God is distant or unavailable.</td></tr>
+    <tr><td>The unchurched</td><td>Describes church participation, not whether someone knows Jesus.</td></tr>
+    <tr><td>Non-Christians</td><td>Useful in demographic reporting, too impersonal for evangelistic communication.</td></tr>
+  </table>
+</section>
+
+<section data-sec id="partnership" data-tier="LOCKED">
+  <h2><span class="n">Section 11</span>Partnership language</h2>
+  <span class="tier" data-t="LOCKED">Locked</span>
+  <p><strong>The partnership law.</strong> We do not extract money from partners. We invite fellow laborers into a God-given assignment, steward their trust, communicate frequently, and faithfully report the fruit.</p>
+
+  <h3>Governing statements</h3>
+  <ul>
+    <li>Partnership is our strength.</li>
+    <li>Partners are not a means to an end. They are part of the mission itself.</li>
+    <li>Partners are worked with and invested in, not managed.</li>
+    <li>Partners participate with us in a shared assignment from God.</li>
+    <li>Your giving produces glory to God.</li>
+    <li>Partnership is a two-way street. We pray, invest and believe with partners for their lives, ministries, businesses and families to produce results for Jesus.</li>
+  </ul>
+
+  <h3>The giving rule</h3>
+  <p>Do not ask a partner to give unless the communication is specifically part of a defined giving campaign. Ordinary partner communication must not contain a routine financial ask. <strong>A partner communication should remain valuable even if the reader never gives.</strong></p>
+
+  <h3>Frictionless giving</h3>
+  <p>Make donations frictionless when a partner wants to give. The path should be easy, secure, clear, accessible and transparent. Frictionless giving is infrastructure, not persuasion: a visible giving link, a simple form, clear designation options, a prompt receipt and accessible help may remain available at all times without turning ordinary partner communication into fundraising. Do not hide how to give, do not create unnecessary steps, and do not make a willing giver search for the process.</p>
+
+  <h3>The Philippians foundation</h3>
+  <p>The governing wisdom for partnership communication is drawn from Philippians. Partner communication should make a meaningful point rooted in biblical truth and wisdom. It must not become a stream of generic organisational updates.</p>
+
+  <h3>Partnership laws</h3>
+  <ul>
+    <li>The people and partners are not a means to further the mission. They are part of the mission.</li>
+    <li>The primary action is investment: communicate truth, wisdom, prayer, encouragement, correction, clarity or commissioning that produces value in the person.</li>
+    <li>Pray for partners whenever they come to mind, and intentionally include them in the ministry's prayer life.</li>
+    <li>Pray that their love overflows, that they grow in knowledge and understanding, understand what truly matters, live pure lives and produce the fruit of salvation.</li>
+    <li>Cherish partners. They have a special place in the ministry's heart and must never be valued according to financial contribution.</li>
+    <li>Communicate so partners can grow and experience the joy of their faith.</li>
+    <li>Share what God is doing so the ministry and its partners can rejoice together in Jesus.</li>
+    <li>Encourage, correct, invest, update, commission and safeguard faith as the relationship and situation require.</li>
+    <li>Write to the actual people and needs involved. Do not send the same generic letter when different partners need different ministry.</li>
+    <li>Communicate frequently enough to steward trust, but never create communication merely to fill a schedule.</li>
+    <li>Listen and report back. Partnership includes learning how a church, ministry, business, family or person is doing, and identifying ways to strengthen them.</li>
+    <li>When appropriate, send trusted people to visit, encourage, help, and return with an accurate report.</li>
+    <li>Celebrate what partners have invested without making them responsible for sustaining the ministry.</li>
+    <li>Giving must arise from their joy, conviction and participation in the assignment, not from guilt, pressure or implied obligation.</li>
+  </ul>
+
+  <h3>Prohibited fundraising practices</h3>
+  <ul>
+    <li>Guilt, shame, fear or artificial deadlines</li>
+    <li>Implying God's work will fail unless a donor rescues it</li>
+    <li>Promising financial return, healing, miracles, favor or access in exchange for a gift</li>
+    <li>Exaggerated or unverified outcomes</li>
+    <li>Valuing people according to how much they give</li>
+    <li>Using urgency to bypass prayer or wise stewardship</li>
+  </ul>
+
+  <h3>The partner communication pattern</h3>
+  <ol>
+    <li>Begin with sincere encouragement or gratitude.</li>
+    <li>Communicate one biblical truth, point of wisdom, or needed correction.</li>
+    <li>Invest that truth directly into the partner's life, family, ministry, business or assignment.</li>
+    <li>Update them on what God is doing, when the update strengthens faith or shared understanding.</li>
+    <li>Acknowledge their prayer, participation, service or giving appropriately.</li>
+    <li>Invite prayer, response, celebration or action consistent with the point of the message.</li>
+    <li>Include a financial invitation only when the communication is an explicit giving campaign.</li>
+    <li>Close with prayer, blessing, affection, or a clear expression of continued relationship.</li>
+  </ol>
+
+  <h3>The partnership team</h3>
+  <p>The prayer team belongs within the partnership function. Anyone serving in partnership communication should understand the partnership teaching in Philippians. Promotion and responsibility within partnership communication require a demonstrated, genuine concern for the welfare of partners, not merely writing skill, fundraising performance or administrative efficiency.</p>
+</section>
+
+<section data-sec id="emotional" data-tier="STANDARD">
+  <h2><span class="n">Section 12</span>Emotional movement</h2>
+  <h3>The overall arc</h3>
+  <table class="wide">
+    <tr><td>Clean</td><td>Create a hunger, clean out the weeds, and produce a heart full of the fear of the Lord, ready for more of God.</td></tr>
+    <tr><td>Burn</td><td>Burn with zeal for the house of God. An insatiable desire in your spirit for more of the presence, power and passion of God: a burning with the fire of God that only God can fill.</td></tr>
+    <tr><td>Train</td><td>Trained to take the power, authority, anointing and mandate of revival to this generation.</td></tr>
+  </table>
+  <h3>Audience destinations</h3>
+  <table class="wide">
+    <tr><td>Passive believer</td><td>From dry, distracted and stuck, to loved, awakened, full of faith and empowered to act.</td></tr>
+    <tr><td>Pastor</td><td>From burdened and isolated, to strengthened, honored, equipped and confident that leaders can carry the fire forward.</td></tr>
+    <tr><td>Potential partner</td><td>From cautious and searching, to valued, included, informed and confident as a fellow laborer.</td></tr>
+    <tr><td>Person who does not know Jesus</td><td>From lost, disconnected and exhausted, to known, loved, forgiven, hopeful and invited into a real relationship with Jesus.</td></tr>
+  </table>
+</section>
+
+<section data-sec id="theology" data-tier="LOCKED">
+  <h2><span class="n">Section 13</span>Theological language</h2>
+  <span class="tier" data-t="LOCKED">Locked</span>
+
+  <h3>The Gospel</h3>
+  <p>The Gospel is the good news that you can have a real relationship with God. People often do not desire that relationship because they do not know God's character.</p>
+  <p>That is the ministry's governing description of the Gospel. It is not a substitute for a complete presentation of the plan of salvation. A complete Gospel presentation includes sin, repentance, Jesus' identity, His cross, His resurrection, faith, confession of His lordship, forgiveness, the new birth, eternal life, and the beginning of a real relationship with Him.</p>
+
+  <h3>How we present Jesus</h3>
+  <p>Jesus Christ is the Son of God, Lord, Savior and King. He died for our sins, rose from the dead, reigns today, and is coming again. His identity and work may also be proclaimed as crucified and risen Redeemer, Healer, Baptizer in the Holy Spirit, Deliverer, Bridegroom and Friend, without reducing Him to sentiment, self-help, or a ticket to Heaven.</p>
+  <h4>Descriptions to avoid or qualify</h4>
+  <ul>
+    <li>Jesus is my buddy.</li>
+    <li>Jesus is your life coach.</li>
+    <li>Jesus only wants you to be happy.</li>
+    <li>Jesus is a ticket to Heaven.</li>
+    <li>Jesus is just waiting for you to let Him help.</li>
+    <li>"Jesus loves you and has a wonderful plan," when separated from sin, the cross, repentance, resurrection and lordship.</li>
+  </ul>
+
+  <h3>A real relationship with Jesus</h3>
+  <p>Relationship begins at the new birth. Fellowship is cultivated through the Word, repentance, obedience and walking with the Holy Spirit. It includes being born again, knowing His character through His Word, receiving His righteousness, prayer, worship, repentance, obedience and fellowship with Him.</p>
+  <p>It produces love, holiness, confidence before God, spiritual fruit, renewed thinking, victory over sin and deception, compassion for people, and participation in Christ's mission.</p>
+  <p>It is not merely church attendance, religious language, an emotional experience, repeating a prayer, intellectual agreement, or viewing salvation only as a ticket to Heaven.</p>
+  <p>Maturity appears as a person recognises God's voice through His Word, obeys His will, quickly repents, walks in love, stewards authority responsibly, produces lasting fruit, and represents Jesus to others.</p>
+
+  <h3>The Holy Spirit</h3>
+  <p>The Holy Spirit is God, and a Person. He speaks, leads, reveals truth, brings Scripture to remembrance, and empowers believers for life, witness and ministry.</p>
+  <p>Every believer can and should be filled with the Holy Spirit. Speaking in tongues is available to every believer and is the initial physical evidence of the baptism in the Holy Spirit. The gifts of the Spirit are active today. Signs, wonders, healing, prophecy and supernatural ministry should be normal within the Church.</p>
+  <p>"The Holy Spirit runs our services" means we prepare diligently while giving Him final authority over the direction, timing, message and ministry of a service. It does not excuse disorder, lack of preparation, or lack of accountability.</p>
+  <h4>Holy Spirit language to avoid</h4>
+  <ul>
+    <li>Referring to the Holy Spirit as "it"</li>
+    <li>Speaking of Him only as a force, energy, atmosphere or power source</li>
+    <li>Saying "we use the Holy Spirit"</li>
+    <li>Manipulative uses of "the Holy Spirit told me"</li>
+    <li>Mystical language that cannot be explained from Scripture</li>
+    <li>Treating emotional intensity as automatic proof that the Spirit is moving</li>
+    <li>Saying someone does not have the Holy Spirit merely because they have not received the baptism in the Holy Spirit</li>
+  </ul>
+
+  <h3>Salvation and response</h3>
+  <h4>Preferred invitation language</h4>
+  <ul>
+    <li>Repent and believe the Gospel.</li>
+    <li>Put your faith in Jesus.</li>
+    <li>Confess and receive Jesus as Lord and Savior.</li>
+    <li>Be born again.</li>
+    <li>Begin a real relationship with Jesus.</li>
+    <li>Receive Jesus.</li>
+    <li>Surrender or give your life to Jesus.</li>
+  </ul>
+  <p>Use "confess Jesus as Lord" or "receive Jesus as Lord and Savior," not <span data-specimen>"make Jesus Lord."</span> He is Lord. The person acknowledges and submits to His lordship.</p>
+  <h4>Reporting responses</h4>
+  <table class="wide">
+    <tr><td>Pastoral</td><td>"They received Jesus as Lord and Savior," or "They were born again."</td></tr>
+    <tr><td>Public</td><td>"People responded to the Gospel and professed faith in Jesus Christ."</td></tr>
+    <tr><td>Formal</td><td>"Reported decisions for Christ," or "documented professions of faith."</td></tr>
+    <tr><td>Follow-up</td><td>"New believers."</td></tr>
+  </table>
+  <p>"Salvations" may remain ministry shorthand, but formal reporting must identify what was actually documented.</p>
+
+  <h3>Healing, miracles and deliverance</h3>
+  <ul>
+    <li>In preaching, declare what Jesus purchased and build faith to receive.</li>
+    <li>In live ministry, invite people to respond and testify.</li>
+    <li>In public stories, describe what the person experienced, without exaggeration.</li>
+    <li>In formal reports, distinguish reported healings from medically verified outcomes.</li>
+    <li>Never imply that someone remained sick because they lacked faith.</li>
+  </ul>
+  <p>Use "Jesus healed her" in ministry, or in a person's direct testimony. Without medical documentation, public copy should say "She testified that Jesus healed her," or describe the reported change. Formal reports use "reported healing" unless reliable documentation supports a more specific claim.</p>
+
+  <h3>Prosperity and stewardship</h3>
+  <table class="wide">
+    <tr><td>Prosperity</td><td>The condition of a person whose soul, life, resources and assignment are increasingly aligned with God's Word and will. True prosperity enables us to fulfill God's assignment and meet the needs of others: spirit, soul and body.</td></tr>
+    <tr><td>Wealth</td><td>Resources, capacity, property, influence, knowledge and opportunity entrusted for stewardship. Neither proof of righteousness nor inherently evil.</td></tr>
+    <tr><td>Increase</td><td>God-given multiplication of fruit, capacity, responsibility, influence or resources, which must be faithfully stewarded.</td></tr>
+    <tr><td>Abundance</td><td>More than enough to fulfill God's will, care for responsibilities and be generous. Not excess for status.</td></tr>
+    <tr><td>Blessing</td><td>God's empowerment, favor, provision and goodness operating in and through a person.</td></tr>
+  </table>
+  <p>Seed and harvest language must identify the context. The Word is foundational seed. Finances, time, service, generosity and actions may also be seed. Harvest may include souls, righteousness, changed lives, provision, influence or eternal reward.</p>
+  <h4>Prosperity prohibitions</h4>
+  <ul>
+    <li>Never promise a specific financial return for a gift.</li>
+    <li>Never imply someone can purchase healing, prophecy, access, favor or a miracle.</li>
+    <li>Never present giving as a transaction that obligates God.</li>
+    <li>Never treat wealth as proof of faith or spiritual maturity.</li>
+    <li>Never treat poverty or sickness as automatic proof of unbelief.</li>
+    <li>Never use seed-and-harvest language to pressure emotionally vulnerable people.</li>
+  </ul>
+
+  <h3>Spiritual warfare</h3>
+  <p>Speak directly about spiritual realities without making the enemy the centre of the message. The order is: identify the enemy or deception accurately, establish what Jesus accomplished, declare Christ's victory, teach the believer's position and delegated authority, lead people into practical freedom, and return attention to Jesus, His Kingdom and the assignment.</p>
+  <p>Name Satan, demons, bondage, curses, strongholds, the spirit of antichrist and deliverance where Scripture warrants it, without sensationalism, careless political labeling, or fascination with darkness.</p>
+
+  <h3>Doctrinal disagreement</h3>
+  <p><strong>Confront directly:</strong> a false Gospel; denial of Christ's identity, death, resurrection or lordship; salvation by human merit; deliberate deception; abuse; exploitation; manipulation; and teaching that produces serious public harm.</p>
+  <p><strong>Teach clearly and graciously about:</strong> the baptism in the Holy Spirit, tongues, healing, miracles, deliverance, prosperity, spiritual gifts, fivefold ministry, the believer's authority, holiness, stewardship, and Christ's return.</p>
+  <p><strong>Partner across disagreement</strong> when there is agreement on Scripture's authority, Jesus' identity and lordship, the essential Gospel, basic Christian integrity and the shared assignment, and where no one must conceal convictions.</p>
+  <p><strong>Do not partner</strong> where essential doctrine is denied, Scripture must be compromised, serious unrepentant misconduct is tolerated, people are manipulated, or local churches are undermined.</p>
+  <p><strong>Never publicly attack</strong> another church or minister over style, personality, vocabulary, tradition, ministry method, secondary doctrine, an isolated mistake, or an unverified allegation. Correction should be biblical, specific, proportionate and directed toward restoration. Public correction is warranted when public teaching or harm leaves people unprotected, not because controversy produces attention.</p>
+</section>
+
+<section data-sec id="evidence" data-tier="LOCKED">
+  <h2><span class="n">Section 14</span>Evidence and reporting</h2>
+  <span class="tier" data-t="LOCKED">Locked</span>
+  <p>Preaching communicates the truth and doctrine behind transformation, so people can receive faith for the same truth. Social media centres one testimony, fact or transformation at a time. Formal reports place detailed, appropriately qualified outcomes on the ministry's official record.</p>
+  <p><strong>Never communicate:</strong> "We are successful because we have seen a certain number of salvations or other conversions."</p>
+
+  <h3>What a formal report includes</h3>
+  <p>Include each of these whenever it applies and is available: assignment; location and ministry context; activities completed; attendance or reach; documented Gospel responses; reported healings and other outcomes; verified outcomes where available; one or more human stories; resources distributed; local-church involvement and follow-up; financial stewardship where appropriate; next steps.</p>
+
+  <h3>Provenance classifications</h3>
+  <p>Every figure on the record carries the classification that describes how it was obtained.</p>
+  <table class="wide">
+    <tr><td>Direct ministry</td><td>Conducted by THE WORD.</td></tr>
+    <tr><td>Local ministry</td><td>Conducted by local workers.</td></tr>
+    <tr><td>Joint ministry</td><td>Conducted with a partner.</td></tr>
+    <tr><td>Estimated reach</td><td>An estimate, and labelled as one.</td></tr>
+    <tr><td>Counted attendance</td><td>Counted, with the counting method named.</td></tr>
+    <tr><td>Reported response</td><td>Reported by those present, not independently documented.</td></tr>
+    <tr><td>Documented response</td><td>Recorded against a ministry record.</td></tr>
+  </table>
+  <p><strong>The reporting law.</strong> Use every category that applies and add other available context when it improves the record. Omit unavailable categories, or mark them unavailable. Never fill an empty field with an assumption.</p>
+</section>
+
+<section data-sec id="global" data-tier="STANDARD">
+  <h2><span class="n">Section 15</span>Global language standard</h2>
+  <p>THE WORD speaks with one globally consistent, Spirit-led theological voice. We use plain, globally understandable English, and we adapt illustrations, stories, vocabulary, calls to action and expressions to the people and the place we serve, without obscuring or weakening the truth.</p>
+</section>
+
+<section data-sec id="verbal" data-tier="STANDARD">
+  <h2><span class="n">Section 16</span>The verbal system</h2>
+  <p class="lede">The words, metaphors, sentence patterns, punctuation, capitalization and Scripture practices that make communication recognisably THE WORD.</p>
+
+  <h3>16.1 Words we carry</h3>
+  <p>These are foundational. Use them consistently wherever they accurately express the message.</p>
+  <table data-phrases class="wide">
+    <tr><th>Phrase</th><th>What it carries</th></tr>
+    <tr><td>Real relationship with Jesus</td><td>The gospel in five words. The good news is not religion. It's Him.</td></tr>
+    <tr><td>First love</td><td>Revelation 2:4. The heart of every RTMC message: return.</td></tr>
+    <tr><td>Fire starts fire</td><td>How the mission spreads. We burn; the dry catch.</td></tr>
+    <tr><td>Revival is here, not coming</td><td>Our posture. We announce a fact, we don't market a hope.</td></tr>
+    <tr><td>EVERY1 in the Church for EVERY1 outside the Church</td><td>The whole movement in one line. Always styled EVERY1.</td></tr>
+    <tr><td>Lighting hearts and seats on fire for Jesus</td><td>What a revival meeting does.</td></tr>
+    <tr><td>Walk with Jesus · turn your heart back to Jesus</td><td>The invitation, said plainly.</td></tr>
+    <tr><td>Authority in Christ</td><td>What the School trains. Believers carry power, not permission slips.</td></tr>
+    <tr><td>The Holy Spirit runs our services</td><td>The guarantee. There is no routine He can't interrupt.</td></tr>
+    <tr><td>Please God, walk with Jesus and minister to Him</td><td>The purpose, said in full.</td></tr>
+    <tr><td>Minister to Jesus</td><td>The direction of worship: toward Him, before it is toward people.</td></tr>
+    <tr><td>Strengthen the local church</td><td>The mission verb. We strengthen; we do not replace.</td></tr>
+    <tr><td>The Great Commission</td><td>The assignment, named rather than implied.</td></tr>
+    <tr><td>Spirit-led</td><td>Hyphenated, always. Our spirit has the final say.</td></tr>
+    <tr><td>Full of faith</td><td>A core value, and a description of how we sound.</td></tr>
+    <tr><td>Driven by love</td><td>The motive behind the urgency.</td></tr>
+    <tr><td>Burn for Jesus</td><td>The core value, and the BURN phase in three words.</td></tr>
+    <tr><td>GO / GO YE</td><td>The command. GO YE preserves the King James wording on purpose.</td></tr>
+    <tr><td>From lethargy to leadership</td><td>What the whole process does to a person.</td></tr>
+    <tr><td>CLEAN, BURN, TRAIN</td><td>The governing process. Never reordered.</td></tr>
+    <tr><td>Fellow laborers</td><td>What partners are. Not donors, not a list.</td></tr>
+    <tr><td>Partnership is our strength</td><td>One of the three uniques.</td></tr>
+    <tr><td>Assignment · calling · responsibility</td><td>What a believer carries. Preferred over "purpose" alone.</td></tr>
+    <tr><td>Stewardship</td><td>How we hold resources, results and trust.</td></tr>
+    <tr><td>Harvest · multiplication</td><td>Fruit language, tied to the soil and fire metaphors.</td></tr>
+    <tr><td>Kingdom of Heaven</td><td>God's rule and righteousness. Never partisan control.</td></tr>
+  </table>
+
+  <h3>16.2 Controlled vocabulary</h3>
+  <p>These words are aligned with the ministry but must be defined by context. Do not use them as empty religious or promotional shorthand.</p>
+  <table class="wide">
+    <tr><td>Revival</td><td>Define as returning to Jesus, spiritual awakening and mobilisation. Not merely an emotional meeting.</td></tr>
+    <tr><td>Revival in its fullest sense</td><td>What most people mean by revival ultimately points to the coming of the Lord and the final outpouring of God. Distinguish personal revival, citywide revival and this final prophetic horizon so the audience knows which is meant.</td></tr>
+    <tr><td>The Second Coming of Christ</td><td>Preferred formal wording. A prophetic and eschatological term, never a sensational prediction or a date-setting device.</td></tr>
+    <tr><td>Fire</td><td>Connect to love for Jesus, the Holy Spirit, consecration, mission or multiplication.</td></tr>
+    <tr><td>Anointing</td><td>Use biblically. Never as a generic synonym for talent, charisma or excitement.</td></tr>
+    <tr><td>Apostolic</td><td>Use naturally with ministry audiences. Publicly, explain it through establishment, order, strengthening, sending and multiplication.</td></tr>
+    <tr><td>Prophetic</td><td>For biblically accountable revelation. Not intuition, political prediction or branding drama.</td></tr>
+    <tr><td>Occupy</td><td>Faithful Kingdom stewardship and service. Never coercive political domination.</td></tr>
+    <tr><td>Kingdom</td><td>God's rule, righteousness, mission, authority and stewardship. Not partisan control.</td></tr>
+    <tr><td>Prosperity</td><td>Define through assignment, stewardship, generosity and a prospering soul.</td></tr>
+    <tr><td>Activation</td><td>Name the action being activated. Never an empty event label.</td></tr>
+    <tr><td>Empower</td><td>Explain what authority, knowledge, resource or opportunity is being given.</td></tr>
+    <tr><td>Impact</td><td>Name the actual change instead, whenever possible.</td></tr>
+    <tr><td>Transformation</td><td>Describe the before and the after rather than relying on the word.</td></tr>
+    <tr><td>Encounter</td><td>Identify what occurred: repentance, healing, revelation, worship or response.</td></tr>
+    <tr><td>Supernatural</td><td>Connect directly to the person and work of the Holy Spirit, rather than to spectacle.</td></tr>
+    <tr><td>Sphere of influence</td><td>Name the actual sphere whenever possible.</td></tr>
+    <tr><td>Mandate</td><td>Reserve for a genuinely authoritative biblical or ministry assignment.</td></tr>
+  </table>
+
+  <h3>16.3 Language we do not use</h3>
+  <p>These are not always false. They usually produce generic Christian, promotional or machine-generated writing. Replace each with a specific truth, outcome or action.</p>
+
+  <div data-ban="Hype">
+    <h4>Hype</h4>
+    <p data-words>insane · epic · unreal · next-level · next level · game-changer · game-changing · "God showed up and showed out" · "you won't believe" · walls of flame emojis · ALL-CAPS excitement · "something big is coming" · "you do not want to miss this" · "come expecting"</p>
+    <p data-why class="why">Manufactured intensity. Excitement must arise from substance, or it is not excitement, it is volume.</p>
+  </div>
+
+  <div data-ban="Corporate polish">
+    <h4>Corporate polish</h4>
+    <p data-words>leverage · synergy · solutions · optimize · engage stakeholders · "excited to announce" · comprehensive · robust · relevant · lean in</p>
+    <p data-why class="why">Borrowed authority. It makes a ministry sound like a vendor and says nothing a person can act on.</p>
+  </div>
+
+  <div data-ban="Churchy insider talk">
+    <h4>Churchy insider talk</h4>
+    <p data-words>traveling mercies · hedge of protection · "love on" · "do life together" · "press in" · "contend for breakthrough" · "a God thing" · "fresh anointing" (unexplained) · "blessed to announce" · "get plugged in" · authentic community</p>
+    <p data-why class="why">Language that only works if you are already inside. It excludes the person we are trying to reach.</p>
+  </div>
+
+  <div data-ban="Generic ministry filler">
+    <h4>Generic ministry filler</h4>
+    <p data-words>life-changing · powerful experience · step into your destiny · your best life · new season · shift the atmosphere · unlock your potential · make an impact · transform the world · God-sized dream · journey</p>
+    <p data-why class="why">Words that describe nothing. If the sentence survives with the phrase deleted, delete it.</p>
+  </div>
+
+  <p><strong>The specificity law.</strong> Do not write "a powerful, life-changing encounter." Name what happened: "She heard the Gospel, repented and received Jesus as Lord." Do not write "make an impact." Name the responsibility: "Share Jesus with one person this week."</p>
+
+  <h3>16.4 Internal and public language</h3>
+  <h4>Approved everywhere</h4>
+  <ul>
+    <li>Fire starts fire.</li>
+    <li>Burn for Jesus.</li>
+    <li>Return to your first love.</li>
+    <li>From lethargy to leadership.</li>
+    <li>EVERY1 in the Church for EVERY1 outside the Church.</li>
+    <li>CLEAN, BURN, TRAIN.</li>
+    <li>The Holy Spirit runs our services.</li>
+    <li>Partnership is our strength.</li>
+  </ul>
+  <h4>Internal or teaching language, requiring public explanation</h4>
+  <table class="wide">
+    <tr><td>"The spirit within us lusts to jealousy"</td><td>Retain the biblical wording when quoting it. Otherwise explain it as the holy desire of the Spirit within us.</td></tr>
+    <tr><td>"The Church is dry enough to burn"</td><td>Use when the fire metaphor and the audience make the intended spiritual meaning clear.</td></tr>
+    <tr><td>"Ministries are last-mile conversion systems"</td><td>Strong internal systems language. Explain publicly through the conversion of earthly resources into eternal fruit.</td></tr>
+    <tr><td>"Occupy the areas of society"</td><td>Explain as faithful Kingdom service and stewardship within one's assigned sphere.</td></tr>
+    <tr><td>"The anointing tills the ground"</td><td>Connect directly to the Holy Spirit breaking bondage and preparing the heart to receive the Word.</td></tr>
+    <tr><td>"Flipping revival on its head"</td><td>Explain publicly as moving people from an event-centred idea of revival to encounter, responsibility and mobilisation.</td></tr>
+  </table>
+  <h4>Prohibited public implications</h4>
+  <ul>
+    <li>Language suggesting that people are lured, tricked or subjected to a bait and switch</li>
+    <li>Language suggesting that people make Jesus Lord. He is Lord.</li>
+    <li>Language implying political takeover or coercion</li>
+    <li>Language suggesting the Holy Spirit excuses disorder, lack of preparation or lack of accountability</li>
+    <li>Language making numerical results proof of spiritual success</li>
+    <li>Language presenting giving as payment for divine results</li>
+  </ul>
+
+  <h3>16.5 Metaphor architecture</h3>
+  <p>Each phase and initiative has an assigned metaphor family. The assignment creates consistency and keeps communications from mixing unrelated images.</p>
+  <table class="wide">
+    <tr><th>Belongs to</th><th>Family, and its primary images</th></tr>
+    <tr><td>CLEAN</td><td><strong>Soil.</strong> Seed, pathway, stones, thorns, weeds, roots, good ground, fruit, harvest. CLEAN prepares the heart so THE WORD can take root and produce.</td></tr>
+    <tr><td>BURN</td><td><strong>Fire.</strong> Ignite, flame, burn, carry the fire, sustain the fire, fire starts fire. BURN describes holy desire, consecration, unity and mission.</td></tr>
+    <tr><td>TRAIN</td><td><strong>Building.</strong> Foundation, pattern, structure, establish, strengthen, build, order, completion. TRAIN gives revelation an ordered structure that can be lived and multiplied.</td></tr>
+    <tr><td>EVERY1</td><td><strong>Kingdom.</strong> King, Kingdom, authority, government, assignment, occupy, advance, sphere, stewardship.</td></tr>
+    <tr><td>Revival To My City</td><td><strong>Water and soil.</strong> Dry ground, rain, refreshment, hunger, thirst, soil, weeds, repentance, preparation.</td></tr>
+  </table>
+  <p><strong>Metaphor discipline.</strong> Use the assigned metaphor as the controlling image. Supporting images may appear when the process requires them. Do not stack soil, fire, construction, warfare, water and movement imagery merely to make writing sound spiritual.</p>
+
+  <h3>16.6 Sentence rhythm and reading level</h3>
+  <p>The house rhythm is: <strong>declaration, explanation, implication, action.</strong></p>
+  <ul>
+    <li>Begin with short, declarative sentences.</li>
+    <li>Follow declarations with enough teaching to make them clear.</li>
+    <li>Prefer active voice and strong verbs over promotional adjectives.</li>
+    <li>Address the reader directly when a personal response is required.</li>
+    <li>Use repetition intentionally, to establish truth and memory.</li>
+    <li>Use contrast sparingly: "Not merely a meeting. A mandate."</li>
+    <li>End action-oriented communication with responsibility, or a clear next step.</li>
+    <li>Avoid excessive rhetorical questions, and never stack three or more slogans together.</li>
+    <li>Use plain, globally understandable English.</li>
+    <li>Aim near an eighth-grade reading level for broad public communication, without reducing theological substance.</li>
+  </ul>
+  <p><strong>Model rhythm.</strong> You are a minister. Jesus has entrusted you with His message wherever you go. The people around you deserve the opportunity to know Him. Ask the Holy Spirit who you should speak to today, and GO.</p>
+
+  <h3>16.7 Contractions and formality</h3>
+  <table class="wide">
+    <tr><td>THE WORD, institutional</td><td>Generally "we are," "do not," "you will."</td></tr>
+    <tr><td>Formal reports and policies</td><td>No contractions.</td></tr>
+    <tr><td>Partner letters</td><td>Natural contractions, where they make the writing personal.</td></tr>
+    <tr><td>Revival To My City</td><td>Conversational, invitational, urgent.</td></tr>
+    <tr><td>EVERY1</td><td>Conversational, direct, active.</td></tr>
+    <tr><td>School of the Local Church</td><td>Clear, instructional, moderately formal.</td></tr>
+    <tr><td>A leader's personal voice</td><td>Preserve natural spoken contractions.</td></tr>
+  </table>
+
+  <h3>16.8 Punctuation and visual emphasis</h3>
+  <table class="wide">
+    <tr><td>Em dashes</td><td><strong>Not used.</strong> Use a colon, a comma, or a period. This holds across every surface this ministry publishes.</td></tr>
+    <tr><td>Exclamation marks</td><td>Rare for THE WORD and the School. Controlled use for RTMC and EVERY1.</td></tr>
+    <tr><td>All caps</td><td>Reserve for official brand names, EVERY1, and rare commands such as GO.</td></tr>
+    <tr><td>One-sentence paragraphs</td><td>Permitted, for declarations and calls to action.</td></tr>
+    <tr><td>Ellipses</td><td>Avoid in official writing.</td></tr>
+    <tr><td>Emojis</td><td>Never in formal THE WORD or School communication. Sparingly in social content.</td></tr>
+    <tr><td>Flame symbols</td><td>Campaign or social use only. Never substitute a symbol for clear fire language.</td></tr>
+    <tr><td>Hashtags</td><td>Functional campaign or organisational tags only.</td></tr>
+    <tr><td>Checkmarks</td><td>Useful in instructional digital content. Not in formal reports.</td></tr>
+  </table>
+
+  <h3>16.9 Naming and capitalization</h3>
+  <table class="wide">
+    <tr><td>THE WORD FOR ALL THE WORLD</td><td>The formal or legal name.</td></tr>
+    <tr><td>THE WORD</td><td>The normal master-brand name.</td></tr>
+    <tr><td>EVERY1</td><td>Always the numeral. Never <span data-specimen>"Every One" or "EveryOne."</span></td></tr>
+    <tr><td>EVERY1 Movement</td><td>The formal initiative name.</td></tr>
+    <tr><td>Revival To My City</td><td>The formal initiative name.</td></tr>
+    <tr><td>School of the Local Church</td><td>The formal initiative name.</td></tr>
+    <tr><td>All Is Well</td><td>The formal podcast name.</td></tr>
+    <tr><td>Church</td><td>Capitalized for the worldwide Body or Bride of Christ, including the Church within a nation when the meaning is the collective Body.</td></tr>
+    <tr><td>local church</td><td>Lowercase for an individual congregation, a building, or generic usage.</td></tr>
+    <tr><td>Always capitalized</td><td>Body of Christ; Bride of Christ; Gospel; Great Commission; Kingdom of God; Kingdom of Heaven; Word of God; the Word when referring to Scripture; Holy Spirit; Spirit of God; Bible.</td></tr>
+    <tr><td>Spirit-led, Spirit-filled</td><td>Hyphenated.</td></tr>
+    <tr><td>biblical</td><td>Lowercase, unless it begins a sentence or a title.</td></tr>
+    <tr><td>He, Him, His</td><td>Capitalized when referring to God.</td></tr>
+    <tr><td>Satan</td><td>Capitalized as a proper name. "the devil" stays lowercase.</td></tr>
+    <tr><td>heaven</td><td>Lowercase in general usage. Capitalized within the formal phrase "Kingdom of Heaven."</td></tr>
+    <tr><td>Second Coming of Christ</td><td>The preferred formal capitalization.</td></tr>
+  </table>
+
+  <h3>16.10 Scripture standards</h3>
+  <p><strong>Primary translation.</strong> The New King James Version is the primary translation for public Scripture quotations. Other translations may be used when needed for clarity, teaching, or accurate preservation of an existing source. Identify the version with the reference.</p>
+  <p><strong>Full quotations.</strong> When printing a full verse, place it on its own line and include the reference and version. Pull the exact published wording from the identified translation.</p>
+  <p><strong>Inline quotations.</strong> When quoting Scripture within a sentence, include the reference inline. If the wording is in quotation marks, or otherwise appears to be a direct quotation, verify it and use the exact published wording of that version.</p>
+  <p><strong>Paraphrase.</strong> Paraphrase Scripture only when specifically requested, and label it clearly as a paraphrase. Never silently convert remembered wording into a quotation.</p>
+  <p><strong>King James and house language.</strong> Preserve intentional King James language such as GO YE. When a source quotes a passage in KJV or another version, retain that version and correct the wording to the exact published quotation.</p>
+  <p><strong>Founder writing and remembered Scripture.</strong> In formal materials, use the exact published quotation when the writing appears intended as a direct quote. Within an unquoted inline sentence that naturally echoes Scripture, preserve the founder's wording and include a reference where useful. Do not add quotation marks unless the wording has been verified.</p>
+</section>
+
+<section data-sec id="channels" data-tier="STANDARD">
+  <h2><span class="n">Section 17</span>Channel, leadership and calls to action</h2>
+
+  <h3>Channel voice</h3>
+  <table class="wide">
+    <tr><th>Channel</th><th>Its job, and the voice it takes</th></tr>
+    <tr><td>THE WORD website</td><td>Establish identity, authority, vision and trust. Institutional, apostolic, concise. Pages should show what God has assigned, how the ministry strengthens the local church, what has been responsibly documented, and how someone may partner or stay connected.</td></tr>
+    <tr><td>Initiative websites</td><td>Move a defined audience into participation. Focused, clear, action-oriented. Each page uses the initiative's mission, its assigned metaphor, and one primary next step.</td></tr>
+    <tr><td>Social media</td><td>The voice depends on the type of post. See below.</td></tr>
+    <tr><td>Institutional email</td><td>Official announcements, organisation-wide updates, reports and policies, in THE WORD's institutional voice.</td></tr>
+    <tr><td>Leader email</td><td>Vision, teaching, prayer and encouragement, in the named leader's own voice. Joel carries pastoral encouragement and communication to the local Church. Nathan carries mobilisation and communication that takes the local Church into the world.</td></tr>
+    <tr><td>Initiative email</td><td>Events, formation, challenges, reminders and next steps, in the initiative voice.</td></tr>
+    <tr><td>Preaching and sermon-derived material</td><td>Edited for punctuation by default, and nothing else. See below.</td></tr>
+    <tr><td>Partnership communication</td><td>The primary purpose is to invest in the person. Letters, emails, messages, prayer and visits are themselves ministry value, not packaging around a financial request.</td></tr>
+    <tr><td>Formal reports</td><td>Place accurate, appropriately qualified information on the ministry's official record. Include every applicable reporting category. Never invent a fact, number, classification, source or outcome.</td></tr>
+    <tr><td>EVERY1 app</td><td>Turn identity and truth into action. Short, personal, encouraging, practical. App copy mobilises without shaming, manipulating, or producing spiritual competition.</td></tr>
+    <tr><td>School curriculum</td><td>Build understanding through ordered teaching. Clear, cumulative, doctrinal, practical. Preserves the teacher's words while making sequence, definitions and application easy to follow.</td></tr>
+    <tr><td>All Is Well podcast</td><td>Refreshment by the Spirit of God. Carries Joel's preaching cadence and pastoral warmth while remaining aligned with this standard. Editing of preaching-derived material is limited to punctuation unless Joel specifically requests otherwise.</td></tr>
+  </table>
+
+  <h4>Social media</h4>
+  <p>Favor speaking directly to the person, unless the post is primarily informative, documentary, or an official record.</p>
+  <ul>
+    <li><strong>Declaration, teaching, mobilisation and invitation posts:</strong> speak primarily to "you."</li>
+    <li><strong>Testimony posts:</strong> centre the person and the specific transformation.</li>
+    <li><strong>Informational posts:</strong> clear institutional language, and the appropriate "we," initiative name, or third-person description.</li>
+    <li><strong>Official-record posts:</strong> state the facts precisely, and qualify what was reported, counted, documented or verified.</li>
+    <li><strong>Personal ministry posts:</strong> preserve the identified leader's own first-person voice.</li>
+  </ul>
+  <p><strong>The social-media law.</strong> One post. One truth. One response. Choose the voice from the function of the post, rather than forcing every post into institutional "we" language.</p>
+
+  <h4>Preaching and sermon-derived material</h4>
+  <ul>
+    <li>When in doubt, preserve the exact words given in the preaching.</li>
+    <li>Do not rewrite sentence structure, vocabulary, repetition, illustrations, theological emphasis or style unless specifically asked to edit style or content.</li>
+    <li>Verify direct Scripture quotations, and correct references per Section 16.10.</li>
+    <li>Do not treat every spontaneous statement as settled institutional policy. Preserve the words, and keep the document type and its authority clear.</li>
+  </ul>
+  <p>Email identities must remain distinct. Do not ghostwrite every message into one generic ministry voice.</p>
+
+  <h3>Ministry-leader voice architecture</h3>
+  <p>Joel and Nathan are both ministry leaders. Neither voice is a subordinate variation of the other.</p>
+  <table class="wide">
+    <tr><td>Joel</td><td>Sent to the local Church. His voice ministers within the Church through spiritual fathering, revival, teaching, prayer, pastoral strength, and a call to return to Jesus.</td></tr>
+    <tr><td>Nathan</td><td>Sent to take the local Church to the world. He goes into the Church in order to send believers outside the church: into the Great Commission, their spheres of influence, and their responsibility as ministers.</td></tr>
+    <tr><td>Shared</td><td>Both speak from the same purpose, mission, doctrine and institutional standard. Their emphasis, examples, relational posture and calls to action may differ according to assignment.</td></tr>
+  </table>
+  <p><strong>The attribution law.</strong> When a communication originates from Joel or Nathan, preserve that leader's identity, vocabulary and assignment. Do not convert a personal ministry-leader message into anonymous institutional prose unless it is intentionally being issued by THE WORD. Equally, institutional copy must not imitate either leader, and must never invent a blended voice out of the two.</p>
+
+  <h4>Who ordinarily carries what</h4>
+  <table class="wide">
+    <tr><td>Teaching letter to partners</td><td>Joel</td></tr>
+    <tr><td>School of the Local Church teaching</td><td>Joel</td></tr>
+    <tr><td>Great Commission mobilisation email</td><td>Nathan</td></tr>
+    <tr><td>Invitation to Revival To My City</td><td>Nathan</td></tr>
+    <tr><td>EVERY1 challenge</td><td>Nathan</td></tr>
+    <tr><td>Doctrinal clarification</td><td>Joel or Nathan, according to subject and assignment</td></tr>
+    <tr><td>Ministry-wide vision announcement</td><td>THE WORD, unless a named leader's personal assignment is material</td></tr>
+    <tr><td>Personal testimony</td><td>THE WORD, unless intentionally issued as an attributed personal communication</td></tr>
+    <tr><td>Giving-campaign appeal</td><td>THE WORD</td></tr>
+  </table>
+
+  <h3>Calls to action</h3>
+  <h4>The CTA laws</h4>
+  <ul>
+    <li>One primary call to action per communication.</li>
+    <li>Begin with a strong verb.</li>
+    <li>Name the action, not merely the destination.</li>
+    <li>Make the next step immediately understandable.</li>
+    <li>No false urgency, and never pressure people into spiritual decisions.</li>
+    <li>Avoid "learn more" when a specific action is available.</li>
+    <li>Use transitional actions when someone needs preparation before commitment.</li>
+    <li>The response must fit the truth that was just communicated.</li>
+  </ul>
+  <table class="wide">
+    <tr><th>Brand</th><th>Calls to action, and the normal outcome</th></tr>
+    <tr><td>THE WORD</td><td>Primary: Partner With the Assignment. Continuing: Join the Newsletter. Supporting: See the Work, Read the Report, Invite THE WORD. Normal outcome: people enter a continuing relationship through partnership or the newsletter.</td></tr>
+    <tr><td>Revival To My City</td><td>Primary: Bring Revival to MY City. Event: Attend Revival in [City]. Spiritual response: Return to Your First Love. Next step: Carry Revival Beyond the Meeting. Normal outcome: people return to Jesus and move from the meeting into obedience, mobilisation and continuing training.</td></tr>
+    <tr><td>EVERY1 Movement</td><td>Primary: Join EVERY1, Reach Your 1. Immediate: Reach Your 1. Formation: Take the EVERY1 Challenge. Identity: Take Your Place. Evidence: Tell Your EVERY1 Story. Normal outcome: people accept the Great Commission, build commissioned habits, reach and follow up with people, and train others.</td></tr>
+    <tr><td>School of the Local Church</td><td>Primary: Begin Training. Leadership: Host the School of the Local Church. Preview: Preview the Curriculum. Normal outcome: believers and leaders enter an ordered training pathway that builds authority, relationship, responsibility and lasting leadership.</td></tr>
+    <tr><td>All Is Well</td><td>Primary: Listen Now. Continuing: Follow the Podcast. Response: Send a Prayer Request. Sharing: Share This Message. Normal outcome: people receive refreshment from the Spirit of God, grow hungry for Him, and continue listening, praying or sharing.</td></tr>
+  </table>
+</section>
+
+<section data-sec id="scripts" data-tier="STANDARD">
+  <h2><span class="n">Section 18</span>Sub-brand message scripts</h2>
+  <p class="lede">Every initiative uses two related scripts: an outside voice for people considering attendance, participation or training, and an inside voice for people who have joined, enrolled, or become part of the team.</p>
+  <p><strong>Outside voice.</strong> Speak to the person's present tension in plain language. Explain what the initiative is, name the spiritual movement it serves, and offer one clear next step. Do not assume familiarity with ministry vocabulary.</p>
+  <p><strong>Inside voice.</strong> Speak identity, belonging, responsibility and activation. Internal language must never create a spiritually superior inner circle, compete with a person's local church, or make loyalty to the initiative more important than obedience to Jesus. Belonging exists to strengthen people for ministry, not to make them dependent upon the organisation.</p>
+
+  <h3>Revival To My City</h3>
+  <p><strong>In one sentence.</strong> Revival To My City is stirring the local church to return to their first love.</p>
+  <p>The principal public script speaks to people considering attendance. Pastor-facing and host-facing material may be developed when needed, but it is not the controlling public script.</p>
+  <h4>Outside · considering attendance</h4>
+  <p>There must be more than going through the motions. Revival To My City is a gathering for people who are hungry for Jesus and ready to return to their first love. Come worship, receive the Word, and allow the Holy Spirit to awaken what has become dry, distracted or stuck. This is not only a meeting to attend. It is an invitation to carry revival into your life, your church and your city.</p>
+  <p class="note">Primary CTA: Attend Revival in [City]. Supporting CTA: Bring Revival to MY City.</p>
+  <h4>Inside · joined or serving</h4>
+  <p>Revival is not merely a meeting we attend. It is a life surrendered to Jesus. As part of Revival To My City, we pray, serve, honor local churches, and create room for the Holy Spirit to minister. We carry a culture of strengthening, we help people return to their first love, and we take responsibility for carrying the fire beyond the meeting.</p>
+
+  <h3>EVERY1 Movement</h3>
+  <p><strong>In one sentence.</strong> EVERY1 is a high-energy global soul-winning movement uniting believers, churches and ministries so EVERY1 in the Church can reach EVERY1 outside the Church, until EVERY1 knows the name Jesus.</p>
+  <p><strong>The primary mandate.</strong> EVERY1 is built on the certainty that Jesus has already given His Church the Great Commission. The question is not whether ordinary believers are allowed to participate. The call is for EVERY1: accept the mission, act on what you know, reach your 1, and help others do the same. Certainty comes from knowing Jesus, knowing the pure and simple Gospel, and knowing His command, not from waiting until every method is understood.</p>
+  <h4>Outside · joining the movement</h4>
+  <p>You were saved and sent. The Great Commission belongs to EVERY1, not only pastors, evangelists, experts or people with a platform. You already have somewhere to begin: tell one person what Jesus has done, preach the pure and simple Gospel in the power of the Holy Spirit, pray for the sick, act in love, and reach your 1. EVERY1 is a global movement turning millions of individual acts of obedience into one worldwide mission. Accept the mission. Reach your 1. See what God is doing. Then GO again.</p>
+  <p class="note">Primary CTA: Join EVERY1, Reach Your 1.</p>
+  <h4>Inside · joined or serving</h4>
+  <p>We are EVERY1 in the Church for EVERY1 outside the Church. We do not spectate revival. We carry it, steward it and spread it. Every person has a part, every act of obedience matters, and every one-on-one interaction can be for Jesus. Together we preach the Gospel, pray for people, follow up responsibly, connect people with the local church, report fruit truthfully, celebrate what God has done, and inspire one another to GO again.</p>
+  <p><strong>Taking position together.</strong> Inside EVERY1, taking your position means discovering and stewarding the part God has given you in government, business, influence, family, ministry, medicine, or where those spheres meet. We do not compete for one visible role. Each person supplies what the whole Body needs. We cooperate across churches and ministries around the essential Gospel and this shared commission without requiring agreement on every secondary doctrine, and we do not mute or compartmentalise the Holy Spirit to preserve that cooperation. Movement spaces are for Spirit-led mission, testimony, prayer, healing, deliverance, follow-up and mobilisation, not doctrinal debate, ministry competition, sheep-stealing, or promotion of THE WORD.</p>
+  <p><strong>The app.</strong> The EVERY1 app makes preaching the Gospel fun, social, visible and actionable. It supplies the movement with challenges, progress tracking, testimonies, community, inspiration and consent-based church follow-up. It exists to serve and scale the movement, not to promote THE WORD.</p>
+
+  <h3>School of the Local Church</h3>
+  <p><strong>In one sentence.</strong> The School of the Local Church trains believers to know their authority in Christ, build a real relationship with Jesus, and take their place in the local church.</p>
+  <p>The principal script begins with the believer's need to know their authority in Christ and develop a real relationship with Jesus. Host-facing language is supporting leadership communication, not the controlling public message.</p>
+  <h4>Outside · considering training</h4>
+  <p>You were not called to remain unsure of who you are, what Jesus has given you, or where you belong. The School of the Local Church is training for believers who want to know their authority in Christ, build a real relationship with Jesus, and take their place in what He is building. This is more than information. It is ordered, practical training that moves truth into relationship, responsibility and action.</p>
+  <p class="note">Primary CTA: Begin Training. Supporting CTA: Preview the Curriculum.</p>
+  <h4>Inside · enrolled or serving</h4>
+  <p>Training is not complete when information has been received. As part of the School of the Local Church, we apply the Word, grow in relationship with Jesus, exercise our authority in Christ, and serve the Church He is building. We receive correction, practice what we learn, and help strengthen others. We are being built so that we can build faithfully.</p>
+
+  <h3>All Is Well</h3>
+  <p>All Is Well brings Spirit-led teaching and encouragement that helps people receive refreshment from the Spirit of God, grow hungry for Jesus, and continue in faith, prayer and the Word. It is a podcast and a recognisable ministry identity of Joel Zimmer, carried under THE WORD. It is not a phase of the process and not an initiative.</p>
+  <p class="note">Primary CTA: Listen Now. Supporting: Follow, Send a Prayer Request, Share This Message.</p>
+</section>
+
+<section data-sec id="leaders" data-tier="EXPERIMENTAL">
+  <h2><span class="n">Section 19</span>Leadership voice profiles</h2>
+  <span class="tier" data-t="EXPERIMENTAL">Experimental</span>
+  <p><strong>Status.</strong> These profiles combine Nathan's confirmed answers about both leaders with existing ministry writing, preaching and vision materials. They may guide drafting now. They do not authorise invented biography, quotation, doctrine or personal opinion. Direct interviews with Joel and Nathan may refine or supersede personal details, and once each leader approves his own profile, that approved profile governs attributed personal communication while this standard continues to govern THE WORD and every initiative.</p>
+  <p>THE WORD remains the enduring institutional voice. Both personal voices remain governed by this standard's doctrine, mission, Scripture standard, partnership laws and reporting laws. Preaching and preaching-derived writing are edited for punctuation only, unless the speaker specifically requests otherwise.</p>
+
+  <h3>Joel Zimmer</h3>
+  <p><strong>Assignment.</strong> Joel is sent into the local Church to strengthen believers through the Word and the demonstration of the Holy Spirit, awaken hunger for Jesus, and help people grow into their place in the Body of Christ.</p>
+  <p>A prophetic word Joel received likened his assignment to Elisha pouring salt into bitter water and making it sweet: "I'll pour you out into the Church and the world." This is a remembered paraphrase. It must not be presented as a verbatim quotation until it has been checked against the original wording.</p>
+  <p><strong>Relational posture.</strong> A seasoned fellow laborer and pastoral teacher with fatherly warmth. He speaks as someone who has walked with Jesus, received from spiritual mentors, tested what he has heard by Scripture, and now wants others to know what is available to them in Christ.</p>
+  <p><strong>Voice DNA.</strong> Relational, testimonial, Scripture-first, warm, steady, plainspoken, full of faith. Joel often begins with something Jesus showed him or someone demonstrated to him, walks through a Bible narrative, draws out a memorable principle, and invites the hearer to believe, receive, speak and act on the Word. Repetition establishes truth. It does not manufacture emotion.</p>
+  <p><strong>Recurring messages.</strong> The Church age is God's mystery on the earth. This is the dispensation of grace and the age of the Holy Spirit. Believe, speak and act on the Word through the Holy Spirit. You are a three-part being: spirit, soul and body. Grow into maturity and take your place in the Body of Christ.</p>
+  <p><strong>Emotional destination.</strong> People should feel known, settled, refreshed, full of faith, and ready to mature in what God has spoken.</p>
+  <p><strong>Signature language.</strong> "Open the Word." "Believe it, speak it and walk it out." "The presence of the Holy Spirit." "All is well." Use these when they naturally fit the message. Do not force all of them into every communication.</p>
+  <p><strong>Joel sounds like</strong> a trusted minister opening the Bible at the kitchen table; a psalmist carrying the Word through music; a mentor who honors those who demonstrated Christ to him; a teacher who expects the Word to work; a pastor who values the presence of the Holy Spirit more than an atmosphere.</p>
+  <p><strong>Joel does not sound like</strong> corporate, hurried, theatrical, self-promotional, controlling, or dependent on atmosphere rather than the presence of God. He does not replace Scripture with personality or tradition, and he does not use fatherly authority to control people.</p>
+  <p><strong>Music and ministry.</strong> Music carries the Word, creates hunger for Jesus, and ministers refreshment through the Holy Spirit. All Is Well is part of this identity. Governing expression: "It creates a hunger within the people that only God can fill."</p>
+  <p class="note">Synthesized sample, not a quotation: Open the Word. Let the Holy Spirit show you what belongs to you in Christ. Believe it, speak it and walk it out. You are a spirit; you have a soul; and you live in a body. As you stay with Jesus and act on His Word, He will mature you and bring you into your place in the Body. All is well.</p>
+
+  <h3>Nathan Zimmer</h3>
+  <p><strong>Assignment.</strong> Nathan is sent into the local Church to send the local Church into the world, mobilising believers to preach the Gospel, win souls, and live the Great Commission.</p>
+  <p><strong>Relational posture.</strong> An apostolic and evangelistic mobiliser with prophetic urgency. He invites people first, and confronts passivity when necessary. He speaks to believers as people who are called, anointed and able to act, not as spectators waiting for a title or perfect understanding.</p>
+  <p><strong>Voice DNA.</strong> Bold, clear, simple, direct, high-energy, Spirit-led. Short declarations carry conviction, teaching supplies biblical certainty, systems give passion an avenue, and the message ends in movement. He brings authority without arrogance, fire without manipulation, urgency without artificial pressure.</p>
+  <p><strong>Recurring messages.</strong> You can have a real relationship with Jesus. Every believer, not just the fivefold ministry, is called to preach the Gospel and win souls. Spirit-led systems help every part do its part and sustain revival.</p>
+  <p><strong>Emotional destination.</strong> People should feel awakened, certain, empowered, responsible, and ready to GO.</p>
+  <p><strong>Signature language.</strong> "Lighting hearts and seats on fire for Jesus." "Fire starts fire." "You can have a real relationship with Jesus." "The Great Commission is for all, not just those proved faithful." "Every tribe, every tongue, every nation and every one-on-one interaction will be for Jesus." Preserve the urgency and the play on EVERY1, without turning every message into a slogan.</p>
+  <p><strong>Nathan sounds like</strong> a ministry leader calling the Church to GO; a psalmist who can preach through a song; a builder who turns revelation into a repeatable pathway; an evangelistic leader who makes the next act of obedience clear; a voice that insists the Holy Spirit will never lose His value.</p>
+  <p><strong>Nathan does not sound like</strong> passive, vague, polished-corporate, academically abstract, hype-driven, manipulative, or afraid of the Holy Spirit. He does not create urgency through shame, make methods the source of power, or let doctrinal side debates displace the mandate of Jesus.</p>
+  <p><strong>Music and ministry.</strong> Music is another means of preaching the Gospel: a psalmist expression that carries people toward Jesus, faith, mission and the world. Governing expression: "Preach my songs and sing my sermons." Music is supporting and situational rather than the centre of Nathan's leadership identity.</p>
+  <p class="note">Synthesized sample, not a quotation: You can have a real relationship with Jesus, and every believer is called to carry His Gospel. The Great Commission is for all, not just the fivefold and not just those considered proved faithful. Let the Holy Spirit light your heart on fire, take the next person in front of you, and GO. Fire starts fire.</p>
+
+  <h3>Shared foundation, distinct emphasis</h3>
+  <p>Both leaders are Scripture-first, Spirit-led, full of faith, centred on a real relationship with Jesus, committed to the local Church, and unwilling to separate the Great Commission from the power of the Holy Spirit. Both may preach, teach, lead, sing, invite response and speak with authority. Their difference is emphasis, not opposition. Joel is generally sent into the local Church through testimony, teaching, mentorship, worship and maturation. Nathan is generally sent into the local Church to send the local Church into the world through mandate, mobilisation, systems, music and action. These are governing tendencies, not rigid limits.</p>
+  <p>The shared operating statement remains: "We function in keeping the main thing the main thing." Neither voice should be flattened to create artificial sameness, and neither voice may be used to contradict this standard.</p>
+  <p class="note">Still open, and to be settled by direct interview: validating Joel's prophecy against its original wording; each leader's single most important emotional destination; which phrases are spontaneous and which are durable signature language; each leader's natural personal calls to action; biographical boundaries; and which source material is now outdated.</p>
+</section>
+
+<section data-sec id="examples" data-tier="STANDARD">
+  <h2><span class="n">Section 20</span>Before and after</h2>
+  <p class="lede">Each comparison teaches a governing law. The off-brand language is illustrative and must never be reused as ministry copy. Diagnose the failure before copying the on-brand pattern.</p>
+
+  <div class="ex" data-rewrite>
+    <h4>Public social post</h4>
+    <p class="off"><span class="lbl">Never</span>"The world is dying while lazy Christians sit in church. Stop making excuses and do something."</p>
+    <p class="why">Contempt and shame as motivation, an unsupported generalisation, and a believer left condemned rather than commissioned.</p>
+    <p class="on"><span class="lbl">Always</span>"You were saved and sent. Someone in your world needs to know what Jesus has done for you. Ask the Holy Spirit who your 1 is, begin the conversation, and GO."</p>
+  </div>
+
+  <div class="ex" data-rewrite>
+    <h4>Revival To My City invitation</h4>
+    <p class="off"><span class="lbl">Never</span>"Revival is coming! Do not miss the most life-changing event your city has ever seen."</p>
+    <p class="why">Hype, an outcome promise that cannot be guaranteed, and revival treated primarily as an event.</p>
+    <p class="on"><span class="lbl">Always</span>"There must be more than going through the motions. Revival To My City is calling the local church to return to her first love. Come worship, receive the Word, and make room for the Holy Spirit to awaken what has become dry or distracted. Attend Revival in [City]."</p>
+  </div>
+
+  <div class="ex" data-rewrite>
+    <h4>EVERY1 Movement</h4>
+    <p class="off"><span class="lbl">Never</span>"Not sure whether you are allowed to evangelize? Download our ministry app and learn how."</p>
+    <p class="why">Uncertainty as the controlling emotion, the app before the movement, and EVERY1 reduced to another content platform.</p>
+    <p class="on"><span class="lbl">Always</span>"You were saved and sent. The Great Commission belongs to EVERY1. Join believers, churches and ministries around the world who are preaching the Gospel in the power of the Holy Spirit. Accept the mission. Reach your 1. Then GO again."</p>
+  </div>
+
+  <div class="ex" data-rewrite>
+    <h4>School of the Local Church</h4>
+    <p class="off"><span class="lbl">Never</span>"An elite leadership intensive for serious Christians ready to reach the next level."</p>
+    <p class="why">Exclusive, self-improving and status-driven. It never names relationship with Jesus, authority in Christ, or service within the local church.</p>
+    <p class="on"><span class="lbl">Always</span>"You were not called to remain unsure of who you are, what Jesus has given you, or where you belong. The School of the Local Church trains believers to know their authority in Christ, build a real relationship with Jesus, and take their place in the local church. Begin Training."</p>
+  </div>
+
+  <div class="ex" data-rewrite>
+    <h4>Ordinary partner communication</h4>
+    <p class="off"><span class="lbl">Never</span>"Because you are one of our most faithful donors, we wanted to tell you about another urgent financial need."</p>
+    <p class="why">It values the person according to giving, turns routine communication into fundraising, and treats the relationship as a pipeline to money.</p>
+    <p class="on"><span class="lbl">Always</span>"We remembered you in prayer today. We are asking the Lord to strengthen your faith, family, work and assignment. Here is a truth that has been helping our team remain full of faith this month, and we believe it will strengthen you too."</p>
+  </div>
+
+  <div class="ex" data-rewrite>
+    <h4>Explicit giving campaign</h4>
+    <p class="off"><span class="lbl">Never</span>"If you do not give by midnight, this opportunity may disappear. Sow today and expect your miracle."</p>
+    <p class="why">Pressure, artificial urgency, and a promised spiritual return.</p>
+    <p class="on"><span class="lbl">Always</span>"We are inviting partners to help provide [verified need] for [specific assignment]. The current confirmed cost is [amount], and gifts designated to this campaign will be used for [purpose]. Please pray and participate only as the Lord leads you. If you choose to give, the process is secure and simple: [link]. We will report what was received, how it was used, and the verified fruit."</p>
+  </div>
+
+  <div class="ex" data-rewrite>
+    <h4>Formal ministry report</h4>
+    <p class="off"><span class="lbl">Never</span>"Our campaign was a massive success with thousands of lives changed and unprecedented miracles."</p>
+    <p class="why">Vague superlatives, numbers treated as proof of spiritual success, and no evidence classification.</p>
+    <p class="on"><span class="lbl">Always</span>"From [dates], the team served in [locations]. Attendance was [counting method]. Ministry records document [verified number] Gospel responses, [verified number] follow-up connections, and [verified number] reported healings. Testimonies still awaiting confirmation are labelled unverified. These results are reported as fruit entrusted to us, not as the measure of our spiritual success."</p>
+  </div>
+
+  <div class="ex" data-rewrite>
+    <h4>Speaking about the Church</h4>
+    <p class="off"><span class="lbl">Never</span>"The Church is asleep, compromised and failing its generation."</p>
+    <p class="why">Accusation as the destination, no pastoral love, condemnation instead of a pathway back to Jesus.</p>
+    <p class="on"><span class="lbl">Always</span>"Many believers know there must be more but have become dry, distracted or weighed down. We speak truthfully about what prevents the Word from producing, while calling the Church back to her first love. The destination is never shame. It is awakening, responsibility and action."</p>
+  </div>
+
+  <div class="ex" data-rewrite>
+    <h4>Speaking to someone who does not know Jesus</h4>
+    <p class="off"><span class="lbl">Never</span>"The lost and unsaved need to get right with God before it is too late."</p>
+    <p class="why">It labels the person before establishing love, assumes religious vocabulary, and leads with condemnation.</p>
+    <p class="on"><span class="lbl">Always</span>"If you do not yet know Jesus, He is not distant or unavailable. He knows you, loves you, and is inviting you to receive forgiveness, new life, and a real relationship with Him."</p>
+  </div>
+
+  <div class="ex" data-rewrite>
+    <h4>Preaching-derived material</h4>
+    <p class="off"><span class="lbl">Never</span>Source: "when Jesus calls you you go you do not wait until everything makes sense you go". Edited to: "Spiritual progress requires embracing uncertainty and proactively pursuing your divine purpose."</p>
+    <p class="why">It replaces the preacher's words, cadence, force and theology with generic editorial language.</p>
+    <p class="on"><span class="lbl">Always</span>Punctuation only: "When Jesus calls you, you GO. You do not wait until everything makes sense. You GO."</p>
+  </div>
+
+  <div class="ex" data-rewrite>
+    <h4>Cross-ministry unity and the Holy Spirit</h4>
+    <p class="off"><span class="lbl">Never</span>"To ensure everyone feels comfortable, EVERY1 avoids disputed supernatural subjects and focuses on shared values."</p>
+    <p class="why">It creates unity by muting the Holy Spirit, and turns the movement spiritually neutral.</p>
+    <p class="on"><span class="lbl">Always</span>"EVERY1 welcomes cooperation around the essential Gospel and the Great Commission. We are not exclusive, but we will not shy away from the Holy Spirit. Spirit-led ministry, healing, deliverance and supernatural dependence upon Him remain part of our normal environment."</p>
   </div>
 </section>
 
-<!-- 02 FOUNDATION -->
-<section id="foundation" class="dark pres">
-  <div class="wrap">
-    <div class="slidehead"><span class="eyebrow">02 · The Foundation</span><span class="slideno">The Word · Messaging Guide</span></div>
-    <h2>One public line.<br>Three pillars behind it.</h2>
-    <p>In public (websites, decks, one-liners, introductions) the mission speaks as a single fused line. Internally, that line stands on a Purpose, a Mission, and a Vision. Both are canon. The fused line is what the world hears; the pillars are what the house is built on.</p>
+<section data-sec id="audit" data-tier="LOCKED">
+  <h2><span class="n">Section 21</span>The publication audit</h2>
+  <span class="tier" data-t="LOCKED">Locked</span>
+  <p><strong>The publication rule.</strong> A message is not ready because it is grammatically correct or visually polished. It is ready when it is faithful to this ministry's heart, theology, audience, evidence and assigned action. Any failed doctrinal, Scripture, integrity or partnership item must be corrected before publication.</p>
 
-    <div class="statement">
-      <div class="sk">The Public Mission Line · Use This Everywhere</div>
-      <div class="big">Strengthening the local church to fulfill the Great Commission, until EVERY1 knows the name Jesus.</div>
-    </div>
+  <h3>Identity and mission</h3>
+  <ul>
+    <li>Does the message strengthen the local church rather than compete with it?</li>
+    <li>Does it ultimately support a real relationship with Jesus, the Great Commission, or ministry to Him?</li>
+    <li>Is the correct brand or initiative speaking?</li>
+    <li>Does it preserve CLEAN, BURN, TRAIN rather than confusing the roles of the initiatives?</li>
+  </ul>
 
-    <div class="pmv">
-      <div class="card">
-        <div class="lab">Purpose</div>
-        <div class="txt">To build a real relationship with Jesus. To please God, walk with Jesus, and minister to Him.</div>
-      </div>
-      <div class="card">
-        <div class="lab">Mission</div>
-        <div class="txt">To strengthen the local church to do the Great Commission. Fire starts fire. We burn for Jesus in locations across the world, and they catch it, because they're dry enough.</div>
-      </div>
-      <div class="card">
-        <div class="lab">Vision</div>
-        <div class="txt">Every tribe, every tongue, every nation, and EVERY1 will know the name Jesus.</div>
-        <span class="vref">Hebrews 8:11</span>
-      </div>
-    </div>
-  </div>
+  <h3>Audience and posture</h3>
+  <ul>
+    <li>Is the primary audience unmistakable?</li>
+    <li>Are we speaking to the person directly, unless the content is intentionally informative or formal?</li>
+    <li>Is our relationship to the audience correct: apostolic leader, trusted partner, fellow laborer, teacher, or movement?</li>
+    <li>Does the reader leave loved, strengthened and responsible, rather than shamed, manipulated or diminished?</li>
+  </ul>
+
+  <h3>Voice and language</h3>
+  <ul>
+    <li>Does this sound authoritative, warm, direct, Spirit-led and full of faith?</li>
+    <li>Is the language plain and globally understandable without weakening the truth?</li>
+    <li>Are sentences active, concrete, and appropriately energetic for the channel?</li>
+    <li>Have vague ministry clichés, hype, corporate jargon and artificial urgency been removed?</li>
+    <li>Are Church, local church, Gospel, Scripture, Holy Spirit, Kingdom and EVERY1 styled per Section 16.9?</li>
+    <li>Are there any em dashes? There must not be.</li>
+  </ul>
+
+  <h3>Gospel, Church and Holy Spirit</h3>
+  <ul>
+    <li>If this is a complete Gospel presentation, are sin, repentance, the cross, resurrection, lordship, forgiveness, new birth, relationship with Jesus and eternal life represented faithfully?</li>
+    <li>Is Jesus presented as He is, not reduced to inspiration, sentiment or self-improvement?</li>
+    <li>Does language about people who do not know Jesus remain personal, clear, hopeful and accurate?</li>
+    <li>When correcting the Church, is the destination repentance, awakening and action rather than accusation or shame?</li>
+    <li>Have we avoided muting, apologising for, or compartmentalising the Holy Spirit?</li>
+    <li>Is supernatural ministry presented without hype, spectacle, or promises God has not made?</li>
+  </ul>
+
+  <h3>EVERY1 Movement</h3>
+  <ul>
+    <li>Does EVERY1 sound high-energy, active, certain, global and inspiring?</li>
+    <li>Does it begin with Christ's mandate rather than uncertainty about permission?</li>
+    <li>Does it keep the controlling statement intact: "We function in keeping the main thing the main thing"?</li>
+    <li>Is the movement clearly larger than the app, and does the app serve participation rather than promote THE WORD?</li>
+    <li>Are people moved from spectatorship to action: accept, GO, preach, reach, pray, do, track, connect, celebrate, repeat, train?</li>
+    <li>Does sphere language help each person take their position while keeping soul winning central?</li>
+    <li>Does cross-ministry unity allow secondary differences without becoming spiritually neutral?</li>
+  </ul>
+
+  <h3>Partnership and giving</h3>
+  <ul>
+    <li>Does the communication invest value, wisdom, prayer or encouragement into the partner?</li>
+    <li>Would it remain valuable if the reader never gave?</li>
+    <li>Are partners treated as fellow laborers and part of the mission, rather than a source of money?</li>
+    <li>Is any financial invitation limited to an explicit giving campaign?</li>
+    <li>Is the giving path frictionless without making ordinary partner communication into fundraising?</li>
+    <li>Have guilt, shame, fear, artificial deadlines, special-access promises and promised returns been removed?</li>
+  </ul>
+
+  <h3>Evidence and reporting</h3>
+  <ul>
+    <li>Is every number supported by a record, a named counting method, or a stated source?</li>
+    <li>Are verified, reported, estimated and unverified claims clearly distinguished?</li>
+    <li>Have we avoided using numbers as proof that the ministry is spiritually successful?</li>
+    <li>Are testimonies represented accurately, without exaggeration or invented detail?</li>
+    <li>If information is unavailable, have we said so instead of filling the gap?</li>
+  </ul>
+
+  <h3>Scripture and quotation integrity</h3>
+  <ul>
+    <li>Is NKJV the primary translation, unless another version better serves the assigned purpose?</li>
+    <li>Has every intended direct quotation been checked against the exact named translation?</li>
+    <li>Is a fully quoted verse on its own line, with the version in the reference?</li>
+    <li>Does an inline quotation carry its reference inline?</li>
+    <li>Has King James wording such as GO YE been preserved where it was intentionally quoted that way?</li>
+    <li>Have paraphrases been used only when requested, and clearly distinguished from direct quotation?</li>
+  </ul>
+
+  <h3>Leadership, preaching and source integrity</h3>
+  <ul>
+    <li>Is the institutional voice distinct from Joel's and Nathan's personal ministry voices?</li>
+    <li>Is Joel's calling to the local Church, and Nathan's calling to take the local Church to the world, represented accurately where it matters?</li>
+    <li>If material came from preaching, were changes limited to punctuation unless style or content editing was specifically requested?</li>
+    <li>Have the founder's theology, recurring images and heart been preserved rather than replaced with generic professional language?</li>
+  </ul>
+
+  <h3>Channel and action</h3>
+  <ul>
+    <li>Does the execution fit its channel: web, social, email, preaching, partnership communication, or formal report?</li>
+    <li>For social media, does the post speak directly to the person unless it is intentionally informative?</li>
+    <li>Is there one primary action, rather than several competing requests?</li>
+    <li>Does the CTA belong to the initiative and to the stage of the relationship?</li>
+    <li>After a THE WORD communication, is partnership or the newsletter the normal continuing relationship, where appropriate?</li>
+  </ul>
+
+  <h3>The final red-flag pass</h3>
+  <ul>
+    <li>Did we make anything up?</li>
+    <li>Did we promise an outcome that God, the ministry, or the available evidence does not guarantee?</li>
+    <li>Did we use fear, shame, pressure, contempt or superiority to create action?</li>
+    <li>Did we make the ministry, the leader, the event, the app or the donor the hero instead of Jesus?</li>
+    <li>Did we weaken the Gospel, the Holy Spirit, the Great Commission or the local Church to gain acceptance?</li>
+    <li>Can the intended audience understand what this means, and what to do next?</li>
+  </ul>
+  <p><strong>Final decision.</strong> Pass only when every applicable doctrinal, integrity, Scripture, evidence and partnership item is satisfied. Escalate anything unresolved to the messaging owner before publication.</p>
 </section>
 
-<!-- 03 THE THREE INITIATIVES -->
-<section id="initiatives" class="pres">
-  <div class="wrap">
-    <div class="slidehead"><span class="eyebrow">03 · The Three Initiatives</span><span class="slideno">The Word · Messaging Guide</span></div>
-    <h2>One journey.<br>Three named front doors.</h2>
-    <p>Clean, Burn, Train, in that order. Each initiative has its own messaging document on official letterhead.</p>
-    <div class="cards">
-      <a class="icard" href="/documents/revival-to-my-city/">
-        <div>
-          <span class="stage">Clean</span>
-          <h3>Revival To My City</h3>
-          <p>Stirring the local church to return to their first love.</p>
-        </div>
-        <div class="go">Read the document →</div>
-      </a>
-      <a class="icard" href="/documents/every1/">
-        <div>
-          <span class="stage">Burn</span>
-          <h3>EVERY1 Movement</h3>
-          <p>Empowering the local church to walk in unity to do the great commission &amp; walk in God's calling.</p>
-        </div>
-        <div class="go">Read the document →</div>
-      </a>
-      <a class="icard" href="/documents/school-of-the-local-church/">
-        <div>
-          <span class="stage">Train</span>
-          <h3>School of the Local Church</h3>
-          <p>Training the local church to know their authority in Christ and build a real relationship with Jesus.</p>
-        </div>
-        <div class="go">Read the document →</div>
-      </a>
-    </div>
-  </div>
+<section data-sec id="governance" data-tier="LOCKED">
+  <h2><span class="n">Section 22</span>Governance and changelog</h2>
+  <span class="tier" data-t="LOCKED">Locked</span>
+  <p>This standard becomes authoritative through ownership and disciplined change control. Approval does not mean the language can never mature. It means changes are deliberate, visible and accountable.</p>
+  <p>The rules that govern how this document changes, who may change it, and how AI systems and contractors must use it, are not restated here. They live with every other rule this ministry runs on, at <a href="/governance">/governance</a>. The ratification record this standard requires, which is the version, the date, what changed, and who approved it, is the changelog below. Nothing reaches this page without a row in it and two signatures.</p>
+
+  <table class="wide">
+    <tr><th>Version</th><th>Date</th><th>What changed</th></tr>
+    <tr><td>2.0</td><td>2026-08-21</td><td>The Messaging Standard replaces the Messaging Guide. The identity core is unchanged and was confirmed word for word against the source. New: theological language, the verbal system, metaphor architecture, capitalization and Scripture standards, channel and leadership voice, partnership communication, provenance classifications for reporting, sub-brand scripts, and the publication audit. Four levels of authority are introduced, so a locked conviction and an experimental profile are no longer published as though they carried the same weight. The voice filter no longer asks whether one named leader would say a thing: THE WORD has its own voice and both leaders have theirs. Audiences are restated as the master-brand priority order. All Is Well is recorded as a podcast rather than an initiative. Em dashes are prohibited outright, which the Doc had permitted. Corrected: the first-love citation was Revelation 3 and is Revelation 2:4. The ten-year target is removed and lives in the vision tool. The page is set as a document rather than a designed page, because a standard this long has to be readable from top to bottom. Companion version corrected from Brand Guide v5.0 to v7.5, which it had trailed by seven releases.</td></tr>
+    <tr><td>1.0</td><td>2026-08-15</td><td>First published messaging guide. The foundation, the prophecy, the origin story, what we are and are not, the message architecture, five audience profiles, voice and vocabulary, and the proof policy.</td></tr>
+  </table>
+  <p class="note">Superseded versions are kept in <a href="/archive/">the archive</a> rather than deleted, so an audit that cites an older version can still be checked against it.</p>
 </section>
 
-<!-- THE DOCUMENT -->
-<div class="docwrap">
-  <div class="toolbar">
-    <span class="tlabel">The Messaging Document</span>
-    <button class="printbtn" onclick="window.print()">Print this document</button>
-  </div>
-  <article class="paper">
-    <table class="pt">
-    <thead class="runhead"><tr><td><div class="rh"><span>The Word for All the World</span><span>Brand Messaging Guide · v1.0</span></div></td></tr></thead>
-    <tbody><tr><td class="ptcell">
-    <header class="masthead">
-      <div class="mrow">
-        <img src="/assets/logos/the-word/the-word-horizontal.svg" alt="THE WORD FOR ALL THE WORLD">
-        <div class="mmeta">Version 1.0 · August 2026</div>
-      </div>
-      <h1 class="doctitle">Brand <em>Messaging Guide</em></h1>
-      <p class="standfirst">The single source for what this ministry says, to whom, and in what words. Where wording conflicts anywhere else, this document rules.</p>
-    </header>
-    <div class="docbody">
-
-      <section class="dsec">
-        <div class="dnum">01<small>Foundation</small></div>
-        <div class="dcontent">
-          <h2 class="dtitle">The Foundation</h2>
-          <p>The public mission line, used everywhere:</p>
-          <p class="missionline">Strengthening the local church to fulfill the Great Commission, until EVERY1 knows the name Jesus.</p>
-          <p><strong>Purpose.</strong> To build a real relationship with Jesus. To please God, walk with Jesus, and minister to Him.</p>
-          <p><strong>Mission.</strong> To strengthen the local church to do the Great Commission. Fire starts fire. We burn for Jesus in locations across the world, and they catch it, because they're dry enough.</p>
-          <p><strong>Vision.</strong> Every tribe, every tongue, every nation, and EVERY1 will know the name Jesus. (Hebrews 8:11)</p>
-          <p><strong>The rally cry.</strong> EVERY1 Will Know The Name Jesus.</p>
-          <p><strong>The lead narrative.</strong> Every generation seeks a revival. No one told them it is already here.</p>
-          <div class="plain">Revival is not a hope we are waiting on. It is a fact we are announcing. All messaging flows downstream of this posture.</div>
-        </div>
-      </section>
-
-      <section class="dsec" id="prophecy">
-        <div class="dnum">02<small>The Record</small></div>
-        <div class="dcontent">
-          <h2 class="dtitle">The Prophecy</h2>
-          <p>Received before the ministry had a name for what it would become. It is quoted exactly, in full, or not at all. Never paraphrased, never excerpted for effect. Set in the record register per Brand Guide §08.</p>
-          <div class="record">
-            <span class="qk">The Word · A Prophecy</span>
-            <div class="verse">As tensions grow between man and foe, the light of THE WORD is needed. No peace they'll find, they'll react in kind, until THE WORD is heeded. But great peace have they that love God's Law, and in that Word their reflections saw — and went forth knowing the enemy is defeated.</div>
-            <div class="dateline">Received December 2019</div>
-          </div>
-        </div>
-      </section>
-
-      <section class="dsec" id="origin">
-        <div class="dnum">03<small>The Record</small></div>
-        <div class="dcontent">
-          <h2 class="dtitle">How It Began</h2>
-          <p>This is the canonical telling of the origin story. Tell it this way: in interviews, on the About page, from the stage. Bracketed fields are pending verification against the ministry record; per Law II, nothing unverified enters a founding document. Verify, unbracket, done.</p>
-          <p class="telling">In <span class="flag">[2024]</span>, Joel Zimmer traveled to Uganda alongside <span class="flag">[Inspiring Better Business]</span>. As he stepped off the plane, a man named <span class="flag">[David Kamanzi]</span> met him with one question: "Will you help me train my people?" That question was the first seed of the School of the Local Church. Later that year, the Lord spoke: go back to Uganda, and this time, hold a pastors conference. The conference was held. The fire caught. We have been going back ever since. Uganda is for Jesus. So is the rest of the world.</p>
-          <p>The prophecy (December 2019) precedes the first trip: the word came first, then the door opened. When telling the full story, keep that order.</p>
-        </div>
-      </section>
-
-      <section class="dsec" id="identity">
-        <div class="dnum">04<small>Identity</small></div>
-        <div class="dcontent">
-          <h2 class="dtitle">What We Are, What We Are Not</h2>
-          <p>The name THE WORD FOR ALL THE WORLD invites assumptions. Messaging corrects them plainly, without being defensive: one clear sentence and move on.</p>
-          <p><strong>We are:</strong></p>
-          <ul>
-            <li><strong>A Spirit-led ministry</strong> that strengthens local churches to do the Great Commission.</li>
-            <li><strong>A servant of the local church</strong>: we come to serve their house, not build ours.</li>
-            <li><strong>Evangelists and trainers</strong>: we preach, we stir, we equip, and we leave the church stronger than we found it.</li>
-          </ul>
-          <p><strong>We are not:</strong></p>
-          <ul>
-            <li><strong>Not a Bible translation ministry.</strong> "THE WORD" is the Word preached, not the Word translated.</li>
-            <li><strong>Not a denomination.</strong> We plant fire, not flags.</li>
-            <li><strong>Not a replacement for the local church.</strong> If there is no local church to partner with in an area, we hold off. Our goal is never to create spiritual orphans.</li>
-          </ul>
-        </div>
-      </section>
-
-      <section class="dsec" id="values">
-        <div class="dnum">05<small>Filters</small></div>
-        <div class="dcontent">
-          <h2 class="dtitle">Values, Uniques &amp; Guarantee</h2>
-          <p>Four core values, three uniques, one guarantee. These are not slogans; they are filters. Content that violates a value gets killed no matter how good it looks.</p>
-          <ul>
-            <li><strong>Burn For Jesus.</strong> We burn with the passion of our relationship with Jesus and with His mission, the Great Commission.</li>
-            <li><strong>Spirit-Led.</strong> Our spirit has the final say. We never violate it, and we always fear the Lord. Words are stewarded to build, edify, and impart life.</li>
-            <li><strong>Selfless Love.</strong> Not concerned about credit, fame, or name recognition. Servant leadership: promoting and developing others first.</li>
-            <li><strong>Full of Faith.</strong> We challenge giants with the Word of God and take the Kingdom by the force of faith.</li>
-          </ul>
-          <p><strong>Three uniques.</strong> The Holy Spirit is our PR man. We communicate frequently. Partnership is our strength.</p>
-          <p><strong>The guarantee.</strong> The Holy Spirit runs our services.</p>
-          <div class="plain">"The Holy Spirit is our PR man" is internal and partner-facing language. In public copy, say it the way the guarantee says it: the Holy Spirit runs our services. There is no routine He can't interrupt.</div>
-        </div>
-      </section>
-
-      <section class="dsec" id="architecture">
-        <div class="dnum">06<small>Reference</small></div>
-        <div class="dcontent">
-          <h2 class="dtitle">The Message Architecture</h2>
-          <p>The believer is the hero. We are the guide. That order never flips. Messaging never makes THE WORD the hero of the story.</p>
-          <table>
-            <tr><th style="width:130px;">Element</th><th>Canonical language</th></tr>
-            <tr><td><strong>The hero</strong></td><td>The local church and the believer. They want a real, active relationship with Jesus and to walk in their purpose, but they feel dry, distracted, or asleep.</td></tr>
-            <tr><td><strong>The problem</strong></td><td>External: the church is asleep and the fire has gone out. Internal: "I know there's more to this walk with Jesus. I just don't know how to get there." Philosophical: the world is waiting for the Church to wake up.</td></tr>
-            <tr><td><strong>The guide</strong></td><td>THE WORD FOR ALL THE WORLD. We don't bring hype. We bring hunger. The Holy Spirit runs our services, and fire starts fire.</td></tr>
-            <tr><td><strong>The plan</strong></td><td>CLEAN · BURN · TRAIN: Revival To My City wakes the church, the EVERY1 Movement sends it, the School of the Local Church roots it.</td></tr>
-            <tr><td><strong>The call</strong></td><td>Primary: join the movement: host a Revival To My City, join EVERY1, enroll in the School. Transitional: watch a testimony, join the prayer meeting, take the free personal evangelism course.</td></tr>
-            <tr><td><strong>The stakes</strong></td><td>If the church stays asleep, people keep searching for life in all the wrong places and entire cities stay unchanged.</td></tr>
-            <tr><td><strong>The success</strong></td><td>Believers become bold, the Great Commission is fulfilled, cities are transformed. The world knows Jesus.</td></tr>
-          </table>
-          <div class="bp">
-            <div class="bl">One sentence</div>
-            <div class="bt">THE WORD FOR ALL THE WORLD strengthens the local church to fulfill the Great Commission, until EVERY1 knows the name Jesus.</div>
-          </div>
-          <div class="bp">
-            <div class="bl">One paragraph<br>~55 words</div>
-            <div class="bt">THE WORD FOR ALL THE WORLD is a Spirit-led ministry that strengthens the local church to fulfill the Great Commission. Through Revival To My City, the EVERY1 Movement, and the School of the Local Church, we stir believers back to their first love, send them to the lost, and train them to walk with Jesus, until EVERY1 knows the name Jesus.</div>
-          </div>
-          <div class="bp">
-            <div class="bl">The full telling<br>~100 words</div>
-            <div class="bt">THE WORD FOR ALL THE WORLD began with a prophecy and a question on a Ugandan tarmac: "Will you help me train my people?" We are a Spirit-led ministry that strengthens the local church to fulfill the Great Commission. We don't replace the local church. We serve it. Through Revival To My City we stir congregations back to their first love. Through the EVERY1 Movement we send EVERY1 in the church to EVERY1 outside of it. Through the School of the Local Church we train believers to know their authority in Christ and build a real relationship with Jesus. Fire starts fire, until EVERY1 knows the name Jesus.</div>
-          </div>
-        </div>
-      </section>
-
-      <section class="dsec" id="journey">
-        <div class="dnum">07<small>The Plan</small></div>
-        <div class="dcontent">
-          <h2 class="dtitle">The Journey: Clean · Burn · Train</h2>
-          <p>The three priorities are a sequence, not a menu. A heart is cleaned, then it burns, then it is trained to keep burning. All journey messaging honors this order.</p>
-          <ul>
-            <li><strong>CLEAN · Revival To My City.</strong> Stirring the local church to return to their first love.</li>
-            <li><strong>BURN · EVERY1 Movement.</strong> Empowering the local church to walk in unity to do the great commission &amp; walk in God's calling.</li>
-            <li><strong>TRAIN · School of the Local Church.</strong> Training the local church to know their authority in Christ and build a real relationship with Jesus.</li>
-          </ul>
-          <p><strong>How one weekend tells the whole story.</strong> We arrive in a city Thursday or Friday. Evenings are Revival To My City services: worship, preaching, altar calls, healing, testimonies captured. Hearts get cleaned out by the power of God. Saturday morning is the EVERY1 interest meeting: what the movement is, how to join, and the first outreach. Participants personally evangelize in the community that same morning. From there, they sign up for the School of the Local Church, starting with the free personal evangelism course. One person can be in all three at once, and often is.</p>
-          <p>Each initiative carries a full messaging document of its own, on official letterhead, in the Documents section of this portal.</p>
-        </div>
-      </section>
-
-      <section class="dsec" id="audiences">
-        <div class="dnum">08<small>Audiences</small></div>
-        <div class="dcontent">
-          <h2 class="dtitle">The Five People We Speak To</h2>
-          <p>Every piece of content is aimed at one of these five people. Know which one before you write a word. The "what they need to hear" line is the heart of the message: say it in your own words, but say <em>that</em>.</p>
-          <div class="roster">
-            <div class="person">
-              <div class="pn">The Local Pastor <span>US &amp; International</span></div>
-              <div class="pd">
-                <p><strong>They want:</strong> to multiply disciples and lead revival without burning out.</p>
-                <p><strong>Their pain:</strong> exhaustion, plateaued growth, no discipleship pathway.</p>
-                <p class="say">"We come to serve your church, not build ours. When we leave, your people stay, on fire and equipped."</p>
-                <p><strong>First step:</strong> host a Revival To My City · train leaders through the School.</p>
-              </div>
-            </div>
-            <div class="person">
-              <div class="pn">The Hungry Church Member <span>The Pew, Awake or Asleep</span></div>
-              <div class="pd">
-                <p><strong>They want:</strong> to grow spiritually and live on mission.</p>
-                <p><strong>Their pain:</strong> dry faith. The conviction that "there must be more."</p>
-                <p class="say">"There is more, and it isn't a program. It's a real relationship with Jesus, and it starts with turning back to your first love."</p>
-                <p><strong>First step:</strong> join the EVERY1 Movement · start the School.</p>
-              </div>
-            </div>
-            <div class="person">
-              <div class="pn">The Lost Online Searcher <span>18 to 30 · Digital-First</span></div>
-              <div class="pd">
-                <p><strong>They want:</strong> truth, healing, identity, purpose.</p>
-                <p><strong>Their pain:</strong> anxiety, loneliness, distrust of religion, hungry for what's real.</p>
-                <p class="say">"What you're looking for has a name. You can have a real relationship with Jesus, starting today."</p>
-                <p><strong>First step:</strong> watch a testimony → request prayer → begin the intro course.</p>
-              </div>
-            </div>
-            <div class="person">
-              <div class="pn">The Legacy Leader <span>66+ · Finishing Well</span></div>
-              <div class="pd">
-                <p><strong>They want:</strong> to pass the torch and leave their people stronger.</p>
-                <p><strong>Their pain:</strong> feeling forgotten; fear the work dies with them.</p>
-                <p class="say">"Your fire isn't finished. The next generation needs what you carry."</p>
-                <p><strong>First step:</strong> mentor through the School · cover the movement in prayer · give.</p>
-              </div>
-            </div>
-            <div class="person">
-              <div class="pn">The Kingdom Partner <span>Businesses &amp; Ministries</span></div>
-              <div class="pd">
-                <p><strong>They want:</strong> eternal impact with their influence and resources.</p>
-                <p><strong>Their pain:</strong> unsure whom to trust; tired of shallow ministry.</p>
-                <p class="say">"Fund what heaven is doing. Every number we report comes from the official record. You will always know exactly what your partnership did."</p>
-                <p><strong>First step:</strong> sponsor a Revival To My City · scholarship School students.</p>
-              </div>
-            </div>
-          </div>
-          <div class="plain">A note on Gen Z (18 to 25): they trust testimony over performance and vulnerability over polish. Lead with real stories of transformation, never with production value. They can smell hype, which is fine, because we don't use it.</div>
-        </div>
-      </section>
-
-      <section class="dsec" id="voice">
-        <div class="dnum">09<small>Voice</small></div>
-        <div class="dcontent">
-          <h2 class="dtitle">Voice &amp; Vocabulary</h2>
-          <p>Bold, clear, simple, direct. Pastoral with prophetic urgency. Invitation-first. Short, punchy sentences. Never polished-corporate. Never hype. Never churchy. If a new believer couldn't understand it, rewrite it.</p>
-          <div class="plain"><strong>The filter:</strong> Would Nathan actually say this? Does it point people to Jesus Himself? Is it clear to a new believer? Does it invite response? If unsure, simplify and center Jesus.</div>
-          <p><strong>Words we carry.</strong> This recurring language is our fingerprint. Use these phrases exactly. They are load-bearing.</p>
-          <table>
-            <tr><th style="width:220px;">Phrase</th><th>What it carries</th></tr>
-            <tr><td>Real relationship with Jesus</td><td>The gospel in five words. The good news is not religion. It's Him.</td></tr>
-            <tr><td>First love</td><td>Revelation 3. The heart of every RTMC message: return.</td></tr>
-            <tr><td>Fire starts fire</td><td>How the mission spreads. We burn; the dry catch.</td></tr>
-            <tr><td>Revival is here, not coming</td><td>Our posture. We announce a fact, we don't market a hope.</td></tr>
-            <tr><td>EVERY1 in the church for EVERY1 outside the church</td><td>The whole movement in one line. Always styled EVERY1.</td></tr>
-            <tr><td>Lighting hearts and seats on fire for Jesus</td><td>What a revival meeting does.</td></tr>
-            <tr><td>Walk with Jesus · turn your heart back to Jesus</td><td>The invitation, said plainly.</td></tr>
-            <tr><td>Authority in Christ</td><td>What the School trains. Believers carry power, not permission slips.</td></tr>
-            <tr><td>The Holy Spirit runs our services</td><td>The guarantee. There is no routine He can't interrupt.</td></tr>
-          </table>
-          <p><strong>Words we never use.</strong> Three ban categories, with starter lists. These lists are proposals for the v1.0 review: strike or keep each one. Theological words (repentance, salvation, Holy Spirit baptism) are never banned; they are explained. The test is always the filter: clear to a new believer.</p>
-          <div class="banreg">
-            <div class="ban">
-              <div class="bh">Hype</div>
-              <div>
-                <div class="bw">insane · epic · unreal · next-level · game-changer · "God showed up and showed out" · "you won't believe" · walls of 🔥 emojis · ALL-CAPS excitement</div>
-                <div class="why">Hype manufactures a feeling. We report what God actually did. The record is more powerful than the adjective.</div>
-              </div>
-            </div>
-            <div class="ban">
-              <div class="bh">Corporate Polish</div>
-              <div>
-                <div class="bw">leverage · synergy · solutions · optimize · engage stakeholders · "excited to announce" · comprehensive · robust</div>
-                <div class="why">We are a ministry, not a vendor. Corporate language makes the guide the hero and the mission a product.</div>
-              </div>
-            </div>
-            <div class="ban">
-              <div class="bh">Churchy Insider Talk</div>
-              <div>
-                <div class="bw">traveling mercies · hedge of protection · "love on" · "do life together" · "press in" · "contend for breakthrough" · "a God thing" · "fresh anointing" (unexplained) · "blessed to announce"</div>
-                <div class="why">Insider language tells a new believer this isn't for them. Everything we say is for them.</div>
-              </div>
-            </div>
-          </div>
-          <p style="margin-top:16px;"><strong>Rewrites: before and after.</strong></p>
-          <table>
-            <tr><th>Never this</th><th>Always this</th></tr>
-            <tr><td>"🔥🔥 INSANE night!! God showed UP and showed OUT!!"</td><td>"Friday night in [city]: [n] people heard the gospel. [n] turned their hearts back to Jesus. The fire is spreading." <em>(numbers from the official record only)</em></td></tr>
-            <tr><td>"Join us as we press into a fresh anointing and contend for breakthrough."</td><td>"Come. Jesus is moving. Bring the person you've been praying for."</td></tr>
-            <tr><td>"We provide comprehensive discipleship solutions for local church partners."</td><td>"We train the local church to walk with Jesus."</td></tr>
-          </table>
-          <p><strong>Standing rules.</strong> Short sentences. One idea each. Say Jesus by name, not "faith," not "spirituality." Never invent a statistic, a quote, or a testimony; the record or nothing (Law II). Never manufacture a catchphrase: if a line has to be explained to be catchy, kill it. Invitation before information: every piece ends with something the reader can <em>do.</em></p>
-        </div>
-      </section>
-
-      <section class="dsec" id="proof">
-        <div class="dnum">10<small>Policy</small></div>
-        <div class="dcontent">
-          <h2 class="dtitle">Proof &amp; Testimony Policy</h2>
-          <p>This guide contains no statistics on purpose. Numbers live in one place, the official ministry record, and messaging cites that record rather than freezing figures that will age. Per the Minister Agreement: official numbers only, never estimates, never memory. A guide that hardcodes stats violates Law II the day the record updates; a guide that points to the record never does.</p>
-          <p><strong>Testimonies: the four slots.</strong> Every testimony is a record of what God did: real, consented, and named. Never fabricated, never composited, never anonymous.</p>
-          <div class="slots">
-            <div class="slot"><div class="s1">Before</div><div class="s2">Life as it was, in the person's own words.</div></div>
-            <div class="slot"><div class="s1">Encounter</div><div class="s2">The moment Jesus intervened: where and when.</div></div>
-            <div class="slot"><div class="s1">Transformation</div><div class="s2">What changed: specific, verifiable, honest.</div></div>
-            <div class="slot"><div class="s1">Outcome</div><div class="s2">Life now, and the invitation to respond.</div></div>
-          </div>
-        </div>
-      </section>
-
-      <section class="dsec" id="roadmap">
-        <div class="dnum">11<small>Roadmap</small></div>
-        <div class="dcontent">
-          <h2 class="dtitle">Roadmap Notes</h2>
-          <p>Two future works are noted here so no one invents messaging for them prematurely. Neither receives public messaging until launch, at which point this guide gets a versioned update.</p>
-          <table>
-            <tr><th style="width:220px;">Initiative</th><th>Status &amp; note</th></tr>
-            <tr><td><strong>School of Supernatural Kingdom Advancement (SOSKA)</strong></td><td>Future online school on stewardship of the Kingdom of Heaven. Roadmap only: no public messaging until launch.</td></tr>
-            <tr><td><strong>EVERY1 App</strong></td><td>Future app on the YouVersion model; will not visibly promote the parent (exception on record, Brand Guide §09). Messaging to be written at launch.</td></tr>
-          </table>
-          <p>Books, music publishing, and clothing are intentionally outside this guide's scope by ruling of August 2026.</p>
-        </div>
-      </section>
-
-      <section class="dsec" id="governance">
-        <div class="dnum">12<small>Record</small></div>
-        <div class="dcontent">
-          <h2 class="dtitle">Governance &amp; Changelog</h2>
-          <p>Per Law IV, the institution signs its work. This guide changes one way: a proposed edit in writing, approval by Joel and Nathan, a version bump, and a changelog entry. No silent edits, ever.</p>
-          <table>
-            <tr><th style="width:70px;">Version</th><th style="width:120px;">Date</th><th>Change</th></tr>
-            <tr><td>1.0</td><td>August 2026</td><td>Initial guide. Rulings on record: fused mission line public with Purpose/Mission/Vision internal · SOSKA roadmap-only · books/music/clothing out of scope. Origin-story fields bracketed pending verification. Banned-word starter lists pending strike/keep review.</td></tr>
-          </table>
-          <p><strong>Open items for v1.1.</strong> Verify and unbracket the origin-story fields (Section 3). Review the three banned-word starter lists (Section 9): strike or keep each entry. Close both, sign, and this guide is fully canonical.</p>
-        </div>
-      </section>
-
-      <div class="adoption">
-        <hr class="frule">
-        <img class="signature" src="/assets/signatures/nathan-zimmer.svg" alt="Nathan Zimmer's signature">
-        <div class="ad">Nathan Zimmer</div>
-      </div>
-
-    </div>
-    </td></tr></tbody>
-    </table>
-  </article>
 </div>
 
 <footer>
-  <div class="wrap">
+  <div class="doc">
     <a href="/" aria-label="THE WORD FOR ALL THE WORLD, portal home"><img src="/assets/logos/the-word/the-word-horizontal-reversed.svg" alt="THE WORD FOR ALL THE WORLD"></a>
     <span>Every tribe. Every tongue. Every nation. EVERY1.</span>
     <span>brand.theword.world · Internal use</span>
