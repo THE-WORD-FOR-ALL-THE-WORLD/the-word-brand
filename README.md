@@ -271,14 +271,22 @@ shape is EVERY1 consuming `@theword/brand` as a dependency rather than copying i
    site: every crawler and every agent would get the login page instead of the standards.
 4. **Deploy**: pushing to `main` publishes in about thirty seconds, gated by the checks above.
 
-### The EVERY1 site, one time
+### The EVERY1 site
 
-1. **Pages**: Create a second Pages project named `every1-brand`, connected to this repo.
-   Framework preset *None*, build command empty, **output directory `every1`**.
-2. **Custom domain**: add `brand.every1movement.com` to that project.
-3. **Deploy**: the same Action publishes it on every push to `main`. Until the project
-   exists the preview step is tolerated on failure, so a missing EVERY1 preview never
-   blocks a review of the portal.
+Nothing to do. The Action creates it.
+
+`.github/scripts/ensure-every1-project.sh` runs on every push to `main`, before the EVERY1
+deploy step. It creates the `every1-brand` Pages project if it is missing and attaches
+`brand.every1movement.com` if that is missing, using the same `CLOUDFLARE_API_TOKEN` the
+workflow already holds. It checks before it creates, so running it every time changes
+nothing once the project exists, and it exits clean on failure, so a second site that
+cannot be reached never stops the portal from deploying.
+
+The token needs **Account → Cloudflare Pages → Edit**. With a narrower token the portal
+still deploys and the step reports what it could not do.
+
+Preview builds do not create anything. The EVERY1 preview step is tolerated on failure, so
+a pull request opened before the first `main` deploy still gets a portal preview.
 
 ---
 
