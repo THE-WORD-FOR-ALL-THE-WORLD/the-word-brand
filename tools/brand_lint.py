@@ -39,6 +39,19 @@ def warn(code: str, message: str):
     warnings.append(f"{code}  {message}")
 
 
+# A repository publishing two sites has two roots. A page under every1/ resolves
+# "/assets/..." against every1/assets, not against the repository root, so a check
+# that assumes one root reports every correct link as broken.
+SITE_ROOTS = {"every1/": "every1"}
+
+
+def site_root(rel: str) -> str:
+    for prefix, root in SITE_ROOTS.items():
+        if rel.startswith(prefix):
+            return root
+    return ""
+
+
 def html_files() -> list:
     out = []
     for root, dirs, files in os.walk(REPO):
@@ -213,7 +226,7 @@ def check_asset_links(files: list):
             # Download links carry a ?v= stamp so a version bump defeats any cache.
             # The file on disk is the path without it.
             path = m.group(1).split("?", 1)[0].split("#", 1)[0]
-            if not os.path.exists(os.path.join(REPO, path.lstrip("/"))):
+            if not os.path.exists(os.path.join(REPO, site_root(rel), path.lstrip("/"))):
                 err("L7", f"{rel} points at {m.group(1)}, which does not exist.")
 
 
@@ -659,6 +672,10 @@ def check_logo_sources(files: list):
     } if os.path.isdir(root) else set()
 
     for rel in files:
+        if site_root(rel):
+            # A second site holds flat copies of its own brand's marks, written by the
+            # build from the published set. L7 already proves each one exists.
+            continue
         s = bs.read(os.path.join(REPO, rel))
         for m in re.finditer(r'(?:src|href)="(/assets/logos/([^"/]+)/[^"]*|/assets/logos/[^"/]+)"', s):
             url = m.group(1).split("?", 1)[0]

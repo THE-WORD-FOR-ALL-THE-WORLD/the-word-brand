@@ -1,6 +1,6 @@
 {
   "name": "@theword/ui",
-  "version": "7.3.0",
+  "version": "7.4.0",
   "description": "React components for THE WORD FOR ALL THE WORLD, implementing the published component specifications. A consumer of the brand system, never a source.",
   "homepage": "https://brand.theword.world/components",
   "repository": {
@@ -21,7 +21,7 @@
   ],
   "peerDependencies": {
     "react": ">=18",
-    "@theword/brand": "^7.3.0"
+    "@theword/brand": "^7.4.0"
   },
   "keywords": [
     "react",
@@ -30,7 +30,7 @@
     "theword"
   ],
   "brand": {
-    "version": "7.3",
+    "version": "7.4",
     "updated": "2026-08-20",
     "specifications": "https://brand.theword.world/ai/components.json",
     "manifest": "https://brand.theword.world/ai/manifest.json"

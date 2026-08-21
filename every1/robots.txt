@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://brand.every1movement.com/sitemap.xml

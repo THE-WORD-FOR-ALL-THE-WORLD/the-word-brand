@@ -50,6 +50,14 @@ file to change any of them; the build fails a policy longer than one line, which
 becoming a wall again. The brand's own non-negotiables are not restated there: they are read out
 of the audit's gate table at build time.
 
+## Two sites
+
+`every1/` is generated: EVERY1's own brand site at `brand.every1movement.com`, built by the
+same `tools/build_ai.py` and checked by the same linter, so it cannot drift from the portal.
+Never edit it by hand. It carries its own copies of the stylesheet, the faces and its marks
+because its Pages project serves only that directory. A page under `every1/` resolves
+`/assets/...` against `every1/assets`, which is why `brand_lint.py` has `SITE_ROOTS`.
+
 ## After any change
 
 ```bash
