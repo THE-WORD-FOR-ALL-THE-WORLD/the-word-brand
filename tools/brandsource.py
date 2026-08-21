@@ -475,6 +475,14 @@ def parse_messaging_guide(path: str = MESSAGING_GUIDE) -> dict:
         "dateline": strip_tags(dateline),
     }
 
+    # --- the blocks EVERY1's own site republishes, kept as markup so the
+    # generator renders the parent's words rather than a copy of them.
+    every1 = {}
+    for m in re.finditer(r'<div data-every1="([a-z]+)">(.*?)\n  </div>', s, re.S):
+        every1[m.group(1)] = m.group(2).strip()
+    require_count(list(every1), 2, "EVERY1 republish blocks", path)
+    out["every1Blocks"] = every1
+
     # --- governance changelog
     changelog = []
     gov = re.search(r'<section data-sec id="governance".*?</table>', s, re.S)

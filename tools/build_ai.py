@@ -3095,6 +3095,286 @@ DESCRIPTIONS = {
 }
 
 
+EVERY1_MESSAGING_CSS = """
+  :root{
+    --midnight:#0B1A2D; --word-blue:#023D6F; --parchment:#F7F3EC;
+    --flame:#F85842; --ember:#C13A24; --white:#FFFFFF;
+    --soft:rgba(11,26,45,.68); --rule:rgba(11,26,45,.16); --hair:rgba(11,26,45,.09);
+    --serif-display:'DM Serif Display', Georgia, 'Times New Roman', serif;
+    --sans:'DM Sans', -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:var(--sans);font-size:17px;line-height:1.75;color:var(--midnight);
+    background:var(--white);-webkit-font-smoothing:antialiased;}
+  a{color:var(--word-blue);}
+  a:hover{color:var(--ember);}
+  a:focus-visible{outline:2px solid var(--ember);outline-offset:3px;border-radius:3px;}
+  .doc{max-width:760px;margin:0 auto;padding:0 28px;}
+  .top{background:var(--midnight);}
+  .top .bar{max-width:1240px;margin:0 auto;padding:22px 36px;display:flex;
+    justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;}
+  .top img{height:19px;width:auto;display:block;}
+  .top .links{display:flex;gap:10px 26px;font-size:12px;font-weight:600;
+    letter-spacing:.08em;text-transform:uppercase;}
+  .top .links a{color:rgba(247,243,236,.82);text-decoration:none;}
+  .top .links a:hover,.top .links a.active{color:var(--white);}
+  .masthead{border-bottom:1px solid var(--rule);padding:64px 0 34px;}
+  .masthead .over{font-size:11.5px;font-weight:700;letter-spacing:.2em;
+    text-transform:uppercase;color:var(--ember);margin-bottom:16px;}
+  .masthead h1{font-family:var(--serif-display);font-weight:400;
+    font-size:clamp(32px,5.2vw,46px);line-height:1.14;letter-spacing:-.01em;}
+  .masthead .sub{margin-top:16px;font-size:17.5px;color:var(--soft);max-width:60ch;}
+  .facts{margin-top:26px;display:grid;gap:2px 30px;grid-template-columns:1fr;font-size:14px;}
+  @media(min-width:620px){.facts{grid-template-columns:1fr 1fr;}}
+  .facts div{display:flex;gap:9px;padding:3px 0;}
+  .facts b{font-weight:600;min-width:104px;}
+  .facts span{color:var(--soft);}
+  .contents{padding:34px 0 10px;border-bottom:1px solid var(--rule);margin-bottom:44px;}
+  .contents h2{font-size:11.5px;font-weight:700;letter-spacing:.2em;
+    text-transform:uppercase;color:var(--ember);margin-bottom:16px;}
+  .contents ol{list-style:none;counter-reset:toc;}
+  @media(min-width:620px){.contents ol{columns:2;column-gap:34px;}}
+  .contents li{counter-increment:toc;break-inside:avoid;margin-bottom:5px;font-size:15px;}
+  .contents li::before{content:counter(toc) ".";color:rgba(11,26,45,.42);
+    margin-right:9px;font-size:13.5px;font-variant-numeric:tabular-nums;}
+  .contents a{text-decoration:none;color:var(--midnight);}
+  .contents a:hover{color:var(--ember);text-decoration:underline;}
+  section[data-sec]{padding:6px 0 46px;}
+  section[data-sec] > h2{font-family:var(--serif-display);font-weight:400;
+    font-size:clamp(25px,3.4vw,31px);line-height:1.2;padding-top:30px;
+    border-top:1px solid var(--rule);margin-bottom:6px;}
+  section[data-sec] > h2 .n{display:block;font-family:var(--sans);font-size:11.5px;
+    font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--ember);
+    margin-bottom:11px;}
+  h3{font-size:16px;font-weight:700;margin:30px 0 8px;letter-spacing:-.005em;}
+  h4{font-size:13.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;
+    color:var(--word-blue);margin:24px 0 7px;}
+  p{margin-bottom:15px;}
+  p:last-child{margin-bottom:0;}
+  ul,ol{margin:0 0 15px 22px;}
+  li{margin-bottom:6px;}
+  strong{font-weight:600;}
+  em{font-style:italic;}
+  .lede{font-size:18px;color:var(--soft);margin-bottom:20px;}
+  table{width:100%;border-collapse:collapse;margin:12px 0 18px;font-size:15.5px;}
+  th,td{text-align:left;vertical-align:top;padding:9px 14px 9px 0;
+    border-bottom:1px solid var(--hair);}
+  th{font-size:11.5px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;
+    color:var(--soft);border-bottom-color:var(--rule);padding-bottom:7px;}
+  td:first-child{font-weight:600;padding-right:22px;}
+  .vision{border-left:2px solid var(--flame);padding:6px 0 6px 22px;margin:16px 0;
+    font-family:var(--serif-display);font-size:22px;line-height:1.35;text-transform:none;}
+  .vision span{display:block;font-family:var(--sans);font-size:12px;font-weight:600;
+    letter-spacing:.13em;text-transform:uppercase;color:var(--soft);margin-top:10px;}
+  .note{font-size:15px;color:var(--soft);border-top:1px solid var(--hair);
+    padding-top:14px;margin-top:20px;}
+  .foot{background:var(--midnight);color:rgba(247,243,236,.72);padding:38px 0;
+    font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;font-weight:500;
+    margin-top:56px;}
+  .foot .doc{display:flex;justify-content:space-between;align-items:center;
+    flex-wrap:wrap;gap:16px;max-width:1240px;}
+  .foot img{height:16px;width:auto;opacity:.9;}
+  .foot a{color:inherit;}
+  @media(max-width:640px){.top .bar{padding:18px 22px;}.masthead{padding:44px 0 28px;}}
+  @media print{.top,.contents,.foot{display:none;}body{font-size:11pt;}.doc{max-width:none;}}
+"""
+
+
+def build_every1_messaging(brand: dict, messaging: dict, words: dict, app: dict, updated: str) -> str:
+    """EVERY1's own messaging standard, for people working on that brand alone.
+
+    Everything doctrinal is rendered from the parent standard's own markup, so
+    this page cannot say something the parent does not. Everything EVERY1
+    specific comes from ai-source/every1-messaging.json, which the movement's
+    front page already reads. Nothing here is a third copy of either.
+    """
+    e = esc
+    blocks = messaging["every1Blocks"]
+    v = words["vision"]
+
+    def drop_lead_heading(block):
+        """The parent names the block; this page's section title already does."""
+        return re.sub(r"^\s*<h[34]>[^<]*</h[34]>\s*", "", block)
+
+    def sec(num, sid, title, body):
+        return (
+            f'\n<section data-sec id="{sid}">\n'
+            f'  <h2><span class="n">Section {num:02d}</span>{e(title)}</h2>\n{body}</section>\n'
+        )
+
+    def ul(items):
+        return "  <ul>\n" + "".join(f"    <li>{e(x)}</li>\n" for x in items) + "  </ul>\n"
+
+    # 01 scope
+    scope = (
+        f'  <p class="lede">This is the messaging standard for the EVERY1 Movement, and for '
+        f'anyone writing as EVERY1: our team, a partner church, a conference, or an activation.</p>\n'
+        f'  <p>Every word of doctrine on this page is published by '
+        f'<a href="{SITE}/brand/messaging">THE WORD Messaging Standard v{messaging["version"]}</a> '
+        f'and is rendered here from that document rather than restated, so the two cannot disagree. '
+        f'What this page adds is everything specific to EVERY1: its identity, its scripts, its '
+        f'audiences, its voice and its calls to action.</p>\n'
+        f'  <p>What this page does not carry, and what you should read in the parent standard when '
+        f'you need it: the full theological language, the Scripture standard, capitalization, '
+        f'reporting and provenance rules, and the partnership laws. Those govern EVERY1 too.</p>\n'
+        f'  <p><strong>The standing rule for this brand.</strong> {e(words["standing"])}</p>\n'
+    )
+
+    # 02 identity
+    # The vision is quoted here as the sentence it is. Its two-line, all-caps
+    # arrangement belongs to the lockup and is explained on the mark page: a
+    # messaging document quotes the words, it does not re-set the artwork.
+    ident = (
+        f'  <h3>Vision</h3>\n  <div class="vision">{e(messaging["vision"]["text"])}'
+        f'<span>{e(messaging["vision"]["reference"])}</span></div>\n'
+        f'  <p class="note">{e(v["note"])}</p>\n'
+        f'  <h3>Mission</h3>\n  <p>{e(words["mission"])} ({e(words["missionReference"])})</p>\n'
+        f'  <h3>The promise</h3>\n  <p>{e(words["promise"])}</p>\n'
+        f'  <h3>In plain words</h3>\n  <p>{e(words["plain"])}</p>\n'
+        f'  <h3>Place in the process</h3>\n  <p>{e(words["place"])}</p>\n'
+        f'  <h3>What it is</h3>\n{ul(words["whatItIs"])}'
+        f'  <h3>Who may join</h3>\n{ul(words["whoMayJoin"])}'
+        f'  <h3>First steps</h3>\n{ul(words["firstSteps"])}'
+    )
+
+    # 05 audiences
+    aud = ""
+    for a in words["audiences"]:
+        aud += (
+            f'  <h3>{e(a["audience"])}</h3>\n'
+            f'  <p class="note" style="border:0;padding:0;margin:0 0 10px;">{e(a["qualifier"])}</p>\n'
+            f'  <p><strong>They want</strong> {e(a["wants"])}</p>\n'
+            f'  <p><strong>Their pain:</strong> {e(a["pain"])}</p>\n'
+            f'  <p><strong>They need to hear:</strong> {e(a["needsToHear"])}</p>\n'
+            f'  <p><strong>First step:</strong> {e(a["firstStep"])}</p>\n'
+        )
+
+    # 06 voice
+    voice = (
+        f'  <p><strong>Register.</strong> {e(words["voice"]["register"])}</p>\n'
+        f'  <h3>Voice rules</h3>\n{ul(words["voice"]["rules"])}'
+        f'  <h3>The filter, inherited</h3>\n  <p>{e(messaging["filter"])}</p>\n'
+        f'  <h3>Standing rules, inherited</h3>\n  <p>{e(messaging["standingRules"])}</p>\n'
+        f'  <h3>Phrases we carry</h3>\n{ul(words["phrases"])}'
+        f'  <h3>Metaphor family</h3>\n'
+        f'  <p>EVERY1 writes in <strong>Kingdom</strong> images: King, Kingdom, authority, '
+        f'government, assignment, occupy, advance, sphere, stewardship. Fire belongs to BURN and '
+        f'may support. Do not stack soil, construction and warfare imagery on top of both.</p>\n'
+    )
+
+    # 07 banned
+    bans = ""
+    for b in messaging["bans"]:
+        bans += (
+            f'  <h4>{e(b["category"])}</h4>\n'
+            f'  <p><span data-specimen>{e(" · ".join(b["words"]))}</span></p>\n'
+            f'  <p class="note" style="border:0;padding:0;">{e(b["why"])}</p>\n'
+        )
+
+    # 08 boilerplate
+    boiler = (
+        f'  <p>When another organisation needs one paragraph describing EVERY1, this is the '
+        f'paragraph. Use it as written.</p>\n  <p>{e(words["boilerplate"])}</p>\n'
+        f'  <p class="note">EVERY1 carries no endorsement line and no parent lockup. Do not add '
+        f'"A ministry of THE WORD FOR ALL THE WORLD" and do not lock a parent mark to it.</p>\n'
+    )
+
+    toc = [
+        ("scope", "Scope, and what the parent governs"),
+        ("identity", "Identity"),
+        ("doctrine", "The mandate"),
+        ("scripts", "What to say, outside and inside"),
+        ("audiences", "Who we speak to"),
+        ("voice", "Voice, filter and phrases"),
+        ("banned", "Language we do not use"),
+        ("boilerplate", "The boilerplate paragraph"),
+    ]
+    toc_html = "".join(f'    <li><a href="#{sid}">{e(t)}</a></li>\n' for sid, t in toc)
+
+    body = (
+        sec(1, "scope", "Scope, and what the parent governs", scope)
+        + sec(2, "identity", "Identity", ident)
+        + sec(3, "doctrine", "The mandate", "  " + drop_lead_heading(blocks["doctrine"]) + "\n")
+        + sec(4, "scripts", "What to say, outside and inside", "  " + drop_lead_heading(blocks["scripts"]) + "\n")
+        + sec(5, "audiences", "Who we speak to", aud)
+        + sec(6, "voice", "Voice, filter and phrases", voice)
+        + sec(7, "banned", "Language we do not use", bans)
+        + sec(8, "boilerplate", "The boilerplate paragraph", boiler)
+    )
+
+    return f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<title>EVERY1 Messaging Standard</title>
+<meta name="description" content="How the EVERY1 Movement speaks. Identity, the mandate, the outside and inside scripts, audiences, voice, and the language we do not use.">
+<link rel="canonical" href="{EVERY1_SITE_URL}/messaging/">
+<link rel="icon" href="/assets/logos/every1-e1-reversed.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:image" content="{EVERY1_SITE_URL}/assets/images/every1-og-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="EVERY1 Movement">
+<meta property="og:site_name" content="EVERY1 Movement">
+<meta property="og:title" content="EVERY1 Messaging Standard">
+<meta property="og:description" content="How the EVERY1 Movement speaks.">
+<meta property="og:url" content="{EVERY1_SITE_URL}/messaging/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&display=swap" rel="stylesheet">
+<style>{EVERY1_MESSAGING_CSS}</style>
+</head>
+<body>
+
+<nav class="top">
+  <div class="bar">
+    <a href="/" aria-label="EVERY1 Movement"><img src="/assets/logos/every1-horizontal-reversed.svg" alt="EVERY1 Movement"></a>
+    <div class="links">
+      <a href="/">The mark</a>
+      <a href="/messaging/" class="active">Messaging</a>
+      <a href="{SITE}/brand/messaging">Parent standard</a>
+    </div>
+  </div>
+</nav>
+
+<div class="doc">
+
+<header class="masthead">
+  <div class="over">EVERY1 Messaging Standard</div>
+  <h1>How EVERY1 speaks.</h1>
+  <p class="sub">For our team, and for any church, ministry or conference carrying EVERY1. What the movement is, what to say, and what never to say.</p>
+  <div class="facts">
+    <div><b>Version</b><span>{e(messaging['version'])} · {e(updated)}</span></div>
+    <div><b>Extract of</b><span>THE WORD Messaging Standard v{e(messaging['version'])}</span></div>
+    <div><b>Brand</b><span>v{e(brand['version'])}</span></div>
+    <div><b>Scope</b><span>The EVERY1 Movement only</span></div>
+  </div>
+</header>
+
+<nav class="contents">
+  <h2>Contents</h2>
+  <ol>
+{toc_html}  </ol>
+</nav>
+{body}
+</div>
+
+<footer class="foot">
+  <div class="doc">
+    <img src="/assets/logos/every1-horizontal-reversed.svg" alt="EVERY1 Movement">
+    <span>{e(" ".join(v["lines"]))}</span>
+    <span>Brand v{e(brand['version'])} · <a href="mailto:brand@theword.world">brand@theword.world</a></span>
+  </div>
+</footer>
+
+</body>
+</html>
+"""
+
+
 def every1_binaries() -> list:
     """Binary files the EVERY1 site needs under its own root.
 
@@ -3212,6 +3492,9 @@ def build() -> dict:
     files[f"{EVERY1_DIR}/index.html"] = build_every1_site(
         brand, tokens, logos, EVERY1_SITE, every1_words, messaging, every1_app
     )
+    files[f"{EVERY1_DIR}/messaging/index.html"] = build_every1_messaging(
+        brand, messaging, every1_words, every1_app, updated
+    )
     files[f"{EVERY1_DIR}/ai/manifest.json"] = (
         json.dumps(build_every1_ai(brand, messaging, updated, tokens, logos,
                                    every1_words, every1_app), indent=2, ensure_ascii=False) + "\n"
@@ -3234,6 +3517,7 @@ def build() -> dict:
         '<?xml version="1.0" encoding="UTF-8"?>\n'
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
         f"  <url><loc>{EVERY1_SITE_URL}/</loc><priority>1.0</priority></url>\n"
+        f"  <url><loc>{EVERY1_SITE_URL}/messaging/</loc><priority>0.9</priority></url>\n"
         f"  <url><loc>{EVERY1_SITE_URL}/ai/manifest.json</loc><priority>0.8</priority></url>\n"
         "</urlset>\n"
     )
@@ -3244,7 +3528,8 @@ def build() -> dict:
         "> line and no parent lockup.\n\n"
         "## Start here\n\n"
         f"- [Manifest]({EVERY1_SITE_URL}/ai/manifest.json): every mark, its clear space, its minimum size, and its files, with the palette and the typefaces.\n"
-        f"- [How to use the mark]({EVERY1_SITE_URL}/): the same thing for people.\n\n"
+        f"- [How to use the mark]({EVERY1_SITE_URL}/): the same thing for people.\n"
+        f"- [Messaging standard]({EVERY1_SITE_URL}/messaging/): how EVERY1 speaks. Identity, the mandate, the outside and inside scripts, audiences, voice, and the language we do not use.\n\n"
         "## Facts at a glance\n\n"
         f"Brand version {brand['version']}, updated {updated}.\n"
         "EVERY1 stands alone. Do not add \"A ministry of THE WORD FOR ALL THE WORLD\" and do not lock a parent mark to it.\n"
