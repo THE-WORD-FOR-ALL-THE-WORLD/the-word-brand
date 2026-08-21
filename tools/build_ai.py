@@ -2421,6 +2421,8 @@ EVERY1_SITE = """<!DOCTYPE html>
   footer.foot .wrap{display:flex;flex-wrap:wrap;gap:var(--space-4);justify-content:space-between;align-items:center;}
   footer.foot img{height:20px;width:auto;display:block;}
   footer.foot a{color:var(--accent-on-dark);}
+
+__DOORCSS__
 </style>
 </head>
 <body>
@@ -2435,7 +2437,8 @@ EVERY1_SITE = """<!DOCTYPE html>
     <div class="acts">
       <a class="btn" href="/assets/downloads/every1-logos.zip">Download every mark</a>
       <a class="btn ghost" href="#say">Read the words</a>
-      <a class="btn ghost" href="#marks">See the marks</a>
+      <a class="btn ghost" href="#brand">See the brand</a>
+      <a class="btn ghost" href="/messaging/">Messaging standard</a>
     </div>
   </div>
 </header>
@@ -2526,7 +2529,11 @@ __BANNED__
       </div>
     </section>
 
-    <section id="marks">
+    <section id="brand">
+__DOOR__
+</section>
+
+<section id="marks">
       <span class="eyebrow">The marks</span>
       <h2>Every published form.</h2>
       <p class="intro">These are the files. They are generated from the approved artwork, so what
@@ -2691,6 +2698,7 @@ def every1_marks(logos: dict) -> list:
 
 
 def build_every1_site(brand: dict, tokens: dict, logos: dict, template: str, words: dict, messaging: dict, app: dict) -> str:
+    door_css, door_html, _ = every1_door_content()
     marks = []
     for c in every1_marks(logos):
         reversed_svg = next(
@@ -2802,6 +2810,12 @@ def build_every1_site(brand: dict, tokens: dict, logos: dict, template: str, wor
             "          </dl>\n"
             "        </div>"
             for sc in app["screens"])),
+        ("__DOOR__", door_html),
+        ("__DOORCSS__", door_css + (
+            "\n#brand{padding:0;max-width:none;}"
+            "\n.e1brand{padding:var(--space-8) 0 var(--space-4);}"
+            "\n.e1brand .blk:last-child{margin-bottom:0;}"
+        )),
         ("__BANNED__", "\n".join(
             f'        <p class="intro"><b>{esc(g["category"])}.</b> '
             + esc(", ".join(w.replace(chr(34), "") for w in g["words"])) + "</p>"
@@ -3399,6 +3413,121 @@ def build_every1_messaging(brand: dict, messaging: dict, words: dict, app: dict,
 """
 
 
+# Blocks the EVERY1 site republishes from its door on the portal, in this order.
+# Named rather than taken wholesale: the door speaks to someone working across
+# every brand in the house, and two of its blocks only make sense there.
+EVERY1_DOOR_BLOCKS = [
+    "What kind of brand this is",
+    "Identity",
+    "Place in the process",
+    "The participation layer",
+    "The 1 as a mask",
+    "A new country",
+    "The ground in use",
+    "In use",
+    "The capture brief",
+    "Channels",
+    "Rules that differ from the parent",
+]
+
+
+def _scope_css(css: str, under: str) -> str:
+    """Prefix every rule in a stylesheet with one class, so it cannot leak.
+
+    The door page and the EVERY1 site both use .mark, .lede and .wrap for
+    different things. Lifting the door's rules unscoped would restyle the host
+    page. The wrapper class must be one the source does not use itself, or its
+    own rules for that name survive unprefixed and paint the whole block.
+    :root is dropped because both pages already load the same token layer.
+    """
+    css = re.sub(r"/\*.*?\*/", "", css, flags=re.S)
+    out, i = [], 0
+    while i < len(css):
+        brace = css.find("{", i)
+        if brace == -1:
+            break
+        selector = css[i:brace].strip()
+        # find the matching close, counting nesting so @media survives
+        depth, j = 1, brace + 1
+        while j < len(css) and depth:
+            if css[j] == "{":
+                depth += 1
+            elif css[j] == "}":
+                depth -= 1
+            j += 1
+        body = css[brace + 1 : j - 1]
+        if selector.startswith("@media") or selector.startswith("@supports"):
+            out.append(f"{selector}{{{_scope_css(body, under)}}}")
+        elif selector.startswith("@"):
+            out.append(f"{selector}{{{body}}}")
+        elif selector.startswith(":root") or selector in ("html", "body", "*"):
+            pass
+        else:
+            parts = []
+            for sel in selector.split(","):
+                sel = sel.strip()
+                if not sel:
+                    continue
+                parts.append(sel if sel.startswith(under) else f"{under} {sel}")
+            if parts:
+                out.append(f"{', '.join(parts)}{{{body}}}")
+        i = j
+    return "".join(out)
+
+
+def every1_door_content():
+    """The door's own blocks and styles, rendered on EVERY1's own site.
+
+    Read from the generated door page rather than copied, so the two cannot
+    disagree. Asset paths are flattened: the portal serves EVERY1's marks from
+    /assets/logos/every1/, and the EVERY1 site serves them from its own root.
+    """
+    path = os.path.join(REPO, "brand", "every1", "index.html")
+    if not os.path.exists(path):
+        raise bs.SourceError(
+            "brand/every1/index.html is missing. Run tools/gen_docs.py before this build."
+        )
+    src = bs.read(path)
+
+    style = re.search(r"<style>(.*?)</style>", src, re.S)
+    if not style:
+        raise bs.SourceError("the EVERY1 door page has no stylesheet to lift.")
+    # Paths appear in the stylesheet too: the mask demo names the numeral in a
+    # url(). Flatten them in both places or the mask silently renders nothing.
+    css = _scope_css(style.group(1), ".e1brand").replace(
+        "/assets/logos/every1/", "/assets/logos/"
+    )
+
+    main = re.search(r"<main.*?</main>", src, re.S)
+    if not main:
+        raise bs.SourceError("the EVERY1 door page has no main content.")
+    found = {}
+    for blk in re.findall(
+        r'<div class="blk">.*?(?=<div class="blk">|</main>|<footer)', main.group(0), re.S
+    ):
+        lab = re.search(r'<div class="lab">(.*?)</div>', blk)
+        if lab:
+            found[re.sub(r"<[^>]+>", "", lab.group(1)).strip()] = blk
+
+    missing = [b for b in EVERY1_DOOR_BLOCKS if b not in found]
+    if missing:
+        raise bs.SourceError(
+            "the EVERY1 door page no longer carries: " + ", ".join(missing)
+        )
+
+    html = "".join(found[name] for name in EVERY1_DOOR_BLOCKS)
+    html = html.replace("/assets/logos/every1/", "/assets/logos/")
+    # The door tells a portal reader that EVERY1 has its own front door. On that
+    # front door the sentence would point at itself.
+    html = html.replace(
+        'href="https://brand.every1movement.com"', 'href="/"'
+    ).replace("https://brand.every1movement.com/", "/")
+    images = sorted(set(re.findall(r'(?:src|href)="/assets/(images/[^"]+)"', html)))
+    # The blocks live inside main > .wrap on the door. Keep that parent, or the
+    # measure and the grid rules that key off it have nothing to apply to.
+    return css, f'<div class="e1brand"><div class="wrap">{html}</div></div>', images
+
+
 def every1_binaries() -> list:
     """Binary files the EVERY1 site needs under its own root.
 
@@ -3420,6 +3549,11 @@ def every1_binaries() -> list:
             if f["format"] == "png" and f.get("width") == 1600 and "black" not in f["file"]:
                 name = f["file"].split("/")[-1]
                 pairs.append((f["file"], f"{EVERY1_DIR}/assets/logos/{name}"))
+    css_assets = re.findall(r'url\("?(/assets/logos/[^")]+)"?\)', every1_door_content()[0])
+    for ref in sorted(set(css_assets)):
+        pairs.append((f"assets/logos/every1/{ref.split('/')[-1]}", EVERY1_DIR + ref))
+    for rel in every1_door_content()[2]:
+        pairs.append((f"assets/{rel}", f"{EVERY1_DIR}/assets/{rel}"))
     pairs += [
         ("assets/downloads/every1-logos.zip", f"{EVERY1_DIR}/assets/downloads/every1-logos.zip"),
         ("assets/images/every1-og-card.png", f"{EVERY1_DIR}/assets/images/every1-og-card.png"),
