@@ -1747,6 +1747,10 @@ footer.chrome img{{height:16px;width:auto;display:block;opacity:.9;}}
   </div>
 </footer>
 
+</div>
+</div>
+__SIDEBARJS__
+
 </body>
 </html>
 """
@@ -2423,9 +2427,14 @@ EVERY1_SITE = """<!DOCTYPE html>
   footer.foot a{color:var(--accent-on-dark);}
 
 __DOORCSS__
+__SIDEBARCSS__
 </style>
 </head>
 <body>
+
+<div class="site">
+__SIDEBAR__
+<div class="sitemain">
 
 <header class="top on-midnight">
   <div class="wrap">
@@ -2666,7 +2675,7 @@ __APP_SCREENS__
     <span>Brand v__VERSION__ · <a href="mailto:brand@theword.world">brand@theword.world</a></span>
   </div>
 </footer>
-
+{EVERY1_SIDEBAR_JS}
 </body>
 </html>
 """
@@ -2682,6 +2691,144 @@ __APP_SCREENS__
 
 EVERY1_DIR = "every1"
 EVERY1_SITE_URL = "https://brand.every1movement.com"
+
+
+# The whole EVERY1 site, in the order a reader meets it. One list, used to draw
+# the menu on both pages and checked against the page that was actually built,
+# so a section can never exist without a way to reach it.
+EVERY1_NAV_BRAND = [
+    ("Start here", "start"),
+    ("The words", "say"),
+    ("The brand", "brand"),
+    ("The marks", "marks"),
+    ("Colour", "colour"),
+    ("Type", "type"),
+    ("Never", "never"),
+    ("The 1 as a mask", "mask"),
+    ("In the app", "app"),
+    ("Country lockups", "countries"),
+    ("Check your work", "check"),
+    ("Ask", "ask"),
+]
+
+EVERY1_NAV_MESSAGING = [
+    ("Scope", "scope"),
+    ("Identity", "identity"),
+    ("The mandate", "doctrine"),
+    ("What to say", "scripts"),
+    ("Who we speak to", "audiences"),
+    ("Voice and phrases", "voice"),
+    ("Language we do not use", "banned"),
+    ("The boilerplate", "boilerplate"),
+]
+
+
+def every1_sidebar(page: str) -> str:
+    """The site menu, identical on every page, with the current page marked.
+
+    Both groups are always shown in full. A reader on the messaging standard can
+    see every part of the brand without going back, and the reverse, which is the
+    point of putting it on the left rather than hiding it in a header.
+    """
+    assert page in ("brand", "messaging")
+    home = "/" if page == "brand" else "/"
+    groups = [
+        ("The brand", EVERY1_NAV_BRAND, "brand"),
+        ("Messaging", EVERY1_NAV_MESSAGING, "messaging"),
+    ]
+    out = [
+        '<nav class="sidebar" aria-label="EVERY1 brand and messaging">',
+        f'  <a class="sidemark" href="{home}" aria-label="EVERY1 Movement, home">',
+        '    <img src="/assets/logos/every1-horizontal.svg" alt="EVERY1 Movement">',
+        "  </a>",
+    ]
+    for title, items, key in groups:
+        base = "" if key == page else ("/" if key == "brand" else "/messaging/")
+        out.append(f'  <div class="sidegroup">')
+        out.append(f'    <div class="sidehead">{esc(title)}</div>')
+        out.append("    <ol>")
+        for label, sid in items:
+            here = ' class="here"' if False else ""
+            out.append(f'      <li><a href="{base}#{sid}"{here}>{esc(label)}</a></li>')
+        out.append("    </ol>")
+        out.append("  </div>")
+    out.append('  <div class="sidegroup">')
+    out.append('    <div class="sidehead">Elsewhere</div>')
+    out.append("    <ol>")
+    out.append('      <li><a href="/assets/downloads/every1-logos.zip">Download every mark</a></li>')
+    out.append(f'      <li><a href="{SITE}/brand/messaging">THE WORD messaging standard</a></li>')
+    out.append(f'      <li><a href="{SITE}/brand/every1/">This door on the portal</a></li>')
+    out.append("    </ol>")
+    out.append("  </div>")
+    out.append("</nav>")
+    return "\n".join(out)
+
+
+EVERY1_SIDEBAR_CSS = """
+  .site{min-height:100vh;}
+  .sidebar{padding:26px 22px 30px;border-bottom:1px solid var(--border);background:var(--ground);overflow-x:hidden;}
+  .sidemark{display:block;margin-bottom:22px;}
+  /* Sized by width, not height: the horizontal lockup is wide enough that a
+     height in pixels overflows a 246px column and clips the wordmark. */
+  .sidemark img{width:100%;max-width:186px;height:auto;display:block;}
+  .sidegroup{margin-bottom:20px;}
+  .sidegroup:last-child{margin-bottom:0;}
+  .sidehead{font-size:10.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
+    color:var(--accent);margin-bottom:8px;}
+  .sidebar ol{list-style:none;counter-reset:n;margin:0;padding:0;}
+  .sidebar li{counter-increment:n;margin:0 0 1px;}
+  .sidebar ol a{display:flex;gap:7px;padding:5px 8px 5px 11px;text-decoration:none;
+    font-size:13.5px;line-height:1.34;color:var(--ink-muted);
+    border-left:2px solid transparent;}
+  .sidebar ol a::before{content:counter(n,decimal-leading-zero);font-size:10px;
+    color:var(--border);font-variant-numeric:tabular-nums;flex:0 0 auto;
+    padding-top:2px;}
+  .sidebar ol a:hover{color:var(--ink);}
+  .sidebar ol a.here{color:var(--ink);font-weight:600;border-left-color:var(--accent);}
+  .sidebar ol a.here::before{color:var(--accent);}
+  @media(min-width:1080px){
+    .site{display:grid;grid-template-columns:246px minmax(0,1fr);align-items:start;}
+    .sidebar{position:sticky;top:0;height:100vh;overflow-y:auto;
+      border-bottom:0;border-right:1px solid var(--border);padding:30px 20px 40px;}
+    .sitemain{min-width:0;}
+  }
+"""
+
+EVERY1_SIDEBAR_JS = """
+<script>
+/* Marks the section the reader is in. The menu works without it. */
+(function () {
+  var nav = document.querySelector(".sidebar");
+  if (!nav || !("IntersectionObserver" in window)) return;
+  var links = {}, order = [];
+  nav.querySelectorAll('a[href*="#"]').forEach(function (a) {
+    var href = a.getAttribute("href");
+    if (href.indexOf("//") !== -1) return;
+    var bare = href.replace(/^\/(messaging\/)?/, "");
+    if (bare.charAt(0) !== "#") return;
+    var id = bare.slice(1);
+    if (href.charAt(0) === "/" && href.indexOf("#") > 1) return;
+    if (!document.getElementById(id)) return;
+    links[id] = a;
+    order.push(id);
+  });
+  if (!order.length) return;
+  var seen = {};
+  var obs = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) seen[e.target.id] = true;
+      else delete seen[e.target.id];
+    });
+    var here = null;
+    for (var i = 0; i < order.length; i++) {
+      if (seen[order[i]]) { here = order[i]; break; }
+    }
+    order.forEach(function (id) { links[id].classList.toggle("here", id === here); });
+  }, { rootMargin: "-10% 0px -80% 0px" });
+  order.forEach(function (id) { obs.observe(document.getElementById(id)); });
+})();
+</script>
+"""
 
 
 def every1_marks(logos: dict) -> list:
@@ -2810,6 +2957,9 @@ def build_every1_site(brand: dict, tokens: dict, logos: dict, template: str, wor
             "          </dl>\n"
             "        </div>"
             for sc in app["screens"])),
+        ("__SIDEBAR__", every1_sidebar("brand")),
+        ("__SIDEBARCSS__", EVERY1_SIDEBAR_CSS),
+        ("__SIDEBARJS__", EVERY1_SIDEBAR_JS),
         ("__DOOR__", door_html),
         ("__DOORCSS__", door_css + (
             "\n#brand{padding:0;max-width:none;}"
@@ -2829,6 +2979,18 @@ def build_every1_site(brand: dict, tokens: dict, logos: dict, template: str, wor
     if leftover:
         raise bs.SourceError(
             "the EVERY1 site template has unfilled placeholders: " + ", ".join(leftover))
+    # The menu is a promise that every section is reachable. Check it against the
+    # page that was actually built, in both directions.
+    built = set(re.findall(r'<section[^>]*id="([^"]+)"', page))
+    listed = {sid for _, sid in EVERY1_NAV_BRAND}
+    if listed - built:
+        raise bs.SourceError(
+            "the EVERY1 menu lists sections the page does not have: "
+            + ", ".join(sorted(listed - built)))
+    if built - listed:
+        raise bs.SourceError(
+            "the EVERY1 page has sections the menu does not list: "
+            + ", ".join(sorted(built - listed)))
     return page
 
 
@@ -3318,18 +3480,6 @@ def build_every1_messaging(brand: dict, messaging: dict, words: dict, app: dict,
         f'"A ministry of THE WORD FOR ALL THE WORLD" and do not lock a parent mark to it.</p>\n'
     )
 
-    toc = [
-        ("scope", "Scope, and what the parent governs"),
-        ("identity", "Identity"),
-        ("doctrine", "The mandate"),
-        ("scripts", "What to say, outside and inside"),
-        ("audiences", "Who we speak to"),
-        ("voice", "Voice, filter and phrases"),
-        ("banned", "Language we do not use"),
-        ("boilerplate", "The boilerplate paragraph"),
-    ]
-    toc_html = "".join(f'    <li><a href="#{sid}">{e(t)}</a></li>\n' for sid, t in toc)
-
     body = (
         sec(1, "scope", "Scope, and what the parent governs", scope)
         + sec(2, "identity", "Identity", ident)
@@ -3340,6 +3490,13 @@ def build_every1_messaging(brand: dict, messaging: dict, words: dict, app: dict,
         + sec(7, "banned", "Language we do not use", bans)
         + sec(8, "boilerplate", "The boilerplate paragraph", boiler)
     )
+
+    built = re.findall(r'<section data-sec id="([a-z0-9-]+)"', body)
+    if built != [sid for _, sid in EVERY1_NAV_MESSAGING]:
+        raise bs.SourceError(
+            "the EVERY1 menu and the messaging page disagree about its sections: "
+            f"menu has {[sid for _, sid in EVERY1_NAV_MESSAGING]}, page has {built}"
+        )
 
     return f"""<!DOCTYPE html>
 <html lang="en">
@@ -3363,20 +3520,13 @@ def build_every1_messaging(brand: dict, messaging: dict, words: dict, app: dict,
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&display=swap" rel="stylesheet">
-<style>{EVERY1_MESSAGING_CSS}</style>
+<style>{EVERY1_MESSAGING_CSS}{EVERY1_SIDEBAR_CSS}</style>
 </head>
 <body>
 
-<nav class="top">
-  <div class="bar">
-    <a href="/" aria-label="EVERY1 Movement"><img src="/assets/logos/every1-horizontal-reversed.svg" alt="EVERY1 Movement"></a>
-    <div class="links">
-      <a href="/">The mark</a>
-      <a href="/messaging/" class="active">Messaging</a>
-      <a href="{SITE}/brand/messaging">Parent standard</a>
-    </div>
-  </div>
-</nav>
+<div class="site">
+{every1_sidebar("messaging")}
+<div class="sitemain">
 
 <div class="doc">
 
@@ -3392,14 +3542,11 @@ def build_every1_messaging(brand: dict, messaging: dict, words: dict, app: dict,
   </div>
 </header>
 
-<nav class="contents">
-  <h2>Contents</h2>
-  <ol>
-{toc_html}  </ol>
-</nav>
 {body}
 </div>
 
+</div>
+</div>
 <footer class="foot">
   <div class="doc">
     <img src="/assets/logos/every1-horizontal-reversed.svg" alt="EVERY1 Movement">
@@ -3414,17 +3561,16 @@ def build_every1_messaging(brand: dict, messaging: dict, words: dict, app: dict,
 
 
 # Blocks the EVERY1 site republishes from its door on the portal, in this order.
-# Named rather than taken wholesale: the door speaks to someone working across
-# every brand in the house, and two of its blocks only make sense there.
+# Named rather than taken wholesale. The door speaks to someone working across
+# every brand in the house, so its "EVERY1 has its own front door" block would
+# point at itself here. Its mask, country and in-use blocks are dropped because
+# this site already carries a section of its own for each of those.
 EVERY1_DOOR_BLOCKS = [
     "What kind of brand this is",
     "Identity",
     "Place in the process",
     "The participation layer",
-    "The 1 as a mask",
-    "A new country",
     "The ground in use",
-    "In use",
     "The capture brief",
     "Channels",
     "Rules that differ from the parent",
