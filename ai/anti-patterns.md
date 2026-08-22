@@ -1,6 +1,6 @@
 # Anti-patterns
 
-> **Brand system v7.5 · Messaging guide v1.0 · Updated 2026-08-20**
+> **Brand system v7.5 · Messaging guide v2.0 · Updated 2026-08-20**
 > Canonical source: <https://brand.theword.world/ai/manifest.json>
 > What not to do. The first section is hand-authored; the rest is generated from the guides.
 
@@ -121,32 +121,120 @@ Generated from the Messaging Guide.
 
 ### Hype
 
-- insane
-- epic
-- unreal
 - next-level
+- next level
 - game-changer
+- game-changing
 - "God showed up and showed out"
 - "you won't believe"
-- walls of 🔥 emojis
+- walls of flame emojis
 - ALL-CAPS excitement
+- "something big is coming"
+- "you do not want to miss this"
+- "come expecting"
 
-Hype manufactures a feeling. We report what God actually did. The record is more powerful than the adjective.
+**Wrong only in context.** These words are ordinary English on their own. Written as epic {event}, insane {event}, unreal {event} and so on, they are hype or jargon. Every form is listed so a checker can match it exactly.
 
-### Corporate Polish
+- epic night
+- epic service
+- epic weekend
+- epic gathering
+- epic meeting
+- epic conference
+- epic moment
+- epic experience
+- epic season
+- epic event
+- insane night
+- insane service
+- insane weekend
+- insane gathering
+- insane meeting
+- insane conference
+- insane moment
+- insane experience
+- insane season
+- insane event
+- unreal night
+- unreal service
+- unreal weekend
+- unreal gathering
+- unreal meeting
+- unreal conference
+- unreal moment
+- unreal experience
+- unreal season
+- unreal event
+- was epic
+- was insane
+- was unreal
+- so epic
+- so insane
+- absolutely insane
+- pretty epic
 
-- leverage
+Manufactured intensity. Excitement must arise from substance, or it is not excitement, it is volume.
+
+### Corporate polish
+
 - synergy
-- solutions
-- optimize
 - engage stakeholders
 - "excited to announce"
-- comprehensive
-- robust
+- lean in
 
-We are a ministry, not a vendor. Corporate language makes the guide the hero and the mission a product.
+**Wrong only in context.** These words are ordinary English on their own. Written as {be} relevant, comprehensive {thing}, robust {thing} and so on, they are hype or jargon. Every form is listed so a checker can match it exactly.
 
-### Churchy Insider Talk
+- be relevant
+- being relevant
+- stay relevant
+- staying relevant
+- remain relevant
+- remaining relevant
+- more relevant
+- most relevant
+- sound relevant
+- look relevant
+- comprehensive strategy
+- comprehensive solution
+- comprehensive solutions
+- comprehensive framework
+- comprehensive platform
+- comprehensive approach
+- comprehensive plan
+- comprehensive program
+- comprehensive process
+- comprehensive system
+- comprehensive discipleship
+- comprehensive ministry
+- comprehensive training
+- robust strategy
+- robust solution
+- robust solutions
+- robust framework
+- robust platform
+- robust approach
+- robust plan
+- robust program
+- robust process
+- robust system
+- robust discipleship
+- robust ministry
+- robust training
+- leverage the
+- leverage our
+- leverage your
+- leverage this
+- optimize the
+- optimize our
+- optimize your
+- optimize for
+- discipleship solutions
+- ministry solutions
+- church solutions
+
+Borrowed authority. It makes a ministry sound like a vendor and says nothing a person can act on.
+
+### Churchy insider talk
 
 - traveling mercies
 - hedge of protection
@@ -157,13 +245,47 @@ We are a ministry, not a vendor. Corporate language makes the guide the hero and
 - "a God thing"
 - "fresh anointing" (unexplained)
 - "blessed to announce"
+- "get plugged in"
+- authentic community
 
-Insider language tells a new believer this isn't for them. Everything we say is for them.
+Language that only works if you are already inside. It excludes the person we are trying to reach.
+
+### Generic ministry filler
+
+- life-changing
+- powerful experience
+- step into your destiny
+- your best life
+- new season
+- shift the atmosphere
+- unlock your potential
+- make an impact
+- transform the world
+- God-sized dream
+
+**Wrong only in context.** These words are ordinary English on their own. Written as spiritual journey, faith journey, your journey and so on, they are hype or jargon. Every form is listed so a checker can match it exactly.
+
+- spiritual journey
+- faith journey
+- your journey
+- this journey
+- journey together
+- the journey of faith
+
+Words that describe nothing. If the sentence survives with the phrase deleted, delete it.
 
 ## Rewrites
 
 | Never this | Always this |
 | --- | --- |
-| "🔥🔥 INSANE night!! God showed UP and showed OUT!!" | "Friday night in [city]: [n] people heard the gospel. [n] turned their hearts back to Jesus. The fire is spreading." (numbers from the official record only) |
-| "Join us as we press into a fresh anointing and contend for breakthrough." | "Come. Jesus is moving. Bring the person you've been praying for." |
-| "We provide comprehensive discipleship solutions for local church partners." | "We train the local church to walk with Jesus." |
+| "The world is dying while lazy Christians sit in church. Stop making excuses and do something." | "You were saved and sent. Someone in your world needs to know what Jesus has done for you. Ask the Holy Spirit who your 1 is, begin the conversation, and GO." |
+| "Revival is coming! Do not miss the most life-changing event your city has ever seen." | "There must be more than going through the motions. Revival To My City is calling the local church to return to her first love. Come worship, receive the Word, and make room for the Holy Spirit to awaken what has become dry or distracted. Attend Revival in [City]." |
+| "Not sure whether you are allowed to evangelize? Download our ministry app and learn how." | "You were saved and sent. The Great Commission belongs to EVERY1. Join believers, churches and ministries around the world who are preaching the Gospel in the power of the Holy Spirit. Accept the mission. Reach your 1. Then GO again." |
+| "An elite leadership intensive for serious Christians ready to reach the next level." | "You were not called to remain unsure of who you are, what Jesus has given you, or where you belong. The School of the Local Church trains believers to know their authority in Christ, build a real relationship with Jesus, and take their place in the local church. Begin Training." |
+| "Because you are one of our most faithful donors, we wanted to tell you about another urgent financial need." | "We remembered you in prayer today. We are asking the Lord to strengthen your faith, family, work and assignment. Here is a truth that has been helping our team remain full of faith this month, and we believe it will strengthen you too." |
+| "If you do not give by midnight, this opportunity may disappear. Sow today and expect your miracle." | "We are inviting partners to help provide [verified need] for [specific assignment]. The current confirmed cost is [amount], and gifts designated to this campaign will be used for [purpose]. Please pray and participate only as the Lord leads you. If you choose to give, the process is secure and simple: [link]. We will report what was received, how it was used, and the verified fruit." |
+| "Our campaign was a massive success with thousands of lives changed and unprecedented miracles." | "From [dates], the team served in [locations]. Attendance was [counting method]. Ministry records document [verified number] Gospel responses, [verified number] follow-up connections, and [verified number] reported healings. Testimonies still awaiting confirmation are labelled unverified. These results are reported as fruit entrusted to us, not as the measure of our spiritual success." |
+| "The Church is asleep, compromised and failing its generation." | "Many believers know there must be more but have become dry, distracted or weighed down. We speak truthfully about what prevents the Word from producing, while calling the Church back to her first love. The destination is never shame. It is awakening, responsibility and action." |
+| "The lost and unsaved need to get right with God before it is too late." | "If you do not yet know Jesus, He is not distant or unavailable. He knows you, loves you, and is inviting you to receive forgiveness, new life, and a real relationship with Him." |
+| Source: "when Jesus calls you you go you do not wait until everything makes sense you go". Edited to: "Spiritual progress requires embracing uncertainty and proactively pursuing your divine purpose." | Punctuation only: "When Jesus calls you, you GO. You do not wait until everything makes sense. You GO." |
+| "To ensure everyone feels comfortable, EVERY1 avoids disputed supernatural subjects and focuses on shared values." | "EVERY1 welcomes cooperation around the essential Gospel and the Great Commission. We are not exclusive, but we will not shy away from the Holy Spirit. Spirit-led ministry, healing, deliverance and supernatural dependence upon Him remain part of our normal environment." |

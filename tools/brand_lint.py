@@ -308,6 +308,10 @@ def check_navigation(files: list):
     """L10: the portal chrome is the same on every page."""
     sets = {}
     for rel in files:
+        # A page served from another site carries that site's chrome, not the
+        # portal's. Comparing the two reports a difference that is the point.
+        if any(rel.startswith(prefix) for prefix in SITE_ROOTS):
+            continue
         s = strip_specimens(bs.read(os.path.join(REPO, rel)))
         nav = re.search(r'<div class="links">(.*?)</div>', s, re.S)
         if not nav:

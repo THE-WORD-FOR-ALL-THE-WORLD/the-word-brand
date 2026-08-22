@@ -66,6 +66,36 @@
       "title": "Corrections come home",
       "rule": "A value corrected in the field returns through a changelog entry, never as a note in an inbox.",
       "why": "A press proof that lives in someone's email is a fact the system does not have."
+    },
+    {
+      "id": "GOV11",
+      "title": "Locked language stays locked",
+      "rule": "No team member, contractor or AI system redefines a locked conviction or standard term without leadership approval.",
+      "why": "A standard that anyone can quietly reword is not a standard."
+    },
+    {
+      "id": "GOV12",
+      "title": "Nothing invented",
+      "rule": "No contractor or AI system invents doctrine, quotations, testimonies, statistics, partner needs, biography or outcomes.",
+      "why": "Law II: the record or nothing. A ministry is believed because it can be checked."
+    },
+    {
+      "id": "GOV13",
+      "title": "Unknown stays labelled",
+      "rule": "Information that is not known stays a labelled placeholder or is escalated. An empty field is never filled with an assumption.",
+      "why": "A guessed number outlives the guess and becomes a fact nobody can trace."
+    },
+    {
+      "id": "GOV14",
+      "title": "Preaching is punctuation only",
+      "rule": "Preaching and preaching-derived writing are edited for punctuation unless the speaker asks for style or content editing.",
+      "why": "The preacher's cadence, force and theology are the content, not a first draft."
+    },
+    {
+      "id": "GOV15",
+      "title": "A human approves",
+      "rule": "An AI audit may identify violations. Final approval of any published asset stays with the designated human owner.",
+      "why": "The audit is a tool. Responsibility does not transfer to it."
     }
   ],
   "processes": [
@@ -373,6 +403,21 @@
       ],
       "done": "The review appears on /reviews and in the machine-readable layer.",
       "skill": null
+    },
+    {
+      "id": "SOP9",
+      "name": "Propose a change to locked language",
+      "when": "A locked conviction, term or standard needs to change.",
+      "who": "Anyone",
+      "steps": [
+        "Name the exact section and the current wording.",
+        "Write the requested wording in full, not a description of it.",
+        "State the reason, and what changes if it is refused.",
+        "List the channels and generated files the change reaches.",
+        "Name the owner and the approver, and propose an effective date.",
+        "Open it as a pull request so the diff is the proposal."
+      ],
+      "done": "Joel and Nathan have approved, the changelog row is written, and the build passes."
     }
   ],
   "decisions": [

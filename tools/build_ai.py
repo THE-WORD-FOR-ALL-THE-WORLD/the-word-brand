@@ -926,17 +926,33 @@ def build_brand_system(brand: dict, messaging: dict, tokens: dict, updated: str,
     md += "\n"
 
     # 14. Audiences
-    md += "## 14. The five people we speak to\n\n"
+    md += "## 14. Who we speak to, in priority order\n\n"
     md += (
-        "Every piece is aimed at one of these five. Know which one before writing a word. The "
-        "\"needs to hear\" line is the heart of the message: say it in your own words, but say that.\n\n"
+        "This is the master-brand audience priority. Know which audience a piece is for before "
+        "writing a word, and when a piece has to choose, it chooses the audience nearer the top. "
+        "The posture is how we stand toward them: it governs tone before any wording is chosen.\n\n"
     )
-    for person in messaging["audiences"]:
-        md += f"### {person['audience']} ({person['qualifier']})\n\n"
-        md += f"- **They want:** {person['wants']}\n"
-        md += f"- **Their pain:** {person['pain']}\n"
-        md += f"- **Needs to hear:** {person['needsToHear']}\n"
-        md += f"- **First step:** {person['firstStep']}\n\n"
+    md += md_table(
+        ["#", "Audience", "Our posture"],
+        [[str(i), p["audience"], p["posture"]] for i, p in enumerate(messaging["audiences"], 1)],
+    )
+    md += "\n"
+
+    # 14b. Ideal client profiles
+    md += "### Ideal client profiles\n\n"
+    md += (
+        "Experimental, not yet ratified. The four fields below are the ministry's own words. "
+        "The rest of each profile is deliberately unfilled: where they already are, what triggers "
+        "the search, the real objection, who else they are listening to, and what tells us it "
+        "worked. Do not invent those. Use these to aim a piece of writing, not to cite as "
+        "settled.\n\n"
+    )
+    for pr in messaging["profiles"]:
+        md += f"**{pr['profile']}** ({pr['who']})\n\n"
+        md += f"- **They want:** {pr['wants']}\n"
+        md += f"- **Their pain:** {pr['pain']}\n"
+        md += f"- **Needs to hear:** {pr['needsToHear']}\n"
+        md += f"- **First step:** {pr['firstStep']}\n\n"
 
     # 15. Agent rules, hand-authored
     md += "## 15. " + read_source("agent-rules.md").split("\n", 1)[0].lstrip("# ").strip() + "\n\n"
@@ -995,6 +1011,14 @@ def build_anti_patterns(brand: dict, messaging: dict, updated: str) -> str:
         md += f"### {ban['category']}\n\n"
         for word in ban["words"]:
             md += f"- {word}\n"
+        if ban.get("patterns"):
+            md += (
+                f"\n**Wrong only in context.** These words are ordinary English on their own. "
+                f"Written as {', '.join(ban['patterns'][:3])} and so on, they are hype or jargon. "
+                f"Every form is listed so a checker can match it exactly.\n\n"
+            )
+            for phrase in ban["contextual"]:
+                md += f"- {phrase}\n"
         md += f"\n{ban['why']}\n\n"
 
     if messaging["rewrites"]:
@@ -1723,6 +1747,10 @@ footer.chrome img{{height:16px;width:auto;display:block;opacity:.9;}}
   </div>
 </footer>
 
+</div>
+</div>
+__SIDEBARJS__
+
 </body>
 </html>
 """
@@ -2397,9 +2425,16 @@ EVERY1_SITE = """<!DOCTYPE html>
   footer.foot .wrap{display:flex;flex-wrap:wrap;gap:var(--space-4);justify-content:space-between;align-items:center;}
   footer.foot img{height:20px;width:auto;display:block;}
   footer.foot a{color:var(--accent-on-dark);}
+
+__DOORCSS__
+__SIDEBARCSS__
 </style>
 </head>
 <body>
+
+<div class="site">
+__SIDEBAR__
+<div class="sitemain">
 
 <header class="top on-midnight">
   <div class="wrap">
@@ -2411,7 +2446,8 @@ EVERY1_SITE = """<!DOCTYPE html>
     <div class="acts">
       <a class="btn" href="/assets/downloads/every1-logos.zip">Download every mark</a>
       <a class="btn ghost" href="#say">Read the words</a>
-      <a class="btn ghost" href="#marks">See the marks</a>
+      <a class="btn ghost" href="#brand">See the brand</a>
+      <a class="btn ghost" href="/messaging/">Messaging standard</a>
     </div>
   </div>
 </header>
@@ -2502,7 +2538,11 @@ __BANNED__
       </div>
     </section>
 
-    <section id="marks">
+    <section id="brand">
+__DOOR__
+</section>
+
+<section id="marks">
       <span class="eyebrow">The marks</span>
       <h2>Every published form.</h2>
       <p class="intro">These are the files. They are generated from the approved artwork, so what
@@ -2635,7 +2675,7 @@ __APP_SCREENS__
     <span>Brand v__VERSION__ · <a href="mailto:brand@theword.world">brand@theword.world</a></span>
   </div>
 </footer>
-
+{EVERY1_SIDEBAR_JS}
 </body>
 </html>
 """
@@ -2653,6 +2693,144 @@ EVERY1_DIR = "every1"
 EVERY1_SITE_URL = "https://brand.every1movement.com"
 
 
+# The whole EVERY1 site, in the order a reader meets it. One list, used to draw
+# the menu on both pages and checked against the page that was actually built,
+# so a section can never exist without a way to reach it.
+EVERY1_NAV_BRAND = [
+    ("Start here", "start"),
+    ("The words", "say"),
+    ("The brand", "brand"),
+    ("The marks", "marks"),
+    ("Colour", "colour"),
+    ("Type", "type"),
+    ("Never", "never"),
+    ("The 1 as a mask", "mask"),
+    ("In the app", "app"),
+    ("Country lockups", "countries"),
+    ("Check your work", "check"),
+    ("Ask", "ask"),
+]
+
+EVERY1_NAV_MESSAGING = [
+    ("Scope", "scope"),
+    ("Identity", "identity"),
+    ("The mandate", "doctrine"),
+    ("What to say", "scripts"),
+    ("Who we speak to", "audiences"),
+    ("Voice and phrases", "voice"),
+    ("Language we do not use", "banned"),
+    ("The boilerplate", "boilerplate"),
+]
+
+
+def every1_sidebar(page: str) -> str:
+    """The site menu, identical on every page, with the current page marked.
+
+    Both groups are always shown in full. A reader on the messaging standard can
+    see every part of the brand without going back, and the reverse, which is the
+    point of putting it on the left rather than hiding it in a header.
+    """
+    assert page in ("brand", "messaging")
+    home = "/" if page == "brand" else "/"
+    groups = [
+        ("The brand", EVERY1_NAV_BRAND, "brand"),
+        ("Messaging", EVERY1_NAV_MESSAGING, "messaging"),
+    ]
+    out = [
+        '<nav class="sidebar" aria-label="EVERY1 brand and messaging">',
+        f'  <a class="sidemark" href="{home}" aria-label="EVERY1 Movement, home">',
+        '    <img src="/assets/logos/every1-horizontal.svg" alt="EVERY1 Movement">',
+        "  </a>",
+    ]
+    for title, items, key in groups:
+        base = "" if key == page else ("/" if key == "brand" else "/messaging/")
+        out.append(f'  <div class="sidegroup">')
+        out.append(f'    <div class="sidehead">{esc(title)}</div>')
+        out.append("    <ol>")
+        for label, sid in items:
+            here = ' class="here"' if False else ""
+            out.append(f'      <li><a href="{base}#{sid}"{here}>{esc(label)}</a></li>')
+        out.append("    </ol>")
+        out.append("  </div>")
+    out.append('  <div class="sidegroup">')
+    out.append('    <div class="sidehead">Elsewhere</div>')
+    out.append("    <ol>")
+    out.append('      <li><a href="/assets/downloads/every1-logos.zip">Download every mark</a></li>')
+    out.append(f'      <li><a href="{SITE}/brand/messaging">THE WORD messaging standard</a></li>')
+    out.append(f'      <li><a href="{SITE}/brand/every1/">This door on the portal</a></li>')
+    out.append("    </ol>")
+    out.append("  </div>")
+    out.append("</nav>")
+    return "\n".join(out)
+
+
+EVERY1_SIDEBAR_CSS = """
+  .site{min-height:100vh;}
+  .sidebar{padding:26px 22px 30px;border-bottom:1px solid var(--border);background:var(--ground);overflow-x:hidden;}
+  .sidemark{display:block;margin-bottom:22px;}
+  /* Sized by width, not height: the horizontal lockup is wide enough that a
+     height in pixels overflows a 246px column and clips the wordmark. */
+  .sidemark img{width:100%;max-width:186px;height:auto;display:block;}
+  .sidegroup{margin-bottom:20px;}
+  .sidegroup:last-child{margin-bottom:0;}
+  .sidehead{font-size:10.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
+    color:var(--accent);margin-bottom:8px;}
+  .sidebar ol{list-style:none;counter-reset:n;margin:0;padding:0;}
+  .sidebar li{counter-increment:n;margin:0 0 1px;}
+  .sidebar ol a{display:flex;gap:7px;padding:5px 8px 5px 11px;text-decoration:none;
+    font-size:13.5px;line-height:1.34;color:var(--ink-muted);
+    border-left:2px solid transparent;}
+  .sidebar ol a::before{content:counter(n,decimal-leading-zero);font-size:10px;
+    color:var(--border);font-variant-numeric:tabular-nums;flex:0 0 auto;
+    padding-top:2px;}
+  .sidebar ol a:hover{color:var(--ink);}
+  .sidebar ol a.here{color:var(--ink);font-weight:600;border-left-color:var(--accent);}
+  .sidebar ol a.here::before{color:var(--accent);}
+  @media(min-width:1080px){
+    .site{display:grid;grid-template-columns:246px minmax(0,1fr);align-items:start;}
+    .sidebar{position:sticky;top:0;height:100vh;overflow-y:auto;
+      border-bottom:0;border-right:1px solid var(--border);padding:30px 20px 40px;}
+    .sitemain{min-width:0;}
+  }
+"""
+
+EVERY1_SIDEBAR_JS = """
+<script>
+/* Marks the section the reader is in. The menu works without it. */
+(function () {
+  var nav = document.querySelector(".sidebar");
+  if (!nav || !("IntersectionObserver" in window)) return;
+  var links = {}, order = [];
+  nav.querySelectorAll('a[href*="#"]').forEach(function (a) {
+    var href = a.getAttribute("href");
+    if (href.indexOf("//") !== -1) return;
+    var bare = href.replace(/^\/(messaging\/)?/, "");
+    if (bare.charAt(0) !== "#") return;
+    var id = bare.slice(1);
+    if (href.charAt(0) === "/" && href.indexOf("#") > 1) return;
+    if (!document.getElementById(id)) return;
+    links[id] = a;
+    order.push(id);
+  });
+  if (!order.length) return;
+  var seen = {};
+  var obs = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) seen[e.target.id] = true;
+      else delete seen[e.target.id];
+    });
+    var here = null;
+    for (var i = 0; i < order.length; i++) {
+      if (seen[order[i]]) { here = order[i]; break; }
+    }
+    order.forEach(function (id) { links[id].classList.toggle("here", id === here); });
+  }, { rootMargin: "-10% 0px -80% 0px" });
+  order.forEach(function (id) { obs.observe(document.getElementById(id)); });
+})();
+</script>
+"""
+
+
 def every1_marks(logos: dict) -> list:
     """EVERY1's configurations, in the order a stranger needs them."""
     order = ["horizontal", "bare", "e1", "numeral", "vision", "promise", "usa", "uganda"]
@@ -2667,6 +2845,7 @@ def every1_marks(logos: dict) -> list:
 
 
 def build_every1_site(brand: dict, tokens: dict, logos: dict, template: str, words: dict, messaging: dict, app: dict) -> str:
+    door_css, door_html, _ = every1_door_content()
     marks = []
     for c in every1_marks(logos):
         reversed_svg = next(
@@ -2778,6 +2957,15 @@ def build_every1_site(brand: dict, tokens: dict, logos: dict, template: str, wor
             "          </dl>\n"
             "        </div>"
             for sc in app["screens"])),
+        ("__SIDEBAR__", every1_sidebar("brand")),
+        ("__SIDEBARCSS__", EVERY1_SIDEBAR_CSS),
+        ("__SIDEBARJS__", EVERY1_SIDEBAR_JS),
+        ("__DOOR__", door_html),
+        ("__DOORCSS__", door_css + (
+            "\n#brand{padding:0;max-width:none;}"
+            "\n.e1brand{padding:var(--space-8) 0 var(--space-4);}"
+            "\n.e1brand .blk:last-child{margin-bottom:0;}"
+        )),
         ("__BANNED__", "\n".join(
             f'        <p class="intro"><b>{esc(g["category"])}.</b> '
             + esc(", ".join(w.replace(chr(34), "") for w in g["words"])) + "</p>"
@@ -2791,6 +2979,18 @@ def build_every1_site(brand: dict, tokens: dict, logos: dict, template: str, wor
     if leftover:
         raise bs.SourceError(
             "the EVERY1 site template has unfilled placeholders: " + ", ".join(leftover))
+    # The menu is a promise that every section is reachable. Check it against the
+    # page that was actually built, in both directions.
+    built = set(re.findall(r'<section[^>]*id="([^"]+)"', page))
+    listed = {sid for _, sid in EVERY1_NAV_BRAND}
+    if listed - built:
+        raise bs.SourceError(
+            "the EVERY1 menu lists sections the page does not have: "
+            + ", ".join(sorted(listed - built)))
+    if built - listed:
+        raise bs.SourceError(
+            "the EVERY1 page has sections the menu does not list: "
+            + ", ".join(sorted(built - listed)))
     return page
 
 
@@ -3095,6 +3295,385 @@ DESCRIPTIONS = {
 }
 
 
+EVERY1_MESSAGING_CSS = """
+  :root{
+    --midnight:#0B1A2D; --word-blue:#023D6F; --parchment:#F7F3EC;
+    --flame:#F85842; --ember:#C13A24; --white:#FFFFFF;
+    --soft:rgba(11,26,45,.68); --rule:rgba(11,26,45,.16); --hair:rgba(11,26,45,.09);
+    --serif-display:'DM Serif Display', Georgia, 'Times New Roman', serif;
+    --sans:'DM Sans', -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:var(--sans);font-size:17px;line-height:1.75;color:var(--midnight);
+    background:var(--white);-webkit-font-smoothing:antialiased;}
+  a{color:var(--word-blue);}
+  a:hover{color:var(--ember);}
+  a:focus-visible{outline:2px solid var(--ember);outline-offset:3px;border-radius:3px;}
+  .doc{max-width:760px;margin:0 auto;padding:0 28px;}
+  .top{background:var(--midnight);}
+  .top .bar{max-width:1240px;margin:0 auto;padding:22px 36px;display:flex;
+    justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;}
+  .top img{height:19px;width:auto;display:block;}
+  .top .links{display:flex;gap:10px 26px;font-size:12px;font-weight:600;
+    letter-spacing:.08em;text-transform:uppercase;}
+  .top .links a{color:rgba(247,243,236,.82);text-decoration:none;}
+  .top .links a:hover,.top .links a.active{color:var(--white);}
+  .masthead{border-bottom:1px solid var(--rule);padding:64px 0 34px;}
+  .masthead .over{font-size:11.5px;font-weight:700;letter-spacing:.2em;
+    text-transform:uppercase;color:var(--ember);margin-bottom:16px;}
+  .masthead h1{font-family:var(--serif-display);font-weight:400;
+    font-size:clamp(32px,5.2vw,46px);line-height:1.14;letter-spacing:-.01em;}
+  .masthead .sub{margin-top:16px;font-size:17.5px;color:var(--soft);max-width:60ch;}
+  .facts{margin-top:26px;display:grid;gap:2px 30px;grid-template-columns:1fr;font-size:14px;}
+  @media(min-width:620px){.facts{grid-template-columns:1fr 1fr;}}
+  .facts div{display:flex;gap:9px;padding:3px 0;}
+  .facts b{font-weight:600;min-width:104px;}
+  .facts span{color:var(--soft);}
+  .contents{padding:34px 0 10px;border-bottom:1px solid var(--rule);margin-bottom:44px;}
+  .contents h2{font-size:11.5px;font-weight:700;letter-spacing:.2em;
+    text-transform:uppercase;color:var(--ember);margin-bottom:16px;}
+  .contents ol{list-style:none;counter-reset:toc;}
+  @media(min-width:620px){.contents ol{columns:2;column-gap:34px;}}
+  .contents li{counter-increment:toc;break-inside:avoid;margin-bottom:5px;font-size:15px;}
+  .contents li::before{content:counter(toc) ".";color:rgba(11,26,45,.42);
+    margin-right:9px;font-size:13.5px;font-variant-numeric:tabular-nums;}
+  .contents a{text-decoration:none;color:var(--midnight);}
+  .contents a:hover{color:var(--ember);text-decoration:underline;}
+  section[data-sec]{padding:6px 0 46px;}
+  section[data-sec] > h2{font-family:var(--serif-display);font-weight:400;
+    font-size:clamp(25px,3.4vw,31px);line-height:1.2;padding-top:30px;
+    border-top:1px solid var(--rule);margin-bottom:6px;}
+  section[data-sec] > h2 .n{display:block;font-family:var(--sans);font-size:11.5px;
+    font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--ember);
+    margin-bottom:11px;}
+  h3{font-size:16px;font-weight:700;margin:30px 0 8px;letter-spacing:-.005em;}
+  h4{font-size:13.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;
+    color:var(--word-blue);margin:24px 0 7px;}
+  p{margin-bottom:15px;}
+  p:last-child{margin-bottom:0;}
+  ul,ol{margin:0 0 15px 22px;}
+  li{margin-bottom:6px;}
+  strong{font-weight:600;}
+  em{font-style:italic;}
+  .lede{font-size:18px;color:var(--soft);margin-bottom:20px;}
+  table{width:100%;border-collapse:collapse;margin:12px 0 18px;font-size:15.5px;}
+  th,td{text-align:left;vertical-align:top;padding:9px 14px 9px 0;
+    border-bottom:1px solid var(--hair);}
+  th{font-size:11.5px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;
+    color:var(--soft);border-bottom-color:var(--rule);padding-bottom:7px;}
+  td:first-child{font-weight:600;padding-right:22px;}
+  .vision{border-left:2px solid var(--flame);padding:6px 0 6px 22px;margin:16px 0;
+    font-family:var(--serif-display);font-size:22px;line-height:1.35;text-transform:none;}
+  .vision span{display:block;font-family:var(--sans);font-size:12px;font-weight:600;
+    letter-spacing:.13em;text-transform:uppercase;color:var(--soft);margin-top:10px;}
+  .note{font-size:15px;color:var(--soft);border-top:1px solid var(--hair);
+    padding-top:14px;margin-top:20px;}
+  .foot{background:var(--midnight);color:rgba(247,243,236,.72);padding:38px 0;
+    font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;font-weight:500;
+    margin-top:56px;}
+  .foot .doc{display:flex;justify-content:space-between;align-items:center;
+    flex-wrap:wrap;gap:16px;max-width:1240px;}
+  .foot img{height:16px;width:auto;opacity:.9;}
+  .foot a{color:inherit;}
+  @media(max-width:640px){.top .bar{padding:18px 22px;}.masthead{padding:44px 0 28px;}}
+  @media print{.top,.contents,.foot{display:none;}body{font-size:11pt;}.doc{max-width:none;}}
+"""
+
+
+def build_every1_messaging(brand: dict, messaging: dict, words: dict, app: dict, updated: str) -> str:
+    """EVERY1's own messaging standard, for people working on that brand alone.
+
+    Everything doctrinal is rendered from the parent standard's own markup, so
+    this page cannot say something the parent does not. Everything EVERY1
+    specific comes from ai-source/every1-messaging.json, which the movement's
+    front page already reads. Nothing here is a third copy of either.
+    """
+    e = esc
+    blocks = messaging["every1Blocks"]
+    v = words["vision"]
+
+    def drop_lead_heading(block):
+        """The parent names the block; this page's section title already does."""
+        return re.sub(r"^\s*<h[34]>[^<]*</h[34]>\s*", "", block)
+
+    def sec(num, sid, title, body):
+        return (
+            f'\n<section data-sec id="{sid}">\n'
+            f'  <h2><span class="n">Section {num:02d}</span>{e(title)}</h2>\n{body}</section>\n'
+        )
+
+    def ul(items):
+        return "  <ul>\n" + "".join(f"    <li>{e(x)}</li>\n" for x in items) + "  </ul>\n"
+
+    # 01 scope
+    scope = (
+        f'  <p class="lede">This is the messaging standard for the EVERY1 Movement, and for '
+        f'anyone writing as EVERY1: our team, a partner church, a conference, or an activation.</p>\n'
+        f'  <p>Every word of doctrine on this page is published by '
+        f'<a href="{SITE}/brand/messaging">THE WORD Messaging Standard v{messaging["version"]}</a> '
+        f'and is rendered here from that document rather than restated, so the two cannot disagree. '
+        f'What this page adds is everything specific to EVERY1: its identity, its scripts, its '
+        f'audiences, its voice and its calls to action.</p>\n'
+        f'  <p>What this page does not carry, and what you should read in the parent standard when '
+        f'you need it: the full theological language, the Scripture standard, capitalization, '
+        f'reporting and provenance rules, and the partnership laws. Those govern EVERY1 too.</p>\n'
+        f'  <p><strong>The standing rule for this brand.</strong> {e(words["standing"])}</p>\n'
+    )
+
+    # 02 identity
+    # The vision is quoted here as the sentence it is. Its two-line, all-caps
+    # arrangement belongs to the lockup and is explained on the mark page: a
+    # messaging document quotes the words, it does not re-set the artwork.
+    ident = (
+        f'  <h3>Vision</h3>\n  <div class="vision">{e(messaging["vision"]["text"])}'
+        f'<span>{e(messaging["vision"]["reference"])}</span></div>\n'
+        f'  <p class="note">{e(v["note"])}</p>\n'
+        f'  <h3>Mission</h3>\n  <p>{e(words["mission"])} ({e(words["missionReference"])})</p>\n'
+        f'  <h3>The promise</h3>\n  <p>{e(words["promise"])}</p>\n'
+        f'  <h3>In plain words</h3>\n  <p>{e(words["plain"])}</p>\n'
+        f'  <h3>Place in the process</h3>\n  <p>{e(words["place"])}</p>\n'
+        f'  <h3>What it is</h3>\n{ul(words["whatItIs"])}'
+        f'  <h3>Who may join</h3>\n{ul(words["whoMayJoin"])}'
+        f'  <h3>First steps</h3>\n{ul(words["firstSteps"])}'
+    )
+
+    # 05 audiences
+    aud = ""
+    for a in words["audiences"]:
+        aud += (
+            f'  <h3>{e(a["audience"])}</h3>\n'
+            f'  <p class="note" style="border:0;padding:0;margin:0 0 10px;">{e(a["qualifier"])}</p>\n'
+            f'  <p><strong>They want</strong> {e(a["wants"])}</p>\n'
+            f'  <p><strong>Their pain:</strong> {e(a["pain"])}</p>\n'
+            f'  <p><strong>They need to hear:</strong> {e(a["needsToHear"])}</p>\n'
+            f'  <p><strong>First step:</strong> {e(a["firstStep"])}</p>\n'
+        )
+
+    # 06 voice
+    voice = (
+        f'  <p><strong>Register.</strong> {e(words["voice"]["register"])}</p>\n'
+        f'  <h3>Voice rules</h3>\n{ul(words["voice"]["rules"])}'
+        f'  <h3>The filter, inherited</h3>\n  <p>{e(messaging["filter"])}</p>\n'
+        f'  <h3>Standing rules, inherited</h3>\n  <p>{e(messaging["standingRules"])}</p>\n'
+        f'  <h3>Phrases we carry</h3>\n{ul(words["phrases"])}'
+        f'  <h3>Metaphor family</h3>\n'
+        f'  <p>EVERY1 writes in <strong>Kingdom</strong> images: King, Kingdom, authority, '
+        f'government, assignment, occupy, advance, sphere, stewardship. Fire belongs to BURN and '
+        f'may support. Do not stack soil, construction and warfare imagery on top of both.</p>\n'
+    )
+
+    # 07 banned
+    bans = ""
+    for b in messaging["bans"]:
+        bans += (
+            f'  <h4>{e(b["category"])}</h4>\n'
+            f'  <p><span data-specimen>{e(" · ".join(b["words"]))}</span></p>\n'
+            f'  <p class="note" style="border:0;padding:0;">{e(b["why"])}</p>\n'
+        )
+
+    # 08 boilerplate
+    boiler = (
+        f'  <p>When another organisation needs one paragraph describing EVERY1, this is the '
+        f'paragraph. Use it as written.</p>\n  <p>{e(words["boilerplate"])}</p>\n'
+        f'  <p class="note">EVERY1 carries no endorsement line and no parent lockup. Do not add '
+        f'"A ministry of THE WORD FOR ALL THE WORLD" and do not lock a parent mark to it.</p>\n'
+    )
+
+    body = (
+        sec(1, "scope", "Scope, and what the parent governs", scope)
+        + sec(2, "identity", "Identity", ident)
+        + sec(3, "doctrine", "The mandate", "  " + drop_lead_heading(blocks["doctrine"]) + "\n")
+        + sec(4, "scripts", "What to say, outside and inside", "  " + drop_lead_heading(blocks["scripts"]) + "\n")
+        + sec(5, "audiences", "Who we speak to", aud)
+        + sec(6, "voice", "Voice, filter and phrases", voice)
+        + sec(7, "banned", "Language we do not use", bans)
+        + sec(8, "boilerplate", "The boilerplate paragraph", boiler)
+    )
+
+    built = re.findall(r'<section data-sec id="([a-z0-9-]+)"', body)
+    if built != [sid for _, sid in EVERY1_NAV_MESSAGING]:
+        raise bs.SourceError(
+            "the EVERY1 menu and the messaging page disagree about its sections: "
+            f"menu has {[sid for _, sid in EVERY1_NAV_MESSAGING]}, page has {built}"
+        )
+
+    return f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<title>EVERY1 Messaging Standard</title>
+<meta name="description" content="How the EVERY1 Movement speaks. Identity, the mandate, the outside and inside scripts, audiences, voice, and the language we do not use.">
+<link rel="canonical" href="{EVERY1_SITE_URL}/messaging/">
+<link rel="icon" href="/assets/logos/every1-e1-reversed.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:image" content="{EVERY1_SITE_URL}/assets/images/every1-og-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="EVERY1 Movement">
+<meta property="og:site_name" content="EVERY1 Movement">
+<meta property="og:title" content="EVERY1 Messaging Standard">
+<meta property="og:description" content="How the EVERY1 Movement speaks.">
+<meta property="og:url" content="{EVERY1_SITE_URL}/messaging/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&display=swap" rel="stylesheet">
+<style>{EVERY1_MESSAGING_CSS}{EVERY1_SIDEBAR_CSS}</style>
+</head>
+<body>
+
+<div class="site">
+{every1_sidebar("messaging")}
+<div class="sitemain">
+
+<div class="doc">
+
+<header class="masthead">
+  <div class="over">EVERY1 Messaging Standard</div>
+  <h1>How EVERY1 speaks.</h1>
+  <p class="sub">For our team, and for any church, ministry or conference carrying EVERY1. What the movement is, what to say, and what never to say.</p>
+  <div class="facts">
+    <div><b>Version</b><span>{e(messaging['version'])} · {e(updated)}</span></div>
+    <div><b>Extract of</b><span>THE WORD Messaging Standard v{e(messaging['version'])}</span></div>
+    <div><b>Brand</b><span>v{e(brand['version'])}</span></div>
+    <div><b>Scope</b><span>The EVERY1 Movement only</span></div>
+  </div>
+</header>
+
+{body}
+</div>
+
+</div>
+</div>
+<footer class="foot">
+  <div class="doc">
+    <img src="/assets/logos/every1-horizontal-reversed.svg" alt="EVERY1 Movement">
+    <span>{e(" ".join(v["lines"]))}</span>
+    <span>Brand v{e(brand['version'])} · <a href="mailto:brand@theword.world">brand@theword.world</a></span>
+  </div>
+</footer>
+
+</body>
+</html>
+"""
+
+
+# Blocks the EVERY1 site republishes from its door on the portal, in this order.
+# Named rather than taken wholesale. The door speaks to someone working across
+# every brand in the house, so its "EVERY1 has its own front door" block would
+# point at itself here. Its mask, country and in-use blocks are dropped because
+# this site already carries a section of its own for each of those.
+EVERY1_DOOR_BLOCKS = [
+    "What kind of brand this is",
+    "Identity",
+    "Place in the process",
+    "The participation layer",
+    "The ground in use",
+    "The capture brief",
+    "Channels",
+    "Rules that differ from the parent",
+]
+
+
+def _scope_css(css: str, under: str) -> str:
+    """Prefix every rule in a stylesheet with one class, so it cannot leak.
+
+    The door page and the EVERY1 site both use .mark, .lede and .wrap for
+    different things. Lifting the door's rules unscoped would restyle the host
+    page. The wrapper class must be one the source does not use itself, or its
+    own rules for that name survive unprefixed and paint the whole block.
+    :root is dropped because both pages already load the same token layer.
+    """
+    css = re.sub(r"/\*.*?\*/", "", css, flags=re.S)
+    out, i = [], 0
+    while i < len(css):
+        brace = css.find("{", i)
+        if brace == -1:
+            break
+        selector = css[i:brace].strip()
+        # find the matching close, counting nesting so @media survives
+        depth, j = 1, brace + 1
+        while j < len(css) and depth:
+            if css[j] == "{":
+                depth += 1
+            elif css[j] == "}":
+                depth -= 1
+            j += 1
+        body = css[brace + 1 : j - 1]
+        if selector.startswith("@media") or selector.startswith("@supports"):
+            out.append(f"{selector}{{{_scope_css(body, under)}}}")
+        elif selector.startswith("@"):
+            out.append(f"{selector}{{{body}}}")
+        elif selector.startswith(":root") or selector in ("html", "body", "*"):
+            pass
+        else:
+            parts = []
+            for sel in selector.split(","):
+                sel = sel.strip()
+                if not sel:
+                    continue
+                parts.append(sel if sel.startswith(under) else f"{under} {sel}")
+            if parts:
+                out.append(f"{', '.join(parts)}{{{body}}}")
+        i = j
+    return "".join(out)
+
+
+def every1_door_content():
+    """The door's own blocks and styles, rendered on EVERY1's own site.
+
+    Read from the generated door page rather than copied, so the two cannot
+    disagree. Asset paths are flattened: the portal serves EVERY1's marks from
+    /assets/logos/every1/, and the EVERY1 site serves them from its own root.
+    """
+    path = os.path.join(REPO, "brand", "every1", "index.html")
+    if not os.path.exists(path):
+        raise bs.SourceError(
+            "brand/every1/index.html is missing. Run tools/gen_docs.py before this build."
+        )
+    src = bs.read(path)
+
+    style = re.search(r"<style>(.*?)</style>", src, re.S)
+    if not style:
+        raise bs.SourceError("the EVERY1 door page has no stylesheet to lift.")
+    # Paths appear in the stylesheet too: the mask demo names the numeral in a
+    # url(). Flatten them in both places or the mask silently renders nothing.
+    css = _scope_css(style.group(1), ".e1brand").replace(
+        "/assets/logos/every1/", "/assets/logos/"
+    )
+
+    main = re.search(r"<main.*?</main>", src, re.S)
+    if not main:
+        raise bs.SourceError("the EVERY1 door page has no main content.")
+    found = {}
+    for blk in re.findall(
+        r'<div class="blk">.*?(?=<div class="blk">|</main>|<footer)', main.group(0), re.S
+    ):
+        lab = re.search(r'<div class="lab">(.*?)</div>', blk)
+        if lab:
+            found[re.sub(r"<[^>]+>", "", lab.group(1)).strip()] = blk
+
+    missing = [b for b in EVERY1_DOOR_BLOCKS if b not in found]
+    if missing:
+        raise bs.SourceError(
+            "the EVERY1 door page no longer carries: " + ", ".join(missing)
+        )
+
+    html = "".join(found[name] for name in EVERY1_DOOR_BLOCKS)
+    html = html.replace("/assets/logos/every1/", "/assets/logos/")
+    # The door tells a portal reader that EVERY1 has its own front door. On that
+    # front door the sentence would point at itself.
+    html = html.replace(
+        'href="https://brand.every1movement.com"', 'href="/"'
+    ).replace("https://brand.every1movement.com/", "/")
+    images = sorted(set(re.findall(r'(?:src|href)="/assets/(images/[^"]+)"', html)))
+    # The blocks live inside main > .wrap on the door. Keep that parent, or the
+    # measure and the grid rules that key off it have nothing to apply to.
+    return css, f'<div class="e1brand"><div class="wrap">{html}</div></div>', images
+
+
 def every1_binaries() -> list:
     """Binary files the EVERY1 site needs under its own root.
 
@@ -3116,6 +3695,11 @@ def every1_binaries() -> list:
             if f["format"] == "png" and f.get("width") == 1600 and "black" not in f["file"]:
                 name = f["file"].split("/")[-1]
                 pairs.append((f["file"], f"{EVERY1_DIR}/assets/logos/{name}"))
+    css_assets = re.findall(r'url\("?(/assets/logos/[^")]+)"?\)', every1_door_content()[0])
+    for ref in sorted(set(css_assets)):
+        pairs.append((f"assets/logos/every1/{ref.split('/')[-1]}", EVERY1_DIR + ref))
+    for rel in every1_door_content()[2]:
+        pairs.append((f"assets/{rel}", f"{EVERY1_DIR}/assets/{rel}"))
     pairs += [
         ("assets/downloads/every1-logos.zip", f"{EVERY1_DIR}/assets/downloads/every1-logos.zip"),
         ("assets/images/every1-og-card.png", f"{EVERY1_DIR}/assets/images/every1-og-card.png"),
@@ -3212,6 +3796,9 @@ def build() -> dict:
     files[f"{EVERY1_DIR}/index.html"] = build_every1_site(
         brand, tokens, logos, EVERY1_SITE, every1_words, messaging, every1_app
     )
+    files[f"{EVERY1_DIR}/messaging/index.html"] = build_every1_messaging(
+        brand, messaging, every1_words, every1_app, updated
+    )
     files[f"{EVERY1_DIR}/ai/manifest.json"] = (
         json.dumps(build_every1_ai(brand, messaging, updated, tokens, logos,
                                    every1_words, every1_app), indent=2, ensure_ascii=False) + "\n"
@@ -3234,6 +3821,7 @@ def build() -> dict:
         '<?xml version="1.0" encoding="UTF-8"?>\n'
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
         f"  <url><loc>{EVERY1_SITE_URL}/</loc><priority>1.0</priority></url>\n"
+        f"  <url><loc>{EVERY1_SITE_URL}/messaging/</loc><priority>0.9</priority></url>\n"
         f"  <url><loc>{EVERY1_SITE_URL}/ai/manifest.json</loc><priority>0.8</priority></url>\n"
         "</urlset>\n"
     )
@@ -3244,7 +3832,8 @@ def build() -> dict:
         "> line and no parent lockup.\n\n"
         "## Start here\n\n"
         f"- [Manifest]({EVERY1_SITE_URL}/ai/manifest.json): every mark, its clear space, its minimum size, and its files, with the palette and the typefaces.\n"
-        f"- [How to use the mark]({EVERY1_SITE_URL}/): the same thing for people.\n\n"
+        f"- [How to use the mark]({EVERY1_SITE_URL}/): the same thing for people.\n"
+        f"- [Messaging standard]({EVERY1_SITE_URL}/messaging/): how EVERY1 speaks. Identity, the mandate, the outside and inside scripts, audiences, voice, and the language we do not use.\n\n"
         "## Facts at a glance\n\n"
         f"Brand version {brand['version']}, updated {updated}.\n"
         "EVERY1 stands alone. Do not add \"A ministry of THE WORD FOR ALL THE WORLD\" and do not lock a parent mark to it.\n"

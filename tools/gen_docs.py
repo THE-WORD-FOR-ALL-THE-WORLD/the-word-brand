@@ -282,7 +282,7 @@ def keywords(words):
     return f'        <div class="keywords">{spans}</div>\n'
 
 FOUNDATION = (
-    '      <p class="whereas"><b>The foundation.</b> In December 2019 this ministry received the prophecy that stands as its founding document. The word came before the work. THE WORD FOR ALL THE WORLD exists to strengthen the local church to fulfill the Great Commission, until EVERY1 knows the name Jesus. The ministry orders its work as one journey in three parts, CLEAN, BURN, and TRAIN, held always in that order: a heart is cleaned, then it burns, then it is trained to keep burning.</p>\n'
+    '      <p class="whereas"><b>The foundation.</b> In December 2019 this ministry received the prophecy that stands as its founding document. The word came before the work. THE WORD FOR ALL THE WORLD exists to strengthen the local church to fulfill the Great Commission, until EVERY1 knows the name Jesus. The ministry orders its work as one process in three parts, CLEAN, BURN, and TRAIN, held always in that order: a heart is cleaned, then it burns, then it is trained to keep burning.</p>\n'
 )
 
 def sec_name_standing(n, name_html, standalone=False):
@@ -317,7 +317,7 @@ rtmc_msg += '      <p class="whereas">The church in many places is asleep and th
 rtmc_msg += MSG_LEAD
 rtmc_msg += sec_name_standing(1, "<strong>Revival To My City</strong>")
 rtmc_msg += sec(2, "Place in the Journey",
-    p("Revival To My City is the first movement of the journey. Its word is <strong>CLEAN</strong>. Before a believer can burn, the heart must be cleaned out and turned back to its first love."))
+    p("Revival To My City is the first movement of the process. Its word is <strong>CLEAN</strong>. Before a believer can burn, the heart must be cleaned out and turned back to its first love."))
 rtmc_msg += sec(3, "Purpose",
     p("To stir the local church to return to their first love (Revelation 3). It speaks to congregations and pew sitters who are asleep at the wheel: complacent, bogged down by the weeds in their hearts.")
     + plain("Revival To My City wakes the church up."))
@@ -366,7 +366,7 @@ slc_msg += '      <p class="whereas">The School began with one question asked on
 slc_msg += MSG_LEAD
 slc_msg += sec_name_standing(1, "the <strong>School of the Local Church</strong>")
 slc_msg += sec(2, "Place in the Journey",
-    p("The School of the Local Church is the third movement of the journey. Its word is <strong>TRAIN</strong>. A burning heart is trained to keep burning. The School gives the fire roots."))
+    p("The School of the Local Church is the third movement of the process. Its word is <strong>TRAIN</strong>. A burning heart is trained to keep burning. The School gives the fire roots."))
 slc_msg += sec(3, "Purpose",
     p("To train the local church to know their authority in Christ and build a real relationship with Jesus.")
     + plain("The School of the Local Church roots the fire so it lasts."))
@@ -421,7 +421,7 @@ SECTIONS = {
         backlabel="All documents",
         index_title="Initiative Documents",
         index_h1="Initiative <em>Documents</em>",
-        index_sub="One messaging document for each initiative of THE WORD FOR ALL THE WORLD, an extension of the Brand Messaging Guide. Read them on screen, or print them on letterhead. One journey, in order: Clean, Burn, Train.",
+        index_sub="One messaging document for each initiative of THE WORD FOR ALL THE WORLD, an extension of the Brand Messaging Guide. Read them on screen, or print them on letterhead. One process, in order: Clean, Burn, Train.",
         doc_suffix="Initiative Document",
         bodies={"revival-to-my-city": rtmc_msg, "every1": e1_msg, "school-of-the-local-church": slc_msg},
     ),
@@ -448,7 +448,7 @@ for section, cfg in SECTIONS.items():
                        band_pad="150px 0 64px", doc_active=doc_a, lh_active=lh_a,
                        og_title=cfg["index_title"], og_desc=cfg["index_sub"],
                        og_url=f"{SITE}/{section}")
-    html += '\n<div class="band">\n  <span class="kicker">One Journey · Three Initiatives</span>\n'
+    html += '\n<div class="band">\n  <span class="kicker">One Process · Three Initiatives</span>\n'
     html += f'  <h1>{cfg["index_h1"]}</h1>\n  <p>{cfg["index_sub"]}</p>\n</div>\n'
     html += '<main>\n  <div class="wrap">\n    <div class="section-label">The Initiatives</div>\n    <div class="cards">\n'
     for slug, name, stage, mission in INITIATIVES:
@@ -680,7 +680,7 @@ SUBS = [
             "<strong>The host church serving.</strong> Local people running their own room: ministry of helps, prayer teams, setup.",
             "<strong>The empty venue.</strong> The room before anyone arrives, for the countdown and the record.",
         ],
-        why="CLEAN is the first movement of the journey. A heart is cleaned before it burns, so this "
+        why="CLEAN is the first movement of the process. A heart is cleaned before it burns, so this "
             "door is the invitation, not the intensity. Its work happens in evening services: worship, "
             "preaching, the altar call, and testimonies captured as they are given.",
         rules=[
@@ -861,7 +861,7 @@ def marks_block(slug):
     return NL.join(head + rows + tail) + NL
 
 
-# Door-specific system blocks, inserted after "Place in the journey".
+# Door-specific system blocks, inserted after "Place in the process".
 # Each door is a different species of brand (Brand Guide §11), so each carries
 # a different asset system: the event brand gets the city instance, the
 # movement brand gets the participation layer, the institution gets the
@@ -1157,7 +1157,7 @@ SUB_PAGE = """
     </div>
 
     <div class="blk">
-      <div class="lab">Place in the journey</div>
+      <div class="lab">Place in the process</div>
       <h2>Why this door exists.</h2>
       <p class="lede">{why}</p>
     </div>

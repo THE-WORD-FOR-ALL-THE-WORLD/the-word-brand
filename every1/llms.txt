@@ -8,6 +8,7 @@
 
 - [Manifest](https://brand.every1movement.com/ai/manifest.json): every mark, its clear space, its minimum size, and its files, with the palette and the typefaces.
 - [How to use the mark](https://brand.every1movement.com/): the same thing for people.
+- [Messaging standard](https://brand.every1movement.com/messaging/): how EVERY1 speaks. Identity, the mandate, the outside and inside scripts, audiences, voice, and the language we do not use.
 
 ## Facts at a glance
 

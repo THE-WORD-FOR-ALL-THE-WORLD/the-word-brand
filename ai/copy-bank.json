@@ -1,6 +1,6 @@
 {
   "version": "7.5",
-  "messagingVersion": "1.0",
+  "messagingVersion": "2.0",
   "updated": "2026-08-20",
   "authority": "canonical",
   "note": "Strings that have passed the audit once and are reusable without re-litigating them. Square brackets mark a fact that comes from the official ministry record at the time of use. They are placeholders, never guesses.",
@@ -18,77 +18,77 @@
       "strings": [
         {
           "text": "Strengthening the local church",
-          "audience": "The Local Pastor",
+          "audience": "Pastors and church leaders",
           "characters": 30
         },
         {
           "text": "Revival is here, not coming",
-          "audience": "The Hungry Church Member",
+          "audience": "The spiritually hungry but passive believer",
           "characters": 27
         },
         {
           "text": "Training for the local church",
-          "audience": "The Local Pastor",
+          "audience": "Pastors and church leaders",
           "characters": 29
         },
         {
           "text": "Walk with Jesus",
-          "audience": "The Lost Online Searcher",
+          "audience": "Those who do not yet know Jesus",
           "characters": 15
         },
         {
           "text": "Your first love, again",
-          "audience": "The Hungry Church Member",
+          "audience": "The spiritually hungry but passive believer",
           "characters": 22
         },
         {
           "text": "For pastors carrying it alone",
-          "audience": "The Local Pastor",
+          "audience": "Pastors and church leaders",
           "characters": 29
         },
         {
           "text": "Bring revival to your city",
-          "audience": "The Local Pastor",
+          "audience": "Pastors and church leaders",
           "characters": 26
         },
         {
           "text": "Know your authority in Christ",
-          "audience": "The Hungry Church Member",
+          "audience": "The spiritually hungry but passive believer",
           "characters": 29
         },
         {
           "text": "A real relationship with Jesus",
-          "audience": "The Lost Online Searcher",
+          "audience": "Those who do not yet know Jesus",
           "characters": 30
         },
         {
           "text": "Start where you are",
-          "audience": "The Lost Online Searcher",
+          "audience": "Those who do not yet know Jesus",
           "characters": 19
         },
         {
           "text": "Pass the torch, finish well",
-          "audience": "The Legacy Leader",
+          "audience": "Evangelists and ministers",
           "characters": 27
         },
         {
           "text": "Eternal impact, real numbers",
-          "audience": "The Kingdom Partner",
+          "audience": "Ministry partners and donors",
           "characters": 28
         },
         {
           "text": "Fire starts fire",
-          "audience": "The Hungry Church Member",
+          "audience": "The spiritually hungry but passive believer",
           "characters": 16
         },
         {
           "text": "Teaching that stays with you",
-          "audience": "The Local Pastor",
+          "audience": "Pastors and church leaders",
           "characters": 28
         },
         {
           "text": "Until EVERY1 knows His name",
-          "audience": "The Kingdom Partner",
+          "audience": "Ministry partners and donors",
           "characters": 27
         },
         {
@@ -136,32 +136,32 @@
       "strings": [
         {
           "text": "Training, teaching, and tools for the local church. Start with one conversation.",
-          "audience": "The Local Pastor",
+          "audience": "Pastors and church leaders",
           "characters": 80
         },
         {
           "text": "Revival is not coming. It is here. Find out what that means for your church.",
-          "audience": "The Hungry Church Member",
+          "audience": "The spiritually hungry but passive believer",
           "characters": 76
         },
         {
           "text": "For the pastor carrying it alone: teaching, training, and people who will stand with you.",
-          "audience": "The Local Pastor",
+          "audience": "Pastors and church leaders",
           "characters": 89
         },
         {
           "text": "You do not need to clean yourself up first. Come as you are and meet Jesus.",
-          "audience": "The Lost Online Searcher",
+          "audience": "Those who do not yet know Jesus",
           "characters": 75
         },
         {
           "text": "Your influence can outlast you. See where partnership goes and what it builds.",
-          "audience": "The Kingdom Partner",
+          "audience": "Ministry partners and donors",
           "characters": 78
         },
         {
           "text": "Know who you are in Christ, and what He has already given you authority to do.",
-          "audience": "The Hungry Church Member",
+          "audience": "The spiritually hungry but passive believer",
           "characters": 78
         },
         {

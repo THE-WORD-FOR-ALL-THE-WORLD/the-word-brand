@@ -359,6 +359,14 @@ def door_channels() -> list:
 
 
 def parse_messaging_guide(path: str = MESSAGING_GUIDE) -> dict:
+    """Read the Messaging Standard.
+
+    The guide is set as a plain document, so nothing here keys off a visual
+    class. Every field a machine needs is carried on a data- attribute, which
+    means the page can be redesigned without silently changing what the build
+    publishes. If a hook goes missing, require() fails the build rather than
+    letting the AI layer publish a guide with a hole in it.
+    """
     s = read(path)
     out: dict = {"source": os.path.relpath(path, REPO)}
 
@@ -368,126 +376,191 @@ def parse_messaging_guide(path: str = MESSAGING_GUIDE) -> dict:
     companion = re.search(r"Brand Guide v([\d.]+)", s)
     out["companionTo"] = companion.group(1) if companion else ""
 
-    # The vision is a published fact like the mission line, and it was being restated
-    # by hand wherever it was needed: the EVERY1 site carried a shortened form that
-    # dropped "and EVERY1" and lost the reason the wordmark sits inside the sentence.
-    # Read once, here, so a change to the guide reaches every surface that says it.
-    vision_card = require(
-        re.search(
-            r'<div class="lab">Vision</div>\s*<div class="txt">(.*?)</div>\s*'
-            r'(?:<span class="vref">(.*?)</span>)?',
-            s, re.S),
-        "the vision", path,
-    )
-    out["vision"] = {
-        "text": strip_tags(vision_card.group(1)),
-        "reference": strip_tags(vision_card.group(2) or ""),
-    }
+    def field(name, what):
+        return strip_tags(
+            require(
+                re.search(r'<div data-field="%s">(.*?)</div>' % name, s, re.S), what, path
+            ).group(1)
+        )
 
-    out["missionLine"] = strip_tags(
-        require(
-            re.search(r'<div class="sk">The Public Mission Line[^<]*</div>\s*<div class="big">(.*?)</div>', s, re.S),
-            "the public mission line",
-            path,
-        ).group(1)
-    )
+    out["missionLine"] = field("mission-line", "the public mission line")
+    out["filter"] = field("filter", "the voice filter")
+    out["standingRules"] = field("standing-rules", "the standing rules")
 
+    # --- purpose, mission, vision
     pillars = {}
-    for m in re.finditer(
-        r'<div class="lab">(Purpose|Mission|Vision)</div>\s*<div class="txt">(.*?)</div>'
-        r'(?:\s*<span class="vref">([^<]*)</span>)?',
-        s,
-        re.S,
-    ):
-        text = strip_tags(m.group(2))
-        if m.group(3):
-            text = f"{text} ({strip_tags(m.group(3))})"
+    for m in re.finditer(r'<div data-pillar="(Purpose|Mission|Vision)">(.*?)</div>', s, re.S):
+        body = m.group(2)
+        ref = re.search(r"<span data-vision-ref>(.*?)</span>", body, re.S)
+        text = strip_tags(re.sub(r"<span data-vision-ref>.*?</span>", "", body, flags=re.S))
+        if ref:
+            out["vision"] = {"text": text, "reference": strip_tags(ref.group(1))}
+            text = f"{text} ({strip_tags(ref.group(1))})"
         pillars[m.group(1).lower()] = text
     require_count(list(pillars), 3, "purpose/mission/vision pillars", path)
     out["pillars"] = pillars
+    require(out.get("vision"), "the vision reference", path)
+
+    # --- the authority tier each section carries
+    tiers = []
+    for m in re.finditer(r'<section data-sec id="([a-z0-9-]+)" data-tier="([A-Z]+)"', s):
+        tiers.append({"section": m.group(1), "tier": m.group(2)})
+    require_count(tiers, 10, "sections carrying an authority tier", path)
+    out["tiers"] = tiers
+    out["locked"] = [t["section"] for t in tiers if t["tier"] == "LOCKED"]
 
     # --- vocabulary we carry
     phrases = []
     voice_block = require(
-        re.search(r"Words we carry\..*?</table>", s, re.S), "the vocabulary table", path
+        re.search(r"<table data-phrases.*?</table>", s, re.S), "the vocabulary table", path
     ).group(0)
     for m in re.finditer(r"<tr><td>(.*?)</td><td>(.*?)</td></tr>", voice_block, re.S):
         phrases.append({"phrase": strip_tags(m.group(1)), "carries": strip_tags(m.group(2))})
-    require_count(phrases, 5, "load-bearing phrases", path)
+    require_count(phrases, 20, "load-bearing phrases", path)
     out["phrases"] = phrases
 
     # --- banned language
+    # Two kinds. A word we never use is matched literally. A pattern names a word
+    # that is ordinary English on its own and only turns into hype or jargon in
+    # certain company, so it is written with a class in braces and expanded here
+    # into the concrete phrases a checker can actually look for. Expanding at
+    # build time keeps the guide readable and the check exact: "epic night" is a
+    # finding, a bare "epic" is not.
+    classes = {}
+    cls_table = re.search(r"<table data-wordclasses.*?</table>", s, re.S)
+    if cls_table:
+        for m in re.finditer(r"<tr><td>\{([a-z]+)\}</td><td>(.*?)</td></tr>", cls_table.group(0), re.S):
+            classes[m.group(1)] = [
+                w.strip() for w in strip_tags(m.group(2)).split("·") if w.strip()
+            ]
+
+    def expand(pattern: str) -> list:
+        out_forms = [pattern]
+        for name, members in classes.items():
+            token = "{%s}" % name
+            if not any(token in f for f in out_forms):
+                continue
+            out_forms = [f.replace(token, m) for f in out_forms for m in members]
+        left = [f for f in out_forms if "{" in f]
+        if left:
+            raise SystemExit(
+                f"{path}: banned-language pattern uses an undefined class: {left[0]}"
+            )
+        return out_forms
+
     bans = []
     for m in re.finditer(
-        r'<div class="bh">([^<]+)</div>\s*<div>\s*<div class="bw">(.*?)</div>\s*<div class="why">(.*?)</div>',
+        r'<div data-ban="([^"]+)">(.*?)<p data-why[^>]*>(.*?)</p>',
         s,
         re.S,
     ):
-        words = [w.strip() for w in strip_tags(m.group(2)).split("·") if w.strip()]
-        bans.append({"category": strip_tags(m.group(1)), "words": words, "why": strip_tags(m.group(3))})
-    require_count(bans, 3, "banned-language categories", path)
+        body = m.group(2)
+        wm = require(
+            re.search(r"<p data-words>(.*?)</p>", body, re.S),
+            f"the banned words for {strip_tags(m.group(1))}",
+            path,
+        )
+        words = [w.strip() for w in strip_tags(wm.group(1)).split("·") if w.strip()]
+        patterns, contextual = [], []
+        pm = re.search(r"<p data-patterns>(.*?)</p>", body, re.S)
+        if pm:
+            patterns = [w.strip() for w in strip_tags(pm.group(1)).split("·") if w.strip()]
+            for pat in patterns:
+                contextual.extend(expand(pat))
+        bans.append(
+            {
+                "category": strip_tags(m.group(1)),
+                "words": words,
+                "patterns": patterns,
+                "contextual": contextual,
+                "why": strip_tags(m.group(3)),
+            }
+        )
+    require_count(bans, 4, "banned-language categories", path)
     out["bans"] = bans
 
     # --- rewrites (never this / always this)
     rewrites = []
-    rw = re.search(r"Rewrites: before and after\..*?</table>", s, re.S)
-    if rw:
-        for m in re.finditer(r"<tr><td>(.*?)</td><td>(.*?)</td></tr>", rw.group(0), re.S):
-            rewrites.append({"never": strip_tags(m.group(1)), "always": strip_tags(m.group(2))})
-    out["rewrites"] = rewrites
-
-    # --- audiences
-    audiences = []
     for m in re.finditer(
-        r'<div class="pn">([^<]+?)\s*<span>(.*?)</span></div>\s*<div class="pd">(.*?)</div>\s*</div>',
+        r'<div class="ex" data-rewrite>.*?<p class="off">(.*?)</p>.*?<p class="on">(.*?)</p>',
         s,
         re.S,
     ):
-        body = m.group(3)
-        want = re.search(r"<strong>They want:</strong>(.*?)</p>", body, re.S)
-        pain = re.search(r"<strong>Their pain:</strong>(.*?)</p>", body, re.S)
-        say = re.search(r'<p class="say">(.*?)</p>', body, re.S)
-        step = re.search(r"<strong>First step:</strong>(.*?)</p>", body, re.S)
-        audiences.append(
-            {
-                "audience": strip_tags(m.group(1)),
-                "qualifier": strip_tags(m.group(2)),
-                "wants": strip_tags(want.group(1)) if want else "",
-                "pain": strip_tags(pain.group(1)) if pain else "",
-                "needsToHear": strip_tags(say.group(1)) if say else "",
-                "firstStep": strip_tags(step.group(1)) if step else "",
-            }
-        )
-    require_count(audiences, 5, "audience profiles", path)
+        def clean(x):
+            return strip_tags(re.sub(r'<span class="lbl">.*?</span>', "", x, flags=re.S))
+        rewrites.append({"never": clean(m.group(1)), "always": clean(m.group(2))})
+    require_count(rewrites, 8, "before-and-after rewrites", path)
+    out["rewrites"] = rewrites
+
+    # --- audiences, in the master-brand priority order
+    audiences = []
+    for m in re.finditer(r'<div data-audience="([^"]+)" data-posture="([^"]+)">', s):
+        audiences.append({"audience": m.group(1), "posture": m.group(2)})
+    require_count(audiences, 7, "audience profiles", path)
     out["audiences"] = audiences
+
+    # --- ideal client profiles. Experimental: four fields are the ministry's own
+    # words, carried from v1.0, and the rest are deliberately unfilled.
+    profiles = []
+    for m in re.finditer(
+        r'<div class="icp" data-profile="([^"]+)" data-maps-to="([^"]+)" data-photo="([^"]*)">'
+        r"(.*?)\n  </div>",
+        s,
+        re.S,
+    ):
+        b = m.group(4)
+        def grab(label):
+            r = re.search(r"<strong>%s</strong>(.*?)</p>" % label, b, re.S)
+            return strip_tags(r.group(1)) if r else ""
+        who = re.search(r'<p class="who">(.*?)</p>', b, re.S)
+        profiles.append({
+            "profile": m.group(1),
+            "mapsTo": m.group(2),
+            "photo": m.group(3),
+            "who": strip_tags(who.group(1)) if who else "",
+            "wants": grab("They want"),
+            "pain": grab("Their pain:"),
+            "needsToHear": grab("They need to hear:"),
+            "firstStep": grab("First step:"),
+        })
+    require_count(profiles, 5, "ideal client profiles", path)
+    out["profiles"] = profiles
 
     # --- message architecture
     architecture = []
-    arch = re.search(r'<section class="dsec" id="architecture".*?</table>', s, re.S)
+    arch = re.search(r'<section data-sec id="architecture".*?</table>', s, re.S)
     if arch:
         for m in re.finditer(r"<tr><td>(.*?)</td><td>(.*?)</td></tr>", arch.group(0), re.S):
             architecture.append({"element": strip_tags(m.group(1)), "canonical": strip_tags(m.group(2))})
     out["architecture"] = architecture
 
-    # --- the voice filter
-    filt = re.search(r"<strong>The filter:</strong>(.*?)</div>", s, re.S)
-    out["filter"] = strip_tags(filt.group(1)) if filt else ""
-
     # --- the prophecy, quoted exactly or not at all
     proph = require(
-        re.search(r'<div class="verse">(.*?)</div>\s*<div class="dateline">(.*?)</div>', s, re.S),
+        re.search(r'<blockquote data-field="prophecy">(.*?)</blockquote>', s, re.S),
         "the prophecy",
         path,
-    )
-    out["prophecy"] = {"text": strip_tags(proph.group(1)), "dateline": strip_tags(proph.group(2))}
+    ).group(1)
+    dateline = require(
+        re.search(r'data-field="prophecy-dateline">(.*?)</span>', proph, re.S),
+        "the prophecy dateline",
+        path,
+    ).group(1)
+    out["prophecy"] = {
+        "text": strip_tags(re.sub(r"<span class=\"dateline\".*?</span>", "", proph, flags=re.S)),
+        "dateline": strip_tags(dateline),
+    }
 
-    # --- standing rules
-    standing = re.search(r"<strong>Standing rules\.</strong>(.*?)</p>", s, re.S)
-    out["standingRules"] = strip_tags(standing.group(1)) if standing else ""
+    # --- the blocks EVERY1's own site republishes, kept as markup so the
+    # generator renders the parent's words rather than a copy of them.
+    every1 = {}
+    for m in re.finditer(r'<div data-every1="([a-z]+)">(.*?)\n  </div>', s, re.S):
+        every1[m.group(1)] = m.group(2).strip()
+    require_count(list(every1), 2, "EVERY1 republish blocks", path)
+    out["every1Blocks"] = every1
 
     # --- governance changelog
     changelog = []
-    gov = re.search(r'<section class="dsec" id="governance".*?</table>', s, re.S)
+    gov = re.search(r'<section data-sec id="governance".*?</table>', s, re.S)
     if gov:
         for m in re.finditer(r"<tr><td>(.*?)</td><td>(.*?)</td><td>(.*?)</td></tr>", gov.group(0), re.S):
             changelog.append(

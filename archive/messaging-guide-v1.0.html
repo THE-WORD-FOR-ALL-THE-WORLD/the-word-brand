@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<title>THE WORD · Brand Messaging Guide v1.0</title>
+<meta name="description" content="How THE WORD FOR ALL THE WORLD speaks. The foundation, identity, values, message architecture, the five audiences, voice and vocabulary, and the proof policy.">
+<link rel="icon" href="/assets/logos/the-word/favicon/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/assets/logos/the-word/favicon/favicon-16.png" sizes="16x16" type="image/png">
+<link rel="apple-touch-icon" href="/assets/logos/the-word/favicon/apple-touch-icon-180.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="THE WORD FOR ALL THE WORLD">
+<meta property="og:title" content="Messaging Guide">
+<meta property="og:description" content="How THE WORD FOR ALL THE WORLD speaks. The foundation, identity, values, message architecture, the five audiences, voice and vocabulary, and the proof policy.">
+<meta property="og:url" content="https://brand.theword.world/brand/messaging">
+<meta property="og:image" content="https://brand.theword.world/assets/images/og-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="THE WORD FOR ALL THE WORLD">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Serif+Text:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400;1,9..40,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/brand.tokens.css">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  @media (prefers-reduced-motion: no-preference){html{scroll-behavior:smooth;}}
+  a:focus-visible,button:focus-visible{outline:2px solid var(--ember);outline-offset:3px;border-radius:3px;}
+  .dark a:focus-visible{outline-color:var(--flame);}
+  body{font-family:var(--sans);font-size:17px;line-height:1.7;color:var(--midnight);background:var(--parchment);-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:1020px;margin:0 auto;padding:0 32px;}
+  section{padding:100px 0;}
+  .slidehead{display:flex;justify-content:space-between;align-items:baseline;gap:16px;margin-bottom:18px;}
+  .eyebrow{font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--ember);}
+  .slideno{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(11,26,45,.72);}
+  .dark .eyebrow{color:var(--flame);}
+  .dark .slideno{color:rgba(247,243,236,.68);}
+  h1,h2{font-family:var(--serif-display);font-weight:400;line-height:1.08;}
+  h2{font-size:clamp(34px,4.8vw,52px);margin-bottom:22px;}
+  h2 em{font-style:italic;}
+  h3{font-size:14px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin:52px 0 16px;}
+  p{max-width:660px;margin-bottom:14px;}
+  p.lede{font-size:19px;}
+  .dark{background:var(--midnight);color:var(--parchment);}
+  .dark p{color:rgba(247,243,236,.92);}
+  .caption{font-size:13px;color:rgba(11,26,45,.8);max-width:660px;}
+  .dark .caption{color:rgba(247,243,236,.75);}
+
+  /* site nav · unified chrome */
+  .sitenav{position:absolute;top:0;left:0;right:0;z-index:10;}
+  .sitenav .bar{max-width:1240px;margin:0 auto;padding:26px 36px;display:flex;justify-content:space-between;align-items:center;gap:20px;}
+  .sitenav .logo img{height:20px;width:auto;display:block;}
+  .sitenav .links{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:12px 28px;font-size:12.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;}
+  .sitenav .links a{color:rgba(247,243,236,.9);text-decoration:none;}
+  .sitenav .links a:hover{color:var(--white);}
+  .sitenav .links a.active{color:var(--white);border-bottom:1px solid rgba(255,255,255,.6);padding-bottom:2px;}
+
+  /* cover · full-bleed video hero, unified chrome */
+  .cover{position:relative;min-height:92vh;display:flex;align-items:center;justify-content:center;text-align:center;background:var(--midnight) url('/assets/images/tent-congregation-poster.jpg') center/cover no-repeat;color:var(--parchment);overflow:hidden;}
+  .cover video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+  .cover .scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,26,45,.78) 0%,rgba(11,26,45,.55) 40%,rgba(11,26,45,.82) 100%);}
+  .cover .inner{position:relative;z-index:2;padding:140px 32px 100px;max-width:900px;}
+  .cover .kicker{font-size:13px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--white);margin-bottom:28px;display:block;}
+  .cover h1{font-size:clamp(44px,7vw,76px);}
+  .cover h1 em{font-style:italic;}
+  .cover .lede{margin:28px auto 0;max-width:620px;color:rgba(247,243,236,.85);}
+  .cover .rule{border-top:1px solid var(--rule-light);width:72px;margin:38px auto 0;}
+  .cover .meta{margin-top:38px;display:flex;flex-wrap:wrap;justify-content:center;gap:24px 48px;font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-weight:500;color:rgba(247,243,236,.75);}
+  .cover .meta strong{display:block;color:var(--parchment);font-weight:600;letter-spacing:.1em;margin-bottom:4px;}
+  .cover .down{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);z-index:2;color:rgba(247,243,236,.75);font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;text-decoration:none;}
+  .cover .down:hover{color:var(--white);}
+  @media(max-width:640px){.sitenav .bar{padding:20px 24px;}.cover .inner{padding:120px 24px 90px;}}
+  @media (prefers-reduced-motion: reduce){.cover video{display:none;}}
+
+  /* toc */
+  .toc{padding:48px 0;border-bottom:1px solid var(--rule);}
+  .toc ol{list-style:none;counter-reset:toc;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:8px 40px;}
+  .toc li{counter-increment:toc;font-size:14.5px;font-weight:500;}
+  .toc li::before{content:counter(toc,decimal-leading-zero)" · ";font-weight:700;color:var(--ember);letter-spacing:.06em;}
+  .toc a{color:var(--midnight);text-decoration:none;}
+  .toc a:hover{color:var(--ember);}
+
+  /* statement + pillars (foundation) */
+  .statement{background:rgba(247,243,236,.05);border-top:3px solid var(--flame);padding:44px 40px;margin:32px 0;}
+  .statement .sk{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--flame);margin-bottom:16px;}
+  .statement .big{font-family:var(--serif-text);font-size:clamp(22px,3vw,30px);line-height:1.35;color:var(--parchment);}
+  .pmv{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin:28px 0 8px;}
+  .pmv .card{background:rgba(247,243,236,.05);border:1px solid var(--rule-light);border-radius:4px;padding:28px 24px;}
+  .pmv .lab{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--flame);margin-bottom:12px;}
+  .pmv .txt{font-size:15.5px;line-height:1.6;color:rgba(247,243,236,.94);}
+  .pmv .vref{display:block;margin-top:10px;font-size:11.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(247,243,236,.6);}
+
+  /* initiative cards (matches /documents/) */
+  .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px;}
+  .icard{display:flex;flex-direction:column;justify-content:space-between;background:var(--white);border:1px solid var(--rule);border-radius:4px;padding:30px 28px;text-decoration:none;color:var(--midnight);transition:border-color .15s ease, box-shadow .15s ease;min-height:210px;}
+  .icard:hover{border-color:var(--ember);box-shadow:0 10px 30px rgba(11,26,45,.1);}
+  .icard .stage{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--white);background:var(--word-blue);border-radius:2px;padding:4px 10px;margin-bottom:16px;align-self:flex-start;}
+  .icard h3{font-family:var(--serif-display);font-weight:400;font-size:25px;line-height:1.2;margin:0 0 10px;text-transform:none;letter-spacing:0;}
+  .icard p{font-size:14.5px;line-height:1.6;color:rgba(11,26,45,.8);}
+  .icard .go{margin-top:20px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--word-blue);}
+  .icard:hover .go{color:var(--ember);}
+
+  /* ============ the messaging document · register & marginalia ============ */
+  .docwrap{padding:72px 0 96px;}
+  .toolbar{max-width:880px;margin:0 auto 22px;padding:0 24px;display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;}
+  .toolbar .tlabel{font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--ember);}
+  .printbtn{font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--white);background:var(--word-blue);border:none;border-radius:3px;padding:11px 22px;cursor:pointer;}
+  .printbtn:hover{background:var(--midnight);}
+  .paper{max-width:880px;margin:0 auto;background:var(--white);border:1px solid var(--rule);box-shadow:0 18px 50px rgba(11,26,45,.14);padding:clamp(36px,6vw,72px) clamp(28px,6vw,76px) clamp(44px,6vw,72px);}
+
+  /* masthead · asymmetric */
+  .masthead .mrow{display:flex;justify-content:space-between;align-items:flex-start;gap:24px;padding-bottom:20px;border-bottom:1px solid var(--rule);}
+  .masthead .mrow img{height:15px;width:auto;margin-top:5px;}
+  .masthead .mmeta{text-align:right;font-size:11.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);line-height:1.9;}
+  .masthead .doctitle{font-family:var(--serif-display);font-weight:400;font-size:clamp(34px,5vw,48px);line-height:1.1;margin:34px 0 14px;}
+  .masthead .doctitle em{font-style:italic;}
+  .masthead .standfirst{font-size:17px;line-height:1.65;color:var(--ink-soft);max-width:56ch;margin:0 0 10px;}
+
+  /* section register · margin numerals */
+  .dsec{display:grid;grid-template-columns:96px minmax(0,1fr);column-gap:36px;padding-top:30px;margin-top:44px;}
+  .dsec:first-of-type{margin-top:0;padding-top:30px;}
+  .dnum{font-family:var(--serif-display);font-size:34px;line-height:1;color:var(--ember);}
+  .dnum small{display:block;margin-top:10px;font-family:var(--sans);font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);}
+  .dtitle{font-family:var(--serif-display);font-weight:400;font-size:26px;line-height:1.15;margin:0 0 16px;}
+  .dcontent{font-size:16px;line-height:1.75;}
+  .dcontent p{max-width:62ch;margin-bottom:12px;}
+  .dcontent ul{margin:6px 0 12px 20px;max-width:60ch;}
+  .dcontent li{margin-bottom:8px;}
+
+  /* distinct treatments */
+  .missionline{font-family:var(--serif-text);font-size:21px;line-height:1.5;border-left:3px solid var(--flame);padding:6px 0 6px 20px;margin:16px 0 18px;max-width:34ch;}
+  .plain{font-size:14px;line-height:1.7;color:rgba(11,26,45,.85);background:var(--parchment);border-left:3px solid var(--word-blue);padding:14px 18px;margin:14px 0 12px;max-width:62ch;}
+  .record{background:var(--parchment);border-left:3px solid var(--word-blue);padding:30px 34px;margin:18px 0;max-width:640px;}
+  .record .qk{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--word-blue);display:block;margin-bottom:16px;}
+  .record .verse{font-family:var(--serif-text);font-style:italic;font-size:19px;line-height:1.65;}
+  .record .dateline{margin-top:18px;font-size:11.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);}
+  .telling{font-family:var(--serif-text);font-size:18px;line-height:1.7;max-width:58ch;margin:14px 0;}
+  .flag{background:rgba(193,58,36,.08);border:1px dashed var(--ember);border-radius:3px;padding:2px 6px;color:var(--ember);font-weight:600;}
+  .dcontent table{width:100%;border-collapse:collapse;font-size:14.5px;margin:14px 0 12px;}
+  .dcontent th{text-align:left;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:8px 14px 8px 0;border-bottom:1px solid var(--midnight);}
+  .dcontent td{padding:10px 14px 10px 0;border-bottom:1px solid var(--rule);vertical-align:top;}
+  .bp{display:grid;grid-template-columns:130px minmax(0,1fr);column-gap:22px;padding:14px 0;}
+  .bp:first-of-type{margin-top:16px;}
+  .bp .bl{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--word-blue);padding-top:4px;}
+  .bp .bt{font-size:15px;line-height:1.7;max-width:58ch;}
+  .roster{margin-top:16px;}
+  .person{display:grid;grid-template-columns:170px minmax(0,1fr);column-gap:22px;padding:16px 0;}
+  .person .pn{font-weight:700;font-size:15px;line-height:1.4;}
+  .person .pn span{display:block;font-weight:600;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);margin-top:4px;}
+  .person .pd{font-size:14.5px;line-height:1.65;}
+  .person .pd p{margin-bottom:5px;max-width:none;}
+  .person .say{font-family:var(--serif-text);font-style:italic;font-size:15.5px;}
+  .banreg{margin-top:16px;}
+  .ban{display:grid;grid-template-columns:170px minmax(0,1fr);column-gap:22px;padding:16px 0;}
+  .ban .bh{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ember);padding-top:2px;}
+  .ban .bw{font-size:14.5px;margin-bottom:6px;}
+  .ban .why{font-size:13.5px;color:rgba(11,26,45,.8);}
+  .slots{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:0 22px;margin:14px 0 12px;}
+  .slot{padding-top:10px;}
+  .slot .s1{font-family:var(--serif-text);font-size:17px;margin-bottom:4px;}
+  .slot .s2{font-size:13px;line-height:1.55;color:rgba(11,26,45,.78);}
+
+  /* adoption · divider, signature, name */
+  .adoption{margin-top:64px;}
+  .adoption .frule{border:none;border-top:2px solid var(--midnight);margin:0 0 30px;}
+  .adoption .signature{height:58px;width:auto;display:block;}
+  .adoption .ad{margin-top:12px;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);}
+
+  table.pt{width:100%;border-collapse:collapse;}
+  table.pt > thead.runhead{display:none;}
+  table.pt > tbody > tr > td.ptcell{padding:0;border:none;}
+
+  footer{background:var(--midnight);color:rgba(247,243,236,.75);padding:40px 0;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;font-weight:500;}
+  footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+  footer img{height:16px;width:auto;display:block;opacity:.9;}
+
+  @media(max-width:700px){
+    .dsec{grid-template-columns:1fr;row-gap:6px;}
+    .dnum{font-size:24px;display:flex;align-items:baseline;gap:10px;}
+    .dnum small{margin-top:0;}
+    .person,.ban,.bp{grid-template-columns:1fr;row-gap:6px;}
+    .masthead .mrow{flex-direction:column;}
+    .masthead .mmeta{text-align:left;}
+  }
+  @media(max-width:640px){section{padding:72px 0;}}
+
+  @media print{
+    .sitenav,.cover,.toc,.pres,.toolbar,footer{display:none !important;}
+    body{background:var(--white);}
+    .docwrap{padding:0;}
+    .paper{max-width:none;margin:0;border:none;box-shadow:none;padding:0;}
+    table.pt > thead.runhead{display:table-header-group;}
+    .runhead td{padding:0;border:none;}
+    .runhead .rh{display:flex;justify-content:space-between;font-size:8.5pt;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(11,26,45,.6);border-bottom:0.5pt solid rgba(11,26,45,.3);padding-bottom:5pt;margin-bottom:22pt;}
+    .masthead .mrow{display:none;}
+    .masthead .doctitle{margin-top:10px;}
+    .dcontent{font-size:10.5pt;line-height:1.6;}
+    .dsec{grid-template-columns:72px minmax(0,1fr);margin-top:30px;padding-top:0;}
+    .dnum,.dtitle{break-after:avoid;}
+    .record,.plain,.bp,.person,.ban,.slot,.missionline,.telling{break-inside:avoid;}
+    .adoption{break-inside:avoid;margin-top:40px;}
+    .dcontent tr{break-inside:avoid;}
+    a{color:inherit;text-decoration:none;}
+    @page{margin:0.95in 0.6in 0.7in;}
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="sitenav">
+  <div class="bar">
+    <a class="logo" href="/" aria-label="THE WORD FOR ALL THE WORLD, portal home">
+      <img src="/assets/logos/the-word/the-word-horizontal-reversed.svg" alt="THE WORD FOR ALL THE WORLD">
+    </a>
+    <div class="links">
+      <a href="/">Home</a>
+      <a href="/brand/">Brand Guide</a>
+      <a href="/brand/messaging/" class="active">Messaging</a>
+      <a href="/documents/">Documents</a>
+      <a href="/letterhead/">Letterhead</a>
+      <a href="/signatures/">Signatures</a>
+      <a href="/assets/">Assets</a>
+    </div>
+  </div>
+</nav>
+
+<!-- COVER -->
+<header class="cover">
+  <video autoplay muted loop playsinline poster="/assets/images/tent-congregation-poster.jpg">
+    <source src="/assets/videos/tent-congregation.mp4" type="video/mp4">
+  </video>
+  <div class="scrim"></div>
+  <div class="inner">
+    <span class="kicker">Messaging Guide · Version 1.0</span>
+    <h1>How we speak.<br>Everywhere. To <em>everyone.</em></h1>
+    <p class="lede">The Brand Messaging Guide: the single source for what this ministry says, to whom, and in what words. Where wording conflicts anywhere else, this document rules.</p>
+    <div class="rule"></div>
+    <div class="meta">
+      <div><strong>Version</strong>1.0 · August 2026</div>
+      <div><strong>Companion To</strong>Brand Guide v5.0</div>
+      <div><strong>Status</strong>Single Source of Truth: Words</div>
+      <div><strong>Approved By</strong>Joel Zimmer · Nathan Zimmer</div>
+    </div>
+  </div>
+  <a class="down" href="#toc">Contents ↓</a>
+</header>
+
+<!-- TOC -->
+<nav class="toc" id="toc">
+  <div class="wrap">
+    <ol>
+      <li><a href="#use">How to use this guide</a></li>
+      <li><a href="#foundation">The foundation</a></li>
+      <li><a href="#initiatives">The three initiatives</a></li>
+      <li><a href="#prophecy">The prophecy</a></li>
+      <li><a href="#origin">How it began</a></li>
+      <li><a href="#identity">What we are, and are not</a></li>
+      <li><a href="#values">Values, uniques &amp; guarantee</a></li>
+      <li><a href="#architecture">The message architecture</a></li>
+      <li><a href="#journey">The journey: Clean · Burn · Train</a></li>
+      <li><a href="#audiences">The five people we speak to</a></li>
+      <li><a href="#voice">Voice &amp; vocabulary</a></li>
+      <li><a href="#proof">Proof &amp; testimony policy</a></li>
+      <li><a href="#roadmap">Roadmap notes</a></li>
+      <li><a href="#governance">Governance &amp; changelog</a></li>
+    </ol>
+  </div>
+</nav>
+
+<!-- 01 HOW TO USE -->
+<section id="use" class="pres">
+  <div class="wrap">
+    <div class="slidehead"><span class="eyebrow">01 · How To Use This Guide</span><span class="slideno">The Word · Messaging Guide</span></div>
+    <h2>One guide. Every voice.</h2>
+    <p class="lede">This document is written for everyone who speaks or writes for THE WORD FOR ALL THE WORLD: leadership, team members, volunteers, and outside writers, designers, and agencies. It assumes no tribal knowledge. If you have never worked with us before, this guide is enough.</p>
+  </div>
+</section>
+
+<!-- 02 FOUNDATION -->
+<section id="foundation" class="dark pres">
+  <div class="wrap">
+    <div class="slidehead"><span class="eyebrow">02 · The Foundation</span><span class="slideno">The Word · Messaging Guide</span></div>
+    <h2>One public line.<br>Three pillars behind it.</h2>
+    <p>In public (websites, decks, one-liners, introductions) the mission speaks as a single fused line. Internally, that line stands on a Purpose, a Mission, and a Vision. Both are canon. The fused line is what the world hears; the pillars are what the house is built on.</p>
+
+    <div class="statement">
+      <div class="sk">The Public Mission Line · Use This Everywhere</div>
+      <div class="big">Strengthening the local church to fulfill the Great Commission, until EVERY1 knows the name Jesus.</div>
+    </div>
+
+    <div class="pmv">
+      <div class="card">
+        <div class="lab">Purpose</div>
+        <div class="txt">To build a real relationship with Jesus. To please God, walk with Jesus, and minister to Him.</div>
+      </div>
+      <div class="card">
+        <div class="lab">Mission</div>
+        <div class="txt">To strengthen the local church to do the Great Commission. Fire starts fire. We burn for Jesus in locations across the world, and they catch it, because they're dry enough.</div>
+      </div>
+      <div class="card">
+        <div class="lab">Vision</div>
+        <div class="txt">Every tribe, every tongue, every nation, and EVERY1 will know the name Jesus.</div>
+        <span class="vref">Hebrews 8:11</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 03 THE THREE INITIATIVES -->
+<section id="initiatives" class="pres">
+  <div class="wrap">
+    <div class="slidehead"><span class="eyebrow">03 · The Three Initiatives</span><span class="slideno">The Word · Messaging Guide</span></div>
+    <h2>One journey.<br>Three named front doors.</h2>
+    <p>Clean, Burn, Train, in that order. Each initiative has its own messaging document on official letterhead.</p>
+    <div class="cards">
+      <a class="icard" href="/documents/revival-to-my-city/">
+        <div>
+          <span class="stage">Clean</span>
+          <h3>Revival To My City</h3>
+          <p>Stirring the local church to return to their first love.</p>
+        </div>
+        <div class="go">Read the document →</div>
+      </a>
+      <a class="icard" href="/documents/every1/">
+        <div>
+          <span class="stage">Burn</span>
+          <h3>EVERY1 Movement</h3>
+          <p>Empowering the local church to walk in unity to do the great commission &amp; walk in God's calling.</p>
+        </div>
+        <div class="go">Read the document →</div>
+      </a>
+      <a class="icard" href="/documents/school-of-the-local-church/">
+        <div>
+          <span class="stage">Train</span>
+          <h3>School of the Local Church</h3>
+          <p>Training the local church to know their authority in Christ and build a real relationship with Jesus.</p>
+        </div>
+        <div class="go">Read the document →</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- THE DOCUMENT -->
+<div class="docwrap">
+  <div class="toolbar">
+    <span class="tlabel">The Messaging Document</span>
+    <button class="printbtn" onclick="window.print()">Print this document</button>
+  </div>
+  <article class="paper">
+    <table class="pt">
+    <thead class="runhead"><tr><td><div class="rh"><span>The Word for All the World</span><span>Brand Messaging Guide · v1.0</span></div></td></tr></thead>
+    <tbody><tr><td class="ptcell">
+    <header class="masthead">
+      <div class="mrow">
+        <img src="/assets/logos/the-word/the-word-horizontal.svg" alt="THE WORD FOR ALL THE WORLD">
+        <div class="mmeta">Version 1.0 · August 2026</div>
+      </div>
+      <h1 class="doctitle">Brand <em>Messaging Guide</em></h1>
+      <p class="standfirst">The single source for what this ministry says, to whom, and in what words. Where wording conflicts anywhere else, this document rules.</p>
+    </header>
+    <div class="docbody">
+
+      <section class="dsec">
+        <div class="dnum">01<small>Foundation</small></div>
+        <div class="dcontent">
+          <h2 class="dtitle">The Foundation</h2>
+          <p>The public mission line, used everywhere:</p>
+          <p class="missionline">Strengthening the local church to fulfill the Great Commission, until EVERY1 knows the name Jesus.</p>
+          <p><strong>Purpose.</strong> To build a real relationship with Jesus. To please God, walk with Jesus, and minister to Him.</p>
+          <p><strong>Mission.</strong> To strengthen the local church to do the Great Commission. Fire starts fire. We burn for Jesus in locations across the world, and they catch it, because they're dry enough.</p>
+          <p><strong>Vision.</strong> Every tribe, every tongue, every nation, and EVERY1 will know the name Jesus. (Hebrews 8:11)</p>
+          <p><strong>The rally cry.</strong> EVERY1 Will Know The Name Jesus.</p>
+          <p><strong>The lead narrative.</strong> Every generation seeks a revival. No one told them it is already here.</p>
+          <div class="plain">Revival is not a hope we are waiting on. It is a fact we are announcing. All messaging flows downstream of this posture.</div>
+        </div>
+      </section>
+
+      <section class="dsec" id="prophecy">
+        <div class="dnum">02<small>The Record</small></div>
+        <div class="dcontent">
+          <h2 class="dtitle">The Prophecy</h2>
+          <p>Received before the ministry had a name for what it would become. It is quoted exactly, in full, or not at all. Never paraphrased, never excerpted for effect. Set in the record register per Brand Guide §08.</p>
+          <div class="record">
+            <span class="qk">The Word · A Prophecy</span>
+            <div class="verse">As tensions grow between man and foe, the light of THE WORD is needed. No peace they'll find, they'll react in kind, until THE WORD is heeded. But great peace have they that love God's Law, and in that Word their reflections saw — and went forth knowing the enemy is defeated.</div>
+            <div class="dateline">Received December 2019</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="dsec" id="origin">
+        <div class="dnum">03<small>The Record</small></div>
+        <div class="dcontent">
+          <h2 class="dtitle">How It Began</h2>
+          <p>This is the canonical telling of the origin story. Tell it this way: in interviews, on the About page, from the stage. Bracketed fields are pending verification against the ministry record; per Law II, nothing unverified enters a founding document. Verify, unbracket, done.</p>
+          <p class="telling">In <span class="flag">[2024]</span>, Joel Zimmer traveled to Uganda alongside <span class="flag">[Inspiring Better Business]</span>. As he stepped off the plane, a man named <span class="flag">[David Kamanzi]</span> met him with one question: "Will you help me train my people?" That question was the first seed of the School of the Local Church. Later that year, the Lord spoke: go back to Uganda, and this time, hold a pastors conference. The conference was held. The fire caught. We have been going back ever since. Uganda is for Jesus. So is the rest of the world.</p>
+          <p>The prophecy (December 2019) precedes the first trip: the word came first, then the door opened. When telling the full story, keep that order.</p>
+        </div>
+      </section>
+
+      <section class="dsec" id="identity">
+        <div class="dnum">04<small>Identity</small></div>
+        <div class="dcontent">
+          <h2 class="dtitle">What We Are, What We Are Not</h2>
+          <p>The name THE WORD FOR ALL THE WORLD invites assumptions. Messaging corrects them plainly, without being defensive: one clear sentence and move on.</p>
+          <p><strong>We are:</strong></p>
+          <ul>
+            <li><strong>A Spirit-led ministry</strong> that strengthens local churches to do the Great Commission.</li>
+            <li><strong>A servant of the local church</strong>: we come to serve their house, not build ours.</li>
+            <li><strong>Evangelists and trainers</strong>: we preach, we stir, we equip, and we leave the church stronger than we found it.</li>
+          </ul>
+          <p><strong>We are not:</strong></p>
+          <ul>
+            <li><strong>Not a Bible translation ministry.</strong> "THE WORD" is the Word preached, not the Word translated.</li>
+            <li><strong>Not a denomination.</strong> We plant fire, not flags.</li>
+            <li><strong>Not a replacement for the local church.</strong> If there is no local church to partner with in an area, we hold off. Our goal is never to create spiritual orphans.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="dsec" id="values">
+        <div class="dnum">05<small>Filters</small></div>
+        <div class="dcontent">
+          <h2 class="dtitle">Values, Uniques &amp; Guarantee</h2>
+          <p>Four core values, three uniques, one guarantee. These are not slogans; they are filters. Content that violates a value gets killed no matter how good it looks.</p>
+          <ul>
+            <li><strong>Burn For Jesus.</strong> We burn with the passion of our relationship with Jesus and with His mission, the Great Commission.</li>
+            <li><strong>Spirit-Led.</strong> Our spirit has the final say. We never violate it, and we always fear the Lord. Words are stewarded to build, edify, and impart life.</li>
+            <li><strong>Selfless Love.</strong> Not concerned about credit, fame, or name recognition. Servant leadership: promoting and developing others first.</li>
+            <li><strong>Full of Faith.</strong> We challenge giants with the Word of God and take the Kingdom by the force of faith.</li>
+          </ul>
+          <p><strong>Three uniques.</strong> The Holy Spirit is our PR man. We communicate frequently. Partnership is our strength.</p>
+          <p><strong>The guarantee.</strong> The Holy Spirit runs our services.</p>
+          <div class="plain">"The Holy Spirit is our PR man" is internal and partner-facing language. In public copy, say it the way the guarantee says it: the Holy Spirit runs our services. There is no routine He can't interrupt.</div>
+        </div>
+      </section>
+
+      <section class="dsec" id="architecture">
+        <div class="dnum">06<small>Reference</small></div>
+        <div class="dcontent">
+          <h2 class="dtitle">The Message Architecture</h2>
+          <p>The believer is the hero. We are the guide. That order never flips. Messaging never makes THE WORD the hero of the story.</p>
+          <table>
+            <tr><th style="width:130px;">Element</th><th>Canonical language</th></tr>
+            <tr><td><strong>The hero</strong></td><td>The local church and the believer. They want a real, active relationship with Jesus and to walk in their purpose, but they feel dry, distracted, or asleep.</td></tr>
+            <tr><td><strong>The problem</strong></td><td>External: the church is asleep and the fire has gone out. Internal: "I know there's more to this walk with Jesus. I just don't know how to get there." Philosophical: the world is waiting for the Church to wake up.</td></tr>
+            <tr><td><strong>The guide</strong></td><td>THE WORD FOR ALL THE WORLD. We don't bring hype. We bring hunger. The Holy Spirit runs our services, and fire starts fire.</td></tr>
+            <tr><td><strong>The plan</strong></td><td>CLEAN · BURN · TRAIN: Revival To My City wakes the church, the EVERY1 Movement sends it, the School of the Local Church roots it.</td></tr>
+            <tr><td><strong>The call</strong></td><td>Primary: join the movement: host a Revival To My City, join EVERY1, enroll in the School. Transitional: watch a testimony, join the prayer meeting, take the free personal evangelism course.</td></tr>
+            <tr><td><strong>The stakes</strong></td><td>If the church stays asleep, people keep searching for life in all the wrong places and entire cities stay unchanged.</td></tr>
+            <tr><td><strong>The success</strong></td><td>Believers become bold, the Great Commission is fulfilled, cities are transformed. The world knows Jesus.</td></tr>
+          </table>
+          <div class="bp">
+            <div class="bl">One sentence</div>
+            <div class="bt">THE WORD FOR ALL THE WORLD strengthens the local church to fulfill the Great Commission, until EVERY1 knows the name Jesus.</div>
+          </div>
+          <div class="bp">
+            <div class="bl">One paragraph<br>~55 words</div>
+            <div class="bt">THE WORD FOR ALL THE WORLD is a Spirit-led ministry that strengthens the local church to fulfill the Great Commission. Through Revival To My City, the EVERY1 Movement, and the School of the Local Church, we stir believers back to their first love, send them to the lost, and train them to walk with Jesus, until EVERY1 knows the name Jesus.</div>
+          </div>
+          <div class="bp">
+            <div class="bl">The full telling<br>~100 words</div>
+            <div class="bt">THE WORD FOR ALL THE WORLD began with a prophecy and a question on a Ugandan tarmac: "Will you help me train my people?" We are a Spirit-led ministry that strengthens the local church to fulfill the Great Commission. We don't replace the local church. We serve it. Through Revival To My City we stir congregations back to their first love. Through the EVERY1 Movement we send EVERY1 in the church to EVERY1 outside of it. Through the School of the Local Church we train believers to know their authority in Christ and build a real relationship with Jesus. Fire starts fire, until EVERY1 knows the name Jesus.</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="dsec" id="journey">
+        <div class="dnum">07<small>The Plan</small></div>
+        <div class="dcontent">
+          <h2 class="dtitle">The Journey: Clean · Burn · Train</h2>
+          <p>The three priorities are a sequence, not a menu. A heart is cleaned, then it burns, then it is trained to keep burning. All journey messaging honors this order.</p>
+          <ul>
+            <li><strong>CLEAN · Revival To My City.</strong> Stirring the local church to return to their first love.</li>
+            <li><strong>BURN · EVERY1 Movement.</strong> Empowering the local church to walk in unity to do the great commission &amp; walk in God's calling.</li>
+            <li><strong>TRAIN · School of the Local Church.</strong> Training the local church to know their authority in Christ and build a real relationship with Jesus.</li>
+          </ul>
+          <p><strong>How one weekend tells the whole story.</strong> We arrive in a city Thursday or Friday. Evenings are Revival To My City services: worship, preaching, altar calls, healing, testimonies captured. Hearts get cleaned out by the power of God. Saturday morning is the EVERY1 interest meeting: what the movement is, how to join, and the first outreach. Participants personally evangelize in the community that same morning. From there, they sign up for the School of the Local Church, starting with the free personal evangelism course. One person can be in all three at once, and often is.</p>
+          <p>Each initiative carries a full messaging document of its own, on official letterhead, in the Documents section of this portal.</p>
+        </div>
+      </section>
+
+      <section class="dsec" id="audiences">
+        <div class="dnum">08<small>Audiences</small></div>
+        <div class="dcontent">
+          <h2 class="dtitle">The Five People We Speak To</h2>
+          <p>Every piece of content is aimed at one of these five people. Know which one before you write a word. The "what they need to hear" line is the heart of the message: say it in your own words, but say <em>that</em>.</p>
+          <div class="roster">
+            <div class="person">
+              <div class="pn">The Local Pastor <span>US &amp; International</span></div>
+              <div class="pd">
+                <p><strong>They want:</strong> to multiply disciples and lead revival without burning out.</p>
+                <p><strong>Their pain:</strong> exhaustion, plateaued growth, no discipleship pathway.</p>
+                <p class="say">"We come to serve your church, not build ours. When we leave, your people stay, on fire and equipped."</p>
+                <p><strong>First step:</strong> host a Revival To My City · train leaders through the School.</p>
+              </div>
+            </div>
+            <div class="person">
+              <div class="pn">The Hungry Church Member <span>The Pew, Awake or Asleep</span></div>
+              <div class="pd">
+                <p><strong>They want:</strong> to grow spiritually and live on mission.</p>
+                <p><strong>Their pain:</strong> dry faith. The conviction that "there must be more."</p>
+                <p class="say">"There is more, and it isn't a program. It's a real relationship with Jesus, and it starts with turning back to your first love."</p>
+                <p><strong>First step:</strong> join the EVERY1 Movement · start the School.</p>
+              </div>
+            </div>
+            <div class="person">
+              <div class="pn">The Lost Online Searcher <span>18 to 30 · Digital-First</span></div>
+              <div class="pd">
+                <p><strong>They want:</strong> truth, healing, identity, purpose.</p>
+                <p><strong>Their pain:</strong> anxiety, loneliness, distrust of religion, hungry for what's real.</p>
+                <p class="say">"What you're looking for has a name. You can have a real relationship with Jesus, starting today."</p>
+                <p><strong>First step:</strong> watch a testimony → request prayer → begin the intro course.</p>
+              </div>
+            </div>
+            <div class="person">
+              <div class="pn">The Legacy Leader <span>66+ · Finishing Well</span></div>
+              <div class="pd">
+                <p><strong>They want:</strong> to pass the torch and leave their people stronger.</p>
+                <p><strong>Their pain:</strong> feeling forgotten; fear the work dies with them.</p>
+                <p class="say">"Your fire isn't finished. The next generation needs what you carry."</p>
+                <p><strong>First step:</strong> mentor through the School · cover the movement in prayer · give.</p>
+              </div>
+            </div>
+            <div class="person">
+              <div class="pn">The Kingdom Partner <span>Businesses &amp; Ministries</span></div>
+              <div class="pd">
+                <p><strong>They want:</strong> eternal impact with their influence and resources.</p>
+                <p><strong>Their pain:</strong> unsure whom to trust; tired of shallow ministry.</p>
+                <p class="say">"Fund what heaven is doing. Every number we report comes from the official record. You will always know exactly what your partnership did."</p>
+                <p><strong>First step:</strong> sponsor a Revival To My City · scholarship School students.</p>
+              </div>
+            </div>
+          </div>
+          <div class="plain">A note on Gen Z (18 to 25): they trust testimony over performance and vulnerability over polish. Lead with real stories of transformation, never with production value. They can smell hype, which is fine, because we don't use it.</div>
+        </div>
+      </section>
+
+      <section class="dsec" id="voice">
+        <div class="dnum">09<small>Voice</small></div>
+        <div class="dcontent">
+          <h2 class="dtitle">Voice &amp; Vocabulary</h2>
+          <p>Bold, clear, simple, direct. Pastoral with prophetic urgency. Invitation-first. Short, punchy sentences. Never polished-corporate. Never hype. Never churchy. If a new believer couldn't understand it, rewrite it.</p>
+          <div class="plain"><strong>The filter:</strong> Would Nathan actually say this? Does it point people to Jesus Himself? Is it clear to a new believer? Does it invite response? If unsure, simplify and center Jesus.</div>
+          <p><strong>Words we carry.</strong> This recurring language is our fingerprint. Use these phrases exactly. They are load-bearing.</p>
+          <table>
+            <tr><th style="width:220px;">Phrase</th><th>What it carries</th></tr>
+            <tr><td>Real relationship with Jesus</td><td>The gospel in five words. The good news is not religion. It's Him.</td></tr>
+            <tr><td>First love</td><td>Revelation 3. The heart of every RTMC message: return.</td></tr>
+            <tr><td>Fire starts fire</td><td>How the mission spreads. We burn; the dry catch.</td></tr>
+            <tr><td>Revival is here, not coming</td><td>Our posture. We announce a fact, we don't market a hope.</td></tr>
+            <tr><td>EVERY1 in the church for EVERY1 outside the church</td><td>The whole movement in one line. Always styled EVERY1.</td></tr>
+            <tr><td>Lighting hearts and seats on fire for Jesus</td><td>What a revival meeting does.</td></tr>
+            <tr><td>Walk with Jesus · turn your heart back to Jesus</td><td>The invitation, said plainly.</td></tr>
+            <tr><td>Authority in Christ</td><td>What the School trains. Believers carry power, not permission slips.</td></tr>
+            <tr><td>The Holy Spirit runs our services</td><td>The guarantee. There is no routine He can't interrupt.</td></tr>
+          </table>
+          <p><strong>Words we never use.</strong> Three ban categories, with starter lists. These lists are proposals for the v1.0 review: strike or keep each one. Theological words (repentance, salvation, Holy Spirit baptism) are never banned; they are explained. The test is always the filter: clear to a new believer.</p>
+          <div class="banreg">
+            <div class="ban">
+              <div class="bh">Hype</div>
+              <div>
+                <div class="bw">insane · epic · unreal · next-level · game-changer · "God showed up and showed out" · "you won't believe" · walls of 🔥 emojis · ALL-CAPS excitement</div>
+                <div class="why">Hype manufactures a feeling. We report what God actually did. The record is more powerful than the adjective.</div>
+              </div>
+            </div>
+            <div class="ban">
+              <div class="bh">Corporate Polish</div>
+              <div>
+                <div class="bw">leverage · synergy · solutions · optimize · engage stakeholders · "excited to announce" · comprehensive · robust</div>
+                <div class="why">We are a ministry, not a vendor. Corporate language makes the guide the hero and the mission a product.</div>
+              </div>
+            </div>
+            <div class="ban">
+              <div class="bh">Churchy Insider Talk</div>
+              <div>
+                <div class="bw">traveling mercies · hedge of protection · "love on" · "do life together" · "press in" · "contend for breakthrough" · "a God thing" · "fresh anointing" (unexplained) · "blessed to announce"</div>
+                <div class="why">Insider language tells a new believer this isn't for them. Everything we say is for them.</div>
+              </div>
+            </div>
+          </div>
+          <p style="margin-top:16px;"><strong>Rewrites: before and after.</strong></p>
+          <table>
+            <tr><th>Never this</th><th>Always this</th></tr>
+            <tr><td>"🔥🔥 INSANE night!! God showed UP and showed OUT!!"</td><td>"Friday night in [city]: [n] people heard the gospel. [n] turned their hearts back to Jesus. The fire is spreading." <em>(numbers from the official record only)</em></td></tr>
+            <tr><td>"Join us as we press into a fresh anointing and contend for breakthrough."</td><td>"Come. Jesus is moving. Bring the person you've been praying for."</td></tr>
+            <tr><td>"We provide comprehensive discipleship solutions for local church partners."</td><td>"We train the local church to walk with Jesus."</td></tr>
+          </table>
+          <p><strong>Standing rules.</strong> Short sentences. One idea each. Say Jesus by name, not "faith," not "spirituality." Never invent a statistic, a quote, or a testimony; the record or nothing (Law II). Never manufacture a catchphrase: if a line has to be explained to be catchy, kill it. Invitation before information: every piece ends with something the reader can <em>do.</em></p>
+        </div>
+      </section>
+
+      <section class="dsec" id="proof">
+        <div class="dnum">10<small>Policy</small></div>
+        <div class="dcontent">
+          <h2 class="dtitle">Proof &amp; Testimony Policy</h2>
+          <p>This guide contains no statistics on purpose. Numbers live in one place, the official ministry record, and messaging cites that record rather than freezing figures that will age. Per the Minister Agreement: official numbers only, never estimates, never memory. A guide that hardcodes stats violates Law II the day the record updates; a guide that points to the record never does.</p>
+          <p><strong>Testimonies: the four slots.</strong> Every testimony is a record of what God did: real, consented, and named. Never fabricated, never composited, never anonymous.</p>
+          <div class="slots">
+            <div class="slot"><div class="s1">Before</div><div class="s2">Life as it was, in the person's own words.</div></div>
+            <div class="slot"><div class="s1">Encounter</div><div class="s2">The moment Jesus intervened: where and when.</div></div>
+            <div class="slot"><div class="s1">Transformation</div><div class="s2">What changed: specific, verifiable, honest.</div></div>
+            <div class="slot"><div class="s1">Outcome</div><div class="s2">Life now, and the invitation to respond.</div></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="dsec" id="roadmap">
+        <div class="dnum">11<small>Roadmap</small></div>
+        <div class="dcontent">
+          <h2 class="dtitle">Roadmap Notes</h2>
+          <p>Two future works are noted here so no one invents messaging for them prematurely. Neither receives public messaging until launch, at which point this guide gets a versioned update.</p>
+          <table>
+            <tr><th style="width:220px;">Initiative</th><th>Status &amp; note</th></tr>
+            <tr><td><strong>School of Supernatural Kingdom Advancement (SOSKA)</strong></td><td>Future online school on stewardship of the Kingdom of Heaven. Roadmap only: no public messaging until launch.</td></tr>
+            <tr><td><strong>EVERY1 App</strong></td><td>Future app on the YouVersion model; will not visibly promote the parent (exception on record, Brand Guide §09). Messaging to be written at launch.</td></tr>
+          </table>
+          <p>Books, music publishing, and clothing are intentionally outside this guide's scope by ruling of August 2026.</p>
+        </div>
+      </section>
+
+      <section class="dsec" id="governance">
+        <div class="dnum">12<small>Record</small></div>
+        <div class="dcontent">
+          <h2 class="dtitle">Governance &amp; Changelog</h2>
+          <p>Per Law IV, the institution signs its work. This guide changes one way: a proposed edit in writing, approval by Joel and Nathan, a version bump, and a changelog entry. No silent edits, ever.</p>
+          <table>
+            <tr><th style="width:70px;">Version</th><th style="width:120px;">Date</th><th>Change</th></tr>
+            <tr><td>1.0</td><td>August 2026</td><td>Initial guide. Rulings on record: fused mission line public with Purpose/Mission/Vision internal · SOSKA roadmap-only · books/music/clothing out of scope. Origin-story fields bracketed pending verification. Banned-word starter lists pending strike/keep review.</td></tr>
+          </table>
+          <p><strong>Open items for v1.1.</strong> Verify and unbracket the origin-story fields (Section 3). Review the three banned-word starter lists (Section 9): strike or keep each entry. Close both, sign, and this guide is fully canonical.</p>
+        </div>
+      </section>
+
+      <div class="adoption">
+        <hr class="frule">
+        <img class="signature" src="/assets/signatures/nathan-zimmer.svg" alt="Nathan Zimmer's signature">
+        <div class="ad">Nathan Zimmer</div>
+      </div>
+
+    </div>
+    </td></tr></tbody>
+    </table>
+  </article>
+</div>
+
+<footer>
+  <div class="wrap">
+    <a href="/" aria-label="THE WORD FOR ALL THE WORLD, portal home"><img src="/assets/logos/the-word/the-word-horizontal-reversed.svg" alt="THE WORD FOR ALL THE WORLD"></a>
+    <span>Every tribe. Every tongue. Every nation. EVERY1.</span>
+    <span>brand.theword.world · Internal use</span>
+  </div>
+</footer>
+
+</body>
+</html>

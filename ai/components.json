@@ -1,6 +1,6 @@
 {
   "version": "7.5",
-  "messagingVersion": "1.0",
+  "messagingVersion": "2.0",
   "updated": "2026-08-20",
   "authority": "canonical",
   "note": "Specs are authored against token names and resolved against the current Brand Guide at build time. `tokenRefs` records the original reference so a palette change updates every component here automatically.",
@@ -72,7 +72,7 @@
         "Every record opens with one. Law II.",
         "All caps belongs here, to labels, and to the wordmark. Never to the serif."
       ],
-      "html": "<span class=\"eyebrow\">03 — Color System</span>",
+      "html": "<span class=\"eyebrow\">03 · Color System</span>",
       "cssClass": "eyebrow",
       "previewGround": "light",
       "tokenRefs": {
@@ -223,7 +223,7 @@
         "Bracketed fields mark anything not yet verified against the ministry record.",
         "Written at capture, never from memory."
       ],
-      "html": "<p class=\"caption\">The Word opened — attendees follow the teaching with Bibles and notes.<br><small>SLC Conference · [City], Uganda · 30 Jul 2026</small></p>",
+      "html": "<p class=\"caption\">The Word opened: attendees follow the teaching with Bibles and notes.<br><small>SLC Conference · [City], Uganda · 30 Jul 2026</small></p>",
       "cssClass": "caption",
       "previewGround": "light",
       "tokenRefs": {
