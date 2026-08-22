@@ -1,10 +1,9 @@
 {
   "_README": "The EVERY1 app and activation platform, specified rather than mocked up. A picture of a screen is correct the day it is exported and silently wrong after the next token change, and no build can tell. These specs are published from the same tokens the app is built from, so they move when the brand moves. Flat mockups may be made from these, and they are illustrative and dated: the spec is what is authoritative. Screens are named here before they are drawn, because naming them is most of the design decision.",
-
   "rules": [
     "One mask per view. The 1 holding a photograph is this door's signature move, and on a poster it appears once. A scrolling list would put six on screen and turn the signature into wallpaper, so a list uses plain images and only a full-width feature uses the mask.",
-    "The numeral is the app icon, on Midnight, with no text. It is the form this door is recognised by at size.",
-    "Flame is the accent and never carries text. Buttons, links, and labels use Ember, which holds contrast at text size.",
+    "The E1 icon is the app icon, reversed on a Midnight plate, with no text. It is the form this door is recognised by at size, and it is the same icon on the launcher, the installable web app, the favicon, and every social profile. The numeral is not the app icon: it is the shape photography is masked into and a display mark at small size.",
+    "Flame is the accent. On a light ground it never carries text, and buttons, links and labels use Ember. On Midnight the rule inverts, because Ember is 3.25:1 there and fails: a text accent on a dark ground is Flame. This app is a Midnight product, so its links and its labels are Flame and its buttons carry a White label on an Ember fill.",
     "Every control needs default, hover, focus, active, disabled, loading, and empty. A screen without its empty state is not specified.",
     "A dark surface is Midnight, never a darkened Parchment.",
     "Loading is a wash placeholder in the shape of the content, never a spinner over a blank screen.",
@@ -12,7 +11,6 @@
     "Touch targets are 44px minimum, whatever the control is drawn at.",
     "No endorsement line and no parent lockup anywhere in the app, including the splash and the about screen. This door stands on its own."
   ],
-
   "screens": [
     {
       "id": "splash",

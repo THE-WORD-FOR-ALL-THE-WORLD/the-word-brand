@@ -2002,6 +2002,71 @@
       ]
     }
   ],
+  "appIcon": {
+    "brand": "every1",
+    "mark": "e1",
+    "ruling": "The E1 icon is the app icon and the avatar on every surface: the mobile launcher, the installable web app, the favicon, and every social profile. The numeral is not the app icon. It is the display mark and the shape photography is cut into.",
+    "sameEverywhere": true,
+    "ground": "Midnight. Opaque, because a launcher icon cannot be transparent.",
+    "safeZone": "Android crops to an arbitrary shape and guarantees only the inner circle at 66% diameter. The maskable file is padded so the whole mark sits inside it.",
+    "noSixteen": "No 16px icon is published. The E1 icon's minimum width is 32px and a 16px file would breach it. Browsers downscale the 32 themselves, and the SVG is offered first.",
+    "files": [
+      {
+        "file": "assets/logos/every1/icon/every1-favicon-32.png",
+        "format": "png",
+        "width": 32,
+        "height": 32,
+        "purpose": "app icon and favicon, opaque Midnight ground"
+      },
+      {
+        "file": "assets/logos/every1/icon/every1-favicon-48.png",
+        "format": "png",
+        "width": 48,
+        "height": 48,
+        "purpose": "app icon and favicon, opaque Midnight ground"
+      },
+      {
+        "file": "assets/logos/every1/icon/every1-apple-touch-icon-180.png",
+        "format": "png",
+        "width": 180,
+        "height": 180,
+        "purpose": "app icon and favicon, opaque Midnight ground"
+      },
+      {
+        "file": "assets/logos/every1/icon/every1-icon-192.png",
+        "format": "png",
+        "width": 192,
+        "height": 192,
+        "purpose": "app icon and favicon, opaque Midnight ground"
+      },
+      {
+        "file": "assets/logos/every1/icon/every1-icon-512.png",
+        "format": "png",
+        "width": 512,
+        "height": 512,
+        "purpose": "app icon and favicon, opaque Midnight ground"
+      },
+      {
+        "file": "assets/logos/every1/icon/every1-icon-maskable-512.png",
+        "format": "png",
+        "width": 512,
+        "height": 512,
+        "purpose": "Android adaptive icon, mark inside the safe zone"
+      },
+      {
+        "file": "assets/logos/every1/icon/every1-icon-mono-512.png",
+        "format": "png",
+        "width": 512,
+        "height": 512,
+        "purpose": "Android status bar, white silhouette on transparency"
+      },
+      {
+        "file": "assets/logos/every1/every1-e1-reversed.svg",
+        "format": "svg",
+        "purpose": "the vector favicon, which a browser prefers to any raster"
+      }
+    ]
+  },
   "packs": [
     {
       "file": "assets/downloads/the-word-logos-svg.zip",

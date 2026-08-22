@@ -22,6 +22,7 @@ answer in CI as it does locally. Dates come from the guides themselves.
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import os
 import re
@@ -30,6 +31,7 @@ import sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 import brandsource as bs  # noqa: E402
+import colorkit as ck  # noqa: E402
 
 REPO = bs.REPO
 SITE = bs.SITE
@@ -104,6 +106,21 @@ def build_tokens(brand: dict, messaging: dict, updated: str, overrides: dict, sc
     for t in brand["systemTokens"]:
         system[slug(t["token"])] = {"name": t["token"], "value": t["value"], "rule": t["rule"]}
 
+    # A product picks a type step and needs everything that comes with it. The guide
+    # states size and line height in one table and weight, tracking, italic and figures
+    # in another, because they are read by different people. They are joined here so an
+    # application reads one object per step rather than two tables.
+    type_rules = {
+        r["step"]: {
+            "family": r["family"],
+            "weight": r["weight"],
+            "letterSpacing": r["tracking"],
+            "italic": r["italic"],
+            "figures": r["figures"],
+        }
+        for r in scales.get("typeface-rules", [])
+    }
+
     tokens = {
         "version": brand["version"],
         "messagingVersion": messaging["version"],
@@ -144,8 +161,17 @@ def build_tokens(brand: dict, messaging: dict, updated: str, overrides: dict, sc
                 "size": r["size"],
                 "lineHeight": r["line height"],
                 "use": r["family and use"],
+                **type_rules.get(r["step"], {}),
             }
             for r in scales["type"]
+        },
+        "outcome": {
+            r["token"]: {"light": r["light"], "dark": r["dark"], "records": r["records"]}
+            for r in scales.get("outcome", [])
+        },
+        "progression": {
+            r["step"]: {"light": r["light"], "dark": r["dark"], "stage": r["stage"]}
+            for r in scales.get("progression", [])
         },
         "print": {
             r["color"]: {
@@ -167,7 +193,253 @@ def build_tokens(brand: dict, messaging: dict, updated: str, overrides: dict, sc
     override_tokens = {k: v for k, v in overrides.get("tokens", {}).items() if not k.startswith("_")}
     for key, value in override_tokens.items():
         tokens[key] = value
+
+    tokens["theme"] = build_theme(tokens)
+    tokens["contrast"] = build_contrast(tokens)
+    tokens["separation"] = build_separation(tokens)
     return tokens
+
+
+# Every pair the system actually puts on screen, with the ratio it has to clear.
+# 4.5 is WCAG AA for body text, 3.0 for large text and for a non-text boundary.
+# A pair listed here is a pair somebody will build, so a palette edit that breaks one
+# of them fails the build rather than shipping and being found by a reader. The list
+# lives here rather than in the linter because it is also published: an application
+# should be able to read the measured ratio rather than compute it and hope it agrees.
+CONTRAST_PAIRS = [
+    ("ink", "parchment", 4.5, "body text on the light ground"),
+    ("ink", "white", 4.5, "body text on a card"),
+    ("ink-muted", "parchment", 4.5, "captions and metadata on the light ground"),
+    ("ink-muted", "white", 4.5, "captions on a card"),
+    ("ink-soft", "parchment", 3.0, "placeholder and inactive labels"),
+    ("ink-reversed", "midnight", 4.5, "body text on Midnight"),
+    ("ink-reversed-muted", "midnight", 4.5, "captions on Midnight"),
+    ("ink-reversed-soft", "midnight", 3.0, "placeholders on Midnight"),
+    ("ember", "parchment", 4.5, "links and labels on the light ground"),
+    ("ember", "white", 4.5, "links on a card"),
+    ("white", "ember", 4.5, "the primary button label"),
+    ("white", "button-hover", 4.5, "the primary button label, hovered"),
+    ("flame", "midnight", 3.0, "the official-record numeral, which is large text"),
+    ("parchment", "midnight", 4.5, "reversed body copy"),
+    ("error-state", "parchment", 4.5, "form error text"),
+    ("warning-state", "parchment", 4.5, "form warning text"),
+    # The dark theme. A card on a dark page sits on a lifted surface, not on the
+    # ground, and every one of these is measured against that surface because that
+    # is where the text actually lands.
+    ("ink-reversed", "surface-on-dark", 4.5, "body text on a dark card"),
+    ("ink-reversed-muted", "surface-on-dark", 4.5, "captions on a dark card"),
+    ("accent-on-dark", "surface-on-dark", 4.5, "links and labels on a dark card"),
+    ("accent-on-dark", "midnight", 4.5, "links and labels on the dark ground"),
+    ("success-on-dark", "surface-on-dark", 4.5, "the success state on a dark card"),
+    ("error-on-dark", "surface-on-dark", 4.5, "form error text on a dark card"),
+    ("warning-on-dark", "surface-on-dark", 4.5, "form warning text on a dark card"),
+    ("error-on-dark", "word-blue", 4.5, "form error text on the School's dark ground"),
+    ("warning-on-dark", "word-blue", 4.5, "form warning text on the School's dark ground"),
+]
+
+# The pairs the brand forbids, measured, so the rule can be cited rather than asserted.
+# "Flame never carries text" reads as absolute and is not: it is a rule about light
+# grounds, and the numbers are what say so. Publishing the measurement is what lets a
+# downstream build explain a refusal instead of just refusing.
+FORBIDDEN_PAIRS = [
+    ("flame", "parchment", "Flame as text on the light ground. This is what the rule prevents."),
+    ("flame", "white", "Flame as text on a card. This is what the rule prevents."),
+    ("ember", "midnight", "Ember as text on the dark ground. Use accent-on-dark instead."),
+    ("ember", "surface-on-dark", "Ember as text on a dark card. Use accent-on-dark instead."),
+    ("word-blue", "midnight", "Word Blue as text on Midnight. It disappears."),
+    ("white", "flame", "Any text on a Flame fill. Flame is never a ground under text."),
+]
+
+
+# The floor the outcome palette is derived against and gated on. Below this, two
+# outcomes start to look like each other to somebody, and an outcome that reads as
+# another outcome is a wrong record rather than a rough edge.
+SEPARATION_FLOOR = 8.0
+
+
+def outcome_pairs(tokens: dict) -> list:
+    """The contrast pairs the outcome palette creates, one per treatment per theme.
+
+    Generated rather than listed, because the list has to grow with the palette. Six
+    outcomes times two treatments times two themes is twenty-four pairs nobody would
+    keep in sync by hand.
+    """
+    pairs = []
+    for key in tokens.get("outcome", {}):
+        for ground in ("parchment", "white"):
+            pairs.append((f"outcome-{key}-light", ground, 4.5,
+                          f"the {key} label on the light {ground} ground"))
+        for ground in ("midnight", "surface-on-dark"):
+            pairs.append((f"outcome-{key}-dark", ground, 4.5,
+                          f"the {key} label on the dark {ground} ground"))
+        pairs.append(("white", f"outcome-{key}-light", 4.5,
+                      f"the {key} label on a solid badge, light theme"))
+        pairs.append(("midnight", f"outcome-{key}-dark", 4.5,
+                      f"the {key} label on a solid badge, dark theme"))
+    return pairs
+
+
+def build_separation(tokens: dict) -> dict:
+    """How far apart the outcome palette is, per kind of vision.
+
+    A palette is only as distinguishable as its closest pair, so what is published is
+    the minimum and the pair that produces it. An average would hide the one collision
+    that matters.
+    """
+    out = {"_README": (
+        "CIEDE2000 distance, measured by tools/colorkit.py. The minimum across every "
+        "pair in the set, under normal vision and each of the three dichromacies, "
+        f"simulated with Machado (2009) at full severity. The floor is {SEPARATION_FLOOR}. "
+        "Colour is still never the only encoding: six categories cannot be told apart "
+        "by hue alone by every reader at any separation, so every outcome also carries "
+        "its glyph and its written name."
+    ), "floor": SEPARATION_FLOOR, "themes": {}}
+    fixed = {
+        "light": ["ember", "word-blue"],
+        "dark": ["flame", "parchment"],
+    }
+    lookup = color_lookup(tokens)
+    for theme, extra in fixed.items():
+        values = [tokens["outcome"][k][theme] for k in tokens.get("outcome", {})]
+        values += [ck.resolve(lookup[name], "#FFFFFF") for name in extra]
+        if len(values) < 2:
+            continue
+        seps = ck.separations(values)
+        a, b, d = ck.closest_pair(values)
+        out["themes"][theme] = {
+            "measuredAgainst": list(tokens.get("outcome", {})) + extra,
+            "minimum": {k: round(v, 2) for k, v in seps.items()},
+            "closestPair": {"a": a, "b": b, "distance": round(d, 2)},
+            "passesFloor": min(seps.values()) + 0.005 >= SEPARATION_FLOOR,
+        }
+    return out
+
+
+def color_lookup(tokens: dict) -> dict:
+    """Every token that names a colour, by token name, as written."""
+    out = {k: c["hex"] for k, c in tokens["color"].items()}
+    out.update({k: v["value"] for k, v in tokens["neutral"].items()})
+    out.update({k: t["value"] for k, t in tokens["system"].items() if t["value"].startswith("#")})
+    for group in ("outcome", "progression"):
+        for key, entry in tokens.get(group, {}).items():
+            for theme in ("light", "dark"):
+                if isinstance(entry, dict) and theme in entry:
+                    out[f"{group}-{key}-{theme}"] = entry[theme]
+    return out
+
+
+def measure(tokens: dict, fg: str, bg: str) -> float:
+    """The contrast of one named token on another, flattening rgba over the ground."""
+    lookup = color_lookup(tokens)
+    ground = ck.resolve(lookup[bg], "#FFFFFF")
+    return ck.contrast(ck.resolve(lookup[fg], ground), ground)
+
+
+def build_theme(tokens: dict) -> dict:
+    """Which ground is which, and what a dual-theme product pairs with what.
+
+    The guide has always carried a dark theme: Midnight is the primary ground and the
+    neutral ramp, the states and the accent all have a dark value. What it did not
+    carry was the statement that those values are a *theme*, addressable as one. An
+    application following the viewer's OS setting needs the pairing, not the pieces.
+    """
+    return {
+        "_README": (
+            "This system is dual-theme and always was. Light is Parchment, dark is Midnight. "
+            "Nothing here is a new colour: every value is a token already published above, "
+            "collected into the pair an application switches between."
+        ),
+        "light": {
+            "ground": "parchment",
+            "raisedSurface": "white",
+            "text": "ink",
+            "textMuted": "ink-muted",
+            "textSoft": "ink-soft",
+            "accent": "ember",
+            "accentHover": "button-hover",
+            "rule": "rule",
+            "wash": "wash",
+            "success": "success-state",
+            "error": "error-state",
+            "warning": "warning-state",
+            "focusRing": "ember",
+        },
+        "dark": {
+            "ground": "midnight",
+            "raisedSurface": "surface-on-dark",
+            "text": "ink-reversed",
+            "textMuted": "ink-reversed-muted",
+            "textSoft": "ink-reversed-soft",
+            "accent": "accent-on-dark",
+            "accentHover": "flame",
+            "rule": "rule-light",
+            "wash": "wash-light",
+            "success": "success-on-dark",
+            "error": "error-on-dark",
+            "warning": "warning-on-dark",
+            "focusRing": "accent-on-dark",
+        },
+        "derivation": (
+            "There is no rule for deriving a dark value from a light one, and there should "
+            "not be: every dark value here was chosen against a measured ratio on Midnight "
+            "and on surface-on-dark, not lightened by a formula. Read the values."
+        ),
+    }
+
+
+def build_contrast(tokens: dict) -> dict:
+    """Every permitted pair, measured, and every forbidden pair with its reason.
+
+    The audit asks a person to check contrast by eye. Half of it is arithmetic, and
+    arithmetic belongs in the build and then in the published file, so a downstream
+    application cites the brand's measurement instead of taking its own and diverging.
+    """
+    lookup = color_lookup(tokens)
+    permitted = []
+    for fg, bg, floor, why in CONTRAST_PAIRS + outcome_pairs(tokens):
+        if fg not in lookup or bg not in lookup:
+            raise bs.SourceError(
+                f"the contrast pair {fg} on {bg} names a token that no longer exists. "
+                "Update CONTRAST_PAIRS in tools/build_ai.py with the palette."
+            )
+        ratio = measure(tokens, fg, bg)
+        permitted.append({
+            "foreground": fg,
+            "ground": bg,
+            "ratio": round(ratio, 2),
+            "requires": floor,
+            "passesAA": ratio + 0.005 >= 4.5,
+            "passesAALarge": ratio + 0.005 >= 3.0,
+            "passesAAA": ratio + 0.005 >= 7.0,
+            "use": why,
+        })
+    forbidden = []
+    for fg, bg, why in FORBIDDEN_PAIRS:
+        ratio = measure(tokens, fg, bg)
+        forbidden.append({
+            "foreground": fg,
+            "ground": bg,
+            "ratio": round(ratio, 2),
+            "passesAA": ratio + 0.005 >= 4.5,
+            "why": why,
+        })
+    return {
+        "_README": (
+            "Measured, not estimated. Computed by tools/colorkit.py at build time and gated "
+            "by tools/brand_lint.py, so a palette edit that breaks a pair fails the build. "
+            "Translucent tokens are flattened over the ground named here before measuring, "
+            "because that is the colour a reader actually sees."
+        ),
+        "standard": "WCAG 2.1 contrast ratio.",
+        "thresholds": {
+            "AA": 4.5,
+            "AALarge": 3.0,
+            "AAA": 7.0,
+            "note": "Large is 24px, or 19px at 600 and above.",
+        },
+        "permitted": permitted,
+        "forbidden": forbidden,
+    }
 
 
 # ---------------------------------------------------------------- token targets
@@ -217,6 +489,15 @@ def css_var_lines(tokens: dict) -> list:
         if t["value"].startswith("#")
     ]
     group("States", state)
+    # Functional colour carries a light and a dark value, so it is emitted as a pair
+    # per token rather than a single value. A product picks the theme; the stylesheet
+    # does not pick it for anyone, because half of what reads these is not a browser.
+    for group_name, prefix in (("Outcomes", "outcome"), ("Progression", "progression")):
+        pairs = []
+        for key, entry in tokens.get(prefix, {}).items():
+            pairs.append((f"{key}-light", entry["light"]))
+            pairs.append((f"{key}-dark", entry["dark"]))
+        group(group_name, pairs)
     while lines and lines[-1] == "":
         lines.pop()
     return lines
@@ -541,6 +822,20 @@ def build_tokens_dtcg(tokens: dict, brand: dict, updated: str) -> dict:
         "shadow": {k: leaf(v, "shadow") for k, v in tokens["elevation"].items()},
         "breakpoint": {k: leaf(v, "dimension") for k, v in tokens["breakpoint"].items()},
     }
+    # Functional colour is two values per token, one per theme, so it nests a level
+    # deeper than the identity palette rather than being flattened into it. A tool that
+    # reads this should be able to see that they are a pair.
+    for name, key in (("outcome", "outcome"), ("progression", "progression")):
+        entries = tokens.get(key, {})
+        if not entries:
+            continue
+        out[name] = {
+            token: {
+                "light": leaf(entry["light"], "color", entry.get("records") or entry.get("stage", "")),
+                "dark": leaf(entry["dark"], "color", entry.get("records") or entry.get("stage", "")),
+            }
+            for token, entry in entries.items()
+        }
     return out
 
 
@@ -555,6 +850,8 @@ def build_tokens_ts(tokens: dict, brand: dict, messaging: dict, updated: str) ->
     neutrals = {k: v["value"] for k, v in tokens["neutral"].items()}
     sizes = {k: t["size"] for k, t in tokens["typeScale"].items()}
     leading = {k: t["lineHeight"] for k, t in tokens["typeScale"].items()}
+    outcomes = {k: {"light": v["light"], "dark": v["dark"]} for k, v in tokens.get("outcome", {}).items()}
+    progression = {k: {"light": v["light"], "dark": v["dark"]} for k, v in tokens.get("progression", {}).items()}
 
     return f"""// THE WORD FOR ALL THE WORLD: design tokens.
 //
@@ -567,6 +864,10 @@ def build_tokens_ts(tokens: dict, brand: dict, messaging: dict, updated: str) ->
 export const color = {obj(colors)} as const
 
 export const neutral = {obj(neutrals)} as const
+
+export const outcome = {obj(outcomes)} as const
+
+export const progression = {obj(progression)} as const
 
 export const fontFamily = {obj(tokens["typography"]["stacks"])} as const
 
@@ -592,6 +893,8 @@ export const meta = {{
 }} as const
 
 export type ColorName = keyof typeof color
+export type OutcomeName = keyof typeof outcome
+export type ProgressionStep = keyof typeof progression
 export type SpacingStep = keyof typeof spacing
 export type TypeStep = keyof typeof fontSize
 """
@@ -604,6 +907,10 @@ def build_tailwind_preset(tokens: dict, brand: dict, updated: str) -> str:
     for key in ("success-state", "error-state", "warning-state"):
         if key in tokens["system"] and tokens["system"][key]["value"].startswith("#"):
             colors[key.replace("-state", "")] = tokens["system"][key]["value"]
+    for group in ("outcome", "progression"):
+        for key, entry in tokens.get(group, {}).items():
+            colors[f"{key}-light"] = entry["light"]
+            colors[f"{key}-dark"] = entry["dark"]
 
     fontsize = {
         k: [t["size"], {"lineHeight": t["lineHeight"]}] for k, t in tokens["typeScale"].items()
@@ -2844,6 +3151,138 @@ def every1_marks(logos: dict) -> list:
     return [by_slug[s] for s in order]
 
 
+def build_every1_404(brand: dict, updated: str) -> str:
+    """The page that makes a wrong path on the EVERY1 site say so.
+
+    Cloudflare Pages serves index.html with a 200 for every unmatched path when a
+    project has no 404.html. That is what turned eighty missing files into eighty
+    successful-looking fetches of a web page, and it is why this file is generated
+    rather than left to be remembered.
+    """
+    return f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, follow">
+<title>Not found &middot; EVERY1 Movement</title>
+<meta name="description" content="That path is not part of the EVERY1 brand system.">
+<link rel="icon" href="/assets/logos/every1-e1-reversed.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="EVERY1 Movement">
+<meta property="og:title" content="Page not found">
+<meta property="og:description" content="That path is not part of the EVERY1 brand system. Start from the manifest.">
+<meta property="og:url" content="{EVERY1_SITE_URL}/404">
+<meta property="og:image" content="{EVERY1_SITE_URL}/assets/images/every1-og-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="EVERY1 Movement">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="/assets/fonts/fonts.css">
+<link rel="stylesheet" href="/assets/brand.css">
+<style>
+  *{{margin:0;padding:0;box-sizing:border-box;}}
+  body{{font-family:var(--sans);font-size:17px;line-height:1.7;color:var(--parchment);
+       background:var(--midnight);min-height:100vh;display:flex;align-items:center;
+       -webkit-font-smoothing:antialiased;}}
+  .wrap{{max-width:640px;margin:0 auto;padding:64px 32px;width:100%;}}
+  .mark img{{height:26px;width:auto;display:block;margin-bottom:40px;}}
+  .code{{font-size:12px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;
+        color:var(--flame);margin-bottom:18px;display:block;}}
+  h1{{font-family:var(--serif-display);font-weight:400;line-height:1.1;
+     font-size:clamp(32px,5vw,48px);margin-bottom:18px;}}
+  p{{color:rgba(247,243,236,.85);margin-bottom:14px;}}
+  ul{{list-style:none;margin-top:28px;border-top:1px solid rgba(247,243,236,.22);}}
+  li{{border-bottom:1px solid rgba(247,243,236,.22);}}
+  li a{{display:block;padding:14px 0;color:var(--parchment);text-decoration:none;font-weight:600;}}
+  li a:hover{{color:var(--flame);}}
+  li a span{{display:block;font-weight:400;font-size:14.5px;color:rgba(247,243,236,.75);}}
+  a:focus-visible{{outline:2px solid var(--flame);outline-offset:3px;}}
+  .note{{margin-top:34px;font-size:14.5px;color:rgba(247,243,236,.75);}}
+  .note code{{font-family:'SF Mono',Consolas,monospace;font-size:13px;
+             background:rgba(247,243,236,.08);border-radius:3px;padding:1px 6px;}}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="mark"><img src="/assets/logos/every1-horizontal-reversed.svg" alt="EVERY1 Movement"></div>
+    <span class="code">404</span>
+    <h1>That path is not <em>here.</em></h1>
+    <p>Nothing is published at this address. If a manifest sent you here, the manifest is
+       wrong and we would like to know: write to
+       <a href="mailto:brand@theword.world" style="color:var(--flame);">brand@theword.world</a>.</p>
+    <ul>
+      <li><a href="/">How to use the mark<span>Which file, on which ground, how much room it needs.</span></a></li>
+      <li><a href="/messaging/">Messaging standard<span>How EVERY1 speaks, and the language we do not use.</span></a></li>
+      <li><a href="/ai/manifest.json">The manifest<span>Every mark and every token, machine readable, with a checksum on each file.</span></a></li>
+      <li><a href="/brand_check.py">brand_check.py<span>The mechanical half of the audit, runnable against any file or URL.</span></a></li>
+    </ul>
+    <p class="note">This site answers <code>404</code> for paths that do not exist, so a failed
+       fetch is a failed fetch. Brand version {brand['version']}, updated {updated}.</p>
+  </div>
+</body>
+</html>
+"""
+
+
+def every1_logo_files(logos: dict) -> list:
+    """Every logo file the EVERY1 site publishes: (repository path, site path, URL).
+
+    One list, read by the manifest and by the copier alike. They disagreed once, and
+    the way it failed is the reason this function exists: the manifest declared all
+    120 files while the copier moved only the 1600px colour PNGs, so 80 declared URLs
+    resolved to the homepage with a 200 and no error anywhere. A consumer that trusted
+    the manifest wrote HTML into files named .png. Deriving both ends from here is what
+    stops that returning, and check_every1_delivery() in tools/brand_lint.py proves it
+    on every build.
+    """
+    out, seen = [], {}
+    for c in every1_marks(logos):
+        for f in c["files"]:
+            name = f["file"].split("/")[-1]
+            if name in seen and seen[name] != f["file"]:
+                raise bs.SourceError(
+                    f"two EVERY1 logo files flatten to the same published name '{name}': "
+                    f"{seen[name]} and {f['file']}. The site serves them from one directory, "
+                    "so the names have to stay unique."
+                )
+            seen[name] = f["file"]
+            out.append((f["file"], f"{EVERY1_DIR}/assets/logos/{name}",
+                        f"{EVERY1_SITE_URL}/assets/logos/{name}"))
+    return out
+
+
+def every1_icon_files(logos: dict) -> list:
+    """The EVERY1 app icon set: (repository path, site path, URL).
+
+    Same shape and same reason as every1_logo_files(). An icon the manifest names and
+    the site does not serve is the defect this whole pass was about.
+    """
+    out = []
+    for f in logos.get("appIcon", {}).get("files", []):
+        name = f["file"].split("/")[-1]
+        out.append((f["file"], f"{EVERY1_DIR}/assets/logos/{name}",
+                    f"{EVERY1_SITE_URL}/assets/logos/{name}"))
+    return out
+
+
+def file_digest(rel: str) -> dict:
+    """Size and SHA-256 of a published binary, read from disk.
+
+    Published beside every declared URL so a consumer can prove the bytes it received
+    are the bytes we published. Without it a wrong-bytes failure is undetectable, which
+    is exactly what the missing 404 used to cause.
+    """
+    path = os.path.join(REPO, rel)
+    if not os.path.exists(path):
+        raise bs.SourceError(
+            f"{rel} is declared by the EVERY1 manifest but is not in the repository. "
+            "Run tools/build_logos.py."
+        )
+    data = open(path, "rb").read()
+    return {"bytes": len(data), "sha256": hashlib.sha256(data).hexdigest()}
+
+
 def build_every1_site(brand: dict, tokens: dict, logos: dict, template: str, words: dict, messaging: dict, app: dict) -> str:
     door_css, door_html, _ = every1_door_content()
     marks = []
@@ -2995,12 +3434,13 @@ def build_every1_site(brand: dict, tokens: dict, logos: dict, template: str, wor
 
 
 def build_every1_ai(brand: dict, messaging: dict, updated: str, tokens: dict, logos: dict,
-                    words: dict, app: dict) -> dict:
+                    words: dict, app: dict, resources: dict) -> dict:
     """EVERY1's own machine-readable layer, scoped to what a partner needs.
 
     Same shape as the parent's so a tool that can read one can read the other, and
     the same version number, because they are one system published twice.
     """
+    urls = {src: url for src, _dest, url in every1_logo_files(logos)}
     marks = []
     for c in every1_marks(logos):
         marks.append(
@@ -3010,14 +3450,32 @@ def build_every1_ai(brand: dict, messaging: dict, updated: str, tokens: dict, lo
                 "use": c["use"],
                 "primary": c["primary"],
                 "aspect": c["aspect"],
+                # Clear space as a rule and as a number. The rule alone is not
+                # computable per mark, because every lockup has its own cap height and
+                # its own aspect, so one sentence does not yield one measurement. These
+                # are the measurements, in the units of the mark's own SVG viewBox.
                 "clearSpace": c["clearSpace"],
+                "clearSpaceReference": c.get("clearSpaceReference", ""),
+                "clearSpaceRatio": c.get("clearSpaceRatio"),
+                "capHeight": c.get("capHeight"),
+                "clearSpaceUnits": (
+                    round(c["capHeight"] * c["clearSpaceRatio"], 2)
+                    if c.get("capHeight") is not None and c.get("clearSpaceRatio") is not None
+                    else None
+                ),
+                "clearSpaceNote": (
+                    "capHeight and clearSpaceUnits are in the units of this mark's own SVG "
+                    "viewBox. To apply at any rendered size, scale by renderedWidth / viewBox "
+                    "width, which the SVG declares."
+                ),
                 "minimumWidth": c["minimumWidth"],
                 "files": [
                     {
-                        "url": f"{EVERY1_SITE_URL}/assets/logos/{f['file'].split('/')[-1]}",
+                        "url": urls[f["file"]],
                         "format": f["format"],
                         "ink": f["ink"],
                         **({"width": f["width"]} if "width" in f else {}),
+                        **file_digest(f["file"]),
                     }
                     for f in c["files"]
                 ],
@@ -3043,8 +3501,88 @@ def build_every1_ai(brand: dict, messaging: dict, updated: str, tokens: dict, lo
             ),
         },
         "marks": marks,
+        # The app icon, ruled once. marks[e1].use and app.rules used to name different
+        # pictures, which is not a detail: a team cannot ship a launcher icon while the
+        # standard contradicts itself, and guessing would mean redrawing a mark, which
+        # this brand forbids for good reason. The E1 icon is the answer on every surface.
+        "appIcon": {
+            "mark": "e1",
+            "ruling": (
+                "The E1 icon is the app icon and the avatar on every surface: the mobile "
+                "launcher, the installable web app, the favicon, and every social profile. "
+                "It is two characters and reads as EVERY1 at a glance on a home screen."
+            ),
+            "sameEverywhere": True,
+            "ground": "midnight",
+            "groundRule": (
+                "App icons are opaque and the platform rounds their corners, so the E1 icon "
+                "sits reversed on a Midnight plate rather than transparent. Never Flame: a "
+                "logo on Flame is the first of the five things that are never done."
+            ),
+            "numeral": (
+                "The numeral is not the app icon. It is the shape photography is masked into "
+                "and a display mark at small size, which is a different job."
+            ),
+            "safeZone": logos.get("appIcon", {}).get("safeZone", ""),
+            "noSixteen": logos.get("appIcon", {}).get("noSixteen", ""),
+            "files": [
+                {
+                    "url": url,
+                    "format": entry["format"],
+                    "purpose": entry["purpose"],
+                    **({"width": entry["width"], "height": entry["height"]}
+                       if "width" in entry else {}),
+                    **file_digest(entry["file"]),
+                }
+                for entry, (_src, _dest, url) in zip(
+                    logos.get("appIcon", {}).get("files", []), every1_icon_files(logos)
+                )
+            ],
+        },
+        # Everything a product needs and a brand guide does not usually carry. These are
+        # the parent system's own tokens, published here rather than only at
+        # brand.theword.world, because an application on this door should not have to
+        # read two manifests to find a line height. They are the same values: one build
+        # writes both, so they cannot disagree.
         "color": tokens["color"],
         "typography": tokens["typography"],
+        "theme": tokens["theme"],
+        "neutral": tokens["neutral"],
+        "system": tokens["system"],
+        "outcome": tokens["outcome"],
+        "progression": tokens["progression"],
+        "typeScale": tokens["typeScale"],
+        "spacing": tokens["spacing"],
+        "radius": tokens["radius"],
+        "elevation": tokens["elevation"],
+        "motion": tokens["motion"],
+        "breakpoint": tokens["breakpoint"],
+        "contrast": tokens["contrast"],
+        "separation": tokens["separation"],
+        "proportion": tokens["proportion"],
+        "social": {
+            "card": f"{EVERY1_SITE_URL}/assets/images/every1-og-card.png",
+            "width": 1200,
+            "height": 630,
+            "ground": "midnight",
+            "safeArea": (
+                "Keep the mark and any text inside the middle 1000x470, centred. Every network "
+                "crops this rectangle differently and several crop it square, so anything in the "
+                "outer band is a thing you have decided not to mind losing."
+            ),
+            "rule": (
+                "The reversed horizontal lockup and the Parchment hairline. No headline, no "
+                "photograph, no Flame ground. A card is the institution speaking, and it stays "
+                "quiet."
+            ),
+            "avatar": (
+                "A square profile picture is the E1 icon on Midnight: use the published app icon "
+                "files rather than cropping a lockup."
+            ),
+        },
+        "tokens": f"{EVERY1_SITE_URL}/ai/tokens.json",
+        "tokensDtcg": f"{EVERY1_SITE_URL}/ai/tokens.dtcg.json",
+        "checker": f"{EVERY1_SITE_URL}/brand_check.py",
         "never": logos["never"],
         # An agent writing a caption or an ad for this door used to get the marks and
         # no language, so it wrote its own. The words ship with the artwork now.
@@ -3067,6 +3605,24 @@ def build_every1_ai(brand: dict, messaging: dict, updated: str, tokens: dict, lo
         "contact": "brand@theword.world",
         "parentSystem": f"{SITE}/ai/manifest.json",
         "generatedBy": "tools/build_ai.py",
+        # A checksum on every file this manifest declares, so a consumer can prove the
+        # bytes it received are the bytes we published. Without one, a wrong-bytes
+        # failure is undetectable, and this site had no 404 to make it detectable
+        # any other way.
+        "files": [
+            {
+                "name": name,
+                "url": f"{EVERY1_SITE_URL}/{path}",
+                "bytes": len(content.encode("utf-8")),
+                "sha256": bs.sha256(content),
+            }
+            for name, path, content in resources
+        ],
+        "integrity": (
+            "Every file this manifest names carries its byte length and its SHA-256, the "
+            "marks included. Verify what you download. Unknown paths on this site return "
+            "404 with a non-HTML body, so a failed fetch is a failed fetch."
+        ),
     }
 
 def build_llms_txt(brand: dict, messaging: dict, tokens: dict, initiatives: list) -> str:
@@ -3083,7 +3639,7 @@ def build_llms_txt(brand: dict, messaging: dict, tokens: dict, initiatives: list
         f"- [AI manifest]({SITE}/ai/manifest.json): The doorway. Names every current resource, with versions and checksums.",
         f"- [Agent skill]({SITE}/ai/SKILL.md): The retrieval and audit workflow, in installable Agent Skills format.",
         f"- [Brand system]({SITE}/ai/brand-system.md): The complete standard as one Markdown document.",
-        f"- [Design tokens]({SITE}/ai/tokens.json): Colors, typography, system tokens and states.",
+        f"- [Design tokens]({SITE}/ai/tokens.json): Colors, typography, both themes, the type scale, the neutral ramp, system tokens and states, outcome and progression colour, and every contrast pair measured.",
         f"- [Brand audit]({SITE}/ai/audit.md): The rubric every piece of work is checked against.",
         f"- [Components]({SITE}/ai/components.json): Component specifications resolved against current tokens.",
         f"- [Assets]({SITE}/ai/assets.json): Every approved logo, photograph, and video, with usage rules.",
@@ -3179,6 +3735,13 @@ def build_headers(existing: str, ai_files: list) -> str:
         if ext in CONTENT_TYPES:
             block.append(f"  Content-Type: {CONTENT_TYPES[ext]}")
         block.append("  X-Robots-Tag: all")
+    # Served as text rather than downloaded as an octet-stream, so anyone can read the
+    # checker before running it. Nobody should run a script they have not looked at.
+    block.append("/brand_check.py")
+    block.append("  Access-Control-Allow-Origin: *")
+    block.append("  Cache-Control: public, max-age=300, must-revalidate")
+    block.append("  Content-Type: text/x-python; charset=utf-8")
+    block.append("  X-Robots-Tag: all")
     block.append(HEADERS_END)
     generated = "\n".join(block)
 
@@ -3280,7 +3843,7 @@ DESCRIPTIONS = {
     "manifest.json": "The doorway. Versions, checksums, and links to everything else.",
     "brand-system.md": "The complete brand standard as one document.",
     "SKILL.md": "Installable agent skill: the retrieval and audit workflow.",
-    "tokens.json": "Colors, typography, system tokens and states.",
+    "tokens.json": "Colors, typography, both themes, the type scale, the neutral ramp, system tokens and states, outcome and progression colour, and every contrast pair measured.",
     "tokens.dtcg.json": "The same tokens in W3C Design Tokens format, for design tooling.",
     "tokens.ts": "The same tokens as typed TypeScript exports, for applications.",
     "tailwind.preset.js": "The same tokens as a Tailwind preset, replacing the default theme.",
@@ -3688,13 +4251,12 @@ def every1_binaries() -> list:
         for name in sorted(os.listdir(fonts)):
             if name.endswith(".woff2") or name == "OFL.txt":
                 pairs.append((f"assets/fonts/{name}", f"{EVERY1_DIR}/assets/fonts/{name}"))
-    # The rasters the page links, for tools that will not take a vector.
+    # Every mark, in every ink and every width the manifest declares. Not a subset:
+    # the manifest is the contract, and a declared URL that is not served is a silent
+    # failure rather than a missing file. See every1_logo_files().
     logos = json.loads(bs.read(os.path.join(REPO, "ai-source", "logo-manifest.json")))
-    for c in every1_marks(logos):
-        for f in c["files"]:
-            if f["format"] == "png" and f.get("width") == 1600 and "black" not in f["file"]:
-                name = f["file"].split("/")[-1]
-                pairs.append((f["file"], f"{EVERY1_DIR}/assets/logos/{name}"))
+    pairs += [(src, dest) for src, dest, _url in every1_logo_files(logos)]
+    pairs += [(src, dest) for src, dest, _url in every1_icon_files(logos)]
     css_assets = re.findall(r'url\("?(/assets/logos/[^")]+)"?\)', every1_door_content()[0])
     for ref in sorted(set(css_assets)):
         pairs.append((f"assets/logos/every1/{ref.split('/')[-1]}", EVERY1_DIR + ref))
@@ -3799,20 +4361,45 @@ def build() -> dict:
     files[f"{EVERY1_DIR}/messaging/index.html"] = build_every1_messaging(
         brand, messaging, every1_words, every1_app, updated
     )
+    # The AI layer this door publishes, built before the manifest so the manifest can
+    # checksum it. EVERY1 runs on the parent's tokens, so these are the parent's values
+    # written out under this domain rather than a second set that could disagree: an
+    # application on this door should not have to read two manifests to find a line
+    # height, and must never get two answers if it does.
+    every1_tokens = dict(tokens)
+    every1_tokens["source"] = f"{EVERY1_SITE_URL}/"
+    every1_tokens["appliesTo"] = "EVERY1 Movement"
+    every1_tokens["parentSource"] = f"{SITE}/brand"
+    every1_tokens["_README"] = (
+        "The same token surface the parent publishes, served from this door's own domain. "
+        "EVERY1 stands alone as an identity and shares the house's tokens, so these values "
+        "are written by one build and cannot drift from brand.theword.world."
+    )
+    files[f"{EVERY1_DIR}/ai/tokens.json"] = (
+        json.dumps(every1_tokens, indent=2, ensure_ascii=False) + "\n"
+    )
+    files[f"{EVERY1_DIR}/ai/tokens.dtcg.json"] = files["ai/tokens.dtcg.json"]
+    files[f"{EVERY1_DIR}/brand_check.py"] = bs.read(
+        os.path.join(REPO, "tools", "brand_check.py")
+    )
+    every1_resources = [
+        ("tokens.json", "ai/tokens.json", files[f"{EVERY1_DIR}/ai/tokens.json"]),
+        ("tokens.dtcg.json", "ai/tokens.dtcg.json", files[f"{EVERY1_DIR}/ai/tokens.dtcg.json"]),
+        ("brand_check.py", "brand_check.py", files[f"{EVERY1_DIR}/brand_check.py"]),
+        ("brand.css", "assets/brand.css", files["assets/brand.css"]),
+    ]
     files[f"{EVERY1_DIR}/ai/manifest.json"] = (
         json.dumps(build_every1_ai(brand, messaging, updated, tokens, logos,
-                                   every1_words, every1_app), indent=2, ensure_ascii=False) + "\n"
+                                   every1_words, every1_app, every1_resources),
+                   indent=2, ensure_ascii=False) + "\n"
     )
     files[f"{EVERY1_DIR}/assets/brand.css"] = files["assets/brand.css"]
     files[f"{EVERY1_DIR}/assets/fonts/fonts.css"] = bs.read(
         os.path.join(REPO, "assets", "fonts", "fonts.css")
     )
-    for c in every1_marks(logos):
-        for f in c["files"]:
-            if f["format"] != "svg":
-                continue
-            name = f["file"].split("/")[-1]
-            files[f"{EVERY1_DIR}/assets/logos/{name}"] = bs.read(os.path.join(REPO, f["file"]))
+    # The marks themselves are copied by every1_binaries(), which reads the same list
+    # the manifest declares from. They are not written here as text as well: two
+    # writers for one file is how the manifest and the site came apart before.
     files[f"{EVERY1_DIR}/robots.txt"] = (
         "User-agent: *\nAllow: /\n\n"
         f"Sitemap: {EVERY1_SITE_URL}/sitemap.xml\n"
@@ -3828,18 +4415,25 @@ def build() -> dict:
     files[f"{EVERY1_DIR}/llms.txt"] = (
         "# EVERY1 Movement: how to use the mark\n\n"
         "> The published brand standard for the EVERY1 Movement: which mark, on which ground,\n"
-        "> how much room it needs, and what never to do. EVERY1 carries no parent endorsement\n"
-        "> line and no parent lockup.\n\n"
+        "> how much room it needs, what never to do, and the tokens a product builds with.\n"
+        "> EVERY1 carries no parent endorsement line and no parent lockup.\n\n"
         "## Start here\n\n"
-        f"- [Manifest]({EVERY1_SITE_URL}/ai/manifest.json): every mark, its clear space, its minimum size, and its files, with the palette and the typefaces.\n"
-        f"- [How to use the mark]({EVERY1_SITE_URL}/): the same thing for people.\n"
+        f"- [Manifest]({EVERY1_SITE_URL}/ai/manifest.json): the doorway. Every mark with its clear space, minimum size, and files, the full token surface, the measured contrast table, and a SHA-256 on every file named.\n"
+        f"- [Tokens]({EVERY1_SITE_URL}/ai/tokens.json): colour, type scale, spacing, radius, elevation, motion, breakpoints, and both themes.\n"
+        f"- [Tokens, W3C format]({EVERY1_SITE_URL}/ai/tokens.dtcg.json): the same values as a Design Tokens document, for design tooling and for a build that wants to fail when the brand moves.\n"
+        f"- [Stylesheet]({EVERY1_SITE_URL}/assets/brand.css): the tokens and the component layer, linkable directly.\n"
+        f"- [brand_check.py]({EVERY1_SITE_URL}/brand_check.py): the mechanical half of the audit, runnable against any file or URL. Use it rather than reimplementing these rules.\n"
+        f"- [How to use the mark]({EVERY1_SITE_URL}/): the same standard for people.\n"
         f"- [Messaging standard]({EVERY1_SITE_URL}/messaging/): how EVERY1 speaks. Identity, the mandate, the outside and inside scripts, audiences, voice, and the language we do not use.\n\n"
         "## Facts at a glance\n\n"
         f"Brand version {brand['version']}, updated {updated}.\n"
         "EVERY1 stands alone. Do not add \"A ministry of THE WORD FOR ALL THE WORLD\" and do not lock a parent mark to it.\n"
-        "Flame never carries text and is never a ground under text. Fire at text size is Ember.\n"
+        "The app icon is the E1 icon, on Midnight, on every surface. The numeral is not the app icon.\n"
+        "Flame never carries text on a light ground. On Midnight it is the text accent, because Ember is 3.25:1 there and fails.\n"
+        "This site answers 404 for paths that do not exist, and publishes a checksum for every file it declares. Verify what you download.\n"
         "Contact brand@theword.world for a country lockup that is not published yet.\n"
     )
+    files[f"{EVERY1_DIR}/404.html"] = build_every1_404(brand, updated)
     files[f"{EVERY1_DIR}/_headers"] = (
         "/*\n"
         "  X-Frame-Options: SAMEORIGIN\n"
@@ -3848,9 +4442,20 @@ def build() -> dict:
         "  Access-Control-Allow-Origin: *\n"
         "  Content-Type: application/json; charset=utf-8\n"
         "  Cache-Control: public, max-age=300, must-revalidate\n\n"
+        # Served as text rather than downloaded as an octet-stream, so a partner can
+        # read the checker before running it. Nobody should run a script they have not
+        # been able to look at.
+        "/brand_check.py\n"
+        "  Access-Control-Allow-Origin: *\n"
+        "  Content-Type: text/x-python; charset=utf-8\n"
+        "  Cache-Control: public, max-age=300, must-revalidate\n\n"
         "/assets/logos/*\n"
         "  Access-Control-Allow-Origin: *\n"
         "  Cache-Control: public, max-age=0, must-revalidate\n\n"
+        "/assets/brand.css\n"
+        "  Access-Control-Allow-Origin: *\n"
+        "  Content-Type: text/css; charset=utf-8\n"
+        "  Cache-Control: public, max-age=300, must-revalidate\n\n"
         "/assets/fonts/*\n"
         "  Access-Control-Allow-Origin: *\n"
         "  Cache-Control: public, max-age=31536000, immutable\n"
@@ -3940,6 +4545,12 @@ def build() -> dict:
     files["ai/manifest.json"] = json.dumps(manifest, indent=2, ensure_ascii=False) + "\n"
     files["ai/index.html"] = build_ai_index(manifest, DESCRIPTIONS, tokens)
 
+    # The checker the portal advertises, published at the URL it is advertised at.
+    # It lived only in tools/ for two releases while both sites offered it as a
+    # download, which is how a partner ended up writing their own and enforcing this
+    # brand as they understood it rather than as it is defined.
+    files["brand_check.py"] = bs.read(os.path.join(REPO, "tools", "brand_check.py"))
+
     files["llms.txt"] = build_llms_txt(brand, messaging, tokens, initiatives)
     files["sitemap.xml"] = build_sitemap(bs.published_pages(), list(DESCRIPTIONS))
 
@@ -4003,7 +4614,9 @@ def main() -> int:
 
     for rel, content in files.items():
         path = os.path.join(REPO, rel)
-        os.makedirs(os.path.dirname(path), exist_ok=True)
+        parent = os.path.dirname(path)
+        if parent:
+            os.makedirs(parent, exist_ok=True)
         changed = not os.path.exists(path) or bs.read(path) != content
         with open(path, "w", encoding="utf-8") as fh:
             fh.write(content)

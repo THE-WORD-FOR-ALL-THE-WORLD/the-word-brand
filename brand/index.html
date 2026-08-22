@@ -349,7 +349,7 @@
   </video>
   <div class="scrim"></div>
   <div class="inner">
-    <span class="kicker">Brand Guide · Version 7.5</span>
+    <span class="kicker">Brand Guide · Version 7.6</span>
     <h1>THE WORD<br>FOR ALL <em>THE WORLD</em></h1>
     <div class="rule"></div>
     <div class="meta">
@@ -468,7 +468,7 @@
         <div class="title">A formal frame around <em>burning</em> content.</div>
         <div class="desc">Composition is centered, spacious, and disciplined: navy and paper grounds, letterspaced labels, sentence-case serif headlines, hairline rules. The formality is the frame; the footage, the fire, and the testimony are the picture.</div>
         <ul class="inpractice">
-          <li>Flame never exceeds a tenth of any composition and never carries text (§03).</li>
+          <li>Flame never exceeds a tenth of any composition, and never carries text on a light ground. On Midnight it is the text accent, because Ember fails there (§03).</li>
           <li>Serif headlines are sentence case with at most one italic word; all-caps belongs to the wordmark and labels.</li>
           <li>Generous whitespace is mandatory. Crowding reads as hype, and we are never hype.</li>
         </ul>
@@ -513,7 +513,7 @@
       </div>
       <div class="swatch">
         <div class="chip" style="background:#F85842;"><span style="color:#FFFFFF;">Flame</span></div>
-        <div class="info"><strong>Flame</strong><code>#F85842</code><em>Non-text accent: BURN moments, display numerals, highlights. Never carries text. ≤10%.</em></div>
+        <div class="info"><strong>Flame</strong><code>#F85842</code><em>Non-text accent on light grounds: BURN moments, display numerals, highlights. Never carries text on Parchment or White. ≤10%. On Midnight it is the text accent, because Ember is 3.25:1 there and fails: see accent-on-dark.</em></div>
       </div>
       <div class="swatch">
         <div class="chip" style="background:#C13A24;"><span style="color:#FFFFFF;">Ember</span></div>
@@ -533,6 +533,15 @@
     </div>
     <p class="caption">If Flame covers more than a tenth of a layout, the institution disappears and the design reads as a startup.</p>
 
+    <h3 id="flame-budget">What &ldquo;a tenth&rdquo; is measured against</h3>
+    <p>The rule was written for a person holding a poster, and a person can see when it is broken. A build cannot, because &ldquo;a tenth of a layout&rdquo; names no denominator. This is the denominator, so the rule can be checked rather than argued about.</p>
+    <ul class="rules">
+      <li><strong>The denominator is one rendered view:</strong> the full area of a single printed page, a single slide, a single email, or, on screen, the viewport at the first paint. Not the scroll height. A long page is judged screen by screen, because that is how it is read, and every screen holds the tenth on its own.</li>
+      <li><strong>Photography and video are excluded from both sides.</strong> Fire inside a photograph is a fact of the photograph. Subtract the area of any image or frame from the denominator before measuring, and never count colour inside it.</li>
+      <li><strong>The numerator is every Flame pixel the layout itself draws:</strong> fills, rules, glyphs, display numerals, icon strokes, and the ninth step of the progression ramp. A Flame element at partial opacity counts at its opacity.</li>
+      <li><strong>Ember is not counted.</strong> Ember is a text colour and has its own rules. The tenth is about the loud fire, not the readable one.</li>
+    </ul>
+
     <h3>Do / Don't</h3>
     <div class="dd-pairs"><div class="dd-col-h do-h">✓ Do</div><div class="dd-col-h dont-h">✕ Don’t</div><div class="dd do"><div class="demo" style="background:#0B1A2D;"><span style="font-family:var(--serif-display);font-size:26px;color:#F7F3EC;">The fire is <em>here.</em></span></div><div class="verdict"><span class="mark">✓</span><span>DO<small>Text on Midnight: White or Parchment. The flagship pairing.</small></span></div></div><div class="dd dont"><div class="demo" style="background:#0B1A2D;"><span style="font-size:15px;color:#023D6F;max-width:190px;font-weight:600;">Word Blue text disappears on Midnight.</span></div><div class="verdict"><span class="mark">✕</span><span>DON’T<small>Text on Midnight: never Word Blue. Too little contrast.</small></span></div></div><div class="dd do"><div class="demo" style="background:#F7F3EC;"><span style="font-size:15px;color:#0B1A2D;max-width:190px;">Body copy is always Midnight on Parchment or White.</span></div><div class="verdict"><span class="mark">✓</span><span>DO<small>Body on light grounds: Midnight.</small></span></div></div><div class="dd dont"><div class="demo" style="background:#F7F3EC;"><span style="font-size:15px;color:#F85842;max-width:190px;">Flame body text on light grounds is hard to read.</span></div><div class="verdict"><span class="mark">✕</span><span>DON’T<small>Body on light grounds: never Flame.</small></span></div></div><div class="dd do"><div class="demo" style="background:#F7F3EC;"><span class="btn">Partner With Us</span></div><div class="verdict"><span class="mark">✓</span><span>DO<small>Buttons: Ember fill, white text. 5.4:1, passes AA.</small></span></div></div><div class="dd dont"><div class="demo" style="background:#F7F3EC;"><span style="display:inline-block;background:#F85842;color:#fff;font-size:14.5px;font-weight:700;letter-spacing:.04em;padding:14px 28px;border-radius:3px;">Partner With Us</span></div><div class="verdict"><span class="mark">✕</span><span>DON’T<small>Buttons: never Flame. 3.3:1 fails AA.</small></span></div></div><div class="dd do"><div class="demo" style="background:#0B1A2D;flex-direction:column;gap:6px;"><span style="font-family:var(--serif-display);font-size:42px;color:#F85842;line-height:1;">1,057</span><span style="font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(247,243,236,.8);">Salvations</span></div><div class="verdict"><span class="mark">✓</span><span>DO<small>Flame’s job: display numerals and small uppercase labels on Midnight.</small></span></div></div><div class="dd dont"><div class="demo" style="background:#F85842;flex-direction:column;gap:8px;"><span style="font-family:var(--serif-display);font-size:22px;color:#fff;">Whole sections in Flame</span><span style="font-size:12px;color:rgba(255,255,255,.9);">overwhelm everything else</span></div><div class="verdict"><span class="mark">✕</span><span>DON’T<small>Flame’s job is never a ground. Accent only, ≤10%.</small></span></div></div><div class="dd do"><div class="demo" style="background:#FFFFFF;"><span style="font-size:15px;font-weight:600;color:#C13A24;border-bottom:1.5px solid #C13A24;padding-bottom:2px;">Read the field report →</span></div><div class="verdict"><span class="mark">✓</span><span>DO<small>Fire at small sizes: Ember for links and accents on light.</small></span></div></div><div class="dd dont"><div class="demo" style="background:#FFFFFF;gap:0;"><span style="background:#F85842;color:#fff;font-weight:700;font-size:13px;padding:12px 16px;">Flame</span><span style="background:#C13A24;color:#fff;font-weight:700;font-size:13px;padding:12px 16px;">Ember</span></div><div class="verdict"><span class="mark">✕</span><span>DON’T<small>Fire at small sizes: never Flame and Ember side by side. Pick one.</small></span></div></div></div>
 
@@ -551,6 +560,7 @@
       <tr><td>ink-reversed</td><td><code>#F7F3EC</code></td><td>dark</td><td>Body text and headings on Midnight.</td></tr>
       <tr><td>ink-reversed-muted</td><td><code>rgba(247,243,236,.75)</code></td><td>dark</td><td>Captions and metadata on Midnight.</td></tr>
       <tr><td>ink-reversed-soft</td><td><code>rgba(247,243,236,.55)</code></td><td>dark</td><td>Placeholder and inactive labels on Midnight.</td></tr>
+      <tr><td>ink-reversed-faint</td><td><code>rgba(247,243,236,.38)</code></td><td>dark</td><td>Disabled controls on Midnight. The dark twin of ink-faint, and the only place the muted floor may be crossed on this ground.</td></tr>
       <tr><td>rule-light</td><td><code>rgba(247,243,236,.22)</code></td><td>dark</td><td>The hairline on Midnight.</td></tr>
       <tr><td>wash-light</td><td><code>rgba(247,243,236,.08)</code></td><td>dark</td><td>Input fills and raised panels on Midnight.</td></tr>
     </table>
@@ -638,6 +648,45 @@
       <tr><td>display-large</td><td>72px</td><td>1.04</td><td>DM Serif Display. Hero headlines only.</td></tr>
     </table>
     <p class="caption" style="margin-top:16px;">The serif has Regular and Italic and no bold cut. Where a headline needs more weight, it goes up a step rather than getting heavier.</p>
+
+    <h3 id="type-rules">Weight, italic, and figures, per step</h3>
+    <table data-scale="typeface-rules">
+      <tr><th>Step</th><th>Family</th><th>Weight</th><th>Tracking</th><th>Italic</th><th>Figures</th></tr>
+      <tr><td>label</td><td>DM Sans</td><td>600</td><td>.18em</td><td>never</td><td>tabular</td></tr>
+      <tr><td>caption</td><td>DM Sans</td><td>400</td><td>0</td><td>allowed</td><td>tabular</td></tr>
+      <tr><td>body-small</td><td>DM Sans</td><td>400</td><td>0</td><td>allowed</td><td>proportional</td></tr>
+      <tr><td>body</td><td>DM Sans</td><td>400</td><td>0</td><td>allowed</td><td>proportional</td></tr>
+      <tr><td>body-large</td><td>DM Sans</td><td>400</td><td>0</td><td>allowed</td><td>proportional</td></tr>
+      <tr><td>title-small</td><td>DM Serif Text</td><td>400</td><td>0</td><td>one word</td><td>proportional</td></tr>
+      <tr><td>title</td><td>DM Serif Text</td><td>400</td><td>0</td><td>one word</td><td>proportional</td></tr>
+      <tr><td>title-large</td><td>DM Serif Text</td><td>400</td><td>-.005em</td><td>one word</td><td>proportional</td></tr>
+      <tr><td>display-small</td><td>DM Serif Display</td><td>400</td><td>-.01em</td><td>one word</td><td>tabular</td></tr>
+      <tr><td>display</td><td>DM Serif Display</td><td>400</td><td>-.015em</td><td>one word</td><td>tabular</td></tr>
+      <tr><td>display-large</td><td>DM Serif Display</td><td>400</td><td>-.02em</td><td>one word</td><td>tabular</td></tr>
+    </table>
+    <ul class="rules">
+      <li><strong>&ldquo;One word&rdquo; is the serif rule already stated:</strong> a sentence-case serif headline may italicise at most one word, for emphasis. It is never set entirely in italic.</li>
+      <li><strong>Tabular figures wherever a number changes while it is being read.</strong> Live counters, the official record, dashboards, and tables all set <code>font-variant-numeric: tabular-nums</code>. Digits that shift width as they tick turn a count into a fidget. Both serifs and DM Sans carry the feature.</li>
+      <li><strong>The display steps are tabular by default</strong> because the display sizes are where the record&rsquo;s numerals are set, and that is the number people watch.</li>
+    </ul>
+
+    <h3 id="scripture">Scripture</h3>
+    <p>A verse is not a pull quote and is not decoration. It is the one voice in this system that is not ours, and it is set so a reader can see that at a glance, before reading a word of it.</p>
+    <ul class="rules">
+      <li><strong>DM Serif Text, at title-small or title, regular.</strong> Never the sans, never all caps, and never italic across the whole verse.</li>
+      <li><strong>No quotation marks.</strong> The setting is what marks it. Quotation marks around scripture make it look like something somebody said.</li>
+      <li><strong>The reference always follows,</strong> on its own line, in the label step: DM Sans 600, uppercase, letterspaced, in ink-muted on a light ground or ink-reversed-muted on a dark one. A verse without its reference is not published.</li>
+      <li><strong>A hairline rule above, never a coloured bar and never a Flame accent.</strong> The Vision lockup is the one exception, and it is a published file rather than a setting to reproduce.</li>
+      <li><strong>Never reflowed, never trimmed to fit, and never paraphrased.</strong> If it does not fit, the layout changes.</li>
+    </ul>
+
+    <h3 id="font-hosting">Where the faces come from</h3>
+    <p>All three are on Google Fonts under the SIL Open Font License, which permits self-hosting, bundling inside an application, and redistribution. That answers it once, for every surface:</p>
+    <ul class="rules">
+      <li><strong>Self-host on the web.</strong> This portal serves its own <code>.woff2</code> files from <code>/assets/fonts/</code> with the licence beside them, and any site on this brand should do the same. A third-party font request is one more thing that can be slow, blocked, or logged.</li>
+      <li><strong>Bundle in an application.</strong> A mobile app ships the faces inside the binary. The field is where this brand is used most, and it is exactly where the network is worst. A brand that only renders on good bandwidth is not the brand.</li>
+      <li><strong>Ship the licence with the files,</strong> wherever they go. <code>/assets/fonts/OFL.txt</code> travels with them.</li>
+    </ul>
 
   </div>
 </section>
@@ -844,6 +893,53 @@
       <tr><td>Muted text</td><td>80% Midnight (light grounds) · 75% Parchment (dark)</td><td>Captions and metadata. Nothing lighter. It fails contrast.</td></tr>
       <tr><td>Breakpoint</td><td>720px</td><td>Single-column below; grids above.</td></tr>
     </table>
+
+    <h3 id="functional-color">Functional color</h3>
+    <p>Everything in &sect;03 is identity. This is the other kind: color that carries a meaning a reader learns, so a product can say <em>which outcome this record is</em> and <em>how far this has come</em> without writing it out every time. It sits deliberately outside the identity palette, and that is the whole design. An outcome drawn in Ember would make every button look like a salvation, which is how a data category quietly steals the action color.</p>
+    <p>None of these values were picked. Each one was derived by <code>tools/colorkit.py</code> against three constraints held at once: it clears 4.5:1 on both grounds of its theme, it sits at least &Delta;E2000 8.5 from every other value here and from Ember, Flame, and Word Blue, and it holds that separation under protanopia, deuteranopia, and tritanopia. Every measurement is published at <a href="/ai/tokens.json" style="color:var(--word-blue);">/ai/tokens.json</a>, and the build fails if any one of them stops being true.</p>
+
+    <h3 id="outcome-color">Outcomes</h3>
+    <p>Six outcomes, read at a glance in the field, often on a phone in daylight. Two that look alike is a defect and not a polish note, which is why the separation floor above is a gate rather than an aspiration.</p>
+    <table data-scale="outcome">
+      <tr><th>Token</th><th>Light</th><th>Dark</th><th>Records</th></tr>
+      <tr><td>outcome-ministered</td><td><code>#005F5E</code></td><td><code>#00DDDB</code></td><td>Ministered To. The conversation happened. The quietest of the six, because it is the most common.</td></tr>
+      <tr><td>outcome-salvation</td><td><code>#007D4C</code></td><td><code>#00C479</code></td><td>Salvation. New life, and the reason for the rest. Green is life, not fire: fire is the institution&rsquo;s own voice and is not lent to a data category.</td></tr>
+      <tr><td>outcome-healing</td><td><code>#3B4100</code></td><td><code>#B2BE2C</code></td><td>Healing. The color of oil, which is what the sick are anointed with.</td></tr>
+      <tr><td>outcome-baptism-water</td><td><code>#0070BD</code></td><td><code>#9CC3FF</code></td><td>Baptism in water.</td></tr>
+      <tr><td>outcome-baptism-spirit</td><td><code>#4C3DAF</code></td><td><code>#A98FFF</code></td><td>Baptism in the Holy Spirit. Separated from water baptism by hue, because they are separate events and are counted separately.</td></tr>
+      <tr><td>outcome-raised</td><td><code>#860048</code></td><td><code>#FF83B2</code></td><td>Raised from the dead. The rarest, and the furthest from every other value here.</td></tr>
+    </table>
+    <p class="caption" style="margin-top:16px;">The light values are dark and the dark values are light. That is not a style choice: a color legible as text on Parchment has to be dark, and one legible on Midnight has to be light. It is why a bright gold and a bright orange are not available on a light ground at text size, whatever a mockup suggests.</p>
+
+    <h3 id="outcome-rules">How an outcome is drawn</h3>
+    <p>Two treatments, both measured, and no third.</p>
+    <ul class="rules">
+      <li><strong>Quiet, the default.</strong> A White card on the light ground, or the surface-on-dark panel on the dark one, a hairline in the outcome color, and the label in the outcome color. Every one of the six clears 4.5:1 in both themes.</li>
+      <li><strong>Solid,</strong> where the badge has to carry across a list. The outcome color as the fill, with a White label on the light theme and a Midnight label on the dark one. Every one clears 4.5:1 in both themes.</li>
+      <li><strong>Color is never the only encoding.</strong> Every outcome carries its own glyph and its written name. Six categories cannot be told apart by color alone by every reader, at any separation, and the brand does not pretend otherwise: the color is the fast channel, not the only one.</li>
+      <li><strong>Never Ember and never Flame.</strong> Those two mean <em>this is the action</em> and <em>this is a celebration</em>, and an outcome is neither.</li>
+    </ul>
+
+    <h3 id="progression-color">The progression ramp</h3>
+    <p>A movement&rsquo;s maturity is nine ordered stages, and the metaphor is the brand&rsquo;s own: fire starts fire. A warming ramp toward Flame is on brand, and these are its endpoints. Step 1 is the least fire that is still fire. Step 9 is Flame itself, unmodified, which is what makes the top of the ladder mean something.</p>
+    <table data-scale="progression">
+      <tr><th>Step</th><th>Light</th><th>Dark</th><th>Stage</th></tr>
+      <tr><td>progression-1</td><td><code>#F8E4D7</code></td><td><code>#5C412F</code></td><td>Match</td></tr>
+      <tr><td>progression-2</td><td><code>#FAD5BF</code></td><td><code>#6D462F</code></td><td>Kindling</td></tr>
+      <tr><td>progression-3</td><td><code>#FBC6A9</code></td><td><code>#7F4B2F</code></td><td>Twigs</td></tr>
+      <tr><td>progression-4</td><td><code>#FBB694</code></td><td><code>#924F30</code></td><td>Sticks</td></tr>
+      <tr><td>progression-5</td><td><code>#FBA680</code></td><td><code>#A55231</code></td><td>Logs</td></tr>
+      <tr><td>progression-6</td><td><code>#FB956E</code></td><td><code>#B95534</code></td><td>Trees</td></tr>
+      <tr><td>progression-7</td><td><code>#FA825E</code></td><td><code>#CD5737</code></td><td>Forests</td></tr>
+      <tr><td>progression-8</td><td><code>#F96E4F</code></td><td><code>#E2583C</code></td><td>Mountain Ranges</td></tr>
+      <tr><td>progression-9</td><td><code>#F85842</code></td><td><code>#F85842</code></td><td>The World</td></tr>
+    </table>
+    <ul class="rules">
+      <li><strong>Fills only. Never text, and never an interactive control.</strong> The ramp lives inside the fire band by design, so its upper steps run close to Ember and its last step is Flame. On a surface where a ramp swatch could be mistaken for a button, the reader can no longer tell a stage from an action.</li>
+      <li><strong>Every ramp fill carries a hairline.</strong> The first steps are a whisper against their ground on purpose, and a whisper with no edge is a blank.</li>
+      <li><strong>Step 9 counts against the Flame budget,</strong> because it is Flame. A view where most of the ladder has reached The World has to hold the tenth like any other composition.</li>
+      <li><strong>Ordinal, not categorical.</strong> Adjacent steps are near neighbours because they are meant to be. Never use the ramp for things that are merely different.</li>
+    </ul>
 
     <h3 id="spacing">Spacing</h3>
     <p>A four-pixel base and ten steps. Every margin, padding, and gap is one of these, which is what makes pages built by different people share a rhythm.</p>
@@ -1062,6 +1158,7 @@
     <p class="lede">This guide changes one way: a proposed edit in writing, approval by Joel Zimmer and Nathan Zimmer, a version bump, and a row in this table. No silent edits, ever. The same table is published for machines at <a href="/ai/brand-system.md" style="color:var(--word-blue);">/ai/brand-system.md</a>, so an audit report can name the exact version it was measured against.</p>
     <table>
       <tr><th style="width:66px;">Version</th><th style="width:104px;">Date</th><th style="width:120px;">Owner</th><th>Changed</th><th style="width:150px;">Approved</th></tr>
+      <tr><td>7.6</td><td>2026-08-22</td><td>Nathan Zimmer</td><td>The product release, answering the EVERY1 platform build&rsquo;s two written requests. &sect;03 states what &ldquo;a tenth&rdquo; is measured against, and narrows the Flame text rule to the light grounds it was always about: on Midnight, Flame is the text accent, because Ember is 3.25:1 there and fails. &sect;04 answers weight, tracking, italic and figures per step, sets the scripture treatment, and rules that the faces are self-hosted on the web and bundled in an application. &sect;09 adds functional colour the identity palette never covered: six outcome colours and a nine-step progression ramp, each value derived rather than picked and gated on 4.5:1 in both themes and &Delta;E2000 8.5 separation under normal vision and all three dichromacies. The neutral ramp gains ink-reversed-faint. Every permitted and forbidden contrast pair is now measured and published at /ai/tokens.json rather than left for each surface to compute. On the delivery side: the EVERY1 site now serves all 120 files its manifest declares rather than 40, returns a real 404, publishes brand_check.py, and carries a SHA-256 on every declared file. The app icon contradiction is resolved in favour of the E1 icon.</td><td>Joel Zimmer &middot; Nathan Zimmer</td></tr>
       <tr><td>7.5</td><td>2026-08-21</td><td>Nathan Zimmer</td><td>EVERY1&rsquo;s door gets its words. An audit of the movement found the mark system in good order and everything downstream of it missing: the site published eight lockups, six colours and three faces, and not one line about what to say. An organisation carrying the mark at a conference got the artwork exactly right and then wrote its own copy, which does more damage than a stretched logo and is harder to take back. Four things are fixed. First, the vision is published as text. The vision lockup was described as carrying the whole promise, and that promise existed only as outlines inside the artwork: <em>Every tribe, every tongue, every nation will know the name Jesus.</em> A partner could put it on a stage backdrop and could not quote it in a program or check a translation of it. The site&rsquo;s own footer had been quoting the first half and stopping. Second, the words themselves are on the site: the mission, the promise, what the movement is, who may join, the first three steps, the four phrases it carries, how to write as EVERY1, the banned words, and a boilerplate paragraph to be used as written. Third, the app is specified rather than pictured. EVERY1 is a movement, an app and an activation platform, and the app had one image and no design. Eight screens are named with their one action, their marks, their ground, their empty state and their error state, plus nine rules that hold across all of them. A mockup is correct the day it is exported and silently wrong after the next token change; a spec generated from tokens moves when the brand moves. The 1 as a mask gains an interface rule it did not have: one per view, because a scrolling list would put six on screen and turn the signature move into wallpaper. Fourth, the messaging document stops contradicting itself. Section 1 told every reader that the initiative carries the endorsement line and Section 8 told them EVERY1 carries none, because the sentence was written once for all three doors. Section 1 now reads the rule that applies to the door it is describing. The words are stated once, in <code>ai-source/every1-messaging.json</code>, and read by both the document generator and the site generator, so the words a partner repeats and the words on record cannot drift. They ship in EVERY1&rsquo;s machine layer too, so an agent writing a caption gets the language along with the artwork. Two audiences are recorded for this door, The Sent Believer and The Partner Organisation, with twenty-three approved strings written against them: the copy bank held forty-seven strings and none for the people this movement is actually for. An unrecognised audience now fails the build, which nothing checked before. The vision and the mission are also restated in this version. The vision reads <em>Every tribe, every tongue, every nation, and EVERY1 will know the name Jesus</em> (Hebrews 8:11), and it is now read from this guide rather than retyped: the EVERY1 site had been carrying a shortened form that dropped <em>and EVERY1</em> and with it the reason the wordmark sits inside the sentence. The lockup is not a logo placed between two lines. The mark is a word in the sentence, and read top to bottom the lockup says the vision in full. EVERY1&rsquo;s mission becomes <em>Empowering the local church to walk in unity to do the great commission &amp; walk in God&rsquo;s calling</em> (Acts 2:17). It was stated in five hand-edited places and all five now agree.</td><td>Joel Zimmer, Nathan Zimmer</td></tr>
       <tr><td>7.4</td><td>2026-08-20</td><td>Nathan Zimmer</td><td>EVERY1 gets its own front door at <a href="https://brand.every1movement.com">brand.every1movement.com</a>, written for the people who were never going to read this guide: our own team, and any organisation carrying the mark at a conference or an activation. It leads with how to use the mark rather than with how the system is governed. Which file for which ground, the room each mark needs, the smallest it may be set, the six colours, the three faces, the short list of things that break it, the 1 as a mask, and how to ask for a country that is not drawn yet. It is a second site, not a second system. One repository, one build, one linter and one version number, published twice, which is what stops the two drifting. Splitting the machinery would have handed back the single thing that makes any of this trustworthy: that nothing here can disagree with anything else. It is also self-contained. The site carries its own copies of the stylesheet, the three faces and its own marks, because a partner downloading a logo should never be sent to the parent&rsquo;s domain, and the door that stands alone should not go dark when that domain does. Two roots meant the linter had to learn that a page under <code>every1/</code> resolves its links against <code>every1/</code>, not against the repository; without it every correct link on the new site read as broken. A fork becomes the right answer the day EVERY1&rsquo;s palette or typefaces diverge from the house, or the day a separate team owns it with no shared review. On that day the structure is EVERY1 consuming <code>@theword/brand</code> as a dependency rather than copying it, which is already built and waiting.</td><td>Joel Zimmer, Nathan Zimmer</td></tr>
       <tr><td>7.3</td><td>2026-08-20</td><td>Nathan Zimmer</td><td>The favicon stops disappearing on dark browser chrome. The microphone is knocked out of the disc rather than drawn as a shape, so the small favicons, which had no ground behind them, were a Midnight disc with a transparent microphone: on a dark tab strip both vanished and the icon was simply gone. Every size now carries the Midnight plate that the touch icons already had, so the mark reads on any chrome at 16, 32 and 48 as well as at 180, 192 and 512. No artwork changes and the glyph itself is untouched. What this does not do is make the microphone white. The microphone is negative space carved by the disc&rsquo;s own outline, not a separable shape, so no build step can fill it; only the capsule can be reached, and a capsule on its own reads as a pill rather than a microphone. A white microphone needs the glyph redrawn with the microphone as a positive shape, which is recorded here as the open question it is rather than approximated.</td><td>Joel Zimmer, Nathan Zimmer</td></tr>

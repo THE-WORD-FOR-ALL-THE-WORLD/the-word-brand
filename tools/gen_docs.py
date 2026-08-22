@@ -701,7 +701,7 @@ SUBS = [
         typerule="Parchment on Midnight. Ember for links and buttons.",
         flame="The full tenth. This door owns the fire.",
         register="The fire itself. Loudest, fastest, most footage.",
-        avatar="The 1 glyph in Flame, on its own Midnight plate. Published, and the only avatar this door uses.",
+        avatar="The E1 icon, reversed on its own Midnight plate. Published at every icon size, and the only avatar this door uses.",
         handle="@every1movement, recorded in the Channels section of this guide.",
         kindhead="A movement brand.",
         kindtext="EVERY1 lives on phones and in other people's feeds. It carries the loosest rules "
@@ -897,7 +897,7 @@ EXTRAS = {
       <p class="lede">A movement's identity lives on its people's own feeds, or it is not a movement.
       These assets exist to leave official hands.</p>
       <ul class="doorrules">
-        <li><strong>The 1 is the glyph.</strong> The mark leads with the numeral, and the numeral is published on its own: an app icon, a profile badge, a sticker, a shape simple enough to survive at sixty pixels with no endorsement line in frame.</li>
+        <li><strong>The 1 is the display mark, and the E1 icon is the app icon.</strong> The mark leads with the numeral and the numeral is published on its own, as a display mark and as the shape photography is cut into. Where a square is needed and a lockup will not read, that is the E1 icon: the launcher, the installable web app, the favicon, and every profile picture. The two do different jobs and neither substitutes for the other.</li>
         <li><strong>Share cards ride along.</strong> Every official EVERY1 surface ships with a version a member can post themselves: square and vertical, footage behind the scrim, one line of Parchment type.</li>
         <li><strong>The loosest rules in the house.</strong> Official surfaces follow this guide. What a member does with the badge on their own feed is not audited; it is the movement working.</li>
         <li><strong>The icon comes first.</strong> The app and the activation platform follow the YouVersion model, so the E1 icon carries the whole identity on its own. It was drawn before the app was built, not after, and it is published here already.</li>

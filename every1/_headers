@@ -7,9 +7,19 @@
   Content-Type: application/json; charset=utf-8
   Cache-Control: public, max-age=300, must-revalidate
 
+/brand_check.py
+  Access-Control-Allow-Origin: *
+  Content-Type: text/x-python; charset=utf-8
+  Cache-Control: public, max-age=300, must-revalidate
+
 /assets/logos/*
   Access-Control-Allow-Origin: *
   Cache-Control: public, max-age=0, must-revalidate
+
+/assets/brand.css
+  Access-Control-Allow-Origin: *
+  Content-Type: text/css; charset=utf-8
+  Cache-Control: public, max-age=300, must-revalidate
 
 /assets/fonts/*
   Access-Control-Allow-Origin: *

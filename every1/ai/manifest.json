@@ -1,6 +1,6 @@
 {
-  "version": "7.5",
-  "updated": "2026-08-20",
+  "version": "7.6",
+  "updated": "2026-08-22",
   "authority": "canonical",
   "name": "EVERY1 Movement",
   "home": "https://brand.every1movement.com/",
@@ -17,6 +17,11 @@
       "primary": true,
       "aspect": 11.0908,
       "clearSpace": "0.5x the cap height of EVERY1 on all four sides",
+      "clearSpaceReference": "the cap height of EVERY1",
+      "clearSpaceRatio": 0.5,
+      "capHeight": 29.39,
+      "clearSpaceUnits": 14.7,
+      "clearSpaceNote": "capHeight and clearSpaceUnits are in the units of this mark's own SVG viewBox. To apply at any rendered size, scale by renderedWidth / viewBox width, which the SVG declares.",
       "minimumWidth": {
         "screen": "200px",
         "print": "45mm"
@@ -25,89 +30,119 @@
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-horizontal.svg",
           "format": "svg",
-          "ink": "Two-tone, Midnight and Flame"
+          "ink": "Two-tone, Midnight and Flame",
+          "bytes": 5386,
+          "sha256": "67614a1fcd04a19a344d955c056ec172e2605924ef0d113562eb2094c3fdb74b"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-horizontal-400.png",
           "format": "png",
           "ink": "Two-tone, Midnight and Flame",
-          "width": 400
+          "width": 400,
+          "bytes": 3639,
+          "sha256": "8ef85e2b889bc6e51dfb7eaa681bee09945cff67295e30a390630092428cd196"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-horizontal-800.png",
           "format": "png",
           "ink": "Two-tone, Midnight and Flame",
-          "width": 800
+          "width": 800,
+          "bytes": 6836,
+          "sha256": "cac6b9177a5f4faea3b61895b63647cb19fd5a3dc9fc67cc6e8f0c3937698d55"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-horizontal-1600.png",
           "format": "png",
           "ink": "Two-tone, Midnight and Flame",
-          "width": 1600
+          "width": 1600,
+          "bytes": 14104,
+          "sha256": "df7a032e28c0896de757e0ac857d82750f0c6b53b732b95cd73b5c6000395109"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-horizontal-3200.png",
           "format": "png",
           "ink": "Two-tone, Midnight and Flame",
-          "width": 3200
+          "width": 3200,
+          "bytes": 32249,
+          "sha256": "81943263967fb028336d6fead5b241d18e9454c164178c2d05cb0e4fc36465d9"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-horizontal-reversed.svg",
           "format": "svg",
-          "ink": "Reversed, white and Flame"
+          "ink": "Reversed, white and Flame",
+          "bytes": 5386,
+          "sha256": "dd20202924645f34b409b330c995b92dd0ca5bf412f4bb3576096647a9de37a8"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-horizontal-reversed-400.png",
           "format": "png",
           "ink": "Reversed, white and Flame",
-          "width": 400
+          "width": 400,
+          "bytes": 3120,
+          "sha256": "5ca63f9238fe0b49a2080f81445b82dceac9e793416fcfbfd85356d6effe9f26"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-horizontal-reversed-800.png",
           "format": "png",
           "ink": "Reversed, white and Flame",
-          "width": 800
+          "width": 800,
+          "bytes": 6026,
+          "sha256": "d4d66d5f9bf05d51f5d3338a523ad015b3edf97ec9b9a0f243ef2055438bcbea"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-horizontal-reversed-1600.png",
           "format": "png",
           "ink": "Reversed, white and Flame",
-          "width": 1600
+          "width": 1600,
+          "bytes": 12563,
+          "sha256": "6f73d3c1e20fc618abe4d8f8673ebe0bc8545acb0ddf4864da9554881792a7c4"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-horizontal-reversed-3200.png",
           "format": "png",
           "ink": "Reversed, white and Flame",
-          "width": 3200
+          "width": 3200,
+          "bytes": 28508,
+          "sha256": "c64bb10232303be911285561db4f307974eab037cd42780f3f2e1a9a4a03e096"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-horizontal-black.svg",
           "format": "svg",
-          "ink": "One colour, black"
+          "ink": "One colour, black",
+          "bytes": 5386,
+          "sha256": "848d3f698a1a8903cb5ee2e3e09c11f9b601320c78c985e37d067f3daca7a31a"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-horizontal-black-400.png",
           "format": "png",
           "ink": "One colour, black",
-          "width": 400
+          "width": 400,
+          "bytes": 2326,
+          "sha256": "8474ab3941b9a30e27f6b2b17377d929fccc8dd75b0a1f338b80f1d8aa82fff6"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-horizontal-black-800.png",
           "format": "png",
           "ink": "One colour, black",
-          "width": 800
+          "width": 800,
+          "bytes": 4676,
+          "sha256": "e05a3aa2c0d37fb4fa638ab280584b7bfc140b467cd06977411c9c43917491b5"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-horizontal-black-1600.png",
           "format": "png",
           "ink": "One colour, black",
-          "width": 1600
+          "width": 1600,
+          "bytes": 9849,
+          "sha256": "76a7e230ddfc755a520c4f79d9b25a2e15bf29cfb112179b4c39e0aab26078e6"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-horizontal-black-3200.png",
           "format": "png",
           "ink": "One colour, black",
-          "width": 3200
+          "width": 3200,
+          "bytes": 22401,
+          "sha256": "a6ee26f5b182c60405bbea47e481817a45a8a280b51c28f329977d6470a9fae9"
         }
       ]
     },
@@ -118,6 +153,11 @@
       "primary": false,
       "aspect": 5.4255,
       "clearSpace": "0.5x the cap height of EVERY1 on all four sides",
+      "clearSpaceReference": "the cap height of EVERY1",
+      "clearSpaceRatio": 0.5,
+      "capHeight": 62.52,
+      "clearSpaceUnits": 31.26,
+      "clearSpaceNote": "capHeight and clearSpaceUnits are in the units of this mark's own SVG viewBox. To apply at any rendered size, scale by renderedWidth / viewBox width, which the SVG declares.",
       "minimumWidth": {
         "screen": "140px",
         "print": "32mm"
@@ -126,89 +166,119 @@
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-bare.svg",
           "format": "svg",
-          "ink": "Two-tone, Midnight and Flame"
+          "ink": "Two-tone, Midnight and Flame",
+          "bytes": 2633,
+          "sha256": "e454a73b58f21c3edfc29b38bbc3aa74e450cd51ffd90ad58083e3b84abbdaa0"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-bare-400.png",
           "format": "png",
           "ink": "Two-tone, Midnight and Flame",
-          "width": 400
+          "width": 400,
+          "bytes": 3318,
+          "sha256": "a37d45108593781afe4e645e110b2906a76edaa406fd55719c3701218222c69f"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-bare-800.png",
           "format": "png",
           "ink": "Two-tone, Midnight and Flame",
-          "width": 800
+          "width": 800,
+          "bytes": 6625,
+          "sha256": "aafe2e20023309472b842b61a0595782b9e6c44bd44dc99915f799ceb2ca4768"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-bare-1600.png",
           "format": "png",
           "ink": "Two-tone, Midnight and Flame",
-          "width": 1600
+          "width": 1600,
+          "bytes": 15054,
+          "sha256": "378cb0a38c4fa45b97931a97cb1c8b0fda32d0f1bae4eae0d8e6dcd2c8f4032f"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-bare-3200.png",
           "format": "png",
           "ink": "Two-tone, Midnight and Flame",
-          "width": 3200
+          "width": 3200,
+          "bytes": 36977,
+          "sha256": "3d76991d7cd93bee3229d47fec5ac3d026f89bacc6534436959d3036ef36c983"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-bare-reversed.svg",
           "format": "svg",
-          "ink": "Reversed, white and Flame"
+          "ink": "Reversed, white and Flame",
+          "bytes": 2633,
+          "sha256": "b00b325a189015fade4d1d393cd4441556a363badefd65ac1e7c01db4b5ffbe2"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-bare-reversed-400.png",
           "format": "png",
           "ink": "Reversed, white and Flame",
-          "width": 400
+          "width": 400,
+          "bytes": 3057,
+          "sha256": "ff1819eb08e24dc5336931b7ce6a57117e23e28716cb45232df311e27a620d20"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-bare-reversed-800.png",
           "format": "png",
           "ink": "Reversed, white and Flame",
-          "width": 800
+          "width": 800,
+          "bytes": 6051,
+          "sha256": "b859453a76be0165d6deb5dfb80185c5dada283650797840727784b0b6e78027"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-bare-reversed-1600.png",
           "format": "png",
           "ink": "Reversed, white and Flame",
-          "width": 1600
+          "width": 1600,
+          "bytes": 13393,
+          "sha256": "203bce8549da3c35ecec38985806b29f1ebe9c371b5998f32cf9979730c4cddd"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-bare-reversed-3200.png",
           "format": "png",
           "ink": "Reversed, white and Flame",
-          "width": 3200
+          "width": 3200,
+          "bytes": 33378,
+          "sha256": "ce31ae095f7697c63d232bc812615a18954dc64bbca41f36edbf6099e5624db3"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-bare-black.svg",
           "format": "svg",
-          "ink": "One colour, black"
+          "ink": "One colour, black",
+          "bytes": 2633,
+          "sha256": "52cf7ff16a7c3fb169c5d5b0f6ea30f0342c2306d187a8b4cccea907ffcc555f"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-bare-black-400.png",
           "format": "png",
           "ink": "One colour, black",
-          "width": 400
+          "width": 400,
+          "bytes": 2308,
+          "sha256": "5a3472c11ac67d34a3b12c794de802d3496c7bac681524e9ed10d438fe073b19"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-bare-black-800.png",
           "format": "png",
           "ink": "One colour, black",
-          "width": 800
+          "width": 800,
+          "bytes": 4744,
+          "sha256": "0bcbe531c62c73453a9a5b91ba064256ee4e3521cb86b88ab6bbabaca3f8398d"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-bare-black-1600.png",
           "format": "png",
           "ink": "One colour, black",
-          "width": 1600
+          "width": 1600,
+          "bytes": 10917,
+          "sha256": "773577202c2c5785d2157605898686e65a5ecdac055f7196f2cd5ae70b7c0fbb"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-bare-black-3200.png",
           "format": "png",
           "ink": "One colour, black",
-          "width": 3200
+          "width": 3200,
+          "bytes": 26216,
+          "sha256": "9f366480e82e97173deab8b5047947329cd924136a8812ced6512d2b4bf46b0d"
         }
       ]
     },
@@ -219,6 +289,11 @@
       "primary": false,
       "aspect": 1.4559,
       "clearSpace": "0.35x the cap height of EVERY1 on all four sides",
+      "clearSpaceReference": "the cap height of EVERY1",
+      "clearSpaceRatio": 0.35,
+      "capHeight": 209.21,
+      "clearSpaceUnits": 73.22,
+      "clearSpaceNote": "capHeight and clearSpaceUnits are in the units of this mark's own SVG viewBox. To apply at any rendered size, scale by renderedWidth / viewBox width, which the SVG declares.",
       "minimumWidth": {
         "screen": "32px",
         "print": "10mm"
@@ -227,89 +302,119 @@
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-e1.svg",
           "format": "svg",
-          "ink": "Two-tone, Midnight and Flame"
+          "ink": "Two-tone, Midnight and Flame",
+          "bytes": 1131,
+          "sha256": "5490e945edb8a74d2a45658b343a639be50b6405d718c12b4f75f75c6015b4c0"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-e1-400.png",
           "format": "png",
           "ink": "Two-tone, Midnight and Flame",
-          "width": 400
+          "width": 400,
+          "bytes": 1702,
+          "sha256": "15cd5b21b915422bd9f593a2fa970d7a09a3051eb30511da507ae05ae9a09d61"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-e1-800.png",
           "format": "png",
           "ink": "Two-tone, Midnight and Flame",
-          "width": 800
+          "width": 800,
+          "bytes": 4022,
+          "sha256": "80f2054f12e59486c0b6ed2b47288d1eef07d6464979f2d8dd2c841fc7721891"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-e1-1600.png",
           "format": "png",
           "ink": "Two-tone, Midnight and Flame",
-          "width": 1600
+          "width": 1600,
+          "bytes": 11926,
+          "sha256": "ea4e7214d085581319ed8bb2b0aa47d4d2d9864cf15d6d2daa8ae1197e9c08c8"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-e1-3200.png",
           "format": "png",
           "ink": "Two-tone, Midnight and Flame",
-          "width": 3200
+          "width": 3200,
+          "bytes": 37544,
+          "sha256": "5dc9ddb0b489d55439488f37512f9b7c097716b5fd1a9ca4b1d8a6b3e80be34a"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-e1-reversed.svg",
           "format": "svg",
-          "ink": "Reversed, white and Flame"
+          "ink": "Reversed, white and Flame",
+          "bytes": 1131,
+          "sha256": "908d23aa3a88192edeaf91c7cf29eaf303241c13f324cd4d286c02f79f05fd69"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-e1-reversed-400.png",
           "format": "png",
           "ink": "Reversed, white and Flame",
-          "width": 400
+          "width": 400,
+          "bytes": 1676,
+          "sha256": "4b6fd983534deb1c1e828bb42fc64a02cfe5ebc4498d12644e94b1c143d9a0ba"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-e1-reversed-800.png",
           "format": "png",
           "ink": "Reversed, white and Flame",
-          "width": 800
+          "width": 800,
+          "bytes": 4014,
+          "sha256": "a1f4eb2b6b158c08d2ea8447eb05e32264ab8b93ff83c6a44b99bc18efd9c458"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-e1-reversed-1600.png",
           "format": "png",
           "ink": "Reversed, white and Flame",
-          "width": 1600
+          "width": 1600,
+          "bytes": 11892,
+          "sha256": "43ed6618a0211601e35a11b7b63722c0ab4ba5e4f0d77d33b10d0b675784e5d9"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-e1-reversed-3200.png",
           "format": "png",
           "ink": "Reversed, white and Flame",
-          "width": 3200
+          "width": 3200,
+          "bytes": 37515,
+          "sha256": "e877c6edae43ceb77e4c4f13b3d1c1137303fdada631b08b2859b45245c5ccdf"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-e1-black.svg",
           "format": "svg",
-          "ink": "One colour, black"
+          "ink": "One colour, black",
+          "bytes": 1131,
+          "sha256": "8cf2ef4b548289742e917a8f3945ff9eadb18d6cda7883139360f7e342d4c95c"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-e1-black-400.png",
           "format": "png",
           "ink": "One colour, black",
-          "width": 400
+          "width": 400,
+          "bytes": 1424,
+          "sha256": "7c372bde7fe5da0954a01dbc5126139277128b4241217695743adae732af923c"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-e1-black-800.png",
           "format": "png",
           "ink": "One colour, black",
-          "width": 800
+          "width": 800,
+          "bytes": 3567,
+          "sha256": "f34f591376f43aa50e7a1803cdfcfd2c5415d54b9bcb9389fcee754f38efd970"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-e1-black-1600.png",
           "format": "png",
           "ink": "One colour, black",
-          "width": 1600
+          "width": 1600,
+          "bytes": 10990,
+          "sha256": "fa4548f092c00c7785e16ee5ee2d2358f57b1d18ba760cb35861740b17afaefe"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-e1-black-3200.png",
           "format": "png",
           "ink": "One colour, black",
-          "width": 3200
+          "width": 3200,
+          "bytes": 35882,
+          "sha256": "c10afa50b74c461961cb9578fa2782044b2a402050eefc370abff9f793f9c537"
         }
       ]
     },
@@ -320,6 +425,11 @@
       "primary": false,
       "aspect": 0.6432,
       "clearSpace": "0.35x its own height on all four sides",
+      "clearSpaceReference": "its own height",
+      "clearSpaceRatio": 0.35,
+      "capHeight": 339.93,
+      "clearSpaceUnits": 118.98,
+      "clearSpaceNote": "capHeight and clearSpaceUnits are in the units of this mark's own SVG viewBox. To apply at any rendered size, scale by renderedWidth / viewBox width, which the SVG declares.",
       "minimumWidth": {
         "screen": "24px",
         "print": "8mm"
@@ -328,89 +438,119 @@
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-numeral.svg",
           "format": "svg",
-          "ink": "Two-tone, Midnight and Flame"
+          "ink": "Two-tone, Midnight and Flame",
+          "bytes": 744,
+          "sha256": "fd689f6fe31970880747d2b1c503df1285fa6cb62584bbecf097fc3cc1c89a61"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-numeral-400.png",
           "format": "png",
           "ink": "Two-tone, Midnight and Flame",
-          "width": 400
+          "width": 400,
+          "bytes": 3319,
+          "sha256": "46a3f6698ea76f3f09003648b08f8c82f61e4fd515d06f41877b20bee8d9a4fb"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-numeral-800.png",
           "format": "png",
           "ink": "Two-tone, Midnight and Flame",
-          "width": 800
+          "width": 800,
+          "bytes": 8658,
+          "sha256": "e28c4d3d2446cb02023ae2363c0ff586fa012166f20b960f788836ba7b4ab369"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-numeral-1600.png",
           "format": "png",
           "ink": "Two-tone, Midnight and Flame",
-          "width": 1600
+          "width": 1600,
+          "bytes": 26638,
+          "sha256": "29a7c3c6857321688ababeb6ff47a0a7fe8b677d1a5cb07f692dd29a34e4ba07"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-numeral-3200.png",
           "format": "png",
           "ink": "Two-tone, Midnight and Flame",
-          "width": 3200
+          "width": 3200,
+          "bytes": 84338,
+          "sha256": "92ddc33622e8422b0ed1211def98632b423e4cd821e69bf11a8784c2577e46a2"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-numeral-reversed.svg",
           "format": "svg",
-          "ink": "Reversed, white and Flame"
+          "ink": "Reversed, white and Flame",
+          "bytes": 744,
+          "sha256": "fd689f6fe31970880747d2b1c503df1285fa6cb62584bbecf097fc3cc1c89a61"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-numeral-reversed-400.png",
           "format": "png",
           "ink": "Reversed, white and Flame",
-          "width": 400
+          "width": 400,
+          "bytes": 3319,
+          "sha256": "46a3f6698ea76f3f09003648b08f8c82f61e4fd515d06f41877b20bee8d9a4fb"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-numeral-reversed-800.png",
           "format": "png",
           "ink": "Reversed, white and Flame",
-          "width": 800
+          "width": 800,
+          "bytes": 8658,
+          "sha256": "e28c4d3d2446cb02023ae2363c0ff586fa012166f20b960f788836ba7b4ab369"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-numeral-reversed-1600.png",
           "format": "png",
           "ink": "Reversed, white and Flame",
-          "width": 1600
+          "width": 1600,
+          "bytes": 26638,
+          "sha256": "29a7c3c6857321688ababeb6ff47a0a7fe8b677d1a5cb07f692dd29a34e4ba07"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-numeral-reversed-3200.png",
           "format": "png",
           "ink": "Reversed, white and Flame",
-          "width": 3200
+          "width": 3200,
+          "bytes": 84338,
+          "sha256": "92ddc33622e8422b0ed1211def98632b423e4cd821e69bf11a8784c2577e46a2"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-numeral-black.svg",
           "format": "svg",
-          "ink": "One colour, black"
+          "ink": "One colour, black",
+          "bytes": 744,
+          "sha256": "ba4584b713175a108c6e709078d7051028e10f579ca3cf8ffe6947dc2db84bd8"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-numeral-black-400.png",
           "format": "png",
           "ink": "One colour, black",
-          "width": 400
+          "width": 400,
+          "bytes": 2893,
+          "sha256": "5d8aa9d6c7e8559e33f3b8cdbccf2fdd27dc876d49234d348a75dd67f7879ca9"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-numeral-black-800.png",
           "format": "png",
           "ink": "One colour, black",
-          "width": 800
+          "width": 800,
+          "bytes": 7792,
+          "sha256": "2c61032160877cf289852dbea8c47ec2873298f8074318622476062aade4aee1"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-numeral-black-1600.png",
           "format": "png",
           "ink": "One colour, black",
-          "width": 1600
+          "width": 1600,
+          "bytes": 24791,
+          "sha256": "a0ba9b4130637dfec5d89c0a0ab92ed61766a351da962eb9042e03fdf2dad1f7"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-numeral-black-3200.png",
           "format": "png",
           "ink": "One colour, black",
-          "width": 3200
+          "width": 3200,
+          "bytes": 80864,
+          "sha256": "8e3812147927116f1c3e97329685c41976d64f26e78e6aa7772693bc6a70c910"
         }
       ]
     },
@@ -421,6 +561,11 @@
       "primary": false,
       "aspect": 3.3317,
       "clearSpace": "0.5x the cap height of EVERY1 on all four sides",
+      "clearSpaceReference": "the cap height of EVERY1",
+      "clearSpaceRatio": 0.5,
+      "capHeight": 102.61,
+      "clearSpaceUnits": 51.3,
+      "clearSpaceNote": "capHeight and clearSpaceUnits are in the units of this mark's own SVG viewBox. To apply at any rendered size, scale by renderedWidth / viewBox width, which the SVG declares.",
       "minimumWidth": {
         "screen": "260px",
         "print": "58mm"
@@ -429,89 +574,119 @@
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-vision.svg",
           "format": "svg",
-          "ink": "Two-tone, Midnight and Flame"
+          "ink": "Two-tone, Midnight and Flame",
+          "bytes": 31355,
+          "sha256": "d223a6689994ce8a9339d2648240c222ccc87c48bf9177da7c5c1cbbe120039d"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-vision-400.png",
           "format": "png",
           "ink": "Two-tone, Midnight and Flame",
-          "width": 400
+          "width": 400,
+          "bytes": 10010,
+          "sha256": "28b6ada8a769f7492ac3e4a2ded73a381b66a343a550b951434af7479511fe0f"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-vision-800.png",
           "format": "png",
           "ink": "Two-tone, Midnight and Flame",
-          "width": 800
+          "width": 800,
+          "bytes": 18735,
+          "sha256": "56c15c551fb08886019a2689e9e97e6d4d9ef0a2afa4f6dd2a3d5f20ca156aee"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-vision-1600.png",
           "format": "png",
           "ink": "Two-tone, Midnight and Flame",
-          "width": 1600
+          "width": 1600,
+          "bytes": 41335,
+          "sha256": "565eecc56aa2c6e4fc875972f0e119d5221840c8e61fbb5dc60e6fab8f9aa2a1"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-vision-3200.png",
           "format": "png",
           "ink": "Two-tone, Midnight and Flame",
-          "width": 3200
+          "width": 3200,
+          "bytes": 93248,
+          "sha256": "fd05cf66170a698556fb1dc4c7b3652370e5931bba3456abd60487673577660d"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-vision-reversed.svg",
           "format": "svg",
-          "ink": "Reversed, white and Flame"
+          "ink": "Reversed, white and Flame",
+          "bytes": 31355,
+          "sha256": "612f74af20c9ce2aa6fe73bd705c1b8c33737957457e1e621ab7a2a5abb7a71e"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-vision-reversed-400.png",
           "format": "png",
           "ink": "Reversed, white and Flame",
-          "width": 400
+          "width": 400,
+          "bytes": 8376,
+          "sha256": "90db722f99143df931769cf66db5696c25a4ed6891dde1f53b1fb4232ab22efb"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-vision-reversed-800.png",
           "format": "png",
           "ink": "Reversed, white and Flame",
-          "width": 800
+          "width": 800,
+          "bytes": 16350,
+          "sha256": "5cc962e8a655956f463e176c555c58e4cc3c52e450da9667c3c2d248040d2dea"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-vision-reversed-1600.png",
           "format": "png",
           "ink": "Reversed, white and Flame",
-          "width": 1600
+          "width": 1600,
+          "bytes": 36546,
+          "sha256": "cd5975fa6f0239b3fbb09ccb7f8f5af9db955e1b871bc4bcd60b7abb4b123e7f"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-vision-reversed-3200.png",
           "format": "png",
           "ink": "Reversed, white and Flame",
-          "width": 3200
+          "width": 3200,
+          "bytes": 83256,
+          "sha256": "26c47170d72d761ff4f6a5457d8aa0d43faa239e4ff88b9b0da405a731668793"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-vision-black.svg",
           "format": "svg",
-          "ink": "One colour, black"
+          "ink": "One colour, black",
+          "bytes": 31355,
+          "sha256": "e6b997e57059fa3440274009e1bb0ebc5d5153e6098f6ad948d2b61d42f893c4"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-vision-black-400.png",
           "format": "png",
           "ink": "One colour, black",
-          "width": 400
+          "width": 400,
+          "bytes": 6394,
+          "sha256": "56010755a8d1001c0dc368192f5f8633c22b36e0ab6d57665f23595e6a7a84cd"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-vision-black-800.png",
           "format": "png",
           "ink": "One colour, black",
-          "width": 800
+          "width": 800,
+          "bytes": 12866,
+          "sha256": "5d31e29e3e307fcc78d07be14a9a2ceecaedee4a0ca5f592c5717637201cd715"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-vision-black-1600.png",
           "format": "png",
           "ink": "One colour, black",
-          "width": 1600
+          "width": 1600,
+          "bytes": 29127,
+          "sha256": "879f3be5fd533e0bd5f4d3829cbf304519c0368aace482b8d31c5c2b4ac34b12"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-vision-black-3200.png",
           "format": "png",
           "ink": "One colour, black",
-          "width": 3200
+          "width": 3200,
+          "bytes": 66318,
+          "sha256": "eaf8143b7bb3e81575b011adb8ace741182dc93250d16495e3f40c7ed769c69a"
         }
       ]
     },
@@ -522,6 +697,11 @@
       "primary": false,
       "aspect": 4.0798,
       "clearSpace": "0.5x the cap height of EVERY1 on all four sides",
+      "clearSpaceReference": "the cap height of EVERY1",
+      "clearSpaceRatio": 0.5,
+      "capHeight": 83.89,
+      "clearSpaceUnits": 41.95,
+      "clearSpaceNote": "capHeight and clearSpaceUnits are in the units of this mark's own SVG viewBox. To apply at any rendered size, scale by renderedWidth / viewBox width, which the SVG declares.",
       "minimumWidth": {
         "screen": "200px",
         "print": "45mm"
@@ -530,89 +710,119 @@
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-promise.svg",
           "format": "svg",
-          "ink": "Two-tone, Midnight and Flame"
+          "ink": "Two-tone, Midnight and Flame",
+          "bytes": 14727,
+          "sha256": "7240b332859fcfafb00e492bb4ac9cc615073b7b631e2cfe76980229764850d5"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-promise-400.png",
           "format": "png",
           "ink": "Two-tone, Midnight and Flame",
-          "width": 400
+          "width": 400,
+          "bytes": 6921,
+          "sha256": "f93a0d3cb90329c00d91c44eeb4e1318f96e7ad6a8ef4d5222d1f2ec7279b656"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-promise-800.png",
           "format": "png",
           "ink": "Two-tone, Midnight and Flame",
-          "width": 800
+          "width": 800,
+          "bytes": 13743,
+          "sha256": "116f9344ecf6dd4eef2e3fc761b5551b6d0916fc21ebc7fd784c639f90e094ce"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-promise-1600.png",
           "format": "png",
           "ink": "Two-tone, Midnight and Flame",
-          "width": 1600
+          "width": 1600,
+          "bytes": 30175,
+          "sha256": "f08b381736711eeb2abb5350bf84616acf67d3fba11d546eef8986c55d20340e"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-promise-3200.png",
           "format": "png",
           "ink": "Two-tone, Midnight and Flame",
-          "width": 3200
+          "width": 3200,
+          "bytes": 68037,
+          "sha256": "83cfa706b8944365d741aa8e1a4f6a13b4370549f4fc2810300a6fee2762663f"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-promise-reversed.svg",
           "format": "svg",
-          "ink": "Reversed, white and Flame"
+          "ink": "Reversed, white and Flame",
+          "bytes": 14727,
+          "sha256": "8c6d8491f4289b1a2fdd34a17c08613b852d09d5a087488f8f560151d6e44516"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-promise-reversed-400.png",
           "format": "png",
           "ink": "Reversed, white and Flame",
-          "width": 400
+          "width": 400,
+          "bytes": 6000,
+          "sha256": "90ae9b6d95b1719b3d73cbea50d7022560163569f1c9472455bf44d070026352"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-promise-reversed-800.png",
           "format": "png",
           "ink": "Reversed, white and Flame",
-          "width": 800
+          "width": 800,
+          "bytes": 12065,
+          "sha256": "af1406783cb9777929bf57e309c617968c657ce637417e02c5a793c9c5a5e85f"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-promise-reversed-1600.png",
           "format": "png",
           "ink": "Reversed, white and Flame",
-          "width": 1600
+          "width": 1600,
+          "bytes": 26420,
+          "sha256": "ba035268c4c01c16647b847c7b7a4dd5b2a4024d48f8f2eb5d3e248194092157"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-promise-reversed-3200.png",
           "format": "png",
           "ink": "Reversed, white and Flame",
-          "width": 3200
+          "width": 3200,
+          "bytes": 60551,
+          "sha256": "766051a05ed1d2ae61285b7ff5938e1dd42b1a1f4df9eebb8267d8159b383370"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-promise-black.svg",
           "format": "svg",
-          "ink": "One colour, black"
+          "ink": "One colour, black",
+          "bytes": 14727,
+          "sha256": "5fe5357bd12fb2acffa5eeb37cc638820a8138f964cbb7e08b51febc47c4d796"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-promise-black-400.png",
           "format": "png",
           "ink": "One colour, black",
-          "width": 400
+          "width": 400,
+          "bytes": 4565,
+          "sha256": "c3ebb0eb0913a35f7828c4685e7ab55687c88a3a9c60d0a41e676979180954fd"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-promise-black-800.png",
           "format": "png",
           "ink": "One colour, black",
-          "width": 800
+          "width": 800,
+          "bytes": 9455,
+          "sha256": "2f021e08ed320d591ec7b05cdb60afdabf0b3926916a6b1ef4977e202a226e68"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-promise-black-1600.png",
           "format": "png",
           "ink": "One colour, black",
-          "width": 1600
+          "width": 1600,
+          "bytes": 21160,
+          "sha256": "a4bd2b9409fe16ea6b97b844694eb660ffd774f8f8340220682b0520ba4ded1d"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-promise-black-3200.png",
           "format": "png",
           "ink": "One colour, black",
-          "width": 3200
+          "width": 3200,
+          "bytes": 47655,
+          "sha256": "a0d0036152d5254dd59661cccdce29f082cfa1ee6fe9ff4fe99e0b029d9df552"
         }
       ]
     },
@@ -623,6 +833,11 @@
       "primary": false,
       "aspect": 2.6143,
       "clearSpace": "0.5x the cap height of EVERY1 on all four sides",
+      "clearSpaceReference": "the cap height of EVERY1",
+      "clearSpaceRatio": 0.5,
+      "capHeight": 62.52,
+      "clearSpaceUnits": 31.26,
+      "clearSpaceNote": "capHeight and clearSpaceUnits are in the units of this mark's own SVG viewBox. To apply at any rendered size, scale by renderedWidth / viewBox width, which the SVG declares.",
       "minimumWidth": {
         "screen": "180px",
         "print": "40mm"
@@ -631,89 +846,119 @@
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-usa.svg",
           "format": "svg",
-          "ink": "Two-tone, Midnight and Flame"
+          "ink": "Two-tone, Midnight and Flame",
+          "bytes": 8481,
+          "sha256": "ddeb0a869733ce1b0d8cc2437f950d6d432b462923f3e95638da7d92e861c654"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-usa-400.png",
           "format": "png",
           "ink": "Two-tone, Midnight and Flame",
-          "width": 400
+          "width": 400,
+          "bytes": 6478,
+          "sha256": "307bfe41be01ebf2ed2b3c42eb42bccb4b469dc19bc9aeb8535c744b4ef685b1"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-usa-800.png",
           "format": "png",
           "ink": "Two-tone, Midnight and Flame",
-          "width": 800
+          "width": 800,
+          "bytes": 12785,
+          "sha256": "523fc0b4430557abb71ce117c9d09eccc86f10667e14e59acde1b87594024769"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-usa-1600.png",
           "format": "png",
           "ink": "Two-tone, Midnight and Flame",
-          "width": 1600
+          "width": 1600,
+          "bytes": 28005,
+          "sha256": "4de9d6f7c4a83d358d96250a92b4118beb958b7c5a43ca0954cb8abfd7005edc"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-usa-3200.png",
           "format": "png",
           "ink": "Two-tone, Midnight and Flame",
-          "width": 3200
+          "width": 3200,
+          "bytes": 68387,
+          "sha256": "bfe420be72a37bd766322798edacdfe7bf70893f62ea19384cf4f0f5de1f40d9"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-usa-reversed.svg",
           "format": "svg",
-          "ink": "Reversed, white and Flame"
+          "ink": "Reversed, white and Flame",
+          "bytes": 8481,
+          "sha256": "5501d5f4b453234fe140c50ab2549238d1eda81daacb64cf6687d69908ee3b67"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-usa-reversed-400.png",
           "format": "png",
           "ink": "Reversed, white and Flame",
-          "width": 400
+          "width": 400,
+          "bytes": 5733,
+          "sha256": "2d010d654110ea092e6ba3ae56ff92ac249398f7bf460bd77d3885452dbd6c8f"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-usa-reversed-800.png",
           "format": "png",
           "ink": "Reversed, white and Flame",
-          "width": 800
+          "width": 800,
+          "bytes": 11436,
+          "sha256": "08271917634f66d762c4d79e296e814a987e2c1344869a90b1c448f8480eaeaa"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-usa-reversed-1600.png",
           "format": "png",
           "ink": "Reversed, white and Flame",
-          "width": 1600
+          "width": 1600,
+          "bytes": 25147,
+          "sha256": "9341d8b13ca4059155a457d644f67eb7507b1d62082db81c18aa93c0d6717d0a"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-usa-reversed-3200.png",
           "format": "png",
           "ink": "Reversed, white and Flame",
-          "width": 3200
+          "width": 3200,
+          "bytes": 61886,
+          "sha256": "87fc1de06906c7069430a40db6b9ee59592d3247a084f5ec5943e4c5b376482c"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-usa-black.svg",
           "format": "svg",
-          "ink": "One colour, black"
+          "ink": "One colour, black",
+          "bytes": 8481,
+          "sha256": "99a94893200445ecb5080039a6ab4d2d7e6287016852680da97a8f5b69003081"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-usa-black-400.png",
           "format": "png",
           "ink": "One colour, black",
-          "width": 400
+          "width": 400,
+          "bytes": 4328,
+          "sha256": "a8566a749870d491a20b88c60b04e5843a97f51d7e388de1524114d9feb51176"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-usa-black-800.png",
           "format": "png",
           "ink": "One colour, black",
-          "width": 800
+          "width": 800,
+          "bytes": 8892,
+          "sha256": "6389e63e390e12d29dcaf0d7859c660afca14284ed47c2c2d595d2bf779960ce"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-usa-black-1600.png",
           "format": "png",
           "ink": "One colour, black",
-          "width": 1600
+          "width": 1600,
+          "bytes": 20406,
+          "sha256": "6c4f7dedbf0c7efff155373f8dba60cb9ef550ca3f23f26dd3dd13eae30926d0"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-usa-black-3200.png",
           "format": "png",
           "ink": "One colour, black",
-          "width": 3200
+          "width": 3200,
+          "bytes": 49773,
+          "sha256": "420404c833a016dd32d94ffbabb68c7691c41dee690ed02163a9f5bb6013e009"
         }
       ]
     },
@@ -724,6 +969,11 @@
       "primary": false,
       "aspect": 2.6143,
       "clearSpace": "0.5x the cap height of EVERY1 on all four sides",
+      "clearSpaceReference": "the cap height of EVERY1",
+      "clearSpaceRatio": 0.5,
+      "capHeight": 62.52,
+      "clearSpaceUnits": 31.26,
+      "clearSpaceNote": "capHeight and clearSpaceUnits are in the units of this mark's own SVG viewBox. To apply at any rendered size, scale by renderedWidth / viewBox width, which the SVG declares.",
       "minimumWidth": {
         "screen": "180px",
         "print": "40mm"
@@ -732,93 +982,205 @@
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-uganda.svg",
           "format": "svg",
-          "ink": "Two-tone, Midnight and Flame"
+          "ink": "Two-tone, Midnight and Flame",
+          "bytes": 9455,
+          "sha256": "e9a5656b8f15d979a8b7c6444520e76cf9702e8838a9003fa6e28ee9e46c3c91"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-uganda-400.png",
           "format": "png",
           "ink": "Two-tone, Midnight and Flame",
-          "width": 400
+          "width": 400,
+          "bytes": 7029,
+          "sha256": "bd4b8cb39dfd381846625926a34a16a737c74f61e437303585e5e9f96d30319e"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-uganda-800.png",
           "format": "png",
           "ink": "Two-tone, Midnight and Flame",
-          "width": 800
+          "width": 800,
+          "bytes": 13938,
+          "sha256": "a58bfeaf46e890e53727ae60464d7fed3f458b844ca62b0f6bbff0f8f5ba8ab8"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-uganda-1600.png",
           "format": "png",
           "ink": "Two-tone, Midnight and Flame",
-          "width": 1600
+          "width": 1600,
+          "bytes": 29876,
+          "sha256": "8719122ef4f1e1ef112d6f122f094ed0c1c7bc0685b863da5411a538d61c69af"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-uganda-3200.png",
           "format": "png",
           "ink": "Two-tone, Midnight and Flame",
-          "width": 3200
+          "width": 3200,
+          "bytes": 72330,
+          "sha256": "0158822841c41c73968d1fba4325800fb3b899746147cf39fcfb4182f868312f"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-uganda-reversed.svg",
           "format": "svg",
-          "ink": "Reversed, white and Flame"
+          "ink": "Reversed, white and Flame",
+          "bytes": 9455,
+          "sha256": "f476f8978690d02c85e6284e2c13f5d779a7fd820f3d27d027fdc82828c9c5f6"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-uganda-reversed-400.png",
           "format": "png",
           "ink": "Reversed, white and Flame",
-          "width": 400
+          "width": 400,
+          "bytes": 6125,
+          "sha256": "2a17c62ec4327627f641128a1bff772abaa147dbca49ba20b055ed3adc0af291"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-uganda-reversed-800.png",
           "format": "png",
           "ink": "Reversed, white and Flame",
-          "width": 800
+          "width": 800,
+          "bytes": 12376,
+          "sha256": "ffe1e71c2d43a7f51c6b8891a576ba9abcf2de2b04646a0d989068c3fdbdc808"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-uganda-reversed-1600.png",
           "format": "png",
           "ink": "Reversed, white and Flame",
-          "width": 1600
+          "width": 1600,
+          "bytes": 26753,
+          "sha256": "75702e5c2099d0afad9a0b577180228f21a4f4ff5e27b2e4c91f5d2b95f8ed0d"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-uganda-reversed-3200.png",
           "format": "png",
           "ink": "Reversed, white and Flame",
-          "width": 3200
+          "width": 3200,
+          "bytes": 65170,
+          "sha256": "f964532d3d4f6f60b357f0c73c4005fa9dfcfaf8c212efc8d54515740d5ead27"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-uganda-black.svg",
           "format": "svg",
-          "ink": "One colour, black"
+          "ink": "One colour, black",
+          "bytes": 9455,
+          "sha256": "8820bf2c5dad624f0f6e57b88f7d538f76a8a615032d1977c5de1f84d1655661"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-uganda-black-400.png",
           "format": "png",
           "ink": "One colour, black",
-          "width": 400
+          "width": 400,
+          "bytes": 4673,
+          "sha256": "4ab489080cd8a26a9e239081293bdb7c4550e57c0225596bd8222d6335402cc1"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-uganda-black-800.png",
           "format": "png",
           "ink": "One colour, black",
-          "width": 800
+          "width": 800,
+          "bytes": 9707,
+          "sha256": "8dcf0e09b14b3298c9a56fc244739caeb280783e3a3bce4650ec3337ea87aa5a"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-uganda-black-1600.png",
           "format": "png",
           "ink": "One colour, black",
-          "width": 1600
+          "width": 1600,
+          "bytes": 21772,
+          "sha256": "2b2445854a4909f3a96f9bf7a03b72cac04450ccac9fe6051b7cac4c69b2f190"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-uganda-black-3200.png",
           "format": "png",
           "ink": "One colour, black",
-          "width": 3200
+          "width": 3200,
+          "bytes": 52787,
+          "sha256": "e6413974378804fe72b1c26fd56c556c76e9799ee0e1a3255f1f37103205e1fb"
         }
       ]
     }
   ],
+  "appIcon": {
+    "mark": "e1",
+    "ruling": "The E1 icon is the app icon and the avatar on every surface: the mobile launcher, the installable web app, the favicon, and every social profile. It is two characters and reads as EVERY1 at a glance on a home screen.",
+    "sameEverywhere": true,
+    "ground": "midnight",
+    "groundRule": "App icons are opaque and the platform rounds their corners, so the E1 icon sits reversed on a Midnight plate rather than transparent. Never Flame: a logo on Flame is the first of the five things that are never done.",
+    "numeral": "The numeral is not the app icon. It is the shape photography is masked into and a display mark at small size, which is a different job.",
+    "safeZone": "Android crops to an arbitrary shape and guarantees only the inner circle at 66% diameter. The maskable file is padded so the whole mark sits inside it.",
+    "noSixteen": "No 16px icon is published. The E1 icon's minimum width is 32px and a 16px file would breach it. Browsers downscale the 32 themselves, and the SVG is offered first.",
+    "files": [
+      {
+        "url": "https://brand.every1movement.com/assets/logos/every1-favicon-32.png",
+        "format": "png",
+        "purpose": "app icon and favicon, opaque Midnight ground",
+        "width": 32,
+        "height": 32,
+        "bytes": 434,
+        "sha256": "c30fe1d8107ec9091b4e387202f2515d52d8978a3201ee19dfd5c5369b56fcc1"
+      },
+      {
+        "url": "https://brand.every1movement.com/assets/logos/every1-favicon-48.png",
+        "format": "png",
+        "purpose": "app icon and favicon, opaque Midnight ground",
+        "width": 48,
+        "height": 48,
+        "bytes": 516,
+        "sha256": "d090d4cb97c5d544505cad397e0ca33391023cfa851e14093c52077a24d00a41"
+      },
+      {
+        "url": "https://brand.every1movement.com/assets/logos/every1-apple-touch-icon-180.png",
+        "format": "png",
+        "purpose": "app icon and favicon, opaque Midnight ground",
+        "width": 180,
+        "height": 180,
+        "bytes": 902,
+        "sha256": "4071e4c3543548cf8d47ab071421ccaf0bee3b18ed547ca0d4333fee3401fbe9"
+      },
+      {
+        "url": "https://brand.every1movement.com/assets/logos/every1-icon-192.png",
+        "format": "png",
+        "purpose": "app icon and favicon, opaque Midnight ground",
+        "width": 192,
+        "height": 192,
+        "bytes": 873,
+        "sha256": "75b4bdb2bc378da11833ce3998e7901a120e3d19f4f80a28945a2abe17eb3b6b"
+      },
+      {
+        "url": "https://brand.every1movement.com/assets/logos/every1-icon-512.png",
+        "format": "png",
+        "purpose": "app icon and favicon, opaque Midnight ground",
+        "width": 512,
+        "height": 512,
+        "bytes": 2681,
+        "sha256": "787d8101cb3fefae0f28427411c658144df0d44ee437059ceba6b533822b4b9d"
+      },
+      {
+        "url": "https://brand.every1movement.com/assets/logos/every1-icon-maskable-512.png",
+        "format": "png",
+        "purpose": "Android adaptive icon, mark inside the safe zone",
+        "width": 512,
+        "height": 512,
+        "bytes": 2504,
+        "sha256": "7570688a9fe4f249cc97f8eb0d14d48e2f848cb1c945ba473dc168fe76f9e241"
+      },
+      {
+        "url": "https://brand.every1movement.com/assets/logos/every1-icon-mono-512.png",
+        "format": "png",
+        "purpose": "Android status bar, white silhouette on transparency",
+        "width": 512,
+        "height": 512,
+        "bytes": 2184,
+        "sha256": "9361f7a5f836b86ee9a9c4d691f2a764061719cb8a62cfda21787fa71a1aa641"
+      },
+      {
+        "url": "https://brand.every1movement.com/assets/logos/every1-e1-reversed.svg",
+        "format": "svg",
+        "purpose": "the vector favicon, which a browser prefers to any raster",
+        "bytes": 1131,
+        "sha256": "908d23aa3a88192edeaf91c7cf29eaf303241c13f324cd4d286c02f79f05fd69"
+      }
+    ]
+  },
   "color": {
     "midnight": {
       "name": "Midnight",
@@ -841,7 +1203,7 @@
     "flame": {
       "name": "Flame",
       "hex": "#F85842",
-      "role": "Non-text accent: BURN moments, display numerals, highlights. Never carries text. ≤10%.",
+      "role": "Non-text accent on light grounds: BURN moments, display numerals, highlights. Never carries text on Parchment or White. ≤10%. On Midnight it is the text accent, because Ember is 3.25:1 there and fails: see accent-on-dark.",
       "cssVar": "--flame"
     },
     "ember": {
@@ -880,6 +1242,1152 @@
     "source": "Google Fonts, free for every volunteer, partner, and field team",
     "retired": "Proxima Nova, fully retired. Fallbacks: Georgia for the serifs, system sans for DM Sans."
   },
+  "theme": {
+    "_README": "This system is dual-theme and always was. Light is Parchment, dark is Midnight. Nothing here is a new colour: every value is a token already published above, collected into the pair an application switches between.",
+    "light": {
+      "ground": "parchment",
+      "raisedSurface": "white",
+      "text": "ink",
+      "textMuted": "ink-muted",
+      "textSoft": "ink-soft",
+      "accent": "ember",
+      "accentHover": "button-hover",
+      "rule": "rule",
+      "wash": "wash",
+      "success": "success-state",
+      "error": "error-state",
+      "warning": "warning-state",
+      "focusRing": "ember"
+    },
+    "dark": {
+      "ground": "midnight",
+      "raisedSurface": "surface-on-dark",
+      "text": "ink-reversed",
+      "textMuted": "ink-reversed-muted",
+      "textSoft": "ink-reversed-soft",
+      "accent": "accent-on-dark",
+      "accentHover": "flame",
+      "rule": "rule-light",
+      "wash": "wash-light",
+      "success": "success-on-dark",
+      "error": "error-on-dark",
+      "warning": "warning-on-dark",
+      "focusRing": "accent-on-dark"
+    },
+    "derivation": "There is no rule for deriving a dark value from a light one, and there should not be: every dark value here was chosen against a measured ratio on Midnight and on surface-on-dark, not lightened by a formula. Read the values."
+  },
+  "neutral": {
+    "ink": {
+      "value": "#0B1A2D",
+      "ground": "light",
+      "use": "Body text and headings on Parchment or White."
+    },
+    "ink-muted": {
+      "value": "rgba(11,26,45,.80)",
+      "ground": "light",
+      "use": "Captions, metadata, datelines. Nothing lighter carries text."
+    },
+    "ink-soft": {
+      "value": "rgba(11,26,45,.60)",
+      "ground": "light",
+      "use": "Placeholder text and inactive labels. Never body copy."
+    },
+    "ink-faint": {
+      "value": "rgba(11,26,45,.38)",
+      "ground": "light",
+      "use": "Disabled controls only, where low contrast is the message."
+    },
+    "rule": {
+      "value": "rgba(11,26,45,.18)",
+      "ground": "light",
+      "use": "The hairline. Card borders, table rules, dividers."
+    },
+    "rule-soft": {
+      "value": "rgba(11,26,45,.10)",
+      "ground": "light",
+      "use": "Secondary dividers and row separators inside a table."
+    },
+    "wash": {
+      "value": "rgba(11,26,45,.05)",
+      "ground": "light",
+      "use": "Input fills, code backgrounds, loading placeholders."
+    },
+    "ink-reversed": {
+      "value": "#F7F3EC",
+      "ground": "dark",
+      "use": "Body text and headings on Midnight."
+    },
+    "ink-reversed-muted": {
+      "value": "rgba(247,243,236,.75)",
+      "ground": "dark",
+      "use": "Captions and metadata on Midnight."
+    },
+    "ink-reversed-soft": {
+      "value": "rgba(247,243,236,.55)",
+      "ground": "dark",
+      "use": "Placeholder and inactive labels on Midnight."
+    },
+    "ink-reversed-faint": {
+      "value": "rgba(247,243,236,.38)",
+      "ground": "dark",
+      "use": "Disabled controls on Midnight. The dark twin of ink-faint, and the only place the muted floor may be crossed on this ground."
+    },
+    "rule-light": {
+      "value": "rgba(247,243,236,.22)",
+      "ground": "dark",
+      "use": "The hairline on Midnight."
+    },
+    "wash-light": {
+      "value": "rgba(247,243,236,.08)",
+      "ground": "dark",
+      "use": "Input fills and raised panels on Midnight."
+    }
+  },
+  "system": {
+    "button-hover": {
+      "name": "Button hover",
+      "value": "#A62F1B",
+      "rule": "Ember deepened ~10%. State-only. Never a palette color."
+    },
+    "focus-ring": {
+      "name": "Focus ring",
+      "value": "2px Ember (Flame on dark), 3px offset",
+      "rule": "Visible on every interactive element. Never removed."
+    },
+    "success-state": {
+      "name": "Success state",
+      "value": "#5FAD56",
+      "rule": "Forms and dashboards only. Never in brand layouts."
+    },
+    "error-state": {
+      "name": "Error state",
+      "value": "#8C1D13",
+      "rule": "Forms and dashboards only. Never Flame and never Ember: Ember means \"this is the action\", and an error is not an action."
+    },
+    "warning-state": {
+      "name": "Warning state",
+      "value": "#8A5B12",
+      "rule": "Forms and dashboards only. Never Flame, which is a celebration colour and reads as one."
+    },
+    "disabled-control": {
+      "name": "Disabled control",
+      "value": "38% Midnight text on 5% Midnight fill",
+      "rule": "Low contrast is the message. The only place the muted floor may be crossed."
+    },
+    "touch-target": {
+      "name": "Touch target",
+      "value": "44px minimum",
+      "rule": "Every control on every surface, however small it is drawn."
+    },
+    "success-on-dark": {
+      "name": "Success on dark",
+      "value": "#7FC177",
+      "rule": "The success state lifted for a dark ground. The light value is 2.4:1 on Midnight and cannot be read there."
+    },
+    "error-on-dark": {
+      "name": "Error on dark",
+      "value": "#F0968A",
+      "rule": "The error state lifted for a dark ground. Passes on Midnight and on Word Blue alike. Still never Flame."
+    },
+    "warning-on-dark": {
+      "name": "Warning on dark",
+      "value": "#E0B25C",
+      "rule": "The warning state lifted for a dark ground. Passes on Midnight and on Word Blue alike."
+    },
+    "surface-on-dark": {
+      "name": "Surface on dark",
+      "value": "#172537",
+      "rule": "Parchment at 5% over Midnight. The raised card and panel ground on a dark page. Any lighter and the accent drops below 4.5:1 on it, which is what fixes this value rather than taste."
+    },
+    "accent-on-dark": {
+      "name": "Accent on dark",
+      "value": "#F85842",
+      "rule": "Flame. Ember is 3.3:1 on Midnight and fails, so a text accent on a dark ground is Flame. This is the one place Flame carries text, and §03 records it."
+    },
+    "photo-video-scrim": {
+      "name": "Photo/video scrim",
+      "value": "Midnight gradient, ~70% at text",
+      "rule": "Required under any text on imagery (§07)."
+    },
+    "corner-radius": {
+      "name": "Corner radius",
+      "value": "3px buttons · 4px cards · 6px frames",
+      "rule": "Three steps, no others."
+    },
+    "muted-text": {
+      "name": "Muted text",
+      "value": "80% Midnight (light grounds) · 75% Parchment (dark)",
+      "rule": "Captions and metadata. Nothing lighter. It fails contrast."
+    },
+    "breakpoint": {
+      "name": "Breakpoint",
+      "value": "720px",
+      "rule": "Single-column below; grids above."
+    }
+  },
+  "outcome": {
+    "outcome-ministered": {
+      "light": "#005F5E",
+      "dark": "#00DDDB",
+      "records": "Ministered To. The conversation happened. The quietest of the six, because it is the most common."
+    },
+    "outcome-salvation": {
+      "light": "#007D4C",
+      "dark": "#00C479",
+      "records": "Salvation. New life, and the reason for the rest. Green is life, not fire: fire is the institution’s own voice and is not lent to a data category."
+    },
+    "outcome-healing": {
+      "light": "#3B4100",
+      "dark": "#B2BE2C",
+      "records": "Healing. The color of oil, which is what the sick are anointed with."
+    },
+    "outcome-baptism-water": {
+      "light": "#0070BD",
+      "dark": "#9CC3FF",
+      "records": "Baptism in water."
+    },
+    "outcome-baptism-spirit": {
+      "light": "#4C3DAF",
+      "dark": "#A98FFF",
+      "records": "Baptism in the Holy Spirit. Separated from water baptism by hue, because they are separate events and are counted separately."
+    },
+    "outcome-raised": {
+      "light": "#860048",
+      "dark": "#FF83B2",
+      "records": "Raised from the dead. The rarest, and the furthest from every other value here."
+    }
+  },
+  "progression": {
+    "progression-1": {
+      "light": "#F8E4D7",
+      "dark": "#5C412F",
+      "stage": "Match"
+    },
+    "progression-2": {
+      "light": "#FAD5BF",
+      "dark": "#6D462F",
+      "stage": "Kindling"
+    },
+    "progression-3": {
+      "light": "#FBC6A9",
+      "dark": "#7F4B2F",
+      "stage": "Twigs"
+    },
+    "progression-4": {
+      "light": "#FBB694",
+      "dark": "#924F30",
+      "stage": "Sticks"
+    },
+    "progression-5": {
+      "light": "#FBA680",
+      "dark": "#A55231",
+      "stage": "Logs"
+    },
+    "progression-6": {
+      "light": "#FB956E",
+      "dark": "#B95534",
+      "stage": "Trees"
+    },
+    "progression-7": {
+      "light": "#FA825E",
+      "dark": "#CD5737",
+      "stage": "Forests"
+    },
+    "progression-8": {
+      "light": "#F96E4F",
+      "dark": "#E2583C",
+      "stage": "Mountain Ranges"
+    },
+    "progression-9": {
+      "light": "#F85842",
+      "dark": "#F85842",
+      "stage": "The World"
+    }
+  },
+  "typeScale": {
+    "label": {
+      "size": "12px",
+      "lineHeight": "1.4",
+      "use": "DM Sans 600, uppercase, letterspaced .18em. Eyebrows and kickers.",
+      "family": "DM Sans",
+      "weight": "600",
+      "letterSpacing": ".18em",
+      "italic": "never",
+      "figures": "tabular"
+    },
+    "caption": {
+      "size": "13px",
+      "lineHeight": "1.6",
+      "use": "DM Sans. Photo captions, metadata, datelines.",
+      "family": "DM Sans",
+      "weight": "400",
+      "letterSpacing": "0",
+      "italic": "allowed",
+      "figures": "tabular"
+    },
+    "body-small": {
+      "size": "15px",
+      "lineHeight": "1.65",
+      "use": "DM Sans. Card copy, table cells, secondary text.",
+      "family": "DM Sans",
+      "weight": "400",
+      "letterSpacing": "0",
+      "italic": "allowed",
+      "figures": "proportional"
+    },
+    "body": {
+      "size": "17px",
+      "lineHeight": "1.7",
+      "use": "DM Sans. Every extended reading passage.",
+      "family": "DM Sans",
+      "weight": "400",
+      "letterSpacing": "0",
+      "italic": "allowed",
+      "figures": "proportional"
+    },
+    "body-large": {
+      "size": "19px",
+      "lineHeight": "1.65",
+      "use": "DM Sans. Ledes and standfirsts.",
+      "family": "DM Sans",
+      "weight": "400",
+      "letterSpacing": "0",
+      "italic": "allowed",
+      "figures": "proportional"
+    },
+    "title-small": {
+      "size": "22px",
+      "lineHeight": "1.35",
+      "use": "DM Serif Text. The lowest the serif goes.",
+      "family": "DM Serif Text",
+      "weight": "400",
+      "letterSpacing": "0",
+      "italic": "one word",
+      "figures": "proportional"
+    },
+    "title": {
+      "size": "28px",
+      "lineHeight": "1.25",
+      "use": "DM Serif Text. Document headings, pull quotes.",
+      "family": "DM Serif Text",
+      "weight": "400",
+      "letterSpacing": "0",
+      "italic": "one word",
+      "figures": "proportional"
+    },
+    "title-large": {
+      "size": "34px",
+      "lineHeight": "1.18",
+      "use": "DM Serif Text. The prophecy, record openings.",
+      "family": "DM Serif Text",
+      "weight": "400",
+      "letterSpacing": "-.005em",
+      "italic": "one word",
+      "figures": "proportional"
+    },
+    "display-small": {
+      "size": "40px",
+      "lineHeight": "1.12",
+      "use": "DM Serif Display. Section headlines.",
+      "family": "DM Serif Display",
+      "weight": "400",
+      "letterSpacing": "-.01em",
+      "italic": "one word",
+      "figures": "tabular"
+    },
+    "display": {
+      "size": "52px",
+      "lineHeight": "1.08",
+      "use": "DM Serif Display. Page headlines.",
+      "family": "DM Serif Display",
+      "weight": "400",
+      "letterSpacing": "-.015em",
+      "italic": "one word",
+      "figures": "tabular"
+    },
+    "display-large": {
+      "size": "72px",
+      "lineHeight": "1.04",
+      "use": "DM Serif Display. Hero headlines only.",
+      "family": "DM Serif Display",
+      "weight": "400",
+      "letterSpacing": "-.02em",
+      "italic": "one word",
+      "figures": "tabular"
+    }
+  },
+  "spacing": {
+    "space-1": "4px",
+    "space-2": "8px",
+    "space-3": "12px",
+    "space-4": "16px",
+    "space-5": "24px",
+    "space-6": "32px",
+    "space-7": "48px",
+    "space-8": "64px",
+    "space-9": "96px",
+    "space-10": "128px"
+  },
+  "radius": {
+    "radius-button": "3px",
+    "radius-card": "4px",
+    "radius-frame": "6px"
+  },
+  "elevation": {
+    "flat": "none",
+    "raised": "0 2px 6px rgba(11,26,45,.06)",
+    "lifted": "0 10px 30px rgba(11,26,45,.10)",
+    "overlay": "0 24px 60px rgba(11,26,45,.18)"
+  },
+  "motion": {
+    "duration-fast": "120ms",
+    "duration-base": "150ms",
+    "duration-slow": "300ms",
+    "easing": "cubic-bezier(.2,.6,.2,1)"
+  },
+  "breakpoint": {
+    "email": "600px",
+    "page": "720px",
+    "wide": "1080px"
+  },
+  "contrast": {
+    "_README": "Measured, not estimated. Computed by tools/colorkit.py at build time and gated by tools/brand_lint.py, so a palette edit that breaks a pair fails the build. Translucent tokens are flattened over the ground named here before measuring, because that is the colour a reader actually sees.",
+    "standard": "WCAG 2.1 contrast ratio.",
+    "thresholds": {
+      "AA": 4.5,
+      "AALarge": 3.0,
+      "AAA": 7.0,
+      "note": "Large is 24px, or 19px at 600 and above."
+    },
+    "permitted": [
+      {
+        "foreground": "ink",
+        "ground": "parchment",
+        "ratio": 15.82,
+        "requires": 4.5,
+        "passesAA": true,
+        "passesAALarge": true,
+        "passesAAA": true,
+        "use": "body text on the light ground"
+      },
+      {
+        "foreground": "ink",
+        "ground": "white",
+        "ratio": 17.5,
+        "requires": 4.5,
+        "passesAA": true,
+        "passesAALarge": true,
+        "passesAAA": true,
+        "use": "body text on a card"
+      },
+      {
+        "foreground": "ink-muted",
+        "ground": "parchment",
+        "ratio": 8.81,
+        "requires": 4.5,
+        "passesAA": true,
+        "passesAALarge": true,
+        "passesAAA": true,
+        "use": "captions and metadata on the light ground"
+      },
+      {
+        "foreground": "ink-muted",
+        "ground": "white",
+        "ratio": 9.31,
+        "requires": 4.5,
+        "passesAA": true,
+        "passesAALarge": true,
+        "passesAAA": true,
+        "use": "captions on a card"
+      },
+      {
+        "foreground": "ink-soft",
+        "ground": "parchment",
+        "ratio": 4.48,
+        "requires": 3.0,
+        "passesAA": false,
+        "passesAALarge": true,
+        "passesAAA": false,
+        "use": "placeholder and inactive labels"
+      },
+      {
+        "foreground": "ink-reversed",
+        "ground": "midnight",
+        "ratio": 15.82,
+        "requires": 4.5,
+        "passesAA": true,
+        "passesAALarge": true,
+        "passesAAA": true,
+        "use": "body text on Midnight"
+      },
+      {
+        "foreground": "ink-reversed-muted",
+        "ground": "midnight",
+        "ratio": 9.29,
+        "requires": 4.5,
+        "passesAA": true,
+        "passesAALarge": true,
+        "passesAAA": true,
+        "use": "captions on Midnight"
+      },
+      {
+        "foreground": "ink-reversed-soft",
+        "ground": "midnight",
+        "ratio": 5.52,
+        "requires": 3.0,
+        "passesAA": true,
+        "passesAALarge": true,
+        "passesAAA": false,
+        "use": "placeholders on Midnight"
+      },
+      {
+        "foreground": "ember",
+        "ground": "parchment",
+        "ratio": 4.87,
+        "requires": 4.5,
+        "passesAA": true,
+        "passesAALarge": true,
+        "passesAAA": false,
+        "use": "links and labels on the light ground"
+      },
+      {
+        "foreground": "ember",
+        "ground": "white",
+        "ratio": 5.39,
+        "requires": 4.5,
+        "passesAA": true,
+        "passesAALarge": true,
+        "passesAAA": false,
+        "use": "links on a card"
+      },
+      {
+        "foreground": "white",
+        "ground": "ember",
+        "ratio": 5.39,
+        "requires": 4.5,
+        "passesAA": true,
+        "passesAALarge": true,
+        "passesAAA": false,
+        "use": "the primary button label"
+      },
+      {
+        "foreground": "white",
+        "ground": "button-hover",
+        "ratio": 6.9,
+        "requires": 4.5,
+        "passesAA": true,
+        "passesAALarge": true,
+        "passesAAA": false,
+        "use": "the primary button label, hovered"
+      },
+      {
+        "foreground": "flame",
+        "ground": "midnight",
+        "ratio": 5.39,
+        "requires": 3.0,
+        "passesAA": true,
+        "passesAALarge": true,
+        "passesAAA": false,
+        "use": "the official-record numeral, which is large text"
+      },
+      {
+        "foreground": "parchment",
+        "ground": "midnight",
+        "ratio": 15.82,
+        "requires": 4.5,
+        "passesAA": true,
+        "passesAALarge": true,
+        "passesAAA": true,
+        "use": "reversed body copy"
+      },
+      {
+        "foreground": "error-state",
+        "ground": "parchment",
+        "ratio": 8.25,
+        "requires": 4.5,
+        "passesAA": true,
+        "passesAALarge": true,
+        "passesAAA": true,
+        "use": "form error text"
+      },
+      {
+        "foreground": "warning-state",
+        "ground": "parchment",
+        "ratio": 5.29,
+        "requires": 4.5,
+        "passesAA": true,
+        "passesAALarge": true,
+        "passesAAA": false,
+        "use": "form warning text"
+      },
+      {
+        "foreground": "ink-reversed",
+        "ground": "surface-on-dark",
+        "ratio": 14.0,
+        "requires": 4.5,
+        "passesAA": true,
+        "passesAALarge": true,
+        "passesAAA": true,
+        "use": "body text on a dark card"
+      },
+      {
+        "foreground": "ink-reversed-muted",
+        "ground": "surface-on-dark",
+        "ratio": 8.42,
+        "requires": 4.5,
+        "passesAA": true,
+        "passesAALarge": true,
+        "passesAAA": true,
+        "use": "captions on a dark card"
+      },
+      {
+        "foreground": "accent-on-dark",
+        "ground": "surface-on-dark",
+        "ratio": 4.77,
+        "requires": 4.5,
+        "passesAA": true,
+        "passesAALarge": true,
+        "passesAAA": false,
+        "use": "links and labels on a dark card"
+      },
+      {
+        "foreground": "accent-on-dark",
+        "ground": "midnight",
+        "ratio": 5.39,
+        "requires": 4.5,
+        "passesAA": true,
+        "passesAALarge": true,
+        "passesAAA": false,
+        "use": "links and labels on the dark ground"
+      },
+      {
+        "foreground": "success-on-dark",
+        "ground": "surface-on-dark",
+        "ratio": 7.22,
+        "requires": 4.5,
+        "passesAA": true,
+        "passesAALarge": true,
+        "passesAAA": true,
+        "use": "the success state on a dark card"
+      },
+      {
+        "foreground": "error-on-dark",
+        "ground": "surface-on-dark",
+        "ratio": 6.96,
+        "requires": 4.5,
+        "passesAA": true,
+        "passesAALarge": true,
+        "passesAAA": false,
+        "use": "form error text on a dark card"
+      },
+      {
+        "foreground": "warning-on-dark",
+        "ground": "surface-on-dark",
+        "ratio": 7.88,
+        "requires": 4.5,
+        "passesAA": true,
+        "passesAALarge": true,
+        "passesAAA": true,
+        "use": "form warning text on a dark card"
+      },
+      {
+        "foreground": "error-on-dark",
+        "ground": "word-blue",
+        "ratio": 4.97,
+        "requires": 4.5,
+        "passesAA": true,
+        "passesAALarge": true,
+        "passesAAA": false,
+        "use": "form error text on the School's dark ground"
+      },
+      {
+        "foreground": "warning-on-dark",
+        "ground": "word-blue",
+        "ratio": 5.63,
+        "requires": 4.5,
+        "passesAA": true,
+        "passesAALarge": true,
+        "passesAAA": false,
+        "use": "form warning text on the School's dark ground"
+      },
+      {
+        "foreground": "outcome-outcome-ministered-light",
+        "ground": "parchment",
+        "ratio": 6.78,
+        "requires": 4.5,
+        "passesAA": true,
+        "passesAALarge": true,
+        "passesAAA": false,
+        "use": "the outcome-ministered label on the light parchment ground"
+      },
+      {
+        "foreground": "outcome-outcome-ministered-light",
+        "ground": "white",
+        "ratio": 7.5,
+        "requires": 4.5,
+        "passesAA": true,
+        "passesAALarge": true,
+        "passesAAA": true,
+        "use": "the outcome-ministered label on the light white ground"
+      },
+      {
+        "foreground": "outcome-outcome-ministered-dark",
+        "ground": "midnight",
+        "ratio": 10.31,
+        "requires": 4.5,
+        "passesAA": true,
+        "passesAALarge": true,
+        "passesAAA": true,
+        "use": "the outcome-ministered label on the dark midnight ground"
+      },
+      {
+        "foreground": "outcome-outcome-ministered-dark",
+        "ground": "surface-on-dark",
+        "ratio": 9.12,
+        "requires": 4.5,
+        "passesAA": true,
+        "passesAALarge": true,
+        "passesAAA": true,
+        "use": "the outcome-ministered label on the dark surface-on-dark ground"
+      },
+      {
+        "foreground": "white",
+        "ground": "outcome-outcome-ministered-light",
+        "ratio": 7.5,
+        "requires": 4.5,
+        "passesAA": true,
+        "passesAALarge": true,
+        "passesAAA": true,
+        "use": "the outcome-ministered label on a solid badge, light theme"
+      },
+      {
+        "foreground": "midnight",
+        "ground": "outcome-outcome-ministered-dark",
+        "ratio": 10.31,
+        "requires": 4.5,
+        "passesAA": true,
+        "passesAALarge": true,
+        "passesAAA": true,
+        "use": "the outcome-ministered label on a solid badge, dark theme"
+      },
+      {
+        "foreground": "outcome-outcome-salvation-light",
+        "ground": "parchment",
+        "ratio": 4.7,
+        "requires": 4.5,
+        "passesAA": true,
+        "passesAALarge": true,
+        "passesAAA": false,
+        "use": "the outcome-salvation label on the light parchment ground"
+      },
+      {
+        "foreground": "outcome-outcome-salvation-light",
+        "ground": "white",
+        "ratio": 5.2,
+        "requires": 4.5,
+        "passesAA": true,
+        "passesAALarge": true,
+        "passesAAA": false,
+        "use": "the outcome-salvation label on the light white ground"
+      },
+      {
+        "foreground": "outcome-outcome-salvation-dark",
+        "ground": "midnight",
+        "ratio": 7.64,
+        "requires": 4.5,
+        "passesAA": true,
+        "passesAALarge": true,
+        "passesAAA": true,
+        "use": "the outcome-salvation label on the dark midnight ground"
+      },
+      {
+        "foreground": "outcome-outcome-salvation-dark",
+        "ground": "surface-on-dark",
+        "ratio": 6.76,
+        "requires": 4.5,
+        "passesAA": true,
+        "passesAALarge": true,
+        "passesAAA": false,
+        "use": "the outcome-salvation label on the dark surface-on-dark ground"
+      },
+      {
+        "foreground": "white",
+        "ground": "outcome-outcome-salvation-light",
+        "ratio": 5.2,
+        "requires": 4.5,
+        "passesAA": true,
+        "passesAALarge": true,
+        "passesAAA": false,
+        "use": "the outcome-salvation label on a solid badge, light theme"
+      },
+      {
+        "foreground": "midnight",
+        "ground": "outcome-outcome-salvation-dark",
+        "ratio": 7.64,
+        "requires": 4.5,
+        "passesAA": true,
+        "passesAALarge": true,
+        "passesAAA": true,
+        "use": "the outcome-salvation label on a solid badge, dark theme"
+      },
+      {
+        "foreground": "outcome-outcome-healing-light",
+        "ground": "parchment",
+        "ratio": 9.78,
+        "requires": 4.5,
+        "passesAA": true,
+        "passesAALarge": true,
+        "passesAAA": true,
+        "use": "the outcome-healing label on the light parchment ground"
+      },
+      {
+        "foreground": "outcome-outcome-healing-light",
+        "ground": "white",
+        "ratio": 10.81,
+        "requires": 4.5,
+        "passesAA": true,
+        "passesAALarge": true,
+        "passesAAA": true,
+        "use": "the outcome-healing label on the light white ground"
+      },
+      {
+        "foreground": "outcome-outcome-healing-dark",
+        "ground": "midnight",
+        "ratio": 8.58,
+        "requires": 4.5,
+        "passesAA": true,
+        "passesAALarge": true,
+        "passesAAA": true,
+        "use": "the outcome-healing label on the dark midnight ground"
+      },
+      {
+        "foreground": "outcome-outcome-healing-dark",
+        "ground": "surface-on-dark",
+        "ratio": 7.59,
+        "requires": 4.5,
+        "passesAA": true,
+        "passesAALarge": true,
+        "passesAAA": true,
+        "use": "the outcome-healing label on the dark surface-on-dark ground"
+      },
+      {
+        "foreground": "white",
+        "ground": "outcome-outcome-healing-light",
+        "ratio": 10.81,
+        "requires": 4.5,
+        "passesAA": true,
+        "passesAALarge": true,
+        "passesAAA": true,
+        "use": "the outcome-healing label on a solid badge, light theme"
+      },
+      {
+        "foreground": "midnight",
+        "ground": "outcome-outcome-healing-dark",
+        "ratio": 8.58,
+        "requires": 4.5,
+        "passesAA": true,
+        "passesAALarge": true,
+        "passesAAA": true,
+        "use": "the outcome-healing label on a solid badge, dark theme"
+      },
+      {
+        "foreground": "outcome-outcome-baptism-water-light",
+        "ground": "parchment",
+        "ratio": 4.69,
+        "requires": 4.5,
+        "passesAA": true,
+        "passesAALarge": true,
+        "passesAAA": false,
+        "use": "the outcome-baptism-water label on the light parchment ground"
+      },
+      {
+        "foreground": "outcome-outcome-baptism-water-light",
+        "ground": "white",
+        "ratio": 5.18,
+        "requires": 4.5,
+        "passesAA": true,
+        "passesAALarge": true,
+        "passesAAA": false,
+        "use": "the outcome-baptism-water label on the light white ground"
+      },
+      {
+        "foreground": "outcome-outcome-baptism-water-dark",
+        "ground": "midnight",
+        "ratio": 9.72,
+        "requires": 4.5,
+        "passesAA": true,
+        "passesAALarge": true,
+        "passesAAA": true,
+        "use": "the outcome-baptism-water label on the dark midnight ground"
+      },
+      {
+        "foreground": "outcome-outcome-baptism-water-dark",
+        "ground": "surface-on-dark",
+        "ratio": 8.6,
+        "requires": 4.5,
+        "passesAA": true,
+        "passesAALarge": true,
+        "passesAAA": true,
+        "use": "the outcome-baptism-water label on the dark surface-on-dark ground"
+      },
+      {
+        "foreground": "white",
+        "ground": "outcome-outcome-baptism-water-light",
+        "ratio": 5.18,
+        "requires": 4.5,
+        "passesAA": true,
+        "passesAALarge": true,
+        "passesAAA": false,
+        "use": "the outcome-baptism-water label on a solid badge, light theme"
+      },
+      {
+        "foreground": "midnight",
+        "ground": "outcome-outcome-baptism-water-dark",
+        "ratio": 9.72,
+        "requires": 4.5,
+        "passesAA": true,
+        "passesAALarge": true,
+        "passesAAA": true,
+        "use": "the outcome-baptism-water label on a solid badge, dark theme"
+      },
+      {
+        "foreground": "outcome-outcome-baptism-spirit-light",
+        "ground": "parchment",
+        "ratio": 7.32,
+        "requires": 4.5,
+        "passesAA": true,
+        "passesAALarge": true,
+        "passesAAA": true,
+        "use": "the outcome-baptism-spirit label on the light parchment ground"
+      },
+      {
+        "foreground": "outcome-outcome-baptism-spirit-light",
+        "ground": "white",
+        "ratio": 8.1,
+        "requires": 4.5,
+        "passesAA": true,
+        "passesAALarge": true,
+        "passesAAA": true,
+        "use": "the outcome-baptism-spirit label on the light white ground"
+      },
+      {
+        "foreground": "outcome-outcome-baptism-spirit-dark",
+        "ground": "midnight",
+        "ratio": 6.72,
+        "requires": 4.5,
+        "passesAA": true,
+        "passesAALarge": true,
+        "passesAAA": false,
+        "use": "the outcome-baptism-spirit label on the dark midnight ground"
+      },
+      {
+        "foreground": "outcome-outcome-baptism-spirit-dark",
+        "ground": "surface-on-dark",
+        "ratio": 5.94,
+        "requires": 4.5,
+        "passesAA": true,
+        "passesAALarge": true,
+        "passesAAA": false,
+        "use": "the outcome-baptism-spirit label on the dark surface-on-dark ground"
+      },
+      {
+        "foreground": "white",
+        "ground": "outcome-outcome-baptism-spirit-light",
+        "ratio": 8.1,
+        "requires": 4.5,
+        "passesAA": true,
+        "passesAALarge": true,
+        "passesAAA": true,
+        "use": "the outcome-baptism-spirit label on a solid badge, light theme"
+      },
+      {
+        "foreground": "midnight",
+        "ground": "outcome-outcome-baptism-spirit-dark",
+        "ratio": 6.72,
+        "requires": 4.5,
+        "passesAA": true,
+        "passesAALarge": true,
+        "passesAAA": false,
+        "use": "the outcome-baptism-spirit label on a solid badge, dark theme"
+      },
+      {
+        "foreground": "outcome-outcome-raised-light",
+        "ground": "parchment",
+        "ratio": 9.01,
+        "requires": 4.5,
+        "passesAA": true,
+        "passesAALarge": true,
+        "passesAAA": true,
+        "use": "the outcome-raised label on the light parchment ground"
+      },
+      {
+        "foreground": "outcome-outcome-raised-light",
+        "ground": "white",
+        "ratio": 9.97,
+        "requires": 4.5,
+        "passesAA": true,
+        "passesAALarge": true,
+        "passesAAA": true,
+        "use": "the outcome-raised label on the light white ground"
+      },
+      {
+        "foreground": "outcome-outcome-raised-dark",
+        "ground": "midnight",
+        "ratio": 7.62,
+        "requires": 4.5,
+        "passesAA": true,
+        "passesAALarge": true,
+        "passesAAA": true,
+        "use": "the outcome-raised label on the dark midnight ground"
+      },
+      {
+        "foreground": "outcome-outcome-raised-dark",
+        "ground": "surface-on-dark",
+        "ratio": 6.74,
+        "requires": 4.5,
+        "passesAA": true,
+        "passesAALarge": true,
+        "passesAAA": false,
+        "use": "the outcome-raised label on the dark surface-on-dark ground"
+      },
+      {
+        "foreground": "white",
+        "ground": "outcome-outcome-raised-light",
+        "ratio": 9.97,
+        "requires": 4.5,
+        "passesAA": true,
+        "passesAALarge": true,
+        "passesAAA": true,
+        "use": "the outcome-raised label on a solid badge, light theme"
+      },
+      {
+        "foreground": "midnight",
+        "ground": "outcome-outcome-raised-dark",
+        "ratio": 7.62,
+        "requires": 4.5,
+        "passesAA": true,
+        "passesAALarge": true,
+        "passesAAA": true,
+        "use": "the outcome-raised label on a solid badge, dark theme"
+      }
+    ],
+    "forbidden": [
+      {
+        "foreground": "flame",
+        "ground": "parchment",
+        "ratio": 2.94,
+        "passesAA": false,
+        "why": "Flame as text on the light ground. This is what the rule prevents."
+      },
+      {
+        "foreground": "flame",
+        "ground": "white",
+        "ratio": 3.25,
+        "passesAA": false,
+        "why": "Flame as text on a card. This is what the rule prevents."
+      },
+      {
+        "foreground": "ember",
+        "ground": "midnight",
+        "ratio": 3.25,
+        "passesAA": false,
+        "why": "Ember as text on the dark ground. Use accent-on-dark instead."
+      },
+      {
+        "foreground": "ember",
+        "ground": "surface-on-dark",
+        "ratio": 2.87,
+        "passesAA": false,
+        "why": "Ember as text on a dark card. Use accent-on-dark instead."
+      },
+      {
+        "foreground": "word-blue",
+        "ground": "midnight",
+        "ratio": 1.58,
+        "passesAA": false,
+        "why": "Word Blue as text on Midnight. It disappears."
+      },
+      {
+        "foreground": "white",
+        "ground": "flame",
+        "ratio": 3.25,
+        "passesAA": false,
+        "why": "Any text on a Flame fill. Flame is never a ground under text."
+      }
+    ]
+  },
+  "separation": {
+    "_README": "CIEDE2000 distance, measured by tools/colorkit.py. The minimum across every pair in the set, under normal vision and each of the three dichromacies, simulated with Machado (2009) at full severity. The floor is 8.0. Colour is still never the only encoding: six categories cannot be told apart by hue alone by every reader at any separation, so every outcome also carries its glyph and its written name.",
+    "floor": 8.0,
+    "themes": {
+      "light": {
+        "measuredAgainst": [
+          "outcome-ministered",
+          "outcome-salvation",
+          "outcome-healing",
+          "outcome-baptism-water",
+          "outcome-baptism-spirit",
+          "outcome-raised",
+          "ember",
+          "word-blue"
+        ],
+        "minimum": {
+          "normal": 14.59,
+          "protanopia": 8.83,
+          "deuteranopia": 8.75,
+          "tritanopia": 9.24
+        },
+        "closestPair": {
+          "a": "#4C3DAF",
+          "b": "#023D6F",
+          "distance": 14.59
+        },
+        "passesFloor": true
+      },
+      "dark": {
+        "measuredAgainst": [
+          "outcome-ministered",
+          "outcome-salvation",
+          "outcome-healing",
+          "outcome-baptism-water",
+          "outcome-baptism-spirit",
+          "outcome-raised",
+          "flame",
+          "parchment"
+        ],
+        "minimum": {
+          "normal": 16.73,
+          "protanopia": 11.31,
+          "deuteranopia": 8.57,
+          "tritanopia": 9.03
+        },
+        "closestPair": {
+          "a": "#9CC3FF",
+          "b": "#A98FFF",
+          "distance": 16.73
+        },
+        "passesFloor": true
+      }
+    }
+  },
+  "proportion": {
+    "rule": "60 / 30 / 10",
+    "parchment": "~60%",
+    "midnight": "~30%",
+    "flame": "<=10%, never carrying text"
+  },
+  "social": {
+    "card": "https://brand.every1movement.com/assets/images/every1-og-card.png",
+    "width": 1200,
+    "height": 630,
+    "ground": "midnight",
+    "safeArea": "Keep the mark and any text inside the middle 1000x470, centred. Every network crops this rectangle differently and several crop it square, so anything in the outer band is a thing you have decided not to mind losing.",
+    "rule": "The reversed horizontal lockup and the Parchment hairline. No headline, no photograph, no Flame ground. A card is the institution speaking, and it stays quiet.",
+    "avatar": "A square profile picture is the E1 icon on Midnight: use the published app icon files rather than cropping a lockup."
+  },
+  "tokens": "https://brand.every1movement.com/ai/tokens.json",
+  "tokensDtcg": "https://brand.every1movement.com/ai/tokens.dtcg.json",
+  "checker": "https://brand.every1movement.com/brand_check.py",
   "never": [
     "Never place any logo on Flame (#F85842).",
     "Never redraw, restretch, rotate, or recolour the mark outside the three published inks.",
@@ -1151,8 +2659,8 @@
     "_README": "The EVERY1 app and activation platform, specified rather than mocked up. A picture of a screen is correct the day it is exported and silently wrong after the next token change, and no build can tell. These specs are published from the same tokens the app is built from, so they move when the brand moves. Flat mockups may be made from these, and they are illustrative and dated: the spec is what is authoritative. Screens are named here before they are drawn, because naming them is most of the design decision.",
     "rules": [
       "One mask per view. The 1 holding a photograph is this door's signature move, and on a poster it appears once. A scrolling list would put six on screen and turn the signature into wallpaper, so a list uses plain images and only a full-width feature uses the mask.",
-      "The numeral is the app icon, on Midnight, with no text. It is the form this door is recognised by at size.",
-      "Flame is the accent and never carries text. Buttons, links, and labels use Ember, which holds contrast at text size.",
+      "The E1 icon is the app icon, reversed on a Midnight plate, with no text. It is the form this door is recognised by at size, and it is the same icon on the launcher, the installable web app, the favicon, and every social profile. The numeral is not the app icon: it is the shape photography is masked into and a display mark at small size.",
+      "Flame is the accent. On a light ground it never carries text, and buttons, links and labels use Ember. On Midnight the rule inverts, because Ember is 3.25:1 there and fails: a text accent on a dark ground is Flame. This app is a Midnight product, so its links and its labels are Flame and its buttons carry a White label on an Ember fill.",
       "Every control needs default, hover, focus, active, disabled, loading, and empty. A screen without its empty state is not specified.",
       "A dark surface is Midnight, never a darkened Parchment.",
       "Loading is a wash placeholder in the shape of the content, never a spinner over a blank screen.",
@@ -1245,5 +2753,32 @@
   },
   "contact": "brand@theword.world",
   "parentSystem": "https://brand.theword.world/ai/manifest.json",
-  "generatedBy": "tools/build_ai.py"
+  "generatedBy": "tools/build_ai.py",
+  "files": [
+    {
+      "name": "tokens.json",
+      "url": "https://brand.every1movement.com/ai/tokens.json",
+      "bytes": 39628,
+      "sha256": "1e82469d3e6eaf6185253fbc9172d12ab5c74a1fd668cb16023c4e57d009d6d7"
+    },
+    {
+      "name": "tokens.dtcg.json",
+      "url": "https://brand.every1movement.com/ai/tokens.dtcg.json",
+      "bytes": 13245,
+      "sha256": "074e75a586b64979109e2517a9b3c32e450c58dd419ca71943c4a8ce148f9cca"
+    },
+    {
+      "name": "brand_check.py",
+      "url": "https://brand.every1movement.com/brand_check.py",
+      "bytes": 18059,
+      "sha256": "ae5a6b6e7907db46682a8650c3d40c6b5270a911a1b3cd9e49d9a875689558cf"
+    },
+    {
+      "name": "brand.css",
+      "url": "https://brand.every1movement.com/assets/brand.css",
+      "bytes": 26750,
+      "sha256": "6ff82129c2949620d79a8fd6394401b0d3fd34d984513c1447de7303158ed4a2"
+    }
+  ],
+  "integrity": "Every file this manifest names carries its byte length and its SHA-256, the marks included. Verify what you download. Unknown paths on this site return 404 with a non-HTML body, so a failed fetch is a failed fetch."
 }
