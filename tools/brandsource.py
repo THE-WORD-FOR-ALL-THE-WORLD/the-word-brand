@@ -648,7 +648,14 @@ def scan_assets() -> list:
     return sorted(out, key=lambda a: a["file"])
 
 
-SCALE_TABLE = re.compile(r'<table data-scale="([a-z-]+)"\s*>(.*?)</table>', re.S)
+# A scale table may carry the rule that governs it, beside the values it governs.
+# The values were always machine-readable and the rules were not, so "nothing in this
+# system is a pill" and "nothing bounces, nothing springs" were real published rules
+# that no consumer of /ai could see. data-rule is how a rule reaches the AI layer
+# without being stated a second time somewhere it could drift from the guide.
+SCALE_TABLE = re.compile(
+    r'<table data-scale="([a-z-]+)"(?:\s+data-rule="([^"]*)")?\s*>(.*?)</table>', re.S
+)
 
 
 def strip_scale_tables(section: str) -> str:
@@ -664,8 +671,9 @@ def parse_scales(path: str) -> dict:
     """
     s = read(path)
     out: dict = {}
+    rules: dict = {}
     for m in SCALE_TABLE.finditer(s):
-        name, body = m.group(1), m.group(2)
+        name, body = m.group(1), m.group(3)
         rows = re.findall(r"<tr>(.*?)</tr>", body, re.S)
         if not rows:
             raise SourceError(f"{path}: the '{name}' scale table has no rows.")
@@ -684,6 +692,9 @@ def parse_scales(path: str) -> dict:
         if not entries:
             raise SourceError(f"{path}: the '{name}' scale table has a header but no values.")
         out[name] = entries
+        if m.group(2):
+            rules[name] = htmlmod.unescape(m.group(2)).strip()
+    out["_rules"] = rules
     return out
 
 

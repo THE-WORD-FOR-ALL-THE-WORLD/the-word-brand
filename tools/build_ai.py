@@ -194,6 +194,24 @@ def build_tokens(brand: dict, messaging: dict, updated: str, overrides: dict, sc
     for key, value in override_tokens.items():
         tokens[key] = value
 
+    # The rule that governs each scale, beside the values it governs. The values were
+    # always machine-readable and the rules were not, which is how "nothing in this
+    # system is a pill" and "nothing bounces, nothing springs" ended up as real
+    # published rules that no consumer of /ai could see. The scale shapes above are
+    # deliberately left alone: applications are mid-migration against them.
+    tokens["scaleRules"] = {
+        k: v for k, v in scales.get("_rules", {}).items() if not k.startswith("_")
+    }
+    def camel(label: str) -> str:
+        head, *rest = label.split()
+        return head + "".join(w.capitalize() for w in rest)
+
+    tokens["scripture"] = {
+        camel(r["property"]): r["value"] for r in scales.get("scripture", [])
+    }
+    if scales.get("_rules", {}).get("scripture"):
+        tokens["scripture"]["rule"] = scales["_rules"]["scripture"]
+    tokens["typography"]["rule"] = scales.get("_rules", {}).get("typeface-rules", "")
     tokens["theme"] = build_theme(tokens)
     tokens["contrast"] = build_contrast(tokens)
     tokens["separation"] = build_separation(tokens)
@@ -3499,6 +3517,8 @@ def build_every1_ai(brand: dict, messaging: dict, updated: str, tokens: dict, lo
         "outcome": tokens["outcome"],
         "progression": tokens["progression"],
         "typeScale": tokens["typeScale"],
+        "scaleRules": tokens["scaleRules"],
+        "scripture": tokens["scripture"],
         "spacing": tokens["spacing"],
         "radius": tokens["radius"],
         "elevation": tokens["elevation"],
@@ -3567,8 +3587,10 @@ def build_every1_ai(brand: dict, messaging: dict, updated: str, tokens: dict, lo
         ],
         "integrity": (
             "Every file this manifest names carries its byte length and its SHA-256, the "
-            "marks included. Verify what you download. Unknown paths on this site return "
-            "404 with a non-HTML body, so a failed fetch is a failed fetch."
+            "marks included. Verify what you download. Unknown paths return a real 404, so "
+            "trust the status code: a failed fetch is a failed fetch. The 404 body is HTML "
+            "by design, because a person who mistypes a URL should get a page that helps "
+            "rather than a blank. Check the status, not the content type."
         ),
     }
 
