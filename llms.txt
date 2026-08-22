@@ -9,7 +9,7 @@
 - [AI manifest](https://brand.theword.world/ai/manifest.json): The doorway. Names every current resource, with versions and checksums.
 - [Agent skill](https://brand.theword.world/ai/SKILL.md): The retrieval and audit workflow, in installable Agent Skills format.
 - [Brand system](https://brand.theword.world/ai/brand-system.md): The complete standard as one Markdown document.
-- [Design tokens](https://brand.theword.world/ai/tokens.json): Colors, typography, system tokens and states.
+- [Design tokens](https://brand.theword.world/ai/tokens.json): Colors, typography, both themes, the type scale, the neutral ramp, system tokens and states, outcome and progression colour, and every contrast pair measured.
 - [Brand audit](https://brand.theword.world/ai/audit.md): The rubric every piece of work is checked against.
 - [Components](https://brand.theword.world/ai/components.json): Component specifications resolved against current tokens.
 - [Assets](https://brand.theword.world/ai/assets.json): Every approved logo, photograph, and video, with usage rules.
@@ -18,7 +18,7 @@
 
 ## Facts at a glance
 
-Brand system version 7.5, messaging guide version 1.0, issued August 2026.
+Brand system version 7.6, messaging guide version 2.0, issued August 2026.
 Palette: Midnight `#0B1A2D`, Word Blue `#023D6F`, Parchment `#F7F3EC`, Flame `#F85842`, Ember `#C13A24`, White `#FFFFFF`.
 Typefaces: DM Serif Display, DM Serif Text, DM Sans.
 Proportion: 60 / 30 / 10, Flame never above a tenth and never carrying text.

@@ -63,6 +63,13 @@ Errors block. Warnings are informational and worth reading anyway.
 | L9 | A manifest checksum does not match the file | Rerun `build_ai.py` |
 | L10 | A page's navigation differs from the rest of the portal | Copy the chrome from an existing page |
 | L11 | The published and installable copies of the skill differ | Rerun `build_ai.py` |
+| L12 | A registered consumer is behind the current version | Sync it, then update `ai-source/consumers.json` |
+| L13 | A page has no social card | Add the og: tags from an existing page |
+| L14 | A contrast pair fails AA, or the published ratio is stale | Change the value in the guide, or rerun `build_ai.py` |
+| L15 | The React library disagrees with a component spec | Fix `packages/ui/src/`, or the spec |
+| L17 | Two outcome colours have come too close, under some kind of vision | Re-derive in the guide; the floor is CIEDE2000 8.0 |
+| L18 | The EVERY1 site declares a file it does not serve, has no 404, or a checksum is stale | Rerun `build_ai.py`; never trim the manifest to match a missing file |
+| L19 | The Android maskable icon overflows the safe zone | Increase the maskable pad in `tools/build_logos.py` |
 
 ## Verify before you finish
 

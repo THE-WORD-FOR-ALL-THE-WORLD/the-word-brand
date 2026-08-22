@@ -62,6 +62,7 @@ def rel(brand, *parts):
 
 
 FAVICON = os.path.join(LOGOS, "the-word", "favicon")
+EVERY1_ICON = os.path.join(LOGOS, "every1", "icon")
 DOWNLOADS = os.path.join(REPO, "assets", "downloads")
 MANIFEST = os.path.join(REPO, "ai-source", "logo-manifest.json")
 
@@ -108,6 +109,37 @@ GLYPH_SIZES = [512, 1024, 2048]
 # rather than drawn as a shape, so a bare favicon has a Midnight disc and a
 # transparent microphone: on dark browser chrome both vanish and the icon is gone.
 # The plate is what the microphone reads against, at every size.
+# EVERY1's app icon set, cut from the E1 icon.
+#
+# The E1 icon is the app icon on every surface: the mobile launcher, the installable
+# web app, the favicon, and every social profile. The manifest used to say that in one
+# place and say "the numeral" in another, which left a team unable to ship a launcher
+# icon at all without guessing, and guessing here means redrawing a mark.
+#
+# (file, pixels, pad as a fraction of the mark, ground)
+#   "plate"    opaque Midnight behind the mark, because an app icon cannot be
+#              transparent and the OS rounds its corners.
+#   "maskable" the same, padded so the whole mark sits inside Android's safe zone:
+#              the inner circle of 66% diameter. An E1 bounding box has a diagonal of
+#              1.21 times its width, so the mark can be at most 54% of the canvas,
+#              which is what the pad buys. Anything bolder gets its corners eaten
+#              by whichever shape the launcher decides on.
+#   "mono"     a white silhouette on transparency, for an Android status bar, which
+#              throws away colour and keeps the alpha channel.
+#
+# There is no 16px icon on purpose. The E1 icon's published minimum width is 32px, and
+# publishing a 16px file would break the fourth of the five rules that are never
+# broken. Browsers downscale the 32 themselves, and the SVG is served first anyway.
+EVERY1_ICONS = [
+    ("every1-favicon-32.png", 32, 0.10, "plate"),
+    ("every1-favicon-48.png", 48, 0.12, "plate"),
+    ("every1-apple-touch-icon-180.png", 180, 0.18, "plate"),
+    ("every1-icon-192.png", 192, 0.16, "plate"),
+    ("every1-icon-512.png", 512, 0.16, "plate"),
+    ("every1-icon-maskable-512.png", 512, 0.46, "maskable"),
+    ("every1-icon-mono-512.png", 512, 0.16, "mono"),
+]
+
 FAVICONS = [
     ("favicon-16.png", 16, 0.10, True),
     ("favicon-32.png", 32, 0.12, True),
@@ -567,9 +599,9 @@ BRANDS = [
             "EVERY1 is the BURN door, and the only one that stands on its own. It carries no "
             "parent lockup: this is the recorded exception, and it exists because EVERY1 is a "
             "movement, an app, and an activation platform that people join before they have "
-            "heard of the house behind it. The mark is the word and the numeral, and the "
-            "numeral does the work. It is the avatar, it is the icon, and it is the shape "
-            "photography is cut into."
+            "heard of the house behind it. The mark is the word and the numeral. The E1 icon "
+            "is the avatar and the app icon, on every surface. The numeral is the display mark "
+            "and the shape photography is cut into, which is a different job."
         ),
     },
     {
@@ -932,6 +964,28 @@ SOCIAL_CARD = os.path.join(REPO, "assets", "images", "og-card.png")
 EVERY1_CARD = os.path.join(REPO, "assets", "images", "every1-og-card.png")
 
 
+def render_every1_icon(masters, px, pad, mode):
+    """One EVERY1 app icon, cut from the E1 icon.
+
+    Three grounds. A plated icon gets an opaque Midnight square because a launcher
+    icon cannot be transparent and the platform rounds its own corners. A maskable
+    icon is the same, padded until the whole mark fits Android's safe circle. A
+    monochrome icon is a white silhouette on transparency, because a status bar keeps
+    the alpha channel and throws the colour away, and a two-tone mark reduced by the
+    OS would lose its numeral entirely.
+    """
+    from PIL import Image
+
+    e1 = masters[("every1", "e1")]
+    if mode == "mono":
+        # One colour, so the Flame numeral does not vanish when the OS flattens it.
+        return render(e1, "#FFFFFF", px, square=True, pad=pad)
+    img = render(e1, EVERY1_INKS["-reversed"], px, square=True, pad=pad)
+    ground = Image.new("RGBA", (px, px), (11, 26, 45, 255))
+    ground.alpha_composite(img)
+    return ground
+
+
 def render_every1_card(masters):
     """EVERY1's own link preview. Its own mark, no parent, on its own ground."""
     from PIL import Image
@@ -1101,6 +1155,9 @@ def build(check):
         for name, _px, _pad, _plate in FAVICONS:
             if not os.path.exists(os.path.join(FAVICON, name)):
                 w.stale.append(f"assets/logos/the-word/favicon/{name}")
+        for name, _px, _pad, _mode in EVERY1_ICONS:
+            if not os.path.exists(os.path.join(EVERY1_ICON, name)):
+                w.stale.append(f"assets/logos/every1/icon/{name}")
         if not os.path.exists(SOCIAL_CARD):
             w.stale.append("assets/images/og-card.png")
         if not os.path.exists(EVERY1_CARD):
@@ -1120,6 +1177,9 @@ def build(check):
                 ground.alpha_composite(img)
                 img = ground
             w.image(os.path.join(FAVICON, name), img)
+
+        for name, px, pad, mode in EVERY1_ICONS:
+            w.image(os.path.join(EVERY1_ICON, name), render_every1_icon(masters, px, pad, mode))
 
         w.image(SOCIAL_CARD, render_social_card(masters))
         w.image(EVERY1_CARD, render_every1_card(masters))
@@ -1156,6 +1216,53 @@ def build(check):
             "outlines with true curves, and only its brackets are drawn geometry."
         ),
         "configurations": entries,
+        # The app icon set, and the ruling that settles which mark it is cut from.
+        # marks[e1].use and the app rules named two different pictures for a release,
+        # which is not a wording problem: a team cannot ship a launcher icon while the
+        # standard contradicts itself, and the only way past it without an answer is to
+        # redraw a mark, which is the second thing that is never done.
+        "appIcon": {
+            "brand": "every1",
+            "mark": "e1",
+            "ruling": (
+                "The E1 icon is the app icon and the avatar on every surface: the mobile "
+                "launcher, the installable web app, the favicon, and every social profile. "
+                "The numeral is not the app icon. It is the display mark and the shape "
+                "photography is cut into."
+            ),
+            "sameEverywhere": True,
+            "ground": "Midnight. Opaque, because a launcher icon cannot be transparent.",
+            "safeZone": (
+                "Android crops to an arbitrary shape and guarantees only the inner circle at "
+                "66% diameter. The maskable file is padded so the whole mark sits inside it."
+            ),
+            "noSixteen": (
+                "No 16px icon is published. The E1 icon's minimum width is 32px and a 16px "
+                "file would breach it. Browsers downscale the 32 themselves, and the SVG is "
+                "offered first."
+            ),
+            "files": [
+                {
+                    "file": f"assets/logos/every1/icon/{name}",
+                    "format": "png",
+                    "width": px,
+                    "height": px,
+                    "purpose": {
+                        "plate": "app icon and favicon, opaque Midnight ground",
+                        "maskable": "Android adaptive icon, mark inside the safe zone",
+                        "mono": "Android status bar, white silhouette on transparency",
+                    }[mode],
+                }
+                for name, px, _pad, mode in EVERY1_ICONS
+            ]
+            + [
+                {
+                    "file": "assets/logos/every1/every1-e1-reversed.svg",
+                    "format": "svg",
+                    "purpose": "the vector favicon, which a browser prefers to any raster",
+                }
+            ],
+        },
         "packs": PACKS,
     }
     w.text(MANIFEST, json.dumps(manifest, indent=2) + "\n")

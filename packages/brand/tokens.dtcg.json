@@ -1,5 +1,5 @@
 {
-  "$description": "THE WORD FOR ALL THE WORLD, brand system v7.5, updated 2026-08-20. Canonical source: https://brand.theword.world/ai/manifest.json",
+  "$description": "THE WORD FOR ALL THE WORLD, brand system v7.6, updated 2026-08-22. Canonical source: https://brand.theword.world/ai/manifest.json",
   "color": {
     "midnight": {
       "$value": "#0B1A2D",
@@ -19,7 +19,7 @@
     "flame": {
       "$value": "#F85842",
       "$type": "color",
-      "$description": "Non-text accent: BURN moments, display numerals, highlights. Never carries text. ≤10%."
+      "$description": "Non-text accent on light grounds: BURN moments, display numerals, highlights. Never carries text on Parchment or White. ≤10%. On Midnight it is the text accent, because Ember is 3.25:1 there and fails: see accent-on-dark."
     },
     "ember": {
       "$value": "#C13A24",
@@ -82,6 +82,11 @@
       "$value": "rgba(247,243,236,.55)",
       "$type": "color",
       "$description": "dark ground. Placeholder and inactive labels on Midnight."
+    },
+    "ink-reversed-faint": {
+      "$value": "rgba(247,243,236,.38)",
+      "$type": "color",
+      "$description": "dark ground. Disabled controls on Midnight. The dark twin of ink-faint, and the only place the muted floor may be crossed on this ground."
     },
     "rule-light": {
       "$value": "rgba(247,243,236,.22)",
@@ -311,6 +316,190 @@
     "wide": {
       "$value": "1080px",
       "$type": "dimension"
+    }
+  },
+  "outcome": {
+    "outcome-ministered": {
+      "light": {
+        "$value": "#005F5E",
+        "$type": "color",
+        "$description": "Ministered To. The conversation happened. The quietest of the six, because it is the most common."
+      },
+      "dark": {
+        "$value": "#00DDDB",
+        "$type": "color",
+        "$description": "Ministered To. The conversation happened. The quietest of the six, because it is the most common."
+      }
+    },
+    "outcome-salvation": {
+      "light": {
+        "$value": "#007D4C",
+        "$type": "color",
+        "$description": "Salvation. New life, and the reason for the rest. Green is life, not fire: fire is the institution’s own voice and is not lent to a data category."
+      },
+      "dark": {
+        "$value": "#00C479",
+        "$type": "color",
+        "$description": "Salvation. New life, and the reason for the rest. Green is life, not fire: fire is the institution’s own voice and is not lent to a data category."
+      }
+    },
+    "outcome-healing": {
+      "light": {
+        "$value": "#3B4100",
+        "$type": "color",
+        "$description": "Healing. The color of oil, which is what the sick are anointed with."
+      },
+      "dark": {
+        "$value": "#B2BE2C",
+        "$type": "color",
+        "$description": "Healing. The color of oil, which is what the sick are anointed with."
+      }
+    },
+    "outcome-baptism-water": {
+      "light": {
+        "$value": "#0070BD",
+        "$type": "color",
+        "$description": "Baptism in water."
+      },
+      "dark": {
+        "$value": "#9CC3FF",
+        "$type": "color",
+        "$description": "Baptism in water."
+      }
+    },
+    "outcome-baptism-spirit": {
+      "light": {
+        "$value": "#4C3DAF",
+        "$type": "color",
+        "$description": "Baptism in the Holy Spirit. Separated from water baptism by hue, because they are separate events and are counted separately."
+      },
+      "dark": {
+        "$value": "#A98FFF",
+        "$type": "color",
+        "$description": "Baptism in the Holy Spirit. Separated from water baptism by hue, because they are separate events and are counted separately."
+      }
+    },
+    "outcome-raised": {
+      "light": {
+        "$value": "#860048",
+        "$type": "color",
+        "$description": "Raised from the dead. The rarest, and the furthest from every other value here."
+      },
+      "dark": {
+        "$value": "#FF83B2",
+        "$type": "color",
+        "$description": "Raised from the dead. The rarest, and the furthest from every other value here."
+      }
+    }
+  },
+  "progression": {
+    "progression-1": {
+      "light": {
+        "$value": "#F8E4D7",
+        "$type": "color",
+        "$description": "Match"
+      },
+      "dark": {
+        "$value": "#5C412F",
+        "$type": "color",
+        "$description": "Match"
+      }
+    },
+    "progression-2": {
+      "light": {
+        "$value": "#FAD5BF",
+        "$type": "color",
+        "$description": "Kindling"
+      },
+      "dark": {
+        "$value": "#6D462F",
+        "$type": "color",
+        "$description": "Kindling"
+      }
+    },
+    "progression-3": {
+      "light": {
+        "$value": "#FBC6A9",
+        "$type": "color",
+        "$description": "Twigs"
+      },
+      "dark": {
+        "$value": "#7F4B2F",
+        "$type": "color",
+        "$description": "Twigs"
+      }
+    },
+    "progression-4": {
+      "light": {
+        "$value": "#FBB694",
+        "$type": "color",
+        "$description": "Sticks"
+      },
+      "dark": {
+        "$value": "#924F30",
+        "$type": "color",
+        "$description": "Sticks"
+      }
+    },
+    "progression-5": {
+      "light": {
+        "$value": "#FBA680",
+        "$type": "color",
+        "$description": "Logs"
+      },
+      "dark": {
+        "$value": "#A55231",
+        "$type": "color",
+        "$description": "Logs"
+      }
+    },
+    "progression-6": {
+      "light": {
+        "$value": "#FB956E",
+        "$type": "color",
+        "$description": "Trees"
+      },
+      "dark": {
+        "$value": "#B95534",
+        "$type": "color",
+        "$description": "Trees"
+      }
+    },
+    "progression-7": {
+      "light": {
+        "$value": "#FA825E",
+        "$type": "color",
+        "$description": "Forests"
+      },
+      "dark": {
+        "$value": "#CD5737",
+        "$type": "color",
+        "$description": "Forests"
+      }
+    },
+    "progression-8": {
+      "light": {
+        "$value": "#F96E4F",
+        "$type": "color",
+        "$description": "Mountain Ranges"
+      },
+      "dark": {
+        "$value": "#E2583C",
+        "$type": "color",
+        "$description": "Mountain Ranges"
+      }
+    },
+    "progression-9": {
+      "light": {
+        "$value": "#F85842",
+        "$type": "color",
+        "$description": "The World"
+      },
+      "dark": {
+        "$value": "#F85842",
+        "$type": "color",
+        "$description": "The World"
+      }
     }
   }
 }

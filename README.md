@@ -65,7 +65,7 @@ correct content types so any agent can fetch them.
 | [`/ai/manifest.json`](https://brand.theword.world/ai/manifest.json) | **The doorway.** Versions, links, and a SHA-256 for every other file. Agents read this first. |
 | [`/ai/brand-system.md`](https://brand.theword.world/ai/brand-system.md) | The complete standard, visual and verbal, as one document. |
 | [`/ai/SKILL.md`](https://brand.theword.world/ai/SKILL.md) | The installable agent skill: retrieval and audit workflow. |
-| [`/ai/tokens.json`](https://brand.theword.world/ai/tokens.json) | Colors, typography, system tokens and states. |
+| [`/ai/tokens.json`](https://brand.theword.world/ai/tokens.json) | Colors, typography, both themes, the type scale, the neutral ramp, system tokens and states, outcome and progression colour, and every contrast pair measured. |
 | [`/ai/audit.md`](https://brand.theword.world/ai/audit.md) | The rubric every piece of work is checked against, with its report template. |
 | [`/ai/components.json`](https://brand.theword.world/ai/components.json) | Component specs, written against token names and resolved to current values. |
 | [`/ai/assets.json`](https://brand.theword.world/ai/assets.json) | Every approved logo, photograph, and video, with usage rules and known gaps. |
@@ -76,6 +76,7 @@ correct content types so any agent can fetch them.
 | [`/assets/brand.css`](https://brand.theword.world/assets/brand.css) | The tokens and the component layer, as one stylesheet anyone can link. |
 | [`/ai/approved-examples.md`](https://brand.theword.world/ai/approved-examples.md) | Worked output that passes the audit. |
 | [`/ai/anti-patterns.md`](https://brand.theword.world/ai/anti-patterns.md) | What not to do, including every DON'T and every banned word. |
+| [`/brand_check.py`](https://brand.theword.world/brand_check.py) | The mechanical audit as a runnable script, served as text. A downstream build enforces these rules rather than its own reading of them. |
 | [`/llms.txt`](https://brand.theword.world/llms.txt) | Discovery file for tools that look for one. |
 
 ### Skills
@@ -179,6 +180,7 @@ tools/brand_lint.py ─→ proves the pages, the AI layer, and delivery still ag
 ├── .claude/skills/         Maintenance skills for this repository.
 ├── tools/
 │   ├── svgkit.py           SVG parsing, measuring, and rasterizing, with no external binaries
+│   ├── colorkit.py         Contrast, CIEDE2000, and colour-blindness simulation, standard library only
 │   ├── build_logos.py      Generation: derives every logo file from the approved masters
 │   ├── brandsource.py      Extraction: reads the guides, returns structured data
 │   ├── build_ai.py         Generation: writes ai/, skills/, llms.txt, sitemap.xml, _headers
@@ -238,7 +240,8 @@ and time:
    improvised colors, text on Flame, unapproved fonts, broken asset links, discovery gaps, manifest
    checksums, navigation consistency, the two copies of the skill, WCAG contrast for every pair the
    system puts on screen, social cards on every page, the React library against the component
-   specifications, and every registered consumer's version. Sixteen checks, listed in
+   specifications, the EVERY1 site against its own manifest, and every registered consumer's
+   version. Nineteen checks, listed in
    [`/brand-sync`](.claude/skills/brand-sync/SKILL.md).
 3. **CI blocks the deploy.** The GitHub Action runs the build in `--check` mode and the linter
    before deploying. Stale or inconsistent output never reaches `brand.theword.world`.

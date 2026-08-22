@@ -1,6 +1,6 @@
 # THE WORD FOR ALL THE WORLD: Brand System
 
-> **Brand system v7.5 · Messaging guide v1.0 · Updated 2026-08-20**
+> **Brand system v7.6 · Messaging guide v2.0 · Updated 2026-08-22**
 > Canonical source: <https://brand.theword.world/ai/manifest.json>
 > The complete standard, assembled for machine reading. The human guides are at <https://brand.theword.world/brand> and <https://brand.theword.world/brand/messaging>.
 
@@ -42,7 +42,7 @@ Two layers held in tension. **The institution** is the parent, THE WORD FOR ALL 
 
 Received before the ministry had a name for what it would become. It is quoted exactly, in full, or not at all. Never paraphrased, never excerpted for effect.
 
-> As tensions grow between man and foe, the light of THE WORD is needed. No peace they'll find, they'll react in kind, until THE WORD is heeded. But great peace have they that love God's Law, and in that Word their reflections saw — and went forth knowing the enemy is defeated.
+> As tensions grow between man and foe, the light of THE WORD is needed. No peace they'll find, they'll react in kind, until THE WORD is heeded. But great peace have they that love God's Law, and in that Word their reflections saw, and went forth knowing the enemy is defeated.
 >
 > Received December 2019
 
@@ -86,7 +86,7 @@ Authority is anchored in named people. Vision statements close with real handwri
 
 Composition is centered, spacious, and disciplined: navy and paper grounds, letterspaced labels, sentence-case serif headlines, hairline rules. The formality is the frame; the footage, the fire, and the testimony are the picture.
 
-- Flame never exceeds a tenth of any composition and never carries text (§03).
+- Flame never exceeds a tenth of any composition, and never carries text on a light ground. On Midnight it is the text accent, because Ember fails there (§03).
 - Serif headlines are sentence case with at most one italic word; all-caps belongs to the wordmark and labels.
 - Generous whitespace is mandatory. Crowding reads as hype, and we are never hype.
 
@@ -107,7 +107,7 @@ Five colors that do one job together. Midnight holds the room and carries the in
 | midnight | Midnight | #0B1A2D | Primary ground. Heroes, bands, footers. |
 | word-blue | Word Blue | #023D6F | Structural secondary. Logo continuity. |
 | parchment | Parchment | #F7F3EC | Light ground. Official paper, never gray. |
-| flame | Flame | #F85842 | Non-text accent: BURN moments, display numerals, highlights. Never carries text. ≤10%. |
+| flame | Flame | #F85842 | Non-text accent on light grounds: BURN moments, display numerals, highlights. Never carries text on Parchment or White. ≤10%. On Midnight it is the text accent, because Ember is 3.25:1 there and fails: see accent-on-dark. |
 | ember | Ember | #C13A24 | Fire at text size: primary buttons, links, labels, hovers. |
 | white | White | #FFFFFF | Cards, reversed text, button labels. |
 
@@ -305,7 +305,7 @@ The doors' channel facts: Revival To My City · EVERY1 Movement · School of the
 
 **Bold, clear, simple, direct.** Pastoral with prophetic urgency. Invitation-first. Short, punchy sentences. Never polished-corporate, never hype. Recurring language: real relationship with Jesus · first love · fire starts fire · turn your heart back to Jesus · walk with Jesus. Full rules live in the Voice & Vision Sheet.
 
-**The filter.** Would Nathan actually say this? Does it point people to Jesus Himself? Is it clear to a new believer? Does it invite response? If unsure, simplify and center Jesus.
+**The filter.** Does this point people to Jesus Himself? Is every claim in it something we can show? Is it clear to a new believer? Does it ask for one thing? If the answer is unsure anywhere, simplify and centre Jesus.
 
 **Standing rules.** Short sentences. One idea each. Say Jesus by name, not "faith," not "spirituality." Never invent a statistic, a quote, or a testimony; the record or nothing (Law II). Never manufacture a catchphrase: if a line has to be explained to be catchy, kill it. Invitation before information: every piece ends with something the reader can do.
 
@@ -316,28 +316,49 @@ Use these exactly as written.
 | Phrase | What it carries |
 | --- | --- |
 | Real relationship with Jesus | The gospel in five words. The good news is not religion. It's Him. |
-| First love | Revelation 3. The heart of every RTMC message: return. |
+| First love | Revelation 2:4. The heart of every RTMC message: return. |
 | Fire starts fire | How the mission spreads. We burn; the dry catch. |
 | Revival is here, not coming | Our posture. We announce a fact, we don't market a hope. |
-| EVERY1 in the church for EVERY1 outside the church | The whole movement in one line. Always styled EVERY1. |
+| EVERY1 in the Church for EVERY1 outside the Church | The whole movement in one line. Always styled EVERY1. |
 | Lighting hearts and seats on fire for Jesus | What a revival meeting does. |
 | Walk with Jesus · turn your heart back to Jesus | The invitation, said plainly. |
 | Authority in Christ | What the School trains. Believers carry power, not permission slips. |
 | The Holy Spirit runs our services | The guarantee. There is no routine He can't interrupt. |
+| Please God, walk with Jesus and minister to Him | The purpose, said in full. |
+| Minister to Jesus | The direction of worship: toward Him, before it is toward people. |
+| Strengthen the local church | The mission verb. We strengthen; we do not replace. |
+| The Great Commission | The assignment, named rather than implied. |
+| Spirit-led | Hyphenated, always. Our spirit has the final say. |
+| Full of faith | A core value, and a description of how we sound. |
+| Driven by love | The motive behind the urgency. |
+| Burn for Jesus | The core value, and the BURN phase in three words. |
+| GO / GO YE | The command. GO YE preserves the King James wording on purpose. |
+| From lethargy to leadership | What the whole process does to a person. |
+| CLEAN, BURN, TRAIN | The governing process. Never reordered. |
+| Fellow laborers | What partners are. Not donors, not a list. |
+| Partnership is our strength | One of the three uniques. |
+| Assignment · calling · responsibility | What a believer carries. Preferred over "purpose" alone. |
+| Stewardship | How we hold resources, results and trust. |
+| Harvest · multiplication | Fruit language, tied to the soil and fire metaphors. |
+| Kingdom of Heaven | God's rule and righteousness. Never partisan control. |
 
 ### Language we never use
 
-**Hype.** insane, epic, unreal, next-level, game-changer, "God showed up and showed out", "you won't believe", walls of 🔥 emojis, ALL-CAPS excitement
+**Hype.** next-level, next level, game-changer, game-changing, "God showed up and showed out", "you won't believe", walls of flame emojis, ALL-CAPS excitement, "something big is coming", "you do not want to miss this", "come expecting"
 
-Hype manufactures a feeling. We report what God actually did. The record is more powerful than the adjective.
+Manufactured intensity. Excitement must arise from substance, or it is not excitement, it is volume.
 
-**Corporate Polish.** leverage, synergy, solutions, optimize, engage stakeholders, "excited to announce", comprehensive, robust
+**Corporate polish.** synergy, engage stakeholders, "excited to announce", lean in
 
-We are a ministry, not a vendor. Corporate language makes the guide the hero and the mission a product.
+Borrowed authority. It makes a ministry sound like a vendor and says nothing a person can act on.
 
-**Churchy Insider Talk.** traveling mercies, hedge of protection, "love on", "do life together", "press in", "contend for breakthrough", "a God thing", "fresh anointing" (unexplained), "blessed to announce"
+**Churchy insider talk.** traveling mercies, hedge of protection, "love on", "do life together", "press in", "contend for breakthrough", "a God thing", "fresh anointing" (unexplained), "blessed to announce", "get plugged in", authentic community
 
-Insider language tells a new believer this isn't for them. Everything we say is for them.
+Language that only works if you are already inside. It excludes the person we are trying to reach.
+
+**Generic ministry filler.** life-changing, powerful experience, step into your destiny, your best life, new season, shift the atmosphere, unlock your potential, make an impact, transform the world, God-sized dream
+
+Words that describe nothing. If the sentence survives with the phrase deleted, delete it.
 
 Theological words such as repentance, salvation, and Holy Spirit baptism are never banned. They are explained. The test is always the filter: clear to a new believer.
 
@@ -345,9 +366,17 @@ Theological words such as repentance, salvation, and Holy Spirit baptism are nev
 
 | Never this | Always this |
 | --- | --- |
-| "🔥🔥 INSANE night!! God showed UP and showed OUT!!" | "Friday night in [city]: [n] people heard the gospel. [n] turned their hearts back to Jesus. The fire is spreading." (numbers from the official record only) |
-| "Join us as we press into a fresh anointing and contend for breakthrough." | "Come. Jesus is moving. Bring the person you've been praying for." |
-| "We provide comprehensive discipleship solutions for local church partners." | "We train the local church to walk with Jesus." |
+| "The world is dying while lazy Christians sit in church. Stop making excuses and do something." | "You were saved and sent. Someone in your world needs to know what Jesus has done for you. Ask the Holy Spirit who your 1 is, begin the conversation, and GO." |
+| "Revival is coming! Do not miss the most life-changing event your city has ever seen." | "There must be more than going through the motions. Revival To My City is calling the local church to return to her first love. Come worship, receive the Word, and make room for the Holy Spirit to awaken what has become dry or distracted. Attend Revival in [City]." |
+| "Not sure whether you are allowed to evangelize? Download our ministry app and learn how." | "You were saved and sent. The Great Commission belongs to EVERY1. Join believers, churches and ministries around the world who are preaching the Gospel in the power of the Holy Spirit. Accept the mission. Reach your 1. Then GO again." |
+| "An elite leadership intensive for serious Christians ready to reach the next level." | "You were not called to remain unsure of who you are, what Jesus has given you, or where you belong. The School of the Local Church trains believers to know their authority in Christ, build a real relationship with Jesus, and take their place in the local church. Begin Training." |
+| "Because you are one of our most faithful donors, we wanted to tell you about another urgent financial need." | "We remembered you in prayer today. We are asking the Lord to strengthen your faith, family, work and assignment. Here is a truth that has been helping our team remain full of faith this month, and we believe it will strengthen you too." |
+| "If you do not give by midnight, this opportunity may disappear. Sow today and expect your miracle." | "We are inviting partners to help provide [verified need] for [specific assignment]. The current confirmed cost is [amount], and gifts designated to this campaign will be used for [purpose]. Please pray and participate only as the Lord leads you. If you choose to give, the process is secure and simple: [link]. We will report what was received, how it was used, and the verified fruit." |
+| "Our campaign was a massive success with thousands of lives changed and unprecedented miracles." | "From [dates], the team served in [locations]. Attendance was [counting method]. Ministry records document [verified number] Gospel responses, [verified number] follow-up connections, and [verified number] reported healings. Testimonies still awaiting confirmation are labelled unverified. These results are reported as fruit entrusted to us, not as the measure of our spiritual success." |
+| "The Church is asleep, compromised and failing its generation." | "Many believers know there must be more but have become dry, distracted or weighed down. We speak truthfully about what prevents the Word from producing, while calling the Church back to her first love. The destination is never shame. It is awakening, responsibility and action." |
+| "The lost and unsaved need to get right with God before it is too late." | "If you do not yet know Jesus, He is not distant or unavailable. He knows you, loves you, and is inviting you to receive forgiveness, new life, and a real relationship with Him." |
+| Source: "when Jesus calls you you go you do not wait until everything makes sense you go". Edited to: "Spiritual progress requires embracing uncertainty and proactively pursuing your divine purpose." | Punctuation only: "When Jesus calls you, you GO. You do not wait until everything makes sense. You GO." |
+| "To ensure everyone feels comfortable, EVERY1 avoids disputed supernatural subjects and focuses on shared values." | "EVERY1 welcomes cooperation around the essential Gospel and the Great Commission. We are not exclusive, but we will not shy away from the Holy Spirit. Spirit-led ministry, healing, deliverance and supernatural dependence upon Him remain part of our normal environment." |
 
 ## 13. Message architecture
 
@@ -355,52 +384,67 @@ The believer is the hero. We are the guide. That order never flips. Messaging ne
 
 | Element | Canonical language |
 | --- | --- |
-| The hero | The local church and the believer. They want a real, active relationship with Jesus and to walk in their purpose, but they feel dry, distracted, or asleep. |
-| The problem | External: the church is asleep and the fire has gone out. Internal: "I know there's more to this walk with Jesus. I just don't know how to get there." Philosophical: the world is waiting for the Church to wake up. |
-| The guide | THE WORD FOR ALL THE WORLD. We don't bring hype. We bring hunger. The Holy Spirit runs our services, and fire starts fire. |
-| The plan | CLEAN · BURN · TRAIN: Revival To My City wakes the church, the EVERY1 Movement sends it, the School of the Local Church roots it. |
-| The call | Primary: join the movement: host a Revival To My City, join EVERY1, enroll in the School. Transitional: watch a testimony, join the prayer meeting, take the free personal evangelism course. |
-| The stakes | If the church stays asleep, people keep searching for life in all the wrong places and entire cities stay unchanged. |
-| The success | Believers become bold, the Great Commission is fulfilled, cities are transformed. The world knows Jesus. |
+| Jesus | The centre and the final destination. |
+| Purpose | Build a real relationship with Jesus. |
+| Mission | Strengthen the local church to do the Great Commission. |
+| Vision | Every tribe, every tongue, every nation and EVERY1 will know the name Jesus. |
+| Process | CLEAN, BURN, TRAIN. |
+| Initiative | Revival To My City, the EVERY1 Movement, or the School of the Local Church. |
+| Current message | The one truth being communicated now. |
+| Response | The one action the audience should take now. |
 
-## 14. The five people we speak to
+## 14. Who we speak to, in priority order
 
-Every piece is aimed at one of these five. Know which one before writing a word. The "needs to hear" line is the heart of the message: say it in your own words, but say that.
+This is the master-brand audience priority. Know which audience a piece is for before writing a word, and when a piece has to choose, it chooses the audience nearer the top. The posture is how we stand toward them: it governs tone before any wording is chosen.
 
-### The Local Pastor (US & International)
+| # | Audience | Our posture |
+| --- | --- | --- |
+| 1 | Ministry partners and donors | Fellow laborers in a shared assignment. |
+| 2 | Institutions, governments and public leaders | Apostolic leader and credible institutional partner. |
+| 3 | Pastors and church leaders | Trusted ministry partner. |
+| 4 | Evangelists and ministers | Apostolic leader and fellow laborer. |
+| 5 | The ordinary believer | Teacher and equipper. |
+| 6 | The spiritually hungry but passive believer | Teacher and equipper, calling them out of the pew. |
+| 7 | Those who do not yet know Jesus | Personal, loving and fatherly invitation. |
+
+### Ideal client profiles
+
+Experimental, not yet ratified. The four fields below are the ministry's own words. The rest of each profile is deliberately unfilled: where they already are, what triggers the search, the real objection, who else they are listening to, and what tells us it worked. Do not invent those. Use these to aim a piece of writing, not to cite as settled.
+
+**The Local Pastor** (US and international · audience 3, Pastors and church leaders)
 
 - **They want:** to multiply disciples and lead revival without burning out.
 - **Their pain:** exhaustion, plateaued growth, no discipleship pathway.
-- **Needs to hear:** "We come to serve your church, not build ours. When we leave, your people stay, on fire and equipped."
-- **First step:** host a Revival To My City · train leaders through the School.
+- **Needs to hear:** “We come to serve your church, not build ours. When we leave, your people stay, on fire and equipped.”
+- **First step:** host a Revival To My City, or train leaders through the School.
 
-### The Hungry Church Member (The Pew, Awake or Asleep)
+**The Hungry Church Member** (The pew, awake or asleep · audience 6, The spiritually hungry but passive believer)
 
 - **They want:** to grow spiritually and live on mission.
-- **Their pain:** dry faith. The conviction that "there must be more."
-- **Needs to hear:** "There is more, and it isn't a program. It's a real relationship with Jesus, and it starts with turning back to your first love."
-- **First step:** join the EVERY1 Movement · start the School.
+- **Their pain:** dry faith, and the conviction that there must be more.
+- **Needs to hear:** “There is more, and it isn’t a program. It’s a real relationship with Jesus, and it starts with turning back to your first love.”
+- **First step:** join the EVERY1 Movement, or start the School.
 
-### The Lost Online Searcher (18 to 30 · Digital-First)
+**The Lost Online Searcher** (18 to 30, digital-first · audience 7, Those who do not yet know Jesus)
 
 - **They want:** truth, healing, identity, purpose.
-- **Their pain:** anxiety, loneliness, distrust of religion, hungry for what's real.
-- **Needs to hear:** "What you're looking for has a name. You can have a real relationship with Jesus, starting today."
-- **First step:** watch a testimony → request prayer → begin the intro course.
+- **Their pain:** anxiety, loneliness, distrust of religion, hunger for what is real.
+- **Needs to hear:** “What you’re looking for has a name. You can have a real relationship with Jesus, starting today.”
+- **First step:** watch a testimony, request prayer, then begin the intro course.
 
-### The Legacy Leader (66+ · Finishing Well)
+**The Legacy Leader** (66 and over, finishing well · audience 4, Evangelists and ministers)
 
 - **They want:** to pass the torch and leave their people stronger.
-- **Their pain:** feeling forgotten; fear the work dies with them.
-- **Needs to hear:** "Your fire isn't finished. The next generation needs what you carry."
-- **First step:** mentor through the School · cover the movement in prayer · give.
+- **Their pain:** feeling forgotten, and the fear that the work dies with them.
+- **Needs to hear:** “Your fire isn’t finished. The next generation needs what you carry.”
+- **First step:** mentor through the School, cover the movement in prayer, give.
 
-### The Kingdom Partner (Businesses & Ministries)
+**The Kingdom Partner** (Businesses and ministries · audience 1, Ministry partners and donors)
 
-- **They want:** eternal impact with their influence and resources.
-- **Their pain:** unsure whom to trust; tired of shallow ministry.
-- **Needs to hear:** "Fund what heaven is doing. Every number we report comes from the official record. You will always know exactly what your partnership did."
-- **First step:** sponsor a Revival To My City · scholarship School students.
+- **They want:** eternal fruit from their influence and resources.
+- **Their pain:** unsure whom to trust, and tired of shallow ministry.
+- **Needs to hear:** “Fund what heaven is doing. Every number we report comes from the official record. You will always know exactly what your partnership did.”
+- **First step:** sponsor a Revival To My City, or scholarship School students.
 
 ## 15. How an agent uses this system
 
@@ -468,10 +512,11 @@ replace it.
 
 ## 16. Version history
 
-### Brand Guide v7.5
+### Brand Guide v7.6
 
 | Version | Date | Owner | Changed | Approved |
 | --- | --- | --- | --- | --- |
+| 7.6 | 2026-08-22 | Nathan Zimmer | The product release, answering the EVERY1 platform build’s two written requests. §03 states what “a tenth” is measured against, and narrows the Flame text rule to the light grounds it was always about: on Midnight, Flame is the text accent, because Ember is 3.25:1 there and fails. §04 answers weight, tracking, italic and figures per step, sets the scripture treatment, and rules that the faces are self-hosted on the web and bundled in an application. §09 adds functional colour the identity palette never covered: six outcome colours and a nine-step progression ramp, each value derived rather than picked and gated on 4.5:1 in both themes and ΔE2000 8.5 separation under normal vision and all three dichromacies. The neutral ramp gains ink-reversed-faint. Every permitted and forbidden contrast pair is now measured and published at /ai/tokens.json rather than left for each surface to compute. On the delivery side: the EVERY1 site now serves all 120 files its manifest declares rather than 40, returns a real 404, publishes brand_check.py, and carries a SHA-256 on every declared file. The app icon contradiction is resolved in favour of the E1 icon. | Joel Zimmer · Nathan Zimmer |
 | 7.5 | 2026-08-21 | Nathan Zimmer | EVERY1’s door gets its words. An audit of the movement found the mark system in good order and everything downstream of it missing: the site published eight lockups, six colours and three faces, and not one line about what to say. An organisation carrying the mark at a conference got the artwork exactly right and then wrote its own copy, which does more damage than a stretched logo and is harder to take back. Four things are fixed. First, the vision is published as text. The vision lockup was described as carrying the whole promise, and that promise existed only as outlines inside the artwork: Every tribe, every tongue, every nation will know the name Jesus. A partner could put it on a stage backdrop and could not quote it in a program or check a translation of it. The site’s own footer had been quoting the first half and stopping. Second, the words themselves are on the site: the mission, the promise, what the movement is, who may join, the first three steps, the four phrases it carries, how to write as EVERY1, the banned words, and a boilerplate paragraph to be used as written. Third, the app is specified rather than pictured. EVERY1 is a movement, an app and an activation platform, and the app had one image and no design. Eight screens are named with their one action, their marks, their ground, their empty state and their error state, plus nine rules that hold across all of them. A mockup is correct the day it is exported and silently wrong after the next token change; a spec generated from tokens moves when the brand moves. The 1 as a mask gains an interface rule it did not have: one per view, because a scrolling list would put six on screen and turn the signature move into wallpaper. Fourth, the messaging document stops contradicting itself. Section 1 told every reader that the initiative carries the endorsement line and Section 8 told them EVERY1 carries none, because the sentence was written once for all three doors. Section 1 now reads the rule that applies to the door it is describing. The words are stated once, in ai-source/every1-messaging.json, and read by both the document generator and the site generator, so the words a partner repeats and the words on record cannot drift. They ship in EVERY1’s machine layer too, so an agent writing a caption gets the language along with the artwork. Two audiences are recorded for this door, The Sent Believer and The Partner Organisation, with twenty-three approved strings written against them: the copy bank held forty-seven strings and none for the people this movement is actually for. An unrecognised audience now fails the build, which nothing checked before. The vision and the mission are also restated in this version. The vision reads Every tribe, every tongue, every nation, and EVERY1 will know the name Jesus (Hebrews 8:11), and it is now read from this guide rather than retyped: the EVERY1 site had been carrying a shortened form that dropped and EVERY1 and with it the reason the wordmark sits inside the sentence. The lockup is not a logo placed between two lines. The mark is a word in the sentence, and read top to bottom the lockup says the vision in full. EVERY1’s mission becomes Empowering the local church to walk in unity to do the great commission & walk in God’s calling (Acts 2:17). It was stated in five hand-edited places and all five now agree. | Joel Zimmer, Nathan Zimmer |
 | 7.4 | 2026-08-20 | Nathan Zimmer | EVERY1 gets its own front door at brand.every1movement.com, written for the people who were never going to read this guide: our own team, and any organisation carrying the mark at a conference or an activation. It leads with how to use the mark rather than with how the system is governed. Which file for which ground, the room each mark needs, the smallest it may be set, the six colours, the three faces, the short list of things that break it, the 1 as a mask, and how to ask for a country that is not drawn yet. It is a second site, not a second system. One repository, one build, one linter and one version number, published twice, which is what stops the two drifting. Splitting the machinery would have handed back the single thing that makes any of this trustworthy: that nothing here can disagree with anything else. It is also self-contained. The site carries its own copies of the stylesheet, the three faces and its own marks, because a partner downloading a logo should never be sent to the parent’s domain, and the door that stands alone should not go dark when that domain does. Two roots meant the linter had to learn that a page under every1/ resolves its links against every1/, not against the repository; without it every correct link on the new site read as broken. A fork becomes the right answer the day EVERY1’s palette or typefaces diverge from the house, or the day a separate team owns it with no shared review. On that day the structure is EVERY1 consuming @theword/brand as a dependency rather than copying it, which is already built and waiting. | Joel Zimmer, Nathan Zimmer |
 | 7.3 | 2026-08-20 | Nathan Zimmer | The favicon stops disappearing on dark browser chrome. The microphone is knocked out of the disc rather than drawn as a shape, so the small favicons, which had no ground behind them, were a Midnight disc with a transparent microphone: on a dark tab strip both vanished and the icon was simply gone. Every size now carries the Midnight plate that the touch icons already had, so the mark reads on any chrome at 16, 32 and 48 as well as at 180, 192 and 512. No artwork changes and the glyph itself is untouched. What this does not do is make the microphone white. The microphone is negative space carved by the disc’s own outline, not a separable shape, so no build step can fill it; only the capsule can be reached, and a capsule on its own reads as a pill rather than a microphone. A white microphone needs the glyph redrawn with the microphone as a positive shape, which is recorded here as the open question it is rather than approximated. | Joel Zimmer, Nathan Zimmer |
@@ -509,9 +554,10 @@ replace it.
 | 2.1 | not recorded | not recorded | DM Serif Text with Instrument Sans trialled and rejected on readability. | not recorded |
 | 2.0 | not recorded | not recorded | Instrument Serif with DM Sans. | not recorded |
 
-### Messaging Guide v1.0
+### Messaging Guide v2.0
 
 | Version | Date | Change |
 | --- | --- | --- |
-| 1.0 | August 2026 | Initial guide. Rulings on record: fused mission line public with Purpose/Mission/Vision internal · SOSKA roadmap-only · books/music/clothing out of scope. Origin-story fields bracketed pending verification. Banned-word starter lists pending strike/keep review. |
+| 2.0 | 2026-08-21 | The Messaging Standard replaces the Messaging Guide. The identity core is unchanged and was confirmed word for word against the source. New: theological language, the verbal system, metaphor architecture, capitalization and Scripture standards, channel and leadership voice, partnership communication, provenance classifications for reporting, sub-brand scripts, and the publication audit. Four levels of authority are introduced, so a locked conviction and an experimental profile are no longer published as though they carried the same weight. The voice filter no longer asks whether one named leader would say a thing: THE WORD has its own voice and both leaders have theirs. Audiences are restated as the master-brand priority order. All Is Well is recorded as a podcast rather than an initiative. Em dashes are prohibited outright, which the Doc had permitted. Corrected: the first-love citation was Revelation 3 and is Revelation 2:4. The ten-year target is removed and lives in the vision tool. The page is set as a document rather than a designed page, because a standard this long has to be readable from top to bottom, and it carries a standing table of contents that marks where the reader is. Ideal client profiles are added as Section 09, carried forward from v1.0's five personas and marked experimental: the four fields they already had are the ministry's own words, and the fields they still need are named rather than invented. Banned language is split in two. A word we never use is matched literally; a word that is ordinary English until it keeps bad company is written as a pattern, and the build expands it, so epic night is a finding and epic poem is not. Companion version corrected from Brand Guide v5.0 to v7.5, which it had trailed by seven releases. |
+| 1.0 | 2026-08-15 | First published messaging guide. The foundation, the prophecy, the origin story, what we are and are not, the message architecture, five audience profiles, voice and vocabulary, and the proof policy. |
 

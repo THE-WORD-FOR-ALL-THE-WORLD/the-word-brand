@@ -107,4 +107,9 @@
   Cache-Control: public, max-age=300, must-revalidate
   Content-Type: text/markdown; charset=utf-8
   X-Robots-Tag: all
+/brand_check.py
+  Access-Control-Allow-Origin: *
+  Cache-Control: public, max-age=300, must-revalidate
+  Content-Type: text/x-python; charset=utf-8
+  X-Robots-Tag: all
 # <<< end generated

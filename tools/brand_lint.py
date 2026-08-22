@@ -14,7 +14,9 @@ Errors fail the build. Warnings are reported and do not.
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
+import math
 import os
 import re
 import sys
@@ -23,6 +25,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 import brandsource as bs  # noqa: E402
 import build_ai  # noqa: E402
+import colorkit as ck  # noqa: E402
 
 REPO = bs.REPO
 SKIP_DIRS = {".git", ".github", ".wrangler", "node_modules", "archive"}
@@ -308,6 +311,10 @@ def check_navigation(files: list):
     """L10: the portal chrome is the same on every page."""
     sets = {}
     for rel in files:
+        # A page served from another site carries that site's chrome, not the
+        # portal's. Comparing the two reports a difference that is the point.
+        if any(rel.startswith(prefix) for prefix in SITE_ROOTS):
+            continue
         s = strip_specimens(bs.read(os.path.join(REPO, rel)))
         nav = re.search(r'<div class="links">(.*?)</div>', s, re.S)
         if not nav:
@@ -341,99 +348,229 @@ def check_skill_copies():
         err("L11", "ai/SKILL.md and skills/the-word-brand/SKILL.md have drifted apart. Run tools/build_ai.py.")
 
 
-def _rgb(value: str, ground: tuple) -> tuple:
-    """A hex or rgba() token as solid RGB, composited over its stated ground."""
-    value = value.strip()
-    m = re.fullmatch(r"#([0-9A-Fa-f]{6})", value)
-    if m:
-        h = m.group(1)
-        return tuple(int(h[i : i + 2], 16) for i in (0, 2, 4))
-    m = re.fullmatch(r"rgba?\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*(?:,\s*([\d.]+)\s*)?\)", value)
-    if not m:
-        raise ValueError(f"cannot read the colour {value!r}")
-    r, g, b = (int(m.group(i)) for i in (1, 2, 3))
-    a = float(m.group(4)) if m.group(4) else 1.0
-    return tuple(round(c * a + gc * (1 - a)) for c, gc in zip((r, g, b), ground))
-
-
-def _luminance(rgb: tuple) -> float:
-    def channel(c):
-        c = c / 255
-        return c / 12.92 if c <= 0.03928 else ((c + 0.055) / 1.055) ** 2.4
-
-    r, g, b = (channel(c) for c in rgb)
-    return 0.2126 * r + 0.7152 * g + 0.0722 * b
-
-
-def contrast(fg: str, bg: str) -> float:
-    ground = _rgb(bg, (255, 255, 255))
-    a, b = _luminance(_rgb(fg, ground)), _luminance(ground)
-    hi, lo = max(a, b), min(a, b)
-    return (hi + 0.05) / (lo + 0.05)
-
-
-# Every pair the system actually puts on screen, with the ratio it has to clear.
-# 4.5 is WCAG AA for body text, 3.0 for large text and for a non-text boundary.
-# A pair listed here is a pair somebody will build, so a palette edit that breaks
-# one of them fails the build rather than shipping and being found by a reader.
-CONTRAST_PAIRS = [
-    ("ink", "parchment", 4.5, "body text on the light ground"),
-    ("ink", "white", 4.5, "body text on a card"),
-    ("ink-muted", "parchment", 4.5, "captions and metadata on the light ground"),
-    ("ink-muted", "white", 4.5, "captions on a card"),
-    ("ink-soft", "parchment", 3.0, "placeholder and inactive labels"),
-    ("ink-reversed", "midnight", 4.5, "body text on Midnight"),
-    ("ink-reversed-muted", "midnight", 4.5, "captions on Midnight"),
-    ("ink-reversed-soft", "midnight", 3.0, "placeholders on Midnight"),
-    ("ember", "parchment", 4.5, "links and labels on the light ground"),
-    ("ember", "white", 4.5, "links on a card"),
-    ("white", "ember", 4.5, "the primary button label"),
-    ("white", "button-hover", 4.5, "the primary button label, hovered"),
-    ("flame", "midnight", 3.0, "the official-record numeral, which is large text"),
-    ("parchment", "midnight", 4.5, "reversed body copy"),
-    ("error-state", "parchment", 4.5, "form error text"),
-    ("warning-state", "parchment", 4.5, "form warning text"),
-    # The dark theme. A card on a dark page sits on a lifted surface, not on the
-    # ground, and every one of these is measured against that surface because that
-    # is where the text actually lands.
-    ("ink-reversed", "surface-on-dark", 4.5, "body text on a dark card"),
-    ("ink-reversed-muted", "surface-on-dark", 4.5, "captions on a dark card"),
-    ("accent-on-dark", "surface-on-dark", 4.5, "links and labels on a dark card"),
-    ("accent-on-dark", "midnight", 4.5, "links and labels on the dark ground"),
-    ("success-on-dark", "surface-on-dark", 4.5, "the success state on a dark card"),
-    ("error-on-dark", "surface-on-dark", 4.5, "form error text on a dark card"),
-    ("warning-on-dark", "surface-on-dark", 4.5, "form warning text on a dark card"),
-    ("error-on-dark", "word-blue", 4.5, "form error text on the School's dark ground"),
-    ("warning-on-dark", "word-blue", 4.5, "form warning text on the School's dark ground"),
-]
-
-
 def check_contrast(tokens: dict):
     """L14: every pair the guide puts on screen still passes WCAG AA.
 
     The audit asks a human to check this by eye (H1). Half of it is arithmetic, and
     arithmetic belongs in the build. Ember was chosen over Flame for text because
     Flame is 3.3:1 and fails; nothing should be able to quietly undo that.
-    """
-    lookup = {k: c["hex"] for k, c in tokens["color"].items()}
-    lookup.update({k: v["value"] for k, v in tokens["neutral"].items()})
-    lookup.update({k: t["value"] for k, t in tokens["system"].items() if t["value"].startswith("#")})
 
-    for fg, bg, minimum, why in CONTRAST_PAIRS:
-        if fg not in lookup or bg not in lookup:
-            err("L14", f"the contrast pair {fg} on {bg} names a token that no longer exists.")
-            continue
+    The pairs and the measurements both come from tools/build_ai.py, which is also
+    what publishes them at /ai/tokens.json. Measuring here against a second list of
+    pairs would let the gate and the published number drift apart, which is the exact
+    failure this whole layer exists to prevent.
+    """
+    published = tokens.get("contrast", {})
+    if not published.get("permitted"):
+        err("L14", "the tokens carry no contrast block. Run tools/build_ai.py.")
+        return
+
+    for pair in published["permitted"]:
+        fg, bg, floor = pair["foreground"], pair["ground"], pair["requires"]
         try:
-            ratio = contrast(lookup[fg], lookup[bg])
-        except ValueError as exc:
-            err("L14", f"{fg} on {bg}: {exc}")
+            ratio = build_ai.measure(tokens, fg, bg)
+        except (KeyError, ValueError) as exc:
+            err("L14", f"the contrast pair {fg} on {bg} cannot be measured: {exc}")
             continue
-        if ratio + 0.005 < minimum:
+        if abs(ratio - pair["ratio"]) > 0.02:
             err(
                 "L14",
-                f"{fg} on {bg} is {ratio:.2f}:1 and needs {minimum}:1 ({why}). "
+                f"{fg} on {bg} measures {ratio:.2f}:1 but tokens.json publishes "
+                f"{pair['ratio']}:1. Run tools/build_ai.py.",
+            )
+        if ratio + 0.005 < floor:
+            err(
+                "L14",
+                f"{fg} on {bg} is {ratio:.2f}:1 and needs {floor}:1 ({pair['use']}). "
                 "Change the value in the Brand Guide, or change what it is used for.",
             )
+
+    # The forbidden pairs are published so a downstream build can cite a rule rather
+    # than assert it. If one of them ever started passing, the rule would need
+    # rewriting rather than keeping, so say so instead of staying quiet about it.
+    for pair in published.get("forbidden", []):
+        try:
+            ratio = build_ai.measure(tokens, pair["foreground"], pair["ground"])
+        except (KeyError, ValueError):
+            continue
+        if ratio + 0.005 >= 4.5:
+            warn(
+                "L14",
+                f"{pair['foreground']} on {pair['ground']} is published as forbidden but now "
+                f"measures {ratio:.2f}:1 and passes AA. The rule and the palette disagree.",
+            )
+
+
+def check_separation(tokens: dict):
+    """L17: the outcome palette still tells itself apart, under every kind of vision.
+
+    Six categories a reader learns by colour are six categories only while the closest
+    pair stays far enough apart. A palette edit that pulls two of them together is a
+    misread record in the field rather than a rough edge, so it fails the build here.
+    """
+    outcomes = tokens.get("outcome", {})
+    if not outcomes:
+        return
+    published = tokens.get("separation", {})
+    if not published.get("themes"):
+        err("L17", "the outcome palette carries no separation block. Run tools/build_ai.py.")
+        return
+    floor = published.get("floor", build_ai.SEPARATION_FLOOR)
+    lookup = build_ai.color_lookup(tokens)
+    for theme, data in published["themes"].items():
+        values = [outcomes[k][theme] for k in outcomes]
+        values += [
+            ck.resolve(lookup[name], "#FFFFFF")
+            for name in data["measuredAgainst"]
+            if name not in outcomes
+        ]
+        measured = ck.separations(values)
+        for view, value in measured.items():
+            if abs(value - data["minimum"].get(view, -1)) > 0.02:
+                err(
+                    "L17",
+                    f"the {theme} outcome palette measures {value:.2f} under {view} but "
+                    f"tokens.json publishes {data['minimum'].get(view)}. Run tools/build_ai.py.",
+                )
+            if value + 0.005 < floor:
+                a, b, distance = ck.closest_pair(values, view)
+                err(
+                    "L17",
+                    f"the {theme} outcome palette is only {value:.2f} apart under {view} and "
+                    f"needs {floor}. The closest pair is {a} and {b} at {distance:.2f}. "
+                    "Two outcomes that look alike are a misread record in the field.",
+                )
+
+
+def check_every1_delivery():
+    """L18: the EVERY1 site serves everything its manifest declares.
+
+    This check exists because it did not. The manifest declared 120 files and the site
+    served 40, and with no 404.html underneath it Cloudflare Pages answered each of the
+    80 missing ones with the homepage and a 200. A consumer that trusted the manifest
+    got a web page where it asked for a PNG, and nothing anywhere caught it.
+    """
+    root = os.path.join(REPO, "every1")
+    if not os.path.isdir(root):
+        return
+
+    # Without a 404.html, Cloudflare Pages answers every unmatched path with index.html
+    # and a 200, which is what made the missing files silent rather than loud.
+    if not os.path.exists(os.path.join(root, "404.html")):
+        err(
+            "L18",
+            "every1/404.html is missing. Without it the EVERY1 Pages project serves its "
+            "homepage with a 200 for every path that does not exist, so a declared asset "
+            "that is not published looks to a consumer like a success.",
+        )
+
+    manifest_path = os.path.join(root, "ai", "manifest.json")
+    if not os.path.exists(manifest_path):
+        err("L18", "every1/ai/manifest.json is missing. Run tools/build_ai.py.")
+        return
+    manifest = json.loads(bs.read(manifest_path))
+    prefix = build_ai.EVERY1_SITE_URL
+
+    def local(url: str):
+        if not url.startswith(prefix):
+            err("L18", f"{url} is declared by the EVERY1 manifest but is not on its own site.")
+            return None
+        return os.path.join(root, url[len(prefix):].lstrip("/"))
+
+    declared = 0
+    for mark in manifest.get("marks", []):
+        for entry in mark.get("files", []):
+            declared += 1
+            path = local(entry["url"])
+            if path is None:
+                continue
+            if not os.path.exists(path):
+                err(
+                    "L18",
+                    f"the EVERY1 manifest declares {entry['url']}, which the site does not "
+                    "publish. Either publish it or stop declaring it: the mismatch is the "
+                    "defect, not which way it is resolved.",
+                )
+                continue
+            data = open(path, "rb").read()
+            if "sha256" in entry and hashlib.sha256(data).hexdigest() != entry["sha256"]:
+                err("L18", f"{entry['url']} does not match its manifest checksum. "
+                           "Run tools/build_ai.py.")
+            if "bytes" in entry and len(data) != entry["bytes"]:
+                err("L18", f"{entry['url']} is {len(data)} bytes, not the {entry['bytes']} declared.")
+    if declared == 0:
+        err("L18", "the EVERY1 manifest declares no mark files at all. Run tools/build_logos.py.")
+
+    for entry in manifest.get("files", []):
+        path = local(entry["url"])
+        if path is None:
+            continue
+        if not os.path.exists(path):
+            err("L18", f"the EVERY1 manifest declares {entry['url']}, which is not published.")
+            continue
+        if bs.sha256(bs.read(path)) != entry["sha256"]:
+            err("L18", f"{entry['url']} does not match its manifest checksum. "
+                       "Run tools/build_ai.py.")
+
+    # Anything a page offers as a download has to be there. brand_check.py was
+    # advertised on the EVERY1 site for two releases without ever being published,
+    # and the only reason anyone found out was a partner trying to use it.
+    for page in ("index.html", os.path.join("messaging", "index.html")):
+        full = os.path.join(root, page)
+        if not os.path.exists(full):
+            continue
+        for href in sorted(set(re.findall(r'href="(/[^"#?]+\.[a-z0-9]+)"', bs.read(full)))):
+            if not os.path.exists(os.path.join(root, href.lstrip("/"))):
+                err(
+                    "L18",
+                    f"every1/{page} links {href}, which the EVERY1 site does not publish. "
+                    "Publish the file or remove the link.",
+                )
+
+
+def check_maskable_icon():
+    """L19: the Android adaptive icon still fits inside the shape Android may crop to.
+
+    Android guarantees only the inner circle at 66% diameter and crops everything else
+    to whatever shape the launcher picks. A mark that overflows it loses a corner on
+    some phones and not others, which is the worst kind of bug to be told about. This
+    measures the rendered file rather than trusting the padding constant: the padding
+    was right by arithmetic and wrong by eight tenths of a pixel the first time.
+    """
+    path = os.path.join(REPO, "assets", "logos", "every1", "icon",
+                        "every1-icon-maskable-512.png")
+    if not os.path.exists(path):
+        err("L19", "the EVERY1 maskable icon is missing. Run tools/build_logos.py.")
+        return
+    try:
+        from PIL import Image
+    except ImportError:
+        return  # CI has no imaging library, and --check already proved the file exists
+    image = Image.open(path).convert("RGB")
+    width, height = image.size
+    pixels = image.load()
+    ground = (11, 26, 45)
+    xs, ys = [], []
+    for y in range(height):
+        for x in range(width):
+            r, g, b = pixels[x, y]
+            if abs(r - ground[0]) + abs(g - ground[1]) + abs(b - ground[2]) > 24:
+                xs.append(x)
+                ys.append(y)
+    if not xs:
+        err("L19", "the EVERY1 maskable icon is a blank Midnight square.")
+        return
+    cx, cy = width / 2, height / 2
+    corners = [(min(xs), min(ys)), (max(xs), min(ys)), (min(xs), max(ys)), (max(xs), max(ys))]
+    furthest = max(math.hypot(x - cx, y - cy) for x, y in corners)
+    safe = 0.33 * width
+    if furthest > safe:
+        err(
+            "L19",
+            f"the EVERY1 maskable icon reaches {furthest:.1f}px from centre and Android's safe "
+            f"zone is {safe:.1f}px. Increase the maskable pad in tools/build_logos.py, or the "
+            "mark loses a corner on whichever launcher crops hardest.",
+        )
 
 
 def check_consumers():
@@ -721,7 +858,17 @@ def main() -> int:
     check_consumers()
     check_stylesheet_vars()
     check_theme_swaps(files)
-    check_contrast(build_ai.build_tokens(brand, _messaging, overrides.get('manifest', {}).get('updated') or brand['issued'], overrides, bs.parse_scales(os.path.join(REPO, 'brand', 'index.html'))))
+    tokens = build_ai.build_tokens(
+        brand,
+        _messaging,
+        overrides.get("manifest", {}).get("updated") or brand["issued"],
+        overrides,
+        bs.parse_scales(os.path.join(REPO, "brand", "index.html")),
+    )
+    check_contrast(tokens)
+    check_separation(tokens)
+    check_every1_delivery()
+    check_maskable_icon()
     check_navigation(files)
     check_skill_copies()
     if os.path.isdir(ai_dir):

@@ -382,13 +382,13 @@
       }
     ]
   },
-  "version": "7.5",
-  "messagingVersion": "1.0",
-  "updated": "2026-08-20",
+  "version": "7.6",
+  "messagingVersion": "2.0",
+  "updated": "2026-08-22",
   "authority": "canonical",
   "rule": "Use these assets. Never generate photography or video of people or ministry, and never substitute stock. If the asset you need is not listed, request it and leave the slot empty.",
   "counts": {
-    "total": 340,
+    "total": 347,
     "approved": 320,
     "counterExamples": 0
   },
@@ -1134,6 +1134,62 @@
       ],
       "note": "The wordmark with the vision above and below it: EVERY TRIBE, EVERY TONGUE, EVERY NATION / WILL KNOW THE NAME JESUS. Both lines are tracked to the exact width of the wordmark, and that alignment is the lockup. Use where the movement is being introduced rather than referred to. Set in DM Sans at weight 900 and converted to outlines, so it is artwork rather than live text: it needs no font installed, never reflows, and recolours by changing one fill value. The 1 is the same drawing in every EVERY1 form. Never re-set it in another face, never stretch it, and never redraw the numeral by hand.",
       "name": "EVERY1, vision lockup"
+    },
+    {
+      "file": "assets/logos/every1/icon/every1-apple-touch-icon-180.png",
+      "url": "https://brand.theword.world/assets/logos/every1/icon/every1-apple-touch-icon-180.png",
+      "kind": "image",
+      "group": "icon",
+      "bytes": 902,
+      "status": "published, no usage note recorded"
+    },
+    {
+      "file": "assets/logos/every1/icon/every1-favicon-32.png",
+      "url": "https://brand.theword.world/assets/logos/every1/icon/every1-favicon-32.png",
+      "kind": "image",
+      "group": "icon",
+      "bytes": 434,
+      "status": "published, no usage note recorded"
+    },
+    {
+      "file": "assets/logos/every1/icon/every1-favicon-48.png",
+      "url": "https://brand.theword.world/assets/logos/every1/icon/every1-favicon-48.png",
+      "kind": "image",
+      "group": "icon",
+      "bytes": 516,
+      "status": "published, no usage note recorded"
+    },
+    {
+      "file": "assets/logos/every1/icon/every1-icon-192.png",
+      "url": "https://brand.theword.world/assets/logos/every1/icon/every1-icon-192.png",
+      "kind": "image",
+      "group": "icon",
+      "bytes": 873,
+      "status": "published, no usage note recorded"
+    },
+    {
+      "file": "assets/logos/every1/icon/every1-icon-512.png",
+      "url": "https://brand.theword.world/assets/logos/every1/icon/every1-icon-512.png",
+      "kind": "image",
+      "group": "icon",
+      "bytes": 2681,
+      "status": "published, no usage note recorded"
+    },
+    {
+      "file": "assets/logos/every1/icon/every1-icon-maskable-512.png",
+      "url": "https://brand.theword.world/assets/logos/every1/icon/every1-icon-maskable-512.png",
+      "kind": "image",
+      "group": "icon",
+      "bytes": 2504,
+      "status": "published, no usage note recorded"
+    },
+    {
+      "file": "assets/logos/every1/icon/every1-icon-mono-512.png",
+      "url": "https://brand.theword.world/assets/logos/every1/icon/every1-icon-mono-512.png",
+      "kind": "image",
+      "group": "icon",
+      "bytes": 2184,
+      "status": "published, no usage note recorded"
     },
     {
       "file": "assets/logos/every1/png/every1-bare-1600.png",

@@ -17,6 +17,9 @@ masters in `assets/logos/_masters/`. The masters are the only logo files edited 
 | --- | --- |
 | A color, token, law, typeface, Do/Don't rule, sub-brand rule | `brand/index.html` |
 | A spacing, type, radius, elevation, motion, breakpoint, neutral, or print value | `brand/index.html`, in its `<table data-scale="...">` |
+| An outcome colour, a progression step, or a per-step type rule | `brand/index.html`, in its `<table data-scale="...">`. Re-derive with `tools/colorkit.py`: the linter gates the AA floor and the &Delta;E2000 separation |
+| Which contrast pairs are permitted or forbidden | `CONTRAST_PAIRS` / `FORBIDDEN_PAIRS` in `tools/build_ai.py`. They are published, not just checked |
+| The EVERY1 app icon set | `EVERY1_ICONS` in `tools/build_logos.py`, then rerun it |
 | Mission line, voice, vocabulary, banned words, audiences, proof policy | `brand/messaging/index.html` |
 | An initiative's guide or document | `tools/gen_docs.py`, then rerun it |
 | A logo variant, ink, size, pack, or anything on the Assets page | `tools/build_logos.py`, then rerun it |
@@ -57,6 +60,14 @@ same `tools/build_ai.py` and checked by the same linter, so it cannot drift from
 Never edit it by hand. It carries its own copies of the stylesheet, the faces and its marks
 because its Pages project serves only that directory. A page under `every1/` resolves
 `/assets/...` against `every1/assets`, which is why `brand_lint.py` has `SITE_ROOTS`.
+
+**Every file that site declares, it has to serve.** `every1_logo_files()` and
+`every1_icon_files()` in `tools/build_ai.py` are the one list the manifest and the copier both
+read, and `check_every1_delivery()` proves the two agree. They did not once: the manifest
+declared 120 files and the site served 40, and because a Pages project with no `404.html`
+answers every unmatched path with `index.html` and a **200**, all 80 missing files looked like
+successful fetches of a web page. Both sites now ship a `404.html`, and the fix for a declared
+file that is missing is to publish it, never to trim the manifest.
 
 ## After any change
 
