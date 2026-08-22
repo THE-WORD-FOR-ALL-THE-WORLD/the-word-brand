@@ -75,18 +75,6 @@
   .never ol{margin:0;padding-left:1.2em;font-size:var(--text-body-small);line-height:1.7;}
   .never li{margin-bottom:var(--space-2);}
 
-  .screens{display:grid;grid-template-columns:1fr;gap:var(--space-4);margin-top:var(--space-6);}
-  @media(min-width:760px){.screens{grid-template-columns:repeat(2,1fr);}}
-  .screen{border:1px solid var(--border);border-radius:var(--radius-card);background:var(--surface);padding:var(--space-5);}
-  .screen h3{margin:0 0 var(--space-2);}
-  .screen .purpose{margin:0 0 var(--space-3);font-size:var(--text-body-small);color:var(--ink-muted);}
-  .screen dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:var(--space-2) var(--space-4);font-size:var(--text-body-small);line-height:1.6;}
-  .screen dt{font-weight:600;white-space:nowrap;}
-  .screen dd{margin:0;}
-
-  .approach{margin-top:var(--space-6);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:var(--radius-card);background:var(--surface);padding:var(--space-5) var(--space-6);}
-  .approach p{margin:0;font-size:var(--text-body-small);line-height:1.7;}
-
   .vision{margin-top:var(--space-6);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:var(--radius-card);background:var(--surface);padding:var(--space-6);}
   .vision .vlabel{display:block;font-size:var(--text-eyebrow);letter-spacing:var(--tracking-eyebrow);text-transform:uppercase;color:var(--ink-muted);margin-bottom:var(--space-3);}
   .vision .vlines{font-family:var(--serif-display);font-size:var(--text-h3);line-height:1.22;margin:0 0 var(--space-3);}
@@ -195,7 +183,6 @@
       <li><a href="#type">Type</a></li>
       <li><a href="#never">Never</a></li>
       <li><a href="#mask">The 1 as a mask</a></li>
-      <li><a href="#app">In the app</a></li>
       <li><a href="#countries">Country lockups</a></li>
       <li><a href="#check">Check your work</a></li>
       <li><a href="#ask">Ask</a></li>
@@ -661,125 +648,6 @@
             <li>No outline, no shadow, no rotation. One per view.</li>
             <li>The photograph still needs everything a photograph needs: real capture, consent from the people in it, and a caption where it is published.</li>
           </ol>
-        </div>
-      </div>
-    </section>
-
-    <section id="app">
-      <span class="eyebrow">In the app</span>
-      <h2>The movement on a phone.</h2>
-      <p class="intro">EVERY1 is a movement, an app, and an activation platform, so the app is a
-      first-class surface of this brand rather than a place the brand gets applied. These are its
-      screens and what each one is for. They are specified rather than pictured on purpose.</p>
-
-      <div class="approach">
-        <p>A picture of a screen is correct the day it is exported and silently wrong after the next token change, and no build can tell. These specs are published from the same tokens the app is built from, so they move when the brand moves. Flat mockups may be made from these, and they are illustrative and dated: the spec is what is authoritative.</p>
-      </div>
-
-      <h3 style="margin-top:var(--space-7)">Rules that hold across every screen</h3>
-      <div class="never" style="border-left-color:var(--accent)">
-        <ol>
-          <li>One mask per view. The 1 holding a photograph is this door's signature move, and on a poster it appears once. A scrolling list would put six on screen and turn the signature into wallpaper, so a list uses plain images and only a full-width feature uses the mask.</li>
-          <li>The E1 icon is the app icon, reversed on a Midnight plate, with no text. It is the form this door is recognised by at size, and it is the same icon on the launcher, the installable web app, the favicon, and every social profile. The numeral is not the app icon: it is the shape photography is masked into and a display mark at small size.</li>
-          <li>Flame is the accent. On a light ground it never carries text, and buttons, links and labels use Ember. On Midnight the rule inverts, because Ember is 3.25:1 there and fails: a text accent on a dark ground is Flame. This app is a Midnight product, so its links and its labels are Flame and its buttons carry a White label on an Ember fill.</li>
-          <li>Every control needs default, hover, focus, active, disabled, loading, and empty. A screen without its empty state is not specified.</li>
-          <li>A dark surface is Midnight, never a darkened Parchment.</li>
-          <li>Loading is a wash placeholder in the shape of the content, never a spinner over a blank screen.</li>
-          <li>Errors name what is wrong and how to fix it, in the functional colours. Never Flame, never Ember: Ember means the action, and an error is not an action.</li>
-          <li>Touch targets are 44px minimum, whatever the control is drawn at.</li>
-          <li>No endorsement line and no parent lockup anywhere in the app, including the splash and the about screen. This door stands on its own.</li>
-        </ol>
-      </div>
-
-      <h3 style="margin-top:var(--space-7)">The screens</h3>
-      <div class="screens">
-        <div class="screen">
-          <h3>Splash</h3>
-          <p class="purpose">The first frame, held only as long as the app takes to load.</p>
-          <dl>
-            <dt>Action</dt><dd>None. It is never tappable and never carries a message.</dd>
-            <dt>Marks</dt><dd>The reversed horizontal lockup, centred, and nothing else.</dd>
-            <dt>Ground</dt><dd>Midnight.</dd>
-            <dt>Empty</dt><dd>Not applicable.</dd>
-            <dt>Error</dt><dd>If loading fails, replace with the sign-in screen carrying a retry, never a blank Midnight field.</dd>
-          </dl>
-        </div>
-        <div class="screen">
-          <h3>Sign in</h3>
-          <p class="purpose">Get a believer into the movement in as few steps as the platform allows.</p>
-          <dl>
-            <dt>Action</dt><dd>Sign in. One primary button in Ember.</dd>
-            <dt>Marks</dt><dd>The reversed horizontal lockup above the form.</dd>
-            <dt>Ground</dt><dd>Midnight, or a photograph under a Midnight scrim with white type only.</dd>
-            <dt>Empty</dt><dd>Not applicable.</dd>
-            <dt>Error</dt><dd>Name the field that is wrong and what to do. Never colour alone, and never a generic failure.</dd>
-          </dl>
-        </div>
-        <div class="screen">
-          <h3>Today</h3>
-          <p class="purpose">Answer one question: have you shared Jesus with someone recently?</p>
-          <dl>
-            <dt>Action</dt><dd>Share Jesus with one person. Everything else on this screen is secondary.</dd>
-            <dt>Marks</dt><dd>The E1 icon in the header. No lockup: the surface already says what this is.</dd>
-            <dt>Ground</dt><dd>Parchment, with Midnight bands for emphasis.</dd>
-            <dt>Empty</dt><dd>For a believer who has logged nothing yet, the screen says what the movement is and gives the first step. It never scolds and never implies they are behind.</dd>
-            <dt>Error</dt><dd>Show the last known state with a quiet retry. Never replace the screen with an error.</dd>
-          </dl>
-        </div>
-        <div class="screen">
-          <h3>Share Jesus</h3>
-          <p class="purpose">Record one real conversation, briefly, while it is fresh.</p>
-          <dl>
-            <dt>Action</dt><dd>Log the conversation.</dd>
-            <dt>Marks</dt><dd>None. The screen is the action, not a place to put a logo.</dd>
-            <dt>Ground</dt><dd>Parchment.</dd>
-            <dt>Empty</dt><dd>First use explains that a name is optional and nothing is published. Membership is one conversation, not a streak.</dd>
-            <dt>Error</dt><dd>A failed save keeps everything the person typed. Losing their words here is worse than a visible error.</dd>
-          </dl>
-        </div>
-        <div class="screen">
-          <h3>Prayer meeting</h3>
-          <p class="purpose">Join the weekly meeting, praying for the lost.</p>
-          <dl>
-            <dt>Action</dt><dd>Join the meeting.</dd>
-            <dt>Marks</dt><dd>The E1 icon in the header.</dd>
-            <dt>Ground</dt><dd>Midnight for the live state, Parchment otherwise.</dd>
-            <dt>Empty</dt><dd>Between meetings, say when the next one is in the reader's own time zone. Never an empty list.</dd>
-            <dt>Error</dt><dd>If the meeting cannot be joined, give the time and a way to be reminded.</dd>
-          </dl>
-        </div>
-        <div class="screen">
-          <h3>Course</h3>
-          <p class="purpose">The free personal evangelism course, offered through the School of the Local Church.</p>
-          <dl>
-            <dt>Action</dt><dd>Continue the course.</dd>
-            <dt>Marks</dt><dd>The E1 icon. The School is named in words, and its mark may appear on the course screen only, because the course is genuinely the School's.</dd>
-            <dt>Ground</dt><dd>Parchment.</dd>
-            <dt>Empty</dt><dd>Before starting, one paragraph on what the course is and that it costs nothing.</dd>
-            <dt>Error</dt><dd>A failed lesson load offers the lesson offline or a retry, and keeps progress.</dd>
-          </dl>
-        </div>
-        <div class="screen">
-          <h3>Invite</h3>
-          <p class="purpose">Fire starts fire. Hand the movement to someone else.</p>
-          <dl>
-            <dt>Action</dt><dd>Invite one person.</dd>
-            <dt>Marks</dt><dd>The numeral, once, as a mask holding a photograph. This is the one screen that carries the signature move.</dd>
-            <dt>Ground</dt><dd>Midnight.</dd>
-            <dt>Empty</dt><dd>Not applicable.</dd>
-            <dt>Error</dt><dd>If sharing fails, offer the link as copyable text.</dd>
-          </dl>
-        </div>
-        <div class="screen">
-          <h3>Profile</h3>
-          <p class="purpose">What this believer has carried, kept private by default.</p>
-          <dl>
-            <dt>Action</dt><dd>None primary. This screen reports, it does not ask.</dd>
-            <dt>Marks</dt><dd>The E1 icon in the header.</dd>
-            <dt>Ground</dt><dd>Parchment.</dd>
-            <dt>Empty</dt><dd>A new profile shows the first three steps rather than an empty record.</dd>
-            <dt>Error</dt><dd>Show what loaded and mark what did not. Never a blank profile.</dd>
-          </dl>
         </div>
       </div>
     </section>

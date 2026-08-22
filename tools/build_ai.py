@@ -2679,18 +2679,6 @@ EVERY1_SITE = """<!DOCTYPE html>
   .never ol{margin:0;padding-left:1.2em;font-size:var(--text-body-small);line-height:1.7;}
   .never li{margin-bottom:var(--space-2);}
 
-  .screens{display:grid;grid-template-columns:1fr;gap:var(--space-4);margin-top:var(--space-6);}
-  @media(min-width:760px){.screens{grid-template-columns:repeat(2,1fr);}}
-  .screen{border:1px solid var(--border);border-radius:var(--radius-card);background:var(--surface);padding:var(--space-5);}
-  .screen h3{margin:0 0 var(--space-2);}
-  .screen .purpose{margin:0 0 var(--space-3);font-size:var(--text-body-small);color:var(--ink-muted);}
-  .screen dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:var(--space-2) var(--space-4);font-size:var(--text-body-small);line-height:1.6;}
-  .screen dt{font-weight:600;white-space:nowrap;}
-  .screen dd{margin:0;}
-
-  .approach{margin-top:var(--space-6);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:var(--radius-card);background:var(--surface);padding:var(--space-5) var(--space-6);}
-  .approach p{margin:0;font-size:var(--text-body-small);line-height:1.7;}
-
   .vision{margin-top:var(--space-6);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:var(--radius-card);background:var(--surface);padding:var(--space-6);}
   .vision .vlabel{display:block;font-size:var(--text-eyebrow);letter-spacing:var(--tracking-eyebrow);text-transform:uppercase;color:var(--ink-muted);margin-bottom:var(--space-3);}
   .vision .vlines{font-family:var(--serif-display);font-size:var(--text-h3);line-height:1.22;margin:0 0 var(--space-3);}
@@ -2909,30 +2897,6 @@ __NEVER__
       </div>
     </section>
 
-    <section id="app">
-      <span class="eyebrow">In the app</span>
-      <h2>The movement on a phone.</h2>
-      <p class="intro">EVERY1 is a movement, an app, and an activation platform, so the app is a
-      first-class surface of this brand rather than a place the brand gets applied. These are its
-      screens and what each one is for. They are specified rather than pictured on purpose.</p>
-
-      <div class="approach">
-        <p>__APP_WHY__</p>
-      </div>
-
-      <h3 style="margin-top:var(--space-7)">Rules that hold across every screen</h3>
-      <div class="never" style="border-left-color:var(--accent)">
-        <ol>
-__APP_RULES__
-        </ol>
-      </div>
-
-      <h3 style="margin-top:var(--space-7)">The screens</h3>
-      <div class="screens">
-__APP_SCREENS__
-      </div>
-    </section>
-
     <section id="countries">
       <span class="eyebrow">Country lockups</span>
       <h2>One per country, drawn not generated.</h2>
@@ -3012,7 +2976,6 @@ EVERY1_NAV_BRAND = [
     ("Type", "type"),
     ("Never", "never"),
     ("The 1 as a mask", "mask"),
-    ("In the app", "app"),
     ("Country lockups", "countries"),
     ("Check your work", "check"),
     ("Ask", "ask"),
@@ -3283,7 +3246,7 @@ def file_digest(rel: str) -> dict:
     return {"bytes": len(data), "sha256": hashlib.sha256(data).hexdigest()}
 
 
-def build_every1_site(brand: dict, tokens: dict, logos: dict, template: str, words: dict, messaging: dict, app: dict) -> str:
+def build_every1_site(brand: dict, tokens: dict, logos: dict, template: str, words: dict, messaging: dict) -> str:
     door_css, door_html, _ = every1_door_content()
     marks = []
     for c in every1_marks(logos):
@@ -3380,22 +3343,6 @@ def build_every1_site(brand: dict, tokens: dict, logos: dict, template: str, wor
         ("__VISION_SENTENCE__", esc(messaging["vision"]["text"])),
         ("__VISION_SENTENCE_2__", esc(messaging["vision"]["text"])),
         ("__VISION_REF__", esc(messaging["vision"]["reference"])),
-        ("__APP_WHY__", esc(app["_README"].split(". ", 1)[1].split(" Screens are named")[0])),
-        ("__APP_RULES__", "\n".join(
-            f"          <li>{esc(r)}</li>" for r in app["rules"])),
-        ("__APP_SCREENS__", "\n".join(
-            '        <div class="screen">\n'
-            f'          <h3>{esc(sc["name"])}</h3>\n'
-            f'          <p class="purpose">{esc(sc["purpose"])}</p>\n'
-            "          <dl>\n"
-            f'            <dt>Action</dt><dd>{esc(sc["action"])}</dd>\n'
-            f'            <dt>Marks</dt><dd>{esc(sc["marks"])}</dd>\n'
-            f'            <dt>Ground</dt><dd>{esc(sc["ground"])}</dd>\n'
-            f'            <dt>Empty</dt><dd>{esc(sc["empty"])}</dd>\n'
-            f'            <dt>Error</dt><dd>{esc(sc["error"])}</dd>\n'
-            "          </dl>\n"
-            "        </div>"
-            for sc in app["screens"])),
         ("__SIDEBAR__", every1_sidebar("brand")),
         ("__SIDEBARCSS__", EVERY1_SIDEBAR_CSS),
         ("__SIDEBARJS__", EVERY1_SIDEBAR_JS),
@@ -3944,7 +3891,7 @@ EVERY1_MESSAGING_CSS = """
 """
 
 
-def build_every1_messaging(brand: dict, messaging: dict, words: dict, app: dict, updated: str) -> str:
+def build_every1_messaging(brand: dict, messaging: dict, words: dict, updated: str) -> str:
     """EVERY1's own messaging standard, for people working on that brand alone.
 
     Everything doctrinal is rendered from the parent standard's own markup, so
@@ -4356,10 +4303,10 @@ def build() -> dict:
     every1_words = read_source_json("every1-messaging.json")
     every1_app = read_source_json("every1-app.json")
     files[f"{EVERY1_DIR}/index.html"] = build_every1_site(
-        brand, tokens, logos, EVERY1_SITE, every1_words, messaging, every1_app
+        brand, tokens, logos, EVERY1_SITE, every1_words, messaging
     )
     files[f"{EVERY1_DIR}/messaging/index.html"] = build_every1_messaging(
-        brand, messaging, every1_words, every1_app, updated
+        brand, messaging, every1_words, updated
     )
     # The AI layer this door publishes, built before the manifest so the manifest can
     # checksum it. EVERY1 runs on the parent's tokens, so these are the parent's values
