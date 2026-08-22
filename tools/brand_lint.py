@@ -528,6 +528,29 @@ def check_every1_delivery():
                 )
 
 
+def check_scale_rules(tokens: dict):
+    """L20: every scale publishes the rule that governs it, not only its values.
+
+    The values were machine-readable for years and the rules were not, so "nothing in
+    this system is a pill" and "nothing bounces, nothing springs" were real published
+    rules that no consumer of /ai could see. Two products built a pill button and a
+    spring animation against a standard that forbade both, and neither could have known.
+    A scale with values and no rule is that gap reopening.
+    """
+    published = tokens.get("scaleRules", {})
+    for name in ("spacing", "radius", "elevation", "motion", "breakpoint", "type",
+                 "neutral", "outcome", "progression"):
+        if name not in tokens:
+            continue
+        if not published.get(name):
+            err(
+                "L20",
+                f"the '{name}' scale publishes values with no rule. Add data-rule to its "
+                "<table data-scale> in the Brand Guide, or a consumer gets the numbers and "
+                "has to guess what governs them.",
+            )
+
+
 def check_maskable_icon():
     """L19: the Android adaptive icon still fits inside the shape Android may crop to.
 
@@ -867,6 +890,7 @@ def main() -> int:
     )
     check_contrast(tokens)
     check_separation(tokens)
+    check_scale_rules(tokens)
     check_every1_delivery()
     check_maskable_icon()
     check_navigation(files)

@@ -1,6 +1,6 @@
 # Brand Audit
 
-> **Brand system v7.6 · Messaging guide v2.0 · Updated 2026-08-22**
+> **Brand system v7.7 · Messaging guide v2.0 · Updated 2026-08-22**
 > Canonical source: <https://brand.theword.world/ai/manifest.json>
 > This file is hand-authored in `ai-source/` and published unchanged. The build never rewrites its body.
 

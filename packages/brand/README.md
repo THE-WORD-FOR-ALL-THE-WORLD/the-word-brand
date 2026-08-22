@@ -1,6 +1,6 @@
 # @theword/brand
 
-Design tokens for THE WORD FOR ALL THE WORLD, brand system v7.6
+Design tokens for THE WORD FOR ALL THE WORLD, brand system v7.7
 (messaging v2.0, updated 2026-08-22).
 
 **Generated. Never edited by hand.** Every value here is read out of the Brand Guide at
