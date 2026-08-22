@@ -184,7 +184,10 @@ def check(name: str, text: str, std: dict) -> list:
             findings.append(("fail", "B1", f"{hexval} is not in the palette or a recorded state."))
 
     # C1: only the three approved families.
-    for m in re.finditer(r"font-family\s*:\s*([^;\"}]+)", style_text):
+    # The newline matters: styles() joins every style attribute and every <style>
+    # block with one, so without it a font-family that ends an attribute swallows the
+    # next element's declarations and reports the whole run as one invented family.
+    for m in re.finditer(r"font-family\s*:\s*([^;\"}\n]+)", style_text):
         for family in m.group(1).split(","):
             f = family.strip().strip("'\"").lower()
             if not f or f.startswith("var(") or f in GENERIC_FONTS or f in std["families"]:
