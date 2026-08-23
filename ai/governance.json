@@ -1,5 +1,5 @@
 {
-  "version": "7.7",
+  "version": "7.8",
   "messagingVersion": "2.0",
   "updated": "2026-08-22",
   "authority": "canonical",
@@ -138,7 +138,7 @@
       {
         "id": "G7",
         "title": "Governmental iconography",
-        "failsWhen": "Seals, crests, flags, eagles, or any device that imitates a government office. One recorded exception: the School of the Local Church's approved academic seal, on the School's own credentials only (Brand Guide §11, v5.8). The seal anywhere else, or any other seal, fails."
+        "failsWhen": "Seals, crests, flags, eagles, or any device that imitates a government office. This includes theming the system to a country: a national accent colour, a flag palette, or a patriotic treatment of buttons, grounds, or type. Two recorded exceptions: the School of the Local Church's approved academic seal, on the School's own credentials only (Brand Guide §11, v5.8), and the flag in the bar of a published country lockup (Brand Guide §11, v7.8). A country is carried by its lockup, its language, and the people in its photographs, and by nothing else."
       },
       {
         "id": "G8",

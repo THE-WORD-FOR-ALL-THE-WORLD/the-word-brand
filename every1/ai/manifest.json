@@ -1,5 +1,5 @@
 {
-  "version": "7.7",
+  "version": "7.8",
   "updated": "2026-08-22",
   "authority": "canonical",
   "name": "EVERY1 Movement",
@@ -1628,7 +1628,8 @@
     "radius": "Three steps, no others. Nothing in this system is a pill, and nothing is a perfect circle except the avatar crop. A fully rounded control is not a radius this brand has: use radius-button.",
     "elevation": "Shadow is Midnight at low opacity, never black and never coloured. Four steps, and most of the system sits at the first two. A scrim is not an elevation step: it is a ground, and it belongs to the photography rules.",
     "motion": "Motion confirms an action. It never performs. Nothing bounces and nothing springs. A product may name its own interaction motions, and every one of them resolves to a duration and the easing published here rather than inventing its own curve. Every duration is suppressed entirely under prefers-reduced-motion.",
-    "breakpoint": "Three, and the layout changes only at these. email is the narrowest anything is designed for and is why this brand governs email templates as a surface."
+    "breakpoint": "Three, and the layout changes only at these. email is the narrowest anything is designed for and is why this brand governs email templates as a surface.",
+    "nation": "One name, many tongues, many faces. The system is the name and does not change at a border. The content is the nations and should change at every one. A country is expressed through the published country lockup, the language, and the people in the photographs, and through nothing else."
   },
   "scripture": {
     "family": "DM Serif Text",
@@ -1642,6 +1643,48 @@
     "ruleAbove": "hairline. Never a coloured bar and never a Flame accent",
     "exception": "the Vision lockup, which is a published file rather than a setting to reproduce",
     "rule": "A verse is not a pull quote and is not decoration. It is the one voice in this system that is not ours, and it is set so a reader can see that before reading a word of it. Never reflowed, never trimmed to fit, never paraphrased: if it does not fit, the layout changes."
+  },
+  "nation": {
+    "colour": {
+      "varies": "never",
+      "rule": "The palette is the same in every country. A national accent collides with the functional palette and cannot be verified: measured against the published tokens, Nigeria's green is ΔE 3.6 from the salvation colour and the Philippines' blue is 7.1 from Holy Spirit baptism, against a published floor of 8.0."
+    },
+    "typography": {
+      "varies": "never",
+      "rule": "Three faces and no others, whatever the local convention. Script support is a font-loading question, not a licence for a fourth face."
+    },
+    "geometry": {
+      "varies": "never",
+      "rule": "Spacing, radius, and the near-square corner are most of what makes a poster in one country and an app in another read as one house."
+    },
+    "motion": {
+      "varies": "never",
+      "rule": "Three durations and one easing, everywhere."
+    },
+    "the mark": {
+      "varies": "once, and only as published",
+      "rule": "The country lockup, drawn by the brand and published here. Country names are drawn as outlines so no build can compose one, and no team may improvise one. This is the single place a flag appears, and it is the recorded exception to G7."
+    },
+    "language": {
+      "varies": "always",
+      "rule": "Including which translation a verse is set in. This is what “every tongue” asks for, and it is the largest lever there is."
+    },
+    "photography": {
+      "varies": "always",
+      "rule": "§07 already requires documentary capture from our own field. Someone opening this in Kampala should see believers from Kampala. Belonging is built here, not in an accent colour."
+    },
+    "testimony and proof": {
+      "varies": "always",
+      "rule": "Local names, local reports, local numbers, each attributed under G8."
+    },
+    "first steps": {
+      "varies": "where the church genuinely gathers differently",
+      "rule": "The journey is the same; the first step into it may not be."
+    },
+    "formats": {
+      "varies": "always",
+      "rule": "Dates, numbers, name order, and reading direction."
+    }
   },
   "spacing": {
     "space-1": "4px",
@@ -2785,14 +2828,14 @@
     {
       "name": "tokens.json",
       "url": "https://brand.every1movement.com/ai/tokens.json",
-      "bytes": 43459,
-      "sha256": "3c1893e4758f000118c585163ffded51b429564c603339d7d75baecb15c2219f"
+      "bytes": 45860,
+      "sha256": "96efdc29e411681beaf32b5ae2aba88b01ba0c16b0025c0dce9e60d15666d793"
     },
     {
       "name": "tokens.dtcg.json",
       "url": "https://brand.every1movement.com/ai/tokens.dtcg.json",
       "bytes": 13245,
-      "sha256": "4bfe015abab381417d00bbe717e74663cc1039b47641cb8ce4f3a6c0887aa9f4"
+      "sha256": "87cab7c4d9cb34b42d44462ae120b715593f0492eb431d0d0cce339771483b85"
     },
     {
       "name": "brand_check.py",
@@ -2804,7 +2847,7 @@
       "name": "brand.css",
       "url": "https://brand.every1movement.com/assets/brand.css",
       "bytes": 26750,
-      "sha256": "2f40b39c6380919eff935a5f6d5f4fafde1df16ff4b8b404ff5b0ab34dd7e956"
+      "sha256": "e5bf55c57760524f00f08a0b21609ee24a2979cce27f0bbd3f197289575050fe"
     }
   ],
   "integrity": "Every file this manifest names carries its byte length and its SHA-256, the marks included. Verify what you download. Unknown paths return a real 404, so trust the status code: a failed fetch is a failed fetch. The 404 body is HTML by design, because a person who mistypes a URL should get a page that helps rather than a blank. Check the status, not the content type."

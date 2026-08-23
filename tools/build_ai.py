@@ -206,6 +206,13 @@ def build_tokens(brand: dict, messaging: dict, updated: str, overrides: dict, sc
         head, *rest = label.split()
         return head + "".join(w.capitalize() for w in rest)
 
+    # Which layers of this system a country may move, and which it may not. Published
+    # as data for the same reason the scale rules are: an application crossing a border
+    # asks this question, and it should not have to ask a person.
+    tokens["nation"] = {
+        r["layer"]: {"varies": r["varies"], "rule": r["rule"]}
+        for r in scales.get("nation", [])
+    }
     tokens["scripture"] = {
         camel(r["property"]): r["value"] for r in scales.get("scripture", [])
     }
@@ -2924,6 +2931,28 @@ __NEVER__
       <div class="countries">
         <img src="/assets/images/every1-country-lockups.png" alt="Six country lockups: USA, Nigeria, Uganda, Brazil, India and the Philippines.">
       </div>
+
+      <h3 style="margin-top:var(--space-7)">This is the only place a country changes the brand</h3>
+      <p class="intro">The lockup is how EVERY1 belongs to a country. The rest of the system does not
+      move at a border: same palette, same three faces, same corners, same motion, everywhere the
+      movement goes. A national accent colour, a flag palette, or a patriotic treatment of buttons is
+      not a localisation, it is a second brand, and the audit fails it under G7.</p>
+      <div class="never" style="border-left-color:var(--accent)">
+        <ol>
+          <li>A flag appears in the bar of a published country lockup and nowhere else.</li>
+          <li>What should change in every country: the language, including which translation a verse
+              is set in, the people in the photographs, the testimonies and the names on them, and
+              the formats for dates, numbers and name order.</li>
+          <li>What never changes: colour, type, spacing, corners and motion. That is what makes a
+              poster in Kampala and a phone in Manila the same movement.</li>
+          <li>Nations contain tribes, and the vision names the tribe first. A national treatment
+              writes out the believer whose relationship to that flag is complicated, and those are
+              the people this movement is for.</li>
+        </ol>
+      </div>
+      <p class="intro" style="margin-top:var(--space-5)">The full ruling is
+      <a class="link" href="https://brand.theword.world/brand#nations">§11 of the Brand Guide</a>.</p>
+
       <p class="intro" style="margin-top:var(--space-5)"><b>Need a country that is not published yet?</b>
       Country names are drawn as outlines, so no build can compose one. Write to
       <a class="link" href="mailto:brand@theword.world">brand@theword.world</a> with the country and
@@ -3519,6 +3548,7 @@ def build_every1_ai(brand: dict, messaging: dict, updated: str, tokens: dict, lo
         "typeScale": tokens["typeScale"],
         "scaleRules": tokens["scaleRules"],
         "scripture": tokens["scripture"],
+        "nation": tokens["nation"],
         "spacing": tokens["spacing"],
         "radius": tokens["radius"],
         "elevation": tokens["elevation"],
