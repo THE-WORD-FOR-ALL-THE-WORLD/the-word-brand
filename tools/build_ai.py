@@ -2634,12 +2634,12 @@ EVERY1_SITE = """<!DOCTYPE html>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
 <title>EVERY1 Movement · Brand</title>
-<meta name="description" content="How to use the EVERY1 Movement mark: which file, on which ground, how much room it needs, and what never to do. For teams and partner organisations using the mark at conferences and activations.">
+<meta name="description" content="The brand standard for the EVERY1 Movement: the marks, the words, the rules that hold them, and everything to download. For our team and for any organisation carrying EVERY1 at a conference or an activation.">
 <link rel="icon" href="/assets/logos/every1-e1-reversed.svg" type="image/svg+xml">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="EVERY1 Movement">
 <meta property="og:title" content="EVERY1 Movement · Brand">
-<meta property="og:description" content="How to use the EVERY1 Movement mark: which file, on which ground, how much room it needs, and what never to do.">
+<meta property="og:description" content="The brand standard for the EVERY1 Movement: the marks, the words, the rules that hold them, and everything to download.">
 <meta property="og:url" content="https://brand.every1movement.com/">
 <meta property="og:image" content="https://brand.every1movement.com/assets/images/every1-og-card.png">
 <meta property="og:image:width" content="1200">
@@ -2650,154 +2650,275 @@ EVERY1_SITE = """<!DOCTYPE html>
 <link rel="stylesheet" href="/assets/brand.css">
 <style>
   /* This page is drawn by the published stylesheet. The rules here are its own
-     furniture only: the shell, the hero, and the specimen frames. */
-  .wrap{max-width:1060px;margin:0 auto;padding:0 var(--space-5);}
+     furniture: the bar, the door, the bands, and the frames the specimens sit in.
+     One face throughout, DM Sans, and the serif once, for scripture. */
+  .wrap{max-width:1180px;margin:0 auto;padding:0 var(--space-5);}
   body{background:var(--ground);}
+  h2,h3{font-family:var(--sans);}
 
-  header.top{background:var(--midnight);color:var(--parchment);padding:var(--space-7) 0 var(--space-8);}
-  header.top .mark{height:34px;width:auto;display:block;}
-  header.top h1{font-family:var(--sans);font-weight:700;letter-spacing:-.015em;font-size:clamp(30px,4.2vw,46px);line-height:1.08;color:var(--white);margin:var(--space-6) 0 0;max-width:22ch;text-wrap:balance;}
-  header.top p.lede{max-width:56ch;margin-top:var(--space-4);color:var(--parchment);}
-  header.top .acts{display:flex;flex-wrap:wrap;gap:var(--space-3);margin-top:var(--space-6);}
+  /* The bar. The lockup left, the way in right, and the download always one tap away. */
+  .topbar{background:var(--midnight);color:var(--parchment);border-bottom:1px solid var(--rule-light);position:sticky;top:0;z-index:20;}
+  .topbar .bar{max-width:1320px;margin:0 auto;padding:16px var(--space-5);display:flex;align-items:center;justify-content:space-between;gap:var(--space-5);flex-wrap:wrap;}
+  .topbar .lockup img{height:22px;width:auto;display:block;}
+  .topbar .links{display:flex;flex-wrap:wrap;align-items:center;gap:var(--space-2) var(--space-5);font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;}
+  .topbar .links a{color:var(--ink-reversed-muted);text-decoration:none;padding:6px 0;}
+  .topbar .links a:hover{color:var(--white);}
+  .topbar .links a.dl{color:var(--white);border:1.5px solid var(--rule-light);border-radius:var(--radius-button);padding:10px 14px;}
+  .topbar .links a.dl:hover{background:var(--white);color:var(--midnight);}
 
-  main{padding:var(--space-8) 0 var(--space-9);}
-  section+section{margin-top:var(--space-8);padding-top:var(--space-8);border-top:1px solid var(--border);}
-  section>h2{font-family:var(--sans);font-weight:700;letter-spacing:-.01em;font-size:clamp(26px,3.4vw,38px);line-height:1.1;margin:var(--space-2) 0 0;text-wrap:balance;}
-  section>p.intro{max-width:64ch;margin-top:var(--space-4);color:var(--text-muted);}
+  /* The door. Footage under a Midnight scrim, and white type only: the standing law. */
+  .hero{position:relative;min-height:min(84vh,760px);display:flex;align-items:center;background:var(--midnight);overflow:hidden;}
+  .hero .still{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:60% 40%;}
+  .hero .scrim{position:absolute;inset:0;background:linear-gradient(90deg,rgba(11,26,45,.96) 0%,rgba(11,26,45,.82) 42%,rgba(11,26,45,.38) 100%);}
+  .hero .inner{position:relative;z-index:2;box-sizing:border-box;width:100%;max-width:1180px;margin:0 auto;padding:var(--space-9) var(--space-5);}
+  .hero .kick{display:block;font-size:12px;font-weight:600;letter-spacing:.26em;text-transform:uppercase;color:var(--ink-reversed);}
+  .hero .kick::after{content:"";display:block;width:56px;border-top:3px solid var(--white);margin-top:14px;}
+  .hero h1{font-weight:700;font-size:clamp(48px,8.4vw,108px);line-height:.96;letter-spacing:-.035em;color:var(--white);margin:var(--space-6) 0 0;max-width:11ch;text-wrap:balance;}
+  .hero .lede{max-width:50ch;margin-top:var(--space-5);font-size:var(--text-body-large);line-height:1.55;color:var(--ink-reversed);}
+  .hero .acts{display:flex;flex-wrap:wrap;gap:var(--space-3);margin-top:var(--space-6);}
+  .hero .btn{font-size:13px;letter-spacing:.14em;text-transform:uppercase;padding:0 var(--space-6);min-height:52px;}
+  .hero .btn.white{background:var(--white);color:var(--midnight);}
+  .hero .btn.white:hover{background:var(--parchment);}
+  .hero .btn.ghost{color:var(--white);border-color:rgba(247,243,236,.55);}
+  .hero .btn.ghost:hover{background:rgba(247,243,236,.12);}
+  .hero .ver{margin-top:var(--space-7);font-size:11px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--ink-reversed-muted);}
 
-  .steps{display:grid;grid-template-columns:1fr;gap:var(--space-4);margin-top:var(--space-6);}
-  @media(min-width:760px){.steps{grid-template-columns:repeat(3,1fr);}}
-  .steps .card{display:flex;flex-direction:column;gap:var(--space-2);}
-  .steps .n{font-family:var(--sans);font-weight:700;font-size:30px;line-height:1;color:var(--accent-text);font-variant-numeric:tabular-nums;}
-  .steps h3{font-family:var(--sans);font-weight:700;font-size:var(--text-body-small);margin:0;}
-  .steps p{margin:0;font-size:var(--text-body-small);line-height:1.6;color:var(--text-muted);}
+  /* The band. The four phrases the movement carries, divided by the mark's own tick. */
+  .band{background:var(--midnight);color:var(--white);border-top:1px solid var(--rule-light);}
+  .band .phrases{display:grid;grid-template-columns:1fr;}
+  @media(min-width:760px){.band .phrases{grid-template-columns:repeat(4,1fr);}}
+  .band .phrases span{padding:26px 22px;text-align:center;font-weight:700;font-size:14px;line-height:1.35;letter-spacing:.08em;text-transform:uppercase;border-top:1px solid var(--rule-light);position:relative;}
+  @media(min-width:760px){.band .phrases span{border-top:0;}.band .phrases span+span::before{content:"";position:absolute;left:0;top:18px;bottom:18px;border-left:2px solid var(--flame);}}
 
-  .marks{display:grid;grid-template-columns:1fr;gap:var(--space-5);margin-top:var(--space-6);}
+  /* The contents. Every section, numbered in the order a reader meets it. */
+  .contents{border-bottom:1px solid var(--rule);background:var(--ground);}
+  .contents ol{list-style:none;counter-reset:c;margin:0;padding:14px 0;display:flex;flex-wrap:wrap;gap:4px var(--space-5);}
+  .contents li{counter-increment:c;}
+  .contents a{display:inline-flex;gap:8px;align-items:baseline;padding:6px 0;font-size:12.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-muted);text-decoration:none;}
+  .contents a::before{content:counter(c,decimal-leading-zero);font-size:11px;color:var(--ember);font-variant-numeric:tabular-nums;}
+  .contents a:hover{color:var(--ink);}
+
+  /* Sections. One eyebrow, one headline, one measure, and the number the contents gave it. */
+  main{counter-reset:sec;}
+  main section{counter-increment:sec;padding:var(--space-9) 0;}
+  main section+section{border-top:1px solid var(--rule);}
+  main section.on-midnight{border-top:0;}
+  .eyebrow.num::before{content:counter(sec,decimal-leading-zero) "  /  ";white-space:pre;}
+  section h2.t{font-weight:700;font-size:clamp(38px,5.2vw,68px);line-height:.98;letter-spacing:-.03em;margin:var(--space-4) 0 0;max-width:15ch;text-wrap:balance;}
+  section p.intro{max-width:60ch;margin-top:var(--space-5);font-size:var(--text-body-large);line-height:1.55;color:var(--text-muted);}
+  section h3{font-weight:700;font-size:var(--text-title-small);letter-spacing:-.01em;line-height:1.2;margin:0 0 var(--space-3);}
+
+  /* Start here. Three things, each on its own Flame rule. */
+  .steps{display:grid;grid-template-columns:1fr;gap:var(--space-6);margin-top:var(--space-7);}
+  @media(min-width:760px){.steps{grid-template-columns:repeat(3,1fr);gap:var(--space-7);}}
+  .steps .step{border-left:3px solid var(--flame);padding-left:var(--space-5);display:flex;flex-direction:column;gap:var(--space-3);}
+  .steps .n{font-weight:700;font-size:56px;line-height:.9;letter-spacing:-.03em;color:var(--ember);font-variant-numeric:tabular-nums;}
+  .steps h3{margin:var(--space-2) 0 0;font-size:var(--text-body-large);}
+  .steps p{margin:0;font-size:var(--text-body);line-height:1.6;color:var(--text-muted);}
+
+  /* The words. The statements on the left, the record on the right. */
+  .wordsplit{display:grid;grid-template-columns:1fr;gap:var(--space-7);margin-top:var(--space-7);align-items:start;}
+  @media(min-width:900px){.wordsplit{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--space-8);}}
+  .says{display:flex;flex-direction:column;gap:var(--space-6);}
+  .says .say{border-left:3px solid var(--flame);padding-left:var(--space-5);}
+  .says .say b{display:block;font-weight:700;font-size:var(--text-title-small);letter-spacing:.02em;text-transform:uppercase;color:var(--ember);margin-bottom:var(--space-2);}
+  .says .say p{margin:0;font-weight:500;font-size:var(--text-body-large);line-height:1.45;max-width:34ch;text-wrap:pretty;}
+  .says .say p span{font-weight:400;color:var(--text-muted);}
+  .photo{margin:0;}
+  .inuse{display:grid;grid-template-columns:1fr;gap:var(--space-5);margin-top:var(--space-8);}
+  @media(min-width:820px){.inuse{grid-template-columns:1fr 1fr;}}
+  .inuse .photo img{aspect-ratio:3/2;}
+  .photo img{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;display:block;border-radius:var(--radius-card);}
+  .photo figcaption{margin-top:var(--space-3);font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-muted);}
+
+  /* The vision, on Midnight. The lockup's lines in the mark's own caps, and the verse
+     beneath them in the one serif on this door: the scripture setting, hairline above,
+     reference in the label step. No coloured bar, because the rule forbids one. */
+  .vision{margin-top:var(--space-8);background:var(--midnight);color:var(--parchment);border-radius:var(--radius-frame);padding:clamp(32px,5vw,64px);}
+  .vision .vlabel{display:block;font-size:var(--text-label);font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--flame);margin-bottom:var(--space-5);}
+  .vision .vlines{font-weight:700;font-size:clamp(26px,3.6vw,44px);line-height:1.06;letter-spacing:.02em;color:var(--white);margin:0;max-width:22ch;}
+  .vision .verse{font-family:var(--serif-text);font-weight:400;font-size:clamp(22px,2.4vw,28px);line-height:1.35;margin:var(--space-6) 0 0;padding-top:var(--space-5);border-top:1px solid var(--rule-light);max-width:36ch;color:var(--parchment);}
+  .vision .vref{display:block;font-size:var(--text-label);font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-reversed-muted);margin:var(--space-3) 0 0;}
+  .vision .vnote{font-size:var(--text-body-small);line-height:1.65;color:var(--ink-reversed-muted);margin:var(--space-6) 0 0;max-width:72ch;}
+
+  .saylists{display:grid;grid-template-columns:1fr;gap:var(--space-6);margin-top:var(--space-8);}
+  @media(min-width:760px){.saylists{grid-template-columns:repeat(3,1fr);gap:var(--space-7);}}
+  .saylists>div{border-top:3px solid var(--midnight);padding-top:var(--space-4);}
+  .saylists ul{margin:0;padding-left:1.1em;font-size:var(--text-body);line-height:1.6;}
+  .saylists li{margin-bottom:var(--space-3);}
+
+  .voicegrid{display:grid;grid-template-columns:1fr;gap:var(--space-7);margin-top:var(--space-8);}
+  @media(min-width:900px){.voicegrid{grid-template-columns:minmax(0,1fr) minmax(0,1fr);}}
+  .voice{border-top:3px solid var(--midnight);padding-top:var(--space-4);}
+  .voice p.intro{margin-top:0;font-size:var(--text-body);}
+  .voice ul{margin:var(--space-4) 0 0;padding-left:1.1em;font-size:var(--text-body);line-height:1.6;}
+  .voice li{margin-bottom:var(--space-3);}
+  .bw{margin-top:var(--space-4);}
+  .bw p{margin:0 0 var(--space-3);font-size:var(--text-body);line-height:1.6;}
+  .bw b{color:var(--ink);}
+
+  .plates{display:grid;grid-template-columns:1fr;gap:var(--space-5);margin-top:var(--space-8);}
+  @media(min-width:900px){.plates{grid-template-columns:minmax(0,1fr) minmax(0,1fr);}}
+  .plate{border:1px solid var(--rule);border-radius:var(--radius-card);background:var(--surface);padding:var(--space-6);}
+  .plate b{display:block;font-size:var(--text-label);font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--ember);margin-bottom:var(--space-3);}
+  .plate p{margin:0;font-size:var(--text-body);line-height:1.65;}
+  .plate.standing{border-left:3px solid var(--ember);}
+
+  /* The marks. */
+  .marks{display:grid;grid-template-columns:1fr;gap:var(--space-5);margin-top:var(--space-7);}
   @media(min-width:820px){.marks{grid-template-columns:1fr 1fr;}}
-  .mark{border:1px solid var(--border);border-radius:var(--radius-frame);background:var(--surface);overflow:hidden;display:flex;flex-direction:column;}
-  .mark .stage{padding:var(--space-6);display:flex;align-items:center;justify-content:center;min-height:150px;background:var(--parchment);}
+  .mark{border:1px solid var(--rule);border-radius:var(--radius-frame);background:var(--surface);overflow:hidden;display:flex;flex-direction:column;}
+  .mark .stage{padding:var(--space-7) var(--space-6);display:flex;align-items:center;justify-content:center;min-height:190px;background:var(--parchment);}
   .mark .stage.dark{background:var(--midnight);}
-  .mark .stage img{max-width:100%;max-height:110px;height:auto;display:block;}
-  .mark .body{padding:var(--space-5);display:flex;flex-direction:column;gap:var(--space-3);flex:1;}
-  .mark h3{font-family:var(--sans);font-weight:700;font-size:var(--text-body-small);margin:0;}
+  .mark .stage img{max-width:100%;max-height:120px;height:auto;display:block;}
+  .mark .body{padding:var(--space-5) var(--space-6) var(--space-6);display:flex;flex-direction:column;gap:var(--space-3);flex:1;}
+  .mark h3{font-size:var(--text-body-large);margin:0;}
   .mark p.use{margin:0;font-size:var(--text-body-small);line-height:1.6;color:var(--text-muted);}
   .mark dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:4px var(--space-4);font-size:var(--text-caption);}
   .mark dt{color:var(--text-soft);}
   .mark dd{margin:0;color:var(--text-muted);}
   .mark .files{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:var(--space-3);}
-  .mark .files a{font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:5px 9px;border:1px solid var(--border);border-radius:var(--radius-button);color:var(--text-muted);text-decoration:none;}
-  .mark .files a:hover{border-color:var(--accent-text);color:var(--accent-text);}
+  .mark .files a{font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:6px 10px;border:1px solid var(--rule);border-radius:var(--radius-button);color:var(--text-muted);text-decoration:none;}
+  .mark .files a:hover{border-color:var(--ember);color:var(--ember);}
 
-  .swatches{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:var(--space-4);margin-top:var(--space-6);}
-  .swatch .chip{height:76px;border-radius:var(--radius-card);border:1px solid var(--border);}
-  .swatch b{display:block;margin-top:var(--space-3);font-size:var(--text-body-small);}
+  /* Colour. Six blocks, and the whole width. */
+  .swatches{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--space-4);margin-top:var(--space-7);}
+  @media(min-width:760px){.swatches{grid-template-columns:repeat(3,1fr);}}
+  @media(min-width:1000px){.swatches{grid-template-columns:repeat(6,1fr);}}
+  .swatch .chip{height:150px;border-radius:var(--radius-card);border:1px solid var(--rule);}
+  .swatch b{display:block;margin-top:var(--space-3);font-size:var(--text-body);}
   .swatch code{font-size:var(--text-caption);color:var(--text-muted);}
-  .swatch span{display:block;margin-top:4px;font-size:var(--text-caption);line-height:1.5;color:var(--text-muted);}
+  .swatch span{display:block;margin-top:6px;font-size:var(--text-caption);line-height:1.5;color:var(--text-muted);}
 
-  .faces{display:grid;grid-template-columns:1fr;gap:var(--space-4);margin-top:var(--space-6);}
-  @media(min-width:760px){.faces{grid-template-columns:repeat(3,1fr);}}
-  .face .spec{font-size:30px;line-height:1.1;}
+  /* Type. Two specimens, and the rule between them. */
+  .faces{display:grid;grid-template-columns:1fr;gap:var(--space-6);margin-top:var(--space-7);}
+  @media(min-width:760px){.faces{grid-template-columns:repeat(2,1fr);gap:var(--space-7);}}
+  .face{border-top:3px solid var(--midnight);padding-top:var(--space-5);}
+  .face .spec{font-size:clamp(88px,12vw,148px);line-height:.9;letter-spacing:-.03em;}
   .face .spec.sans{font-family:var(--sans);font-weight:700;}
   .face .spec.serif-text{font-family:var(--serif-text);font-weight:400;}
-  .face b{display:block;margin-top:var(--space-3);font-size:var(--text-body-small);}
-  .face span{display:block;margin-top:4px;font-size:var(--text-caption);line-height:1.5;color:var(--text-muted);}
+  .face b{display:block;margin-top:var(--space-5);font-size:var(--text-body-large);}
+  .face span{display:block;margin-top:6px;font-size:var(--text-body-small);line-height:1.6;color:var(--text-muted);max-width:40ch;}
 
-  .never{margin-top:var(--space-6);border:1px solid var(--border);border-left:3px solid var(--state-error);border-radius:var(--radius-card);background:var(--surface);padding:var(--space-5) var(--space-6);}
-  .never ol{margin:0;padding-left:1.2em;font-size:var(--text-body-small);line-height:1.7;}
-  .never li{margin-bottom:var(--space-2);}
+  /* Never. On Midnight, numbered in Flame. */
+  .never ol{list-style:none;counter-reset:nv;margin:var(--space-7) 0 0;padding:0;max-width:60ch;}
+  .never li{counter-increment:nv;position:relative;padding:var(--space-5) 0 var(--space-5) 72px;border-top:1px solid var(--rule-light);font-size:var(--text-body-large);line-height:1.45;font-weight:500;}
+  .never li::before{content:counter(nv,decimal-leading-zero);position:absolute;left:0;top:var(--space-5);line-height:1;font-weight:700;font-size:32px;letter-spacing:-.02em;color:var(--flame);font-variant-numeric:tabular-nums;}
+  .never li:last-child{border-bottom:1px solid var(--rule-light);}
 
-  /* No coloured bar on this box: it holds scripture, and the scripture rule forbids a Flame accent. */
-  .vision{margin-top:var(--space-6);border:1px solid var(--border);border-radius:var(--radius-card);background:var(--surface);padding:var(--space-6);}
-  .vision .vlabel{display:block;font-size:var(--text-eyebrow);letter-spacing:var(--tracking-eyebrow);text-transform:uppercase;color:var(--ink-muted);margin-bottom:var(--space-3);}
-  .vision .vlines{font-family:var(--sans);font-weight:700;letter-spacing:.04em;font-size:var(--text-h3);line-height:1.22;margin:0 0 var(--space-3);}
-  /* The verse is the one serif on this door: the scripture setting from the parent guide,
-     hairline above, DM Serif Text at title-small, reference beneath in the label step. */
-  .vision .verse{font-family:var(--serif-text);font-weight:400;font-size:var(--text-title-small);line-height:1.35;margin:0;padding-top:var(--space-4);border-top:1px solid var(--border);}
-  .vision .vref{display:block;font-family:var(--sans);font-size:var(--text-eyebrow);font-weight:600;letter-spacing:var(--tracking-eyebrow);text-transform:uppercase;color:var(--ink-muted);margin:var(--space-2) 0 var(--space-4);}
-  .vision .vnote{font-size:var(--text-body-small);color:var(--ink-muted);margin:0;}
+  /* Rules on a light ground: the same list, Ember numerals. */
+  .ruleslist{list-style:none;counter-reset:rl;margin:var(--space-6) 0 0;padding:0;max-width:64ch;}
+  .ruleslist li{counter-increment:rl;position:relative;padding:var(--space-4) 0 var(--space-4) 56px;border-top:1px solid var(--rule);font-size:var(--text-body);line-height:1.55;}
+  .ruleslist li::before{content:counter(rl,decimal-leading-zero);position:absolute;left:0;top:calc(var(--space-4) - 2px);line-height:1;font-weight:700;font-size:24px;color:var(--ember);font-variant-numeric:tabular-nums;}
+  .ruleslist li:last-child{border-bottom:1px solid var(--rule);}
 
-  .says{display:grid;grid-template-columns:1fr;gap:var(--space-4);margin-top:var(--space-6);}
-  @media(min-width:760px){.says{grid-template-columns:repeat(3,1fr);}}
-  .says .say{border:1px solid var(--border);border-radius:var(--radius-card);background:var(--surface);padding:var(--space-5);}
-  .says .say b{display:block;font-size:var(--text-eyebrow);letter-spacing:var(--tracking-eyebrow);text-transform:uppercase;color:var(--ink-muted);margin-bottom:var(--space-2);}
-  .says .say p{margin:0;font-size:var(--text-body-small);line-height:1.6;}
+  .masksplit{display:grid;grid-template-columns:1fr;gap:var(--space-7);align-items:start;margin-top:var(--space-7);}
+  @media(min-width:820px){.masksplit{grid-template-columns:260px minmax(0,1fr);gap:var(--space-8);}}
 
-  .saylists{display:grid;grid-template-columns:1fr;gap:var(--space-6);margin-top:var(--space-6);}
-  @media(min-width:760px){.saylists{grid-template-columns:repeat(3,1fr);}}
-  .saylists h3{margin:0 0 var(--space-3);}
-  .saylists ul{margin:0;padding-left:1.2em;font-size:var(--text-body-small);line-height:1.7;}
-  .saylists li{margin-bottom:var(--space-2);}
+  .countries{margin-top:var(--space-7);}
+  .countries img{width:100%;height:auto;display:block;border:1px solid var(--rule);border-radius:var(--radius-card);}
 
-  .phrases{display:flex;flex-wrap:wrap;gap:var(--space-3);margin-top:var(--space-5);}
-  .phrases span{border:1px solid var(--border);border-radius:100px;padding:var(--space-2) var(--space-4);font-size:var(--text-body-small);background:var(--surface);}
+  pre.code{font-size:15px;margin:var(--space-6) 0 0;padding:var(--space-5) var(--space-6);overflow-x:auto;background:var(--midnight);color:var(--parchment);border-radius:var(--radius-card);}
 
-  .voice{margin-top:var(--space-6);}
-  .voice ul{margin:var(--space-3) 0 0;padding-left:1.2em;font-size:var(--text-body-small);line-height:1.7;}
-  .voice li{margin-bottom:var(--space-2);}
+  /* Ask. The last thing on the page is a way to reach a person. */
+  .ask .btn.white{background:var(--white);color:var(--midnight);font-size:13px;letter-spacing:.14em;text-transform:uppercase;min-height:52px;padding:0 var(--space-6);}
+  .ask .btn.white:hover{background:var(--parchment);}
+  .ask .acts{display:flex;flex-wrap:wrap;gap:var(--space-3);margin-top:var(--space-6);}
+  .ask p.intro{color:var(--ink-reversed-muted);}
 
-  .boiler{margin-top:var(--space-6);border:1px solid var(--border);border-radius:var(--radius-card);background:var(--surface);padding:var(--space-5) var(--space-6);}
-  .boiler b{display:block;font-size:var(--text-eyebrow);letter-spacing:var(--tracking-eyebrow);text-transform:uppercase;color:var(--ink-muted);margin-bottom:var(--space-3);}
-  .boiler p{margin:0;font-size:var(--text-body-small);line-height:1.7;}
-
-  .standing{margin-top:var(--space-6);border:1px solid var(--border);border-left:3px solid var(--state-error);border-radius:var(--radius-card);background:var(--surface);padding:var(--space-5) var(--space-6);}
-  .standing p{margin:0;font-size:var(--text-body-small);line-height:1.7;}
-
-  .masksplit{display:grid;grid-template-columns:1fr;gap:var(--space-6);align-items:start;margin-top:var(--space-6);}
-  @media(min-width:820px){.masksplit{grid-template-columns:210px 1fr;gap:var(--space-7);}}
-
-  .countries{margin-top:var(--space-6);}
-  .countries img{width:100%;height:auto;display:block;border:1px solid var(--border);border-radius:var(--radius-card);}
-
-  footer.foot{background:var(--midnight);color:var(--ink-reversed-muted);padding:var(--space-7) 0;margin-top:var(--space-9);}
+  footer.foot{background:var(--midnight);color:var(--ink-reversed-muted);padding:var(--space-7) 0;border-top:1px solid var(--rule-light);font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:600;}
   footer.foot .wrap{display:flex;flex-wrap:wrap;gap:var(--space-4);justify-content:space-between;align-items:center;}
   footer.foot img{height:20px;width:auto;display:block;}
-  footer.foot a{color:var(--accent-on-dark);}
+  footer.foot a{color:var(--parchment);text-decoration:none;border-bottom:1px solid var(--rule-light);}
+  /* The vision is a sentence, not a label: never all caps. */
+  footer.foot .vis{text-transform:none;letter-spacing:0;font-weight:500;font-size:var(--text-body-small);color:var(--parchment);}
 
 __DOORCSS__
-__SIDEBARCSS__
 </style>
 </head>
 <body>
 
-<div class="site">
-__SIDEBAR__
-<div class="sitemain">
-
-<header class="top on-midnight">
-  <div class="wrap">
-    <img class="mark" src="/assets/logos/every1-horizontal-reversed.svg" alt="EVERY1 Movement">
-    <h1>How to carry this mark.</h1>
-    <p class="lede">For our team, and for any organisation carrying EVERY1 at a conference,
-    an activation, or on a shirt. The marks and the words are both on this page, and everything
-    you need to download is linked from it.</p>
-    <div class="acts">
-      <a class="btn" href="/assets/downloads/every1-logos.zip">Download every mark</a>
-      <a class="btn ghost" href="#say">Read the words</a>
-      <a class="btn ghost" href="#brand">See the brand</a>
-      <a class="btn ghost" href="/messaging/">Messaging standard</a>
-    </div>
+<header class="topbar">
+  <div class="bar">
+    <a class="lockup" href="/" aria-label="EVERY1 Movement, home">
+      <img src="/assets/logos/every1-horizontal-reversed.svg" alt="EVERY1 Movement">
+    </a>
+    <nav class="links" aria-label="Site">
+      <a href="#say">The words</a>
+      <a href="#brand">The brand</a>
+      <a href="#marks">The marks</a>
+      <a href="#colour">Colour</a>
+      <a href="#never">Never</a>
+      <a href="/messaging/">Messaging</a>
+      <a class="dl" href="/assets/downloads/every1-logos.zip">Download</a>
+    </nav>
   </div>
 </header>
 
-<main>
+<section class="hero on-midnight" aria-label="EVERY1 Movement brand standard">
+  <img class="still" src="/assets/images/every1-street-outreach.jpg" alt="An EVERY1 street activation: a tent and banner carrying the mark, and people in EVERY1 shirts talking one to one.">
+  <div class="scrim"></div>
+  <div class="inner">
+    <span class="kick">The official brand standard</span>
+    <h1>A movement for EVERY1.</h1>
+    <p class="lede">The marks, the words, and the rules that hold them, for our team and for any
+    organisation carrying EVERY1 at a conference, an activation, or on a shirt. Everything you
+    need to download is on this page.</p>
+    <div class="acts">
+      <a class="btn white" href="/assets/downloads/every1-logos.zip">Download every mark</a>
+      <a class="btn ghost" href="#say">Read the words</a>
+    </div>
+    <div class="ver">Brand standard · v__VERSION__</div>
+  </div>
+</section>
+
+<div class="band" aria-label="The words EVERY1 carries">
+  <div class="phrases">
+__PHRASES__
+  </div>
+</div>
+
+<nav class="contents" aria-label="On this page">
   <div class="wrap">
+    <ol>
+__CONTENTS__
+    </ol>
+  </div>
+</nav>
+
+<main>
 
     <section id="start">
-      <span class="eyebrow">Start here</span>
-      <h2>Three things, and you are right.</h2>
+      <div class="wrap">
+      <span class="eyebrow num">Start here</span>
+      <h2 class="t">Three things, and you are right.</h2>
       <div class="steps">
-        <div class="card"><div class="n">01</div><h3>Pick the file for the ground</h3><p>Dark background, use the reversed file. Light background, use the default. One colour only, use the black file. Never recolour a mark yourself.</p></div>
-        <div class="card"><div class="n">02</div><h3>Give it room, and size</h3><p>Every mark below states the clear space it needs and the smallest it may be set. Both are measured from the artwork, not guessed.</p></div>
-        <div class="card"><div class="n">03</div><h3>Check it before it prints</h3><p>Read the never list. If you are unsure, send it to us before it goes to a printer or a platform. We would rather answer than correct.</p></div>
+        <div class="step"><div class="n">01</div><h3>Pick the file for the ground</h3><p>Dark background, use the reversed file. Light background, use the default. One colour only, use the black file. Never recolour a mark yourself.</p></div>
+        <div class="step"><div class="n">02</div><h3>Give it room, and size</h3><p>Every mark below states the clear space it needs and the smallest it may be set. Both are measured from the artwork, not guessed.</p></div>
+        <div class="step"><div class="n">03</div><h3>Check it before it prints</h3><p>Read the never list. If you are unsure, send it to us before it goes to a printer or a platform. We would rather answer than correct.</p></div>
+      </div>
       </div>
     </section>
 
     <section id="say">
-      <span class="eyebrow">The words</span>
-      <h2>What EVERY1 says.</h2>
+      <div class="wrap">
+      <span class="eyebrow num">The words</span>
+      <h2 class="t">What EVERY1 says.</h2>
       <p class="intro">The marks are half of it. These are the words that go with them, and they
       are approved: quote them as they stand, in a program, from a stage, or on a page. If you need
       something they do not cover, ask rather than writing your own.</p>
+
+      <div class="wordsplit">
+        <div class="says">
+          <div class="say"><b>Mission</b><p>__MISSION__ <span>__MISSION_REF__</span></p></div>
+          <div class="say"><b>The promise</b><p>__PROMISE__</p></div>
+          <div class="say"><b>In plain words</b><p>__PLAIN__</p></div>
+        </div>
+        <figure class="photo">
+          <img src="/assets/images/every1-around-the-world.jpg" alt="Three panels: the USA, Nigeria and Uganda country lockups carried on shirts, a stage banner and a street banner.">
+          <figcaption>Every nation, one mark · design mockup, not the record</figcaption>
+        </figure>
+      </div>
 
       <div class="vision">
         <span class="vlabel">The vision</span>
@@ -2805,12 +2926,6 @@ __SIDEBAR__
         <p class="verse">__VISION_SENTENCE_2__</p>
         <span class="vref">__VISION_REF__</span>
         <p class="vnote">__VISION_NOTE__</p>
-      </div>
-
-      <div class="says">
-        <div class="say"><b>Mission</b><p>__MISSION__ <span style="color:var(--ink-muted)">__MISSION_REF__</span></p></div>
-        <div class="say"><b>The promise</b><p>__PROMISE__</p></div>
-        <div class="say"><b>In plain words</b><p>__PLAIN__</p></div>
       </div>
 
       <div class="saylists">
@@ -2834,66 +2949,83 @@ __FIRSTSTEPS__
         </div>
       </div>
 
-      <h3 style="margin-top:var(--space-7)">The words it carries</h3>
-      <div class="phrases">
-__PHRASES__
-      </div>
-
-      <div class="voice">
-        <h3>How to write as EVERY1</h3>
-        <p class="intro">__VOICE_REGISTER__</p>
-        <ul>
+      <div class="voicegrid">
+        <div class="voice">
+          <h3>How to write as EVERY1</h3>
+          <p class="intro">__VOICE_REGISTER__</p>
+          <ul>
 __VOICE_RULES__
-        </ul>
-      </div>
-
-      <div class="voice">
-        <h3>Words this brand does not use</h3>
-        <p class="intro">These are banned across everything THE WORD publishes, EVERY1 included.
-        Theological words are never banned: these are words that manufacture a feeling or sell.</p>
-        <div class="bw">
+          </ul>
+        </div>
+        <div class="voice">
+          <h3>Words this brand does not use</h3>
+          <p class="intro">These are banned across everything THE WORD publishes, EVERY1 included.
+          Theological words are never banned: these are words that manufacture a feeling or sell.</p>
+          <div class="bw">
 __BANNED__
+          </div>
         </div>
       </div>
 
-      <div class="boiler">
-        <b>Boilerplate, use as written</b>
-        <p>__BOILER__</p>
+      <div class="plates">
+        <div class="plate">
+          <b>Boilerplate, use as written</b>
+          <p>__BOILER__</p>
+        </div>
+        <div class="plate standing">
+          <b>The standing rule</b>
+          <p>__STANDING__</p>
+        </div>
       </div>
-
-      <div class="standing">
-        <p>__STANDING__</p>
       </div>
     </section>
 
     <section id="brand">
+      <div class="wrap">
+      <span class="eyebrow num">The brand</span>
+      <h2 class="t">What this door is.</h2>
+      <p class="intro">Recorded on the parent's portal and read from there, so the door and the
+      house cannot disagree: what kind of brand this is, what it owns, where it sits in the
+      process, and where it departs from the parent.</p>
+      </div>
 __DOOR__
-</section>
+      <div class="wrap">
+      <div class="inuse">
+        <figure class="photo"><img src="/assets/images/every1-social-profile.png" alt="An EVERY1 social profile and grid, the E1 icon as the avatar."><figcaption>Social · the E1 icon is the avatar · design mockup</figcaption></figure>
+        <figure class="photo"><img src="/assets/images/every1-kit-flat-lay.png" alt="EVERY1 shirts, a banner and lanyards carrying the country lockups."><figcaption>The activation kit · shirts, banner, lanyards · design mockup</figcaption></figure>
+      </div>
+      </div>
+    </section>
 
-<section id="marks">
-      <span class="eyebrow">The marks</span>
-      <h2>Every published form.</h2>
+    <section id="marks">
+      <div class="wrap">
+      <span class="eyebrow num">The marks</span>
+      <h2 class="t">Every published form.</h2>
       <p class="intro">These are the files. They are generated from the approved artwork, so what
       you download here is what the mark is. Do not rebuild one by typesetting it.</p>
       <div class="marks">
 __MARKS__
       </div>
+      </div>
     </section>
 
     <section id="colour">
-      <span class="eyebrow">Colour</span>
-      <h2>Six, and no others.</h2>
+      <div class="wrap">
+      <span class="eyebrow num">Colour</span>
+      <h2 class="t">Six, and no others.</h2>
       <p class="intro">Flame is the accent and the numeral. It is never used for text and never
       as a ground under text: at text size it does not carry enough contrast. Where you need
       fire at text size, use Ember.</p>
       <div class="swatches">
 __SWATCHES__
       </div>
+      </div>
     </section>
 
     <section id="type">
-      <span class="eyebrow">Type</span>
-      <h2>One face, and the serif only where the parent speaks.</h2>
+      <div class="wrap">
+      <span class="eyebrow num">Type</span>
+      <h2 class="t">One face, and the serif only where the parent speaks.</h2>
       <p class="intro">EVERY1 is set in DM Sans: every headline, label, button and line of body on
       this door, in the same family the mark is drawn in. The parent's serif appears on an EVERY1
       surface only where the parent speaks, and on this door that is scripture. Both faces are on
@@ -2902,28 +3034,32 @@ __SWATCHES__
       <div class="faces">
 __FACES__
       </div>
+      </div>
     </section>
 
-    <section id="never">
-      <span class="eyebrow">Never</span>
-      <h2>The short list.</h2>
+    <section id="never" class="on-midnight">
+      <div class="wrap">
+      <span class="eyebrow num">Never</span>
+      <h2 class="t">The short list.</h2>
       <p class="intro">Everything else is judgement. These are not.</p>
       <div class="never">
         <ol>
 __NEVER__
         </ol>
       </div>
+      </div>
     </section>
 
     <section id="mask">
-      <span class="eyebrow">The 1 as a mask</span>
-      <h2>Photography cut into the numeral.</h2>
+      <div class="wrap">
+      <span class="eyebrow num">The 1 as a mask</span>
+      <h2 class="t">Photography cut into the numeral.</h2>
       <div class="masksplit">
-        <figure class="mask-1" style="margin:0"><img src="/assets/images/every1-mask-example.jpg" alt="A photograph masked into the shape of the numeral."></figure>
+        <div class="e1brand" style="padding:0"><figure class="mask-1" style="margin:0"><img src="/assets/images/every1-mask-example.jpg" alt="A photograph masked into the shape of the numeral."></figure></div>
         <div>
           <p class="intro" style="margin-top:0">This is the one move that belongs to EVERY1 and to
           nothing else. A photograph is cut into the shape of the 1 rather than set beside it.</p>
-          <ol class="rules" style="margin-top:var(--space-4);padding-left:1.2em;font-size:var(--text-body-small);line-height:1.7">
+          <ol class="ruleslist">
             <li>Use the published <code class="code">every1-numeral.svg</code> as the shape. Never redraw it and never use a font character.</li>
             <li>It holds a photograph. Never type, never a logo, never another mark.</li>
             <li>No outline, no shadow, no rotation. One per view.</li>
@@ -2931,11 +3067,13 @@ __NEVER__
           </ol>
         </div>
       </div>
+      </div>
     </section>
 
     <section id="countries">
-      <span class="eyebrow">Country lockups</span>
-      <h2>One per country, drawn not generated.</h2>
+      <div class="wrap">
+      <span class="eyebrow num">Country lockups</span>
+      <h2 class="t">One per country, drawn not generated.</h2>
       <p class="intro">Each country lockup carries its own flag in the bar beneath the name. USA is
       the single exception and carries brand colours, because its flag is close enough that a true
       red and blue reads as a mistake.</p>
@@ -2943,68 +3081,71 @@ __NEVER__
         <img src="/assets/images/every1-country-lockups.png" alt="Six country lockups: USA, Nigeria, Uganda, Brazil, India and the Philippines.">
       </div>
 
-      <h3 style="margin-top:var(--space-7)">This is the only place a country changes the brand</h3>
-      <p class="intro">The lockup is how EVERY1 belongs to a country. The rest of the system does not
-      move at a border: same palette, same three faces, same corners, same motion, everywhere the
+      <h3 style="margin-top:var(--space-8)">This is the only place a country changes the brand</h3>
+      <p class="intro" style="margin-top:0;font-size:var(--text-body)">The lockup is how EVERY1 belongs to a country. The rest of the system does not
+      move at a border: same palette, same faces, same corners, same motion, everywhere the
       movement goes. A national accent colour, a flag palette, or a patriotic treatment of buttons is
       not a localisation, it is a second brand, and the audit fails it under G7.</p>
-      <div class="never" style="border-left-color:var(--accent)">
-        <ol>
-          <li>A flag appears in the bar of a published country lockup and nowhere else.</li>
-          <li>What should change in every country: the language, including which translation a verse
-              is set in, the people in the photographs, the testimonies and the names on them, and
-              the formats for dates, numbers and name order.</li>
-          <li>What never changes: colour, type, spacing, corners and motion. That is what makes a
-              poster in Kampala and a phone in Manila the same movement.</li>
-          <li>Nations contain tribes, and the vision names the tribe first. A national treatment
-              writes out the believer whose relationship to that flag is complicated, and those are
-              the people this movement is for.</li>
-        </ol>
-      </div>
-      <p class="intro" style="margin-top:var(--space-5)">The full ruling is
+      <ol class="ruleslist">
+        <li>A flag appears in the bar of a published country lockup and nowhere else.</li>
+        <li>What should change in every country: the language, including which translation a verse
+            is set in, the people in the photographs, the testimonies and the names on them, and
+            the formats for dates, numbers and name order.</li>
+        <li>What never changes: colour, type, spacing, corners and motion. That is what makes a
+            poster in Kampala and a phone in Manila the same movement.</li>
+        <li>Nations contain tribes, and the vision names the tribe first. A national treatment
+            writes out the believer whose relationship to that flag is complicated, and those are
+            the people this movement is for.</li>
+      </ol>
+      <p class="intro" style="font-size:var(--text-body)">The full ruling is
       <a class="link" href="https://brand.theword.world/brand#nations">§11 of the Brand Guide</a>.</p>
 
-      <p class="intro" style="margin-top:var(--space-5)"><b>Need a country that is not published yet?</b>
+      <p class="intro" style="font-size:var(--text-body)"><b>Need a country that is not published yet?</b>
       Country names are drawn as outlines, so no build can compose one. Write to
       <a class="link" href="mailto:brand@theword.world">brand@theword.world</a> with the country and
       what it is for, and it is drawn, published here, and yours to download.</p>
+      </div>
     </section>
 
     <section id="check">
-      <span class="eyebrow">Check your work</span>
-      <h2>Before it ships.</h2>
+      <div class="wrap">
+      <span class="eyebrow num">Check your work</span>
+      <h2 class="t">Before it ships.</h2>
       <p class="intro">Anyone can check a page or a file against this standard without asking us.
       The checker reads the published rules, so it is always checking against what is current.</p>
-      <pre class="code" style="margin-top:var(--space-5);padding:var(--space-4);overflow-x:auto;border:1px solid var(--border);border-radius:var(--radius-card)">python3 brand_check.py poster.html</pre>
-      <p class="intro"><a class="link" href="/brand_check.py" download>Download brand_check.py</a>.
+      <pre class="code">python3 brand_check.py poster.html</pre>
+      <p class="intro" style="font-size:var(--text-body)"><a class="link" href="/brand_check.py" download>Download brand_check.py</a>.
       It needs Python 3 and nothing else: no install, no account, no network.</p>
-      <p class="intro">It decides the mechanical half: colours outside the palette, a face that is not
+      <p class="intro" style="font-size:var(--text-body)">It decides the mechanical half: colours outside the palette, a face that is not
       one of the three, text in Flame, a removed focus ring, an image with no alternative text. It
       does not decide whether a photograph is real or whether the words are true. A clean run is not
       a finished check.</p>
+      </div>
     </section>
 
-    <section id="ask">
-      <span class="eyebrow">Ask</span>
-      <h2>When in doubt, ask first.</h2>
-      <p class="intro">A question costs a minute. A reprint costs a conference.
-      <a class="link" href="mailto:brand@theword.world">brand@theword.world</a></p>
-      <p class="intro"><b>For machines.</b> Everything on this page is published as data at
+    <section id="ask" class="on-midnight ask">
+      <div class="wrap">
+      <span class="eyebrow num">Ask</span>
+      <h2 class="t">When in doubt, ask first.</h2>
+      <p class="intro">A question costs a minute. A reprint costs a conference.</p>
+      <div class="acts">
+        <a class="btn white" href="mailto:brand@theword.world">brand@theword.world</a>
+      </div>
+      <p class="intro" style="font-size:var(--text-body)"><b style="color:var(--parchment)">For machines.</b> Everything on this page is published as data at
       <a class="link" href="/ai/manifest.json">/ai/manifest.json</a>, with a checksum on every file,
       so an AI tool can read the current standard rather than remembering an old one.</p>
+      </div>
     </section>
 
-  </div>
 </main>
 
 <footer class="foot">
   <div class="wrap">
     <img src="/assets/logos/every1-horizontal-reversed.svg" alt="EVERY1 Movement">
-    <span>__VISION_SENTENCE__</span>
+    <span class="vis">__VISION_SENTENCE__</span>
     <span>Brand v__VERSION__ · <a href="mailto:brand@theword.world">brand@theword.world</a></span>
   </div>
 </footer>
-{EVERY1_SIDEBAR_JS}
 </body>
 </html>
 """
@@ -3448,14 +3589,21 @@ def build_every1_site(brand: dict, tokens: dict, logos: dict, template: str, wor
         ("__VISION_SENTENCE__", esc(messaging["vision"]["text"])),
         ("__VISION_SENTENCE_2__", esc(messaging["vision"]["text"])),
         ("__VISION_REF__", esc(messaging["vision"]["reference"])),
-        ("__SIDEBAR__", every1_sidebar("brand")),
-        ("__SIDEBARCSS__", EVERY1_SIDEBAR_CSS),
-        ("__SIDEBARJS__", EVERY1_SIDEBAR_JS),
+        # The contents strip: every section, numbered, in the order the menu keeps.
+        ("__CONTENTS__", "\n".join(
+            f'      <li><a href="#{sid}">{esc(label)}</a></li>'
+            for label, sid in EVERY1_NAV_BRAND)),
         ("__DOOR__", door_html),
         ("__DOORCSS__", door_css + (
-            "\n#brand{padding:0;max-width:none;}"
-            "\n.e1brand{padding:var(--space-8) 0 var(--space-4);}"
+            # The door's blocks sit under this page's own section header, in this
+            # page's measure and at this page's scale.
+            "\n.e1brand{padding:var(--space-8) 0 0;}"
+            "\n.e1brand .wrap{max-width:1180px;padding:0 var(--space-5);}"
+            "\n.e1brand .blk{margin-bottom:var(--space-8);}"
             "\n.e1brand .blk:last-child{margin-bottom:0;}"
+            "\n.e1brand .lab{font-size:12px;letter-spacing:.18em;color:var(--ember);margin-bottom:var(--space-4);}"
+            "\n.e1brand h2{font-size:clamp(30px,4vw,46px);line-height:1.02;letter-spacing:-.025em;margin-bottom:var(--space-4);}"
+            "\n.e1brand .lede{font-size:var(--text-body-large);line-height:1.55;}"
         )),
         ("__BANNED__", "\n".join(
             f'        <p class="intro"><b>{esc(g["category"])}.</b> '
@@ -4190,7 +4338,6 @@ EVERY1_DOOR_BLOCKS = [
     "Identity",
     "Place in the process",
     "The participation layer",
-    "The ground in use",
     "The capture brief",
     "Channels",
     "Rules that differ from the parent",
@@ -4333,7 +4480,14 @@ def every1_binaries() -> list:
         ("assets/downloads/every1-logos.zip", f"{EVERY1_DIR}/assets/downloads/every1-logos.zip"),
         ("assets/images/every1-og-card.png", f"{EVERY1_DIR}/assets/images/every1-og-card.png"),
         ("assets/images/every1-country-lockups.png", f"{EVERY1_DIR}/assets/images/every1-country-lockups.png"),
-        ("assets/images/every1-one-to-one.jpg", f"{EVERY1_DIR}/assets/images/every1-mask-example.jpg"),
+        # The homepage's photographs. All three are recorded in asset-notes.json as
+        # generated mockups standing in until real capture replaces them, which is
+        # why the page captions them as mockups and never as the record.
+        ("assets/images/every1-street-outreach.jpg", f"{EVERY1_DIR}/assets/images/every1-street-outreach.jpg"),
+        ("assets/images/every1-around-the-world.jpg", f"{EVERY1_DIR}/assets/images/every1-around-the-world.jpg"),
+        ("assets/images/every1-street-outreach.jpg", f"{EVERY1_DIR}/assets/images/every1-mask-example.jpg"),
+        ("assets/images/every1-social-profile.png", f"{EVERY1_DIR}/assets/images/every1-social-profile.png"),
+        ("assets/images/every1-kit-flat-lay.png", f"{EVERY1_DIR}/assets/images/every1-kit-flat-lay.png"),
     ]
     return pairs
 
