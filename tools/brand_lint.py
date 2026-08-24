@@ -442,6 +442,51 @@ def check_separation(tokens: dict):
                 )
 
 
+def check_every1_type():
+    """L20: the EVERY1 site is DM Sans led, and the serif appears only for scripture.
+
+    Brand Guide section 11: sub-brand materials are DM Sans led, and the serif appears
+    only where the parent speaks. The EVERY1 site shipped for five releases with every
+    headline in DM Serif Display, and nothing checked it, because the faces were the
+    parent's three and the parent's guide sets headlines in the serif. This reads the
+    two published EVERY1 pages and fails any rule or inline style that sets the display
+    serif at all, or the text serif on anything but the scripture setting. It also
+    fails a third-party font request: the faces are self-hosted on both sites.
+    """
+    root = os.path.join(REPO, "every1")
+    if not os.path.isdir(root):
+        return
+    for page in ("index.html", "messaging/index.html"):
+        path = os.path.join(root, page)
+        if not os.path.exists(path):
+            continue
+        s = bs.read(path)
+        if "fonts.googleapis.com" in s or "fonts.gstatic.com" in s:
+            err("L20", f"every1/{page} requests a face from Google Fonts. The site self-hosts "
+                       "its faces at /assets/fonts/, like the portal.")
+        # The prose may name the display serif, to say it is never used. A stylesheet
+        # or an inline style may not.
+        styled = "".join(re.findall(r"<style>(.*?)</style>", s, re.S)) + "".join(
+            re.findall(r'style="([^"]*)"', s))
+        if "serif-display" in styled or "DM Serif Display" in styled:
+            err("L20", f"every1/{page} sets DM Serif Display. EVERY1 is DM Sans led, and the "
+                       "parent's display serif is never set on one of its surfaces.")
+        # Every CSS rule that names the text serif has to be a scripture setting: on the
+        # brand page that is .vision .verse, on the messaging standard it is .vision. A
+        # type specimen (.spec) shows the face it names, and :root only declares the stack.
+        for css in re.findall(r"<style>(.*?)</style>", s, re.S):
+            for m in re.finditer(r"([^{}]+)\{[^{}]*serif-text[^{}]*\}", css):
+                selector = m.group(1).strip().split("}")[-1].strip()
+                if selector.startswith(":root"):
+                    continue
+                if not any(k in selector for k in ("vision", "verse", ".spec")):
+                    err("L20", f"every1/{page} sets the text serif on '{selector}'. On an EVERY1 "
+                               "surface the serif is scripture only.")
+        for m in re.finditer(r'<([a-z0-9]+)[^>]*style="[^"]*serif-text[^"]*"', s):
+            err("L20", f"every1/{page} sets the text serif inline on a <{m.group(1)}>. The "
+                       "serif is scripture only, and scripture is a class, not an inline style.")
+
+
 def check_every1_delivery():
     """L18: the EVERY1 site serves everything its manifest declares.
 
@@ -892,6 +937,7 @@ def main() -> int:
     check_separation(tokens)
     check_scale_rules(tokens)
     check_every1_delivery()
+    check_every1_type()
     check_maskable_icon()
     check_navigation(files)
     check_skill_copies()

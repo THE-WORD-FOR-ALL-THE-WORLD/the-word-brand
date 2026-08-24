@@ -1,6 +1,6 @@
 {
-  "version": "7.8",
-  "updated": "2026-08-22",
+  "version": "7.9",
+  "updated": "2026-08-24",
   "authority": "canonical",
   "name": "EVERY1 Movement",
   "home": "https://brand.every1movement.com/",
@@ -1222,16 +1222,14 @@
   "typography": {
     "families": [
       {
-        "family": "DM Serif Display",
-        "use": "Large headlines, 36px and up. Fine, engraved hairlines. Regular + Italic only. No bold exists."
+        "family": "DM Sans",
+        "stack": "sans",
+        "use": "The movement's face. Every headline, label, button, caption and line of body on an EVERY1 surface, in the family the mark is drawn in. Weights 400 to 700 with true italics; the mark's 900 lives only in the outlined artwork."
       },
       {
         "family": "DM Serif Text",
-        "use": "Serif moments from 22–36px: pull quotes, the prophecy, document headings. Regular + Italic only."
-      },
-      {
-        "family": "DM Sans",
-        "use": "Everything functional: body, nav, labels, buttons, sub-brand materials. Weights 400–700 with true italics."
+        "stack": "serif-text",
+        "use": "Scripture only: title-small or title, regular, hairline above, the reference beneath in DM Sans. That is the parent speaking, and it is the only serif on this door."
       }
     ],
     "stacks": {
@@ -1241,7 +1239,11 @@
     },
     "source": "Google Fonts, free for every volunteer, partner, and field team",
     "retired": "Proxima Nova, fully retired. Fallbacks: Georgia for the serifs, system sans for DM Sans.",
-    "rule": "Three faces and no others, in the weights and figures named here. A face outside the three is not a substitution, it is a different brand. Where a face cannot load, the fallbacks are Georgia for the serifs and the system sans for DM Sans."
+    "rule": "DM Sans led, per Brand Guide section 11. The parent's serif appears on an EVERY1 surface only where the parent speaks, and on this door that is scripture, set in DM Serif Text under the parent's scripture rule. DM Serif Display is never set on an EVERY1 surface: a headline, a number or a pull quote in the serif is the parent's voice, not the movement's.",
+    "notSet": [
+      "DM Serif Display"
+    ],
+    "parentRule": "Three faces and no others, in the weights and figures named here. A face outside the three is not a substitution, it is a different brand. Where a face cannot load, the fallbacks are Georgia for the serifs and the system sans for DM Sans."
   },
   "theme": {
     "_README": "This system is dual-theme and always was. Light is Parchment, dark is Midnight. Nothing here is a new colour: every value is a token already published above, collected into the pair an application switches between.",
@@ -2829,13 +2831,13 @@
       "name": "tokens.json",
       "url": "https://brand.every1movement.com/ai/tokens.json",
       "bytes": 45860,
-      "sha256": "96efdc29e411681beaf32b5ae2aba88b01ba0c16b0025c0dce9e60d15666d793"
+      "sha256": "05c076c5f53449fd071be277a7279fecd1de8702e5ef8bd66a121179527937e2"
     },
     {
       "name": "tokens.dtcg.json",
       "url": "https://brand.every1movement.com/ai/tokens.dtcg.json",
       "bytes": 13245,
-      "sha256": "87cab7c4d9cb34b42d44462ae120b715593f0492eb431d0d0cce339771483b85"
+      "sha256": "d8e263ec7d2bf17fc86b4d76c39394f2cd7e0a394df7ac5612169887a58f8ad0"
     },
     {
       "name": "brand_check.py",
@@ -2847,7 +2849,7 @@
       "name": "brand.css",
       "url": "https://brand.every1movement.com/assets/brand.css",
       "bytes": 26750,
-      "sha256": "e5bf55c57760524f00f08a0b21609ee24a2979cce27f0bbd3f197289575050fe"
+      "sha256": "295017bf36ee96669a59f2bc7dfe6050d535c95e62036d92c0e30820e2fc06d7"
     }
   ],
   "integrity": "Every file this manifest names carries its byte length and its SHA-256, the marks included. Verify what you download. Unknown paths return a real 404, so trust the status code: a failed fetch is a failed fetch. The 404 body is HTML by design, because a person who mistypes a URL should get a page that helps rather than a blank. Check the status, not the content type."
