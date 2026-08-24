@@ -2656,19 +2656,19 @@ EVERY1_SITE = """<!DOCTYPE html>
 
   header.top{background:var(--midnight);color:var(--parchment);padding:var(--space-7) 0 var(--space-8);}
   header.top .mark{height:34px;width:auto;display:block;}
-  header.top h1{font-family:var(--serif-display);font-weight:400;font-size:clamp(30px,4.2vw,46px);line-height:1.08;color:var(--white);margin:var(--space-6) 0 0;max-width:22ch;text-wrap:balance;}
+  header.top h1{font-family:var(--sans);font-weight:700;letter-spacing:-.015em;font-size:clamp(30px,4.2vw,46px);line-height:1.08;color:var(--white);margin:var(--space-6) 0 0;max-width:22ch;text-wrap:balance;}
   header.top p.lede{max-width:56ch;margin-top:var(--space-4);color:var(--parchment);}
   header.top .acts{display:flex;flex-wrap:wrap;gap:var(--space-3);margin-top:var(--space-6);}
 
   main{padding:var(--space-8) 0 var(--space-9);}
   section+section{margin-top:var(--space-8);padding-top:var(--space-8);border-top:1px solid var(--border);}
-  section>h2{font-family:var(--serif-display);font-weight:400;font-size:clamp(26px,3.4vw,38px);line-height:1.1;margin:var(--space-2) 0 0;text-wrap:balance;}
+  section>h2{font-family:var(--sans);font-weight:700;letter-spacing:-.01em;font-size:clamp(26px,3.4vw,38px);line-height:1.1;margin:var(--space-2) 0 0;text-wrap:balance;}
   section>p.intro{max-width:64ch;margin-top:var(--space-4);color:var(--text-muted);}
 
   .steps{display:grid;grid-template-columns:1fr;gap:var(--space-4);margin-top:var(--space-6);}
   @media(min-width:760px){.steps{grid-template-columns:repeat(3,1fr);}}
   .steps .card{display:flex;flex-direction:column;gap:var(--space-2);}
-  .steps .n{font-family:var(--serif-display);font-size:30px;line-height:1;color:var(--accent-text);font-variant-numeric:tabular-nums;}
+  .steps .n{font-family:var(--sans);font-weight:700;font-size:30px;line-height:1;color:var(--accent-text);font-variant-numeric:tabular-nums;}
   .steps h3{font-family:var(--sans);font-weight:700;font-size:var(--text-body-small);margin:0;}
   .steps p{margin:0;font-size:var(--text-body-small);line-height:1.6;color:var(--text-muted);}
 
@@ -2697,6 +2697,8 @@ EVERY1_SITE = """<!DOCTYPE html>
   .faces{display:grid;grid-template-columns:1fr;gap:var(--space-4);margin-top:var(--space-6);}
   @media(min-width:760px){.faces{grid-template-columns:repeat(3,1fr);}}
   .face .spec{font-size:30px;line-height:1.1;}
+  .face .spec.sans{font-family:var(--sans);font-weight:700;}
+  .face .spec.serif-text{font-family:var(--serif-text);font-weight:400;}
   .face b{display:block;margin-top:var(--space-3);font-size:var(--text-body-small);}
   .face span{display:block;margin-top:4px;font-size:var(--text-caption);line-height:1.5;color:var(--text-muted);}
 
@@ -2704,9 +2706,14 @@ EVERY1_SITE = """<!DOCTYPE html>
   .never ol{margin:0;padding-left:1.2em;font-size:var(--text-body-small);line-height:1.7;}
   .never li{margin-bottom:var(--space-2);}
 
-  .vision{margin-top:var(--space-6);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:var(--radius-card);background:var(--surface);padding:var(--space-6);}
+  /* No coloured bar on this box: it holds scripture, and the scripture rule forbids a Flame accent. */
+  .vision{margin-top:var(--space-6);border:1px solid var(--border);border-radius:var(--radius-card);background:var(--surface);padding:var(--space-6);}
   .vision .vlabel{display:block;font-size:var(--text-eyebrow);letter-spacing:var(--tracking-eyebrow);text-transform:uppercase;color:var(--ink-muted);margin-bottom:var(--space-3);}
-  .vision .vlines{font-family:var(--serif-display);font-size:var(--text-h3);line-height:1.22;margin:0 0 var(--space-3);}
+  .vision .vlines{font-family:var(--sans);font-weight:700;letter-spacing:.04em;font-size:var(--text-h3);line-height:1.22;margin:0 0 var(--space-3);}
+  /* The verse is the one serif on this door: the scripture setting from the parent guide,
+     hairline above, DM Serif Text at title-small, reference beneath in the label step. */
+  .vision .verse{font-family:var(--serif-text);font-weight:400;font-size:var(--text-title-small);line-height:1.35;margin:0;padding-top:var(--space-4);border-top:1px solid var(--border);}
+  .vision .vref{display:block;font-family:var(--sans);font-size:var(--text-eyebrow);font-weight:600;letter-spacing:var(--tracking-eyebrow);text-transform:uppercase;color:var(--ink-muted);margin:var(--space-2) 0 var(--space-4);}
   .vision .vnote{font-size:var(--text-body-small);color:var(--ink-muted);margin:0;}
 
   .says{display:grid;grid-template-columns:1fr;gap:var(--space-4);margin-top:var(--space-6);}
@@ -2759,7 +2766,7 @@ __SIDEBAR__
 <header class="top on-midnight">
   <div class="wrap">
     <img class="mark" src="/assets/logos/every1-horizontal-reversed.svg" alt="EVERY1 Movement">
-    <h1>How to carry this <em>mark.</em></h1>
+    <h1>How to carry this mark.</h1>
     <p class="lede">For our team, and for any organisation carrying EVERY1 at a conference,
     an activation, or on a shirt. The marks and the words are both on this page, and everything
     you need to download is linked from it.</p>
@@ -2795,7 +2802,8 @@ __SIDEBAR__
       <div class="vision">
         <span class="vlabel">The vision</span>
         <p class="vlines">__VISION_LINES__</p>
-        <p class="vlines" style="font-family:var(--sans);font-size:var(--text-body);margin-bottom:var(--space-3)">__VISION_SENTENCE_2__ <span style="color:var(--ink-muted)">__VISION_REF__</span></p>
+        <p class="verse">__VISION_SENTENCE_2__</p>
+        <span class="vref">__VISION_REF__</span>
         <p class="vnote">__VISION_NOTE__</p>
       </div>
 
@@ -2885,9 +2893,12 @@ __SWATCHES__
 
     <section id="type">
       <span class="eyebrow">Type</span>
-      <h2>Three faces, free to everyone.</h2>
-      <p class="intro">All three are on Google Fonts under the Open Font License, so any team or
-      partner can install them at no cost. Do not substitute a different face.</p>
+      <h2>One face, and the serif only where the parent speaks.</h2>
+      <p class="intro">EVERY1 is set in DM Sans: every headline, label, button and line of body on
+      this door, in the same family the mark is drawn in. The parent's serif appears on an EVERY1
+      surface only where the parent speaks, and on this door that is scripture. Both faces are on
+      Google Fonts under the Open Font License, so any team or partner can install them at no
+      cost. Do not substitute a different face, and do not borrow the parent's display serif.</p>
       <div class="faces">
 __FACES__
       </div>
@@ -3148,6 +3159,56 @@ EVERY1_SIDEBAR_JS = """
 """
 
 
+# The Brand Guide's sub-brand rule: sub-brand materials are DM Sans led, and the serif
+# appears only where the parent speaks. On EVERY1's surfaces the parent speaks once, in
+# scripture, which the guide sets in DM Serif Text. The display serif never appears.
+# This list is what the EVERY1 site's type section and its manifest both publish, so
+# the page a partner reads and the file an agent reads cannot disagree.
+EVERY1_FACES = [
+    {
+        "family": "DM Sans",
+        "stack": "sans",
+        "use": "The movement's face. Every headline, label, button, caption and line of body "
+               "on an EVERY1 surface, in the family the mark is drawn in. Weights 400 to 700 "
+               "with true italics; the mark's 900 lives only in the outlined artwork.",
+    },
+    {
+        "family": "DM Serif Text",
+        "stack": "serif-text",
+        "use": "Scripture only: title-small or title, regular, hairline above, the reference "
+               "beneath in DM Sans. That is the parent speaking, and it is the only serif on "
+               "this door.",
+    },
+]
+EVERY1_TYPE_RULE = (
+    "DM Sans led, per Brand Guide section 11. The parent's serif appears on an EVERY1 surface "
+    "only where the parent speaks, and on this door that is scripture, set in DM Serif Text "
+    "under the parent's scripture rule. DM Serif Display is never set on an EVERY1 surface: "
+    "a headline, a number or a pull quote in the serif is the parent's voice, not the movement's."
+)
+
+
+def every1_typography(tokens: dict) -> dict:
+    """The door's typography: the parent's stacks, the door's own faces and rule.
+
+    Every face named here has to be one of the parent's three, or the door would be
+    a different brand. The build fails on a family the guide does not carry.
+    """
+    parent = tokens["typography"]
+    known = {f["family"] for f in parent["families"]}
+    for f in EVERY1_FACES:
+        if f["family"] not in known:
+            raise bs.SourceError(
+                f"EVERY1 sets {f['family']}, which the Brand Guide does not carry."
+            )
+    out = dict(parent)
+    out["families"] = [dict(f) for f in EVERY1_FACES]
+    out["notSet"] = sorted(known - {f["family"] for f in EVERY1_FACES})
+    out["rule"] = EVERY1_TYPE_RULE
+    out["parentRule"] = parent["rule"]
+    return out
+
+
 def every1_marks(logos: dict) -> list:
     """EVERY1's configurations, in the order a stranger needs them."""
     order = ["horizontal", "bare", "e1", "numeral", "vision", "promise", "usa", "uganda"]
@@ -3348,14 +3409,11 @@ def build_every1_site(brand: dict, tokens: dict, logos: dict, template: str, wor
         )
 
     faces = []
-    for f in tokens["typography"]["families"]:
-        family = f["family"]
-        stack = ("serifDisplay" if "Display" in family else
-                 "serifText" if "Serif" in family else "sans")
+    for f in every1_typography(tokens)["families"]:
         faces.append(
             '        <div class="face">\n'
-            f'          <div class="spec" style="font-family:var(--{"serif-display" if stack=="serifDisplay" else "serif-text" if stack=="serifText" else "sans"})">Aa</div>\n'
-            f'          <b>{esc(family)}</b>\n'
+            f'          <div class="spec {f["stack"]}">Aa</div>\n'
+            f'          <b>{esc(f["family"])}</b>\n'
             f'          <span>{esc(f["use"])}</span>\n'
             '        </div>'
         )
@@ -3539,7 +3597,9 @@ def build_every1_ai(brand: dict, messaging: dict, updated: str, tokens: dict, lo
         # read two manifests to find a line height. They are the same values: one build
         # writes both, so they cannot disagree.
         "color": tokens["color"],
-        "typography": tokens["typography"],
+        # The one block that differs from the parent's tokens.json: the door's faces and
+        # its type rule. The stacks and the parent's rule ride along under their own keys.
+        "typography": every1_typography(tokens),
         "theme": tokens["theme"],
         "neutral": tokens["neutral"],
         "system": tokens["system"],
@@ -3862,7 +3922,7 @@ EVERY1_MESSAGING_CSS = """
     --midnight:#0B1A2D; --word-blue:#023D6F; --parchment:#F7F3EC;
     --flame:#F85842; --ember:#C13A24; --white:#FFFFFF;
     --soft:rgba(11,26,45,.68); --rule:rgba(11,26,45,.16); --hair:rgba(11,26,45,.09);
-    --serif-display:'DM Serif Display', Georgia, 'Times New Roman', serif;
+    --serif-text:'DM Serif Text', Georgia, 'Times New Roman', serif;
     --sans:'DM Sans', -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
   }
   *{margin:0;padding:0;box-sizing:border-box;}
@@ -3884,8 +3944,8 @@ EVERY1_MESSAGING_CSS = """
   .masthead{border-bottom:1px solid var(--rule);padding:64px 0 34px;}
   .masthead .over{font-size:11.5px;font-weight:700;letter-spacing:.2em;
     text-transform:uppercase;color:var(--ember);margin-bottom:16px;}
-  .masthead h1{font-family:var(--serif-display);font-weight:400;
-    font-size:clamp(32px,5.2vw,46px);line-height:1.14;letter-spacing:-.01em;}
+  .masthead h1{font-family:var(--sans);font-weight:700;
+    font-size:clamp(32px,5.2vw,46px);line-height:1.14;letter-spacing:-.015em;}
   .masthead .sub{margin-top:16px;font-size:17.5px;color:var(--soft);max-width:60ch;}
   .facts{margin-top:26px;display:grid;gap:2px 30px;grid-template-columns:1fr;font-size:14px;}
   @media(min-width:620px){.facts{grid-template-columns:1fr 1fr;}}
@@ -3903,7 +3963,7 @@ EVERY1_MESSAGING_CSS = """
   .contents a{text-decoration:none;color:var(--midnight);}
   .contents a:hover{color:var(--ember);text-decoration:underline;}
   section[data-sec]{padding:6px 0 46px;}
-  section[data-sec] > h2{font-family:var(--serif-display);font-weight:400;
+  section[data-sec] > h2{font-family:var(--sans);font-weight:700;letter-spacing:-.01em;
     font-size:clamp(25px,3.4vw,31px);line-height:1.2;padding-top:30px;
     border-top:1px solid var(--rule);margin-bottom:6px;}
   section[data-sec] > h2 .n{display:block;font-family:var(--sans);font-size:11.5px;
@@ -3925,8 +3985,8 @@ EVERY1_MESSAGING_CSS = """
   th{font-size:11.5px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;
     color:var(--soft);border-bottom-color:var(--rule);padding-bottom:7px;}
   td:first-child{font-weight:600;padding-right:22px;}
-  .vision{border-left:2px solid var(--flame);padding:6px 0 6px 22px;margin:16px 0;
-    font-family:var(--serif-display);font-size:22px;line-height:1.35;text-transform:none;}
+  .vision{border-top:1px solid var(--rule);padding:16px 0 6px;margin:16px 0;
+    font-family:var(--serif-text);font-weight:400;font-size:22px;line-height:1.35;text-transform:none;}
   .vision span{display:block;font-family:var(--sans);font-size:12px;font-weight:600;
     letter-spacing:.13em;text-transform:uppercase;color:var(--soft);margin-top:10px;}
   .note{font-size:15px;color:var(--soft);border-top:1px solid var(--hair);
@@ -4079,9 +4139,7 @@ def build_every1_messaging(brand: dict, messaging: dict, words: dict, updated: s
 <meta property="og:title" content="EVERY1 Messaging Standard">
 <meta property="og:description" content="How the EVERY1 Movement speaks.">
 <meta property="og:url" content="{EVERY1_SITE_URL}/messaging/">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/fonts/fonts.css">
 <style>{EVERY1_MESSAGING_CSS}{EVERY1_SIDEBAR_CSS}</style>
 </head>
 <body>
@@ -4204,6 +4262,16 @@ def every1_door_content():
     # url(). Flatten them in both places or the mask silently renders nothing.
     css = _scope_css(style.group(1), ".e1brand").replace(
         "/assets/logos/every1/", "/assets/logos/"
+    )
+    # The door page sits on the parent's portal in the parent's chrome, and its headings
+    # are set in the parent's serif there. On EVERY1's own site the same blocks are the
+    # movement speaking, and the movement is DM Sans led: the serif is swapped out
+    # here, where the blocks are lifted, rather than overridden after the fact, so
+    # nothing on this site references the parent's display serif at all.
+    css = re.sub(
+        r"font-family:var\(--serif-(?:display|text)\);(?:font-weight:400;)?",
+        "font-family:var(--sans);font-weight:700;",
+        css,
     )
 
     main = re.search(r"<main.*?</main>", src, re.S)

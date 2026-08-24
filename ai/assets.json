@@ -382,9 +382,9 @@
       }
     ]
   },
-  "version": "7.8",
+  "version": "7.9",
   "messagingVersion": "2.0",
-  "updated": "2026-08-22",
+  "updated": "2026-08-24",
   "authority": "canonical",
   "rule": "Use these assets. Never generate photography or video of people or ministry, and never substitute stock. If the asset you need is not listed, request it and leave the slot empty.",
   "counts": {
