@@ -388,8 +388,8 @@
   "authority": "canonical",
   "rule": "Use these assets. Never generate photography or video of people or ministry, and never substitute stock. If the asset you need is not listed, request it and leave the slot empty.",
   "counts": {
-    "total": 347,
-    "approved": 320,
+    "total": 349,
+    "approved": 322,
     "counterExamples": 0
   },
   "assets": [
@@ -529,6 +529,16 @@
       "note": "The EVERY1 app sign-in screen. Shows the reversed horizontal lockup on Midnight, an Ember primary button, and the vision line at the foot. Ember carries the action and never Flame: white on Flame is 3.3:1 and fails AA. Shows how the identity is built, never what happened. It is not documentary capture and may not be published as a photograph of an event."
     },
     {
+      "file": "assets/images/every1-around-the-world.jpg",
+      "url": "https://brand.theword.world/assets/images/every1-around-the-world.jpg",
+      "kind": "image",
+      "group": "images",
+      "bytes": 273577,
+      "status": "approved",
+      "capture": "Generated design mockup, not photography and not the record",
+      "note": "Three panels, three country lockups carried on shirts, a stage and a banner: USA, Nigeria and Uganda. Stands in on the EVERY1 brand site until real capture from those countries replaces it, and is recorded here as a mockup so nobody publishes it as an event. Shows how the identity is built, never what happened. It is not documentary capture and may not be published as a photograph of an event."
+    },
+    {
       "file": "assets/images/every1-community-gathering-poster.jpg",
       "url": "https://brand.theword.world/assets/images/every1-community-gathering-poster.jpg",
       "kind": "image",
@@ -594,6 +604,16 @@
       "status": "approved",
       "capture": "Generated design mockup, not photography and not the record",
       "note": "An EVERY1 social profile and grid. The E1 icon is the avatar, because a lockup in a circle is unreadable. The photographs inside the grid tiles are generated placeholders and are not photography either: they may not be lifted out and published. Shows how the identity is built, never what happened. It is not documentary capture and may not be published as a photograph of an event."
+    },
+    {
+      "file": "assets/images/every1-street-outreach.jpg",
+      "url": "https://brand.theword.world/assets/images/every1-street-outreach.jpg",
+      "kind": "image",
+      "group": "images",
+      "bytes": 310989,
+      "status": "approved",
+      "capture": "Generated design mockup, not photography and not the record",
+      "note": "A street activation: the tent, the banner and the shirts carrying the mark, people talking one to one. Stands in as the EVERY1 brand site's hero until real capture of an activation replaces it, and is recorded here as a mockup so nobody publishes it as an event. Shows how the identity is built, never what happened. It is not documentary capture and may not be published as a photograph of an event."
     },
     {
       "file": "assets/images/hero-congregation.jpg",
