@@ -1,6 +1,6 @@
 {
-  "version": "7.9",
-  "updated": "2026-08-24",
+  "version": "8.0",
+  "updated": "2026-08-25",
   "authority": "canonical",
   "name": "EVERY1 Movement",
   "home": "https://brand.every1movement.com/",
@@ -43,12 +43,28 @@
           "sha256": "8ef85e2b889bc6e51dfb7eaa681bee09945cff67295e30a390630092428cd196"
         },
         {
+          "url": "https://brand.every1movement.com/assets/logos/every1-horizontal-clear-400.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and Flame",
+          "width": 400,
+          "bytes": 3698,
+          "sha256": "67ef25527ab938997e3b5f185632f189a608f045cb1cf7dd3dd2aabad8d8b2a3"
+        },
+        {
           "url": "https://brand.every1movement.com/assets/logos/every1-horizontal-800.png",
           "format": "png",
           "ink": "Two-tone, Midnight and Flame",
           "width": 800,
           "bytes": 6836,
           "sha256": "cac6b9177a5f4faea3b61895b63647cb19fd5a3dc9fc67cc6e8f0c3937698d55"
+        },
+        {
+          "url": "https://brand.every1movement.com/assets/logos/every1-horizontal-clear-800.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and Flame",
+          "width": 800,
+          "bytes": 6830,
+          "sha256": "1a668b60771b27480609a4f5e4eebcd33198a0100823e7097e142bf041cb3683"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-horizontal-1600.png",
@@ -59,12 +75,28 @@
           "sha256": "df7a032e28c0896de757e0ac857d82750f0c6b53b732b95cd73b5c6000395109"
         },
         {
+          "url": "https://brand.every1movement.com/assets/logos/every1-horizontal-clear-1600.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and Flame",
+          "width": 1600,
+          "bytes": 14475,
+          "sha256": "002ed00515432e541759fc74f3360331fe7cc0abe593053d506fd6591c5fa1fa"
+        },
+        {
           "url": "https://brand.every1movement.com/assets/logos/every1-horizontal-3200.png",
           "format": "png",
           "ink": "Two-tone, Midnight and Flame",
           "width": 3200,
           "bytes": 32249,
           "sha256": "81943263967fb028336d6fead5b241d18e9454c164178c2d05cb0e4fc36465d9"
+        },
+        {
+          "url": "https://brand.every1movement.com/assets/logos/every1-horizontal-clear-3200.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and Flame",
+          "width": 3200,
+          "bytes": 33394,
+          "sha256": "1aa53f78a14fd379d2cc7b7cb7b032ab52503ccb03fa49110579afa67f04b22f"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-horizontal-reversed.svg",
@@ -82,12 +114,28 @@
           "sha256": "5ca63f9238fe0b49a2080f81445b82dceac9e793416fcfbfd85356d6effe9f26"
         },
         {
+          "url": "https://brand.every1movement.com/assets/logos/every1-horizontal-reversed-clear-400.png",
+          "format": "png",
+          "ink": "Reversed, white and Flame",
+          "width": 400,
+          "bytes": 3170,
+          "sha256": "91795c5935270a015f2f7775475625a101e76f8e30f04d6345e597160ad6bb94"
+        },
+        {
           "url": "https://brand.every1movement.com/assets/logos/every1-horizontal-reversed-800.png",
           "format": "png",
           "ink": "Reversed, white and Flame",
           "width": 800,
           "bytes": 6026,
           "sha256": "d4d66d5f9bf05d51f5d3338a523ad015b3edf97ec9b9a0f243ef2055438bcbea"
+        },
+        {
+          "url": "https://brand.every1movement.com/assets/logos/every1-horizontal-reversed-clear-800.png",
+          "format": "png",
+          "ink": "Reversed, white and Flame",
+          "width": 800,
+          "bytes": 6249,
+          "sha256": "20805ed97cb9f0e66172e6d45fe9f663659f67619cf8cd5c724c8c4e3df5b72e"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-horizontal-reversed-1600.png",
@@ -98,12 +146,28 @@
           "sha256": "6f73d3c1e20fc618abe4d8f8673ebe0bc8545acb0ddf4864da9554881792a7c4"
         },
         {
+          "url": "https://brand.every1movement.com/assets/logos/every1-horizontal-reversed-clear-1600.png",
+          "format": "png",
+          "ink": "Reversed, white and Flame",
+          "width": 1600,
+          "bytes": 12889,
+          "sha256": "9e9c49ee8dc2325b10ef8389682c3738d9ddaa8186f3762da23f1d2c1818cab2"
+        },
+        {
           "url": "https://brand.every1movement.com/assets/logos/every1-horizontal-reversed-3200.png",
           "format": "png",
           "ink": "Reversed, white and Flame",
           "width": 3200,
           "bytes": 28508,
           "sha256": "c64bb10232303be911285561db4f307974eab037cd42780f3f2e1a9a4a03e096"
+        },
+        {
+          "url": "https://brand.every1movement.com/assets/logos/every1-horizontal-reversed-clear-3200.png",
+          "format": "png",
+          "ink": "Reversed, white and Flame",
+          "width": 3200,
+          "bytes": 29504,
+          "sha256": "5655e55df4679e74851c14d7c214820b4d39d65561b4f10f8fdbecbec72ac4cf"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-horizontal-black.svg",
@@ -121,12 +185,28 @@
           "sha256": "8474ab3941b9a30e27f6b2b17377d929fccc8dd75b0a1f338b80f1d8aa82fff6"
         },
         {
+          "url": "https://brand.every1movement.com/assets/logos/every1-horizontal-black-clear-400.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 400,
+          "bytes": 2332,
+          "sha256": "62ba4703e4b47c2b6c130e646f9508c63ae9cf6e17326804211630a660e455ce"
+        },
+        {
           "url": "https://brand.every1movement.com/assets/logos/every1-horizontal-black-800.png",
           "format": "png",
           "ink": "One colour, black",
           "width": 800,
           "bytes": 4676,
           "sha256": "e05a3aa2c0d37fb4fa638ab280584b7bfc140b467cd06977411c9c43917491b5"
+        },
+        {
+          "url": "https://brand.every1movement.com/assets/logos/every1-horizontal-black-clear-800.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 800,
+          "bytes": 4831,
+          "sha256": "d384e597226cb63f524a49a4fcc48b0e0b00a552c04f1e20a2388bccd9e41ebd"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-horizontal-black-1600.png",
@@ -137,12 +217,28 @@
           "sha256": "76a7e230ddfc755a520c4f79d9b25a2e15bf29cfb112179b4c39e0aab26078e6"
         },
         {
+          "url": "https://brand.every1movement.com/assets/logos/every1-horizontal-black-clear-1600.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 1600,
+          "bytes": 10023,
+          "sha256": "e42500645b4f378de7026f095d096f34d547a82607ae34c871eacd1d535510b2"
+        },
+        {
           "url": "https://brand.every1movement.com/assets/logos/every1-horizontal-black-3200.png",
           "format": "png",
           "ink": "One colour, black",
           "width": 3200,
           "bytes": 22401,
           "sha256": "a6ee26f5b182c60405bbea47e481817a45a8a280b51c28f329977d6470a9fae9"
+        },
+        {
+          "url": "https://brand.every1movement.com/assets/logos/every1-horizontal-black-clear-3200.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 3200,
+          "bytes": 23940,
+          "sha256": "4e944f803123bc709dbe3f1461243ab59e410aba614da620c040f969b388a141"
         }
       ]
     },
@@ -179,12 +275,28 @@
           "sha256": "a37d45108593781afe4e645e110b2906a76edaa406fd55719c3701218222c69f"
         },
         {
+          "url": "https://brand.every1movement.com/assets/logos/every1-bare-clear-400.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and Flame",
+          "width": 400,
+          "bytes": 3178,
+          "sha256": "1392a053bdda7d23b2167c508c508f391e6009d58edf52acdc6cbea69b87f398"
+        },
+        {
           "url": "https://brand.every1movement.com/assets/logos/every1-bare-800.png",
           "format": "png",
           "ink": "Two-tone, Midnight and Flame",
           "width": 800,
           "bytes": 6625,
           "sha256": "aafe2e20023309472b842b61a0595782b9e6c44bd44dc99915f799ceb2ca4768"
+        },
+        {
+          "url": "https://brand.every1movement.com/assets/logos/every1-bare-clear-800.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and Flame",
+          "width": 800,
+          "bytes": 6387,
+          "sha256": "e57bea87c7700b5ac38509f6bbc466b23e715fff450b540be40e6907a763e600"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-bare-1600.png",
@@ -195,12 +307,28 @@
           "sha256": "378cb0a38c4fa45b97931a97cb1c8b0fda32d0f1bae4eae0d8e6dcd2c8f4032f"
         },
         {
+          "url": "https://brand.every1movement.com/assets/logos/every1-bare-clear-1600.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and Flame",
+          "width": 1600,
+          "bytes": 14541,
+          "sha256": "9f52cd0ee3121fac695917ade6a5911682068faca5da3943ab5fe2652fd37c35"
+        },
+        {
           "url": "https://brand.every1movement.com/assets/logos/every1-bare-3200.png",
           "format": "png",
           "ink": "Two-tone, Midnight and Flame",
           "width": 3200,
           "bytes": 36977,
           "sha256": "3d76991d7cd93bee3229d47fec5ac3d026f89bacc6534436959d3036ef36c983"
+        },
+        {
+          "url": "https://brand.every1movement.com/assets/logos/every1-bare-clear-3200.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and Flame",
+          "width": 3200,
+          "bytes": 37816,
+          "sha256": "8c687e7897b2b1393a20bd13c3d5df10053c48027a39e46efa3a79c52983e98a"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-bare-reversed.svg",
@@ -218,12 +346,28 @@
           "sha256": "ff1819eb08e24dc5336931b7ce6a57117e23e28716cb45232df311e27a620d20"
         },
         {
+          "url": "https://brand.every1movement.com/assets/logos/every1-bare-reversed-clear-400.png",
+          "format": "png",
+          "ink": "Reversed, white and Flame",
+          "width": 400,
+          "bytes": 2922,
+          "sha256": "539a09061247b898538db2fe3528afb83c2d9dcdf804c17d55150f70c9c88a6f"
+        },
+        {
           "url": "https://brand.every1movement.com/assets/logos/every1-bare-reversed-800.png",
           "format": "png",
           "ink": "Reversed, white and Flame",
           "width": 800,
           "bytes": 6051,
           "sha256": "b859453a76be0165d6deb5dfb80185c5dada283650797840727784b0b6e78027"
+        },
+        {
+          "url": "https://brand.every1movement.com/assets/logos/every1-bare-reversed-clear-800.png",
+          "format": "png",
+          "ink": "Reversed, white and Flame",
+          "width": 800,
+          "bytes": 5792,
+          "sha256": "e93b3c5ef1650325ec4d045c06d0e1a1814125e29d6c697da952246f205e76ca"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-bare-reversed-1600.png",
@@ -234,12 +378,28 @@
           "sha256": "203bce8549da3c35ecec38985806b29f1ebe9c371b5998f32cf9979730c4cddd"
         },
         {
+          "url": "https://brand.every1movement.com/assets/logos/every1-bare-reversed-clear-1600.png",
+          "format": "png",
+          "ink": "Reversed, white and Flame",
+          "width": 1600,
+          "bytes": 13039,
+          "sha256": "fe035eef66da2aae5e2a0066813cc3f8ffedf474aac67fddc2f6adaef1aa5794"
+        },
+        {
           "url": "https://brand.every1movement.com/assets/logos/every1-bare-reversed-3200.png",
           "format": "png",
           "ink": "Reversed, white and Flame",
           "width": 3200,
           "bytes": 33378,
           "sha256": "ce31ae095f7697c63d232bc812615a18954dc64bbca41f36edbf6099e5624db3"
+        },
+        {
+          "url": "https://brand.every1movement.com/assets/logos/every1-bare-reversed-clear-3200.png",
+          "format": "png",
+          "ink": "Reversed, white and Flame",
+          "width": 3200,
+          "bytes": 34744,
+          "sha256": "cfb298651813224497a1f3e7000e51632294f5c2d7777a1f4a2a30ecdcbb57a2"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-bare-black.svg",
@@ -257,12 +417,28 @@
           "sha256": "5a3472c11ac67d34a3b12c794de802d3496c7bac681524e9ed10d438fe073b19"
         },
         {
+          "url": "https://brand.every1movement.com/assets/logos/every1-bare-black-clear-400.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 400,
+          "bytes": 2209,
+          "sha256": "6970976d7de411307f0cf523ad97af44b961681fffbdaa4efee3499e339c85d7"
+        },
+        {
           "url": "https://brand.every1movement.com/assets/logos/every1-bare-black-800.png",
           "format": "png",
           "ink": "One colour, black",
           "width": 800,
           "bytes": 4744,
           "sha256": "0bcbe531c62c73453a9a5b91ba064256ee4e3521cb86b88ab6bbabaca3f8398d"
+        },
+        {
+          "url": "https://brand.every1movement.com/assets/logos/every1-bare-black-clear-800.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 800,
+          "bytes": 4523,
+          "sha256": "0bef70589d4bcab62756ecbbdc447a9f43228d640206344d49b1c7777c60193d"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-bare-black-1600.png",
@@ -273,12 +449,28 @@
           "sha256": "773577202c2c5785d2157605898686e65a5ecdac055f7196f2cd5ae70b7c0fbb"
         },
         {
+          "url": "https://brand.every1movement.com/assets/logos/every1-bare-black-clear-1600.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 1600,
+          "bytes": 10886,
+          "sha256": "a2a2b01390aca5f0add7001937f976f05cd207fa6ad788b2422c5d30aed94f2d"
+        },
+        {
           "url": "https://brand.every1movement.com/assets/logos/every1-bare-black-3200.png",
           "format": "png",
           "ink": "One colour, black",
           "width": 3200,
           "bytes": 26216,
           "sha256": "9f366480e82e97173deab8b5047947329cd924136a8812ced6512d2b4bf46b0d"
+        },
+        {
+          "url": "https://brand.every1movement.com/assets/logos/every1-bare-black-clear-3200.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 3200,
+          "bytes": 28529,
+          "sha256": "a50924e579c417bfe81a7956495d3915358d85bb7e0831b39092bcb739cb240e"
         }
       ]
     },
@@ -315,12 +507,28 @@
           "sha256": "15cd5b21b915422bd9f593a2fa970d7a09a3051eb30511da507ae05ae9a09d61"
         },
         {
+          "url": "https://brand.every1movement.com/assets/logos/every1-e1-clear-400.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and Flame",
+          "width": 400,
+          "bytes": 1493,
+          "sha256": "6cc85b0d9229b6aeead73b57eacc27f4b7cc0946bb31498cc3d2cca3aeca56d3"
+        },
+        {
           "url": "https://brand.every1movement.com/assets/logos/every1-e1-800.png",
           "format": "png",
           "ink": "Two-tone, Midnight and Flame",
           "width": 800,
           "bytes": 4022,
           "sha256": "80f2054f12e59486c0b6ed2b47288d1eef07d6464979f2d8dd2c841fc7721891"
+        },
+        {
+          "url": "https://brand.every1movement.com/assets/logos/every1-e1-clear-800.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and Flame",
+          "width": 800,
+          "bytes": 3683,
+          "sha256": "acc14c487ea5f119e5b07a451f0f32dfc8bdcfbf15e6bfd9337112c216e43468"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-e1-1600.png",
@@ -331,12 +539,28 @@
           "sha256": "ea4e7214d085581319ed8bb2b0aa47d4d2d9864cf15d6d2daa8ae1197e9c08c8"
         },
         {
+          "url": "https://brand.every1movement.com/assets/logos/every1-e1-clear-1600.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and Flame",
+          "width": 1600,
+          "bytes": 11439,
+          "sha256": "b3eebe23feb6dfa5a06ed36ec512ee082e9dcdce0e273fc0c28a7b78ada75524"
+        },
+        {
           "url": "https://brand.every1movement.com/assets/logos/every1-e1-3200.png",
           "format": "png",
           "ink": "Two-tone, Midnight and Flame",
           "width": 3200,
           "bytes": 37544,
           "sha256": "5dc9ddb0b489d55439488f37512f9b7c097716b5fd1a9ca4b1d8a6b3e80be34a"
+        },
+        {
+          "url": "https://brand.every1movement.com/assets/logos/every1-e1-clear-3200.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and Flame",
+          "width": 3200,
+          "bytes": 38530,
+          "sha256": "2b5d84ccdbb553962331830ce0c3720ec04504af4db065ec18e6b1bc40b51769"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-e1-reversed.svg",
@@ -354,12 +578,28 @@
           "sha256": "4b6fd983534deb1c1e828bb42fc64a02cfe5ebc4498d12644e94b1c143d9a0ba"
         },
         {
+          "url": "https://brand.every1movement.com/assets/logos/every1-e1-reversed-clear-400.png",
+          "format": "png",
+          "ink": "Reversed, white and Flame",
+          "width": 400,
+          "bytes": 1498,
+          "sha256": "c91fbd2ed526b29bc196265e32e8e6aa76b7fa00b3de4eb00b2bb9226241ec0e"
+        },
+        {
           "url": "https://brand.every1movement.com/assets/logos/every1-e1-reversed-800.png",
           "format": "png",
           "ink": "Reversed, white and Flame",
           "width": 800,
           "bytes": 4014,
           "sha256": "a1f4eb2b6b158c08d2ea8447eb05e32264ab8b93ff83c6a44b99bc18efd9c458"
+        },
+        {
+          "url": "https://brand.every1movement.com/assets/logos/every1-e1-reversed-clear-800.png",
+          "format": "png",
+          "ink": "Reversed, white and Flame",
+          "width": 800,
+          "bytes": 3645,
+          "sha256": "f8e6ac2ddf8e0ab747176198b7795d52d502e12a3a294cdcb85c7c49876daa40"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-e1-reversed-1600.png",
@@ -370,12 +610,28 @@
           "sha256": "43ed6618a0211601e35a11b7b63722c0ab4ba5e4f0d77d33b10d0b675784e5d9"
         },
         {
+          "url": "https://brand.every1movement.com/assets/logos/every1-e1-reversed-clear-1600.png",
+          "format": "png",
+          "ink": "Reversed, white and Flame",
+          "width": 1600,
+          "bytes": 11419,
+          "sha256": "b7a88f7fe5364a28c16fdd2bbe97d50912730ee09d2e8a6ba291ec10de6525d5"
+        },
+        {
           "url": "https://brand.every1movement.com/assets/logos/every1-e1-reversed-3200.png",
           "format": "png",
           "ink": "Reversed, white and Flame",
           "width": 3200,
           "bytes": 37515,
           "sha256": "e877c6edae43ceb77e4c4f13b3d1c1137303fdada631b08b2859b45245c5ccdf"
+        },
+        {
+          "url": "https://brand.every1movement.com/assets/logos/every1-e1-reversed-clear-3200.png",
+          "format": "png",
+          "ink": "Reversed, white and Flame",
+          "width": 3200,
+          "bytes": 38490,
+          "sha256": "b4019a1541cae34df44eb49b0dbfc597ea65ce1b0e0673f7030ecb333251eb3d"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-e1-black.svg",
@@ -393,12 +649,28 @@
           "sha256": "7c372bde7fe5da0954a01dbc5126139277128b4241217695743adae732af923c"
         },
         {
+          "url": "https://brand.every1movement.com/assets/logos/every1-e1-black-clear-400.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 400,
+          "bytes": 1270,
+          "sha256": "b2baea6fb42a8025378e836e452ff49ff3bb8fa46556c67fa4fc1bde4e3096ce"
+        },
+        {
           "url": "https://brand.every1movement.com/assets/logos/every1-e1-black-800.png",
           "format": "png",
           "ink": "One colour, black",
           "width": 800,
           "bytes": 3567,
           "sha256": "f34f591376f43aa50e7a1803cdfcfd2c5415d54b9bcb9389fcee754f38efd970"
+        },
+        {
+          "url": "https://brand.every1movement.com/assets/logos/every1-e1-black-clear-800.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 800,
+          "bytes": 3314,
+          "sha256": "1c49822b488197ac79a2f2c01b07c0a62b17d6aec01a99db9b604c9a9bb3e73a"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-e1-black-1600.png",
@@ -409,12 +681,28 @@
           "sha256": "fa4548f092c00c7785e16ee5ee2d2358f57b1d18ba760cb35861740b17afaefe"
         },
         {
+          "url": "https://brand.every1movement.com/assets/logos/every1-e1-black-clear-1600.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 1600,
+          "bytes": 10754,
+          "sha256": "929022cdc6e11b58579d27c52c7a25f6022fc8d39603c21acc023ee5b6f68de6"
+        },
+        {
           "url": "https://brand.every1movement.com/assets/logos/every1-e1-black-3200.png",
           "format": "png",
           "ink": "One colour, black",
           "width": 3200,
           "bytes": 35882,
           "sha256": "c10afa50b74c461961cb9578fa2782044b2a402050eefc370abff9f793f9c537"
+        },
+        {
+          "url": "https://brand.every1movement.com/assets/logos/every1-e1-black-clear-3200.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 3200,
+          "bytes": 37283,
+          "sha256": "d0eb646562805eb1e9d0cfd9a23f3a1d2d7443b99be92975360f71076361f330"
         }
       ]
     },
@@ -451,12 +739,28 @@
           "sha256": "46a3f6698ea76f3f09003648b08f8c82f61e4fd515d06f41877b20bee8d9a4fb"
         },
         {
+          "url": "https://brand.every1movement.com/assets/logos/every1-numeral-clear-400.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and Flame",
+          "width": 400,
+          "bytes": 1992,
+          "sha256": "30b85943e608f8f577cb4a855aaedaf3b4046d514d428108bfd781ec124d8782"
+        },
+        {
           "url": "https://brand.every1movement.com/assets/logos/every1-numeral-800.png",
           "format": "png",
           "ink": "Two-tone, Midnight and Flame",
           "width": 800,
           "bytes": 8658,
           "sha256": "e28c4d3d2446cb02023ae2363c0ff586fa012166f20b960f788836ba7b4ab369"
+        },
+        {
+          "url": "https://brand.every1movement.com/assets/logos/every1-numeral-clear-800.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and Flame",
+          "width": 800,
+          "bytes": 5583,
+          "sha256": "018bb6f1e76248338f740e610a8cf7b18450e5a569e629923934d5c6e10e73a6"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-numeral-1600.png",
@@ -467,12 +771,28 @@
           "sha256": "29a7c3c6857321688ababeb6ff47a0a7fe8b677d1a5cb07f692dd29a34e4ba07"
         },
         {
+          "url": "https://brand.every1movement.com/assets/logos/every1-numeral-clear-1600.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and Flame",
+          "width": 1600,
+          "bytes": 17953,
+          "sha256": "04bc6c3e2cb59719f8b8791d3076254cd97f58ec86209d537e33d65216f896c5"
+        },
+        {
           "url": "https://brand.every1movement.com/assets/logos/every1-numeral-3200.png",
           "format": "png",
           "ink": "Two-tone, Midnight and Flame",
           "width": 3200,
           "bytes": 84338,
           "sha256": "92ddc33622e8422b0ed1211def98632b423e4cd821e69bf11a8784c2577e46a2"
+        },
+        {
+          "url": "https://brand.every1movement.com/assets/logos/every1-numeral-clear-3200.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and Flame",
+          "width": 3200,
+          "bytes": 61289,
+          "sha256": "e9ca89011bc6acb48428f269862a513732268e535950acaae401572fab58e578"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-numeral-reversed.svg",
@@ -490,12 +810,28 @@
           "sha256": "46a3f6698ea76f3f09003648b08f8c82f61e4fd515d06f41877b20bee8d9a4fb"
         },
         {
+          "url": "https://brand.every1movement.com/assets/logos/every1-numeral-reversed-clear-400.png",
+          "format": "png",
+          "ink": "Reversed, white and Flame",
+          "width": 400,
+          "bytes": 1992,
+          "sha256": "30b85943e608f8f577cb4a855aaedaf3b4046d514d428108bfd781ec124d8782"
+        },
+        {
           "url": "https://brand.every1movement.com/assets/logos/every1-numeral-reversed-800.png",
           "format": "png",
           "ink": "Reversed, white and Flame",
           "width": 800,
           "bytes": 8658,
           "sha256": "e28c4d3d2446cb02023ae2363c0ff586fa012166f20b960f788836ba7b4ab369"
+        },
+        {
+          "url": "https://brand.every1movement.com/assets/logos/every1-numeral-reversed-clear-800.png",
+          "format": "png",
+          "ink": "Reversed, white and Flame",
+          "width": 800,
+          "bytes": 5583,
+          "sha256": "018bb6f1e76248338f740e610a8cf7b18450e5a569e629923934d5c6e10e73a6"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-numeral-reversed-1600.png",
@@ -506,12 +842,28 @@
           "sha256": "29a7c3c6857321688ababeb6ff47a0a7fe8b677d1a5cb07f692dd29a34e4ba07"
         },
         {
+          "url": "https://brand.every1movement.com/assets/logos/every1-numeral-reversed-clear-1600.png",
+          "format": "png",
+          "ink": "Reversed, white and Flame",
+          "width": 1600,
+          "bytes": 17953,
+          "sha256": "04bc6c3e2cb59719f8b8791d3076254cd97f58ec86209d537e33d65216f896c5"
+        },
+        {
           "url": "https://brand.every1movement.com/assets/logos/every1-numeral-reversed-3200.png",
           "format": "png",
           "ink": "Reversed, white and Flame",
           "width": 3200,
           "bytes": 84338,
           "sha256": "92ddc33622e8422b0ed1211def98632b423e4cd821e69bf11a8784c2577e46a2"
+        },
+        {
+          "url": "https://brand.every1movement.com/assets/logos/every1-numeral-reversed-clear-3200.png",
+          "format": "png",
+          "ink": "Reversed, white and Flame",
+          "width": 3200,
+          "bytes": 61289,
+          "sha256": "e9ca89011bc6acb48428f269862a513732268e535950acaae401572fab58e578"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-numeral-black.svg",
@@ -529,12 +881,28 @@
           "sha256": "5d8aa9d6c7e8559e33f3b8cdbccf2fdd27dc876d49234d348a75dd67f7879ca9"
         },
         {
+          "url": "https://brand.every1movement.com/assets/logos/every1-numeral-black-clear-400.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 400,
+          "bytes": 1782,
+          "sha256": "62885e161a48eead27ea59fc66347afded016c816b817c63744218a9a5cd96b1"
+        },
+        {
           "url": "https://brand.every1movement.com/assets/logos/every1-numeral-black-800.png",
           "format": "png",
           "ink": "One colour, black",
           "width": 800,
           "bytes": 7792,
           "sha256": "2c61032160877cf289852dbea8c47ec2873298f8074318622476062aade4aee1"
+        },
+        {
+          "url": "https://brand.every1movement.com/assets/logos/every1-numeral-black-clear-800.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 800,
+          "bytes": 5115,
+          "sha256": "f18f9d836b0959e4c8f61c4696472476c840767ae9d3ba951fa466db02d4ba86"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-numeral-black-1600.png",
@@ -545,12 +913,28 @@
           "sha256": "a0ba9b4130637dfec5d89c0a0ab92ed61766a351da962eb9042e03fdf2dad1f7"
         },
         {
+          "url": "https://brand.every1movement.com/assets/logos/every1-numeral-black-clear-1600.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 1600,
+          "bytes": 17051,
+          "sha256": "f83ff20f8b0967e78383f0e770b155edaa93066759ace8f76dae7ced57bd8c93"
+        },
+        {
           "url": "https://brand.every1movement.com/assets/logos/every1-numeral-black-3200.png",
           "format": "png",
           "ink": "One colour, black",
           "width": 3200,
           "bytes": 80864,
           "sha256": "8e3812147927116f1c3e97329685c41976d64f26e78e6aa7772693bc6a70c910"
+        },
+        {
+          "url": "https://brand.every1movement.com/assets/logos/every1-numeral-black-clear-3200.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 3200,
+          "bytes": 59495,
+          "sha256": "7212228cb38dafbef26384fc96ee4a5e0a4393554857962dc7bfc737ca32294e"
         }
       ]
     },
@@ -587,12 +971,28 @@
           "sha256": "28b6ada8a769f7492ac3e4a2ded73a381b66a343a550b951434af7479511fe0f"
         },
         {
+          "url": "https://brand.every1movement.com/assets/logos/every1-vision-clear-400.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and Flame",
+          "width": 400,
+          "bytes": 8300,
+          "sha256": "c0e82ea91fa97b05a869506e157a650032d90f917ebb9063397b878a80ab3b19"
+        },
+        {
           "url": "https://brand.every1movement.com/assets/logos/every1-vision-800.png",
           "format": "png",
           "ink": "Two-tone, Midnight and Flame",
           "width": 800,
           "bytes": 18735,
           "sha256": "56c15c551fb08886019a2689e9e97e6d4d9ef0a2afa4f6dd2a3d5f20ca156aee"
+        },
+        {
+          "url": "https://brand.every1movement.com/assets/logos/every1-vision-clear-800.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and Flame",
+          "width": 800,
+          "bytes": 16887,
+          "sha256": "2d34bf9476dda18cb46a411c290d37c031d3a61a42a2f50a6f9c49538fbccb19"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-vision-1600.png",
@@ -603,12 +1003,28 @@
           "sha256": "565eecc56aa2c6e4fc875972f0e119d5221840c8e61fbb5dc60e6fab8f9aa2a1"
         },
         {
+          "url": "https://brand.every1movement.com/assets/logos/every1-vision-clear-1600.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and Flame",
+          "width": 1600,
+          "bytes": 35794,
+          "sha256": "fba3f8e72a7e14ad91aa0a4a229d5c4f426edf6b5e5855a1c81097b0f9d3a886"
+        },
+        {
           "url": "https://brand.every1movement.com/assets/logos/every1-vision-3200.png",
           "format": "png",
           "ink": "Two-tone, Midnight and Flame",
           "width": 3200,
           "bytes": 93248,
           "sha256": "fd05cf66170a698556fb1dc4c7b3652370e5931bba3456abd60487673577660d"
+        },
+        {
+          "url": "https://brand.every1movement.com/assets/logos/every1-vision-clear-3200.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and Flame",
+          "width": 3200,
+          "bytes": 83247,
+          "sha256": "cbb54019630ca17a38324a3b6e7173b568b11f7f979f012245e68fed854821f9"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-vision-reversed.svg",
@@ -626,12 +1042,28 @@
           "sha256": "90db722f99143df931769cf66db5696c25a4ed6891dde1f53b1fb4232ab22efb"
         },
         {
+          "url": "https://brand.every1movement.com/assets/logos/every1-vision-reversed-clear-400.png",
+          "format": "png",
+          "ink": "Reversed, white and Flame",
+          "width": 400,
+          "bytes": 6905,
+          "sha256": "a3a269181ee1d0439f62ceb72d362d9e646a29a36df12744a9ec087cacc9826c"
+        },
+        {
           "url": "https://brand.every1movement.com/assets/logos/every1-vision-reversed-800.png",
           "format": "png",
           "ink": "Reversed, white and Flame",
           "width": 800,
           "bytes": 16350,
           "sha256": "5cc962e8a655956f463e176c555c58e4cc3c52e450da9667c3c2d248040d2dea"
+        },
+        {
+          "url": "https://brand.every1movement.com/assets/logos/every1-vision-reversed-clear-800.png",
+          "format": "png",
+          "ink": "Reversed, white and Flame",
+          "width": 800,
+          "bytes": 14673,
+          "sha256": "9bf8d118c3d79e97c8f980cc2134af8b9816a243eda63d5f6efb2f788f0ca540"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-vision-reversed-1600.png",
@@ -642,12 +1074,28 @@
           "sha256": "cd5975fa6f0239b3fbb09ccb7f8f5af9db955e1b871bc4bcd60b7abb4b123e7f"
         },
         {
+          "url": "https://brand.every1movement.com/assets/logos/every1-vision-reversed-clear-1600.png",
+          "format": "png",
+          "ink": "Reversed, white and Flame",
+          "width": 1600,
+          "bytes": 31671,
+          "sha256": "10e40ba12e932107fa11aed2ec4a2e86451c718f48067e67e9ae4ba0133e9e17"
+        },
+        {
           "url": "https://brand.every1movement.com/assets/logos/every1-vision-reversed-3200.png",
           "format": "png",
           "ink": "Reversed, white and Flame",
           "width": 3200,
           "bytes": 83256,
           "sha256": "26c47170d72d761ff4f6a5457d8aa0d43faa239e4ff88b9b0da405a731668793"
+        },
+        {
+          "url": "https://brand.every1movement.com/assets/logos/every1-vision-reversed-clear-3200.png",
+          "format": "png",
+          "ink": "Reversed, white and Flame",
+          "width": 3200,
+          "bytes": 74828,
+          "sha256": "366126efb8d6660eb8c5bd50443092919d8ac5d58f1ffb4e688154f1f20b7336"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-vision-black.svg",
@@ -665,12 +1113,28 @@
           "sha256": "56010755a8d1001c0dc368192f5f8633c22b36e0ab6d57665f23595e6a7a84cd"
         },
         {
+          "url": "https://brand.every1movement.com/assets/logos/every1-vision-black-clear-400.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 400,
+          "bytes": 5203,
+          "sha256": "97343b0f725ca207f57d46562d36a6288f2edf31e816853323e99f154cc0d4e1"
+        },
+        {
           "url": "https://brand.every1movement.com/assets/logos/every1-vision-black-800.png",
           "format": "png",
           "ink": "One colour, black",
           "width": 800,
           "bytes": 12866,
           "sha256": "5d31e29e3e307fcc78d07be14a9a2ceecaedee4a0ca5f592c5717637201cd715"
+        },
+        {
+          "url": "https://brand.every1movement.com/assets/logos/every1-vision-black-clear-800.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 800,
+          "bytes": 11506,
+          "sha256": "1c84e0f9458bdd2484afc46a22966212dca8c5003192e5fe9052bfb9d9722a1d"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-vision-black-1600.png",
@@ -681,12 +1145,28 @@
           "sha256": "879f3be5fd533e0bd5f4d3829cbf304519c0368aace482b8d31c5c2b4ac34b12"
         },
         {
+          "url": "https://brand.every1movement.com/assets/logos/every1-vision-black-clear-1600.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 1600,
+          "bytes": 25447,
+          "sha256": "81981a8467aa1c4d90763d3a38901539d4300a6f8139699169ac558b76dd63eb"
+        },
+        {
           "url": "https://brand.every1movement.com/assets/logos/every1-vision-black-3200.png",
           "format": "png",
           "ink": "One colour, black",
           "width": 3200,
           "bytes": 66318,
           "sha256": "eaf8143b7bb3e81575b011adb8ace741182dc93250d16495e3f40c7ed769c69a"
+        },
+        {
+          "url": "https://brand.every1movement.com/assets/logos/every1-vision-black-clear-3200.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 3200,
+          "bytes": 60928,
+          "sha256": "80477277f2812cb0b736d598efbe72b3bbfb12f85d985a1144b39ee03fe91356"
         }
       ]
     },
@@ -723,12 +1203,28 @@
           "sha256": "f93a0d3cb90329c00d91c44eeb4e1318f96e7ad6a8ef4d5222d1f2ec7279b656"
         },
         {
+          "url": "https://brand.every1movement.com/assets/logos/every1-promise-clear-400.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and Flame",
+          "width": 400,
+          "bytes": 6196,
+          "sha256": "3f9e57f2b042c0e0e90a9795f3eb700c6f9d9a48eca77348c8dc578a49c21868"
+        },
+        {
           "url": "https://brand.every1movement.com/assets/logos/every1-promise-800.png",
           "format": "png",
           "ink": "Two-tone, Midnight and Flame",
           "width": 800,
           "bytes": 13743,
           "sha256": "116f9344ecf6dd4eef2e3fc761b5551b6d0916fc21ebc7fd784c639f90e094ce"
+        },
+        {
+          "url": "https://brand.every1movement.com/assets/logos/every1-promise-clear-800.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and Flame",
+          "width": 800,
+          "bytes": 12616,
+          "sha256": "b773ba220f9e448ab1e18c52db7f1c4c469d88d8c87b491e319e0902d60910e4"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-promise-1600.png",
@@ -739,12 +1235,28 @@
           "sha256": "f08b381736711eeb2abb5350bf84616acf67d3fba11d546eef8986c55d20340e"
         },
         {
+          "url": "https://brand.every1movement.com/assets/logos/every1-promise-clear-1600.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and Flame",
+          "width": 1600,
+          "bytes": 26859,
+          "sha256": "89a118d131ac460100f482e8a1e09f7a0f607149f1821a99c70bbde5f7a7392a"
+        },
+        {
           "url": "https://brand.every1movement.com/assets/logos/every1-promise-3200.png",
           "format": "png",
           "ink": "Two-tone, Midnight and Flame",
           "width": 3200,
           "bytes": 68037,
           "sha256": "83cfa706b8944365d741aa8e1a4f6a13b4370549f4fc2810300a6fee2762663f"
+        },
+        {
+          "url": "https://brand.every1movement.com/assets/logos/every1-promise-clear-3200.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and Flame",
+          "width": 3200,
+          "bytes": 65199,
+          "sha256": "f83721b658e93b82386f03330c2cf06cead77edae466522b963ac0a02b7c39ce"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-promise-reversed.svg",
@@ -762,12 +1274,28 @@
           "sha256": "90ae9b6d95b1719b3d73cbea50d7022560163569f1c9472455bf44d070026352"
         },
         {
+          "url": "https://brand.every1movement.com/assets/logos/every1-promise-reversed-clear-400.png",
+          "format": "png",
+          "ink": "Reversed, white and Flame",
+          "width": 400,
+          "bytes": 5357,
+          "sha256": "08a5ead5ff4e1d7077feeb75894565d39d071316ab6d8ca85d9c96c1f67d3b33"
+        },
+        {
           "url": "https://brand.every1movement.com/assets/logos/every1-promise-reversed-800.png",
           "format": "png",
           "ink": "Reversed, white and Flame",
           "width": 800,
           "bytes": 12065,
           "sha256": "af1406783cb9777929bf57e309c617968c657ce637417e02c5a793c9c5a5e85f"
+        },
+        {
+          "url": "https://brand.every1movement.com/assets/logos/every1-promise-reversed-clear-800.png",
+          "format": "png",
+          "ink": "Reversed, white and Flame",
+          "width": 800,
+          "bytes": 11007,
+          "sha256": "82f13b769fb471c2b91f4c982ea88c0eeb8b411b3980d8b603ac15b70aa11f7f"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-promise-reversed-1600.png",
@@ -778,12 +1306,28 @@
           "sha256": "ba035268c4c01c16647b847c7b7a4dd5b2a4024d48f8f2eb5d3e248194092157"
         },
         {
+          "url": "https://brand.every1movement.com/assets/logos/every1-promise-reversed-clear-1600.png",
+          "format": "png",
+          "ink": "Reversed, white and Flame",
+          "width": 1600,
+          "bytes": 23876,
+          "sha256": "868f14c09c06f4d63ecdf46e3396529bcf7489d9a7af7247dc4766aae01bf974"
+        },
+        {
           "url": "https://brand.every1movement.com/assets/logos/every1-promise-reversed-3200.png",
           "format": "png",
           "ink": "Reversed, white and Flame",
           "width": 3200,
           "bytes": 60551,
           "sha256": "766051a05ed1d2ae61285b7ff5938e1dd42b1a1f4df9eebb8267d8159b383370"
+        },
+        {
+          "url": "https://brand.every1movement.com/assets/logos/every1-promise-reversed-clear-3200.png",
+          "format": "png",
+          "ink": "Reversed, white and Flame",
+          "width": 3200,
+          "bytes": 58822,
+          "sha256": "0c3447a41f3d697f8237226ee9f4bac67752471c4a8ff7b6060aece6793b6a7e"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-promise-black.svg",
@@ -801,12 +1345,28 @@
           "sha256": "c3ebb0eb0913a35f7828c4685e7ab55687c88a3a9c60d0a41e676979180954fd"
         },
         {
+          "url": "https://brand.every1movement.com/assets/logos/every1-promise-black-clear-400.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 400,
+          "bytes": 4049,
+          "sha256": "87a41ce7639125e42fe6b1972bf1af127b5c55c33bc41b2ee175ea159f56a7d5"
+        },
+        {
           "url": "https://brand.every1movement.com/assets/logos/every1-promise-black-800.png",
           "format": "png",
           "ink": "One colour, black",
           "width": 800,
           "bytes": 9455,
           "sha256": "2f021e08ed320d591ec7b05cdb60afdabf0b3926916a6b1ef4977e202a226e68"
+        },
+        {
+          "url": "https://brand.every1movement.com/assets/logos/every1-promise-black-clear-800.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 800,
+          "bytes": 8501,
+          "sha256": "eaac8aba83925a9a720c5b7a7782eb451facaeddb8201a6e31ed3d1ef5667771"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-promise-black-1600.png",
@@ -817,12 +1377,28 @@
           "sha256": "a4bd2b9409fe16ea6b97b844694eb660ffd774f8f8340220682b0520ba4ded1d"
         },
         {
+          "url": "https://brand.every1movement.com/assets/logos/every1-promise-black-clear-1600.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 1600,
+          "bytes": 19336,
+          "sha256": "1ac9beb850cb785dce47118f9932c200ed113b798345a99e39f8fe3dec6b8bb1"
+        },
+        {
           "url": "https://brand.every1movement.com/assets/logos/every1-promise-black-3200.png",
           "format": "png",
           "ink": "One colour, black",
           "width": 3200,
           "bytes": 47655,
           "sha256": "a0d0036152d5254dd59661cccdce29f082cfa1ee6fe9ff4fe99e0b029d9df552"
+        },
+        {
+          "url": "https://brand.every1movement.com/assets/logos/every1-promise-black-clear-3200.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 3200,
+          "bytes": 47746,
+          "sha256": "d03ab91ff895127301a8c77f367ffbf293487d5f9e47b6e090ca272d8edcadf1"
         }
       ]
     },
@@ -859,12 +1435,28 @@
           "sha256": "307bfe41be01ebf2ed2b3c42eb42bccb4b469dc19bc9aeb8535c744b4ef685b1"
         },
         {
+          "url": "https://brand.every1movement.com/assets/logos/every1-usa-clear-400.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and Flame",
+          "width": 400,
+          "bytes": 6014,
+          "sha256": "ef58d1d681a68791e9b6632e3b69e126220de52fcdfbda95b645484b2bca6266"
+        },
+        {
           "url": "https://brand.every1movement.com/assets/logos/every1-usa-800.png",
           "format": "png",
           "ink": "Two-tone, Midnight and Flame",
           "width": 800,
           "bytes": 12785,
           "sha256": "523fc0b4430557abb71ce117c9d09eccc86f10667e14e59acde1b87594024769"
+        },
+        {
+          "url": "https://brand.every1movement.com/assets/logos/every1-usa-clear-800.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and Flame",
+          "width": 800,
+          "bytes": 11768,
+          "sha256": "15ac9c42acdb938fe6927261ceec598753fea989b87ccc70eb75f5efbaac4dba"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-usa-1600.png",
@@ -875,12 +1467,28 @@
           "sha256": "4de9d6f7c4a83d358d96250a92b4118beb958b7c5a43ca0954cb8abfd7005edc"
         },
         {
+          "url": "https://brand.every1movement.com/assets/logos/every1-usa-clear-1600.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and Flame",
+          "width": 1600,
+          "bytes": 25863,
+          "sha256": "b124c8369ac30f00104097c5a166a538ac2112146258d0bc12682479fcb57a89"
+        },
+        {
           "url": "https://brand.every1movement.com/assets/logos/every1-usa-3200.png",
           "format": "png",
           "ink": "Two-tone, Midnight and Flame",
           "width": 3200,
           "bytes": 68387,
           "sha256": "bfe420be72a37bd766322798edacdfe7bf70893f62ea19384cf4f0f5de1f40d9"
+        },
+        {
+          "url": "https://brand.every1movement.com/assets/logos/every1-usa-clear-3200.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and Flame",
+          "width": 3200,
+          "bytes": 65047,
+          "sha256": "aaa076d90f0c9574e9bd3b2779bb5595b51bf92a0e8e8b2fd2cc80f84d3ccffe"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-usa-reversed.svg",
@@ -898,12 +1506,28 @@
           "sha256": "2d010d654110ea092e6ba3ae56ff92ac249398f7bf460bd77d3885452dbd6c8f"
         },
         {
+          "url": "https://brand.every1movement.com/assets/logos/every1-usa-reversed-clear-400.png",
+          "format": "png",
+          "ink": "Reversed, white and Flame",
+          "width": 400,
+          "bytes": 5164,
+          "sha256": "188fecc4399a56761443a9079d1915c13653edf018666a1663abb421cf985668"
+        },
+        {
           "url": "https://brand.every1movement.com/assets/logos/every1-usa-reversed-800.png",
           "format": "png",
           "ink": "Reversed, white and Flame",
           "width": 800,
           "bytes": 11436,
           "sha256": "08271917634f66d762c4d79e296e814a987e2c1344869a90b1c448f8480eaeaa"
+        },
+        {
+          "url": "https://brand.every1movement.com/assets/logos/every1-usa-reversed-clear-800.png",
+          "format": "png",
+          "ink": "Reversed, white and Flame",
+          "width": 800,
+          "bytes": 10449,
+          "sha256": "c1eb974bfcc76c9cd4794ee4c225d2206e2e3595f5a4a24ad7cdfc25b57d4267"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-usa-reversed-1600.png",
@@ -914,12 +1538,28 @@
           "sha256": "9341d8b13ca4059155a457d644f67eb7507b1d62082db81c18aa93c0d6717d0a"
         },
         {
+          "url": "https://brand.every1movement.com/assets/logos/every1-usa-reversed-clear-1600.png",
+          "format": "png",
+          "ink": "Reversed, white and Flame",
+          "width": 1600,
+          "bytes": 23223,
+          "sha256": "a1e7717c14b7e6648663dc481af0de84cddbc44be0662f3c3289bb55d2c511d0"
+        },
+        {
           "url": "https://brand.every1movement.com/assets/logos/every1-usa-reversed-3200.png",
           "format": "png",
           "ink": "Reversed, white and Flame",
           "width": 3200,
           "bytes": 61886,
           "sha256": "87fc1de06906c7069430a40db6b9ee59592d3247a084f5ec5943e4c5b376482c"
+        },
+        {
+          "url": "https://brand.every1movement.com/assets/logos/every1-usa-reversed-clear-3200.png",
+          "format": "png",
+          "ink": "Reversed, white and Flame",
+          "width": 3200,
+          "bytes": 59121,
+          "sha256": "986c208ea4612a57e1ae92688e6d3245792cb02e076ff8376811702ccf4e326c"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-usa-black.svg",
@@ -937,12 +1577,28 @@
           "sha256": "a8566a749870d491a20b88c60b04e5843a97f51d7e388de1524114d9feb51176"
         },
         {
+          "url": "https://brand.every1movement.com/assets/logos/every1-usa-black-clear-400.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 400,
+          "bytes": 3883,
+          "sha256": "0f16d5d6cc2f782e2a00c1ee52f6e04f8cf57ff03dae996052cecb2c35be321b"
+        },
+        {
           "url": "https://brand.every1movement.com/assets/logos/every1-usa-black-800.png",
           "format": "png",
           "ink": "One colour, black",
           "width": 800,
           "bytes": 8892,
           "sha256": "6389e63e390e12d29dcaf0d7859c660afca14284ed47c2c2d595d2bf779960ce"
+        },
+        {
+          "url": "https://brand.every1movement.com/assets/logos/every1-usa-black-clear-800.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 800,
+          "bytes": 8126,
+          "sha256": "46ec634cc1dbe08f8f0346a83e1ac8025a715c9dfc5ffb0c5333e4491a9520ee"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-usa-black-1600.png",
@@ -953,12 +1609,28 @@
           "sha256": "6c4f7dedbf0c7efff155373f8dba60cb9ef550ca3f23f26dd3dd13eae30926d0"
         },
         {
+          "url": "https://brand.every1movement.com/assets/logos/every1-usa-black-clear-1600.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 1600,
+          "bytes": 19021,
+          "sha256": "05e9a6da6c2caa33863a91c9fd127a60af43dde776e6ecd3323e6ae202b23dd1"
+        },
+        {
           "url": "https://brand.every1movement.com/assets/logos/every1-usa-black-3200.png",
           "format": "png",
           "ink": "One colour, black",
           "width": 3200,
           "bytes": 49773,
           "sha256": "420404c833a016dd32d94ffbabb68c7691c41dee690ed02163a9f5bb6013e009"
+        },
+        {
+          "url": "https://brand.every1movement.com/assets/logos/every1-usa-black-clear-3200.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 3200,
+          "bytes": 48790,
+          "sha256": "0ac030483a534a377a062661181db8cce4b0d980b649aa4f2842fe0de8fa7ab0"
         }
       ]
     },
@@ -995,12 +1667,28 @@
           "sha256": "bd4b8cb39dfd381846625926a34a16a737c74f61e437303585e5e9f96d30319e"
         },
         {
+          "url": "https://brand.every1movement.com/assets/logos/every1-uganda-clear-400.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and Flame",
+          "width": 400,
+          "bytes": 6561,
+          "sha256": "e98971746ce82d2971abea0b7c8e8e0728d27f727615ffe5111b9360de57906d"
+        },
+        {
           "url": "https://brand.every1movement.com/assets/logos/every1-uganda-800.png",
           "format": "png",
           "ink": "Two-tone, Midnight and Flame",
           "width": 800,
           "bytes": 13938,
           "sha256": "a58bfeaf46e890e53727ae60464d7fed3f458b844ca62b0f6bbff0f8f5ba8ab8"
+        },
+        {
+          "url": "https://brand.every1movement.com/assets/logos/every1-uganda-clear-800.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and Flame",
+          "width": 800,
+          "bytes": 12855,
+          "sha256": "63e66cadc8d6c51d7e596587605d2115976a1efcf65f6f5fb4d1c8a5d18687ac"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-uganda-1600.png",
@@ -1011,12 +1699,28 @@
           "sha256": "8719122ef4f1e1ef112d6f122f094ed0c1c7bc0685b863da5411a538d61c69af"
         },
         {
+          "url": "https://brand.every1movement.com/assets/logos/every1-uganda-clear-1600.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and Flame",
+          "width": 1600,
+          "bytes": 27222,
+          "sha256": "a8036306b4bbb08f0097065cfa05d4ef85cd8123968de12d0f9fb7d07e79c01d"
+        },
+        {
           "url": "https://brand.every1movement.com/assets/logos/every1-uganda-3200.png",
           "format": "png",
           "ink": "Two-tone, Midnight and Flame",
           "width": 3200,
           "bytes": 72330,
           "sha256": "0158822841c41c73968d1fba4325800fb3b899746147cf39fcfb4182f868312f"
+        },
+        {
+          "url": "https://brand.every1movement.com/assets/logos/every1-uganda-clear-3200.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and Flame",
+          "width": 3200,
+          "bytes": 68306,
+          "sha256": "1f8ac904567e2b83509b04db3883938114c62f4339c7d6dc50b70d5a51f108cd"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-uganda-reversed.svg",
@@ -1034,12 +1738,28 @@
           "sha256": "2a17c62ec4327627f641128a1bff772abaa147dbca49ba20b055ed3adc0af291"
         },
         {
+          "url": "https://brand.every1movement.com/assets/logos/every1-uganda-reversed-clear-400.png",
+          "format": "png",
+          "ink": "Reversed, white and Flame",
+          "width": 400,
+          "bytes": 5518,
+          "sha256": "6bebd66c842e20b4f9a6f671c34fba1f0b22a5822e67177a71f31c256de03c37"
+        },
+        {
           "url": "https://brand.every1movement.com/assets/logos/every1-uganda-reversed-800.png",
           "format": "png",
           "ink": "Reversed, white and Flame",
           "width": 800,
           "bytes": 12376,
           "sha256": "ffe1e71c2d43a7f51c6b8891a576ba9abcf2de2b04646a0d989068c3fdbdc808"
+        },
+        {
+          "url": "https://brand.every1movement.com/assets/logos/every1-uganda-reversed-clear-800.png",
+          "format": "png",
+          "ink": "Reversed, white and Flame",
+          "width": 800,
+          "bytes": 11177,
+          "sha256": "ea2483cb8c7b5d2f3dbc2b5bdde591ad546e7ecccc5dc8da43955ce32b6f5ee4"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-uganda-reversed-1600.png",
@@ -1050,12 +1770,28 @@
           "sha256": "75702e5c2099d0afad9a0b577180228f21a4f4ff5e27b2e4c91f5d2b95f8ed0d"
         },
         {
+          "url": "https://brand.every1movement.com/assets/logos/every1-uganda-reversed-clear-1600.png",
+          "format": "png",
+          "ink": "Reversed, white and Flame",
+          "width": 1600,
+          "bytes": 24528,
+          "sha256": "e2a6a34053286e2816ee70a808a234e8c6d9d71633f2b2b8505c061bd0feb8a3"
+        },
+        {
           "url": "https://brand.every1movement.com/assets/logos/every1-uganda-reversed-3200.png",
           "format": "png",
           "ink": "Reversed, white and Flame",
           "width": 3200,
           "bytes": 65170,
           "sha256": "f964532d3d4f6f60b357f0c73c4005fa9dfcfaf8c212efc8d54515740d5ead27"
+        },
+        {
+          "url": "https://brand.every1movement.com/assets/logos/every1-uganda-reversed-clear-3200.png",
+          "format": "png",
+          "ink": "Reversed, white and Flame",
+          "width": 3200,
+          "bytes": 61698,
+          "sha256": "55ba0d06cf4abe4effc47ab7a90710a4486e76f5dd64940eeb46d8c42d091fe0"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-uganda-black.svg",
@@ -1073,12 +1809,28 @@
           "sha256": "4ab489080cd8a26a9e239081293bdb7c4550e57c0225596bd8222d6335402cc1"
         },
         {
+          "url": "https://brand.every1movement.com/assets/logos/every1-uganda-black-clear-400.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 400,
+          "bytes": 4214,
+          "sha256": "96825fdb2e1bcb591e75a1e315ca77276a023792b713b8ea38d6b6038e550069"
+        },
+        {
           "url": "https://brand.every1movement.com/assets/logos/every1-uganda-black-800.png",
           "format": "png",
           "ink": "One colour, black",
           "width": 800,
           "bytes": 9707,
           "sha256": "8dcf0e09b14b3298c9a56fc244739caeb280783e3a3bce4650ec3337ea87aa5a"
+        },
+        {
+          "url": "https://brand.every1movement.com/assets/logos/every1-uganda-black-clear-800.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 800,
+          "bytes": 8809,
+          "sha256": "8020c3acb20e1a164f5829e2d90b14b0050afb9ba568b358a0af5224e77edb89"
         },
         {
           "url": "https://brand.every1movement.com/assets/logos/every1-uganda-black-1600.png",
@@ -1089,12 +1841,28 @@
           "sha256": "2b2445854a4909f3a96f9bf7a03b72cac04450ccac9fe6051b7cac4c69b2f190"
         },
         {
+          "url": "https://brand.every1movement.com/assets/logos/every1-uganda-black-clear-1600.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 1600,
+          "bytes": 20076,
+          "sha256": "a57a86e5bed7e8845ae0abb099bb8610642a9037e2f4a6657f7d9b36a40887e2"
+        },
+        {
           "url": "https://brand.every1movement.com/assets/logos/every1-uganda-black-3200.png",
           "format": "png",
           "ink": "One colour, black",
           "width": 3200,
           "bytes": 52787,
           "sha256": "e6413974378804fe72b1c26fd56c556c76e9799ee0e1a3255f1f37103205e1fb"
+        },
+        {
+          "url": "https://brand.every1movement.com/assets/logos/every1-uganda-black-clear-3200.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 3200,
+          "bytes": 51050,
+          "sha256": "4795d1e1fbffb047200727811f4740f51447ccfa425704607532950def71920e"
         }
       ]
     }
@@ -1112,25 +1880,25 @@
       {
         "url": "https://brand.every1movement.com/assets/logos/every1-favicon-32.png",
         "format": "png",
-        "purpose": "app icon and favicon, opaque Midnight ground",
+        "purpose": "browser tab, two-tone mark on an opaque White plate",
         "width": 32,
         "height": 32,
-        "bytes": 434,
-        "sha256": "c30fe1d8107ec9091b4e387202f2515d52d8978a3201ee19dfd5c5369b56fcc1"
+        "bytes": 399,
+        "sha256": "f64ff68e002643d4fbc552b2b09bb864507095fa9885b9f41a085bead95864d7"
       },
       {
         "url": "https://brand.every1movement.com/assets/logos/every1-favicon-48.png",
         "format": "png",
-        "purpose": "app icon and favicon, opaque Midnight ground",
+        "purpose": "browser tab, two-tone mark on an opaque White plate",
         "width": 48,
         "height": 48,
-        "bytes": 516,
-        "sha256": "d090d4cb97c5d544505cad397e0ca33391023cfa851e14093c52077a24d00a41"
+        "bytes": 494,
+        "sha256": "b3748810a0d28f8e957373117a48a3d307e2cefbbc663edff2b63c5c2bc0a5e3"
       },
       {
         "url": "https://brand.every1movement.com/assets/logos/every1-apple-touch-icon-180.png",
         "format": "png",
-        "purpose": "app icon and favicon, opaque Midnight ground",
+        "purpose": "app icon and avatar, opaque Midnight ground",
         "width": 180,
         "height": 180,
         "bytes": 902,
@@ -1139,7 +1907,7 @@
       {
         "url": "https://brand.every1movement.com/assets/logos/every1-icon-192.png",
         "format": "png",
-        "purpose": "app icon and favicon, opaque Midnight ground",
+        "purpose": "app icon and avatar, opaque Midnight ground",
         "width": 192,
         "height": 192,
         "bytes": 873,
@@ -1148,7 +1916,7 @@
       {
         "url": "https://brand.every1movement.com/assets/logos/every1-icon-512.png",
         "format": "png",
-        "purpose": "app icon and favicon, opaque Midnight ground",
+        "purpose": "app icon and avatar, opaque Midnight ground",
         "width": 512,
         "height": 512,
         "bytes": 2681,
@@ -1171,13 +1939,6 @@
         "height": 512,
         "bytes": 2184,
         "sha256": "9361f7a5f836b86ee9a9c4d691f2a764061719cb8a62cfda21787fa71a1aa641"
-      },
-      {
-        "url": "https://brand.every1movement.com/assets/logos/every1-e1-reversed.svg",
-        "format": "svg",
-        "purpose": "the vector favicon, which a browser prefers to any raster",
-        "bytes": 1131,
-        "sha256": "908d23aa3a88192edeaf91c7cf29eaf303241c13f324cd4d286c02f79f05fd69"
       }
     ]
   },
@@ -2831,13 +3592,13 @@
       "name": "tokens.json",
       "url": "https://brand.every1movement.com/ai/tokens.json",
       "bytes": 45860,
-      "sha256": "05c076c5f53449fd071be277a7279fecd1de8702e5ef8bd66a121179527937e2"
+      "sha256": "e671ed9618ba7d90e0d9cc063aa438415b826a97e71bf86fc0a1f39d1b81119d"
     },
     {
       "name": "tokens.dtcg.json",
       "url": "https://brand.every1movement.com/ai/tokens.dtcg.json",
       "bytes": 13245,
-      "sha256": "d8e263ec7d2bf17fc86b4d76c39394f2cd7e0a394df7ac5612169887a58f8ad0"
+      "sha256": "5d900684f6d0dc94f23a0b9861d671c512002010f92865cda908bf17663ed1d4"
     },
     {
       "name": "brand_check.py",
@@ -2849,7 +3610,7 @@
       "name": "brand.css",
       "url": "https://brand.every1movement.com/assets/brand.css",
       "bytes": 26750,
-      "sha256": "295017bf36ee96669a59f2bc7dfe6050d535c95e62036d92c0e30820e2fc06d7"
+      "sha256": "6befee68707ff1b514193add05787e6edc512929315de64284c2339e9a24336e"
     }
   ],
   "integrity": "Every file this manifest names carries its byte length and its SHA-256, the marks included. Verify what you download. Unknown paths return a real 404, so trust the status code: a failed fetch is a failed fetch. The 404 body is HTML by design, because a person who mistypes a URL should get a page that helps rather than a blank. Check the status, not the content type."

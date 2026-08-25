@@ -70,10 +70,24 @@
           "width": 400
         },
         {
+          "file": "assets/logos/the-word/png/the-word-horizontal-clear-400.png",
+          "format": "png",
+          "ink": "Midnight ink",
+          "width": 400,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/the-word/png/the-word-horizontal-800.png",
           "format": "png",
           "ink": "Midnight ink",
           "width": 800
+        },
+        {
+          "file": "assets/logos/the-word/png/the-word-horizontal-clear-800.png",
+          "format": "png",
+          "ink": "Midnight ink",
+          "width": 800,
+          "clearSpace": true
         },
         {
           "file": "assets/logos/the-word/png/the-word-horizontal-1600.png",
@@ -82,10 +96,24 @@
           "width": 1600
         },
         {
+          "file": "assets/logos/the-word/png/the-word-horizontal-clear-1600.png",
+          "format": "png",
+          "ink": "Midnight ink",
+          "width": 1600,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/the-word/png/the-word-horizontal-3200.png",
           "format": "png",
           "ink": "Midnight ink",
           "width": 3200
+        },
+        {
+          "file": "assets/logos/the-word/png/the-word-horizontal-clear-3200.png",
+          "format": "png",
+          "ink": "Midnight ink",
+          "width": 3200,
+          "clearSpace": true
         },
         {
           "file": "assets/logos/the-word/the-word-horizontal-reversed.svg",
@@ -99,10 +127,24 @@
           "width": 400
         },
         {
+          "file": "assets/logos/the-word/png/the-word-horizontal-reversed-clear-400.png",
+          "format": "png",
+          "ink": "Reversed, white",
+          "width": 400,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/the-word/png/the-word-horizontal-reversed-800.png",
           "format": "png",
           "ink": "Reversed, white",
           "width": 800
+        },
+        {
+          "file": "assets/logos/the-word/png/the-word-horizontal-reversed-clear-800.png",
+          "format": "png",
+          "ink": "Reversed, white",
+          "width": 800,
+          "clearSpace": true
         },
         {
           "file": "assets/logos/the-word/png/the-word-horizontal-reversed-1600.png",
@@ -111,10 +153,24 @@
           "width": 1600
         },
         {
+          "file": "assets/logos/the-word/png/the-word-horizontal-reversed-clear-1600.png",
+          "format": "png",
+          "ink": "Reversed, white",
+          "width": 1600,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/the-word/png/the-word-horizontal-reversed-3200.png",
           "format": "png",
           "ink": "Reversed, white",
           "width": 3200
+        },
+        {
+          "file": "assets/logos/the-word/png/the-word-horizontal-reversed-clear-3200.png",
+          "format": "png",
+          "ink": "Reversed, white",
+          "width": 3200,
+          "clearSpace": true
         },
         {
           "file": "assets/logos/the-word/the-word-horizontal-black.svg",
@@ -128,10 +184,24 @@
           "width": 400
         },
         {
+          "file": "assets/logos/the-word/png/the-word-horizontal-black-clear-400.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 400,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/the-word/png/the-word-horizontal-black-800.png",
           "format": "png",
           "ink": "One colour, black",
           "width": 800
+        },
+        {
+          "file": "assets/logos/the-word/png/the-word-horizontal-black-clear-800.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 800,
+          "clearSpace": true
         },
         {
           "file": "assets/logos/the-word/png/the-word-horizontal-black-1600.png",
@@ -140,10 +210,24 @@
           "width": 1600
         },
         {
+          "file": "assets/logos/the-word/png/the-word-horizontal-black-clear-1600.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 1600,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/the-word/png/the-word-horizontal-black-3200.png",
           "format": "png",
           "ink": "One colour, black",
           "width": 3200
+        },
+        {
+          "file": "assets/logos/the-word/png/the-word-horizontal-black-clear-3200.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 3200,
+          "clearSpace": true
         }
       ]
     },
@@ -175,10 +259,24 @@
           "width": 400
         },
         {
+          "file": "assets/logos/the-word/png/the-word-stacked-clear-400.png",
+          "format": "png",
+          "ink": "Midnight ink",
+          "width": 400,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/the-word/png/the-word-stacked-800.png",
           "format": "png",
           "ink": "Midnight ink",
           "width": 800
+        },
+        {
+          "file": "assets/logos/the-word/png/the-word-stacked-clear-800.png",
+          "format": "png",
+          "ink": "Midnight ink",
+          "width": 800,
+          "clearSpace": true
         },
         {
           "file": "assets/logos/the-word/png/the-word-stacked-1600.png",
@@ -187,10 +285,24 @@
           "width": 1600
         },
         {
+          "file": "assets/logos/the-word/png/the-word-stacked-clear-1600.png",
+          "format": "png",
+          "ink": "Midnight ink",
+          "width": 1600,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/the-word/png/the-word-stacked-3200.png",
           "format": "png",
           "ink": "Midnight ink",
           "width": 3200
+        },
+        {
+          "file": "assets/logos/the-word/png/the-word-stacked-clear-3200.png",
+          "format": "png",
+          "ink": "Midnight ink",
+          "width": 3200,
+          "clearSpace": true
         },
         {
           "file": "assets/logos/the-word/the-word-stacked-reversed.svg",
@@ -204,10 +316,24 @@
           "width": 400
         },
         {
+          "file": "assets/logos/the-word/png/the-word-stacked-reversed-clear-400.png",
+          "format": "png",
+          "ink": "Reversed, white",
+          "width": 400,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/the-word/png/the-word-stacked-reversed-800.png",
           "format": "png",
           "ink": "Reversed, white",
           "width": 800
+        },
+        {
+          "file": "assets/logos/the-word/png/the-word-stacked-reversed-clear-800.png",
+          "format": "png",
+          "ink": "Reversed, white",
+          "width": 800,
+          "clearSpace": true
         },
         {
           "file": "assets/logos/the-word/png/the-word-stacked-reversed-1600.png",
@@ -216,10 +342,24 @@
           "width": 1600
         },
         {
+          "file": "assets/logos/the-word/png/the-word-stacked-reversed-clear-1600.png",
+          "format": "png",
+          "ink": "Reversed, white",
+          "width": 1600,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/the-word/png/the-word-stacked-reversed-3200.png",
           "format": "png",
           "ink": "Reversed, white",
           "width": 3200
+        },
+        {
+          "file": "assets/logos/the-word/png/the-word-stacked-reversed-clear-3200.png",
+          "format": "png",
+          "ink": "Reversed, white",
+          "width": 3200,
+          "clearSpace": true
         },
         {
           "file": "assets/logos/the-word/the-word-stacked-black.svg",
@@ -233,10 +373,24 @@
           "width": 400
         },
         {
+          "file": "assets/logos/the-word/png/the-word-stacked-black-clear-400.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 400,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/the-word/png/the-word-stacked-black-800.png",
           "format": "png",
           "ink": "One colour, black",
           "width": 800
+        },
+        {
+          "file": "assets/logos/the-word/png/the-word-stacked-black-clear-800.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 800,
+          "clearSpace": true
         },
         {
           "file": "assets/logos/the-word/png/the-word-stacked-black-1600.png",
@@ -245,10 +399,24 @@
           "width": 1600
         },
         {
+          "file": "assets/logos/the-word/png/the-word-stacked-black-clear-1600.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 1600,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/the-word/png/the-word-stacked-black-3200.png",
           "format": "png",
           "ink": "One colour, black",
           "width": 3200
+        },
+        {
+          "file": "assets/logos/the-word/png/the-word-stacked-black-clear-3200.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 3200,
+          "clearSpace": true
         }
       ]
     },
@@ -280,10 +448,24 @@
           "width": 400
         },
         {
+          "file": "assets/logos/the-word/png/the-word-bare-clear-400.png",
+          "format": "png",
+          "ink": "Midnight ink",
+          "width": 400,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/the-word/png/the-word-bare-800.png",
           "format": "png",
           "ink": "Midnight ink",
           "width": 800
+        },
+        {
+          "file": "assets/logos/the-word/png/the-word-bare-clear-800.png",
+          "format": "png",
+          "ink": "Midnight ink",
+          "width": 800,
+          "clearSpace": true
         },
         {
           "file": "assets/logos/the-word/png/the-word-bare-1600.png",
@@ -292,10 +474,24 @@
           "width": 1600
         },
         {
+          "file": "assets/logos/the-word/png/the-word-bare-clear-1600.png",
+          "format": "png",
+          "ink": "Midnight ink",
+          "width": 1600,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/the-word/png/the-word-bare-3200.png",
           "format": "png",
           "ink": "Midnight ink",
           "width": 3200
+        },
+        {
+          "file": "assets/logos/the-word/png/the-word-bare-clear-3200.png",
+          "format": "png",
+          "ink": "Midnight ink",
+          "width": 3200,
+          "clearSpace": true
         },
         {
           "file": "assets/logos/the-word/the-word-bare-reversed.svg",
@@ -309,10 +505,24 @@
           "width": 400
         },
         {
+          "file": "assets/logos/the-word/png/the-word-bare-reversed-clear-400.png",
+          "format": "png",
+          "ink": "Reversed, white",
+          "width": 400,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/the-word/png/the-word-bare-reversed-800.png",
           "format": "png",
           "ink": "Reversed, white",
           "width": 800
+        },
+        {
+          "file": "assets/logos/the-word/png/the-word-bare-reversed-clear-800.png",
+          "format": "png",
+          "ink": "Reversed, white",
+          "width": 800,
+          "clearSpace": true
         },
         {
           "file": "assets/logos/the-word/png/the-word-bare-reversed-1600.png",
@@ -321,10 +531,24 @@
           "width": 1600
         },
         {
+          "file": "assets/logos/the-word/png/the-word-bare-reversed-clear-1600.png",
+          "format": "png",
+          "ink": "Reversed, white",
+          "width": 1600,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/the-word/png/the-word-bare-reversed-3200.png",
           "format": "png",
           "ink": "Reversed, white",
           "width": 3200
+        },
+        {
+          "file": "assets/logos/the-word/png/the-word-bare-reversed-clear-3200.png",
+          "format": "png",
+          "ink": "Reversed, white",
+          "width": 3200,
+          "clearSpace": true
         },
         {
           "file": "assets/logos/the-word/the-word-bare-black.svg",
@@ -338,10 +562,24 @@
           "width": 400
         },
         {
+          "file": "assets/logos/the-word/png/the-word-bare-black-clear-400.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 400,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/the-word/png/the-word-bare-black-800.png",
           "format": "png",
           "ink": "One colour, black",
           "width": 800
+        },
+        {
+          "file": "assets/logos/the-word/png/the-word-bare-black-clear-800.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 800,
+          "clearSpace": true
         },
         {
           "file": "assets/logos/the-word/png/the-word-bare-black-1600.png",
@@ -350,10 +588,24 @@
           "width": 1600
         },
         {
+          "file": "assets/logos/the-word/png/the-word-bare-black-clear-1600.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 1600,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/the-word/png/the-word-bare-black-3200.png",
           "format": "png",
           "ink": "One colour, black",
           "width": 3200
+        },
+        {
+          "file": "assets/logos/the-word/png/the-word-bare-black-clear-3200.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 3200,
+          "clearSpace": true
         }
       ]
     },
@@ -385,16 +637,37 @@
           "width": 512
         },
         {
+          "file": "assets/logos/the-word/png/the-word-glyph-clear-512.png",
+          "format": "png",
+          "ink": "Midnight ink",
+          "width": 512,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/the-word/png/the-word-glyph-1024.png",
           "format": "png",
           "ink": "Midnight ink",
           "width": 1024
         },
         {
+          "file": "assets/logos/the-word/png/the-word-glyph-clear-1024.png",
+          "format": "png",
+          "ink": "Midnight ink",
+          "width": 1024,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/the-word/png/the-word-glyph-2048.png",
           "format": "png",
           "ink": "Midnight ink",
           "width": 2048
+        },
+        {
+          "file": "assets/logos/the-word/png/the-word-glyph-clear-2048.png",
+          "format": "png",
+          "ink": "Midnight ink",
+          "width": 2048,
+          "clearSpace": true
         },
         {
           "file": "assets/logos/the-word/the-word-glyph-reversed.svg",
@@ -408,16 +681,37 @@
           "width": 512
         },
         {
+          "file": "assets/logos/the-word/png/the-word-glyph-reversed-clear-512.png",
+          "format": "png",
+          "ink": "Reversed, white",
+          "width": 512,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/the-word/png/the-word-glyph-reversed-1024.png",
           "format": "png",
           "ink": "Reversed, white",
           "width": 1024
         },
         {
+          "file": "assets/logos/the-word/png/the-word-glyph-reversed-clear-1024.png",
+          "format": "png",
+          "ink": "Reversed, white",
+          "width": 1024,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/the-word/png/the-word-glyph-reversed-2048.png",
           "format": "png",
           "ink": "Reversed, white",
           "width": 2048
+        },
+        {
+          "file": "assets/logos/the-word/png/the-word-glyph-reversed-clear-2048.png",
+          "format": "png",
+          "ink": "Reversed, white",
+          "width": 2048,
+          "clearSpace": true
         },
         {
           "file": "assets/logos/the-word/the-word-glyph-black.svg",
@@ -431,16 +725,37 @@
           "width": 512
         },
         {
+          "file": "assets/logos/the-word/png/the-word-glyph-black-clear-512.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 512,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/the-word/png/the-word-glyph-black-1024.png",
           "format": "png",
           "ink": "One colour, black",
           "width": 1024
         },
         {
+          "file": "assets/logos/the-word/png/the-word-glyph-black-clear-1024.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 1024,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/the-word/png/the-word-glyph-black-2048.png",
           "format": "png",
           "ink": "One colour, black",
           "width": 2048
+        },
+        {
+          "file": "assets/logos/the-word/png/the-word-glyph-black-clear-2048.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 2048,
+          "clearSpace": true
         }
       ]
     },
@@ -472,10 +787,24 @@
           "width": 400
         },
         {
+          "file": "assets/logos/the-word/png/the-word-heritage-clear-400.png",
+          "format": "png",
+          "ink": "Midnight ink",
+          "width": 400,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/the-word/png/the-word-heritage-800.png",
           "format": "png",
           "ink": "Midnight ink",
           "width": 800
+        },
+        {
+          "file": "assets/logos/the-word/png/the-word-heritage-clear-800.png",
+          "format": "png",
+          "ink": "Midnight ink",
+          "width": 800,
+          "clearSpace": true
         },
         {
           "file": "assets/logos/the-word/png/the-word-heritage-1600.png",
@@ -484,10 +813,24 @@
           "width": 1600
         },
         {
+          "file": "assets/logos/the-word/png/the-word-heritage-clear-1600.png",
+          "format": "png",
+          "ink": "Midnight ink",
+          "width": 1600,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/the-word/png/the-word-heritage-3200.png",
           "format": "png",
           "ink": "Midnight ink",
           "width": 3200
+        },
+        {
+          "file": "assets/logos/the-word/png/the-word-heritage-clear-3200.png",
+          "format": "png",
+          "ink": "Midnight ink",
+          "width": 3200,
+          "clearSpace": true
         },
         {
           "file": "assets/logos/the-word/the-word-heritage-reversed.svg",
@@ -501,10 +844,24 @@
           "width": 400
         },
         {
+          "file": "assets/logos/the-word/png/the-word-heritage-reversed-clear-400.png",
+          "format": "png",
+          "ink": "Reversed, white",
+          "width": 400,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/the-word/png/the-word-heritage-reversed-800.png",
           "format": "png",
           "ink": "Reversed, white",
           "width": 800
+        },
+        {
+          "file": "assets/logos/the-word/png/the-word-heritage-reversed-clear-800.png",
+          "format": "png",
+          "ink": "Reversed, white",
+          "width": 800,
+          "clearSpace": true
         },
         {
           "file": "assets/logos/the-word/png/the-word-heritage-reversed-1600.png",
@@ -513,10 +870,24 @@
           "width": 1600
         },
         {
+          "file": "assets/logos/the-word/png/the-word-heritage-reversed-clear-1600.png",
+          "format": "png",
+          "ink": "Reversed, white",
+          "width": 1600,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/the-word/png/the-word-heritage-reversed-3200.png",
           "format": "png",
           "ink": "Reversed, white",
           "width": 3200
+        },
+        {
+          "file": "assets/logos/the-word/png/the-word-heritage-reversed-clear-3200.png",
+          "format": "png",
+          "ink": "Reversed, white",
+          "width": 3200,
+          "clearSpace": true
         },
         {
           "file": "assets/logos/the-word/the-word-heritage-black.svg",
@@ -530,10 +901,24 @@
           "width": 400
         },
         {
+          "file": "assets/logos/the-word/png/the-word-heritage-black-clear-400.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 400,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/the-word/png/the-word-heritage-black-800.png",
           "format": "png",
           "ink": "One colour, black",
           "width": 800
+        },
+        {
+          "file": "assets/logos/the-word/png/the-word-heritage-black-clear-800.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 800,
+          "clearSpace": true
         },
         {
           "file": "assets/logos/the-word/png/the-word-heritage-black-1600.png",
@@ -542,10 +927,24 @@
           "width": 1600
         },
         {
+          "file": "assets/logos/the-word/png/the-word-heritage-black-clear-1600.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 1600,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/the-word/png/the-word-heritage-black-3200.png",
           "format": "png",
           "ink": "One colour, black",
           "width": 3200
+        },
+        {
+          "file": "assets/logos/the-word/png/the-word-heritage-black-clear-3200.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 3200,
+          "clearSpace": true
         }
       ]
     },
@@ -577,10 +976,24 @@
           "width": 400
         },
         {
+          "file": "assets/logos/rtmc/png/rtmc-primary-clear-400.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and Word Blue",
+          "width": 400,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/rtmc/png/rtmc-primary-800.png",
           "format": "png",
           "ink": "Two-tone, Midnight and Word Blue",
           "width": 800
+        },
+        {
+          "file": "assets/logos/rtmc/png/rtmc-primary-clear-800.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and Word Blue",
+          "width": 800,
+          "clearSpace": true
         },
         {
           "file": "assets/logos/rtmc/png/rtmc-primary-1600.png",
@@ -589,10 +1002,24 @@
           "width": 1600
         },
         {
+          "file": "assets/logos/rtmc/png/rtmc-primary-clear-1600.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and Word Blue",
+          "width": 1600,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/rtmc/png/rtmc-primary-3200.png",
           "format": "png",
           "ink": "Two-tone, Midnight and Word Blue",
           "width": 3200
+        },
+        {
+          "file": "assets/logos/rtmc/png/rtmc-primary-clear-3200.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and Word Blue",
+          "width": 3200,
+          "clearSpace": true
         },
         {
           "file": "assets/logos/rtmc/rtmc-primary-reversed.svg",
@@ -606,10 +1033,24 @@
           "width": 400
         },
         {
+          "file": "assets/logos/rtmc/png/rtmc-primary-reversed-clear-400.png",
+          "format": "png",
+          "ink": "Reversed, white",
+          "width": 400,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/rtmc/png/rtmc-primary-reversed-800.png",
           "format": "png",
           "ink": "Reversed, white",
           "width": 800
+        },
+        {
+          "file": "assets/logos/rtmc/png/rtmc-primary-reversed-clear-800.png",
+          "format": "png",
+          "ink": "Reversed, white",
+          "width": 800,
+          "clearSpace": true
         },
         {
           "file": "assets/logos/rtmc/png/rtmc-primary-reversed-1600.png",
@@ -618,10 +1059,24 @@
           "width": 1600
         },
         {
+          "file": "assets/logos/rtmc/png/rtmc-primary-reversed-clear-1600.png",
+          "format": "png",
+          "ink": "Reversed, white",
+          "width": 1600,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/rtmc/png/rtmc-primary-reversed-3200.png",
           "format": "png",
           "ink": "Reversed, white",
           "width": 3200
+        },
+        {
+          "file": "assets/logos/rtmc/png/rtmc-primary-reversed-clear-3200.png",
+          "format": "png",
+          "ink": "Reversed, white",
+          "width": 3200,
+          "clearSpace": true
         },
         {
           "file": "assets/logos/rtmc/rtmc-primary-black.svg",
@@ -635,10 +1090,24 @@
           "width": 400
         },
         {
+          "file": "assets/logos/rtmc/png/rtmc-primary-black-clear-400.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 400,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/rtmc/png/rtmc-primary-black-800.png",
           "format": "png",
           "ink": "One colour, black",
           "width": 800
+        },
+        {
+          "file": "assets/logos/rtmc/png/rtmc-primary-black-clear-800.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 800,
+          "clearSpace": true
         },
         {
           "file": "assets/logos/rtmc/png/rtmc-primary-black-1600.png",
@@ -647,10 +1116,24 @@
           "width": 1600
         },
         {
+          "file": "assets/logos/rtmc/png/rtmc-primary-black-clear-1600.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 1600,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/rtmc/png/rtmc-primary-black-3200.png",
           "format": "png",
           "ink": "One colour, black",
           "width": 3200
+        },
+        {
+          "file": "assets/logos/rtmc/png/rtmc-primary-black-clear-3200.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 3200,
+          "clearSpace": true
         }
       ]
     },
@@ -682,10 +1165,24 @@
           "width": 400
         },
         {
+          "file": "assets/logos/rtmc/png/rtmc-cobrand-clear-400.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and Word Blue",
+          "width": 400,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/rtmc/png/rtmc-cobrand-800.png",
           "format": "png",
           "ink": "Two-tone, Midnight and Word Blue",
           "width": 800
+        },
+        {
+          "file": "assets/logos/rtmc/png/rtmc-cobrand-clear-800.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and Word Blue",
+          "width": 800,
+          "clearSpace": true
         },
         {
           "file": "assets/logos/rtmc/png/rtmc-cobrand-1600.png",
@@ -694,10 +1191,24 @@
           "width": 1600
         },
         {
+          "file": "assets/logos/rtmc/png/rtmc-cobrand-clear-1600.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and Word Blue",
+          "width": 1600,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/rtmc/png/rtmc-cobrand-3200.png",
           "format": "png",
           "ink": "Two-tone, Midnight and Word Blue",
           "width": 3200
+        },
+        {
+          "file": "assets/logos/rtmc/png/rtmc-cobrand-clear-3200.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and Word Blue",
+          "width": 3200,
+          "clearSpace": true
         },
         {
           "file": "assets/logos/rtmc/rtmc-cobrand-reversed.svg",
@@ -711,10 +1222,24 @@
           "width": 400
         },
         {
+          "file": "assets/logos/rtmc/png/rtmc-cobrand-reversed-clear-400.png",
+          "format": "png",
+          "ink": "Reversed, white",
+          "width": 400,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/rtmc/png/rtmc-cobrand-reversed-800.png",
           "format": "png",
           "ink": "Reversed, white",
           "width": 800
+        },
+        {
+          "file": "assets/logos/rtmc/png/rtmc-cobrand-reversed-clear-800.png",
+          "format": "png",
+          "ink": "Reversed, white",
+          "width": 800,
+          "clearSpace": true
         },
         {
           "file": "assets/logos/rtmc/png/rtmc-cobrand-reversed-1600.png",
@@ -723,10 +1248,24 @@
           "width": 1600
         },
         {
+          "file": "assets/logos/rtmc/png/rtmc-cobrand-reversed-clear-1600.png",
+          "format": "png",
+          "ink": "Reversed, white",
+          "width": 1600,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/rtmc/png/rtmc-cobrand-reversed-3200.png",
           "format": "png",
           "ink": "Reversed, white",
           "width": 3200
+        },
+        {
+          "file": "assets/logos/rtmc/png/rtmc-cobrand-reversed-clear-3200.png",
+          "format": "png",
+          "ink": "Reversed, white",
+          "width": 3200,
+          "clearSpace": true
         },
         {
           "file": "assets/logos/rtmc/rtmc-cobrand-black.svg",
@@ -740,10 +1279,24 @@
           "width": 400
         },
         {
+          "file": "assets/logos/rtmc/png/rtmc-cobrand-black-clear-400.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 400,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/rtmc/png/rtmc-cobrand-black-800.png",
           "format": "png",
           "ink": "One colour, black",
           "width": 800
+        },
+        {
+          "file": "assets/logos/rtmc/png/rtmc-cobrand-black-clear-800.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 800,
+          "clearSpace": true
         },
         {
           "file": "assets/logos/rtmc/png/rtmc-cobrand-black-1600.png",
@@ -752,10 +1305,24 @@
           "width": 1600
         },
         {
+          "file": "assets/logos/rtmc/png/rtmc-cobrand-black-clear-1600.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 1600,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/rtmc/png/rtmc-cobrand-black-3200.png",
           "format": "png",
           "ink": "One colour, black",
           "width": 3200
+        },
+        {
+          "file": "assets/logos/rtmc/png/rtmc-cobrand-black-clear-3200.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 3200,
+          "clearSpace": true
         }
       ]
     },
@@ -787,10 +1354,24 @@
           "width": 400
         },
         {
+          "file": "assets/logos/every1/png/every1-horizontal-clear-400.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and Flame",
+          "width": 400,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/every1/png/every1-horizontal-800.png",
           "format": "png",
           "ink": "Two-tone, Midnight and Flame",
           "width": 800
+        },
+        {
+          "file": "assets/logos/every1/png/every1-horizontal-clear-800.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and Flame",
+          "width": 800,
+          "clearSpace": true
         },
         {
           "file": "assets/logos/every1/png/every1-horizontal-1600.png",
@@ -799,10 +1380,24 @@
           "width": 1600
         },
         {
+          "file": "assets/logos/every1/png/every1-horizontal-clear-1600.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and Flame",
+          "width": 1600,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/every1/png/every1-horizontal-3200.png",
           "format": "png",
           "ink": "Two-tone, Midnight and Flame",
           "width": 3200
+        },
+        {
+          "file": "assets/logos/every1/png/every1-horizontal-clear-3200.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and Flame",
+          "width": 3200,
+          "clearSpace": true
         },
         {
           "file": "assets/logos/every1/every1-horizontal-reversed.svg",
@@ -816,10 +1411,24 @@
           "width": 400
         },
         {
+          "file": "assets/logos/every1/png/every1-horizontal-reversed-clear-400.png",
+          "format": "png",
+          "ink": "Reversed, white and Flame",
+          "width": 400,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/every1/png/every1-horizontal-reversed-800.png",
           "format": "png",
           "ink": "Reversed, white and Flame",
           "width": 800
+        },
+        {
+          "file": "assets/logos/every1/png/every1-horizontal-reversed-clear-800.png",
+          "format": "png",
+          "ink": "Reversed, white and Flame",
+          "width": 800,
+          "clearSpace": true
         },
         {
           "file": "assets/logos/every1/png/every1-horizontal-reversed-1600.png",
@@ -828,10 +1437,24 @@
           "width": 1600
         },
         {
+          "file": "assets/logos/every1/png/every1-horizontal-reversed-clear-1600.png",
+          "format": "png",
+          "ink": "Reversed, white and Flame",
+          "width": 1600,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/every1/png/every1-horizontal-reversed-3200.png",
           "format": "png",
           "ink": "Reversed, white and Flame",
           "width": 3200
+        },
+        {
+          "file": "assets/logos/every1/png/every1-horizontal-reversed-clear-3200.png",
+          "format": "png",
+          "ink": "Reversed, white and Flame",
+          "width": 3200,
+          "clearSpace": true
         },
         {
           "file": "assets/logos/every1/every1-horizontal-black.svg",
@@ -845,10 +1468,24 @@
           "width": 400
         },
         {
+          "file": "assets/logos/every1/png/every1-horizontal-black-clear-400.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 400,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/every1/png/every1-horizontal-black-800.png",
           "format": "png",
           "ink": "One colour, black",
           "width": 800
+        },
+        {
+          "file": "assets/logos/every1/png/every1-horizontal-black-clear-800.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 800,
+          "clearSpace": true
         },
         {
           "file": "assets/logos/every1/png/every1-horizontal-black-1600.png",
@@ -857,10 +1494,24 @@
           "width": 1600
         },
         {
+          "file": "assets/logos/every1/png/every1-horizontal-black-clear-1600.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 1600,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/every1/png/every1-horizontal-black-3200.png",
           "format": "png",
           "ink": "One colour, black",
           "width": 3200
+        },
+        {
+          "file": "assets/logos/every1/png/every1-horizontal-black-clear-3200.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 3200,
+          "clearSpace": true
         }
       ]
     },
@@ -892,10 +1543,24 @@
           "width": 400
         },
         {
+          "file": "assets/logos/every1/png/every1-bare-clear-400.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and Flame",
+          "width": 400,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/every1/png/every1-bare-800.png",
           "format": "png",
           "ink": "Two-tone, Midnight and Flame",
           "width": 800
+        },
+        {
+          "file": "assets/logos/every1/png/every1-bare-clear-800.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and Flame",
+          "width": 800,
+          "clearSpace": true
         },
         {
           "file": "assets/logos/every1/png/every1-bare-1600.png",
@@ -904,10 +1569,24 @@
           "width": 1600
         },
         {
+          "file": "assets/logos/every1/png/every1-bare-clear-1600.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and Flame",
+          "width": 1600,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/every1/png/every1-bare-3200.png",
           "format": "png",
           "ink": "Two-tone, Midnight and Flame",
           "width": 3200
+        },
+        {
+          "file": "assets/logos/every1/png/every1-bare-clear-3200.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and Flame",
+          "width": 3200,
+          "clearSpace": true
         },
         {
           "file": "assets/logos/every1/every1-bare-reversed.svg",
@@ -921,10 +1600,24 @@
           "width": 400
         },
         {
+          "file": "assets/logos/every1/png/every1-bare-reversed-clear-400.png",
+          "format": "png",
+          "ink": "Reversed, white and Flame",
+          "width": 400,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/every1/png/every1-bare-reversed-800.png",
           "format": "png",
           "ink": "Reversed, white and Flame",
           "width": 800
+        },
+        {
+          "file": "assets/logos/every1/png/every1-bare-reversed-clear-800.png",
+          "format": "png",
+          "ink": "Reversed, white and Flame",
+          "width": 800,
+          "clearSpace": true
         },
         {
           "file": "assets/logos/every1/png/every1-bare-reversed-1600.png",
@@ -933,10 +1626,24 @@
           "width": 1600
         },
         {
+          "file": "assets/logos/every1/png/every1-bare-reversed-clear-1600.png",
+          "format": "png",
+          "ink": "Reversed, white and Flame",
+          "width": 1600,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/every1/png/every1-bare-reversed-3200.png",
           "format": "png",
           "ink": "Reversed, white and Flame",
           "width": 3200
+        },
+        {
+          "file": "assets/logos/every1/png/every1-bare-reversed-clear-3200.png",
+          "format": "png",
+          "ink": "Reversed, white and Flame",
+          "width": 3200,
+          "clearSpace": true
         },
         {
           "file": "assets/logos/every1/every1-bare-black.svg",
@@ -950,10 +1657,24 @@
           "width": 400
         },
         {
+          "file": "assets/logos/every1/png/every1-bare-black-clear-400.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 400,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/every1/png/every1-bare-black-800.png",
           "format": "png",
           "ink": "One colour, black",
           "width": 800
+        },
+        {
+          "file": "assets/logos/every1/png/every1-bare-black-clear-800.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 800,
+          "clearSpace": true
         },
         {
           "file": "assets/logos/every1/png/every1-bare-black-1600.png",
@@ -962,10 +1683,24 @@
           "width": 1600
         },
         {
+          "file": "assets/logos/every1/png/every1-bare-black-clear-1600.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 1600,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/every1/png/every1-bare-black-3200.png",
           "format": "png",
           "ink": "One colour, black",
           "width": 3200
+        },
+        {
+          "file": "assets/logos/every1/png/every1-bare-black-clear-3200.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 3200,
+          "clearSpace": true
         }
       ]
     },
@@ -997,10 +1732,24 @@
           "width": 400
         },
         {
+          "file": "assets/logos/every1/png/every1-vision-clear-400.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and Flame",
+          "width": 400,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/every1/png/every1-vision-800.png",
           "format": "png",
           "ink": "Two-tone, Midnight and Flame",
           "width": 800
+        },
+        {
+          "file": "assets/logos/every1/png/every1-vision-clear-800.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and Flame",
+          "width": 800,
+          "clearSpace": true
         },
         {
           "file": "assets/logos/every1/png/every1-vision-1600.png",
@@ -1009,10 +1758,24 @@
           "width": 1600
         },
         {
+          "file": "assets/logos/every1/png/every1-vision-clear-1600.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and Flame",
+          "width": 1600,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/every1/png/every1-vision-3200.png",
           "format": "png",
           "ink": "Two-tone, Midnight and Flame",
           "width": 3200
+        },
+        {
+          "file": "assets/logos/every1/png/every1-vision-clear-3200.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and Flame",
+          "width": 3200,
+          "clearSpace": true
         },
         {
           "file": "assets/logos/every1/every1-vision-reversed.svg",
@@ -1026,10 +1789,24 @@
           "width": 400
         },
         {
+          "file": "assets/logos/every1/png/every1-vision-reversed-clear-400.png",
+          "format": "png",
+          "ink": "Reversed, white and Flame",
+          "width": 400,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/every1/png/every1-vision-reversed-800.png",
           "format": "png",
           "ink": "Reversed, white and Flame",
           "width": 800
+        },
+        {
+          "file": "assets/logos/every1/png/every1-vision-reversed-clear-800.png",
+          "format": "png",
+          "ink": "Reversed, white and Flame",
+          "width": 800,
+          "clearSpace": true
         },
         {
           "file": "assets/logos/every1/png/every1-vision-reversed-1600.png",
@@ -1038,10 +1815,24 @@
           "width": 1600
         },
         {
+          "file": "assets/logos/every1/png/every1-vision-reversed-clear-1600.png",
+          "format": "png",
+          "ink": "Reversed, white and Flame",
+          "width": 1600,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/every1/png/every1-vision-reversed-3200.png",
           "format": "png",
           "ink": "Reversed, white and Flame",
           "width": 3200
+        },
+        {
+          "file": "assets/logos/every1/png/every1-vision-reversed-clear-3200.png",
+          "format": "png",
+          "ink": "Reversed, white and Flame",
+          "width": 3200,
+          "clearSpace": true
         },
         {
           "file": "assets/logos/every1/every1-vision-black.svg",
@@ -1055,10 +1846,24 @@
           "width": 400
         },
         {
+          "file": "assets/logos/every1/png/every1-vision-black-clear-400.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 400,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/every1/png/every1-vision-black-800.png",
           "format": "png",
           "ink": "One colour, black",
           "width": 800
+        },
+        {
+          "file": "assets/logos/every1/png/every1-vision-black-clear-800.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 800,
+          "clearSpace": true
         },
         {
           "file": "assets/logos/every1/png/every1-vision-black-1600.png",
@@ -1067,10 +1872,24 @@
           "width": 1600
         },
         {
+          "file": "assets/logos/every1/png/every1-vision-black-clear-1600.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 1600,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/every1/png/every1-vision-black-3200.png",
           "format": "png",
           "ink": "One colour, black",
           "width": 3200
+        },
+        {
+          "file": "assets/logos/every1/png/every1-vision-black-clear-3200.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 3200,
+          "clearSpace": true
         }
       ]
     },
@@ -1102,10 +1921,24 @@
           "width": 400
         },
         {
+          "file": "assets/logos/every1/png/every1-promise-clear-400.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and Flame",
+          "width": 400,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/every1/png/every1-promise-800.png",
           "format": "png",
           "ink": "Two-tone, Midnight and Flame",
           "width": 800
+        },
+        {
+          "file": "assets/logos/every1/png/every1-promise-clear-800.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and Flame",
+          "width": 800,
+          "clearSpace": true
         },
         {
           "file": "assets/logos/every1/png/every1-promise-1600.png",
@@ -1114,10 +1947,24 @@
           "width": 1600
         },
         {
+          "file": "assets/logos/every1/png/every1-promise-clear-1600.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and Flame",
+          "width": 1600,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/every1/png/every1-promise-3200.png",
           "format": "png",
           "ink": "Two-tone, Midnight and Flame",
           "width": 3200
+        },
+        {
+          "file": "assets/logos/every1/png/every1-promise-clear-3200.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and Flame",
+          "width": 3200,
+          "clearSpace": true
         },
         {
           "file": "assets/logos/every1/every1-promise-reversed.svg",
@@ -1131,10 +1978,24 @@
           "width": 400
         },
         {
+          "file": "assets/logos/every1/png/every1-promise-reversed-clear-400.png",
+          "format": "png",
+          "ink": "Reversed, white and Flame",
+          "width": 400,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/every1/png/every1-promise-reversed-800.png",
           "format": "png",
           "ink": "Reversed, white and Flame",
           "width": 800
+        },
+        {
+          "file": "assets/logos/every1/png/every1-promise-reversed-clear-800.png",
+          "format": "png",
+          "ink": "Reversed, white and Flame",
+          "width": 800,
+          "clearSpace": true
         },
         {
           "file": "assets/logos/every1/png/every1-promise-reversed-1600.png",
@@ -1143,10 +2004,24 @@
           "width": 1600
         },
         {
+          "file": "assets/logos/every1/png/every1-promise-reversed-clear-1600.png",
+          "format": "png",
+          "ink": "Reversed, white and Flame",
+          "width": 1600,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/every1/png/every1-promise-reversed-3200.png",
           "format": "png",
           "ink": "Reversed, white and Flame",
           "width": 3200
+        },
+        {
+          "file": "assets/logos/every1/png/every1-promise-reversed-clear-3200.png",
+          "format": "png",
+          "ink": "Reversed, white and Flame",
+          "width": 3200,
+          "clearSpace": true
         },
         {
           "file": "assets/logos/every1/every1-promise-black.svg",
@@ -1160,10 +2035,24 @@
           "width": 400
         },
         {
+          "file": "assets/logos/every1/png/every1-promise-black-clear-400.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 400,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/every1/png/every1-promise-black-800.png",
           "format": "png",
           "ink": "One colour, black",
           "width": 800
+        },
+        {
+          "file": "assets/logos/every1/png/every1-promise-black-clear-800.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 800,
+          "clearSpace": true
         },
         {
           "file": "assets/logos/every1/png/every1-promise-black-1600.png",
@@ -1172,10 +2061,24 @@
           "width": 1600
         },
         {
+          "file": "assets/logos/every1/png/every1-promise-black-clear-1600.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 1600,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/every1/png/every1-promise-black-3200.png",
           "format": "png",
           "ink": "One colour, black",
           "width": 3200
+        },
+        {
+          "file": "assets/logos/every1/png/every1-promise-black-clear-3200.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 3200,
+          "clearSpace": true
         }
       ]
     },
@@ -1207,10 +2110,24 @@
           "width": 400
         },
         {
+          "file": "assets/logos/every1/png/every1-usa-clear-400.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and Flame",
+          "width": 400,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/every1/png/every1-usa-800.png",
           "format": "png",
           "ink": "Two-tone, Midnight and Flame",
           "width": 800
+        },
+        {
+          "file": "assets/logos/every1/png/every1-usa-clear-800.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and Flame",
+          "width": 800,
+          "clearSpace": true
         },
         {
           "file": "assets/logos/every1/png/every1-usa-1600.png",
@@ -1219,10 +2136,24 @@
           "width": 1600
         },
         {
+          "file": "assets/logos/every1/png/every1-usa-clear-1600.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and Flame",
+          "width": 1600,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/every1/png/every1-usa-3200.png",
           "format": "png",
           "ink": "Two-tone, Midnight and Flame",
           "width": 3200
+        },
+        {
+          "file": "assets/logos/every1/png/every1-usa-clear-3200.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and Flame",
+          "width": 3200,
+          "clearSpace": true
         },
         {
           "file": "assets/logos/every1/every1-usa-reversed.svg",
@@ -1236,10 +2167,24 @@
           "width": 400
         },
         {
+          "file": "assets/logos/every1/png/every1-usa-reversed-clear-400.png",
+          "format": "png",
+          "ink": "Reversed, white and Flame",
+          "width": 400,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/every1/png/every1-usa-reversed-800.png",
           "format": "png",
           "ink": "Reversed, white and Flame",
           "width": 800
+        },
+        {
+          "file": "assets/logos/every1/png/every1-usa-reversed-clear-800.png",
+          "format": "png",
+          "ink": "Reversed, white and Flame",
+          "width": 800,
+          "clearSpace": true
         },
         {
           "file": "assets/logos/every1/png/every1-usa-reversed-1600.png",
@@ -1248,10 +2193,24 @@
           "width": 1600
         },
         {
+          "file": "assets/logos/every1/png/every1-usa-reversed-clear-1600.png",
+          "format": "png",
+          "ink": "Reversed, white and Flame",
+          "width": 1600,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/every1/png/every1-usa-reversed-3200.png",
           "format": "png",
           "ink": "Reversed, white and Flame",
           "width": 3200
+        },
+        {
+          "file": "assets/logos/every1/png/every1-usa-reversed-clear-3200.png",
+          "format": "png",
+          "ink": "Reversed, white and Flame",
+          "width": 3200,
+          "clearSpace": true
         },
         {
           "file": "assets/logos/every1/every1-usa-black.svg",
@@ -1265,10 +2224,24 @@
           "width": 400
         },
         {
+          "file": "assets/logos/every1/png/every1-usa-black-clear-400.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 400,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/every1/png/every1-usa-black-800.png",
           "format": "png",
           "ink": "One colour, black",
           "width": 800
+        },
+        {
+          "file": "assets/logos/every1/png/every1-usa-black-clear-800.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 800,
+          "clearSpace": true
         },
         {
           "file": "assets/logos/every1/png/every1-usa-black-1600.png",
@@ -1277,10 +2250,24 @@
           "width": 1600
         },
         {
+          "file": "assets/logos/every1/png/every1-usa-black-clear-1600.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 1600,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/every1/png/every1-usa-black-3200.png",
           "format": "png",
           "ink": "One colour, black",
           "width": 3200
+        },
+        {
+          "file": "assets/logos/every1/png/every1-usa-black-clear-3200.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 3200,
+          "clearSpace": true
         }
       ]
     },
@@ -1312,10 +2299,24 @@
           "width": 400
         },
         {
+          "file": "assets/logos/every1/png/every1-uganda-clear-400.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and Flame",
+          "width": 400,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/every1/png/every1-uganda-800.png",
           "format": "png",
           "ink": "Two-tone, Midnight and Flame",
           "width": 800
+        },
+        {
+          "file": "assets/logos/every1/png/every1-uganda-clear-800.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and Flame",
+          "width": 800,
+          "clearSpace": true
         },
         {
           "file": "assets/logos/every1/png/every1-uganda-1600.png",
@@ -1324,10 +2325,24 @@
           "width": 1600
         },
         {
+          "file": "assets/logos/every1/png/every1-uganda-clear-1600.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and Flame",
+          "width": 1600,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/every1/png/every1-uganda-3200.png",
           "format": "png",
           "ink": "Two-tone, Midnight and Flame",
           "width": 3200
+        },
+        {
+          "file": "assets/logos/every1/png/every1-uganda-clear-3200.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and Flame",
+          "width": 3200,
+          "clearSpace": true
         },
         {
           "file": "assets/logos/every1/every1-uganda-reversed.svg",
@@ -1341,10 +2356,24 @@
           "width": 400
         },
         {
+          "file": "assets/logos/every1/png/every1-uganda-reversed-clear-400.png",
+          "format": "png",
+          "ink": "Reversed, white and Flame",
+          "width": 400,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/every1/png/every1-uganda-reversed-800.png",
           "format": "png",
           "ink": "Reversed, white and Flame",
           "width": 800
+        },
+        {
+          "file": "assets/logos/every1/png/every1-uganda-reversed-clear-800.png",
+          "format": "png",
+          "ink": "Reversed, white and Flame",
+          "width": 800,
+          "clearSpace": true
         },
         {
           "file": "assets/logos/every1/png/every1-uganda-reversed-1600.png",
@@ -1353,10 +2382,24 @@
           "width": 1600
         },
         {
+          "file": "assets/logos/every1/png/every1-uganda-reversed-clear-1600.png",
+          "format": "png",
+          "ink": "Reversed, white and Flame",
+          "width": 1600,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/every1/png/every1-uganda-reversed-3200.png",
           "format": "png",
           "ink": "Reversed, white and Flame",
           "width": 3200
+        },
+        {
+          "file": "assets/logos/every1/png/every1-uganda-reversed-clear-3200.png",
+          "format": "png",
+          "ink": "Reversed, white and Flame",
+          "width": 3200,
+          "clearSpace": true
         },
         {
           "file": "assets/logos/every1/every1-uganda-black.svg",
@@ -1370,10 +2413,24 @@
           "width": 400
         },
         {
+          "file": "assets/logos/every1/png/every1-uganda-black-clear-400.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 400,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/every1/png/every1-uganda-black-800.png",
           "format": "png",
           "ink": "One colour, black",
           "width": 800
+        },
+        {
+          "file": "assets/logos/every1/png/every1-uganda-black-clear-800.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 800,
+          "clearSpace": true
         },
         {
           "file": "assets/logos/every1/png/every1-uganda-black-1600.png",
@@ -1382,10 +2439,24 @@
           "width": 1600
         },
         {
+          "file": "assets/logos/every1/png/every1-uganda-black-clear-1600.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 1600,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/every1/png/every1-uganda-black-3200.png",
           "format": "png",
           "ink": "One colour, black",
           "width": 3200
+        },
+        {
+          "file": "assets/logos/every1/png/every1-uganda-black-clear-3200.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 3200,
+          "clearSpace": true
         }
       ]
     },
@@ -1417,10 +2488,24 @@
           "width": 400
         },
         {
+          "file": "assets/logos/every1/png/every1-e1-clear-400.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and Flame",
+          "width": 400,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/every1/png/every1-e1-800.png",
           "format": "png",
           "ink": "Two-tone, Midnight and Flame",
           "width": 800
+        },
+        {
+          "file": "assets/logos/every1/png/every1-e1-clear-800.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and Flame",
+          "width": 800,
+          "clearSpace": true
         },
         {
           "file": "assets/logos/every1/png/every1-e1-1600.png",
@@ -1429,10 +2514,24 @@
           "width": 1600
         },
         {
+          "file": "assets/logos/every1/png/every1-e1-clear-1600.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and Flame",
+          "width": 1600,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/every1/png/every1-e1-3200.png",
           "format": "png",
           "ink": "Two-tone, Midnight and Flame",
           "width": 3200
+        },
+        {
+          "file": "assets/logos/every1/png/every1-e1-clear-3200.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and Flame",
+          "width": 3200,
+          "clearSpace": true
         },
         {
           "file": "assets/logos/every1/every1-e1-reversed.svg",
@@ -1446,10 +2545,24 @@
           "width": 400
         },
         {
+          "file": "assets/logos/every1/png/every1-e1-reversed-clear-400.png",
+          "format": "png",
+          "ink": "Reversed, white and Flame",
+          "width": 400,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/every1/png/every1-e1-reversed-800.png",
           "format": "png",
           "ink": "Reversed, white and Flame",
           "width": 800
+        },
+        {
+          "file": "assets/logos/every1/png/every1-e1-reversed-clear-800.png",
+          "format": "png",
+          "ink": "Reversed, white and Flame",
+          "width": 800,
+          "clearSpace": true
         },
         {
           "file": "assets/logos/every1/png/every1-e1-reversed-1600.png",
@@ -1458,10 +2571,24 @@
           "width": 1600
         },
         {
+          "file": "assets/logos/every1/png/every1-e1-reversed-clear-1600.png",
+          "format": "png",
+          "ink": "Reversed, white and Flame",
+          "width": 1600,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/every1/png/every1-e1-reversed-3200.png",
           "format": "png",
           "ink": "Reversed, white and Flame",
           "width": 3200
+        },
+        {
+          "file": "assets/logos/every1/png/every1-e1-reversed-clear-3200.png",
+          "format": "png",
+          "ink": "Reversed, white and Flame",
+          "width": 3200,
+          "clearSpace": true
         },
         {
           "file": "assets/logos/every1/every1-e1-black.svg",
@@ -1475,10 +2602,24 @@
           "width": 400
         },
         {
+          "file": "assets/logos/every1/png/every1-e1-black-clear-400.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 400,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/every1/png/every1-e1-black-800.png",
           "format": "png",
           "ink": "One colour, black",
           "width": 800
+        },
+        {
+          "file": "assets/logos/every1/png/every1-e1-black-clear-800.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 800,
+          "clearSpace": true
         },
         {
           "file": "assets/logos/every1/png/every1-e1-black-1600.png",
@@ -1487,10 +2628,24 @@
           "width": 1600
         },
         {
+          "file": "assets/logos/every1/png/every1-e1-black-clear-1600.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 1600,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/every1/png/every1-e1-black-3200.png",
           "format": "png",
           "ink": "One colour, black",
           "width": 3200
+        },
+        {
+          "file": "assets/logos/every1/png/every1-e1-black-clear-3200.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 3200,
+          "clearSpace": true
         }
       ]
     },
@@ -1522,10 +2677,24 @@
           "width": 400
         },
         {
+          "file": "assets/logos/every1/png/every1-numeral-clear-400.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and Flame",
+          "width": 400,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/every1/png/every1-numeral-800.png",
           "format": "png",
           "ink": "Two-tone, Midnight and Flame",
           "width": 800
+        },
+        {
+          "file": "assets/logos/every1/png/every1-numeral-clear-800.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and Flame",
+          "width": 800,
+          "clearSpace": true
         },
         {
           "file": "assets/logos/every1/png/every1-numeral-1600.png",
@@ -1534,10 +2703,24 @@
           "width": 1600
         },
         {
+          "file": "assets/logos/every1/png/every1-numeral-clear-1600.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and Flame",
+          "width": 1600,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/every1/png/every1-numeral-3200.png",
           "format": "png",
           "ink": "Two-tone, Midnight and Flame",
           "width": 3200
+        },
+        {
+          "file": "assets/logos/every1/png/every1-numeral-clear-3200.png",
+          "format": "png",
+          "ink": "Two-tone, Midnight and Flame",
+          "width": 3200,
+          "clearSpace": true
         },
         {
           "file": "assets/logos/every1/every1-numeral-reversed.svg",
@@ -1551,10 +2734,24 @@
           "width": 400
         },
         {
+          "file": "assets/logos/every1/png/every1-numeral-reversed-clear-400.png",
+          "format": "png",
+          "ink": "Reversed, white and Flame",
+          "width": 400,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/every1/png/every1-numeral-reversed-800.png",
           "format": "png",
           "ink": "Reversed, white and Flame",
           "width": 800
+        },
+        {
+          "file": "assets/logos/every1/png/every1-numeral-reversed-clear-800.png",
+          "format": "png",
+          "ink": "Reversed, white and Flame",
+          "width": 800,
+          "clearSpace": true
         },
         {
           "file": "assets/logos/every1/png/every1-numeral-reversed-1600.png",
@@ -1563,10 +2760,24 @@
           "width": 1600
         },
         {
+          "file": "assets/logos/every1/png/every1-numeral-reversed-clear-1600.png",
+          "format": "png",
+          "ink": "Reversed, white and Flame",
+          "width": 1600,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/every1/png/every1-numeral-reversed-3200.png",
           "format": "png",
           "ink": "Reversed, white and Flame",
           "width": 3200
+        },
+        {
+          "file": "assets/logos/every1/png/every1-numeral-reversed-clear-3200.png",
+          "format": "png",
+          "ink": "Reversed, white and Flame",
+          "width": 3200,
+          "clearSpace": true
         },
         {
           "file": "assets/logos/every1/every1-numeral-black.svg",
@@ -1580,10 +2791,24 @@
           "width": 400
         },
         {
+          "file": "assets/logos/every1/png/every1-numeral-black-clear-400.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 400,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/every1/png/every1-numeral-black-800.png",
           "format": "png",
           "ink": "One colour, black",
           "width": 800
+        },
+        {
+          "file": "assets/logos/every1/png/every1-numeral-black-clear-800.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 800,
+          "clearSpace": true
         },
         {
           "file": "assets/logos/every1/png/every1-numeral-black-1600.png",
@@ -1592,10 +2817,24 @@
           "width": 1600
         },
         {
+          "file": "assets/logos/every1/png/every1-numeral-black-clear-1600.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 1600,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/every1/png/every1-numeral-black-3200.png",
           "format": "png",
           "ink": "One colour, black",
           "width": 3200
+        },
+        {
+          "file": "assets/logos/every1/png/every1-numeral-black-clear-3200.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 3200,
+          "clearSpace": true
         }
       ]
     },
@@ -1627,10 +2866,24 @@
           "width": 400
         },
         {
+          "file": "assets/logos/school/png/school-horizontal-clear-400.png",
+          "format": "png",
+          "ink": "Midnight lion, Word Blue name",
+          "width": 400,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/school/png/school-horizontal-800.png",
           "format": "png",
           "ink": "Midnight lion, Word Blue name",
           "width": 800
+        },
+        {
+          "file": "assets/logos/school/png/school-horizontal-clear-800.png",
+          "format": "png",
+          "ink": "Midnight lion, Word Blue name",
+          "width": 800,
+          "clearSpace": true
         },
         {
           "file": "assets/logos/school/png/school-horizontal-1600.png",
@@ -1639,10 +2892,24 @@
           "width": 1600
         },
         {
+          "file": "assets/logos/school/png/school-horizontal-clear-1600.png",
+          "format": "png",
+          "ink": "Midnight lion, Word Blue name",
+          "width": 1600,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/school/png/school-horizontal-3200.png",
           "format": "png",
           "ink": "Midnight lion, Word Blue name",
           "width": 3200
+        },
+        {
+          "file": "assets/logos/school/png/school-horizontal-clear-3200.png",
+          "format": "png",
+          "ink": "Midnight lion, Word Blue name",
+          "width": 3200,
+          "clearSpace": true
         },
         {
           "file": "assets/logos/school/school-horizontal-reversed.svg",
@@ -1656,10 +2923,24 @@
           "width": 400
         },
         {
+          "file": "assets/logos/school/png/school-horizontal-reversed-clear-400.png",
+          "format": "png",
+          "ink": "Reversed",
+          "width": 400,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/school/png/school-horizontal-reversed-800.png",
           "format": "png",
           "ink": "Reversed",
           "width": 800
+        },
+        {
+          "file": "assets/logos/school/png/school-horizontal-reversed-clear-800.png",
+          "format": "png",
+          "ink": "Reversed",
+          "width": 800,
+          "clearSpace": true
         },
         {
           "file": "assets/logos/school/png/school-horizontal-reversed-1600.png",
@@ -1668,10 +2949,24 @@
           "width": 1600
         },
         {
+          "file": "assets/logos/school/png/school-horizontal-reversed-clear-1600.png",
+          "format": "png",
+          "ink": "Reversed",
+          "width": 1600,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/school/png/school-horizontal-reversed-3200.png",
           "format": "png",
           "ink": "Reversed",
           "width": 3200
+        },
+        {
+          "file": "assets/logos/school/png/school-horizontal-reversed-clear-3200.png",
+          "format": "png",
+          "ink": "Reversed",
+          "width": 3200,
+          "clearSpace": true
         },
         {
           "file": "assets/logos/school/school-horizontal-black.svg",
@@ -1685,10 +2980,24 @@
           "width": 400
         },
         {
+          "file": "assets/logos/school/png/school-horizontal-black-clear-400.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 400,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/school/png/school-horizontal-black-800.png",
           "format": "png",
           "ink": "One colour, black",
           "width": 800
+        },
+        {
+          "file": "assets/logos/school/png/school-horizontal-black-clear-800.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 800,
+          "clearSpace": true
         },
         {
           "file": "assets/logos/school/png/school-horizontal-black-1600.png",
@@ -1697,10 +3006,24 @@
           "width": 1600
         },
         {
+          "file": "assets/logos/school/png/school-horizontal-black-clear-1600.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 1600,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/school/png/school-horizontal-black-3200.png",
           "format": "png",
           "ink": "One colour, black",
           "width": 3200
+        },
+        {
+          "file": "assets/logos/school/png/school-horizontal-black-clear-3200.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 3200,
+          "clearSpace": true
         }
       ]
     },
@@ -1732,10 +3055,24 @@
           "width": 400
         },
         {
+          "file": "assets/logos/school/png/school-stacked-clear-400.png",
+          "format": "png",
+          "ink": "Midnight lion, Word Blue name",
+          "width": 400,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/school/png/school-stacked-800.png",
           "format": "png",
           "ink": "Midnight lion, Word Blue name",
           "width": 800
+        },
+        {
+          "file": "assets/logos/school/png/school-stacked-clear-800.png",
+          "format": "png",
+          "ink": "Midnight lion, Word Blue name",
+          "width": 800,
+          "clearSpace": true
         },
         {
           "file": "assets/logos/school/png/school-stacked-1600.png",
@@ -1744,10 +3081,24 @@
           "width": 1600
         },
         {
+          "file": "assets/logos/school/png/school-stacked-clear-1600.png",
+          "format": "png",
+          "ink": "Midnight lion, Word Blue name",
+          "width": 1600,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/school/png/school-stacked-3200.png",
           "format": "png",
           "ink": "Midnight lion, Word Blue name",
           "width": 3200
+        },
+        {
+          "file": "assets/logos/school/png/school-stacked-clear-3200.png",
+          "format": "png",
+          "ink": "Midnight lion, Word Blue name",
+          "width": 3200,
+          "clearSpace": true
         },
         {
           "file": "assets/logos/school/school-stacked-reversed.svg",
@@ -1761,10 +3112,24 @@
           "width": 400
         },
         {
+          "file": "assets/logos/school/png/school-stacked-reversed-clear-400.png",
+          "format": "png",
+          "ink": "Reversed",
+          "width": 400,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/school/png/school-stacked-reversed-800.png",
           "format": "png",
           "ink": "Reversed",
           "width": 800
+        },
+        {
+          "file": "assets/logos/school/png/school-stacked-reversed-clear-800.png",
+          "format": "png",
+          "ink": "Reversed",
+          "width": 800,
+          "clearSpace": true
         },
         {
           "file": "assets/logos/school/png/school-stacked-reversed-1600.png",
@@ -1773,10 +3138,24 @@
           "width": 1600
         },
         {
+          "file": "assets/logos/school/png/school-stacked-reversed-clear-1600.png",
+          "format": "png",
+          "ink": "Reversed",
+          "width": 1600,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/school/png/school-stacked-reversed-3200.png",
           "format": "png",
           "ink": "Reversed",
           "width": 3200
+        },
+        {
+          "file": "assets/logos/school/png/school-stacked-reversed-clear-3200.png",
+          "format": "png",
+          "ink": "Reversed",
+          "width": 3200,
+          "clearSpace": true
         },
         {
           "file": "assets/logos/school/school-stacked-black.svg",
@@ -1790,10 +3169,24 @@
           "width": 400
         },
         {
+          "file": "assets/logos/school/png/school-stacked-black-clear-400.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 400,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/school/png/school-stacked-black-800.png",
           "format": "png",
           "ink": "One colour, black",
           "width": 800
+        },
+        {
+          "file": "assets/logos/school/png/school-stacked-black-clear-800.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 800,
+          "clearSpace": true
         },
         {
           "file": "assets/logos/school/png/school-stacked-black-1600.png",
@@ -1802,10 +3195,24 @@
           "width": 1600
         },
         {
+          "file": "assets/logos/school/png/school-stacked-black-clear-1600.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 1600,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/school/png/school-stacked-black-3200.png",
           "format": "png",
           "ink": "One colour, black",
           "width": 3200
+        },
+        {
+          "file": "assets/logos/school/png/school-stacked-black-clear-3200.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 3200,
+          "clearSpace": true
         }
       ]
     },
@@ -1837,16 +3244,37 @@
           "width": 512
         },
         {
+          "file": "assets/logos/school/png/school-lion-clear-512.png",
+          "format": "png",
+          "ink": "Midnight lion, Word Blue name",
+          "width": 512,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/school/png/school-lion-1024.png",
           "format": "png",
           "ink": "Midnight lion, Word Blue name",
           "width": 1024
         },
         {
+          "file": "assets/logos/school/png/school-lion-clear-1024.png",
+          "format": "png",
+          "ink": "Midnight lion, Word Blue name",
+          "width": 1024,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/school/png/school-lion-2048.png",
           "format": "png",
           "ink": "Midnight lion, Word Blue name",
           "width": 2048
+        },
+        {
+          "file": "assets/logos/school/png/school-lion-clear-2048.png",
+          "format": "png",
+          "ink": "Midnight lion, Word Blue name",
+          "width": 2048,
+          "clearSpace": true
         },
         {
           "file": "assets/logos/school/school-lion-reversed.svg",
@@ -1860,16 +3288,37 @@
           "width": 512
         },
         {
+          "file": "assets/logos/school/png/school-lion-reversed-clear-512.png",
+          "format": "png",
+          "ink": "Reversed",
+          "width": 512,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/school/png/school-lion-reversed-1024.png",
           "format": "png",
           "ink": "Reversed",
           "width": 1024
         },
         {
+          "file": "assets/logos/school/png/school-lion-reversed-clear-1024.png",
+          "format": "png",
+          "ink": "Reversed",
+          "width": 1024,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/school/png/school-lion-reversed-2048.png",
           "format": "png",
           "ink": "Reversed",
           "width": 2048
+        },
+        {
+          "file": "assets/logos/school/png/school-lion-reversed-clear-2048.png",
+          "format": "png",
+          "ink": "Reversed",
+          "width": 2048,
+          "clearSpace": true
         },
         {
           "file": "assets/logos/school/school-lion-black.svg",
@@ -1883,16 +3332,37 @@
           "width": 512
         },
         {
+          "file": "assets/logos/school/png/school-lion-black-clear-512.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 512,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/school/png/school-lion-black-1024.png",
           "format": "png",
           "ink": "One colour, black",
           "width": 1024
         },
         {
+          "file": "assets/logos/school/png/school-lion-black-clear-1024.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 1024,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/school/png/school-lion-black-2048.png",
           "format": "png",
           "ink": "One colour, black",
           "width": 2048
+        },
+        {
+          "file": "assets/logos/school/png/school-lion-black-clear-2048.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 2048,
+          "clearSpace": true
         }
       ]
     },
@@ -1924,10 +3394,24 @@
           "width": 400
         },
         {
+          "file": "assets/logos/school/png/school-cobrand-clear-400.png",
+          "format": "png",
+          "ink": "Midnight lion, Word Blue name",
+          "width": 400,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/school/png/school-cobrand-800.png",
           "format": "png",
           "ink": "Midnight lion, Word Blue name",
           "width": 800
+        },
+        {
+          "file": "assets/logos/school/png/school-cobrand-clear-800.png",
+          "format": "png",
+          "ink": "Midnight lion, Word Blue name",
+          "width": 800,
+          "clearSpace": true
         },
         {
           "file": "assets/logos/school/png/school-cobrand-1600.png",
@@ -1936,10 +3420,24 @@
           "width": 1600
         },
         {
+          "file": "assets/logos/school/png/school-cobrand-clear-1600.png",
+          "format": "png",
+          "ink": "Midnight lion, Word Blue name",
+          "width": 1600,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/school/png/school-cobrand-3200.png",
           "format": "png",
           "ink": "Midnight lion, Word Blue name",
           "width": 3200
+        },
+        {
+          "file": "assets/logos/school/png/school-cobrand-clear-3200.png",
+          "format": "png",
+          "ink": "Midnight lion, Word Blue name",
+          "width": 3200,
+          "clearSpace": true
         },
         {
           "file": "assets/logos/school/school-cobrand-reversed.svg",
@@ -1953,10 +3451,24 @@
           "width": 400
         },
         {
+          "file": "assets/logos/school/png/school-cobrand-reversed-clear-400.png",
+          "format": "png",
+          "ink": "Reversed",
+          "width": 400,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/school/png/school-cobrand-reversed-800.png",
           "format": "png",
           "ink": "Reversed",
           "width": 800
+        },
+        {
+          "file": "assets/logos/school/png/school-cobrand-reversed-clear-800.png",
+          "format": "png",
+          "ink": "Reversed",
+          "width": 800,
+          "clearSpace": true
         },
         {
           "file": "assets/logos/school/png/school-cobrand-reversed-1600.png",
@@ -1965,10 +3477,24 @@
           "width": 1600
         },
         {
+          "file": "assets/logos/school/png/school-cobrand-reversed-clear-1600.png",
+          "format": "png",
+          "ink": "Reversed",
+          "width": 1600,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/school/png/school-cobrand-reversed-3200.png",
           "format": "png",
           "ink": "Reversed",
           "width": 3200
+        },
+        {
+          "file": "assets/logos/school/png/school-cobrand-reversed-clear-3200.png",
+          "format": "png",
+          "ink": "Reversed",
+          "width": 3200,
+          "clearSpace": true
         },
         {
           "file": "assets/logos/school/school-cobrand-black.svg",
@@ -1982,10 +3508,24 @@
           "width": 400
         },
         {
+          "file": "assets/logos/school/png/school-cobrand-black-clear-400.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 400,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/school/png/school-cobrand-black-800.png",
           "format": "png",
           "ink": "One colour, black",
           "width": 800
+        },
+        {
+          "file": "assets/logos/school/png/school-cobrand-black-clear-800.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 800,
+          "clearSpace": true
         },
         {
           "file": "assets/logos/school/png/school-cobrand-black-1600.png",
@@ -1994,10 +3534,24 @@
           "width": 1600
         },
         {
+          "file": "assets/logos/school/png/school-cobrand-black-clear-1600.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 1600,
+          "clearSpace": true
+        },
+        {
           "file": "assets/logos/school/png/school-cobrand-black-3200.png",
           "format": "png",
           "ink": "One colour, black",
           "width": 3200
+        },
+        {
+          "file": "assets/logos/school/png/school-cobrand-black-clear-3200.png",
+          "format": "png",
+          "ink": "One colour, black",
+          "width": 3200,
+          "clearSpace": true
         }
       ]
     }
@@ -2007,8 +3561,9 @@
     "mark": "e1",
     "ruling": "The E1 icon is the app icon and the avatar on every surface: the mobile launcher, the installable web app, the favicon, and every social profile. The numeral is not the app icon. It is the display mark and the shape photography is cut into.",
     "sameEverywhere": true,
-    "ground": "Midnight. Opaque, because a launcher icon cannot be transparent.",
+    "ground": "Midnight, opaque, because a launcher icon cannot be transparent. The browser tab is the one exception: its chrome is light on most systems, so the favicon is the same mark in its two-tone ink on an opaque White plate. One mark everywhere; the plate follows the surface, which is the same rule every other ink on this brand already follows.",
     "safeZone": "Android crops to an arbitrary shape and guarantees only the inner circle at 66% diameter. The maskable file is padded so the whole mark sits inside it.",
+    "noVectorFavicon": "No SVG is declared as the favicon. The published marks are transparent, and a transparent favicon takes the tab's own colour behind it: the reversed file loses its white E on light chrome and the default file loses its Midnight E on dark chrome. The plated PNGs are the favicon, as they are on the parent portal.",
     "noSixteen": "No 16px icon is published. The E1 icon's minimum width is 32px and a 16px file would breach it. Browsers downscale the 32 themselves, and the SVG is offered first.",
     "files": [
       {
@@ -2016,35 +3571,35 @@
         "format": "png",
         "width": 32,
         "height": 32,
-        "purpose": "app icon and favicon, opaque Midnight ground"
+        "purpose": "browser tab, two-tone mark on an opaque White plate"
       },
       {
         "file": "assets/logos/every1/icon/every1-favicon-48.png",
         "format": "png",
         "width": 48,
         "height": 48,
-        "purpose": "app icon and favicon, opaque Midnight ground"
+        "purpose": "browser tab, two-tone mark on an opaque White plate"
       },
       {
         "file": "assets/logos/every1/icon/every1-apple-touch-icon-180.png",
         "format": "png",
         "width": 180,
         "height": 180,
-        "purpose": "app icon and favicon, opaque Midnight ground"
+        "purpose": "app icon and avatar, opaque Midnight ground"
       },
       {
         "file": "assets/logos/every1/icon/every1-icon-192.png",
         "format": "png",
         "width": 192,
         "height": 192,
-        "purpose": "app icon and favicon, opaque Midnight ground"
+        "purpose": "app icon and avatar, opaque Midnight ground"
       },
       {
         "file": "assets/logos/every1/icon/every1-icon-512.png",
         "format": "png",
         "width": 512,
         "height": 512,
-        "purpose": "app icon and favicon, opaque Midnight ground"
+        "purpose": "app icon and avatar, opaque Midnight ground"
       },
       {
         "file": "assets/logos/every1/icon/every1-icon-maskable-512.png",
@@ -2059,11 +3614,6 @@
         "width": 512,
         "height": 512,
         "purpose": "Android status bar, white silhouette on transparency"
-      },
-      {
-        "file": "assets/logos/every1/every1-e1-reversed.svg",
-        "format": "svg",
-        "purpose": "the vector favicon, which a browser prefers to any raster"
       }
     ]
   },
@@ -2114,9 +3664,11 @@
     {
       "file": "assets/downloads/every1-logos.zip",
       "name": "EVERY1 Movement",
-      "note": "The approved EVERY1 wordmark, the vision lockup, and the 1 glyph, in every published form.",
+      "note": "Every published EVERY1 file: the wordmark, the vision and promise lockups, the E1 icon, the 1, and the country lockups. Vector in all three inks, PNG at four widths both trimmed and with the clear space built in, and the app icon set.",
       "globs": [
-        "assets/logos/every1/*.svg"
+        "assets/logos/every1/*.svg",
+        "assets/logos/every1/png/*.png",
+        "assets/logos/every1/icon/*.png"
       ]
     }
   ]

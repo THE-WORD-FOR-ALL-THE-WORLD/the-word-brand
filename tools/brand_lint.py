@@ -641,6 +641,49 @@ def check_maskable_icon():
         )
 
 
+def check_every1_favicon():
+    """L21: the EVERY1 favicon is opaque and carries the whole mark.
+
+    This check exists because it did not. The door declared a transparent SVG as its
+    favicon for two releases, and a transparent favicon takes the tab's own colour
+    behind it: on the light chrome most systems ship, the reversed file's white E
+    disappeared and the tab showed a lone Flame 1. The door was recognised by half its
+    own icon. The favicon is now a plated PNG, and this measures the pixels rather than
+    trusting the mode constant: fully opaque, and all three of White, Midnight and Flame
+    present, so a plate change that erases one half of a two-tone mark fails here.
+    """
+    for name in ("every1-favicon-32.png", "every1-favicon-48.png"):
+        path = os.path.join(REPO, "assets", "logos", "every1", "icon", name)
+        if not os.path.exists(path):
+            err("L21", f"the EVERY1 favicon {name} is missing. Run tools/build_logos.py.")
+            continue
+        try:
+            from PIL import Image
+        except ImportError:
+            return  # CI has no imaging library, and --check already proved the file exists
+        image = Image.open(path).convert("RGBA")
+        pixels = image.load()
+        width, height = image.size
+        found = {"plate": 0, "word": 0, "accent": 0}
+        for y in range(height):
+            for x in range(width):
+                r, g, b, a = pixels[x, y]
+                if a != 255:
+                    err("L21", f"the EVERY1 favicon {name} has transparent pixels. A tab paints "
+                               "its own colour behind them, which is how the reversed mark "
+                               "vanished on light chrome. The favicon is plated.")
+                    return
+                for key, (tr, tg, tb) in (("plate", (255, 255, 255)),
+                                          ("word", (11, 26, 45)),
+                                          ("accent", (248, 88, 66))):
+                    if abs(r - tr) + abs(g - tg) + abs(b - tb) <= 30:
+                        found[key] += 1
+        missing = sorted(k for k, n in found.items() if n < 4)
+        if missing:
+            err("L21", f"the EVERY1 favicon {name} is missing its {', '.join(missing)}. The tab "
+                       "carries the whole two-tone mark on its plate, never half of it.")
+
+
 def check_consumers():
     """L15: the React library still implements what the specifications say.
 
@@ -939,6 +982,7 @@ def main() -> int:
     check_every1_delivery()
     check_every1_type()
     check_maskable_icon()
+    check_every1_favicon()
     check_navigation(files)
     check_skill_copies()
     if os.path.isdir(ai_dir):

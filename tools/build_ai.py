@@ -2635,7 +2635,9 @@ EVERY1_SITE = """<!DOCTYPE html>
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
 <title>EVERY1 Movement · Brand</title>
 <meta name="description" content="The brand standard for the EVERY1 Movement: the marks, the words, the rules that hold them, and everything to download. For our team and for any organisation carrying EVERY1 at a conference or an activation.">
-<link rel="icon" href="/assets/logos/every1-e1-reversed.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/logos/every1-favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/assets/logos/every1-favicon-48.png" sizes="48x48" type="image/png">
+<link rel="apple-touch-icon" href="/assets/logos/every1-apple-touch-icon-180.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="EVERY1 Movement">
 <meta property="og:title" content="EVERY1 Movement · Brand">
@@ -3002,7 +3004,10 @@ __DOOR__
       <span class="eyebrow num">The marks</span>
       <h2 class="t">Every published form.</h2>
       <p class="intro">These are the files. They are generated from the approved artwork, so what
-      you download here is what the mark is. Do not rebuild one by typesetting it.</p>
+      you download here is what the mark is. Do not rebuild one by typesetting it. A
+      <b>clear</b> file is the same mark with its clear space already inside the image, for
+      dropping into a slide or a partner's template without measuring anything. Every file,
+      at every width and in every ink, is in the download pack.</p>
       <div class="marks">
 __MARKS__
       </div>
@@ -3379,7 +3384,9 @@ def build_every1_404(brand: dict, updated: str) -> str:
 <meta name="robots" content="noindex, follow">
 <title>Not found &middot; EVERY1 Movement</title>
 <meta name="description" content="That path is not part of the EVERY1 brand system.">
-<link rel="icon" href="/assets/logos/every1-e1-reversed.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/logos/every1-favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/assets/logos/every1-favicon-48.png" sizes="48x48" type="image/png">
+<link rel="apple-touch-icon" href="/assets/logos/every1-apple-touch-icon-180.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="EVERY1 Movement">
 <meta property="og:title" content="Page not found">
@@ -3511,7 +3518,10 @@ def build_every1_site(brand: dict, tokens: dict, logos: dict, template: str, wor
         links = []
         for f in c["files"]:
             name = f["file"].split("/")[-1]
-            label = f["format"].upper() if f["format"] == "svg" else f"PNG {f.get('width')}"
+            label = (
+                "SVG" if f["format"] == "svg"
+                else f"PNG {f.get('width')}" + (" clear" if f.get("clearSpace") else "")
+            )
             ink = "reversed" if "reversed" in name else ("black" if "black" in name else "default")
             links.append((f"{label} {ink}", f"/assets/logos/{name}"))
         # Keep the vector for all three inks plus one useful raster, or the card becomes a wall.
@@ -4277,7 +4287,9 @@ def build_every1_messaging(brand: dict, messaging: dict, words: dict, updated: s
 <title>EVERY1 Messaging Standard</title>
 <meta name="description" content="How the EVERY1 Movement speaks. Identity, the mandate, the outside and inside scripts, audiences, voice, and the language we do not use.">
 <link rel="canonical" href="{EVERY1_SITE_URL}/messaging/">
-<link rel="icon" href="/assets/logos/every1-e1-reversed.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/logos/every1-favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/assets/logos/every1-favicon-48.png" sizes="48x48" type="image/png">
+<link rel="apple-touch-icon" href="/assets/logos/every1-apple-touch-icon-180.png">
 <meta property="og:type" content="website">
 <meta property="og:image" content="{EVERY1_SITE_URL}/assets/images/every1-og-card.png">
 <meta property="og:image:width" content="1200">

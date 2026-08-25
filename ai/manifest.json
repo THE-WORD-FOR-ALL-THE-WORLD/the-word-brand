@@ -2,9 +2,9 @@
   "schemaVersion": "1.0",
   "name": "THE WORD Brand System",
   "organization": "THE WORD FOR ALL THE WORLD",
-  "version": "7.9",
+  "version": "8.0",
   "messagingVersion": "2.0",
-  "updated": "2026-08-24",
+  "updated": "2026-08-25",
   "issued": "August 2026",
   "authority": "canonical",
   "home": "https://brand.theword.world/",
@@ -86,8 +86,8 @@
       "name": "brand-system.md",
       "url": "https://brand.theword.world/ai/brand-system.md",
       "description": "The complete brand standard as one document.",
-      "bytes": 79957,
-      "sha256": "3e36e1785faec97571ce511d91d030350fd2b15079d95a0951c535abf16aeaa8"
+      "bytes": 81681,
+      "sha256": "b59d631084945b7786c15f1edfa5e7b5da9cacd3aba9cdde918a1de252329589"
     },
     {
       "name": "SKILL.md",
@@ -101,84 +101,84 @@
       "url": "https://brand.theword.world/ai/tokens.json",
       "description": "Colors, typography, both themes, the type scale, the neutral ramp, system tokens and states, outcome and progression colour, and every contrast pair measured.",
       "bytes": 45524,
-      "sha256": "e57b809d3e49095fcecf961a2992773bd8e21d8de08b97803d83db5829b4423e"
+      "sha256": "4e241474b72e590bc4401f6cae6a53340125750ab636fe1fb04f553afd3f6fff"
     },
     {
       "name": "tokens.dtcg.json",
       "url": "https://brand.theword.world/ai/tokens.dtcg.json",
       "description": "The same tokens in W3C Design Tokens format, for design tooling.",
       "bytes": 13245,
-      "sha256": "d8e263ec7d2bf17fc86b4d76c39394f2cd7e0a394df7ac5612169887a58f8ad0"
+      "sha256": "5d900684f6d0dc94f23a0b9861d671c512002010f92865cda908bf17663ed1d4"
     },
     {
       "name": "tokens.ts",
       "url": "https://brand.theword.world/ai/tokens.ts",
       "description": "The same tokens as typed TypeScript exports, for applications.",
       "bytes": 4312,
-      "sha256": "d6753a0e65597a32355a60e7516c50a41dab5e67945295564ee90cc0011922d7"
+      "sha256": "93b67d1e65987f4541172b1e29921083781b16d5fb436e635300c116195416da"
     },
     {
       "name": "tailwind.preset.js",
       "url": "https://brand.theword.world/ai/tailwind.preset.js",
       "description": "The same tokens as a Tailwind preset, replacing the default theme.",
       "bytes": 4798,
-      "sha256": "5f8c81dd42a724f00b99e0c3b5a7b2f803aa1076b58a325e233a905e2fd8beb9"
+      "sha256": "ac19ec47a448905fd428d34922e09029b7902f0e2e44592bf2132abfe87ec9a7"
     },
     {
       "name": "audit.md",
       "url": "https://brand.theword.world/ai/audit.md",
       "description": "The brand audit rubric and report template.",
       "bytes": 8282,
-      "sha256": "82d45b3352a005650c845df5f918828b1fab1a50e935b82edc91ae3c7ddd50f3"
+      "sha256": "b6a082c3a50a1cbcdbb00b080a4208c34f9fdbc013943cc649e038cd81815dcc"
     },
     {
       "name": "components.json",
       "url": "https://brand.theword.world/ai/components.json",
       "description": "Component specifications, resolved against current tokens.",
       "bytes": 42619,
-      "sha256": "046e72589461795b1b1627c5a328652f44d452d28076bd48222956f9b09f89f7"
+      "sha256": "adafb2a61d5d5dd480940e9df2d15de89ea2d3beecb8e325f67b663f17172db5"
     },
     {
       "name": "channels.json",
       "url": "https://brand.theword.world/ai/channels.json",
       "description": "One entry per surface: sizes, safe areas, limits, rules, and the audit checks that apply.",
       "bytes": 11504,
-      "sha256": "5e2a60b66f5c0ff3a727f5726bcda01ef6e93439252ec0ea59466889c63afcd1"
+      "sha256": "35ef66d37b7877c469abd9ffa6c3cbb3472ddf6c9a495b3bf7f70765d7116082"
     },
     {
       "name": "governance.json",
       "url": "https://brand.theword.world/ai/governance.json",
       "description": "Policies, processes, and procedures: how this system is run, changed, and used.",
       "bytes": 20089,
-      "sha256": "523c29a050dfacd9cb652c516c7cf8be6d05cada72bb578c70a595cc93d1978d"
+      "sha256": "b22af61abc3853e8d896f5b4a8c8e112a5db86c0102aefbb64b243c6d5b9a69b"
     },
     {
       "name": "copy-bank.json",
       "url": "https://brand.theword.world/ai/copy-bank.json",
       "description": "Pre-approved strings by channel, each within the character limit it was written against.",
       "bytes": 12651,
-      "sha256": "72f1d9624e29c1d4b4efe947d3f5ca19e456fc19b98dadb9cfd4168c70dcbacf"
+      "sha256": "4bbd3b4383318992833923771224ae0d9ac93175517cdf98db0525edd6061609"
     },
     {
       "name": "assets.json",
       "url": "https://brand.theword.world/ai/assets.json",
       "description": "Approved logos, photography, and video, with usage rules.",
-      "bytes": 283427,
-      "sha256": "3e9d579446f1a8acd53be343bb111ee219c5f6981ba04660f3e2e27e2024fa88"
+      "bytes": 474029,
+      "sha256": "22e0b84590825d4cf23a1716005ecc71d807fa879c2f0ea715c0a6fe9530738b"
     },
     {
       "name": "approved-examples.md",
       "url": "https://brand.theword.world/ai/approved-examples.md",
       "description": "Worked output that passes the audit.",
       "bytes": 5682,
-      "sha256": "e0eba1a30d3d29def2c398aad77ef669e6f8ed4c65920d147e984e06a45a7d32"
+      "sha256": "0eef50aa4585d88a01c8b9e6cf4008b90e25b5460635c847688f7114b3c71973"
     },
     {
       "name": "anti-patterns.md",
       "url": "https://brand.theword.world/ai/anti-patterns.md",
       "description": "What not to do, including every DON'T and every banned word.",
       "bytes": 14986,
-      "sha256": "13a22dfe99be62e60d2ac7311ce544ec25b52e689f33066b234b2bac440c932a"
+      "sha256": "9c3d416044f60148eebf9807cae9d215b88632e3bc4883f87b41757b4743d26b"
     }
   ],
   "extraResources": []
