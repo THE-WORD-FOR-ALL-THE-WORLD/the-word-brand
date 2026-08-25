@@ -1,6 +1,6 @@
 # Anti-patterns
 
-> **Brand system v7.9 · Messaging guide v2.0 · Updated 2026-08-24**
+> **Brand system v8.0 · Messaging guide v2.0 · Updated 2026-08-25**
 > Canonical source: <https://brand.theword.world/ai/manifest.json>
 > What not to do. The first section is hand-authored; the rest is generated from the guides.
 

@@ -131,8 +131,8 @@ GLYPH_SIZES = [512, 1024, 2048]
 # publishing a 16px file would break the fourth of the five rules that are never
 # broken. Browsers downscale the 32 themselves, and the SVG is served first anyway.
 EVERY1_ICONS = [
-    ("every1-favicon-32.png", 32, 0.10, "plate"),
-    ("every1-favicon-48.png", 48, 0.12, "plate"),
+    ("every1-favicon-32.png", 32, 0.10, "light"),
+    ("every1-favicon-48.png", 48, 0.12, "light"),
     ("every1-apple-touch-icon-180.png", 180, 0.18, "plate"),
     ("every1-icon-192.png", 192, 0.16, "plate"),
     ("every1-icon-512.png", 512, 0.16, "plate"),
@@ -912,7 +912,10 @@ def r(v):
 # ── rasterizing ───────────────────────────────────────────────────────────────
 
 
-def render(master, ink, width, height=None, pad=0.0, square=False):
+def render(master, ink, width, height=None, pad=0.0, square=False, margin=0.0):
+    """Rasterize one master. `margin` is empty space in the artwork's own units,
+    added on all four sides and counted inside `width`, which is how the clear-space
+    files carry their rule in the pixels rather than in a caption beside them."""
     from PIL import Image
 
     x0, y0, x1, y1 = master["box"]
@@ -922,6 +925,9 @@ def render(master, ink, width, height=None, pad=0.0, square=False):
         cx, cy = (x0 + x1) / 2, (y0 + y1) / 2
         x0, y0 = cx - side / 2, cy - side / 2
         aw = ah = side
+    if margin:
+        x0, y0 = x0 - margin, y0 - margin
+        aw, ah = aw + margin * 2, ah + margin * 2
     s = width / aw
     height = height or max(1, round(ah * s))
 
@@ -967,16 +973,26 @@ EVERY1_CARD = os.path.join(REPO, "assets", "images", "every1-og-card.png")
 def render_every1_icon(masters, px, pad, mode):
     """One EVERY1 app icon, cut from the E1 icon.
 
-    Three grounds. A plated icon gets an opaque Midnight square because a launcher
+    Four grounds. A plated icon gets an opaque Midnight square because a launcher
     icon cannot be transparent and the platform rounds its own corners. A maskable
     icon is the same, padded until the whole mark fits Android's safe circle. A
     monochrome icon is a white silhouette on transparency, because a status bar keeps
     the alpha channel and throws the colour away, and a two-tone mark reduced by the
-    OS would lose its numeral entirely.
+    OS would lose its numeral entirely. A light icon is the browser tab: White plate,
+    the mark in its own two-tone ink.
     """
     from PIL import Image
 
     e1 = masters[("every1", "e1")]
+    if mode == "light":
+        # The browser tab. Its chrome is light on most systems, so the reversed mark
+        # published here for two releases showed a Flame 1 beside an invisible white E:
+        # the door was recognised by half its own icon. This is the two-tone ink on an
+        # opaque White plate, so the tab shows Midnight and Flame whatever sits behind it.
+        img = render(e1, EVERY1_INKS[""], px, square=True, pad=pad)
+        ground = Image.new("RGBA", (px, px), (255, 255, 255, 255))
+        ground.alpha_composite(img)
+        return ground
     if mode == "mono":
         # One colour, so the Flame numeral does not vanish when the OS flattens it.
         return render(e1, "#FFFFFF", px, square=True, pad=pad)
@@ -1111,26 +1127,36 @@ def build(check):
             files.append({"file": rel(brand, f"{stem}.svg"), "format": "svg", "ink": ink["name"]})
 
             widths = GLYPH_SIZES if cfg.get("square") else PNG_WIDTHS
+            # Two rasters at every width. The plain file is trimmed to the artwork.
+            # The -clear file carries the mark's own published clear space inside the
+            # image, so a mark dropped into a slide, a document, or a partner's
+            # template cannot be crowded by whatever is set next to it. The margin is
+            # the recorded rule rather than a taste: the same multiple the specs name.
+            margin = cfg["clear"] * m["cap"]
             for px in widths:
-                name = f"{stem}-{px}.png"
-                # The manifest is written the same way in both modes, so --check compares
-                # like for like. Only the pixels are skipped, because CI has no Pillow.
-                if check:
-                    if not os.path.exists(os.path.join(png_dir(brand), name)):
-                        w.stale.append(rel(brand, "png", name))
-                else:
-                    w.image(
-                        os.path.join(png_dir(brand), name),
-                        render(m, ink, px, square=bool(cfg.get("square"))),
+                for name, mar in (
+                    (f"{stem}-{px}.png", 0.0),
+                    (f"{stem}-clear-{px}.png", margin),
+                ):
+                    # The manifest is written the same way in both modes, so --check compares
+                    # like for like. Only the pixels are skipped, because CI has no Pillow.
+                    if check:
+                        if not os.path.exists(os.path.join(png_dir(brand), name)):
+                            w.stale.append(rel(brand, "png", name))
+                    else:
+                        w.image(
+                            os.path.join(png_dir(brand), name),
+                            render(m, ink, px, square=bool(cfg.get("square")), margin=mar),
+                        )
+                    files.append(
+                        {
+                            "file": rel(brand, "png", name),
+                            "format": "png",
+                            "ink": ink["name"],
+                            "width": px,
+                            **({"clearSpace": True} if mar else {}),
+                        }
                     )
-                files.append(
-                    {
-                        "file": rel(brand, "png", name),
-                        "format": "png",
-                        "ink": ink["name"],
-                        "width": px,
-                    }
-                )
 
         entries.append(
             {
@@ -1231,10 +1257,22 @@ def build(check):
                 "photography is cut into."
             ),
             "sameEverywhere": True,
-            "ground": "Midnight. Opaque, because a launcher icon cannot be transparent.",
+            "ground": (
+                "Midnight, opaque, because a launcher icon cannot be transparent. The browser "
+                "tab is the one exception: its chrome is light on most systems, so the favicon "
+                "is the same mark in its two-tone ink on an opaque White plate. One mark "
+                "everywhere; the plate follows the surface, which is the same rule every other "
+                "ink on this brand already follows."
+            ),
             "safeZone": (
                 "Android crops to an arbitrary shape and guarantees only the inner circle at "
                 "66% diameter. The maskable file is padded so the whole mark sits inside it."
+            ),
+            "noVectorFavicon": (
+                "No SVG is declared as the favicon. The published marks are transparent, and a "
+                "transparent favicon takes the tab's own colour behind it: the reversed file "
+                "loses its white E on light chrome and the default file loses its Midnight E on "
+                "dark chrome. The plated PNGs are the favicon, as they are on the parent portal."
             ),
             "noSixteen": (
                 "No 16px icon is published. The E1 icon's minimum width is 32px and a 16px "
@@ -1248,20 +1286,15 @@ def build(check):
                     "width": px,
                     "height": px,
                     "purpose": {
-                        "plate": "app icon and favicon, opaque Midnight ground",
+                        "light": "browser tab, two-tone mark on an opaque White plate",
+                        "plate": "app icon and avatar, opaque Midnight ground",
                         "maskable": "Android adaptive icon, mark inside the safe zone",
                         "mono": "Android status bar, white silhouette on transparency",
                     }[mode],
                 }
                 for name, px, _pad, mode in EVERY1_ICONS
             ]
-            + [
-                {
-                    "file": "assets/logos/every1/every1-e1-reversed.svg",
-                    "format": "svg",
-                    "purpose": "the vector favicon, which a browser prefers to any raster",
-                }
-            ],
+            ,
         },
         "packs": PACKS,
     }
@@ -1366,6 +1399,13 @@ def mark_card(brand, cfg, entry, master):
     png_rev = " ".join(
         f'<a href="{base}/png/{stem}-reversed-{p}.png?v={VER}" download>{p}px</a>' for p in widths
     )
+    png_clear = " ".join(
+        f'<a href="{base}/png/{stem}-clear-{p}.png?v={VER}" download>{p}px</a>' for p in widths
+    )
+    png_clear_rev = " ".join(
+        f'<a href="{base}/png/{stem}-reversed-clear-{p}.png?v={VER}" download>{p}px</a>'
+        for p in widths
+    )
     tag = "The default mark" if cfg["primary"] else "Alternate"
     dark = brand.get("dark_ground", "midnight")
     ground_class = "on-word-blue" if dark == "word-blue" else ""
@@ -1397,6 +1437,8 @@ def mark_card(brand, cfg, entry, master):
           </div>
           <div class="sizes"><span>PNG, Midnight</span>{png_links}</div>
           <div class="sizes"><span>PNG, reversed</span>{png_rev}</div>
+          <div class="sizes"><span>Clear space built in, Midnight</span>{png_clear}</div>
+          <div class="sizes"><span>Clear space built in, reversed</span>{png_clear_rev}</div>
         </div>"""
 
 
@@ -1634,7 +1676,7 @@ def render_page(masters, entries):
         <li><b>Never redraw it.</b> Do not retype it, restretch it, rotate it, outline it, or rebuild a lockup by setting the words yourself. Download the file. If the format you need is not here, ask for it.</li>
         <li><b>Never recolour it.</b> Three inks are published and no fourth exists. Not a brand colour, not a client colour, not a gradient.</li>
         <li><b>Never add effects.</b> No drop shadow, glow, bevel, outline, or stroke. The mark is flat.</li>
-        <li><b>Never crowd it, never shrink it past the floor.</b> Clear space and minimum size are published per mark below and both are measured, not estimated.</li>
+        <li><b>Never crowd it, never shrink it past the floor.</b> Clear space and minimum size are published per mark below and both are measured, not estimated. Every mark also ships a <code>-clear</code> PNG with that space already inside the file, for dropping into a slide, a document, or a partner's template without measuring anything.</li>
       </ol>
     </div>
 
@@ -1797,8 +1839,16 @@ PACKS = [
     {
         "file": "assets/downloads/every1-logos.zip",
         "name": "EVERY1 Movement",
-        "note": "The approved EVERY1 wordmark, the vision lockup, and the 1 glyph, in every published form.",
-        "globs": ["assets/logos/every1/*.svg"],
+        "note": (
+            "Every published EVERY1 file: the wordmark, the vision and promise lockups, the E1 "
+            "icon, the 1, and the country lockups. Vector in all three inks, PNG at four widths "
+            "both trimmed and with the clear space built in, and the app icon set."
+        ),
+        "globs": [
+            "assets/logos/every1/*.svg",
+            "assets/logos/every1/png/*.png",
+            "assets/logos/every1/icon/*.png",
+        ],
     },
 ]
 # Signatures are deliberately not packaged. They are the real signatures of real people,

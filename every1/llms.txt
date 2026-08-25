@@ -16,7 +16,7 @@
 
 ## Facts at a glance
 
-Brand version 7.9, updated 2026-08-24.
+Brand version 8.0, updated 2026-08-25.
 EVERY1 stands alone. Do not add "A ministry of THE WORD FOR ALL THE WORLD" and do not lock a parent mark to it.
 The app icon is the E1 icon, on Midnight, on every surface. The numeral is not the app icon.
 Flame never carries text on a light ground. On Midnight it is the text accent, because Ember is 3.25:1 there and fails.
